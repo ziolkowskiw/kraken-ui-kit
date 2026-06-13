@@ -36,10 +36,12 @@ const badgeVariants = cva(
         ghost:
           "[background-color:transparent] [color:var(--badge-content)] [border-color:transparent]",
       },
+      // Fixed height per size (the differentiator; sm/md share padding+font).
+      // Flex-centering handles vertical alignment, so no padding-block.
       size: {
-        sm: "[min-height:var(--ds-badge-size-sm-height)] [padding-inline:var(--ds-badge-size-sm-paddingx)] [padding-block:var(--ds-badge-size-sm-paddingy)] [font-size:var(--ds-badge-size-sm-fontsize)] [font-weight:var(--ds-badge-size-sm-fontweight)] [&>svg]:size-3",
-        md: "[min-height:var(--ds-badge-size-md-height)] [padding-inline:var(--ds-badge-size-md-paddingx)] [padding-block:var(--ds-badge-size-md-paddingy)] [font-size:var(--ds-badge-size-md-fontsize)] [font-weight:var(--ds-badge-size-md-fontweight)] [&>svg]:size-3.5",
-        lg: "[min-height:var(--ds-badge-size-lg-height)] [padding-inline:var(--ds-badge-size-lg-paddingx)] [padding-block:var(--ds-badge-size-lg-paddingy)] [font-size:var(--ds-badge-size-lg-fontsize)] [font-weight:var(--ds-badge-size-lg-fontweight)] [&>svg]:size-4",
+        sm: "[height:var(--ds-badge-size-sm-height)] [padding-inline:var(--ds-badge-size-sm-paddingx)] [font-size:var(--ds-badge-size-sm-fontsize)] [font-weight:var(--ds-badge-size-sm-fontweight)] [&>svg]:size-3",
+        md: "[height:var(--ds-badge-size-md-height)] [padding-inline:var(--ds-badge-size-md-paddingx)] [font-size:var(--ds-badge-size-md-fontsize)] [font-weight:var(--ds-badge-size-md-fontweight)] [&>svg]:size-3.5",
+        lg: "[height:var(--ds-badge-size-lg-height)] [padding-inline:var(--ds-badge-size-lg-paddingx)] [font-size:var(--ds-badge-size-lg-fontsize)] [font-weight:var(--ds-badge-size-lg-fontweight)] [&>svg]:size-4",
       },
       // Radius depends on size + shape (see compoundVariants).
       shape: { round: "", square: "" },
