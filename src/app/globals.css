@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* Brand fonts: "Noto Sans" (Randstadt) is loaded via a <link> in layout.tsx;
+   "Moderat JIT" (JIT, proprietary) renders from the OS if installed — add woff2
+   to public/fonts/ + an @font-face here to make it portable. */
+
 /* Kraken design tokens — 3-layer system; brand-switchable via [data-theme="…"] on <html> */
 @import "../styles/tokens.css";
 
@@ -56,6 +60,8 @@
    Brand switching happens one layer down (tokens.css), so these need no per-brand
    overrides here — var(--ds-color-primary) re-resolves when [data-theme] changes. */
 :root {
+  /* App font follows the active brand: jit → "Moderat JIT", randstadt → "Noto Sans". */
+  --font-sans: var(--ds-typography-bodymd-fontfamily), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --background: var(--ds-color-background);
   --foreground: var(--ds-color-foreground);
   --card: var(--ds-color-card);
