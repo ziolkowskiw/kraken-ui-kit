@@ -1,30 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import * as React from 'react'
-import { Check, X, Wrench, Star, Circle, Clock, User, Tag, Info } from 'lucide-react'
+import { icons, Check } from 'lucide-react'
 import { Badge } from './badge'
 
 const COLORS = ['neutral', 'brand', 'green', 'red', 'orange', 'amber', 'blue', 'purple'] as const
 const APPEARANCES = ['filled', 'outlined', 'ghost'] as const
 
-// Story-side icon picker — stands in for Figma's left/right icon instance-swap.
-// The real props (leftIcon/rightIcon) accept any ReactNode; here we map a
-// selectable name to a lucide icon.
-const ICONS = {
-  none: null,
-  check: Check,
-  x: X,
-  wrench: Wrench,
-  star: Star,
-  circle: Circle,
-  clock: Clock,
-  user: User,
-  tag: Tag,
-  info: Info,
-} as const
-type IconName = keyof typeof ICONS
-const ICON_NAMES = Object.keys(ICONS) as IconName[]
-const renderIcon = (name?: IconName) => {
-  const Icon = name ? ICONS[name] : null
+// Story-side icon picker mirroring Figma's left/right icon instance-swap.
+// The real props (leftIcon/rightIcon) accept ANY ReactNode — this just exposes
+// the full lucide set (~1,715 icons) as a Storybook control. "none" = no icon.
+type IconName = 'none' | keyof typeof icons
+const ICON_OPTIONS: IconName[] = ['none', ...(Object.keys(icons) as (keyof typeof icons)[])]
+const renderIcon = (name?: IconName): React.ReactNode => {
+  if (!name || name === 'none') return undefined
+  const Icon = icons[name as keyof typeof icons]
   return Icon ? <Icon /> : undefined
 }
 
@@ -43,8 +32,8 @@ const meta = {
     appearance: { control: 'select', options: APPEARANCES },
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
     shape: { control: 'inline-radio', options: ['round', 'square'] },
-    leftIconName: { control: 'select', options: ICON_NAMES, name: 'Left icon' },
-    rightIconName: { control: 'select', options: ICON_NAMES, name: 'Right icon' },
+    leftIconName: { control: 'select', options: ICON_OPTIONS, name: 'Left icon' },
+    rightIconName: { control: 'select', options: ICON_OPTIONS, name: 'Right icon' },
     // hide the raw ReactNode props from the controls table
     leftIcon: { table: { disable: true } },
     rightIcon: { table: { disable: true } },
@@ -73,7 +62,7 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {}
 
 export const WithIcons: Story = {
-  args: { leftIconName: 'wrench', rightIconName: 'x', children: 'Assignee' },
+  args: { leftIconName: 'Wrench', rightIconName: 'Check', children: 'Assignee' },
 }
 
 // The full Figma matrix: every color × appearance.
