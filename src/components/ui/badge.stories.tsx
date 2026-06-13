@@ -1,17 +1,36 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import * as React from 'react'
-import { Wrench, Check, X } from 'lucide-react'
+import { Check, X, Wrench, Star, Circle, Clock, User, Tag, Info } from 'lucide-react'
 import { Badge } from './badge'
 
 const COLORS = ['neutral', 'brand', 'green', 'red', 'orange', 'amber', 'blue', 'purple'] as const
 const APPEARANCES = ['filled', 'outlined', 'ghost'] as const
 
-// Story-only args: boolean toggles that stand in for Figma's "Left icon" /
-// "Right icon" instance-swap booleans (the real props take a ReactNode, which
-// Storybook controls can't supply).
+// Story-side icon picker — stands in for Figma's left/right icon instance-swap.
+// The real props (leftIcon/rightIcon) accept any ReactNode; here we map a
+// selectable name to a lucide icon.
+const ICONS = {
+  none: null,
+  check: Check,
+  x: X,
+  wrench: Wrench,
+  star: Star,
+  circle: Circle,
+  clock: Clock,
+  user: User,
+  tag: Tag,
+  info: Info,
+} as const
+type IconName = keyof typeof ICONS
+const ICON_NAMES = Object.keys(ICONS) as IconName[]
+const renderIcon = (name?: IconName) => {
+  const Icon = name ? ICONS[name] : null
+  return Icon ? <Icon /> : undefined
+}
+
 type StoryProps = React.ComponentProps<typeof Badge> & {
-  leftIconOn?: boolean
-  rightIconOn?: boolean
+  leftIconName?: IconName
+  rightIconName?: IconName
 }
 
 const meta = {
@@ -24,8 +43,8 @@ const meta = {
     appearance: { control: 'select', options: APPEARANCES },
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
     shape: { control: 'inline-radio', options: ['round', 'square'] },
-    leftIconOn: { control: 'boolean', name: 'Left icon' },
-    rightIconOn: { control: 'boolean', name: 'Right icon' },
+    leftIconName: { control: 'select', options: ICON_NAMES, name: 'Left icon' },
+    rightIconName: { control: 'select', options: ICON_NAMES, name: 'Right icon' },
     // hide the raw ReactNode props from the controls table
     leftIcon: { table: { disable: true } },
     rightIcon: { table: { disable: true } },
@@ -36,14 +55,14 @@ const meta = {
     appearance: 'filled',
     size: 'md',
     shape: 'round',
-    leftIconOn: false,
-    rightIconOn: false,
+    leftIconName: 'none',
+    rightIconName: 'none',
   },
-  render: ({ leftIconOn, rightIconOn, ...args }: StoryProps) => (
+  render: ({ leftIconName, rightIconName, ...args }: StoryProps) => (
     <Badge
       {...args}
-      leftIcon={leftIconOn ? <Wrench /> : undefined}
-      rightIcon={rightIconOn ? <X /> : undefined}
+      leftIcon={renderIcon(leftIconName)}
+      rightIcon={renderIcon(rightIconName)}
     />
   ),
 } satisfies Meta<StoryProps>
@@ -54,7 +73,7 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {}
 
 export const WithIcons: Story = {
-  args: { leftIconOn: true, rightIconOn: true, children: 'Assignee' },
+  args: { leftIconName: 'wrench', rightIconName: 'x', children: 'Assignee' },
 }
 
 // The full Figma matrix: every color × appearance.
