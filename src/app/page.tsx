@@ -102,13 +102,24 @@ export default function Showcase() {
         <Card>
           <CardHeader>
             <CardTitle>Badges</CardTitle>
-            <CardDescription>Status & label chips.</CardDescription>
+            <CardDescription>color × appearance — mirrors the Figma set.</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-wrap items-center gap-2">
-            <Badge>Default</Badge>
-            <Badge variant="secondary">Secondary</Badge>
-            <Badge variant="destructive">Destructive</Badge>
-            <Badge variant="outline">Outline</Badge>
+          <CardContent className="flex flex-col gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge color="neutral">Neutral</Badge>
+              <Badge color="green">Green</Badge>
+              <Badge color="red">Red</Badge>
+              <Badge color="amber">Amber</Badge>
+              <Badge color="blue">Blue</Badge>
+              <Badge color="purple">Purple</Badge>
+              <Badge color="brand">Brand</Badge>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge color="blue" appearance="filled">Filled</Badge>
+              <Badge color="blue" appearance="outlined">Outlined</Badge>
+              <Badge color="blue" appearance="ghost">Ghost</Badge>
+              <Badge color="blue" shape="square">Square</Badge>
+            </div>
           </CardContent>
         </Card>
 
