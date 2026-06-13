@@ -25,3 +25,5 @@ yarn-error.log*
 *.pem
 .vscode/
 .idea/
+
+*storybook.log
