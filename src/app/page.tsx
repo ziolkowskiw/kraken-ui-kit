@@ -82,17 +82,16 @@ export default function Showcase() {
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center gap-2">
-              <Button>Default</Button>
+              <Button>Primary</Button>
               <Button variant="secondary">Secondary</Button>
-              <Button variant="outline">Outline</Button>
+              <Button variant="tonal">Tonal</Button>
               <Button variant="ghost">Ghost</Button>
               <Button variant="destructive">Destructive</Button>
-              <Button variant="link">Link</Button>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               <Button size="xs">xs</Button>
               <Button size="sm">sm</Button>
-              <Button size="default">default</Button>
+              <Button size="md">md</Button>
               <Button size="lg">lg</Button>
             </div>
           </CardContent>
@@ -190,7 +189,7 @@ export default function Showcase() {
             </Alert>
             <Dialog>
               <DialogTrigger
-                render={<Button variant="outline">Open dialog</Button>}
+                render={<Button variant="secondary">Open dialog</Button>}
               />
               <DialogContent>
                 <DialogHeader>
@@ -200,7 +199,7 @@ export default function Showcase() {
                   </DialogDescription>
                 </DialogHeader>
                 <DialogFooter>
-                  <DialogClose render={<Button variant="outline">Cancel</Button>} />
+                  <DialogClose render={<Button variant="secondary">Cancel</Button>} />
                   <DialogClose render={<Button>Confirm</Button>} />
                 </DialogFooter>
               </DialogContent>
