@@ -1,45 +1,107 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
 const alertVariants = cva(
-  "group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4",
+  [
+    "group/alert relative flex w-full items-center border",
+    "[border-width:var(--ds-alert-borderwidth)] [border-radius:var(--ds-alert-radius)] [padding:var(--ds-alert-padding)]",
+    "gap-[var(--ds-spacing-component-sm)]",
+  ].join(" "),
   {
     variants: {
-      variant: {
-        default: "bg-card text-card-foreground",
-        destructive:
-          "bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
+      type: {
+        neutral:
+          "[background-color:var(--ds-color-status-neutral-bg)] [border-color:var(--ds-color-status-neutral-border)]",
+        error:
+          "[background-color:var(--ds-color-status-error-bg)] [border-color:var(--ds-color-status-error-border)]",
+        success:
+          "[background-color:var(--ds-color-status-success-bg)] [border-color:var(--ds-color-status-success-border)]",
+        informational:
+          "[background-color:var(--ds-color-status-info-bg)] [border-color:var(--ds-color-status-info-border)]",
+        warning:
+          "[background-color:var(--ds-color-status-warning-bg)] [border-color:var(--ds-color-status-warning-border)]",
       },
     },
-    defaultVariants: {
-      variant: "default",
-    },
+    defaultVariants: { type: "neutral" },
   }
 )
 
+const alertTitleColorMap = {
+  neutral: "[color:var(--ds-color-status-neutral-foreground)]",
+  error: "[color:var(--ds-color-status-error-foreground)]",
+  success: "[color:var(--ds-color-status-success-foreground)]",
+  informational: "[color:var(--ds-color-status-info-foreground)]",
+  warning: "[color:var(--ds-color-status-warning-foreground)]",
+} as const
+
+const alertIconColorMap = {
+  neutral: "[color:var(--ds-color-status-neutral-icon)]",
+  error: "[color:var(--ds-color-status-error-icon)]",
+  success: "[color:var(--ds-color-status-success-icon)]",
+  informational: "[color:var(--ds-color-status-info-icon)]",
+  warning: "[color:var(--ds-color-status-warning-icon)]",
+} as const
+
+type AlertProps = React.ComponentProps<"div"> &
+  VariantProps<typeof alertVariants> & {
+    icon?: React.ReactNode
+    closeIcon?: React.ReactNode
+    onClose?: () => void
+    action?: React.ReactNode
+  }
+
 function Alert({
   className,
-  variant,
+  type = "neutral",
+  icon,
+  closeIcon,
+  onClose,
+  action,
+  children,
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof alertVariants>) {
+}: AlertProps) {
   return (
     <div
       data-slot="alert"
       role="alert"
-      className={cn(alertVariants({ variant }), className)}
+      className={cn(alertVariants({ type }), className)}
       {...props}
-    />
+    >
+      <div className="flex flex-1 items-start gap-[var(--ds-spacing-component-md)] min-w-0">
+        {icon && (
+          <div className={cn("flex shrink-0 items-center pt-0.5 [&_svg]:size-4", alertIconColorMap[type ?? "neutral"])}>
+            {icon}
+          </div>
+        )}
+        <div className="flex flex-1 flex-col gap-[var(--ds-spacing-component-sm)] items-start min-w-0 pt-0.5">
+          {children}
+        </div>
+      </div>
+      {action}
+      {onClose && (
+        <Button
+          variant="ghost"
+          size="xs"
+          iconOnly
+          onClick={onClose}
+          aria-label="Dismiss"
+        >
+          {closeIcon}
+        </Button>
+      )}
+    </div>
   )
 }
 
-function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
+function AlertTitle({ className, ...props }: React.ComponentProps<"p">) {
   return (
-    <div
+    <p
       data-slot="alert-title"
       className={cn(
-        "font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground",
+        "[font-size:var(--ds-typography-labellg-fontsize)] [line-height:var(--ds-typography-labellg-lineheight)] [font-weight:var(--ds-typography-labellg-fontweight)]",
+        "w-full group-data-[slot=alert]/alert:[color:inherit]",
         className
       )}
       {...props}
@@ -50,12 +112,12 @@ function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
 function AlertDescription({
   className,
   ...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<"p">) {
   return (
-    <div
+    <p
       data-slot="alert-description"
       className={cn(
-        "text-sm text-balance text-muted-foreground md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
+        "[font-size:var(--ds-typography-bodysm-fontsize)] [line-height:var(--ds-typography-bodysm-lineheight)] [color:var(--ds-color-content-primary)] w-full",
         className
       )}
       {...props}
@@ -63,14 +125,4 @@ function AlertDescription({
   )
 }
 
-function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="alert-action"
-      className={cn("absolute top-2 right-2", className)}
-      {...props}
-    />
-  )
-}
-
-export { Alert, AlertTitle, AlertDescription, AlertAction }
+export { Alert, AlertTitle, AlertDescription, alertVariants }

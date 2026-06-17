@@ -1,32 +1,92 @@
 "use client"
 
+import * as React from "react"
 import { Switch as SwitchPrimitive } from "@base-ui/react/switch"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { TooltipIcon, TooltipProvider } from "./tooltip"
 
-function Switch({
-  className,
-  size = "default",
-  ...props
-}: SwitchPrimitive.Root.Props & {
-  size?: "sm" | "default"
-}) {
-  return (
+const switchVariants = cva(
+  [
+    "peer group/switch relative inline-flex shrink-0 items-center rounded-full border border-transparent transition-all outline-none cursor-pointer",
+    "data-unchecked:[background-color:var(--ds-input-bordercolor)]",
+    "data-checked:[background-color:var(--ds-color-primary)]",
+    "data-checked:hover:[background-color:var(--ds-color-primary-hover)]",
+    "focus-visible:shadow-[0px_0px_0px_3px_var(--ds-color-border-focus)]",
+    "aria-invalid:shadow-[0px_0px_0px_3px_var(--ds-color-status-error-border)]",
+    "data-disabled:cursor-not-allowed data-disabled:opacity-50",
+  ].join(" "),
+  {
+    variants: {
+      size: {
+        default: "h-6 w-[42px]",
+        compact: "h-4 w-7",
+      },
+    },
+    defaultVariants: { size: "default" },
+  }
+)
+
+const thumbVariants = cva(
+  "pointer-events-none block rounded-full bg-white ring-0 transition-transform",
+  {
+    variants: {
+      size: {
+        default: "size-5 data-checked:translate-x-[18px] data-unchecked:translate-x-0.5",
+        compact: "size-3 data-checked:translate-x-[12px] data-unchecked:translate-x-0.5",
+      },
+    },
+    defaultVariants: { size: "default" },
+  }
+)
+
+type SwitchProps = SwitchPrimitive.Root.Props &
+  VariantProps<typeof switchVariants> & {
+    leftLabel?: string
+    rightLabel?: string
+    error?: boolean
+    /** When provided, shows the ⓘ info tooltip-icon trigger after the label row. */
+    tooltip?: React.ReactNode
+  }
+
+function Switch({ className, size, leftLabel, rightLabel, error, tooltip, ...props }: SwitchProps) {
+  const switchEl = (
     <SwitchPrimitive.Root
       data-slot="switch"
-      data-size={size}
-      className={cn(
-        "peer group/switch relative inline-flex shrink-0 items-center rounded-full border border-transparent transition-all outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=default]:h-[18.4px] data-[size=default]:w-[32px] data-[size=sm]:h-[14px] data-[size=sm]:w-[24px] dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 data-checked:bg-primary data-unchecked:bg-input dark:data-unchecked:bg-input/80 data-disabled:cursor-not-allowed data-disabled:opacity-50",
-        className
-      )}
+      aria-invalid={error || undefined}
+      className={cn(switchVariants({ size }), className)}
       {...props}
     >
       <SwitchPrimitive.Thumb
         data-slot="switch-thumb"
-        className="pointer-events-none block rounded-full bg-background ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 group-data-[size=default]/switch:data-checked:translate-x-[calc(100%-2px)] group-data-[size=sm]/switch:data-checked:translate-x-[calc(100%-2px)] dark:data-checked:bg-primary-foreground group-data-[size=default]/switch:data-unchecked:translate-x-0 group-data-[size=sm]/switch:data-unchecked:translate-x-0 dark:data-unchecked:bg-foreground"
+        className={thumbVariants({ size })}
       />
     </SwitchPrimitive.Root>
   )
+
+  if (!leftLabel && !rightLabel && !tooltip) return switchEl
+
+  // The <label> wraps the toggle so clicking the text flips it. The info ⓘ is a
+  // sibling OUTSIDE the label, so hovering/clicking it never toggles the switch.
+  const row = (
+    <label className="flex items-center gap-2 text-sm [color:var(--ds-color-content-primary)]">
+      {leftLabel && <span>{leftLabel}</span>}
+      {switchEl}
+      {rightLabel && <span>{rightLabel}</span>}
+    </label>
+  )
+
+  if (!tooltip) return row
+
+  return (
+    <div className="flex items-center gap-1.5">
+      {row}
+      <TooltipProvider>
+        <TooltipIcon content={tooltip} />
+      </TooltipProvider>
+    </div>
+  )
 }
 
-export { Switch }
+export { Switch, switchVariants }

@@ -1,18 +1,122 @@
 import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { TooltipIcon, TooltipProvider } from "./tooltip"
 
-function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
+const textareaVariants = cva(
+  [
+    "flex w-full field-sizing-content min-h-16 border transition-colors outline-none",
+    "[border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)]",
+    "[color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)]",
+    "hover:[border-color:var(--ds-input-borderhover)]",
+    "focus-visible:[border-color:var(--ds-input-borderfocus)]",
+    "disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-input-borderdisabled)] disabled:cursor-not-allowed disabled:opacity-50 disabled:[color:var(--ds-input-placeholder)]",
+    "aria-invalid:[border-color:var(--ds-input-bordererror)]",
+  ].join(" "),
+  {
+    variants: {
+      size: {
+        sm: "[padding:var(--ds-input-size-sm-paddingx)] [border-radius:var(--ds-input-size-sm-radius)] [font-size:var(--ds-input-size-sm-fontsize)]",
+        md: "[padding:var(--ds-input-size-md-paddingx)] [border-radius:var(--ds-input-size-md-radius)] [font-size:var(--ds-input-size-md-fontsize)]",
+        lg: "[padding:var(--ds-input-size-lg-paddingx)] [border-radius:var(--ds-input-size-lg-radius)] [font-size:var(--ds-input-size-lg-fontsize)]",
+      },
+    },
+    defaultVariants: { size: "md" },
+  }
+)
+
+type TextareaProps = React.ComponentProps<"textarea"> &
+  VariantProps<typeof textareaVariants>
+
+function Textarea({ className, size, ...props }: TextareaProps) {
   return (
     <textarea
       data-slot="textarea"
-      className={cn(
-        "flex field-sizing-content min-h-16 w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
-        className
-      )}
+      className={cn(textareaVariants({ size }), className)}
       {...props}
     />
   )
 }
 
-export { Textarea }
+type TextareaFieldProps = React.ComponentProps<"textarea"> &
+  VariantProps<typeof textareaVariants> & {
+    label?: string
+    description?: string
+    errorMessage?: string
+    error?: boolean
+    mandatory?: boolean
+    /** When provided, shows the ⓘ tooltip-icon trigger next to the label. */
+    tooltip?: React.ReactNode
+    showCounter?: boolean
+    maxLength?: number
+  }
+
+function TextareaField({
+  className,
+  size,
+  label,
+  description,
+  errorMessage,
+  error,
+  mandatory,
+  tooltip,
+  showCounter,
+  maxLength,
+  disabled,
+  ...props
+}: TextareaFieldProps) {
+  const hasError = error || !!errorMessage
+  const [charCount, setCharCount] = React.useState(0)
+  const counter = showCounter && maxLength ? (
+    <span className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] tabular-nums shrink-0">
+      {charCount}/{maxLength}
+    </span>
+  ) : null
+  return (
+    <div className="flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start">
+      {(label || counter) && (
+        // Top row: label on the left, character counter pinned to the top-right.
+        <div className="flex w-full items-center gap-1 min-h-4">
+          {label && (
+            <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+              {label}
+            </span>
+          )}
+          {label && mandatory && (
+            <span className="[color:var(--ds-input-contenterror)]">*</span>
+          )}
+          {label && tooltip && (
+            <TooltipProvider>
+              <TooltipIcon content={tooltip} />
+            </TooltipProvider>
+          )}
+          {counter && <span className="ml-auto">{counter}</span>}
+        </div>
+      )}
+      <textarea
+        data-slot="textarea"
+        disabled={disabled}
+        aria-invalid={hasError || undefined}
+        maxLength={maxLength}
+        className={cn(textareaVariants({ size }), className)}
+        onChange={(e) => {
+          setCharCount(e.target.value.length)
+          props.onChange?.(e)
+        }}
+        {...props}
+      />
+      {hasError && errorMessage ? (
+        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+          {errorMessage}
+        </p>
+      ) : description ? (
+        <p className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+          {description}
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
+export { Textarea, TextareaField, textareaVariants }
