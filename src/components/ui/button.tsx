@@ -27,7 +27,7 @@ const buttonVariants = cva(
         tonal:
           "[--btn-fill:var(--ds-button-tonal-fill)] [--btn-fill-hover:var(--ds-button-tonal-fillhover)] [--btn-fill-active:var(--ds-button-tonal-fillactive)] [--btn-fill-disabled:var(--ds-button-tonal-filldisabled)] [--btn-content:var(--ds-button-tonal-content)] [--btn-content-disabled:var(--ds-button-tonal-contentdisabled)]",
         ghost:
-          "[--btn-fill:var(--ds-button-ghost-fill)] [--btn-fill-hover:var(--ds-button-ghost-fillhover)] [--btn-fill-active:var(--ds-button-ghost-fillactive)] [--btn-fill-disabled:var(--ds-button-ghost-filldisabled)] [--btn-content:var(--ds-button-ghost-content)] [--btn-content-disabled:var(--ds-button-ghost-contentdisabled)]",
+          "[--btn-fill:transparent] [--btn-fill-hover:var(--ds-button-ghost-fillhover)] [--btn-fill-active:var(--ds-button-ghost-fillactive)] [--btn-fill-disabled:var(--ds-button-ghost-filldisabled)] [--btn-content:var(--ds-button-ghost-content)] [--btn-content-disabled:var(--ds-button-ghost-contentdisabled)]",
         destructive:
           "[--btn-fill:var(--ds-button-destructive-fill)] [--btn-fill-hover:var(--ds-button-destructive-fillhover)] [--btn-fill-active:var(--ds-button-destructive-fillactive)] [--btn-fill-disabled:var(--ds-button-destructive-filldisabled)] [--btn-content:var(--ds-button-destructive-content)] [--btn-content-disabled:var(--ds-button-destructive-contentdisabled)]",
         "destructive-secondary":
