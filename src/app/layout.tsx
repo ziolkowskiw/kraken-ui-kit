@@ -38,6 +38,9 @@ export default function RootLayout({
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        // React 19 hoists this into <head>; precedence is required for
+        // body-rendered stylesheets so React knows where to order it.
+        precedence="default"
       />
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
