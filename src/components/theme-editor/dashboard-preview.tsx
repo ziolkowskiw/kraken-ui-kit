@@ -83,6 +83,16 @@ export function DashboardPreview() {
         </div>
       </div>
 
+      {/* Hero — shows heading font + type scale */}
+      <div>
+        <h1 className="[font-family:var(--ds-typography-headingxl-fontfamily)] [font-size:var(--ds-typography-headingxl-fontsize)] [font-weight:var(--ds-typography-headingxl-fontweight)] [line-height:var(--ds-typography-headingxl-lineheight)] text-foreground">
+          Good morning, Wojciech
+        </h1>
+        <p className="[font-family:var(--ds-typography-bodymd-fontfamily)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)] text-muted-foreground [margin-top:var(--ds-spacing-4)]">
+          Here&apos;s how your workspace is performing today. The quick brown fox jumps over the lazy dog.
+        </p>
+      </div>
+
       {/* KPI stat cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 [gap:var(--ds-spacing-16)]">
         {stats.map(({ label, value, delta, icon: Icon }) => {

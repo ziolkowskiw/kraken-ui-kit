@@ -11,14 +11,18 @@ live dashboard of real components, with WCAG contrast checks, and export CSS/JSO
 This skill turns that export into a durable part of the kit.
 
 ## Inputs
-- The editor's **CSS** or **JSON** export (colors + `spacingScale` + `radiusScale`),
-  or a description of the desired changes.
+- The Style Builder's **JSON** export (a `kraken-style@1` token set: colors, fonts,
+  `fontScale`/`lineHeightScale`, `spacingScale`, `radiusScale`), or a description.
 
 ## A. Apply as an override (quickest)
-1. Paste the exported CSS **after** `@import "../styles/tokens.css"` in
-   `src/app/globals.css` (or a dedicated `src/styles/theme-overrides.css` imported
-   there). It targets `:root`, so the alias chains re-resolve and components restyle.
-2. `npm run build` to verify; check the contrast pairs still pass.
+1. Turn the JSON into CSS with `generateStyleCss(style, ":root")` from
+   `src/lib/theme-editor.ts` (the editor injects exactly this live). Re-hydrate the
+   JSON into a `Style` first (the fields map 1:1; `fontBodyId`/`fontHeadingId` →
+   `fontBody`/`fontHeading`).
+2. Paste that CSS **after** `@import "../styles/tokens.css"` in `src/app/globals.css`
+   (or a dedicated `src/styles/theme-overrides.css` imported there). It targets
+   `:root`, so the alias chains re-resolve and components restyle.
+3. `npm run build` to verify; check the contrast pairs still pass.
 
 ## B. Promote to a brand (durable, round-trips through Figma)
 The clean home for a theme is the Figma **semantic** collection as a brand mode —
