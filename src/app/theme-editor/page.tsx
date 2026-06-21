@@ -59,6 +59,33 @@ export default function SemanticEditorPage() {
     setContrast((prev) => (JSON.stringify(prev) === JSON.stringify(next) ? prev : next));
   }, [css]);
 
+  // resizable splitter between the token table and the preview
+  const [previewW, setPreviewW] = React.useState(520);
+  const dragging = React.useRef(false);
+  React.useEffect(() => {
+    const move = (e: MouseEvent) => {
+      if (!dragging.current) return;
+      setPreviewW(Math.max(340, Math.min(window.innerWidth - 420, window.innerWidth - e.clientX)));
+    };
+    const up = () => {
+      dragging.current = false;
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+    };
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", up);
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", up);
+    };
+  }, []);
+  const startDrag = (e: React.MouseEvent) => {
+    dragging.current = true;
+    e.preventDefault();
+    document.body.style.userSelect = "none";
+    document.body.style.cursor = "col-resize";
+  };
+
   const repoint = (semDs: string, primDs: string) => setStyle((s) => ({ ...s, overrides: { ...s.overrides, [semDs]: primDs } }));
   const reset = (semDs: string) =>
     setStyle((s) => {
@@ -111,9 +138,9 @@ export default function SemanticEditorPage() {
         <button onClick={save} className="rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-neutral-700">Save</button>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px]">
+      <div className="flex flex-col lg:flex-row">
         {/* ── Token table ──────────────────────────────────────────── */}
-        <main className="h-[calc(100vh-57px)] overflow-y-auto p-4 [scrollbar-width:thin]">
+        <main className="h-[calc(100vh-57px)] flex-1 overflow-y-auto p-4 [scrollbar-width:thin]">
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -149,8 +176,22 @@ export default function SemanticEditorPage() {
           })}
         </main>
 
+        {/* draggable splitter */}
+        <div
+          onMouseDown={startDrag}
+          role="separator"
+          aria-orientation="vertical"
+          title="Drag to resize"
+          className="hidden cursor-col-resize items-center justify-center bg-neutral-200 hover:bg-neutral-300 active:bg-neutral-400 lg:flex lg:w-1.5"
+        >
+          <div className="h-10 w-0.5 rounded bg-neutral-400" />
+        </div>
+
         {/* ── Live preview + a11y + export ─────────────────────────── */}
-        <aside className="h-[calc(100vh-57px)] overflow-y-auto border-l border-neutral-200 bg-neutral-50 p-4">
+        <aside
+          className="h-[calc(100vh-57px)] w-full shrink-0 overflow-y-auto border-l border-neutral-200 bg-neutral-50 p-4 lg:w-[var(--pw)]"
+          style={{ "--pw": `${previewW}px` } as React.CSSProperties}
+        >
           <div className="relative overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm">
             <div className="origin-top scale-[0.82]">
               <DashboardPreview />
