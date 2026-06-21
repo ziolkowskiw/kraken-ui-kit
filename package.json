@@ -12,7 +12,8 @@
     "build-storybook": "storybook build",
     "registry:build": "node scripts/build-registry.mjs",
     "registry:bundle": "npm run registry:build && shadcn build",
-    "docs:build": "node scripts/build-docs.mjs"
+    "docs:build": "node scripts/build-docs.mjs",
+    "editor:data": "node scripts/build-semantic-editor-data.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

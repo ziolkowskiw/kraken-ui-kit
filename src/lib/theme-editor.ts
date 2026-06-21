@@ -1,182 +1,101 @@
-/* Style-builder logic. A "Style" is a complete, self-contained design style the
- * user authors one at a time: colors + fonts + type scale + spacing + radius.
- * jit/randstadt are just seed palettes to start from. Overrides apply at :root
- * (every token is declared there, alias chains resolve there) — the same reason
- * the kit's brand switch sets data-theme on <html>. */
+/* Semantic-layer editor logic. You edit the DS's *semantic layer*: every semantic
+ * token is an alias to a Layer-1 primitive (primary → color.jit.500), and you
+ * re-point it to a different primitive. Overrides apply at :root (all tokens are
+ * declared there, alias chains resolve there) — the same reason brand switching
+ * sets data-theme on <html>. Data is generated from tokens.dtcg.json by
+ * scripts/build-semantic-editor-data.mjs (npm run editor:data). */
 
-export type Seed = "jit" | "randstadt";
+import data from "./semantic-tokens.json";
 
+export type Prim = { path: string; ds: string; value: string; ramp?: string; step?: string; label: string };
+export type SemTarget = { kind: "primitive" | "alias" | "raw"; path?: string; ds?: string; value?: string };
+export type SemToken = {
+  path: string;
+  ds: string;
+  name: string;
+  type: string;
+  major: string; // color | typography | spacing | radius | borderWidth | chart
+  sub: string; // core | content | border | status | label | bodymd …
+  primFamily: string; // which primitive family it may re-point to
+  target: SemTarget; // current alias
+  resolved: string; // concrete value (for swatch/display)
+};
+
+export const SEMANTIC = (data.semantic as SemToken[]).slice();
+export const PRIMITIVES = data.primitives as Record<string, Prim[]>;
+
+// primitive lookup by ds var
+export const PRIM_BY_DS: Record<string, Prim> = {};
+for (const fam of Object.values(PRIMITIVES)) for (const p of fam) PRIM_BY_DS[p.ds] = p;
+
+// color ramps in display order
+export const COLOR_RAMPS: string[] = (() => {
+  const seen: string[] = [];
+  for (const p of PRIMITIVES.color || []) if (p.ramp && !seen.includes(p.ramp)) seen.push(p.ramp);
+  return seen;
+})();
+
+// major-group display order + labels
+export const MAJORS = ["color", "typography", "spacing", "radius", "borderWidth", "chart"];
+export const SUBGROUPS: Record<string, string[]> = (() => {
+  const m: Record<string, string[]> = {};
+  for (const tk of SEMANTIC) {
+    (m[tk.major] ||= []);
+    if (!m[tk.major].includes(tk.sub)) m[tk.major].push(tk.sub);
+  }
+  return m;
+})();
+
+// ── A style = a named set of semantic re-points ─────────────────────────────
 export type Style = {
   id: string;
   name: string;
-  seed: Seed; // starting palette (base colors for anything not overridden)
-  colors: Record<string, string>; // semantic token key -> hex
-  fontBody: string; // font catalog id
-  fontHeading: string; // font catalog id
-  fontScale: number; // font-size multiplier
-  lineHeightScale: number; // line-height multiplier
-  spacingScale: number;
-  radiusScale: number;
+  overrides: Record<string, string>; // semantic ds  ->  primitive ds (chosen alias)
 };
-
-export const newStyle = (seed: Seed = "jit"): Style => ({
+export const newStyle = (): Style => ({
   id: `style-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
   name: "Untitled style",
-  seed,
-  colors: {},
-  fontBody: seed === "randstadt" ? "noto-sans" : "moderat",
-  fontHeading: seed === "randstadt" ? "noto-sans" : "moderat",
-  fontScale: 1,
-  lineHeightScale: 1,
-  spacingScale: 1,
-  radiusScale: 1,
+  overrides: {},
 });
 
-// ── Editable semantic colors (shadcn names verbatim) ────────────────────────
-export type ColorToken = { key: string; label: string; group: string };
-export const COLOR_TOKENS: ColorToken[] = [
-  { key: "background", label: "Background", group: "Base" },
-  { key: "foreground", label: "Foreground", group: "Base" },
-  { key: "primary", label: "Primary", group: "Primary" },
-  { key: "primary-foreground", label: "Primary fg", group: "Primary" },
-  { key: "secondary", label: "Secondary", group: "Secondary" },
-  { key: "secondary-foreground", label: "Secondary fg", group: "Secondary" },
-  { key: "muted", label: "Muted", group: "Muted" },
-  { key: "muted-foreground", label: "Muted fg", group: "Muted" },
-  { key: "accent", label: "Accent", group: "Accent" },
-  { key: "accent-foreground", label: "Accent fg", group: "Accent" },
-  { key: "card", label: "Card", group: "Surfaces" },
-  { key: "card-foreground", label: "Card fg", group: "Surfaces" },
-  { key: "popover", label: "Popover", group: "Surfaces" },
-  { key: "popover-foreground", label: "Popover fg", group: "Surfaces" },
-  { key: "destructive", label: "Destructive", group: "Status" },
-  { key: "destructive-foreground", label: "Destructive fg", group: "Status" },
-  { key: "border", label: "Border", group: "UI" },
-  { key: "input", label: "Input", group: "UI" },
-  { key: "ring", label: "Ring", group: "UI" },
-];
-export const COLOR_GROUPS = ["Base", "Primary", "Secondary", "Muted", "Accent", "Surfaces", "Status", "UI"];
+/** effective primitive ds a token currently points at (override or original). */
+export function effectiveTargetDs(tk: SemToken, overrides: Record<string, string>): string | null {
+  if (overrides[tk.ds]) return overrides[tk.ds];
+  if (tk.target.kind === "raw") return null;
+  return tk.target.ds ?? null;
+}
+/** concrete display value for a token under the current overrides. */
+export function effectiveValue(tk: SemToken, overrides: Record<string, string>): string {
+  const ds = overrides[tk.ds];
+  if (ds && PRIM_BY_DS[ds]) return PRIM_BY_DS[ds].value;
+  return tk.resolved;
+}
 
-export const CONTRAST_PAIRS: { label: string; fg: string; bg: string }[] = [
-  { label: "Text on background", fg: "foreground", bg: "background" },
-  { label: "Text on card", fg: "card-foreground", bg: "card" },
-  { label: "Text on popover", fg: "popover-foreground", bg: "popover" },
-  { label: "Primary button", fg: "primary-foreground", bg: "primary" },
-  { label: "Secondary button", fg: "secondary-foreground", bg: "secondary" },
-  { label: "Muted text", fg: "muted-foreground", bg: "muted" },
-  { label: "Accent", fg: "accent-foreground", bg: "accent" },
-  { label: "Destructive", fg: "destructive-foreground", bg: "destructive" },
-];
-
-// ── Font catalog ────────────────────────────────────────────────────────────
-export type FontDef = { id: string; name: string; stack: string; google?: string; serif?: boolean };
-export const FONTS: FontDef[] = [
-  { id: "moderat", name: "Moderat JIT (brand)", stack: '"Moderat JIT"' },
-  { id: "noto-sans", name: "Noto Sans (brand)", stack: '"Noto Sans"', google: "Noto+Sans" },
-  { id: "system", name: "System UI", stack: "system-ui, -apple-system" },
-  { id: "inter", name: "Inter", stack: '"Inter"', google: "Inter" },
-  { id: "roboto", name: "Roboto", stack: '"Roboto"', google: "Roboto" },
-  { id: "open-sans", name: "Open Sans", stack: '"Open Sans"', google: "Open+Sans" },
-  { id: "lato", name: "Lato", stack: '"Lato"', google: "Lato" },
-  { id: "montserrat", name: "Montserrat", stack: '"Montserrat"', google: "Montserrat" },
-  { id: "poppins", name: "Poppins", stack: '"Poppins"', google: "Poppins" },
-  { id: "work-sans", name: "Work Sans", stack: '"Work Sans"', google: "Work+Sans" },
-  { id: "dm-sans", name: "DM Sans", stack: '"DM Sans"', google: "DM+Sans" },
-  { id: "manrope", name: "Manrope", stack: '"Manrope"', google: "Manrope" },
-  { id: "space-grotesk", name: "Space Grotesk", stack: '"Space Grotesk"', google: "Space+Grotesk" },
-  { id: "ibm-plex-sans", name: "IBM Plex Sans", stack: '"IBM Plex Sans"', google: "IBM+Plex+Sans" },
-  { id: "jakarta", name: "Plus Jakarta Sans", stack: '"Plus Jakarta Sans"', google: "Plus+Jakarta+Sans" },
-  { id: "merriweather", name: "Merriweather (serif)", stack: '"Merriweather"', google: "Merriweather", serif: true },
-  { id: "playfair", name: "Playfair Display (serif)", stack: '"Playfair Display"', google: "Playfair+Display", serif: true },
-];
-export const fontById = (id: string) => FONTS.find((f) => f.id === id) ?? FONTS[0];
-const fontStack = (id: string) => {
-  const f = fontById(id);
-  return `${f.stack}, ${f.serif ? "ui-serif, Georgia, serif" : "ui-sans-serif, system-ui, -apple-system, sans-serif"}`;
-};
-export const googleFontHref = (id: string) => {
-  const f = fontById(id);
-  return f.google
-    ? `https://fonts.googleapis.com/css2?family=${f.google}:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap`
-    : null;
-};
-
-// ── Typography styles (which font group + scaled primitives) ────────────────
-const HEADING_STYLES = ["display2xl", "displayxl", "displaylg", "displaymd", "headingxl", "headinglg", "headingmd", "headingsm"];
-const BODY_STYLES = ["bodylg", "bodymd", "bodysm", "bodyxs", "labellg", "labelmd", "labelsm", "linklg", "linkmd", "linksm", "linkxs", "overline"];
-
-// L1 primitive base px (suffix is named, so we keep an explicit base map)
-const FONTSIZE_BASE: Record<string, number> = { xs: 12, sm: 14, md: 16, lg: 20, xl: 24, "2xl": 32, "3xl": 40, "4xl": 48, "5xl": 56, "6xl": 72 };
-const LINEHEIGHT_BASE: Record<string, number> = { xs: 16, sm: 20, md: 24, lg: 28, xl: 32, "2xl": 40, "3xl": 56 };
-const SPACING_SUFFIXES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 56, 64, 80, 96, 128, 160, 192, 256];
-const RADIUS_SUFFIXES = [2, 4, 6, 8, 12, 16, 24];
-
-const px = (n: number) => `${Math.round(n * 10) / 10}px`;
-
-/** The CSS that applies the whole style. Targets :root so alias chains resolve. */
-export function generateStyleCss(style: Style, selector = ":root"): string {
-  const lines: string[] = [];
-
-  // colors
-  for (const { key } of COLOR_TOKENS) {
-    const v = style.colors[key];
-    if (v) lines.push(`  --ds-color-${key}: ${v};`);
-  }
-
-  // fonts — override each typography style's family directly (brand-independent)
-  const body = fontStack(style.fontBody);
-  const heading = fontStack(style.fontHeading);
-  for (const s of BODY_STYLES) lines.push(`  --ds-typography-${s}-fontfamily: ${body};`);
-  for (const s of HEADING_STYLES) lines.push(`  --ds-typography-${s}-fontfamily: ${heading};`);
-  // also drive the app sans + the family primitives, so anything else follows body
-  lines.push(`  --ds-fontfamily-jit: ${body};`);
-  lines.push(`  --ds-fontfamily-randstadt: ${body};`);
-
-  // type scale
-  if (style.fontScale !== 1) {
-    for (const [k, base] of Object.entries(FONTSIZE_BASE)) lines.push(`  --ds-fontsize-${k}: ${px(base * style.fontScale)};`);
-  }
-  if (style.lineHeightScale !== 1) {
-    for (const [k, base] of Object.entries(LINEHEIGHT_BASE)) lines.push(`  --ds-lineheight-${k}: ${px(base * style.lineHeightScale)};`);
-  }
-
-  // spacing & radius
-  if (style.spacingScale !== 1) {
-    for (const n of SPACING_SUFFIXES) lines.push(`  --ds-spacing-${n}: ${px(n * style.spacingScale)};`);
-  }
-  if (style.radiusScale !== 1) {
-    for (const n of RADIUS_SUFFIXES) lines.push(`  --ds-borderradius-${n}: ${px(n * style.radiusScale)};`);
-  }
-
+/** Live CSS: re-point each overridden semantic token to its new primitive. */
+export function generateCss(style: Style, selector = ":root"): string {
+  const lines = Object.entries(style.overrides).map(([semDs, primDs]) => `  ${semDs}: var(${primDs});`);
   return lines.length ? `${selector} {\n${lines.join("\n")}\n}` : "";
 }
 
-/** Complete, re-importable JSON token set for the style. */
+/** Export the authored semantic layer as an alias map (re-importable). */
 export function exportJson(style: Style): string {
+  const tokens: Record<string, string> = {};
+  for (const tk of SEMANTIC) {
+    const ds = style.overrides[tk.ds];
+    const prim = ds ? PRIM_BY_DS[ds] : null;
+    if (prim) tokens[tk.path] = `{${prim.path.replace(/\//g, ".")}}`;
+    else if (tk.target.kind === "raw") tokens[tk.path] = tk.target.value ?? tk.resolved;
+    else if (tk.target.path) tokens[tk.path] = `{${tk.target.path.replace(/\//g, ".")}}`;
+  }
   return JSON.stringify(
-    {
-      $schema: "kraken-style@1",
-      name: style.name,
-      seed: style.seed,
-      typography: {
-        fontBody: fontById(style.fontBody).name,
-        fontBodyId: style.fontBody,
-        fontHeading: fontById(style.fontHeading).name,
-        fontHeadingId: style.fontHeading,
-        fontScale: style.fontScale,
-        lineHeightScale: style.lineHeightScale,
-      },
-      spacingScale: style.spacingScale,
-      radiusScale: style.radiusScale,
-      colors: style.colors,
-    },
+    { $schema: "kraken-semantic@1", name: style.name, changed: Object.keys(style.overrides).length, semantic: tokens },
     null,
     2,
   );
 }
 
-// ── localStorage persistence (save & switch multiple styles) ────────────────
-const LS_KEY = "kraken-styles";
+// ── localStorage (save & switch named styles) ───────────────────────────────
+const LS_KEY = "kraken-semantic-styles";
 export function loadStyles(): Style[] {
   if (typeof window === "undefined") return [];
   try {
@@ -189,7 +108,16 @@ export function saveStyles(styles: Style[]) {
   if (typeof window !== "undefined") localStorage.setItem(LS_KEY, JSON.stringify(styles));
 }
 
-// ── Color parsing & WCAG contrast ───────────────────────────────────────────
+// ── WCAG contrast (effective colors read from live probes) ───────────────────
+export const CONTRAST_PAIRS = [
+  { label: "Text on background", fg: "--ds-color-foreground", bg: "--ds-color-background" },
+  { label: "Text on card", fg: "--ds-color-card-foreground", bg: "--ds-color-card" },
+  { label: "Primary button", fg: "--ds-color-primary-foreground", bg: "--ds-color-primary" },
+  { label: "Secondary button", fg: "--ds-color-secondary-foreground", bg: "--ds-color-secondary" },
+  { label: "Muted text", fg: "--ds-color-muted-foreground", bg: "--ds-color-muted" },
+  { label: "Destructive", fg: "--ds-color-destructive-foreground", bg: "--ds-color-destructive" },
+];
+
 export function parseRgb(s: string): [number, number, number] | null {
   const m = s.match(/rgba?\(([^)]+)\)/);
   if (m) {
@@ -200,10 +128,6 @@ export function parseRgb(s: string): [number, number, number] | null {
   if (/^[0-9a-f]{6}$/i.test(hex)) return [parseInt(hex.slice(0, 2), 16), parseInt(hex.slice(2, 4), 16), parseInt(hex.slice(4, 6), 16)];
   if (/^[0-9a-f]{3}$/i.test(hex)) return [parseInt(hex[0] + hex[0], 16), parseInt(hex[1] + hex[1], 16), parseInt(hex[2] + hex[2], 16)];
   return null;
-}
-export function rgbToHex([r, g, b]: [number, number, number]): string {
-  const h = (n: number) => Math.max(0, Math.min(255, Math.round(n))).toString(16).padStart(2, "0");
-  return `#${h(r)}${h(g)}${h(b)}`;
 }
 function luminance([r, g, b]: [number, number, number]): number {
   const a = [r, g, b].map((v) => {
@@ -225,4 +149,7 @@ export function wcagLevel(ratio: number): WcagLevel {
   if (ratio >= 4.5) return "AA";
   if (ratio >= 3) return "AA Large";
   return "Fail";
+}
+export function isColorValue(v: string) {
+  return /^#|^rgb|^hsl|^oklch/i.test(v.trim());
 }

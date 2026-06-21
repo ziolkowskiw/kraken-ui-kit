@@ -11,18 +11,27 @@ live dashboard of real components, with WCAG contrast checks, and export CSS/JSO
 This skill turns that export into a durable part of the kit.
 
 ## Inputs
-- The Style Builder's **JSON** export (a `kraken-style@1` token set: colors, fonts,
-  `fontScale`/`lineHeightScale`, `spacingScale`, `radiusScale`), or a description.
+- The Semantic-Layer Editor's **JSON** export (`kraken-semantic@1`): a map of every
+  semantic token path → its primitive alias (e.g. `"color/primary": "{color.blue.500}"`),
+  reflecting the user's re-points. Or a description of the desired changes.
 
-## A. Apply as an override (quickest)
-1. Turn the JSON into CSS with `generateStyleCss(style, ":root")` from
-   `src/lib/theme-editor.ts` (the editor injects exactly this live). Re-hydrate the
-   JSON into a `Style` first (the fields map 1:1; `fontBodyId`/`fontHeadingId` →
-   `fontBody`/`fontHeading`).
-2. Paste that CSS **after** `@import "../styles/tokens.css"` in `src/app/globals.css`
-   (or a dedicated `src/styles/theme-overrides.css` imported there). It targets
-   `:root`, so the alias chains re-resolve and components restyle.
+## A. Apply to the canonical tokens (durable, recommended)
+The export *is* the semantic layer. Fold the changed aliases into the source of
+truth and regenerate:
+1. For each entry in the export's `semantic` map that differs from
+   `tokens/tokens.dtcg.json`'s `semantic`, update that token's `$value` to the new
+   `{primitive.path}` alias. (Only touch changed tokens.)
+2. `npm run tokens:build` → regenerates `src/styles/tokens.css`. `npm run editor:data`
+   → refreshes the editor's `semantic-tokens.json`.
 3. `npm run build` to verify; check the contrast pairs still pass.
+
+## B. Apply as a quick CSS override (no source edit)
+1. Build the override CSS from the editor's working style with
+   `generateCss(style, ":root")` in `src/lib/theme-editor.ts` (the editor injects
+   exactly this live — `--ds-color-primary: var(--ds-color-blue-500);` …).
+2. Paste it **after** `@import "../styles/tokens.css"` in `src/app/globals.css`. It
+   targets `:root`, so alias chains re-resolve and components restyle.
+3. `npm run build` to verify.
 
 ## B. Promote to a brand (durable, round-trips through Figma)
 The clean home for a theme is the Figma **semantic** collection as a brand mode —
