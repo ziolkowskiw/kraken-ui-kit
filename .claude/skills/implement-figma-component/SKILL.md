@@ -435,8 +435,8 @@ Complete all items before marking the component done:
 
 ## Important Conventions
 
-- **Token binding:** `[css-property:var(--ds-<component>-<path>)]` — never hardcode colors
-- **CVA + local vars pattern:** variant sets `--<short>-fill`, base consumes `[background-color:var(--<short>-fill)]`
+- **Token binding:** bind every value to a token (pattern `--ds-{component}-{path}`), e.g. `[background-color:var(--ds-button-primary-fill)]` — never hardcode colors
+- **CVA + local vars pattern:** variant sets a local `--{short}-fill`, base consumes it, e.g. `[background-color:var(--btn-fill)]`
 - **State mapping:** Figma `state=rest|hover|focus|active|disabled` → CSS only. Pin stories to `state=rest`. Only `disabled` is a React prop.
 - **Size mapping:** Figma `xs|sm|md|lg` → code `xs|sm|md|lg` (shadcn default = our `md`)
 - `iconOnly=true` → `size="icon"` in shadcn terms, but we keep `iconOnly` as a boolean prop

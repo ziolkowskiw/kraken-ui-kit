@@ -2,6 +2,13 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* Don't scan docs/skills/markdown for utility classes — they contain token
+   examples and placeholders (e.g. `[css-property:var(--ds-<component>-<path>)]`)
+   that aren't real utilities and would emit invalid CSS. */
+@source not "../../**/*.md";
+@source not "../../.claude";
+@source not "../../docs";
+
 /* Brand fonts: "Noto Sans" (Randstadt) is loaded via a <link> in layout.tsx;
    "Moderat JIT" (JIT, proprietary) renders from the OS if installed — add woff2
    to public/fonts/ + an @font-face here to make it portable. */
