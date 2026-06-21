@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "title": "Button Group",
+  "description": "Kraken UI Kit button-group — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+  "dependencies": [
+    "class-variance-authority@0.7.1"
+  ],
+  "registryDependencies": [
+    "theme",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/button-group.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\n// Mirrors the Figma `button-group-container` slot (Button group page, 699:1902):\n// a row/column of <Button>s that read as one segmented control — inner radii are\n// flattened and borders collapse into shared seams. Children are real <Button>s\n// (single source of truth); this only handles the grouping geometry.\nconst buttonGroupVariants = cva(\n  [\n    \"flex w-fit items-stretch\",\n    \"[&>*]:focus-visible:z-10 [&>*]:focus-within:z-10\",\n  ].join(\" \"),\n  {\n    variants: {\n      orientation: {\n        horizontal: [\n          \"flex-row\",\n          \"[&>*:not(:first-child)]:rounded-l-none [&>*:not(:last-child)]:rounded-r-none\",\n          \"[&>*:not(:first-child)]:-ml-px\",\n        ].join(\" \"),\n        vertical: [\n          \"flex-col\",\n          \"[&>*:not(:first-child)]:rounded-t-none [&>*:not(:last-child)]:rounded-b-none\",\n          \"[&>*:not(:first-child)]:-mt-px\",\n        ].join(\" \"),\n      },\n    },\n    defaultVariants: { orientation: \"horizontal\" },\n  }\n)\n\nfunction ButtonGroup({\n  className,\n  orientation,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof buttonGroupVariants>) {\n  return (\n    <div\n      data-slot=\"button-group\"\n      role=\"group\"\n      className={cn(buttonGroupVariants({ orientation }), className)}\n      {...props}\n    />\n  )\n}\n\nexport { ButtonGroup, buttonGroupVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

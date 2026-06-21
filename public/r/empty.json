@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty",
+  "title": "Empty",
+  "description": "Kraken UI Kit empty — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+  "dependencies": [
+    "class-variance-authority@0.7.1"
+  ],
+  "registryDependencies": [
+    "theme",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/empty.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\n// Mirrors the Figma `Empty state` component (1686:7468): a centered empty/zero\n// state — optional media (icon), title, body, and an action slot that composes\n// real <Button>s (primary / secondary / ghost). Built as compound parts so the\n// action row is the single source of truth (the actual Button component).\nfunction Empty({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty\"\n      className={cn(\n        \"flex w-full flex-col items-center justify-center gap-6 text-center [padding-block:var(--ds-spacing-component-2xl)] [padding-inline:var(--ds-spacing-component-xl)]\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction EmptyHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-header\"\n      className={cn(\"flex max-w-md flex-col items-center gap-2\", className)}\n      {...props}\n    />\n  )\n}\n\nconst emptyMediaVariants = cva(\n  \"flex shrink-0 items-center justify-center\",\n  {\n    variants: {\n      variant: {\n        icon: \"size-12 [border-radius:var(--ds-radius-lg)] [background-color:var(--ds-color-muted)] [color:var(--ds-color-icon-default)] [&_svg]:size-6\",\n        default: \"[color:var(--ds-color-icon-muted)] [&_svg]:size-8\",\n      },\n    },\n    defaultVariants: { variant: \"icon\" },\n  }\n)\n\nfunction EmptyMedia({\n  className,\n  variant,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof emptyMediaVariants>) {\n  return (\n    <div\n      data-slot=\"empty-media\"\n      className={cn(emptyMediaVariants({ variant }), className)}\n      {...props}\n    />\n  )\n}\n\nfunction EmptyTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-title\"\n      className={cn(\n        \"[color:var(--ds-color-content-primary)] [font-family:var(--ds-typography-headingmd-fontfamily)] [font-size:var(--ds-typography-headingmd-fontsize)] [font-weight:var(--ds-typography-headingmd-fontweight)] [line-height:var(--ds-typography-headingmd-lineheight)]\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction EmptyDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"empty-description\"\n      className={cn(\n        \"[color:var(--ds-color-content-secondary)] [font-family:var(--ds-typography-bodymd-fontfamily)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)]\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction EmptyContent({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-content\"\n      className={cn(\"flex flex-wrap items-center justify-center gap-3\", className)}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Empty,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n  EmptyDescription,\n  EmptyContent,\n  emptyMediaVariants,\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

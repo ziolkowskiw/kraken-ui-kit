@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "Kraken UI Kit progress — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+  "dependencies": [
+    "@base-ui/react@1.5.0"
+  ],
+  "registryDependencies": [
+    "theme",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/progress.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Progress as ProgressPrimitive } from \"@base-ui/react/progress\"\n\nimport { cn } from \"@/lib/utils\"\n\n// Mirrors the Figma `Progress` component (1792:1815): a rounded track + indicator\n// with an optional label row (Label on the left, percentage Value on the right).\n// Track = `--ds-color-muted`, indicator = `--ds-color-primary`.\nfunction Progress({\n  className,\n  value,\n  label,\n  showLabels = false,\n  ...props\n}: ProgressPrimitive.Root.Props & {\n  label?: React.ReactNode\n  showLabels?: boolean\n}) {\n  return (\n    <ProgressPrimitive.Root\n      data-slot=\"progress\"\n      value={value}\n      className={cn(\"flex w-full flex-col gap-[var(--ds-spacing-component-sm)]\", className)}\n      {...props}\n    >\n      {showLabels && (\n        <div className=\"flex items-center justify-between [color:var(--ds-color-content-secondary)] [font-family:var(--ds-typography-labelsm-fontfamily)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]\">\n          <ProgressPrimitive.Label>{label}</ProgressPrimitive.Label>\n          <ProgressPrimitive.Value>\n            {(_, value) => (value == null ? null : `${Math.round(value)}%`)}\n          </ProgressPrimitive.Value>\n        </div>\n      )}\n      <ProgressPrimitive.Track\n        data-slot=\"progress-track\"\n        className=\"relative w-full overflow-hidden [height:var(--ds-spacing-2)] [border-radius:var(--ds-radius-full)] [background-color:var(--ds-color-muted)]\"\n      >\n        <ProgressPrimitive.Indicator\n          data-slot=\"progress-indicator\"\n          className=\"h-full [background-color:var(--ds-color-primary)] transition-all duration-300 ease-out\"\n        />\n      </ProgressPrimitive.Track>\n    </ProgressPrimitive.Root>\n  )\n}\n\nexport { Progress }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

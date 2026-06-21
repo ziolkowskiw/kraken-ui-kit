@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "title": "Skeleton",
+  "description": "Kraken UI Kit skeleton — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+  "dependencies": [],
+  "registryDependencies": [
+    "theme",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/skeleton.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\n// Mirrors the Figma `Skeleton` component (1808:15417): a muted, pulsing\n// placeholder block. Footprint (width/height/shape) is supplied by the consumer\n// via className so it can stand in for any element.\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(\n        \"animate-pulse [border-radius:var(--ds-radius-md)] [background-color:var(--ds-color-muted)]\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Skeleton }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

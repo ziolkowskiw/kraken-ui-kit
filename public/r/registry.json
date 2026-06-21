@@ -1,0 +1,1171 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "kraken",
+  "homepage": "https://github.com/ziolkowskiw/kraken-ui-kit",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "cn() utility",
+      "description": "clsx + tailwind-merge className helper.",
+      "dependencies": [
+        "clsx@2.1.1",
+        "tailwind-merge@3.6.0"
+      ],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "tokens",
+      "type": "registry:file",
+      "title": "Design tokens (--ds-*)",
+      "description": "Generated 3-layer token CSS (primitives + component tokens + brand semantics). Brand-switchable via [data-theme] on <html>.",
+      "files": [
+        {
+          "path": "src/styles/tokens.css",
+          "type": "registry:file",
+          "target": "src/styles/tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "registry:file",
+      "title": "Kraken theme mapping",
+      "description": "Maps shadcn semantic vars (--primary, --background, …) onto the --ds-* tokens + @theme inline. Depends on `tokens`.",
+      "registryDependencies": [
+        "tokens"
+      ],
+      "files": [
+        {
+          "path": "src/styles/kraken-theme.css",
+          "type": "registry:file",
+          "target": "src/styles/kraken-theme.css"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Kraken UI Kit accordion — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Kraken UI Kit alert-dialog — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Kraken UI Kit alert — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "button",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Kraken UI Kit avatar — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Kraken UI Kit badge — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Kraken UI Kit breadcrumb — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Kraken UI Kit button-group — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Kraken UI Kit button — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Kraken UI Kit calendar — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "lucide-react@1.18.0",
+        "react-day-picker@10.0.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Kraken UI Kit card — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Kraken UI Kit carousel — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "embla-carousel-react@8.6.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-button",
+      "type": "registry:ui",
+      "title": "Checkbox Button",
+      "description": "Kraken UI Kit checkbox-button — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Kraken UI Kit checkbox — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Kraken UI Kit combobox — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Kraken UI Kit command — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Kraken UI Kit context-menu — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table-cell",
+      "type": "registry:ui",
+      "title": "Data Table Cell",
+      "description": "Kraken UI Kit data-table-cell — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "checkbox",
+        "input",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/data-table-cell.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table-header",
+      "type": "registry:ui",
+      "title": "Data Table Header",
+      "description": "Kraken UI Kit data-table-header — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "checkbox",
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/data-table-header.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "Kraken UI Kit data-table — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "button",
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Kraken UI Kit date-picker — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "calendar",
+        "popover",
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Kraken UI Kit dialog — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Kraken UI Kit drawer — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Kraken UI Kit dropdown-menu — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Kraken UI Kit empty — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form-table-cell",
+      "type": "registry:ui",
+      "title": "Form Table Cell",
+      "description": "Kraken UI Kit form-table-cell — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "checkbox-button",
+        "input",
+        "radio-group",
+        "select",
+        "switch",
+        "textarea",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/form-table-cell.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Kraken UI Kit hover-card — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input Otp",
+      "description": "Kraken UI Kit input-otp — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "input-otp@1.4.2",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Kraken UI Kit input — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "Kraken UI Kit item — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Kraken UI Kit kbd — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "title": "Link",
+      "description": "Kraken UI Kit link — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/link.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Kraken UI Kit menubar — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Kraken UI Kit navigation-menu — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Kraken UI Kit pagination — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Kraken UI Kit popover — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Kraken UI Kit progress — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-button",
+      "type": "registry:ui",
+      "title": "Radio Button",
+      "description": "Kraken UI Kit radio-button — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "radio-group",
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radio-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Kraken UI Kit radio-group — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Kraken UI Kit resizable — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "lucide-react@1.18.0",
+        "react-resizable-panels@4.11.2"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Kraken UI Kit scroll-area — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "type": "registry:ui",
+      "title": "Search",
+      "description": "Kraken UI Kit search — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/search.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Kraken UI Kit select — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Kraken UI Kit separator — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Kraken UI Kit sidebar — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Kraken UI Kit skeleton — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Kraken UI Kit slider — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Kraken UI Kit sonner — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Kraken UI Kit switch — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Kraken UI Kit table — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Kraken UI Kit tabs — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Kraken UI Kit textarea — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "time-input",
+      "type": "registry:ui",
+      "title": "Time Input",
+      "description": "Kraken UI Kit time-input — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "tooltip",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/time-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Kraken UI Kit toggle-group — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Kraken UI Kit toggle — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "class-variance-authority@0.7.1"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Kraken UI Kit tooltip — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+      "dependencies": [
+        "@base-ui/react@1.5.0",
+        "lucide-react@1.18.0"
+      ],
+      "registryDependencies": [
+        "theme",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

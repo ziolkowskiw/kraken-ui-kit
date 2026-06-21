@@ -9,7 +9,9 @@
     "start": "next start",
     "tokens:build": "node scripts/build-tokens.mjs",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "registry:build": "node scripts/build-registry.mjs",
+    "registry:bundle": "npm run registry:build && shadcn build"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
