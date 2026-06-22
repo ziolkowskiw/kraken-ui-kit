@@ -165,9 +165,10 @@ These mirror their Figma component API exactly and carry full Storybook controls
 
 | Figma property | Code prop | Values |
 |---|---|---|
-| Variant | `variant` on `TabsList` | `default` · `line` |
+| Variant | `variant` on `TabsList` | Figma `line` → `"line"` (default, underline strip) · Figma `default` → `"badge"` (pill/segmented, the "default" Figma variant maps to the `badge` code value) |
 | Orientation | `orientation` on `Tabs` | `horizontal` · `vertical` |
 | (disabled tab) | `disabled` on `TabsTrigger` | bool |
+| (depth — code ext.) | `depth` on `TabsList` | `1` (default) · `2` — controls label scale; no Figma axis, intentional kit extension |
 
 ---
 
