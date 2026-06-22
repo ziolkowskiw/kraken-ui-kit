@@ -1,5 +1,8 @@
 "use client"
 
+// Mirrors the Figma `data-table/cell` (1824:18395) — a table data cell with
+// optional inline controls (input, select, badge, checkbox, button, action menu).
+
 import * as React from "react"
 import {
   SquareDashed,

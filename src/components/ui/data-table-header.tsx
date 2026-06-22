@@ -1,5 +1,8 @@
 "use client"
 
+// Mirrors the Figma `data-table/header` (1824:18391) — sortable column header
+// cell with asc/desc/neutral sort icons and optional checkbox column.
+
 import * as React from "react"
 import { ArrowDownUp, ArrowUp, ArrowDown, SquareDashed } from "lucide-react"
 import { cva, type VariantProps } from "class-variance-authority"

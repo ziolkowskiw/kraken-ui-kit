@@ -47,7 +47,7 @@ const meta = {
   },
   args: {
     state: 'rest',
-    size: 'lg',
+    size: 'md',
     label: 'Name',
     placeholder: 'Placeholder',
     description: 'Help text',

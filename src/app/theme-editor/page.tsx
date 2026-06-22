@@ -206,6 +206,7 @@ export default function SemanticEditorPage() {
           <ContrastPanel contrast={contrast} />
           <ExportPanel style={style} />
           <ImportPanel onImport={setStyle} />
+          <PushToFigmaPanel overrides={style.overrides} />
         </aside>
       </div>
     </div>
@@ -312,6 +313,83 @@ function ContrastPanel({ contrast }: { contrast: Record<string, string> }) {
         })}
       </div>
     </section>
+  );
+}
+
+const MODES = ["jit", "randstadt"] as const;
+type PushStatus = "idle" | "loading" | "ok" | "error";
+
+function PushToFigmaPanel({ overrides }: { overrides: Record<string, string> }) {
+  const [pat, setPat] = React.useState(() => {
+    if (typeof window === "undefined") return "";
+    return localStorage.getItem("kraken-figma-pat") ?? "";
+  });
+  const [mode, setMode] = React.useState<(typeof MODES)[number]>("jit");
+  const [status, setStatus] = React.useState<PushStatus>("idle");
+  const [msg, setMsg] = React.useState("");
+  const count = Object.keys(overrides).length;
+
+  const savePat = (v: string) => {
+    setPat(v);
+    if (typeof window !== "undefined") localStorage.setItem("kraken-figma-pat", v);
+  };
+
+  const push = async () => {
+    if (!pat.trim()) { setMsg("Figma PAT is required."); setStatus("error"); return; }
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/push-to-figma", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ overrides, targetMode: mode, pat: pat.trim() }),
+      });
+      const data = await res.json() as { pushed?: number; skipped?: number; error?: string };
+      if (!res.ok) { setMsg(data.error ?? `Error ${res.status}`); setStatus("error"); return; }
+      setMsg(`Pushed ${data.pushed} alias${data.pushed === 1 ? "" : "es"} to Figma "${mode}" mode.${(data.skipped ?? 0) > 0 ? ` (${data.skipped} skipped — not in token map)` : ""}`);
+      setStatus("ok");
+    } catch (e) {
+      setMsg(String(e));
+      setStatus("error");
+    }
+  };
+
+  return (
+    <details className="mt-4 mb-2 rounded-xl border border-neutral-200 bg-white">
+      <summary className="cursor-pointer select-none px-4 py-3 text-sm font-semibold">Push to Figma</summary>
+      <div className="border-t border-neutral-100 p-4 flex flex-col gap-2.5">
+        <p className="text-[11px] text-neutral-500">Write the {count} changed alias{count === 1 ? "" : "es"} back to the Figma semantic collection.</p>
+        <label className="flex flex-col gap-1">
+          <span className="text-[10px] font-medium uppercase tracking-wide text-neutral-400">Figma PAT</span>
+          <input
+            type="password"
+            value={pat}
+            onChange={(e) => savePat(e.target.value)}
+            placeholder="figd_…"
+            className="w-full rounded-md border border-neutral-300 px-2.5 py-1.5 font-mono text-xs"
+          />
+        </label>
+        <label className="flex flex-col gap-1">
+          <span className="text-[10px] font-medium uppercase tracking-wide text-neutral-400">Target mode</span>
+          <select
+            value={mode}
+            onChange={(e) => setMode(e.target.value as typeof mode)}
+            className="w-full rounded-md border border-neutral-300 px-2 py-1.5 text-xs"
+          >
+            {MODES.map((m) => <option key={m} value={m}>{m}</option>)}
+          </select>
+        </label>
+        <button
+          onClick={push}
+          disabled={status === "loading" || !count}
+          className="rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-neutral-700 disabled:opacity-40"
+        >
+          {status === "loading" ? "Pushing…" : `Push ${count} change${count === 1 ? "" : "s"}`}
+        </button>
+        {msg && (
+          <p className={`text-[11px] ${status === "ok" ? "text-green-700" : "text-red-600"}`}>{msg}</p>
+        )}
+      </div>
+    </details>
   );
 }
 
