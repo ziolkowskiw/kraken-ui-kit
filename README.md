@@ -41,7 +41,8 @@ npm run storybook      # component explorer at :6006 (Brand toggle in the toolba
 ## Status
 
 - ✅ **Phase 4 — Token pipeline**: 827 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ randstadt).
-- ✅ **Phase 5 — React kit + Storybook**: Next.js 16 + Tailwind v4 + shadcn (Base UI); v1-12 components wired to tokens; live brand toggle in both the showcase and Storybook. (Extension CVA variants + remaining stories = Phase 5.1.)
-- ⬜ Phase 6 — Figma↔code mapping (`MAPPING.md`) · Phase 7 — registry + AI skills/agents · Phase 8 — live theme editor (tweakcn).
-
-Full roadmap: `JIT-DS-2.0-execution-plan.md` (design-docs folder).
+- ✅ **Phase 5 — React kit + Storybook**: Next.js 16 + Tailwind v4 + shadcn (Base UI); 55+ components wired to tokens; live brand toggle in both the showcase and Storybook.
+- ✅ **Phase 6 — Figma↔code mapping**: `MAPPING.md` — 40 parent components, Figma node IDs + source links.
+- ✅ **Phase 7 — Registry + AI layer**: shadcn registry (58 items), 6 skills (token-sync, drift-audit, parity-reviewer, implement-figma-component, mapping-doctor, add-component), per-component docs.
+- ✅ **Phase 8 — Semantic-layer editor**: `/theme-editor` — re-point semantic tokens to primitives, live preview, WCAG contrast, export/import JSON, push to Figma.
+- ⬜ Phase 9 — Governance (ongoing): run drift-audit monthly, first versioned release via release agent.
