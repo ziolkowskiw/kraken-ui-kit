@@ -20,6 +20,7 @@ import {
   newStyle,
   generateCss,
   exportJson,
+  importJson,
   effectiveTargetDs,
   effectiveValue,
   loadStyles,
@@ -204,6 +205,7 @@ export default function SemanticEditorPage() {
           </div>
           <ContrastPanel contrast={contrast} />
           <ExportPanel style={style} />
+          <ImportPanel onImport={setStyle} />
         </aside>
       </div>
     </div>
@@ -310,6 +312,40 @@ function ContrastPanel({ contrast }: { contrast: Record<string, string> }) {
         })}
       </div>
     </section>
+  );
+}
+
+function ImportPanel({ onImport }: { onImport: (s: Style) => void }) {
+  const [text, setText] = React.useState("");
+  const [error, setError] = React.useState("");
+  const handle = () => {
+    const result = importJson(text.trim());
+    if (!result) { setError("Invalid JSON or wrong schema"); return; }
+    onImport(result);
+    setText("");
+    setError("");
+  };
+  return (
+    <details className="mt-4 mb-2 rounded-xl border border-neutral-200 bg-white">
+      <summary className="cursor-pointer select-none px-4 py-3 text-sm font-semibold">Import semantic layer</summary>
+      <div className="border-t border-neutral-100 p-4">
+        <textarea
+          value={text}
+          onChange={(e) => { setText(e.target.value); setError(""); }}
+          rows={5}
+          placeholder='Paste exported JSON ({"$schema":"kraken-semantic@1",…})'
+          className="w-full rounded-lg border border-neutral-300 bg-neutral-50 p-2.5 font-mono text-[10px] leading-relaxed"
+        />
+        {error && <p className="mt-1 text-[11px] text-red-600">{error}</p>}
+        <button
+          onClick={handle}
+          disabled={!text.trim()}
+          className="mt-2 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-neutral-700 disabled:opacity-40"
+        >
+          Import
+        </button>
+      </div>
+    </details>
   );
 }
 

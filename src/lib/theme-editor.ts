@@ -94,6 +94,40 @@ export function exportJson(style: Style): string {
   );
 }
 
+/** Import a previously exported kraken-semantic@1 JSON back into a Style. */
+export function importJson(jsonStr: string): Style | null {
+  let parsed: unknown;
+  try { parsed = JSON.parse(jsonStr); } catch { return null; }
+  if (
+    typeof parsed !== "object" || parsed === null ||
+    (parsed as Record<string, unknown>)["$schema"] !== "kraken-semantic@1"
+  ) return null;
+
+  const raw = parsed as { name?: string; semantic?: Record<string, string> };
+  const semByPath: Record<string, SemToken> = {};
+  for (const tk of SEMANTIC) semByPath[tk.path] = tk;
+
+  const primByPath: Record<string, Prim> = {};
+  for (const fam of Object.values(PRIMITIVES)) for (const p of fam) primByPath[p.path] = p;
+
+  const overrides: Record<string, string> = {};
+  for (const [path, ref] of Object.entries(raw.semantic ?? {})) {
+    const tk = semByPath[path];
+    if (!tk) continue;
+    if (typeof ref === "string" && ref.startsWith("{") && ref.endsWith("}")) {
+      const primPath = ref.slice(1, -1).replace(/\./g, "/");
+      const prim = primByPath[primPath];
+      if (prim) overrides[tk.ds] = prim.ds;
+    }
+  }
+
+  return {
+    id: `style-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
+    name: typeof raw.name === "string" && raw.name ? raw.name : "Imported style",
+    overrides,
+  };
+}
+
 // ── localStorage (save & switch named styles) ───────────────────────────────
 const LS_KEY = "kraken-semantic-styles";
 export function loadStyles(): Style[] {
