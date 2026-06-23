@@ -88,7 +88,7 @@ const sidebarMenuButtonVariants = cva(
   ].join(" "),
   {
     variants: {
-      sub: { true: "pl-8 text-[13px]", false: "" },
+      sub: { true: "pl-8 [font-size:var(--ds-typography-labelsm-fontsize)]", false: "" },
     },
     defaultVariants: { sub: false },
   }

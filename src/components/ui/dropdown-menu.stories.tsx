@@ -8,6 +8,8 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
@@ -30,6 +32,7 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: () => {
     const [bookmarks, setBookmarks] = React.useState(true)
+    const [position, setPosition] = React.useState('top')
     return (
       <DropdownMenu>
         <DropdownMenuTrigger render={<Button variant="secondary">Open menu</Button>} />
@@ -51,6 +54,13 @@ export const Playground: Story = {
           <DropdownMenuCheckboxItem checked={bookmarks} onCheckedChange={setBookmarks}>
             Show bookmarks
           </DropdownMenuCheckboxItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuLabel inset>Panel position</DropdownMenuLabel>
+          <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+            <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
           <DropdownMenuSeparator />
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>

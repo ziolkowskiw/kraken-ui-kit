@@ -10,7 +10,8 @@ import { cn } from "@/lib/utils"
 // Mirrors the Figma `Navigation menu` (1696:13337): a horizontal menu whose
 // triggers reveal a shared floating panel. Built on Base UI's NavigationMenu;
 // the panel uses the `--ds-color-popover` surface. The Content of every item is
-// portaled into the single Popup/Viewport rendered by `NavigationMenu`.
+// portaled into the single Popup/Viewport rendered by `NavigationMenu`, and the
+// `NavigationMenuIndicator` arrow points at whichever trigger is currently open.
 const navigationMenuTriggerStyle = cva(
   cn(
     "group inline-flex h-9 w-max items-center justify-center gap-1 rounded-md px-3 py-2 text-sm font-medium outline-none transition-colors",
@@ -32,21 +33,7 @@ function NavigationMenu({
       {...props}
     >
       {children}
-      <NavigationMenuPrimitive.Portal>
-        <NavigationMenuPrimitive.Positioner sideOffset={8} className="isolate z-50 box-border h-(--positioner-height) w-(--positioner-width) transition-[top,left,right,bottom] duration-200">
-          <NavigationMenuPrimitive.Popup
-            data-slot="navigation-menu-popup"
-            className={cn(
-              "relative h-(--popup-height) w-full origin-(--transform-origin) overflow-hidden",
-              "[border-radius:var(--ds-radius-lg)] [background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
-              "shadow-md ring-1 ring-foreground/10",
-              "data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"
-            )}
-          >
-            <NavigationMenuPrimitive.Viewport className="relative h-full w-full" />
-          </NavigationMenuPrimitive.Popup>
-        </NavigationMenuPrimitive.Positioner>
-      </NavigationMenuPrimitive.Portal>
+      <NavigationMenuViewport />
     </NavigationMenuPrimitive.Root>
   )
 }
@@ -106,6 +93,63 @@ function NavigationMenuLink({ className, ...props }: NavigationMenuPrimitive.Lin
   )
 }
 
+// The shared floating panel. Every `NavigationMenuContent` is portaled into the
+// single Viewport here, so triggers reveal one panel rather than individual
+// popovers. The `NavigationMenuIndicator` arrow sits in the Positioner so it can
+// track the active trigger's anchor. Surface = `--ds-color-popover`.
+function NavigationMenuViewport({
+  className,
+  sideOffset = 8,
+  ...props
+}: NavigationMenuPrimitive.Viewport.Props &
+  Pick<NavigationMenuPrimitive.Positioner.Props, "sideOffset" | "side" | "align">) {
+  return (
+    <NavigationMenuPrimitive.Portal>
+      <NavigationMenuPrimitive.Positioner
+        sideOffset={sideOffset}
+        className="isolate z-50 box-border h-(--positioner-height) w-(--positioner-width) transition-[top,left,right,bottom] duration-200"
+      >
+        <NavigationMenuPrimitive.Popup
+          data-slot="navigation-menu-popup"
+          className={cn(
+            "relative h-(--popup-height) w-full origin-(--transform-origin) overflow-hidden",
+            "[border-radius:var(--ds-radius-lg)] [background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
+            "shadow-md ring-1 ring-foreground/10",
+            "data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"
+          )}
+        >
+          <NavigationMenuIndicator />
+          <NavigationMenuPrimitive.Viewport
+            data-slot="navigation-menu-viewport"
+            className={cn("relative h-full w-full", className)}
+            {...props}
+          />
+        </NavigationMenuPrimitive.Popup>
+      </NavigationMenuPrimitive.Positioner>
+    </NavigationMenuPrimitive.Portal>
+  )
+}
+
+// Visual feedback for which trigger is active. Base UI exposes this as `Arrow`
+// (it points toward the current anchor); the kit names the export `Indicator` to
+// match the shadcn/Figma `NavigationMenuIndicator` surface. The diamond inherits
+// the popover surface so it reads as a continuation of the panel.
+function NavigationMenuIndicator({ className, ...props }: NavigationMenuPrimitive.Arrow.Props) {
+  return (
+    <NavigationMenuPrimitive.Arrow
+      data-slot="navigation-menu-indicator"
+      className={cn(
+        "z-1 flex h-2.5 w-full items-end justify-center overflow-hidden",
+        "data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        className
+      )}
+      {...props}
+    >
+      <div className="relative top-[60%] size-2 rotate-45 rounded-tl-sm [background-color:var(--ds-color-popover)] ring-1 ring-foreground/10" />
+    </NavigationMenuPrimitive.Arrow>
+  )
+}
+
 export {
   NavigationMenu,
   NavigationMenuList,
@@ -113,5 +157,7 @@ export {
   NavigationMenuTrigger,
   NavigationMenuContent,
   NavigationMenuLink,
+  NavigationMenuViewport,
+  NavigationMenuIndicator,
   navigationMenuTriggerStyle,
 }

@@ -15,7 +15,7 @@ import { TooltipIcon, TooltipProvider } from "./tooltip"
 const tableTitleVariants = cva("flex w-full items-center gap-1", {
   variants: {
     variant: {
-      title: "[background-color:var(--ds-color-primary-muted)] px-4 py-3 rounded-t-lg",
+      title: "[background-color:var(--ds-color-primary-muted)] px-4 py-3 [border-top-left-radius:var(--ds-radius-lg)] [border-top-right-radius:var(--ds-radius-lg)]",
       section: "[background-color:var(--ds-color-surface)] px-4 pt-4 pb-2",
     },
   },
@@ -122,7 +122,7 @@ function DataTable({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="data-table"
       role="table"
       className={cn(
-        "flex w-full flex-col overflow-hidden rounded-lg border border-solid",
+        "flex w-full flex-col overflow-hidden [border-radius:var(--ds-radius-lg)] border border-solid",
         "[border-color:var(--ds-color-border)] [background-color:var(--ds-color-background)]",
         className
       )}

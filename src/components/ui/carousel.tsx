@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-// Mirrors the Figma `carousel` (858:2046) + `carousel/with-image` sets (1/2/3
+// Mirrors the Figma `carousel` (950:4516) + `carousel/with-image` (950:4542) sets (1/2/3
 // slides). Built on Embla; prev/next reuse the real <Button> (single source of
 // truth).
 type CarouselApi = UseEmblaCarouselType[1]

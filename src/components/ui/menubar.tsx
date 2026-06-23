@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Menubar as MenubarPrimitive } from "@base-ui/react/menubar"
 import { Menu as MenuPrimitive } from "@base-ui/react/menu"
-import { CheckIcon, ChevronRightIcon } from "lucide-react"
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { menuItemClasses, menuPopupClasses } from "./dropdown-menu"
@@ -89,6 +89,19 @@ function MenubarCheckboxItem({ className, children, ...props }: MenuPrimitive.Ch
   )
 }
 
+function MenubarRadioItem({ className, children, ...props }: MenuPrimitive.RadioItem.Props) {
+  return (
+    <MenuPrimitive.RadioItem data-slot="menubar-radio-item" className={cn(menuItemClasses, "pl-8", className)} {...props}>
+      <span className="pointer-events-none absolute left-2 flex size-4 items-center justify-center">
+        <MenuPrimitive.RadioItemIndicator>
+          <CircleIcon className="size-2 fill-current" />
+        </MenuPrimitive.RadioItemIndicator>
+      </span>
+      {children}
+    </MenuPrimitive.RadioItem>
+  )
+}
+
 // Standalone section header — plain div so it doesn't require a Menu.Group ancestor.
 function MenubarLabel({ className, inset, ...props }: React.ComponentProps<"div"> & { inset?: boolean }) {
   return (
@@ -137,6 +150,7 @@ export {
   MenubarContent,
   MenubarItem,
   MenubarCheckboxItem,
+  MenubarRadioItem,
   MenubarLabel,
   MenubarSeparator,
   MenubarShortcut,

@@ -7,7 +7,7 @@ import { SearchIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { menuItemClasses } from "./dropdown-menu"
 
-// Mirrors the Figma `command` set (858:2054): Variant=collapsed|expanded — a
+// Mirrors the Figma `command` set (1134:17063): Variant=collapsed|expanded — a
 // search box over a filtered list. Built on Base UI's Autocomplete (mode="list")
 // rendered inline as a bordered command panel on the `--ds-color-popover` surface.
 function Command({

@@ -47,7 +47,7 @@ const meta: Meta<SelectFieldStoryProps> = {
   },
   args: {
     state: 'rest',
-    size: 'lg',
+    size: 'md',
     label: 'Label',
     description: 'Help text',
     errorMessage: 'Error message',

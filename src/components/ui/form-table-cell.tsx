@@ -100,13 +100,13 @@ function FormTableCell({
             <label
               key={o}
               className={cn(
-                "flex min-h-8 cursor-pointer items-center gap-2 rounded-lg border border-solid px-3 py-2",
+                "flex min-h-8 cursor-pointer items-center gap-2 [border-radius:var(--ds-radius-lg)] border border-solid px-3 py-2",
                 "[border-color:var(--ds-checkbox-bordercolor)] [background-color:var(--ds-checkbox-fill)]",
                 "hover:[border-color:var(--ds-checkbox-borderhover)]"
               )}
             >
               <RadioGroupItem value={o} />
-              <span className="text-sm [color:var(--ds-color-content-secondary)]">{o}</span>
+              <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] [color:var(--ds-color-content-secondary)]">{o}</span>
             </label>
           ))}
         </RadioGroup>

@@ -20,13 +20,39 @@ const accordionItemVariants = cva("flex flex-col", {
   defaultVariants: { variant: "in-box" },
 })
 
-function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
+type AccordionRootProps = Omit<AccordionPrimitive.Root.Props, "multiple"> & {
+  /**
+   * Whether one (`"single"`) or many (`"multiple"`) items can be open at the
+   * same time. Mirrors the shadcn/Radix `type` API. Maps to Base UI's
+   * `multiple` boolean internally.
+   * @default "single"
+   */
+  type?: "single" | "multiple"
+}
+
+function Accordion({ className, type = "single", children, ...props }: AccordionRootProps) {
+  // Base UI matches `defaultValue`/`value` against each item's `value`, which
+  // defaults to an auto-generated id (not the item index). Assign an index-based
+  // value to any AccordionItem that doesn't set one, so `defaultValue={[0]}` and
+  // friends resolve predictably.
+  const items = React.Children.map(children, (child, index) =>
+    React.isValidElement(child) &&
+    (child.props as { value?: unknown }).value === undefined
+      ? React.cloneElement(child as React.ReactElement<{ value?: unknown }>, {
+          value: index,
+        })
+      : child
+  )
+
   return (
     <AccordionPrimitive.Root
       data-slot="accordion"
+      multiple={type === "multiple"}
       className={cn("flex flex-col gap-2", className)}
       {...props}
-    />
+    >
+      {items}
+    </AccordionPrimitive.Root>
   )
 }
 
@@ -74,7 +100,9 @@ function AccordionTrigger({
             ? "[padding-block:var(--ds-spacing-component-lg)]"
             : "[padding-block:var(--ds-spacing-component-xl)]",
           "focus-visible:ring-2 focus-visible:[ring-color:var(--ds-color-border-focus)] focus-visible:ring-offset-1 [border-radius:var(--ds-card-radius)]",
-          "disabled:pointer-events-none disabled:opacity-50",
+          // Base UI strips the native `disabled` attr on composite triggers, so
+          // hook the disabled look on data-disabled / aria-disabled instead.
+          "aria-disabled:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
           className
         )}
         {...props}
@@ -97,7 +125,7 @@ function AccordionTrigger({
           </span>
           {hasSubtitle && subtitle && (
             <>
-              <div className="mx-3 h-[26px] w-px [background-color:var(--ds-color-border)]" />
+              <div className="mx-3 w-px self-stretch [background-color:var(--ds-color-border)]" />
               <span
                 className={cn(
                   "[color:var(--ds-color-content-secondary)] whitespace-nowrap",
@@ -133,7 +161,12 @@ function AccordionContent({
     <AccordionPrimitive.Panel
       data-slot="accordion-content"
       className={cn(
-        "flex flex-col gap-3 overflow-hidden transition-all",
+        "flex flex-col gap-3 overflow-hidden",
+        // Animate height between 0 and the panel's measured height. Base UI sets
+        // --accordion-panel-height on the element and toggles data-starting-style
+        // (entering) / data-ending-style (leaving).
+        "h-[var(--accordion-panel-height)] transition-[height,opacity] duration-200 ease-out",
+        "data-[starting-style]:h-0 data-[ending-style]:h-0 data-[ending-style]:opacity-0",
         "[padding-inline:var(--ds-spacing-component-lg)] [padding-bottom:var(--ds-spacing-component-xl)]",
         className
       )}

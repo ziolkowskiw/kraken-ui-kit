@@ -37,3 +37,11 @@ export const Vertical: Story = {
 export const VerticalRange: Story = {
   args: { orientation: 'vertical', defaultValue: [20, 80] },
 }
+
+export const Disabled: Story = {
+  args: { disabled: true, defaultValue: 40 },
+}
+
+export const Steps: Story = {
+  args: { step: 10, defaultValue: 30 },
+}

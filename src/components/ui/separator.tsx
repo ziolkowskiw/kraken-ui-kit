@@ -13,8 +13,8 @@ const separatorVariants = cva(
   {
     variants: {
       orientation: {
-        horizontal: "h-px w-full [margin-block:var(--sep-gap,0px)]",
-        vertical: "w-px min-h-4 self-stretch [margin-inline:var(--sep-gap,0px)]",
+        horizontal: "h-px w-full [margin-block:var(--sep-gap,var(--ds-spacing-0))]",
+        vertical: "w-px min-h-4 self-stretch [margin-inline:var(--sep-gap,var(--ds-spacing-0))]",
       },
       spacing: {
         0: "[--sep-gap:var(--ds-spacing-0)]",
@@ -30,20 +30,35 @@ const separatorVariants = cva(
   }
 )
 
-type SeparatorProps = SeparatorPrimitive.Props &
-  VariantProps<typeof separatorVariants>
+type SeparatorProps = Omit<SeparatorPrimitive.Props, "orientation"> &
+  VariantProps<typeof separatorVariants> & {
+    decorative?: boolean
+  }
 
 function Separator({
   className,
   orientation = "horizontal",
   spacing,
+  decorative = false,
   ...props
 }: SeparatorProps) {
+  const classes = cn(separatorVariants({ orientation, spacing }), className)
+  if (decorative) {
+    return (
+      <div
+        data-slot="separator"
+        role="none"
+        aria-hidden
+        className={classes}
+        {...(props as React.HTMLAttributes<HTMLDivElement>)}
+      />
+    )
+  }
   return (
     <SeparatorPrimitive
       data-slot="separator"
       orientation={orientation}
-      className={cn(separatorVariants({ orientation, spacing }), className)}
+      className={classes}
       {...props}
     />
   )

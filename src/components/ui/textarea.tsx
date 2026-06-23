@@ -64,10 +64,17 @@ function TextareaField({
   showCounter,
   maxLength,
   disabled,
+  value,
+  defaultValue,
+  onChange,
   ...props
 }: TextareaFieldProps) {
   const hasError = error || !!errorMessage
-  const [charCount, setCharCount] = React.useState(0)
+  const initialLength = String(value ?? defaultValue ?? "").length
+  const [charCount, setCharCount] = React.useState(initialLength)
+  React.useEffect(() => {
+    if (value !== undefined) setCharCount(String(value).length)
+  }, [value])
   const counter = showCounter && maxLength ? (
     <span className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] tabular-nums shrink-0">
       {charCount}/{maxLength}
@@ -100,11 +107,13 @@ function TextareaField({
         aria-invalid={hasError || undefined}
         maxLength={maxLength}
         className={cn(textareaVariants({ size }), className)}
+        value={value}
+        defaultValue={defaultValue}
+        {...props}
         onChange={(e) => {
           setCharCount(e.target.value.length)
-          props.onChange?.(e)
+          onChange?.(e)
         }}
-        {...props}
       />
       {hasError && errorMessage ? (
         <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">

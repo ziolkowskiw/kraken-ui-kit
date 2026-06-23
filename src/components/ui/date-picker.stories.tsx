@@ -13,6 +13,7 @@ const meta = {
   parameters: { layout: 'padded' },
   tags: ['autodocs'],
   argTypes: {
+    mode: { control: 'inline-radio', options: ['single', 'range'] },
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
     label: { control: 'text' },
     placeholder: { control: 'text' },
@@ -30,6 +31,7 @@ const meta = {
     format: { table: { disable: true } },
   },
   args: {
+    mode: 'single',
     label: 'Date of birth',
     placeholder: 'Pick a date',
     description: 'Used to verify your age.',
@@ -50,6 +52,28 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
+
+/** Opens with a date already chosen, so the trigger shows the formatted value
+ *  (not the placeholder). */
+export const WithValue: Story = {
+  args: {
+    label: 'Start date',
+    description: undefined,
+    defaultValue: new Date(2026, 5, 23),
+  },
+}
+
+/** Range selection: the trigger shows "from – to" and the popover stays open
+ *  until both ends are picked. */
+export const RangeSelection: Story = {
+  args: {
+    mode: 'range',
+    label: 'Stay dates',
+    placeholder: 'Pick a date range',
+    description: 'Check-in to check-out.',
+    defaultValue: { from: new Date(2026, 5, 23), to: new Date(2026, 5, 27) },
+  },
+}
 
 export const ErrorState: Story = {
   args: { errorMessage: 'Please select a date.' },

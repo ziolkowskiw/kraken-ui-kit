@@ -33,7 +33,7 @@ const meta = {
     <div className="flex h-96">
       <Sidebar {...args}>
         <SidebarHeader>
-          <div className="flex size-8 items-center justify-center rounded-md [background-color:var(--ds-color-primary)] [color:var(--ds-color-primary-foreground)] font-semibold">
+          <div className="flex size-8 items-center justify-center rounded-md [background-color:var(--ds-sidebar-primary)] [color:var(--ds-sidebar-primaryforeground)] font-semibold">
             K
           </div>
           {!args.collapsed && <span className="font-medium">Kraken</span>}
@@ -71,3 +71,42 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {}
 
 export const Collapsed: Story = { args: { collapsed: true } }
+
+export const WithSubItems: Story = {
+  render: () => (
+    <div className="flex h-96">
+      <Sidebar>
+        <SidebarContent>
+          <SidebarGroup>
+            <SidebarGroupLabel>Platform</SidebarGroupLabel>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton isActive>
+                  <Home />
+                  <span>Home</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton>
+                  <Inbox />
+                  <span>Inbox</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton sub>
+                  <span>All mail</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton sub>
+                  <span>Drafts</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroup>
+        </SidebarContent>
+      </Sidebar>
+      <div className="flex-1 p-6 text-sm [color:var(--ds-color-content-secondary)]">Main content area</div>
+    </div>
+  ),
+}

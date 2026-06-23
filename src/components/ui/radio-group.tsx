@@ -43,7 +43,7 @@ function RadioGroupItem({ className, error, ...props }: RadioGroupItemProps) {
         data-slot="radio-group-indicator"
         className="flex size-4 items-center justify-center"
       >
-        <span className="absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
+        <span className="absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current" />
       </RadioPrimitive.Indicator>
     </RadioPrimitive.Root>
   )

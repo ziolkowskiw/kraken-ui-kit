@@ -20,6 +20,7 @@ const renderIcon = (name?: IconName): React.ReactNode => {
 }
 
 type StoryProps = {
+  type?: 'single' | 'multiple'
   variant?: (typeof VARIANTS)[number]
   title?: string
   hasSubtitle?: boolean
@@ -39,6 +40,11 @@ const meta = {
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
+    type: {
+      control: 'inline-radio',
+      options: ['single', 'multiple'],
+      name: 'Type',
+    },
     variant: { control: 'select', options: VARIANTS, name: 'Variant' },
     compact: { control: 'boolean', name: 'Compact' },
     title: { control: 'text', name: 'Title' },
@@ -78,6 +84,7 @@ const meta = {
     },
   },
   args: {
+    type: 'single',
     variant: 'in-box',
     compact: false,
     title: 'Accordion title',
@@ -93,6 +100,7 @@ const meta = {
     linkButtonLabel: 'Learn more',
   },
   render: ({
+    type,
     variant,
     compact,
     title,
@@ -106,7 +114,7 @@ const meta = {
     hasLinkButton,
     linkButtonLabel,
   }: StoryProps) => (
-    <Accordion className="w-[510px]" defaultValue={[0]}>
+    <Accordion type={type} className="w-[510px]" defaultValue={[0]}>
       <AccordionItem variant={variant}>
         <AccordionTrigger
           title={title}
@@ -162,24 +170,33 @@ export const Variants: Story = {
   ),
 }
 
-export const MultipleItems: Story = {
+const sampleItems = (['First', 'Second', 'Third'] as const).map((label, i) => (
+  <AccordionItem key={i} variant="in-box">
+    <AccordionTrigger
+      title={`${label} item`}
+      subtitle="Details"
+      icon={renderIcon('SquircleDashed' as IconName)}
+    />
+    <AccordionContent hasTitle contentTitle={`${label} content`}>
+      Content for the {label.toLowerCase()} accordion item.
+    </AccordionContent>
+  </AccordionItem>
+))
+
+/** `type="single"` — opening one item closes the others. */
+export const Single: Story = {
   render: () => (
-    <Accordion className="w-[510px]" defaultValue={[0]}>
-      {['First', 'Second', 'Third'].map((label, i) => (
-        <AccordionItem key={i} variant="in-box">
-          <AccordionTrigger
-            title={`${label} item`}
-            subtitle="Details"
-            icon={renderIcon('SquircleDashed' as IconName)}
-          />
-          <AccordionContent
-            hasTitle
-            contentTitle={`${label} content`}
-          >
-            Content for the {label.toLowerCase()} accordion item.
-          </AccordionContent>
-        </AccordionItem>
-      ))}
+    <Accordion type="single" className="w-[510px]" defaultValue={[0]}>
+      {sampleItems}
+    </Accordion>
+  ),
+}
+
+/** `type="multiple"` — several items stay open at once (here items 0 and 2). */
+export const Multiple: Story = {
+  render: () => (
+    <Accordion type="multiple" className="w-[510px]" defaultValue={[0, 2]}>
+      {sampleItems}
     </Accordion>
   ),
 }
@@ -198,4 +215,24 @@ export const NoIcon: Story = {
 
 export const WithLinkButton: Story = {
   args: { hasLinkButton: true, linkButtonLabel: 'Learn more' },
+}
+
+/** `disabled` on an individual `AccordionItem` — the middle item can't open. */
+export const DisabledItem: Story = {
+  render: () => (
+    <Accordion type="single" className="w-[510px]" defaultValue={[0]}>
+      <AccordionItem variant="in-box">
+        <AccordionTrigger title="Enabled item" subtitle="Open me" />
+        <AccordionContent>This item opens and closes normally.</AccordionContent>
+      </AccordionItem>
+      <AccordionItem variant="in-box" disabled>
+        <AccordionTrigger title="Disabled item" subtitle="Can't open" />
+        <AccordionContent>You should not be able to reach this.</AccordionContent>
+      </AccordionItem>
+      <AccordionItem variant="in-box">
+        <AccordionTrigger title="Another enabled item" subtitle="Open me too" />
+        <AccordionContent>This item also opens and closes normally.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  ),
 }

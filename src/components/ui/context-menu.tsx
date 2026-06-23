@@ -7,7 +7,7 @@ import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { menuItemClasses, menuPopupClasses } from "./dropdown-menu"
 
-// Mirrors the Figma `context-menu` set (858:2056): State=default|open. Same item
+// Mirrors the Figma `context-menu` set (1134:17687): State=default|open. Same item
 // system as the dropdown menu (shared `--ds-menuitem-*` styling) but opened by
 // right-click via Base UI's ContextMenu primitive.
 const ContextMenu = ContextMenuPrimitive.Root

@@ -10,29 +10,62 @@ const meta = {
     orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'] },
   },
   args: { orientation: 'horizontal' },
-  render: (args) => (
-    <ResizablePanelGroup
-      {...args}
-      className="h-64 w-[480px] rounded-lg border [border-color:var(--ds-color-border)]"
-    >
-      <ResizablePanel defaultSize={50}>
-        <div className="flex h-full items-center justify-center p-6 text-sm [color:var(--ds-color-content-secondary)]">
-          One
-        </div>
-      </ResizablePanel>
-      <ResizableHandle withHandle />
-      <ResizablePanel defaultSize={50}>
-        <div className="flex h-full items-center justify-center p-6 text-sm [color:var(--ds-color-content-secondary)]">
-          Two
-        </div>
-      </ResizablePanel>
-    </ResizablePanelGroup>
-  ),
 } satisfies Meta<typeof ResizablePanelGroup>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {}
+type StoryArgs = { orientation: 'horizontal' | 'vertical'; withHandle: boolean }
 
-export const Vertical: Story = { args: { orientation: 'vertical' } }
+const PanelContent = ({ label }: { label: string }) => (
+  <div className="flex h-full items-center justify-center p-6 text-sm [color:var(--ds-color-content-secondary)]">
+    {label}
+  </div>
+)
+
+export const Playground: Story = {
+  argTypes: {
+    withHandle: { control: 'boolean' },
+  },
+  args: { withHandle: true } as StoryArgs,
+  render: (args) => {
+    const { withHandle, ...groupArgs } = args as StoryArgs
+    return (
+      <ResizablePanelGroup
+        {...groupArgs}
+        className="h-64 w-[480px] rounded-lg border [border-color:var(--ds-color-border)]"
+      >
+        <ResizablePanel defaultSize={50}><PanelContent label="One" /></ResizablePanel>
+        <ResizableHandle withHandle={withHandle} />
+        <ResizablePanel defaultSize={50}><PanelContent label="Two" /></ResizablePanel>
+      </ResizablePanelGroup>
+    )
+  },
+}
+
+export const Vertical: Story = {
+  args: { orientation: 'vertical' } as StoryArgs,
+  render: (args) => (
+    <ResizablePanelGroup
+      orientation="vertical"
+      className="h-64 w-[480px] rounded-lg border [border-color:var(--ds-color-border)]"
+    >
+      <ResizablePanel defaultSize={50}><PanelContent label="Top" /></ResizablePanel>
+      <ResizableHandle withHandle />
+      <ResizablePanel defaultSize={50}><PanelContent label="Bottom" /></ResizablePanel>
+    </ResizablePanelGroup>
+  ),
+}
+
+export const NoHandle: Story = {
+  render: () => (
+    <ResizablePanelGroup
+      orientation="horizontal"
+      className="h-64 w-[480px] rounded-lg border [border-color:var(--ds-color-border)]"
+    >
+      <ResizablePanel defaultSize={50}><PanelContent label="One" /></ResizablePanel>
+      <ResizableHandle />
+      <ResizablePanel defaultSize={50}><PanelContent label="Two" /></ResizablePanel>
+    </ResizablePanelGroup>
+  ),
+}

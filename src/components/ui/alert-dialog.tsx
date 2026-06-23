@@ -43,12 +43,14 @@ function AlertDialogContent({
   className,
   children,
   title,
-  closeIcon = true,
+  description,
+  closeIcon = false,
   secondaryActions,
   primaryActions,
   ...props
 }: AlertDialogPrimitive.Popup.Props & {
   title?: React.ReactNode
+  description?: React.ReactNode
   closeIcon?: boolean
   secondaryActions?: React.ReactNode
   primaryActions?: React.ReactNode
@@ -88,7 +90,15 @@ function AlertDialogContent({
 
         <div className="h-px w-full [background-color:var(--ds-color-border)]" />
 
-        <div data-slot="alert-dialog-body">{children}</div>
+        <div
+          data-slot="alert-dialog-body"
+          className="[padding-inline:var(--ds-spacing-component-xl)] [padding-block:var(--ds-spacing-component-lg)]"
+        >
+          {description != null && (
+            <AlertDialogDescription>{description}</AlertDialogDescription>
+          )}
+          {children}
+        </div>
 
         <div className="h-px w-full [background-color:var(--ds-color-border)]" />
 
@@ -105,6 +115,22 @@ function AlertDialogContent({
   )
 }
 
+function AlertDialogDescription({
+  className,
+  ...props
+}: AlertDialogPrimitive.Description.Props) {
+  return (
+    <AlertDialogPrimitive.Description
+      data-slot="alert-dialog-description"
+      className={cn(
+        "[font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)] [color:var(--ds-color-content-primary)]",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
 function AlertDialogClose({ ...props }: AlertDialogPrimitive.Close.Props) {
   return (
     <AlertDialogPrimitive.Close data-slot="alert-dialog-close" {...props} />
@@ -115,6 +141,7 @@ export {
   AlertDialog,
   AlertDialogClose,
   AlertDialogContent,
+  AlertDialogDescription,
   AlertDialogOverlay,
   AlertDialogPortal,
   AlertDialogTrigger,

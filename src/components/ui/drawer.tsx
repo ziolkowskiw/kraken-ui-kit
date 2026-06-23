@@ -41,7 +41,7 @@ const drawerVariants = cva(
         right: "inset-y-0 right-0 h-full w-3/4 max-w-sm border-l [border-color:var(--ds-color-border)] data-closed:translate-x-full",
         left: "inset-y-0 left-0 h-full w-3/4 max-w-sm border-r [border-color:var(--ds-color-border)] data-closed:-translate-x-full",
         top: "inset-x-0 top-0 max-h-[80vh] border-b [border-color:var(--ds-color-border)] data-closed:-translate-y-full",
-        bottom: "inset-x-0 bottom-0 max-h-[80vh] border-t [border-color:var(--ds-color-border)] data-closed:translate-y-full rounded-t-xl",
+        bottom: "inset-x-0 bottom-0 max-h-[80vh] border-t [border-color:var(--ds-color-border)] data-closed:translate-y-full [border-top-left-radius:var(--ds-radius-xl)] [border-top-right-radius:var(--ds-radius-xl)]",
       },
     },
     defaultVariants: { side: "right" },

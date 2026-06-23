@@ -41,3 +41,21 @@ export const Range: Story = {
     )
   },
 }
+
+// Disabled dates render with the `disabled` className (reduced opacity) and are
+// non-interactive — react-day-picker blocks selection for any date that matches
+// the `disabled` matcher. Here: every day before today is disabled.
+export const Disabled: Story = {
+  render: () => {
+    const [date, setDate] = React.useState<Date | undefined>()
+    return (
+      <Calendar
+        mode="single"
+        selected={date}
+        onSelect={setDate}
+        disabled={{ before: new Date() }}
+        className="rounded-lg border [border-color:var(--ds-color-border)]"
+      />
+    )
+  },
+}

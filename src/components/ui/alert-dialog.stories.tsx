@@ -5,6 +5,7 @@ import {
   AlertDialog,
   AlertDialogClose,
   AlertDialogContent,
+  AlertDialogDescription,
   AlertDialogTrigger,
 } from './alert-dialog'
 import { Button } from './button'
@@ -59,6 +60,7 @@ function renderButton(cfg: ButtonConfig, key: string) {
 type StoryProps = {
   variant: 'default'
   title: string
+  description: string
   closeIcon: boolean
   // Left slot — button 1
   left1Show: boolean
@@ -135,6 +137,7 @@ const meta: Meta<StoryProps> = {
   argTypes: {
     variant: { control: 'select', options: ['default'], name: 'Variant' },
     title: { control: 'text', name: 'Title' },
+    description: { control: 'text', name: 'Description' },
     closeIcon: { control: 'boolean', name: 'closeIcon' },
     // dialog-content is a slot — no control, use stories to demonstrate different content
     ...buttonArgTypes('left1', 'Left slot: Button 1', 'left1Show'),
@@ -145,7 +148,8 @@ const meta: Meta<StoryProps> = {
   args: {
     variant: 'default',
     title: 'Modal title',
-    closeIcon: true,
+    description: 'Are you sure you want to proceed? This action cannot be undone.',
+    closeIcon: false,
     // Left slot — 1 ghost button (cancel)
     left1Show: true,
     left1Label: 'Label',
@@ -208,14 +212,11 @@ const meta: Meta<StoryProps> = {
         <AlertDialogTrigger render={<Button>Open alert dialog</Button>} />
         <AlertDialogContent
           title={args.title}
+          description={args.description || undefined}
           closeIcon={args.closeIcon}
           secondaryActions={hasLeft ? leftButtons : undefined}
           primaryActions={hasRight ? rightButtons : undefined}
-        >
-          <div className="[padding-inline:var(--ds-spacing-component-xl)] [padding-block:var(--ds-spacing-component-lg)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)] [color:var(--ds-color-content-primary)]">
-            Are you sure you want to proceed? This action cannot be undone.
-          </div>
-        </AlertDialogContent>
+        />
       </AlertDialog>
     )
   },
@@ -229,6 +230,7 @@ export const Playground: Story = {}
 export const Destructive: Story = {
   args: {
     title: 'Delete item',
+    description: 'This will permanently delete the item. This action cannot be undone.',
     left1Label: 'Learn more',
     right1Label: 'Cancel',
     right2Label: 'Delete',
@@ -246,14 +248,11 @@ export const Destructive: Story = {
         <AlertDialogTrigger render={<Button variant="destructive">Delete</Button>} />
         <AlertDialogContent
           title={args.title}
+          description={args.description || undefined}
           closeIcon={args.closeIcon}
           secondaryActions={hasLeft ? <>{renderButton(left1, 'l1')}{renderButton(left2, 'l2')}</> : undefined}
           primaryActions={hasRight ? <>{renderButton(right1, 'r1')}{renderButton(right2, 'r2')}</> : undefined}
-        >
-          <div className="[padding-inline:var(--ds-spacing-component-xl)] [padding-block:var(--ds-spacing-component-lg)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)] [color:var(--ds-color-content-primary)]">
-            This will permanently delete the item. This action cannot be undone.
-          </div>
-        </AlertDialogContent>
+        />
       </AlertDialog>
     )
   },

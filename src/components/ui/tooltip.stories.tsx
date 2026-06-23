@@ -95,8 +95,9 @@ export const TooltipIconSides: StoryObj = {
 
 const meta = {
   title: 'Components/Tooltip',
+  component: Tooltip,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
-} satisfies Meta
+} satisfies Meta<typeof Tooltip>
 
 export default meta
