@@ -27,7 +27,7 @@ type DialogStoryProps = {
   subtitleText: string
   hasSubtitle: boolean
   hasTitle: boolean
-  showClose: boolean
+  showCloseButton: boolean
   triggerLabel: string
   triggerVariant: (typeof BUTTON_VARIANTS)[number]
   cancelLabel: string
@@ -45,7 +45,7 @@ const meta: Meta<DialogStoryProps> = {
     subtitleText: { control: 'text', name: 'Subtitle', table: { category: 'Content' } },
     hasTitle: { control: 'boolean', name: 'hasTitle', table: { category: 'Content' } },
     hasSubtitle: { control: 'boolean', name: 'hasSubtitle', table: { category: 'Content' } },
-    showClose: { control: 'boolean', name: 'showClose', table: { category: 'Content' } },
+    showCloseButton: { control: 'boolean', name: 'showCloseButton', table: { category: 'Content' } },
     // ── Nested: Trigger button ──
     triggerLabel: { control: 'text', name: 'Label', table: { category: 'Nested: Trigger' } },
     triggerVariant: { control: 'select', options: BUTTON_VARIANTS, name: 'Variant', table: { category: 'Nested: Trigger' } },
@@ -59,7 +59,7 @@ const meta: Meta<DialogStoryProps> = {
     subtitleText: 'This is supporting text',
     hasTitle: true,
     hasSubtitle: true,
-    showClose: true,
+    showCloseButton: true,
     triggerLabel: 'Open dialog',
     triggerVariant: 'secondary',
     cancelLabel: 'Cancel',
@@ -71,7 +71,7 @@ const meta: Meta<DialogStoryProps> = {
     subtitleText,
     hasTitle,
     hasSubtitle,
-    showClose,
+    showCloseButton,
     triggerLabel,
     triggerVariant,
     cancelLabel,
@@ -80,7 +80,7 @@ const meta: Meta<DialogStoryProps> = {
   }) => (
     <Dialog>
       <DialogTrigger render={<Button variant={triggerVariant}>{triggerLabel}</Button>} />
-      <DialogContent showCloseButton={showClose}>
+      <DialogContent showCloseButton={showCloseButton}>
         <DialogHeader>
           {hasTitle && <DialogTitle>{titleLabel}</DialogTitle>}
           {hasSubtitle && (
@@ -105,7 +105,7 @@ export const Playground: Story = {}
 export const Default: Story = {}
 
 export const NoCloseButton: Story = {
-  args: { showClose: false },
+  args: { showCloseButton: false },
 }
 
 export const TitleOnly: Story = {
