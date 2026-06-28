@@ -66,9 +66,12 @@ function TextareaField({
   disabled,
   value,
   defaultValue,
+  id: idProp,
   onChange,
   ...props
-}: TextareaFieldProps) {
+}: TextareaFieldProps & { id?: string }) {
+  const generatedId = React.useId()
+  const id = idProp ?? generatedId
   const hasError = error || !!errorMessage
   const initialLength = String(value ?? defaultValue ?? "").length
   const [charCount, setCharCount] = React.useState(initialLength)
@@ -86,9 +89,9 @@ function TextareaField({
         // Top row: label on the left, character counter pinned to the top-right.
         <div className="flex w-full items-center gap-1 min-h-4">
           {label && (
-            <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+            <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
               {label}
-            </span>
+            </label>
           )}
           {label && mandatory && (
             <span className="[color:var(--ds-input-contenterror)]">*</span>
@@ -102,6 +105,7 @@ function TextareaField({
         </div>
       )}
       <textarea
+        id={id}
         data-slot="textarea"
         disabled={disabled}
         aria-invalid={hasError || undefined}

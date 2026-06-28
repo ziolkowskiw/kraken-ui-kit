@@ -58,6 +58,7 @@ function ToggleGroup({
       data-slot="toggle-group"
       data-skin={skin}
       orientation={orientation}
+      role="toolbar"
       className={cn(
         "flex w-fit items-stretch",
         "data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col",

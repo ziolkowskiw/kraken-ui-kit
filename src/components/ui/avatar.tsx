@@ -61,7 +61,7 @@ function Avatar({
         avatarVariants({ size, roundness }),
         showImage
           ? "[background-color:var(--ds-color-background)]"
-          : "[background-color:var(--ds-color-primary-muted)]",
+          : "[background-color:var(--ds-badge-slate-fill)]",
         className
       )}
       {...props}
@@ -76,7 +76,7 @@ function Avatar({
       ) : (
         <span
           className={cn(
-            "select-none [color:var(--ds-color-primary-muted-foreground)]",
+            "select-none [color:var(--ds-badge-slate-content)]",
             fallbackTypography[size ?? "md"]
           )}
         >
@@ -113,7 +113,10 @@ function AvatarStack({
       {visible.map((child, i) => (
         <span
           key={i}
-          className="relative ring-2 [ring-color:var(--ds-color-background)] [border-radius:var(--ds-radius-full)]"
+          className={cn(
+            "relative ring-2 [ring-color:var(--ds-color-background)]",
+            roundness === "round" && "[border-radius:var(--ds-radius-full)]"
+          )}
         >
           {React.isValidElement<AvatarProps>(child)
             ? React.cloneElement(child, { size, roundness })
@@ -124,12 +127,12 @@ function AvatarStack({
         <span
           className={cn(
             avatarVariants({ size, roundness }),
-            "relative ring-2 [ring-color:var(--ds-color-background)] [background-color:var(--ds-color-primary-muted)]"
+            "relative ring-2 [ring-color:var(--ds-color-background)] [background-color:var(--ds-badge-slate-fill)]"
           )}
         >
           <span
             className={cn(
-              "select-none [color:var(--ds-color-primary-muted-foreground)]",
+              "select-none [color:var(--ds-badge-slate-content)]",
               fallbackTypography[size ?? "sm"]
             )}
           >

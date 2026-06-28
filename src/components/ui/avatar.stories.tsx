@@ -19,21 +19,22 @@ const avatarMeta: Meta<AvatarStoryProps> = {
     picture: { control: 'boolean', name: 'Picture' },
     size: { control: 'select', options: SIZE_OPTIONS, name: 'Size' },
     roundness: { control: 'select', options: ROUNDNESS_OPTIONS, name: 'Roundness' },
+    fallback: { control: 'text', name: 'Initials', if: { arg: 'picture', eq: false } },
     src: { table: { disable: true } },
     alt: { table: { disable: true } },
-    fallback: { table: { disable: true } },
   },
   args: {
     picture: true,
     size: '2xl',
     roundness: 'round',
+    fallback: 'CN',
   },
-  render: ({ picture, size, roundness }) => (
+  render: ({ picture, size, roundness, fallback }) => (
     <Avatar
       size={size}
       roundness={roundness}
       src={picture ? 'https://i.pravatar.cc/96?u=demo' : undefined}
-      fallback="CN"
+      fallback={fallback}
     />
   ),
 }

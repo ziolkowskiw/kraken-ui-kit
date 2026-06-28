@@ -45,11 +45,11 @@ function FormTableCell({
   let control: React.ReactNode
   switch (inputType) {
     case "text field":
-      control = <InputField size="sm" placeholder={placeholder} />
+      control = <InputField size="sm" placeholder={placeholder} aria-label={placeholder} />
       break
     case "select":
       control = (
-        <SelectField size="sm" placeholder={placeholder}>
+        <SelectField size="sm" placeholder={placeholder} aria-label={placeholder}>
           {options.map((o) => (
             <SelectItem key={o} value={o}>
               {o}
@@ -60,7 +60,7 @@ function FormTableCell({
       break
     case "search":
       control = (
-        <InputField size="sm" placeholder={placeholder} leftDecoration={<Search />} />
+        <InputField size="sm" placeholder={placeholder} aria-label={placeholder} leftDecoration={<Search />} />
       )
       break
     case "date":
@@ -68,6 +68,7 @@ function FormTableCell({
         <InputField
           size="sm"
           placeholder={placeholder === "Placeholder" ? "Choose a date" : placeholder}
+          aria-label={placeholder === "Placeholder" ? "Choose a date" : placeholder}
           leftDecoration={<Calendar />}
         />
       )
@@ -80,7 +81,7 @@ function FormTableCell({
       )
       break
     case "switch":
-      control = <Switch />
+      control = <Switch aria-label="Toggle" />
       break
     case "checkbox":
       control = (
@@ -95,7 +96,7 @@ function FormTableCell({
       // The kit has no button-style radio; compose RadioGroupItem in a bordered
       // container to mirror Figma's button-style radio options.
       control = (
-        <RadioGroup className="flex flex-wrap gap-1" defaultValue={options[0]}>
+        <RadioGroup aria-label="Options" className="flex flex-wrap gap-1" defaultValue={options[0]}>
           {options.map((o) => (
             <label
               key={o}
@@ -113,7 +114,7 @@ function FormTableCell({
       )
       break
     case "textarea":
-      control = <TextareaField size="sm" placeholder={placeholder} className="min-h-16" />
+      control = <TextareaField size="sm" placeholder={placeholder} aria-label={placeholder} className="min-h-16" />
       break
   }
 

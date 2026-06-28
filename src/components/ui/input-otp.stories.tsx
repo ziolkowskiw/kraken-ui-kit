@@ -12,7 +12,7 @@ const meta = {
   },
   args: { size: 'md' },
   render: (args: StoryArgs) => (
-    <InputOTP maxLength={6}>
+    <InputOTP maxLength={6} aria-label="One-time password">
       <InputOTPGroup>
         <InputOTPSlot index={0} size={args.size} />
         <InputOTPSlot index={1} size={args.size} />
@@ -35,7 +35,7 @@ export const Playground: Story = {}
 
 export const FourDigits: Story = {
   render: () => (
-    <InputOTP maxLength={4}>
+    <InputOTP maxLength={4} aria-label="One-time password">
       <InputOTPGroup>
         <InputOTPSlot index={0} />
         <InputOTPSlot index={1} />

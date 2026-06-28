@@ -61,12 +61,14 @@ const meta = {
     sort: 'default',
   },
   render: ({ leftDecoration, rightDecoration, sort, ...args }: StoryProps) => (
-    <div className="w-[240px]">
-      <TableHeader
-        {...args}
-        leftDecoration={renderDecoration(leftDecoration, sort)}
-        rightDecoration={renderDecoration(rightDecoration, sort)}
-      />
+    <div role="table" className="w-[240px]">
+      <div role="row">
+        <TableHeader
+          {...args}
+          leftDecoration={renderDecoration(leftDecoration, sort)}
+          rightDecoration={renderDecoration(rightDecoration, sort)}
+        />
+      </div>
     </div>
   ),
 } satisfies Meta<StoryProps>
@@ -86,9 +88,11 @@ export const WithCheckbox: Story = {
 
 export const States: Story = {
   render: () => (
-    <div className="flex w-[240px] flex-col gap-2">
+    <div role="table" className="flex w-[240px] flex-col gap-2">
       {STATES.map((s) => (
-        <TableHeader key={s} label={`State: ${s}`} selected={s === 'selected'} />
+        <div key={s} role="row">
+          <TableHeader label={`State: ${s}`} selected={s === 'selected'} />
+        </div>
       ))}
     </div>
   ),
@@ -109,7 +113,7 @@ export const SortingIconStates: Story = {
 
 export const HeaderRow: Story = {
   render: () => (
-    <div className="w-[600px]">
+    <div role="table" className="w-[600px]">
       <TableHeaderRow>
         <TableHeader label="Name" leftDecoration={<TableHeaderDecoration type="checkbox" />} />
         <TableHeader label="Status" />

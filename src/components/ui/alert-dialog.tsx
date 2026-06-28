@@ -70,7 +70,7 @@ function AlertDialogContent({
         )}
         {...props}
       >
-        <div className="flex items-center gap-2.5 [padding-inline:var(--ds-spacing-component-xl)] [padding-block:var(--ds-spacing-component-md)]">
+        <div className="flex items-center gap-2.5 [padding:var(--ds-spacing-component-md)]">
           <AlertDialogPrimitive.Title
             data-slot="alert-dialog-title"
             className="flex-1 min-w-0 [font-family:var(--ds-typography-headingmd-fontfamily)] [font-size:var(--ds-typography-headingmd-fontsize)] [font-weight:var(--ds-typography-headingmd-fontweight)] [line-height:var(--ds-typography-headingmd-lineheight)] [color:var(--ds-color-content-primary)]"

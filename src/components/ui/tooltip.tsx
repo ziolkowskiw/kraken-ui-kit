@@ -73,6 +73,7 @@ function TooltipIcon({
     <TooltipProvider delay={delay}>
       <Tooltip>
         <TooltipTrigger
+          aria-label="More information"
           className={cn(
             "inline-flex shrink-0 items-center justify-center [color:var(--ds-color-muted-foreground)] hover:[color:var(--ds-color-foreground)] transition-colors",
             className

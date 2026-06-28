@@ -72,12 +72,13 @@ function RadioGroupField({
   children,
   ...props
 }: RadioGroupFieldProps) {
+  const labelId = React.useId()
   const hasError = error || !!errorMessage
   return (
     <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
       {label && (
         <div className="flex items-center gap-1 h-4">
-          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+          <span id={labelId} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
             {label}
           </span>
           {mandatory && (
@@ -93,6 +94,7 @@ function RadioGroupField({
       <RadioGroupPrimitive
         data-slot="radio-group"
         aria-invalid={hasError || undefined}
+        aria-labelledby={label ? labelId : undefined}
         className={cn(
           "grid w-full gap-2",
           direction === "horizontal" ? "grid-flow-col auto-cols-fr" : "grid-flow-row",

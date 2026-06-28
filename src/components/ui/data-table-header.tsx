@@ -80,6 +80,7 @@ function TableHeaderDecoration({
       {type === "sortable" && <SortingIcons variant={sort} />}
       {type === "checkbox" && (
         <Checkbox
+          aria-label="Select all"
           checked={checked === "indeterminate" ? undefined : checked}
           indeterminate={checked === "indeterminate"}
           onCheckedChange={onCheckedChange}
@@ -150,6 +151,7 @@ function TableHeader({
     >
       {!empty && leftDecoration}
       {!empty && showLabel && <span className="min-w-0 truncate">{label}</span>}
+      {!empty && !showLabel && !props['aria-label'] && <span className="sr-only">{label}</span>}
       {!empty && rightDecoration}
       {showBorder && (
         <span

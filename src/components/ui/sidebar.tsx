@@ -103,10 +103,17 @@ function SidebarMenuButton({
 }: React.ComponentProps<"button"> &
   VariantProps<typeof sidebarMenuButtonVariants> & { isActive?: boolean }) {
   const { collapsed } = useSidebar()
+  const collapsedLabel = collapsed
+    ? React.Children.toArray(children)
+        .filter((child) => React.isValidElement(child) && child.type === "span")
+        .map((child) => (child as React.ReactElement<{ children?: React.ReactNode }>).props.children)
+        .join(" ") || undefined
+    : undefined
   return (
     <button
       data-slot="sidebar-menu-button"
       data-active={isActive}
+      aria-label={collapsedLabel}
       className={cn(sidebarMenuButtonVariants({ sub }), collapsed && "justify-center", className)}
       {...props}
     >

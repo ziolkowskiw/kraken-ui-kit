@@ -92,5 +92,5 @@ export const Sizes: Story = {
 }
 
 export const IconOnly: Story = {
-  args: { iconOnly: true, leftIconName: 'Plus', children: undefined },
+  args: { iconOnly: true, leftIconName: 'Plus', children: undefined, 'aria-label': 'Add' },
 }

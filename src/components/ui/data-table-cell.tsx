@@ -180,6 +180,7 @@ function DataTableCell({
     case "checkbox":
       content = (
         <Checkbox
+          aria-label="Select row"
           checked={checked === "indeterminate" ? undefined : checked}
           indeterminate={checked === "indeterminate"}
           onCheckedChange={onCheckedChange}

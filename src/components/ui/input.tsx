@@ -58,16 +58,19 @@ function InputField({
   rightDecoration,
   disabled,
   type,
+  id: idProp,
   ...props
 }: InputFieldProps) {
+  const generatedId = React.useId()
+  const id = idProp ?? generatedId
   const hasError = error || !!errorMessage
   return (
     <div className="flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start">
       {label && (
         <div className="flex items-center gap-1 h-4">
-          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+          <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
             {label}
-          </span>
+          </label>
           {mandatory && (
             <span className="[color:var(--ds-input-contenterror)]">*</span>
           )}
@@ -84,6 +87,7 @@ function InputField({
       >
         {leftDecoration}
         <InputPrimitive
+          id={id}
           type={type}
           disabled={disabled}
           aria-invalid={hasError || undefined}

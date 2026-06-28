@@ -7,10 +7,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // Mirrors the Figma Calendar page: `calendar` (Variant 1/2/3 months, month/year),
-// `calendar/header` and `calendar/day` (State default|selected|active|disabled,
-// Position left|middle|right|single for ranges). Built on react-day-picker; the
-// selected day binds `--ds-color-primary`, today gets a strong border, range fills
-// use the brand-muted token.
+// `calendar/header` and `calendar/day` (State default|active|selected|disabled,
+// Position left|middle|right|single for ranges). Built on react-day-picker.
+// Day cells are 32px (button/size/sm/height), radius/sm corners.
+// active=selected endpoint (primary fill), selected=range-middle (secondary-fillhover).
 const navButton =
   "inline-flex size-7 items-center justify-center rounded-md outline-none transition-colors [color:var(--ds-color-content-secondary)] hover:[background-color:var(--ds-color-muted)] focus-visible:ring-2 focus-visible:ring-ring/50 disabled:opacity-40"
 
@@ -37,20 +37,20 @@ function Calendar({
         button_next: navButton,
         month_grid: "w-full border-collapse",
         weekdays: "flex",
-        weekday: "w-9 text-center text-xs font-normal [color:var(--ds-color-content-tertiary)]",
+        weekday: "w-8 text-center text-xs font-normal [color:var(--ds-color-content-tertiary)]",
         week: "mt-2 flex w-full",
-        day: "relative size-9 p-0 text-center text-sm",
+        day: "relative size-8 p-0 text-center text-sm",
         day_button:
-          "inline-flex size-9 items-center justify-center rounded-md font-normal outline-none transition-colors [color:var(--ds-color-content-primary)] hover:[background-color:var(--ds-color-muted)] focus-visible:ring-2 focus-visible:ring-ring/50",
+          "inline-flex size-8 items-center justify-center [border-radius:var(--ds-radius-sm)] font-normal outline-none transition-colors [color:var(--ds-color-content-primary)] hover:[background-color:var(--ds-button-ghost-fillhover)] focus-visible:ring-2 focus-visible:ring-ring/50",
         selected:
-          "[&>button]:[background-color:var(--ds-color-primary)] [&>button]:[color:var(--ds-color-primary-foreground)] [&>button]:hover:[background-color:var(--ds-color-primary-hover)]",
+          "[&>button]:[background-color:var(--ds-button-primary-fill)] [&>button]:[color:var(--ds-button-primary-content)] [&>button]:hover:[background-color:var(--ds-button-primary-fillhover)]",
         today: "[&>button]:border [&>button]:[border-color:var(--ds-color-border-strong)]",
         outside: "[&>button]:[color:var(--ds-color-content-disabled)] [&>button]:opacity-50",
-        disabled: "[&>button]:opacity-40 [&>button]:pointer-events-none",
-        range_start: "[&>button]:rounded-r-none",
-        range_end: "[&>button]:rounded-l-none",
+        disabled: "[&>button]:opacity-50 [&>button]:pointer-events-none [&>button]:[color:var(--ds-button-ghost-contentdisabled)]",
+        range_start: "[&>button]:rounded-l-[var(--ds-radius-sm)] [&>button]:rounded-r-none",
+        range_end: "[&>button]:rounded-r-[var(--ds-radius-sm)] [&>button]:rounded-l-none",
         range_middle:
-          "[background-color:var(--ds-color-primary-muted)] [&>button]:rounded-none [&>button]:[background-color:transparent] [&>button]:[color:var(--ds-color-content-primary)]",
+          "[background-color:var(--ds-button-secondary-fillhover)] [&>button]:rounded-none [&>button]:[background-color:transparent] [&>button]:[color:var(--ds-button-secondary-content)]",
         hidden: "invisible",
         ...classNames,
       }}

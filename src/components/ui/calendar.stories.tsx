@@ -3,6 +3,11 @@ import * as React from 'react'
 import type { DateRange } from 'react-day-picker'
 import { Calendar } from './calendar'
 
+// Figma variants: "only month" | "1 month" | "2 months" | "3 months" | "month and year" | "only year"
+// "only month" and "1 month" = single month view (mode="single")
+// "2 months" / "3 months" = numberOfMonths=2/3 (mode="range")
+// "month and year" / "only year" = navigation-only display, not directly mapped to react-day-picker props
+
 const meta = {
   title: 'Components/Calendar',
   component: Calendar,

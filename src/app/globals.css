@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+/* Kraken design tokens — 3-layer system; brand-switchable via [data-theme="…"] on <html> */
+@import "../styles/tokens.css";
+/* shadcn semantic vars → --ds-* mapping + @theme inline.
+   Portable file, also shipped by the shadcn registry `theme` item. */
+@import "../styles/kraken-theme.css";
 
 /* Don't scan docs/skills/markdown for utility classes — they contain token
    examples and placeholders (e.g. `[css-property:var(--ds-<component>-<path>)]`)
@@ -12,13 +17,6 @@
 /* Brand fonts: "Noto Sans" (Randstadt) is loaded via a <link> in layout.tsx;
    "Moderat JIT" (JIT, proprietary) renders from the OS if installed — add woff2
    to public/fonts/ + an @font-face here to make it portable. */
-
-/* Kraken design tokens — 3-layer system; brand-switchable via [data-theme="…"] on <html> */
-@import "../styles/tokens.css";
-
-/* shadcn semantic vars → --ds-* mapping + @theme inline.
-   Portable file, also shipped by the shadcn registry `theme` item. */
-@import "../styles/kraken-theme.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -58,12 +56,14 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--color-border);
+    outline-color: color-mix(in oklch, var(--color-ring) 50%, transparent);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
   html {
-    @apply font-sans;
+    font-family: var(--font-sans);
   }
 }

@@ -100,6 +100,7 @@ export const AllStates: Story = {
             {checkedStates.map((c) => (
               <Checkbox
                 key={c}
+                aria-label={`${row.label} ${c}`}
                 error={row.error}
                 disabled={row.disabled}
                 defaultChecked={c === 'true'}

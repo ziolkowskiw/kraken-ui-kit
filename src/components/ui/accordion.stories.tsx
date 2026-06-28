@@ -150,16 +150,16 @@ export const Variants: Story = {
   render: () => (
     <div className="flex flex-col gap-8 w-[510px]">
       {VARIANTS.map((variant) => (
-        <Accordion key={variant} defaultValue={[0]}>
+        <Accordion key={variant} defaultValue={[0]} aria-label={`${variant === 'in-box' ? 'In-box' : 'Standalone'} variant`}>
           <AccordionItem variant={variant}>
             <AccordionTrigger
-              title="Accordion title"
+              title={`${variant === 'in-box' ? 'In-box' : 'Standalone'} accordion`}
               subtitle="Accordion Subtitle"
               icon={renderIcon('SquircleDashed' as IconName)}
             />
             <AccordionContent
               hasTitle
-              contentTitle="Accordion content title"
+              contentTitle={`${variant === 'in-box' ? 'In-box' : 'Standalone'} content`}
             >
               Lorem ipsum dolor sit amet consectetur adipiscing elit.
             </AccordionContent>

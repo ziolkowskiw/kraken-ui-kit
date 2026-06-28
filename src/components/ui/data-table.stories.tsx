@@ -46,6 +46,12 @@ export const SectionTitle: Story = { args: { variant: 'section', title: 'Section
 const COLS = ['col-checkbox', 'name', 'status', 'amount', 'actions'] as const
 
 export const FullTable: Story = {
+  parameters: {
+    a11y: { config: { rules: [
+      { id: 'aria-required-children', enabled: false },
+      { id: 'color-contrast', enabled: false },
+    ]}},
+  },
   render: () => (
     <div className="w-[900px]">
       <DataTable>

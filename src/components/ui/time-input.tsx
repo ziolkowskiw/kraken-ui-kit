@@ -62,17 +62,20 @@ function TimeInputField({
   mandatory,
   tooltip,
   error,
+  id: idProp,
   className,
   ...props
-}: TimeInputFieldProps) {
+}: TimeInputFieldProps & { id?: string }) {
+  const generatedId = React.useId()
+  const id = idProp ?? generatedId
   const hasError = error || !!errorMessage
   return (
     <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
       {label && (
         <div className="flex items-center gap-1 h-4">
-          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+          <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
             {label}
-          </span>
+          </label>
           {mandatory && <span className="[color:var(--ds-input-contenterror)]">*</span>}
           {tooltip && (
             <TooltipProvider>
@@ -81,7 +84,7 @@ function TimeInputField({
           )}
         </div>
       )}
-      <TimeInput error={hasError} {...props} />
+      <TimeInput id={id} error={hasError} {...props} />
       {hasError && errorMessage ? (
         <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
           {errorMessage}

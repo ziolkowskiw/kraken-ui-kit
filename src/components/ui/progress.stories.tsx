@@ -26,6 +26,11 @@ export const Playground: Story = {}
 
 export const NoLabels: Story = {
   args: { showLabels: false, value: 40 },
+  render: (args) => (
+    <div className="w-80">
+      <Progress {...args} aria-label="Progress" />
+    </div>
+  ),
 }
 
 export const Steps: Story = {

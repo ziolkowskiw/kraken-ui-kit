@@ -64,6 +64,7 @@ function Slider({
           <SliderPrimitive.Thumb
             key={i}
             data-slot="slider-thumb"
+            aria-label={thumbCount > 1 ? (i === 0 ? "Minimum value" : "Maximum value") : "Value"}
             className={cn(
               "block size-4 shrink-0 border-2 outline-none transition-[box-shadow]",
               "[border-radius:var(--ds-radius-full)] [border-color:var(--ds-color-primary)] [background-color:var(--ds-color-white)]",

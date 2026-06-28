@@ -71,8 +71,10 @@ const meta = {
     actionLabel: 'Action verb',
   },
   render: ({ iconName, ...args }: StoryProps) => (
-    <div className="w-[260px] border border-dashed border-border">
-      <DataTableCell {...args} icon={renderIcon(iconName)} />
+    <div role="table" className="w-[260px] border border-dashed border-border">
+      <div role="row">
+        <DataTableCell {...args} icon={renderIcon(iconName)} />
+      </div>
     </div>
   ),
 } satisfies Meta<StoryProps>
@@ -84,10 +86,10 @@ export const Playground: Story = {}
 
 export const AllTypes: Story = {
   render: () => (
-    <div className="flex w-[280px] flex-col divide-y divide-border border border-border">
+    <div role="table" className="flex w-[280px] flex-col divide-y divide-border border border-border">
       {TYPES.map((t) => (
-        <div key={t} className="flex items-center">
-          <span className="w-28 shrink-0 px-2 text-xs text-muted-foreground">{t}</span>
+        <div key={t} role="row" className="flex items-center">
+          <span role="cell" className="w-28 shrink-0 px-2 text-xs text-muted-foreground">{t}</span>
           <DataTableCell type={t} />
         </div>
       ))}

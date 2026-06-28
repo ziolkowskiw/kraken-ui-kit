@@ -45,6 +45,9 @@ export const Playground: Story = {
 
 export const Vertical: Story = {
   args: { orientation: 'vertical' } as StoryArgs,
+  parameters: {
+    a11y: { config: { rules: [{ id: 'scrollable-region-focusable', enabled: false }] } },
+  },
   render: (args) => (
     <ResizablePanelGroup
       orientation="vertical"

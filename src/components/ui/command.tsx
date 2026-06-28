@@ -41,6 +41,7 @@ function CommandInput({ className, ...props }: AutocompletePrimitive.Input.Props
           className
         )}
         {...props}
+        aria-label={(props as { 'aria-label'?: string })['aria-label'] ?? props.placeholder ?? "Search"}
       />
     </div>
   )
@@ -50,6 +51,8 @@ function CommandList({ className, ...props }: AutocompletePrimitive.List.Props) 
   return (
     <AutocompletePrimitive.List
       data-slot="command-list"
+      aria-label="Commands"
+      tabIndex={0}
       className={cn("max-h-72 scroll-py-1 overflow-x-hidden overflow-y-auto p-1", className)}
       {...props}
     />
