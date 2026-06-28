@@ -1,0 +1,33 @@
+## v0.0.1 — 2026-06-28
+
+- fix(parity): component and story tokenization tweaks
+- fix(parity): full 53-component visual parity QA pass
+- fix(parity): dialog tokenization + story naming
+- fix(parity): alert story defaults + tabs variant mapping
+- feat: theme editor push-to-Figma + import/export round-trip; figma-binder & release agents
+- feat(theme-editor): add Import-JSON round-trip
+- docs: update README status + add 7 missing components to MAPPING.md
+- feat(theme-editor): resizable table/preview split + richer preview
+- feat(theme-editor): rebuild as semantic-layer editor (variables studio)
+- feat(theme-editor): single-style builder with fonts + type scale + save/switch
+- fix(layout): add precedence to body-rendered font stylesheet
+- fix(css): stop Tailwind scanning markdown/docs for utility classes
+- feat(theme-editor): visual semantic-layer theme editor (Phase 8)
+- docs(components): per-component docs for all 55 components (Phase 7)
+- feat(registry): shadcn registry + AI-native skills/agents (Phase 7)
+- docs(mapping): add MAPPING.md — Figma↔code bridge for 40 parents
+- feat(components): implement all remaining Figma components + Switch tooltip
+- feat(stories): working stories for all v1-12 components
+- feat(button): mirror Figma button API, bound to Layer-3 tokens
+- feat(badge): full lucide icon set in Storybook icon pickers
+- feat(badge): icon picker in Storybook (Left/Right icon dropdowns)
+- fix(badge): fixed height per size + toggleable icons in Storybook
+- feat(badge): mirror Figma badge API, bound to Layer-3 tokens
+- fix: wire brand fonts (Moderat JIT / Noto Sans) to the app
+- fix: suppressHydrationWarning on <html>; real app metadata
+- docs: README quick start + Phase 5 status
+- Phase 5: Storybook 10 (nextjs-vite) with brand toolbar + token theming
+- Phase 5: React kit — Next.js 16 + Tailwind v4 + shadcn, brand-wired
+- Phase 4: token pipeline (Figma → DTCG JSON → brand-switchable CSS)
+- Initial commit
+
