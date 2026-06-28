@@ -24,9 +24,6 @@ const PanelContent = ({ label }: { label: string }) => (
 )
 
 export const Playground: Story = {
-  argTypes: {
-    withHandle: { control: 'boolean' },
-  },
   args: { withHandle: true } as StoryArgs,
   render: (args) => {
     const { withHandle, ...groupArgs } = args as StoryArgs

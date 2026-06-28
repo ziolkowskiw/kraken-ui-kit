@@ -57,7 +57,7 @@ function Separator({
   return (
     <SeparatorPrimitive
       data-slot="separator"
-      orientation={orientation}
+      orientation={orientation ?? "horizontal"}
       className={classes}
       {...props}
     />
