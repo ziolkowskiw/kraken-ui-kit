@@ -17,7 +17,7 @@ Switch the whole kit's look by changing **only the semantic layer** (the brand m
 
 ```html
 <html>                          <!-- jit brand: yellow #FFD242, rounded -->
-<html data-theme="randstadt">   <!-- randstadt brand: blue #298EE5, sharp -->
+<html data-theme="brand">   <!-- brand brand: blue #298EE5, sharp -->
 ```
 
 ## Token pipeline
@@ -40,7 +40,7 @@ npm run storybook      # component explorer at :6006 (Brand toggle in the toolba
 
 ## Status
 
-- ✅ **Phase 4 — Token pipeline**: 827 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ randstadt).
+- ✅ **Phase 4 — Token pipeline**: 827 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ brand).
 - ✅ **Phase 5 — React kit + Storybook**: Next.js 16 + Tailwind v4 + shadcn (Base UI); 55+ components wired to tokens; live brand toggle in both the showcase and Storybook.
 - ✅ **Phase 6 — Figma↔code mapping**: `MAPPING.md` — 40 parent components, Figma node IDs + source links.
 - ✅ **Phase 7 — Registry + AI layer**: shadcn registry (58 items), 6 skills (token-sync, drift-audit, parity-reviewer, implement-figma-component, mapping-doctor, add-component), per-component docs.

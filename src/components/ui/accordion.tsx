@@ -99,7 +99,7 @@ function AccordionTrigger({
           compact
             ? "[padding-block:var(--ds-spacing-component-lg)]"
             : "[padding-block:var(--ds-spacing-component-xl)]",
-          "focus-visible:ring-2 focus-visible:[ring-color:var(--ds-color-border-focus)] focus-visible:ring-offset-1 [border-radius:var(--ds-card-radius)]",
+          "focus-visible:ring-2 focus-visible:[--tw-ring-color:var(--ds-color-border-focus)] focus-visible:ring-offset-1 [border-radius:var(--ds-card-radius)]",
           // Base UI strips the native `disabled` attr on composite triggers, so
           // hook the disabled look on data-disabled / aria-disabled instead.
           "aria-disabled:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",

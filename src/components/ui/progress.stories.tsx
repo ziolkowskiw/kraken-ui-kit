@@ -8,8 +8,8 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     value: { control: { type: 'range', min: 0, max: 100, step: 1 } },
-    label: { control: 'text' },
     showLabels: { control: 'boolean' },
+    label: { control: 'text', if: { arg: 'showLabels' } },
   },
   args: { value: 60, label: 'Uploading…', showLabels: true },
   render: (args) => (

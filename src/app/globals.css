@@ -14,7 +14,7 @@
 @source not "../../.claude";
 @source not "../../docs";
 
-/* Brand fonts: "Noto Sans" (Randstadt) is loaded via a <link> in layout.tsx;
+/* Brand fonts: "Noto Sans" (Brand) is loaded via a <link> in layout.tsx;
    "Moderat JIT" (JIT, proprietary) renders from the OS if installed — add woff2
    to public/fonts/ + an @font-face here to make it portable. */
 

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import * as React from 'react'
-import { icons } from 'lucide-react'
 import { Button } from './button'
+import { iconArgType, renderIcon, type IconName } from '@/lib/story-helpers'
 
 const VARIANTS = [
   'primary',
@@ -13,16 +13,6 @@ const VARIANTS = [
   'destructive-ghost',
 ] as const
 const SIZES = ['xs', 'sm', 'md', 'lg'] as const
-
-// Same icon-picker approach as Badge: the full lucide set as a control. The real
-// leftIcon/rightIcon props accept any ReactNode. "none" = no icon.
-type IconName = 'none' | keyof typeof icons
-const ICON_OPTIONS: IconName[] = ['none', ...(Object.keys(icons) as (keyof typeof icons)[])]
-const renderIcon = (name?: IconName): React.ReactNode => {
-  if (!name || name === 'none') return undefined
-  const Icon = icons[name as keyof typeof icons]
-  return Icon ? <Icon /> : undefined
-}
 
 type StoryProps = React.ComponentProps<typeof Button> & {
   leftIconName?: IconName
@@ -39,8 +29,8 @@ const meta = {
     size: { control: 'inline-radio', options: SIZES },
     iconOnly: { control: 'boolean' },
     disabled: { control: 'boolean' },
-    leftIconName: { control: 'select', options: ICON_OPTIONS, name: 'Left icon' },
-    rightIconName: { control: 'select', options: ICON_OPTIONS, name: 'Right icon' },
+    leftIconName: iconArgType('Left icon'),
+    rightIconName: iconArgType('Right icon'),
     leftIcon: { table: { disable: true } },
     rightIcon: { table: { disable: true } },
   },

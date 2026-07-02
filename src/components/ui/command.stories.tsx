@@ -53,22 +53,34 @@ function renderItem(cmd: Cmd) {
   )
 }
 
-const meta = {
+type StoryProps = {
+  placeholder: string
+  emptyText: string
+}
+
+const meta: Meta<StoryProps> = {
   title: 'Components/Command',
-  component: Command,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
-} satisfies Meta<typeof Command>
+  argTypes: {
+    placeholder: { control: 'text', name: 'Input placeholder', table: { category: 'Nested: Input' } },
+    emptyText: { control: 'text', name: 'Empty state', table: { category: 'Content' } },
+  },
+  args: {
+    placeholder: 'Type a command or search…',
+    emptyText: 'No results found.',
+  },
+}
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 // Flat command palette: input, empty state, and a single ungrouped list.
 export const Playground: Story = {
-  render: () => (
+  render: ({ placeholder, emptyText }) => (
     <Command items={commands.map((c) => c.label)} className="w-80">
-      <CommandInput placeholder="Type a command or search…" />
-      <CommandEmpty>No results found.</CommandEmpty>
+      <CommandInput placeholder={placeholder} />
+      <CommandEmpty>{emptyText}</CommandEmpty>
       <CommandList>
         {(label: string) => renderItem(commands.find((c) => c.label === label)!)}
       </CommandList>

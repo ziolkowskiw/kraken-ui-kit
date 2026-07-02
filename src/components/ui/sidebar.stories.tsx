@@ -20,29 +20,42 @@ const items = [
   { title: 'Settings', icon: Settings },
 ]
 
-const meta = {
+type StoryProps = {
+  collapsed: boolean
+  showHeader: boolean
+  showFooter: boolean
+  groupLabel: string
+  itemCount: number
+}
+
+const meta: Meta<StoryProps> = {
   title: 'Components/Sidebar',
-  component: Sidebar,
   parameters: { layout: 'fullscreen' },
   tags: ['autodocs'],
   argTypes: {
-    collapsed: { control: 'boolean' },
+    collapsed: { control: 'boolean', name: 'Collapsed', table: { category: 'Layout' } },
+    showHeader: { control: 'boolean', name: 'Header', table: { category: 'Slots' } },
+    showFooter: { control: 'boolean', name: 'Footer', table: { category: 'Slots' } },
+    groupLabel: { control: 'text', name: 'Group label', table: { category: 'Content' } },
+    itemCount: { control: { type: 'range', min: 1, max: 5, step: 1 }, name: 'Menu items', table: { category: 'Content' } },
   },
-  args: { collapsed: false },
-  render: (args) => (
+  args: { collapsed: false, showHeader: true, showFooter: true, groupLabel: 'Platform', itemCount: 5 },
+  render: ({ collapsed, showHeader, showFooter, groupLabel, itemCount }) => (
     <div className="flex h-96">
-      <Sidebar {...args}>
-        <SidebarHeader>
-          <div className="flex size-8 items-center justify-center rounded-md [background-color:var(--ds-sidebar-primary)] [color:var(--ds-sidebar-primaryforeground)] font-semibold">
-            K
-          </div>
-          {!args.collapsed && <span className="font-medium">Kraken</span>}
-        </SidebarHeader>
+      <Sidebar collapsed={collapsed}>
+        {showHeader && (
+          <SidebarHeader>
+            <div className="flex size-8 items-center justify-center rounded-md [background-color:var(--ds-sidebar-primary)] [color:var(--ds-sidebar-primaryforeground)] font-semibold">
+              K
+            </div>
+            {!collapsed && <span className="font-medium">Kraken</span>}
+          </SidebarHeader>
+        )}
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Platform</SidebarGroupLabel>
+            <SidebarGroupLabel>{groupLabel}</SidebarGroupLabel>
             <SidebarMenu>
-              {items.map((item) => (
+              {items.slice(0, itemCount).map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton isActive={item.active}>
                     <item.icon />
@@ -53,17 +66,19 @@ const meta = {
             </SidebarMenu>
           </SidebarGroup>
         </SidebarContent>
-        <SidebarFooter>
-          <SidebarMenuButton>
-            <ChevronRight />
-            <span>Account</span>
-          </SidebarMenuButton>
-        </SidebarFooter>
+        {showFooter && (
+          <SidebarFooter>
+            <SidebarMenuButton>
+              <ChevronRight />
+              <span>Account</span>
+            </SidebarMenuButton>
+          </SidebarFooter>
+        )}
       </Sidebar>
       <div className="flex-1 p-6 text-sm [color:var(--ds-color-content-secondary)]">Main content area</div>
     </div>
   ),
-} satisfies Meta<typeof Sidebar>
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

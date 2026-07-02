@@ -58,14 +58,14 @@ Part of the goal is a kit that is *self-maintaining* via AI. These ship inside t
 | Phase | What | Status |
 |---|---|---|
 | 0 | Decisions & setup | ✅ v1 list frozen, repo confirmed |
-| 1 | Token architecture on paper | ✅ (dark mode deferred to v1.1 — semantic modes are brands `jit`/`randstadt`) |
+| 1 | Token architecture on paper | ✅ (dark mode deferred to v1.1 — semantic modes are brands `jit`/`brand`) |
 | 2 | Variable system built in Figma | ✅ 3 clean layers, 100% alias chains, +6 shadcn tokens, sidebar added |
 | 3 | Component sets mirror shadcn | ✅ All open items resolved (button-size 1:1, outline/link confirmed, zero-hardcoded sweep done via parity review) |
-| 4 | Token pipeline: Figma → JSON → CSS | ✅ (2026-06-13 — 827 tokens, jit⇄randstadt verified, committed to repo) |
+| 4 | Token pipeline: Figma → JSON → CSS | ✅ (2026-06-13 — 827 tokens, jit⇄brand verified, committed to repo) |
 | 5 | React kit + Storybook | ✅ (2026-06-14 all 12 rebuilt; visual QA pass COMPLETE 2026-06-23 — all 53 components PASS/FIXED) |
 | 6 | Figma ↔ code mapping (`MAPPING.md`) | ✅ (2026-06-17 — 40 parents mapped, v1-12 full prop maps, conventions + dup-by-nodeID locked) |
 | 7 | AI-native layer (registry + skills/agents) | ✅ (2026-06-28 — registry, using-kraken-ui-kit skill, all 4 skills + 3 agents complete) |
-| 8 | Visual semantic-layer theme editor | ✅ (2026-06-28 — 249-token editor, import/export round-trip, push-to-Figma, per-mode jit/randstadt) |
+| 8 | Visual semantic-layer theme editor | ✅ (2026-06-28 — 249-token editor, import/export round-trip, push-to-Figma, per-mode jit/brand) |
 | **9** | **Governance (ongoing)** | **🟡 infrastructure in place; first release not yet cut** |
 
 **All four pillars are live.** The kit ships: theme editor restyles real components, registry installs tokenized components, MAPPING.md maps every Figma node to code, skills/agents maintain it. Phase 9 is ongoing governance — run `npm run release -- --yes` to cut the first tagged version.
@@ -84,7 +84,7 @@ Part of the goal is a kit that is *self-maintaining* via AI. These ship inside t
 
 ## Phase 1 — Token architecture on paper  ✅
 
-Complete. 3-layer map exists; OKLCH primitives; semantic uses shadcn names verbatim + documented `success`/`warning` extensions; `content`→`foreground` export mapping documented. Dark mode **deferred to v1.1** (current semantic modes are brands `jit`/`randstadt`; matrix `brand×light/dark` modes come later).
+Complete. 3-layer map exists; OKLCH primitives; semantic uses shadcn names verbatim + documented `success`/`warning` extensions; `content`→`foreground` export mapping documented. Dark mode **deferred to v1.1** (current semantic modes are brands `jit`/`brand`; matrix `brand×light/dark` modes come later).
 
 ---
 
@@ -114,12 +114,12 @@ All open items resolved:
 
 Built in `kraken-ui-kit` (commit `b295cac`). Decision: the figma-console-mcp export replaces Style Dictionary — it understands this token system's brand-mode + reference format natively; a tiny committed Node script does the deterministic selector-shaping (CI-safe, no Figma needed). Result:
 
-1. ✅ `tokens/tokens.dtcg.json` — 827 tokens (global 302 / semantic 249 / component 276), W3C DTCG, **aliases + `jit`/`randstadt` brand splits preserved**, `_preview-labels` excluded. Via `figma_export_tokens`.
+1. ✅ `tokens/tokens.dtcg.json` — 827 tokens (global 302 / semantic 249 / component 276), W3C DTCG, **aliases + `jit`/`brand` brand splits preserved**, `_preview-labels` excluded. Via `figma_export_tokens`.
 2. ✅ `tokens/tokens.raw.css` — css-vars export, `--ds-` prefix, aliases kept as `var()` chains. Name rule from the conventions doc applied automatically.
-3. ✅ `scripts/build-tokens.mjs` → `src/styles/tokens.css`: remaps the per-collection-mode blocks to the correct cascade — primitives + component tokens → `:root`; semantic brands → `:root,[data-theme="jit"]` (default) + `[data-theme="randstadt"]`.
+3. ✅ `scripts/build-tokens.mjs` → `src/styles/tokens.css`: remaps the per-collection-mode blocks to the correct cascade — primitives + component tokens → `:root`; semantic brands → `:root,[data-theme="jit"]` (default) + `[data-theme="brand"]`.
 4. ✅ One command (`npm run tokens:build`); the Figma→files sync ritual is documented in `docs/token-pipeline.md` (becomes the `token-sync` skill in Phase 7).
 
-**Verified:** flipping `data-theme="randstadt"` restyles the kit through the cascade — `--ds-button-primary-fill` `#FFD242`→`#298EE5`, `--ds-radius-md` `6px`→`0px` — with component tokens untouched.
+**Verified:** flipping `data-theme="brand"` restyles the kit through the cascade — `--ds-button-primary-fill` `#FFD242`→`#298EE5`, `--ds-radius-md` `6px`→`0px` — with component tokens untouched.
 
 **Open follow-ups (non-blocking):** color format is hex (oklch requested but tool kept hex — fine for Tailwind v4; revisit if charts need oklch); `chart/color/N`→`chart-N` and `content`→`foreground` shadcn renames not yet applied (do as an export name-map when wiring components in Phase 5).
 
@@ -133,8 +133,8 @@ Built in `kraken-ui-kit`. Stack: Next.js 16 / React 19 / Tailwind v4 / shadcn (B
 
 1. ✅ Scaffolded; `shadcn add` the v1 12 (button, input, textarea, select, checkbox, radio-group, switch, badge, card, alert, dialog, tabs).
 2. ✅ `globals.css` imports `tokens.css` and re-points shadcn's semantic vars (`--primary`, `--background`, …) at our `--ds-*` tokens — 1:1 because the semantic layer already uses shadcn names. Brand switch cascades from the token layer (no per-brand overrides in the app).
-3. ✅ Showcase page (`src/app/page.tsx`) with a live jit/randstadt toggle; Storybook 10 (`nextjs-vite`) with a **brand toolbar** toggle.
-4. ✅ **Verified:** `next build` passes; dev server serves the page; compiled CSS (Next + Storybook) carries `--primary→--ds-color-primary` and the `[data-theme="randstadt"]` override (`#298ee5`).
+3. ✅ Showcase page (`src/app/page.tsx`) with a live jit/brand toggle; Storybook 10 (`nextjs-vite`) with a **brand toolbar** toggle.
+4. ✅ **Verified:** `next build` passes; dev server serves the page; compiled CSS (Next + Storybook) carries `--primary→--ds-color-primary` and the `[data-theme="brand"]` override (`#298ee5`).
 
 **Component API parity (Phase 5.1) — ✅ ALL 12 REBUILT (2026-06-14).**
 Every v1 component has been rebuilt from the stock shadcn version to mirror its Figma component API, with Layer-3 token bindings and full Storybook controls matching Figma properties.
@@ -229,7 +229,7 @@ Layer-1 primitive** (keep the alias contract), **full 249-token semantic layer**
    - Verified: `tsc` clean, `next build` prerenders. (Run: `npm run dev` → `/theme-editor`.)
 2. ✅ Live preview wired to the component dashboard (part of #1).
 3. ✅ **Import-JSON box** — `ImportPanel` in `theme-editor/page.tsx`; paste a previously exported `kraken-semantic@1` JSON to reload a saved style.
-4. ✅ **Per-mode (jit/randstadt) editing** — the push-to-Figma panel lets you select the target Figma semantic mode before pushing; the editor table edits whichever style is active (brand-agnostic overrides that can be pushed to either mode).
+4. ✅ **Per-mode (jit/brand) editing** — the push-to-Figma panel lets you select the target Figma semantic mode before pushing; the editor table edits whichever style is active (brand-agnostic overrides that can be pushed to either mode).
 5. ✅ **Push-to-Figma** — `PushToFigmaPanel` in the editor sidebar + `src/app/api/push-to-figma/route.ts`; writes the re-pointed semantic aliases back into the Figma `semantic` collection via the REST API. PAT stored in `localStorage`. Part C of `theme-apply` skill.
 
 **Done when:** ~~a user creates a theme visually, it restyles the live preview, and (if extended) syncs to Figma.~~ ✅ Met.

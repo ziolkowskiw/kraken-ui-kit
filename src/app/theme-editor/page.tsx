@@ -316,7 +316,7 @@ function ContrastPanel({ contrast }: { contrast: Record<string, string> }) {
   );
 }
 
-const MODES = ["jit", "randstadt"] as const;
+const MODES = ["jit", "brand"] as const;
 type PushStatus = "idle" | "loading" | "ok" | "error";
 
 function PushToFigmaPanel({ overrides }: { overrides: Record<string, string> }) {

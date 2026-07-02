@@ -10,10 +10,12 @@ import {
 } from './card'
 import { Button } from './button'
 import { Input } from './input'
+import { BUTTON_VARIANTS, type ButtonVariant } from '@/lib/story-helpers'
 
 // Card is compositional: a single Figma variant (filled) plus structural slots.
 // The Playground exposes those slots as story-only controls so the panel behaves
-// like a real card builder — text overrides + toggles for the optional regions.
+// like a real card builder — text overrides + toggles for the optional regions,
+// and the nested footer Buttons' labels/variant.
 type StoryProps = {
   filled: boolean
   title: string
@@ -21,6 +23,9 @@ type StoryProps = {
   contentText: string
   showAction: boolean
   showFooter: boolean
+  cancelLabel: string
+  confirmLabel: string
+  confirmVariant: ButtonVariant
 }
 
 const meta = {
@@ -35,6 +40,9 @@ const meta = {
     contentText: { control: 'text', name: 'Body text', table: { category: 'Content' } },
     showAction: { control: 'boolean', name: 'Show header action', table: { category: 'Slots' } },
     showFooter: { control: 'boolean', name: 'Show footer', table: { category: 'Slots' } },
+    cancelLabel: { control: 'text', name: 'Cancel label', table: { category: 'Nested: Footer' }, if: { arg: 'showFooter' } },
+    confirmLabel: { control: 'text', name: 'Confirm label', table: { category: 'Nested: Footer' }, if: { arg: 'showFooter' } },
+    confirmVariant: { control: 'select', options: BUTTON_VARIANTS, name: 'Confirm variant', table: { category: 'Nested: Footer' }, if: { arg: 'showFooter' } },
   },
   args: {
     filled: true,
@@ -43,8 +51,11 @@ const meta = {
     contentText: 'Project name',
     showAction: false,
     showFooter: true,
+    cancelLabel: 'Cancel',
+    confirmLabel: 'Deploy',
+    confirmVariant: 'primary',
   },
-  render: ({ filled, title, description, contentText, showAction, showFooter }: StoryProps) => (
+  render: ({ filled, title, description, contentText, showAction, showFooter, cancelLabel, confirmLabel, confirmVariant }: StoryProps) => (
     <Card filled={filled} className="w-80">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
@@ -63,9 +74,9 @@ const meta = {
       {showFooter && (
         <CardFooter className="justify-end gap-2">
           <Button variant="secondary" size="sm">
-            Cancel
+            {cancelLabel}
           </Button>
-          <Button size="sm">Deploy</Button>
+          <Button variant={confirmVariant} size="sm">{confirmLabel}</Button>
         </CardFooter>
       )}
     </Card>

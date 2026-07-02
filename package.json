@@ -2,7 +2,7 @@
   "name": "kraken-ui-kit",
   "version": "0.0.1",
   "private": true,
-  "description": "Kraken UI Kit — a shadcn-based design system with a 3-layer token architecture (global → semantic → component) and brand theming (jit / randstadt).",
+  "description": "Kraken UI Kit — a shadcn-based design system with a 3-layer token architecture (global → semantic → component) and brand theming (jit / brand).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

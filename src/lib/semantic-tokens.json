@@ -4897,92 +4897,92 @@
         "label": "purple 950"
       },
       {
-        "path": "color/randstadt/50",
-        "ds": "--ds-color-randstadt-50",
+        "path": "color/brand/50",
+        "ds": "--ds-color-brand-50",
         "value": "#F5FAFE",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "50",
-        "label": "randstadt 50"
+        "label": "brand 50"
       },
       {
-        "path": "color/randstadt/100",
-        "ds": "--ds-color-randstadt-100",
+        "path": "color/brand/100",
+        "ds": "--ds-color-brand-100",
         "value": "#CCE4F9",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "100",
-        "label": "randstadt 100"
+        "label": "brand 100"
       },
       {
-        "path": "color/randstadt/200",
-        "ds": "--ds-color-randstadt-200",
+        "path": "color/brand/200",
+        "ds": "--ds-color-brand-200",
         "value": "#A3CEF4",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "200",
-        "label": "randstadt 200"
+        "label": "brand 200"
       },
       {
-        "path": "color/randstadt/300",
-        "ds": "--ds-color-randstadt-300",
+        "path": "color/brand/300",
+        "ds": "--ds-color-brand-300",
         "value": "#7AB9EF",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "300",
-        "label": "randstadt 300"
+        "label": "brand 300"
       },
       {
-        "path": "color/randstadt/400",
-        "ds": "--ds-color-randstadt-400",
+        "path": "color/brand/400",
+        "ds": "--ds-color-brand-400",
         "value": "#52A3EA",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "400",
-        "label": "randstadt 400"
+        "label": "brand 400"
       },
       {
-        "path": "color/randstadt/500",
-        "ds": "--ds-color-randstadt-500",
+        "path": "color/brand/500",
+        "ds": "--ds-color-brand-500",
         "value": "#298EE5",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "500",
-        "label": "randstadt 500"
+        "label": "brand 500"
       },
       {
-        "path": "color/randstadt/600",
-        "ds": "--ds-color-randstadt-600",
+        "path": "color/brand/600",
+        "ds": "--ds-color-brand-600",
         "value": "#0078E0",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "600",
-        "label": "randstadt 600"
+        "label": "brand 600"
       },
       {
-        "path": "color/randstadt/700",
-        "ds": "--ds-color-randstadt-700",
+        "path": "color/brand/700",
+        "ds": "--ds-color-brand-700",
         "value": "#0065BC",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "700",
-        "label": "randstadt 700"
+        "label": "brand 700"
       },
       {
-        "path": "color/randstadt/800",
-        "ds": "--ds-color-randstadt-800",
+        "path": "color/brand/800",
+        "ds": "--ds-color-brand-800",
         "value": "#005298",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "800",
-        "label": "randstadt 800"
+        "label": "brand 800"
       },
       {
-        "path": "color/randstadt/900",
-        "ds": "--ds-color-randstadt-900",
+        "path": "color/brand/900",
+        "ds": "--ds-color-brand-900",
         "value": "#002B51",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "900",
-        "label": "randstadt 900"
+        "label": "brand 900"
       },
       {
-        "path": "color/randstadt/950",
-        "ds": "--ds-color-randstadt-950",
+        "path": "color/brand/950",
+        "ds": "--ds-color-brand-950",
         "value": "#00182D",
-        "ramp": "randstadt",
+        "ramp": "brand",
         "step": "950",
-        "label": "randstadt 950"
+        "label": "brand 950"
       },
       {
         "path": "color/red/50",
@@ -5711,10 +5711,10 @@
         "label": "jit"
       },
       {
-        "path": "fontFamily/randstadt",
-        "ds": "--ds-fontfamily-randstadt",
+        "path": "fontFamily/brand",
+        "ds": "--ds-fontfamily-brand",
         "value": "Noto Sans",
-        "label": "randstadt"
+        "label": "brand"
       }
     ],
     "fontSize": [

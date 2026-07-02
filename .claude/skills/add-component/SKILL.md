@@ -32,10 +32,17 @@ first-class kit citizen.
      errorMessage / mandatory).
    - Nested instances compose the real child component (Button/Badge/Input/…).
 
-3. **Write `src/components/ui/<name>.stories.tsx:`** controls mirror the Figma
-   property surface 1:1 (enum→select, boolean→toggle, text→text, icon→lucide
-   picker). Pin examples to `state=rest`. Disable auto ReactNode/Date controls
-   (use the `hasTooltip` + `tooltipText` pattern; see field stories).
+3. **Write `src/components/ui/<name>.stories.tsx`** to the gold standard in
+   [`docs/storybook-conventions.md`](../../../docs/storybook-conventions.md).
+   Controls mirror the Figma property surface 1:1 (enum→select, boolean→toggle,
+   text→text, icon→lucide picker via `iconArgType`/`renderIcon` from
+   `@/lib/story-helpers`). Nested child components get `Nested: <part>` control
+   categories (`nestedButtonArgTypes`). **Gate every dependent control with `if:`**
+   so it hides when irrelevant — a `show*`/`has*` toggle hides its paired content
+   control (`subtitle: { …, if: { arg: 'hasSubtitle' } }`), and type/variant-specific
+   controls gate on the value (`if: { arg: 'type', eq: 'badge' }`). Pin examples to
+   `state=rest`; disable auto ReactNode/Date controls (the `hasTooltip` +
+   `tooltipText` pattern; see field stories).
 
 4. **Validate:** `tsc --noEmit` passes; `npm run build-storybook` (exit 0); render
    the story. Fix until clean.
@@ -49,5 +56,6 @@ first-class kit citizen.
    derived from its imports). Then `npx shadcn build` to refresh `public/r/`.
 
 ## Done when
-The component renders in Storybook with Figma-parity controls, uses only `--ds-*`
+The component renders in Storybook with Figma-parity controls (every dependent
+control gated with `if:` — no editable-but-ignored controls), uses only `--ds-*`
 tokens, has a `MAPPING.md` entry, and installs via `npx shadcn add @kraken/<name>`.

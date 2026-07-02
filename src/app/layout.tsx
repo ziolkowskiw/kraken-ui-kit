@@ -27,7 +27,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistMono.variable} h-full antialiased`}
     >
-      {/* Randstadt brand font, registered under its literal name "Noto Sans" so
+      {/* Brand font, registered under its literal name "Noto Sans" so
           the design token resolves to it. React 19 hoists these into <head>. */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link

@@ -41,10 +41,10 @@ const meta: Meta<DialogStoryProps> = {
   tags: ['autodocs'],
   argTypes: {
     // ── Content ──
-    titleLabel: { control: 'text', name: 'Title', table: { category: 'Content' } },
-    subtitleText: { control: 'text', name: 'Subtitle', table: { category: 'Content' } },
     hasTitle: { control: 'boolean', name: 'hasTitle', table: { category: 'Content' } },
+    titleLabel: { control: 'text', name: 'Title', table: { category: 'Content' }, if: { arg: 'hasTitle' } },
     hasSubtitle: { control: 'boolean', name: 'hasSubtitle', table: { category: 'Content' } },
+    subtitleText: { control: 'text', name: 'Subtitle', table: { category: 'Content' }, if: { arg: 'hasSubtitle' } },
     showCloseButton: { control: 'boolean', name: 'showCloseButton', table: { category: 'Content' } },
     // ── Nested: Trigger button ──
     triggerLabel: { control: 'text', name: 'Label', table: { category: 'Nested: Trigger' } },

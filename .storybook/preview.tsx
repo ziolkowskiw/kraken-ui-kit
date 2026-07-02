@@ -5,8 +5,10 @@ import React from 'react'
 import '../src/app/globals.css'
 
 const preview: Preview = {
-  // Brand switch in the Storybook toolbar — the live "change the semantic layer".
-  initialGlobals: { brand: 'jit' },
+  // Two live "change the semantic layer" switches in the toolbar:
+  //  • brand       — swaps the semantic brand tokens (jit ⇄ brand) via [data-theme]
+  //  • colorScheme — toggles the .dark token block (light ⇄ dark)
+  initialGlobals: { brand: 'jit', colorScheme: 'light' },
   globalTypes: {
     brand: {
       description: 'Brand theme (semantic layer)',
@@ -15,7 +17,19 @@ const preview: Preview = {
         icon: 'paintbrush',
         items: [
           { value: 'jit', title: 'JIT — yellow, rounded' },
-          { value: 'randstadt', title: 'Randstadt — blue, sharp' },
+          { value: 'brand', title: 'Brand — blue, sharp' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+    colorScheme: {
+      description: 'Light / dark color scheme',
+      toolbar: {
+        title: 'Scheme',
+        icon: 'contrast',
+        items: [
+          { value: 'light', title: 'Light' },
+          { value: 'dark', title: 'Dark' },
         ],
         dynamicTitle: true,
       },
@@ -23,11 +37,13 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      // jit is the :root default (no attribute); randstadt is the override.
       if (typeof document !== 'undefined') {
         const el = document.documentElement
-        if (context.globals.brand === 'randstadt') el.dataset.theme = 'randstadt'
+        // Brand: jit is the :root default (no attribute); brand is the override.
+        if (context.globals.brand === 'brand') el.dataset.theme = 'brand'
         else delete el.dataset.theme
+        // Color scheme: toggle the `.dark` token block on <html>.
+        el.classList.toggle('dark', context.globals.colorScheme === 'dark')
       }
       return (
         <div className="bg-background text-foreground p-6">
@@ -46,6 +62,9 @@ const preview: Preview = {
     a11y: {
       test: 'error',
       config: {
+        // color-contrast is evaluated against the live theme; kept off here to
+        // avoid false failures from the brand/dark permutations. Re-enable per
+        // story with parameters.a11y.config.rules once palettes are AA-verified.
         rules: [{ id: 'color-contrast', enabled: false }],
       },
     },

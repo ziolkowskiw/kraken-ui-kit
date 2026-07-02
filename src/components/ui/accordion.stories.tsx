@@ -49,13 +49,14 @@ const meta = {
     compact: { control: 'boolean', name: 'Compact' },
     title: { control: 'text', name: 'Title' },
     hasSubtitle: { control: 'boolean', name: 'hasSubtitle' },
-    subtitle: { control: 'text', name: 'Subtitle' },
+    subtitle: { control: 'text', name: 'Subtitle', if: { arg: 'hasSubtitle' } },
     hasIcon: { control: 'boolean', name: 'hasIcon' },
     iconName: {
       control: 'select',
       options: ICON_OPTIONS,
       name: 'Icon',
       table: { category: 'Nested: Header' },
+      if: { arg: 'hasIcon' },
     },
     hasTitle: {
       control: 'boolean',
@@ -66,6 +67,7 @@ const meta = {
       control: 'text',
       name: 'Content title',
       table: { category: 'Nested: Content' },
+      if: { arg: 'hasTitle' },
     },
     content: {
       control: 'text',
@@ -81,6 +83,7 @@ const meta = {
       control: 'text',
       name: 'Link button label',
       table: { category: 'Nested: Content' },
+      if: { arg: 'hasLinkButton' },
     },
   },
   args: {

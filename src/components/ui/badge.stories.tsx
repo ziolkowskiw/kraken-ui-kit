@@ -1,21 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import * as React from 'react'
-import { icons, Check } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { Badge } from './badge'
+import { iconArgType, renderIcon, type IconName } from '@/lib/story-helpers'
 
 const COLORS = ['neutral', 'brand', 'green', 'red', 'orange', 'amber', 'blue', 'purple'] as const
 const APPEARANCES = ['filled', 'outlined', 'ghost'] as const
-
-// Story-side icon picker mirroring Figma's left/right icon instance-swap.
-// The real props (leftIcon/rightIcon) accept ANY ReactNode — this just exposes
-// the full lucide set (~1,715 icons) as a Storybook control. "none" = no icon.
-type IconName = 'none' | keyof typeof icons
-const ICON_OPTIONS: IconName[] = ['none', ...(Object.keys(icons) as (keyof typeof icons)[])]
-const renderIcon = (name?: IconName): React.ReactNode => {
-  if (!name || name === 'none') return undefined
-  const Icon = icons[name as keyof typeof icons]
-  return Icon ? <Icon /> : undefined
-}
 
 type StoryProps = React.ComponentProps<typeof Badge> & {
   leftIconName?: IconName
@@ -32,8 +22,8 @@ const meta = {
     appearance: { control: 'select', options: APPEARANCES },
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
     shape: { control: 'inline-radio', options: ['round', 'square'] },
-    leftIconName: { control: 'select', options: ICON_OPTIONS, name: 'Left icon' },
-    rightIconName: { control: 'select', options: ICON_OPTIONS, name: 'Right icon' },
+    leftIconName: iconArgType('Left icon'),
+    rightIconName: iconArgType('Right icon'),
     // hide the raw ReactNode props from the controls table
     leftIcon: { table: { disable: true } },
     rightIcon: { table: { disable: true } },

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import {
   Pagination,
   PaginationContent,
@@ -9,44 +10,79 @@ import {
   PaginationEllipsis,
 } from './pagination'
 
-const meta = {
+type StoryProps = {
+  totalPages: number
+  currentPage: number
+  showPrevNext: boolean
+}
+
+/** Windowed page list: always first + last, the current page ±1, ellipses for gaps. */
+function pageList(total: number, current: number): (number | 'ellipsis')[] {
+  const pages = new Set<number>([1, total, current, current - 1, current + 1])
+  const sorted = [...pages].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b)
+  const out: (number | 'ellipsis')[] = []
+  let prev = 0
+  for (const p of sorted) {
+    if (p - prev > 1) out.push('ellipsis')
+    out.push(p)
+    prev = p
+  }
+  return out
+}
+
+const meta: Meta<StoryProps> = {
   title: 'Components/Pagination',
-  component: Pagination,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
-} satisfies Meta<typeof Pagination>
+  argTypes: {
+    totalPages: { control: { type: 'range', min: 1, max: 20, step: 1 }, name: 'Total pages' },
+    currentPage: { control: { type: 'number', min: 1 }, name: 'Current page' },
+    showPrevNext: { control: 'boolean', name: 'Prev / Next' },
+  },
+  args: {
+    totalPages: 10,
+    currentPage: 2,
+    showPrevNext: true,
+  },
+  render: ({ totalPages, currentPage, showPrevNext }) => {
+    const current = Math.min(Math.max(currentPage, 1), totalPages)
+    return (
+      <Pagination>
+        <PaginationContent>
+          {showPrevNext && (
+            <PaginationItem>
+              <PaginationPrevious href="#" aria-disabled={current === 1} />
+            </PaginationItem>
+          )}
+          {pageList(totalPages, current).map((p, i) =>
+            p === 'ellipsis' ? (
+              <PaginationItem key={`e${i}`}>
+                <PaginationEllipsis />
+              </PaginationItem>
+            ) : (
+              <PaginationItem key={p}>
+                <PaginationLink href="#" isActive={p === current}>
+                  {p}
+                </PaginationLink>
+              </PaginationItem>
+            ),
+          )}
+          {showPrevNext && (
+            <PaginationItem>
+              <PaginationNext href="#" aria-disabled={current === totalPages} />
+            </PaginationItem>
+          )}
+        </PaginationContent>
+      </Pagination>
+    )
+  },
+}
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {
-  render: () => (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href="#" />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#" isActive>
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href="#">10</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href="#" />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
-  ),
-}
+export const Playground: Story = {}
+
+export const FewPages: Story = { args: { totalPages: 3, currentPage: 1 } }
+
+export const ManyPages: Story = { args: { totalPages: 20, currentPage: 10 } }

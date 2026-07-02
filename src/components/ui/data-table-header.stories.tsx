@@ -39,8 +39,8 @@ const meta = {
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
-    label: { control: 'text', name: 'Label', table: { category: 'Content' } },
     showLabel: { control: 'boolean', name: 'showLabel', table: { category: 'Content' } },
+    label: { control: 'text', name: 'Label', table: { category: 'Content' }, if: { arg: 'showLabel' } },
     empty: { control: 'boolean', name: 'Empty', table: { category: 'Content' } },
     alignment: { control: 'inline-radio', options: ALIGNMENTS, name: 'Alignment', table: { category: 'Layout' } },
     selected: { control: 'boolean', name: 'Selected (sorted column)', table: { category: 'State' } },
