@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2026-06-28T19:03:03.227Z",
+  "generatedAt": "2026-07-02T12:07:49.582Z",
   "counts": {
     "semantic": 249,
+    "component": 276,
+    "usageFiles": 54,
     "primitives": {
       "borderRadius": 9,
       "borderWidth": 4,
@@ -3749,6 +3751,4846 @@
       "resolved": "16"
     }
   ],
+  "component": [
+    {
+      "path": "alert/borderWidth",
+      "ds": "--ds-alert-borderwidth",
+      "group": "alert",
+      "name": "borderWidth",
+      "type": "dimension",
+      "primFamily": "borderWidth",
+      "target": {
+        "kind": "semantic",
+        "path": "borderWidth/sm",
+        "ds": "--ds-borderwidth-sm"
+      },
+      "resolved": "1"
+    },
+    {
+      "path": "alert/padding",
+      "ds": "--ds-alert-padding",
+      "group": "alert",
+      "name": "padding",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/lg",
+        "ds": "--ds-spacing-component-lg"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "alert/radius",
+      "ds": "--ds-alert-radius",
+      "group": "alert",
+      "name": "radius",
+      "type": "dimension",
+      "primFamily": "borderRadius",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/lg",
+        "ds": "--ds-radius-lg"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "avatar/borderWidth",
+      "ds": "--ds-avatar-borderwidth",
+      "group": "avatar",
+      "name": "borderWidth",
+      "type": "dimension",
+      "primFamily": "borderWidth",
+      "target": {
+        "kind": "semantic",
+        "path": "borderWidth/md",
+        "ds": "--ds-borderwidth-md"
+      },
+      "resolved": "2"
+    },
+    {
+      "path": "avatar/radius",
+      "ds": "--ds-avatar-radius",
+      "group": "avatar",
+      "name": "radius",
+      "type": "dimension",
+      "primFamily": "borderRadius",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/full",
+        "ds": "--ds-radius-full"
+      },
+      "resolved": "9999"
+    },
+    {
+      "path": "avatar/size/2xl",
+      "ds": "--ds-avatar-size-2xl",
+      "group": "avatar",
+      "name": "size/2xl",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/xl",
+        "ds": "--ds-spacing-component-height-xl"
+      },
+      "resolved": "48"
+    },
+    {
+      "path": "avatar/size/lg",
+      "ds": "--ds-avatar-size-lg",
+      "group": "avatar",
+      "name": "size/lg",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/md",
+        "ds": "--ds-spacing-component-height-md"
+      },
+      "resolved": "32"
+    },
+    {
+      "path": "avatar/size/md",
+      "ds": "--ds-avatar-size-md",
+      "group": "avatar",
+      "name": "size/md",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/sm",
+        "ds": "--ds-spacing-component-height-sm"
+      },
+      "resolved": "28"
+    },
+    {
+      "path": "avatar/size/sm",
+      "ds": "--ds-avatar-size-sm",
+      "group": "avatar",
+      "name": "size/sm",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/xs",
+        "ds": "--ds-spacing-component-height-xs"
+      },
+      "resolved": "24"
+    },
+    {
+      "path": "avatar/size/xl",
+      "ds": "--ds-avatar-size-xl",
+      "group": "avatar",
+      "name": "size/xl",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/lg",
+        "ds": "--ds-spacing-component-height-lg"
+      },
+      "resolved": "40"
+    },
+    {
+      "path": "avatar/size/xs",
+      "ds": "--ds-avatar-size-xs",
+      "group": "avatar",
+      "name": "size/xs",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/2xs",
+        "ds": "--ds-spacing-component-height-2xs"
+      },
+      "resolved": "20"
+    },
+    {
+      "path": "badge/amber/border",
+      "ds": "--ds-badge-amber-border",
+      "group": "badge",
+      "name": "amber/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/amber/muted",
+        "ds": "--ds-color-label-amber-muted"
+      },
+      "resolved": "#FDE68A"
+    },
+    {
+      "path": "badge/amber/content",
+      "ds": "--ds-badge-amber-content",
+      "group": "badge",
+      "name": "amber/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/amber/strong",
+        "ds": "--ds-color-label-amber-strong"
+      },
+      "resolved": "#B45309"
+    },
+    {
+      "path": "badge/amber/fill",
+      "ds": "--ds-badge-amber-fill",
+      "group": "badge",
+      "name": "amber/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/amber/subtle",
+        "ds": "--ds-color-label-amber-subtle"
+      },
+      "resolved": "#FEF3C7"
+    },
+    {
+      "path": "badge/blue/border",
+      "ds": "--ds-badge-blue-border",
+      "group": "badge",
+      "name": "blue/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/blue/muted",
+        "ds": "--ds-color-label-blue-muted"
+      },
+      "resolved": "#BFDBFE"
+    },
+    {
+      "path": "badge/blue/content",
+      "ds": "--ds-badge-blue-content",
+      "group": "badge",
+      "name": "blue/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/blue/strong",
+        "ds": "--ds-color-label-blue-strong"
+      },
+      "resolved": "#1D4ED8"
+    },
+    {
+      "path": "badge/blue/fill",
+      "ds": "--ds-badge-blue-fill",
+      "group": "badge",
+      "name": "blue/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/blue/subtle",
+        "ds": "--ds-color-label-blue-subtle"
+      },
+      "resolved": "#DBEAFE"
+    },
+    {
+      "path": "badge/brand/border",
+      "ds": "--ds-badge-brand-border",
+      "group": "badge",
+      "name": "brand/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/brand/muted",
+        "ds": "--ds-color-label-brand-muted"
+      },
+      "resolved": "#FFF3A3"
+    },
+    {
+      "path": "badge/brand/content",
+      "ds": "--ds-badge-brand-content",
+      "group": "badge",
+      "name": "brand/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/brand/strong",
+        "ds": "--ds-color-label-brand-strong"
+      },
+      "resolved": "#9E7900"
+    },
+    {
+      "path": "badge/brand/fill",
+      "ds": "--ds-badge-brand-fill",
+      "group": "badge",
+      "name": "brand/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/brand/subtle",
+        "ds": "--ds-color-label-brand-subtle"
+      },
+      "resolved": "#FFF9CC"
+    },
+    {
+      "path": "badge/fontWeight",
+      "ds": "--ds-badge-fontweight",
+      "group": "badge",
+      "name": "fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelSm/fontWeight",
+        "ds": "--ds-typography-labelsm-fontweight"
+      },
+      "resolved": "400"
+    },
+    {
+      "path": "badge/green/border",
+      "ds": "--ds-badge-green-border",
+      "group": "badge",
+      "name": "green/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/green/muted",
+        "ds": "--ds-color-label-green-muted"
+      },
+      "resolved": "#BBF7D0"
+    },
+    {
+      "path": "badge/green/content",
+      "ds": "--ds-badge-green-content",
+      "group": "badge",
+      "name": "green/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/green/strong",
+        "ds": "--ds-color-label-green-strong"
+      },
+      "resolved": "#15803D"
+    },
+    {
+      "path": "badge/green/fill",
+      "ds": "--ds-badge-green-fill",
+      "group": "badge",
+      "name": "green/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/green/subtle",
+        "ds": "--ds-color-label-green-subtle"
+      },
+      "resolved": "#DCFCE7"
+    },
+    {
+      "path": "badge/orange/border",
+      "ds": "--ds-badge-orange-border",
+      "group": "badge",
+      "name": "orange/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/orange/muted",
+        "ds": "--ds-color-label-orange-muted"
+      },
+      "resolved": "#FED7AA"
+    },
+    {
+      "path": "badge/orange/content",
+      "ds": "--ds-badge-orange-content",
+      "group": "badge",
+      "name": "orange/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/orange/strong",
+        "ds": "--ds-color-label-orange-strong"
+      },
+      "resolved": "#C2410C"
+    },
+    {
+      "path": "badge/orange/fill",
+      "ds": "--ds-badge-orange-fill",
+      "group": "badge",
+      "name": "orange/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/orange/subtle",
+        "ds": "--ds-color-label-orange-subtle"
+      },
+      "resolved": "#FFEDD5"
+    },
+    {
+      "path": "badge/purple/border",
+      "ds": "--ds-badge-purple-border",
+      "group": "badge",
+      "name": "purple/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/purple/muted",
+        "ds": "--ds-color-label-purple-muted"
+      },
+      "resolved": "#E9D5FF"
+    },
+    {
+      "path": "badge/purple/content",
+      "ds": "--ds-badge-purple-content",
+      "group": "badge",
+      "name": "purple/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/purple/strong",
+        "ds": "--ds-color-label-purple-strong"
+      },
+      "resolved": "#7E22CE"
+    },
+    {
+      "path": "badge/purple/fill",
+      "ds": "--ds-badge-purple-fill",
+      "group": "badge",
+      "name": "purple/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/purple/subtle",
+        "ds": "--ds-color-label-purple-subtle"
+      },
+      "resolved": "#F3E8FF"
+    },
+    {
+      "path": "badge/radius",
+      "ds": "--ds-badge-radius",
+      "group": "badge",
+      "name": "radius",
+      "type": "dimension",
+      "primFamily": "borderRadius",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/full",
+        "ds": "--ds-radius-full"
+      },
+      "resolved": "9999"
+    },
+    {
+      "path": "badge/red/border",
+      "ds": "--ds-badge-red-border",
+      "group": "badge",
+      "name": "red/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/red/muted",
+        "ds": "--ds-color-label-red-muted"
+      },
+      "resolved": "#FECACA"
+    },
+    {
+      "path": "badge/red/content",
+      "ds": "--ds-badge-red-content",
+      "group": "badge",
+      "name": "red/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/red/strong",
+        "ds": "--ds-color-label-red-strong"
+      },
+      "resolved": "#B91C1C"
+    },
+    {
+      "path": "badge/red/fill",
+      "ds": "--ds-badge-red-fill",
+      "group": "badge",
+      "name": "red/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/red/subtle",
+        "ds": "--ds-color-label-red-subtle"
+      },
+      "resolved": "#FEF2F2"
+    },
+    {
+      "path": "badge/size/lg/fontSize",
+      "ds": "--ds-badge-size-lg-fontsize",
+      "group": "badge",
+      "name": "size/lg/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelMd/fontSize",
+        "ds": "--ds-typography-labelmd-fontsize"
+      },
+      "resolved": "14"
+    },
+    {
+      "path": "badge/size/lg/fontWeight",
+      "ds": "--ds-badge-size-lg-fontweight",
+      "group": "badge",
+      "name": "size/lg/fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelMd/fontWeight",
+        "ds": "--ds-typography-labelmd-fontweight"
+      },
+      "resolved": "400"
+    },
+    {
+      "path": "badge/size/lg/height",
+      "ds": "--ds-badge-size-lg-height",
+      "group": "badge",
+      "name": "size/lg/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/sm",
+        "ds": "--ds-spacing-component-height-sm"
+      },
+      "resolved": "28"
+    },
+    {
+      "path": "badge/size/lg/paddingX",
+      "ds": "--ds-badge-size-lg-paddingx",
+      "group": "badge",
+      "name": "size/lg/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "badge/size/lg/paddingY",
+      "ds": "--ds-badge-size-lg-paddingy",
+      "group": "badge",
+      "name": "size/lg/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "badge/size/lg/radiusFull",
+      "ds": "--ds-badge-size-lg-radiusfull",
+      "group": "badge",
+      "name": "size/lg/radiusFull",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/full",
+        "ds": "--ds-radius-full"
+      },
+      "resolved": "9999"
+    },
+    {
+      "path": "badge/size/lg/radiusSquare",
+      "ds": "--ds-badge-size-lg-radiussquare",
+      "group": "badge",
+      "name": "size/lg/radiusSquare",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/xs",
+        "ds": "--ds-radius-xs"
+      },
+      "resolved": "2"
+    },
+    {
+      "path": "badge/size/md/fontSize",
+      "ds": "--ds-badge-size-md-fontsize",
+      "group": "badge",
+      "name": "size/md/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelSm/fontSize",
+        "ds": "--ds-typography-labelsm-fontsize"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "badge/size/md/fontWeight",
+      "ds": "--ds-badge-size-md-fontweight",
+      "group": "badge",
+      "name": "size/md/fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelSm/fontWeight",
+        "ds": "--ds-typography-labelsm-fontweight"
+      },
+      "resolved": "400"
+    },
+    {
+      "path": "badge/size/md/height",
+      "ds": "--ds-badge-size-md-height",
+      "group": "badge",
+      "name": "size/md/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/xs",
+        "ds": "--ds-spacing-component-height-xs"
+      },
+      "resolved": "24"
+    },
+    {
+      "path": "badge/size/md/paddingX",
+      "ds": "--ds-badge-size-md-paddingx",
+      "group": "badge",
+      "name": "size/md/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "badge/size/md/paddingY",
+      "ds": "--ds-badge-size-md-paddingy",
+      "group": "badge",
+      "name": "size/md/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "badge/size/md/radius",
+      "ds": "--ds-badge-size-md-radius",
+      "group": "badge",
+      "name": "size/md/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/full",
+        "ds": "--ds-radius-full"
+      },
+      "resolved": "9999"
+    },
+    {
+      "path": "badge/size/md/radiusSquare",
+      "ds": "--ds-badge-size-md-radiussquare",
+      "group": "badge",
+      "name": "size/md/radiusSquare",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/xs",
+        "ds": "--ds-radius-xs"
+      },
+      "resolved": "2"
+    },
+    {
+      "path": "badge/size/sm/fontSize",
+      "ds": "--ds-badge-size-sm-fontsize",
+      "group": "badge",
+      "name": "size/sm/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelSm/fontSize",
+        "ds": "--ds-typography-labelsm-fontsize"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "badge/size/sm/fontWeight",
+      "ds": "--ds-badge-size-sm-fontweight",
+      "group": "badge",
+      "name": "size/sm/fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelSm/fontWeight",
+        "ds": "--ds-typography-labelsm-fontweight"
+      },
+      "resolved": "400"
+    },
+    {
+      "path": "badge/size/sm/height",
+      "ds": "--ds-badge-size-sm-height",
+      "group": "badge",
+      "name": "size/sm/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/2xs",
+        "ds": "--ds-spacing-component-height-2xs"
+      },
+      "resolved": "20"
+    },
+    {
+      "path": "badge/size/sm/paddingX",
+      "ds": "--ds-badge-size-sm-paddingx",
+      "group": "badge",
+      "name": "size/sm/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "badge/size/sm/paddingY",
+      "ds": "--ds-badge-size-sm-paddingy",
+      "group": "badge",
+      "name": "size/sm/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "badge/size/sm/radiusFull",
+      "ds": "--ds-badge-size-sm-radiusfull",
+      "group": "badge",
+      "name": "size/sm/radiusFull",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/full",
+        "ds": "--ds-radius-full"
+      },
+      "resolved": "9999"
+    },
+    {
+      "path": "badge/size/sm/radiusSquare",
+      "ds": "--ds-badge-size-sm-radiussquare",
+      "group": "badge",
+      "name": "size/sm/radiusSquare",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/xs",
+        "ds": "--ds-radius-xs"
+      },
+      "resolved": "2"
+    },
+    {
+      "path": "badge/slate/border",
+      "ds": "--ds-badge-slate-border",
+      "group": "badge",
+      "name": "slate/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/slate/muted",
+        "ds": "--ds-color-label-slate-muted"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "badge/slate/content",
+      "ds": "--ds-badge-slate-content",
+      "group": "badge",
+      "name": "slate/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/slate/strong",
+        "ds": "--ds-color-label-slate-strong"
+      },
+      "resolved": "#334155"
+    },
+    {
+      "path": "badge/slate/fill",
+      "ds": "--ds-badge-slate-fill",
+      "group": "badge",
+      "name": "slate/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/slate/subtle",
+        "ds": "--ds-color-label-slate-subtle"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "button/destructive/content",
+      "ds": "--ds-button-destructive-content",
+      "group": "button",
+      "name": "destructive/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-foreground",
+        "ds": "--ds-color-destructive-foreground"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "button/destructive/contentDisabled",
+      "ds": "--ds-button-destructive-contentdisabled",
+      "group": "button",
+      "name": "destructive/contentDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-content-disabled",
+        "ds": "--ds-color-destructive-content-disabled"
+      },
+      "resolved": "#FCA5A5"
+    },
+    {
+      "path": "button/destructive/fill",
+      "ds": "--ds-button-destructive-fill",
+      "group": "button",
+      "name": "destructive/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive",
+        "ds": "--ds-color-destructive"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "button/destructive/fillActive",
+      "ds": "--ds-button-destructive-fillactive",
+      "group": "button",
+      "name": "destructive/fillActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-active",
+        "ds": "--ds-color-destructive-active"
+      },
+      "resolved": "#991B1B"
+    },
+    {
+      "path": "button/destructive/fillDisabled",
+      "ds": "--ds-button-destructive-filldisabled",
+      "group": "button",
+      "name": "destructive/fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/bg",
+        "ds": "--ds-color-status-error-bg"
+      },
+      "resolved": "#FEF2F2"
+    },
+    {
+      "path": "button/destructive/fillHover",
+      "ds": "--ds-button-destructive-fillhover",
+      "group": "button",
+      "name": "destructive/fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-hover",
+        "ds": "--ds-color-destructive-hover"
+      },
+      "resolved": "#EF4444"
+    },
+    {
+      "path": "button/destructive/iconDisabled",
+      "ds": "--ds-button-destructive-icondisabled",
+      "group": "button",
+      "name": "destructive/iconDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-content-disabled",
+        "ds": "--ds-color-destructive-content-disabled"
+      },
+      "resolved": "#FCA5A5"
+    },
+    {
+      "path": "button/destructiveGhost/border",
+      "ds": "--ds-button-destructiveghost-border",
+      "group": "button",
+      "name": "destructiveGhost/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive",
+        "ds": "--ds-color-destructive"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "button/destructiveGhost/borderDisabled",
+      "ds": "--ds-button-destructiveghost-borderdisabled",
+      "group": "button",
+      "name": "destructiveGhost/borderDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-content-disabled",
+        "ds": "--ds-color-destructive-content-disabled"
+      },
+      "resolved": "#FCA5A5"
+    },
+    {
+      "path": "button/destructiveGhost/borderWidth",
+      "ds": "--ds-button-destructiveghost-borderwidth",
+      "group": "button",
+      "name": "destructiveGhost/borderWidth",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "borderWidth/sm",
+        "ds": "--ds-borderwidth-sm"
+      },
+      "resolved": "1"
+    },
+    {
+      "path": "button/destructiveGhost/content",
+      "ds": "--ds-button-destructiveghost-content",
+      "group": "button",
+      "name": "destructiveGhost/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive",
+        "ds": "--ds-color-destructive"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "button/destructiveGhost/contentDisabled",
+      "ds": "--ds-button-destructiveghost-contentdisabled",
+      "group": "button",
+      "name": "destructiveGhost/contentDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-content-disabled",
+        "ds": "--ds-color-destructive-content-disabled"
+      },
+      "resolved": "#FCA5A5"
+    },
+    {
+      "path": "button/destructiveGhost/fill",
+      "ds": "--ds-button-destructiveghost-fill",
+      "group": "button",
+      "name": "destructiveGhost/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/background",
+        "ds": "--ds-color-background"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "button/destructiveGhost/fillActive",
+      "ds": "--ds-button-destructiveghost-fillactive",
+      "group": "button",
+      "name": "destructiveGhost/fillActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/border",
+        "ds": "--ds-color-status-error-border"
+      },
+      "resolved": "#FECACA"
+    },
+    {
+      "path": "button/destructiveGhost/fillDisabled",
+      "ds": "--ds-button-destructiveghost-filldisabled",
+      "group": "button",
+      "name": "destructiveGhost/fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/background",
+        "ds": "--ds-color-background"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "button/destructiveGhost/fillHover",
+      "ds": "--ds-button-destructiveghost-fillhover",
+      "group": "button",
+      "name": "destructiveGhost/fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/bg",
+        "ds": "--ds-color-status-error-bg"
+      },
+      "resolved": "#FEF2F2"
+    },
+    {
+      "path": "button/destructiveGhost/iconDisabled",
+      "ds": "--ds-button-destructiveghost-icondisabled",
+      "group": "button",
+      "name": "destructiveGhost/iconDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-content-disabled",
+        "ds": "--ds-color-destructive-content-disabled"
+      },
+      "resolved": "#FCA5A5"
+    },
+    {
+      "path": "button/destructiveSecondary/border",
+      "ds": "--ds-button-destructivesecondary-border",
+      "group": "button",
+      "name": "destructiveSecondary/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/border",
+        "ds": "--ds-color-status-error-border"
+      },
+      "resolved": "#FECACA"
+    },
+    {
+      "path": "button/destructiveSecondary/borderDisabled",
+      "ds": "--ds-button-destructivesecondary-borderdisabled",
+      "group": "button",
+      "name": "destructiveSecondary/borderDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-content-disabled",
+        "ds": "--ds-color-destructive-content-disabled"
+      },
+      "resolved": "#FCA5A5"
+    },
+    {
+      "path": "button/destructiveSecondary/borderWidth",
+      "ds": "--ds-button-destructivesecondary-borderwidth",
+      "group": "button",
+      "name": "destructiveSecondary/borderWidth",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "borderWidth/sm",
+        "ds": "--ds-borderwidth-sm"
+      },
+      "resolved": "1"
+    },
+    {
+      "path": "button/destructiveSecondary/content",
+      "ds": "--ds-button-destructivesecondary-content",
+      "group": "button",
+      "name": "destructiveSecondary/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive",
+        "ds": "--ds-color-destructive"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "button/destructiveSecondary/contentDisabled",
+      "ds": "--ds-button-destructivesecondary-contentdisabled",
+      "group": "button",
+      "name": "destructiveSecondary/contentDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-content-disabled",
+        "ds": "--ds-color-destructive-content-disabled"
+      },
+      "resolved": "#FCA5A5"
+    },
+    {
+      "path": "button/destructiveSecondary/fill",
+      "ds": "--ds-button-destructivesecondary-fill",
+      "group": "button",
+      "name": "destructiveSecondary/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/bg",
+        "ds": "--ds-color-status-error-bg"
+      },
+      "resolved": "#FEF2F2"
+    },
+    {
+      "path": "button/destructiveSecondary/fillActive",
+      "ds": "--ds-button-destructivesecondary-fillactive",
+      "group": "button",
+      "name": "destructiveSecondary/fillActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/border",
+        "ds": "--ds-color-status-error-border"
+      },
+      "resolved": "#FECACA"
+    },
+    {
+      "path": "button/destructiveSecondary/fillDisabled",
+      "ds": "--ds-button-destructivesecondary-filldisabled",
+      "group": "button",
+      "name": "destructiveSecondary/fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/background",
+        "ds": "--ds-color-background"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "button/destructiveSecondary/fillHover",
+      "ds": "--ds-button-destructivesecondary-fillhover",
+      "group": "button",
+      "name": "destructiveSecondary/fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/surface",
+        "ds": "--ds-color-surface"
+      },
+      "resolved": "#F8FAFC"
+    },
+    {
+      "path": "button/destructiveSecondary/iconDisabled",
+      "ds": "--ds-button-destructivesecondary-icondisabled",
+      "group": "button",
+      "name": "destructiveSecondary/iconDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-content-disabled",
+        "ds": "--ds-color-destructive-content-disabled"
+      },
+      "resolved": "#FCA5A5"
+    },
+    {
+      "path": "button/focusRingWidth",
+      "ds": "--ds-button-focusringwidth",
+      "group": "button",
+      "name": "focusRingWidth",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "borderWidth/md",
+        "ds": "--ds-borderwidth-md"
+      },
+      "resolved": "2"
+    },
+    {
+      "path": "button/fontWeight",
+      "ds": "--ds-button-fontweight",
+      "group": "button",
+      "name": "fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelLg/fontWeight",
+        "ds": "--ds-typography-labellg-fontweight"
+      },
+      "resolved": "500"
+    },
+    {
+      "path": "button/ghost/content",
+      "ds": "--ds-button-ghost-content",
+      "group": "button",
+      "name": "ghost/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/primary",
+        "ds": "--ds-color-content-primary"
+      },
+      "resolved": "#0F172A"
+    },
+    {
+      "path": "button/ghost/contentDisabled",
+      "ds": "--ds-button-ghost-contentdisabled",
+      "group": "button",
+      "name": "ghost/contentDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled-on-color",
+        "ds": "--ds-color-content-disabled-on-color"
+      },
+      "resolved": "#64748B"
+    },
+    {
+      "path": "button/ghost/fill",
+      "ds": "--ds-button-ghost-fill",
+      "group": "button",
+      "name": "ghost/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/surface",
+        "ds": "--ds-color-surface"
+      },
+      "resolved": "#F8FAFC"
+    },
+    {
+      "path": "button/ghost/fillActive",
+      "ds": "--ds-button-ghost-fillactive",
+      "group": "button",
+      "name": "ghost/fillActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/secondary-pressed",
+        "ds": "--ds-color-secondary-pressed"
+      },
+      "resolved": "#CBD5E1"
+    },
+    {
+      "path": "button/ghost/fillDisabled",
+      "ds": "--ds-button-ghost-filldisabled",
+      "group": "button",
+      "name": "ghost/fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/background",
+        "ds": "--ds-color-background"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "button/ghost/fillHover",
+      "ds": "--ds-button-ghost-fillhover",
+      "group": "button",
+      "name": "ghost/fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/secondary-hover",
+        "ds": "--ds-color-secondary-hover"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "button/ghost/iconDisabled",
+      "ds": "--ds-button-ghost-icondisabled",
+      "group": "button",
+      "name": "ghost/iconDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled-on-color",
+        "ds": "--ds-color-content-disabled-on-color"
+      },
+      "resolved": "#64748B"
+    },
+    {
+      "path": "button/ghost/size/lg/paddingX",
+      "ds": "--ds-button-ghost-size-lg-paddingx",
+      "group": "button",
+      "name": "ghost/size/lg/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "button/ghost/size/md/paddingX",
+      "ds": "--ds-button-ghost-size-md-paddingx",
+      "group": "button",
+      "name": "ghost/size/md/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "button/ghost/size/sm/paddingX",
+      "ds": "--ds-button-ghost-size-sm-paddingx",
+      "group": "button",
+      "name": "ghost/size/sm/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/ghost/size/xs/paddingX",
+      "ds": "--ds-button-ghost-size-xs-paddingx",
+      "group": "button",
+      "name": "ghost/size/xs/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/primary/content",
+      "ds": "--ds-button-primary-content",
+      "group": "button",
+      "name": "primary/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-foreground",
+        "ds": "--ds-color-primary-foreground"
+      },
+      "resolved": "#473600"
+    },
+    {
+      "path": "button/primary/contentDisabled",
+      "ds": "--ds-button-primary-contentdisabled",
+      "group": "button",
+      "name": "primary/contentDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled-on-color",
+        "ds": "--ds-color-content-disabled-on-color"
+      },
+      "resolved": "#64748B"
+    },
+    {
+      "path": "button/primary/fill",
+      "ds": "--ds-button-primary-fill",
+      "group": "button",
+      "name": "primary/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary",
+        "ds": "--ds-color-primary"
+      },
+      "resolved": "#FFD242"
+    },
+    {
+      "path": "button/primary/fillActive",
+      "ds": "--ds-button-primary-fillactive",
+      "group": "button",
+      "name": "primary/fillActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-active",
+        "ds": "--ds-color-primary-active"
+      },
+      "resolved": "#C99D00"
+    },
+    {
+      "path": "button/primary/fillDisabled",
+      "ds": "--ds-button-primary-filldisabled",
+      "group": "button",
+      "name": "primary/fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/muted",
+        "ds": "--ds-color-muted"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "button/primary/fillHover",
+      "ds": "--ds-button-primary-fillhover",
+      "group": "button",
+      "name": "primary/fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-hover",
+        "ds": "--ds-color-primary-hover"
+      },
+      "resolved": "#FFE87A"
+    },
+    {
+      "path": "button/primary/iconDisabled",
+      "ds": "--ds-button-primary-icondisabled",
+      "group": "button",
+      "name": "primary/iconDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled-on-color",
+        "ds": "--ds-color-content-disabled-on-color"
+      },
+      "resolved": "#64748B"
+    },
+    {
+      "path": "button/secondary/border",
+      "ds": "--ds-button-secondary-border",
+      "group": "button",
+      "name": "secondary/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/border-input",
+        "ds": "--ds-color-border-input"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "button/secondary/content",
+      "ds": "--ds-button-secondary-content",
+      "group": "button",
+      "name": "secondary/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/primary",
+        "ds": "--ds-color-content-primary"
+      },
+      "resolved": "#0F172A"
+    },
+    {
+      "path": "button/secondary/contentDisabled",
+      "ds": "--ds-button-secondary-contentdisabled",
+      "group": "button",
+      "name": "secondary/contentDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled",
+        "ds": "--ds-color-content-disabled"
+      },
+      "resolved": "#94A3B8"
+    },
+    {
+      "path": "button/secondary/fill",
+      "ds": "--ds-button-secondary-fill",
+      "group": "button",
+      "name": "secondary/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/background",
+        "ds": "--ds-color-background"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "button/secondary/fillActive",
+      "ds": "--ds-button-secondary-fillactive",
+      "group": "button",
+      "name": "secondary/fillActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/secondary-pressed",
+        "ds": "--ds-color-secondary-pressed"
+      },
+      "resolved": "#CBD5E1"
+    },
+    {
+      "path": "button/secondary/fillDisabled",
+      "ds": "--ds-button-secondary-filldisabled",
+      "group": "button",
+      "name": "secondary/fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/muted",
+        "ds": "--ds-color-muted"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "button/secondary/fillHover",
+      "ds": "--ds-button-secondary-fillhover",
+      "group": "button",
+      "name": "secondary/fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/secondary-hover",
+        "ds": "--ds-color-secondary-hover"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "button/secondary/iconDisabled",
+      "ds": "--ds-button-secondary-icondisabled",
+      "group": "button",
+      "name": "secondary/iconDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled",
+        "ds": "--ds-color-content-disabled"
+      },
+      "resolved": "#94A3B8"
+    },
+    {
+      "path": "button/size/lg/fontSize",
+      "ds": "--ds-button-size-lg-fontsize",
+      "group": "button",
+      "name": "size/lg/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelLg/fontSize",
+        "ds": "--ds-typography-labellg-fontsize"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "button/size/lg/fontWeight",
+      "ds": "--ds-button-size-lg-fontweight",
+      "group": "button",
+      "name": "size/lg/fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelLg/fontWeight",
+        "ds": "--ds-typography-labellg-fontweight"
+      },
+      "resolved": "500"
+    },
+    {
+      "path": "button/size/lg/height",
+      "ds": "--ds-button-size-lg-height",
+      "group": "button",
+      "name": "size/lg/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/xl",
+        "ds": "--ds-spacing-component-height-xl"
+      },
+      "resolved": "48"
+    },
+    {
+      "path": "button/size/lg/iconOnlyPadding",
+      "ds": "--ds-button-size-lg-icononlypadding",
+      "group": "button",
+      "name": "size/lg/iconOnlyPadding",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/lg",
+        "ds": "--ds-spacing-component-lg"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "button/size/lg/labelWrapperPaddingX",
+      "ds": "--ds-button-size-lg-labelwrapperpaddingx",
+      "group": "button",
+      "name": "size/lg/labelWrapperPaddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/lg/paddingX",
+      "ds": "--ds-button-size-lg-paddingx",
+      "group": "button",
+      "name": "size/lg/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/lg",
+        "ds": "--ds-spacing-component-lg"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "button/size/lg/paddingY",
+      "ds": "--ds-button-size-lg-paddingy",
+      "group": "button",
+      "name": "size/lg/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "button/size/lg/radius",
+      "ds": "--ds-button-size-lg-radius",
+      "group": "button",
+      "name": "size/lg/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/lg",
+        "ds": "--ds-radius-lg"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "button/size/md/fontSize",
+      "ds": "--ds-button-size-md-fontsize",
+      "group": "button",
+      "name": "size/md/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelLg/fontSize",
+        "ds": "--ds-typography-labellg-fontsize"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "button/size/md/fontWeight",
+      "ds": "--ds-button-size-md-fontweight",
+      "group": "button",
+      "name": "size/md/fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelLg/fontWeight",
+        "ds": "--ds-typography-labellg-fontweight"
+      },
+      "resolved": "500"
+    },
+    {
+      "path": "button/size/md/height",
+      "ds": "--ds-button-size-md-height",
+      "group": "button",
+      "name": "size/md/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/lg",
+        "ds": "--ds-spacing-component-height-lg"
+      },
+      "resolved": "40"
+    },
+    {
+      "path": "button/size/md/iconOnlyPadding",
+      "ds": "--ds-button-size-md-icononlypadding",
+      "group": "button",
+      "name": "size/md/iconOnlyPadding",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "button/size/md/labelWrapperPaddingX",
+      "ds": "--ds-button-size-md-labelwrapperpaddingx",
+      "group": "button",
+      "name": "size/md/labelWrapperPaddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/md/paddingX",
+      "ds": "--ds-button-size-md-paddingx",
+      "group": "button",
+      "name": "size/md/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "button/size/md/paddingY",
+      "ds": "--ds-button-size-md-paddingy",
+      "group": "button",
+      "name": "size/md/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "button/size/md/radius",
+      "ds": "--ds-button-size-md-radius",
+      "group": "button",
+      "name": "size/md/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/lg",
+        "ds": "--ds-radius-lg"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "button/size/sm/fontSize",
+      "ds": "--ds-button-size-sm-fontsize",
+      "group": "button",
+      "name": "size/sm/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelMd/fontSize",
+        "ds": "--ds-typography-labelmd-fontsize"
+      },
+      "resolved": "14"
+    },
+    {
+      "path": "button/size/sm/fontWeight",
+      "ds": "--ds-button-size-sm-fontweight",
+      "group": "button",
+      "name": "size/sm/fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelMd/fontWeight",
+        "ds": "--ds-typography-labelmd-fontweight"
+      },
+      "resolved": "400"
+    },
+    {
+      "path": "button/size/sm/height",
+      "ds": "--ds-button-size-sm-height",
+      "group": "button",
+      "name": "size/sm/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/md",
+        "ds": "--ds-spacing-component-height-md"
+      },
+      "resolved": "32"
+    },
+    {
+      "path": "button/size/sm/iconOnlyPadding",
+      "ds": "--ds-button-size-sm-icononlypadding",
+      "group": "button",
+      "name": "size/sm/iconOnlyPadding",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "button/size/sm/labelWrapperPaddingX",
+      "ds": "--ds-button-size-sm-labelwrapperpaddingx",
+      "group": "button",
+      "name": "size/sm/labelWrapperPaddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/sm/paddingX",
+      "ds": "--ds-button-size-sm-paddingx",
+      "group": "button",
+      "name": "size/sm/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "button/size/sm/paddingY",
+      "ds": "--ds-button-size-sm-paddingy",
+      "group": "button",
+      "name": "size/sm/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/sm/radius",
+      "ds": "--ds-button-size-sm-radius",
+      "group": "button",
+      "name": "size/sm/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/md",
+        "ds": "--ds-radius-md"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/xs/fontSize",
+      "ds": "--ds-button-size-xs-fontsize",
+      "group": "button",
+      "name": "size/xs/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelSm/fontSize",
+        "ds": "--ds-typography-labelsm-fontsize"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "button/size/xs/fontWeight",
+      "ds": "--ds-button-size-xs-fontweight",
+      "group": "button",
+      "name": "size/xs/fontWeight",
+      "type": "fontWeight",
+      "primFamily": "fontWeight",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelSm/fontWeight",
+        "ds": "--ds-typography-labelsm-fontweight"
+      },
+      "resolved": "400"
+    },
+    {
+      "path": "button/size/xs/height",
+      "ds": "--ds-button-size-xs-height",
+      "group": "button",
+      "name": "size/xs/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/sm",
+        "ds": "--ds-spacing-component-height-sm"
+      },
+      "resolved": "28"
+    },
+    {
+      "path": "button/size/xs/iconOnlyPadding",
+      "ds": "--ds-button-size-xs-icononlypadding",
+      "group": "button",
+      "name": "size/xs/iconOnlyPadding",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/xs/labelWrapperPaddingX",
+      "ds": "--ds-button-size-xs-labelwrapperpaddingx",
+      "group": "button",
+      "name": "size/xs/labelWrapperPaddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/xs/paddingX",
+      "ds": "--ds-button-size-xs-paddingx",
+      "group": "button",
+      "name": "size/xs/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/xs/paddingY",
+      "ds": "--ds-button-size-xs-paddingy",
+      "group": "button",
+      "name": "size/xs/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/size/xs/radius",
+      "ds": "--ds-button-size-xs-radius",
+      "group": "button",
+      "name": "size/xs/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/md",
+        "ds": "--ds-radius-md"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "button/tonal/content",
+      "ds": "--ds-button-tonal-content",
+      "group": "button",
+      "name": "tonal/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-muted-foreground",
+        "ds": "--ds-color-primary-muted-foreground"
+      },
+      "resolved": "#735700"
+    },
+    {
+      "path": "button/tonal/contentDisabled",
+      "ds": "--ds-button-tonal-contentdisabled",
+      "group": "button",
+      "name": "tonal/contentDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled-on-color",
+        "ds": "--ds-color-content-disabled-on-color"
+      },
+      "resolved": "#64748B"
+    },
+    {
+      "path": "button/tonal/fill",
+      "ds": "--ds-button-tonal-fill",
+      "group": "button",
+      "name": "tonal/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-muted",
+        "ds": "--ds-color-primary-muted"
+      },
+      "resolved": "#FFF9CC"
+    },
+    {
+      "path": "button/tonal/fillActive",
+      "ds": "--ds-button-tonal-fillactive",
+      "group": "button",
+      "name": "tonal/fillActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-muted-active",
+        "ds": "--ds-color-primary-muted-active"
+      },
+      "resolved": "#FFE87A"
+    },
+    {
+      "path": "button/tonal/fillDisabled",
+      "ds": "--ds-button-tonal-filldisabled",
+      "group": "button",
+      "name": "tonal/fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/muted",
+        "ds": "--ds-color-muted"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "button/tonal/fillHover",
+      "ds": "--ds-button-tonal-fillhover",
+      "group": "button",
+      "name": "tonal/fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-muted-hover",
+        "ds": "--ds-color-primary-muted-hover"
+      },
+      "resolved": "#FFFDF0"
+    },
+    {
+      "path": "button/tonal/iconDisabled",
+      "ds": "--ds-button-tonal-icondisabled",
+      "group": "button",
+      "name": "tonal/iconDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled-on-color",
+        "ds": "--ds-color-content-disabled-on-color"
+      },
+      "resolved": "#64748B"
+    },
+    {
+      "path": "card/border",
+      "ds": "--ds-card-border",
+      "group": "card",
+      "name": "border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/border",
+        "ds": "--ds-color-border"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "card/borderWidth",
+      "ds": "--ds-card-borderwidth",
+      "group": "card",
+      "name": "borderWidth",
+      "type": "dimension",
+      "primFamily": "borderWidth",
+      "target": {
+        "kind": "semantic",
+        "path": "borderWidth/sm",
+        "ds": "--ds-borderwidth-sm"
+      },
+      "resolved": "1"
+    },
+    {
+      "path": "card/fill",
+      "ds": "--ds-card-fill",
+      "group": "card",
+      "name": "fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/card",
+        "ds": "--ds-color-card"
+      },
+      "resolved": "#F8FAFC"
+    },
+    {
+      "path": "card/foreground",
+      "ds": "--ds-card-foreground",
+      "group": "card",
+      "name": "foreground",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/card-foreground",
+        "ds": "--ds-color-card-foreground"
+      },
+      "resolved": "#1E293B"
+    },
+    {
+      "path": "card/gap",
+      "ds": "--ds-card-gap",
+      "group": "card",
+      "name": "gap",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/lg",
+        "ds": "--ds-spacing-component-lg"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "card/padding",
+      "ds": "--ds-card-padding",
+      "group": "card",
+      "name": "padding",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xl",
+        "ds": "--ds-spacing-component-xl"
+      },
+      "resolved": "24"
+    },
+    {
+      "path": "card/radius",
+      "ds": "--ds-card-radius",
+      "group": "card",
+      "name": "radius",
+      "type": "dimension",
+      "primFamily": "borderRadius",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/lg",
+        "ds": "--ds-radius-lg"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "checkbox/borderColor",
+      "ds": "--ds-checkbox-bordercolor",
+      "group": "checkbox",
+      "name": "borderColor",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderColor",
+        "ds": "--ds-input-bordercolor"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "checkbox/borderError",
+      "ds": "--ds-checkbox-bordererror",
+      "group": "checkbox",
+      "name": "borderError",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderError",
+        "ds": "--ds-input-bordererror"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "checkbox/borderErrorHover",
+      "ds": "--ds-checkbox-bordererrorhover",
+      "group": "checkbox",
+      "name": "borderErrorHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-active",
+        "ds": "--ds-color-destructive-active"
+      },
+      "resolved": "#991B1B"
+    },
+    {
+      "path": "checkbox/borderHover",
+      "ds": "--ds-checkbox-borderhover",
+      "group": "checkbox",
+      "name": "borderHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderHover",
+        "ds": "--ds-input-borderhover"
+      },
+      "resolved": "#475569"
+    },
+    {
+      "path": "checkbox/borderWarning",
+      "ds": "--ds-checkbox-borderwarning",
+      "group": "checkbox",
+      "name": "borderWarning",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/warning/icon",
+        "ds": "--ds-color-status-warning-icon"
+      },
+      "resolved": "#F59E0B"
+    },
+    {
+      "path": "checkbox/borderWarningHover",
+      "ds": "--ds-checkbox-borderwarninghover",
+      "group": "checkbox",
+      "name": "borderWarningHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-active",
+        "ds": "--ds-color-destructive-active"
+      },
+      "resolved": "#991B1B"
+    },
+    {
+      "path": "checkbox/borderWidth",
+      "ds": "--ds-checkbox-borderwidth",
+      "group": "checkbox",
+      "name": "borderWidth",
+      "type": "dimension",
+      "primFamily": "borderWidth",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderWidth",
+        "ds": "--ds-input-borderwidth"
+      },
+      "resolved": "1"
+    },
+    {
+      "path": "checkbox/checked",
+      "ds": "--ds-checkbox-checked",
+      "group": "checkbox",
+      "name": "checked",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary",
+        "ds": "--ds-color-primary"
+      },
+      "resolved": "#FFD242"
+    },
+    {
+      "path": "checkbox/checkedBorder",
+      "ds": "--ds-checkbox-checkedborder",
+      "group": "checkbox",
+      "name": "checkedBorder",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary",
+        "ds": "--ds-color-primary"
+      },
+      "resolved": "#FFD242"
+    },
+    {
+      "path": "checkbox/checkedDisabled",
+      "ds": "--ds-checkbox-checkeddisabled",
+      "group": "checkbox",
+      "name": "checkedDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled-strong",
+        "ds": "--ds-color-content-disabled-strong"
+      },
+      "resolved": "#64748B"
+    },
+    {
+      "path": "checkbox/checkedHover",
+      "ds": "--ds-checkbox-checkedhover",
+      "group": "checkbox",
+      "name": "checkedHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-hover",
+        "ds": "--ds-color-primary-hover"
+      },
+      "resolved": "#FFE87A"
+    },
+    {
+      "path": "checkbox/containerFill",
+      "ds": "--ds-checkbox-containerfill",
+      "group": "checkbox",
+      "name": "containerFill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/background",
+        "ds": "--ds-color-background"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "checkbox/containerRadius",
+      "ds": "--ds-checkbox-containerradius",
+      "group": "checkbox",
+      "name": "containerRadius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "alias",
+        "path": "input/size/md/radius",
+        "ds": "--ds-input-size-md-radius"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "checkbox/cornerRadius",
+      "ds": "--ds-checkbox-cornerradius",
+      "group": "checkbox",
+      "name": "cornerRadius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/sm",
+        "ds": "--ds-radius-sm"
+      },
+      "resolved": "4"
+    },
+    {
+      "path": "checkbox/fill",
+      "ds": "--ds-checkbox-fill",
+      "group": "checkbox",
+      "name": "fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/fill",
+        "ds": "--ds-input-fill"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "checkbox/fillDisabled",
+      "ds": "--ds-checkbox-filldisabled",
+      "group": "checkbox",
+      "name": "fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/fillDisabled",
+        "ds": "--ds-input-filldisabled"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "checkbox/fillHover",
+      "ds": "--ds-checkbox-fillhover",
+      "group": "checkbox",
+      "name": "fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/fillFilled",
+        "ds": "--ds-input-fillfilled"
+      },
+      "resolved": "#F8FAFC"
+    },
+    {
+      "path": "checkbox/focusRingError",
+      "ds": "--ds-checkbox-focusringerror",
+      "group": "checkbox",
+      "name": "focusRingError",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/border",
+        "ds": "--ds-color-status-error-border"
+      },
+      "resolved": "#FECACA"
+    },
+    {
+      "path": "checkbox/gap",
+      "ds": "--ds-checkbox-gap",
+      "group": "checkbox",
+      "name": "gap",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "checkbox/paddingX",
+      "ds": "--ds-checkbox-paddingx",
+      "group": "checkbox",
+      "name": "paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "checkbox/paddingYDefault",
+      "ds": "--ds-checkbox-paddingydefault",
+      "group": "checkbox",
+      "name": "paddingYDefault",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "checkbox/size/lg/minHeight",
+      "ds": "--ds-checkbox-size-lg-minheight",
+      "group": "checkbox",
+      "name": "size/lg/minHeight",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "alias",
+        "path": "input/size/lg/height",
+        "ds": "--ds-input-size-lg-height"
+      },
+      "resolved": "48"
+    },
+    {
+      "path": "checkbox/size/md/minHeight",
+      "ds": "--ds-checkbox-size-md-minheight",
+      "group": "checkbox",
+      "name": "size/md/minHeight",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "alias",
+        "path": "input/size/md/height",
+        "ds": "--ds-input-size-md-height"
+      },
+      "resolved": "40"
+    },
+    {
+      "path": "checkbox/size/sm/minHeight",
+      "ds": "--ds-checkbox-size-sm-minheight",
+      "group": "checkbox",
+      "name": "size/sm/minHeight",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "alias",
+        "path": "input/size/sm/height",
+        "ds": "--ds-input-size-sm-height"
+      },
+      "resolved": "32"
+    },
+    {
+      "path": "checkbox/warningHoverColor",
+      "ds": "--ds-checkbox-warninghovercolor",
+      "group": "checkbox",
+      "name": "warningHoverColor",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/warning/foreground",
+        "ds": "--ds-color-status-warning-foreground"
+      },
+      "resolved": "#D97706"
+    },
+    {
+      "path": "chip/outlined/border",
+      "ds": "--ds-chip-outlined-border",
+      "group": "chip",
+      "name": "outlined/border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/border",
+        "ds": "--ds-color-border"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "chip/outlined/content",
+      "ds": "--ds-chip-outlined-content",
+      "group": "chip",
+      "name": "outlined/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/primary",
+        "ds": "--ds-color-content-primary"
+      },
+      "resolved": "#0F172A"
+    },
+    {
+      "path": "chip/outlined/contentSelected",
+      "ds": "--ds-chip-outlined-contentselected",
+      "group": "chip",
+      "name": "outlined/contentSelected",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-muted-foreground",
+        "ds": "--ds-color-primary-muted-foreground"
+      },
+      "resolved": "#735700"
+    },
+    {
+      "path": "chip/outlined/fill",
+      "ds": "--ds-chip-outlined-fill",
+      "group": "chip",
+      "name": "outlined/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/none",
+        "ds": "--ds-color-none"
+      },
+      "resolved": "#FFFFFF03"
+    },
+    {
+      "path": "chip/outlined/fillSelected",
+      "ds": "--ds-chip-outlined-fillselected",
+      "group": "chip",
+      "name": "outlined/fillSelected",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-muted",
+        "ds": "--ds-color-primary-muted"
+      },
+      "resolved": "#FFF9CC"
+    },
+    {
+      "path": "chip/radius",
+      "ds": "--ds-chip-radius",
+      "group": "chip",
+      "name": "radius",
+      "type": "dimension",
+      "primFamily": "borderRadius",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/full",
+        "ds": "--ds-radius-full"
+      },
+      "resolved": "9999"
+    },
+    {
+      "path": "chip/size/md/fontSize",
+      "ds": "--ds-chip-size-md-fontsize",
+      "group": "chip",
+      "name": "size/md/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelMd/fontSize",
+        "ds": "--ds-typography-labelmd-fontsize"
+      },
+      "resolved": "14"
+    },
+    {
+      "path": "chip/size/md/height",
+      "ds": "--ds-chip-size-md-height",
+      "group": "chip",
+      "name": "size/md/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/md",
+        "ds": "--ds-spacing-component-height-md"
+      },
+      "resolved": "32"
+    },
+    {
+      "path": "chip/size/md/paddingX",
+      "ds": "--ds-chip-size-md-paddingx",
+      "group": "chip",
+      "name": "size/md/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "chip/size/md/radius",
+      "ds": "--ds-chip-size-md-radius",
+      "group": "chip",
+      "name": "size/md/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/full",
+        "ds": "--ds-radius-full"
+      },
+      "resolved": "9999"
+    },
+    {
+      "path": "chip/tonal/content",
+      "ds": "--ds-chip-tonal-content",
+      "group": "chip",
+      "name": "tonal/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/surface-foreground",
+        "ds": "--ds-color-surface-foreground"
+      },
+      "resolved": "#1E293B"
+    },
+    {
+      "path": "chip/tonal/contentSelected",
+      "ds": "--ds-chip-tonal-contentselected",
+      "group": "chip",
+      "name": "tonal/contentSelected",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-muted-foreground",
+        "ds": "--ds-color-primary-muted-foreground"
+      },
+      "resolved": "#735700"
+    },
+    {
+      "path": "chip/tonal/fill",
+      "ds": "--ds-chip-tonal-fill",
+      "group": "chip",
+      "name": "tonal/fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/muted",
+        "ds": "--ds-color-muted"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "chip/tonal/fillSelected",
+      "ds": "--ds-chip-tonal-fillselected",
+      "group": "chip",
+      "name": "tonal/fillSelected",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary-muted",
+        "ds": "--ds-color-primary-muted"
+      },
+      "resolved": "#FFF9CC"
+    },
+    {
+      "path": "input/borderColor",
+      "ds": "--ds-input-bordercolor",
+      "group": "input",
+      "name": "borderColor",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/border-input",
+        "ds": "--ds-color-border-input"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "input/borderDisabled",
+      "ds": "--ds-input-borderdisabled",
+      "group": "input",
+      "name": "borderDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/border",
+        "ds": "--ds-color-border"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "input/borderError",
+      "ds": "--ds-input-bordererror",
+      "group": "input",
+      "name": "borderError",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive",
+        "ds": "--ds-color-destructive"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "input/borderFocus",
+      "ds": "--ds-input-borderfocus",
+      "group": "input",
+      "name": "borderFocus",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/border-input-focus",
+        "ds": "--ds-color-border-input-focus"
+      },
+      "resolved": "#334155"
+    },
+    {
+      "path": "input/borderHover",
+      "ds": "--ds-input-borderhover",
+      "group": "input",
+      "name": "borderHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/border-input-hover",
+        "ds": "--ds-color-border-input-hover"
+      },
+      "resolved": "#475569"
+    },
+    {
+      "path": "input/borderWidth",
+      "ds": "--ds-input-borderwidth",
+      "group": "input",
+      "name": "borderWidth",
+      "type": "dimension",
+      "primFamily": "borderWidth",
+      "target": {
+        "kind": "semantic",
+        "path": "borderWidth/sm",
+        "ds": "--ds-borderwidth-sm"
+      },
+      "resolved": "1"
+    },
+    {
+      "path": "input/content",
+      "ds": "--ds-input-content",
+      "group": "input",
+      "name": "content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/surface-foreground",
+        "ds": "--ds-color-surface-foreground"
+      },
+      "resolved": "#1E293B"
+    },
+    {
+      "path": "input/contentError",
+      "ds": "--ds-input-contenterror",
+      "group": "input",
+      "name": "contentError",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/destructive-muted-foreground",
+        "ds": "--ds-color-destructive-muted-foreground"
+      },
+      "resolved": "#7F1D1D"
+    },
+    {
+      "path": "input/fill",
+      "ds": "--ds-input-fill",
+      "group": "input",
+      "name": "fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/background",
+        "ds": "--ds-color-background"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "input/fillDisabled",
+      "ds": "--ds-input-filldisabled",
+      "group": "input",
+      "name": "fillDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/muted",
+        "ds": "--ds-color-muted"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "input/fillFilled",
+      "ds": "--ds-input-fillfilled",
+      "group": "input",
+      "name": "fillFilled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/surface",
+        "ds": "--ds-color-surface"
+      },
+      "resolved": "#F8FAFC"
+    },
+    {
+      "path": "input/helper",
+      "ds": "--ds-input-helper",
+      "group": "input",
+      "name": "helper",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/muted-foreground",
+        "ds": "--ds-color-muted-foreground"
+      },
+      "resolved": "#475569"
+    },
+    {
+      "path": "input/placeholder",
+      "ds": "--ds-input-placeholder",
+      "group": "input",
+      "name": "placeholder",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/placeholder",
+        "ds": "--ds-color-content-placeholder"
+      },
+      "resolved": "#94A3B8"
+    },
+    {
+      "path": "input/size/lg/fontSize",
+      "ds": "--ds-input-size-lg-fontsize",
+      "group": "input",
+      "name": "size/lg/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelLg/fontSize",
+        "ds": "--ds-typography-labellg-fontsize"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "input/size/lg/height",
+      "ds": "--ds-input-size-lg-height",
+      "group": "input",
+      "name": "size/lg/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/xl",
+        "ds": "--ds-spacing-component-height-xl"
+      },
+      "resolved": "48"
+    },
+    {
+      "path": "input/size/lg/paddingX",
+      "ds": "--ds-input-size-lg-paddingx",
+      "group": "input",
+      "name": "size/lg/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "input/size/lg/radius",
+      "ds": "--ds-input-size-lg-radius",
+      "group": "input",
+      "name": "size/lg/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/lg",
+        "ds": "--ds-radius-lg"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "input/size/md/fontSize",
+      "ds": "--ds-input-size-md-fontsize",
+      "group": "input",
+      "name": "size/md/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelLg/fontSize",
+        "ds": "--ds-typography-labellg-fontsize"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "input/size/md/height",
+      "ds": "--ds-input-size-md-height",
+      "group": "input",
+      "name": "size/md/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/lg",
+        "ds": "--ds-spacing-component-height-lg"
+      },
+      "resolved": "40"
+    },
+    {
+      "path": "input/size/md/paddingX",
+      "ds": "--ds-input-size-md-paddingx",
+      "group": "input",
+      "name": "size/md/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "input/size/md/radius",
+      "ds": "--ds-input-size-md-radius",
+      "group": "input",
+      "name": "size/md/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/lg",
+        "ds": "--ds-radius-lg"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "input/size/sm/fontSize",
+      "ds": "--ds-input-size-sm-fontsize",
+      "group": "input",
+      "name": "size/sm/fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelMd/fontSize",
+        "ds": "--ds-typography-labelmd-fontsize"
+      },
+      "resolved": "14"
+    },
+    {
+      "path": "input/size/sm/height",
+      "ds": "--ds-input-size-sm-height",
+      "group": "input",
+      "name": "size/sm/height",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/height/md",
+        "ds": "--ds-spacing-component-height-md"
+      },
+      "resolved": "32"
+    },
+    {
+      "path": "input/size/sm/paddingX",
+      "ds": "--ds-input-size-sm-paddingx",
+      "group": "input",
+      "name": "size/sm/paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "input/size/sm/radius",
+      "ds": "--ds-input-size-sm-radius",
+      "group": "input",
+      "name": "size/sm/radius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/md",
+        "ds": "--ds-radius-md"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "input/value",
+      "ds": "--ds-input-value",
+      "group": "input",
+      "name": "value",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/foreground",
+        "ds": "--ds-color-foreground"
+      },
+      "resolved": "#0F172A"
+    },
+    {
+      "path": "menuItem/containerColorActive",
+      "ds": "--ds-menuitem-containercoloractive",
+      "group": "menuItem",
+      "name": "containerColorActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/secondary-hover",
+        "ds": "--ds-color-secondary-hover"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "menuItem/content",
+      "ds": "--ds-menuitem-content",
+      "group": "menuItem",
+      "name": "content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/primary",
+        "ds": "--ds-color-content-primary"
+      },
+      "resolved": "#0F172A"
+    },
+    {
+      "path": "menuItem/contentDisabled",
+      "ds": "--ds-menuitem-contentdisabled",
+      "group": "menuItem",
+      "name": "contentDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/disabled",
+        "ds": "--ds-color-content-disabled"
+      },
+      "resolved": "#94A3B8"
+    },
+    {
+      "path": "menuItem/destructive/content",
+      "ds": "--ds-menuitem-destructive-content",
+      "group": "menuItem",
+      "name": "destructive/content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/label/red/default",
+        "ds": "--ds-color-label-red-default"
+      },
+      "resolved": "#EF4444"
+    },
+    {
+      "path": "menuItem/destructive/fillActive",
+      "ds": "--ds-menuitem-destructive-fillactive",
+      "group": "menuItem",
+      "name": "destructive/fillActive",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/border",
+        "ds": "--ds-color-status-error-border"
+      },
+      "resolved": "#FECACA"
+    },
+    {
+      "path": "menuItem/destructive/fillHover",
+      "ds": "--ds-menuitem-destructive-fillhover",
+      "group": "menuItem",
+      "name": "destructive/fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/status/error/bg",
+        "ds": "--ds-color-status-error-bg"
+      },
+      "resolved": "#FEF2F2"
+    },
+    {
+      "path": "menuItem/fill",
+      "ds": "--ds-menuitem-fill",
+      "group": "menuItem",
+      "name": "fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/background",
+        "ds": "--ds-color-background"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "menuItem/fillHover",
+      "ds": "--ds-menuitem-fillhover",
+      "group": "menuItem",
+      "name": "fillHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/secondary-hover",
+        "ds": "--ds-color-secondary-hover"
+      },
+      "resolved": "#F1F5F9"
+    },
+    {
+      "path": "menuItem/focusRing",
+      "ds": "--ds-menuitem-focusring",
+      "group": "menuItem",
+      "name": "focusRing",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/border-focus",
+        "ds": "--ds-color-border-focus"
+      },
+      "resolved": "#06B6D4"
+    },
+    {
+      "path": "radio/borderColor",
+      "ds": "--ds-radio-bordercolor",
+      "group": "radio",
+      "name": "borderColor",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderColor",
+        "ds": "--ds-input-bordercolor"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "radio/borderError",
+      "ds": "--ds-radio-bordererror",
+      "group": "radio",
+      "name": "borderError",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderError",
+        "ds": "--ds-input-bordererror"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "radio/borderHover",
+      "ds": "--ds-radio-borderhover",
+      "group": "radio",
+      "name": "borderHover",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderHover",
+        "ds": "--ds-input-borderhover"
+      },
+      "resolved": "#475569"
+    },
+    {
+      "path": "radio/borderWidth",
+      "ds": "--ds-radio-borderwidth",
+      "group": "radio",
+      "name": "borderWidth",
+      "type": "dimension",
+      "primFamily": "borderWidth",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderWidth",
+        "ds": "--ds-input-borderwidth"
+      },
+      "resolved": "1"
+    },
+    {
+      "path": "radio/fill",
+      "ds": "--ds-radio-fill",
+      "group": "radio",
+      "name": "fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/fill",
+        "ds": "--ds-input-fill"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "radio/fillError",
+      "ds": "--ds-radio-fillerror",
+      "group": "radio",
+      "name": "fillError",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderError",
+        "ds": "--ds-input-bordererror"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "radio/indicator",
+      "ds": "--ds-radio-indicator",
+      "group": "radio",
+      "name": "indicator",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/primary",
+        "ds": "--ds-color-primary"
+      },
+      "resolved": "#FFD242"
+    },
+    {
+      "path": "select/borderColor",
+      "ds": "--ds-select-bordercolor",
+      "group": "select",
+      "name": "borderColor",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderColor",
+        "ds": "--ds-input-bordercolor"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "select/borderDisabled",
+      "ds": "--ds-select-borderdisabled",
+      "group": "select",
+      "name": "borderDisabled",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderDisabled",
+        "ds": "--ds-input-borderdisabled"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "select/borderError",
+      "ds": "--ds-select-bordererror",
+      "group": "select",
+      "name": "borderError",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderError",
+        "ds": "--ds-input-bordererror"
+      },
+      "resolved": "#DC2626"
+    },
+    {
+      "path": "select/borderRadius",
+      "ds": "--ds-select-borderradius",
+      "group": "select",
+      "name": "borderRadius",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/sm",
+        "ds": "--ds-radius-sm"
+      },
+      "resolved": "4"
+    },
+    {
+      "path": "select/borderWidth",
+      "ds": "--ds-select-borderwidth",
+      "group": "select",
+      "name": "borderWidth",
+      "type": "dimension",
+      "primFamily": "borderWidth",
+      "target": {
+        "kind": "alias",
+        "path": "input/borderWidth",
+        "ds": "--ds-input-borderwidth"
+      },
+      "resolved": "1"
+    },
+    {
+      "path": "select/content",
+      "ds": "--ds-select-content",
+      "group": "select",
+      "name": "content",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/secondary",
+        "ds": "--ds-color-content-secondary"
+      },
+      "resolved": "#475569"
+    },
+    {
+      "path": "select/fill",
+      "ds": "--ds-select-fill",
+      "group": "select",
+      "name": "fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "alias",
+        "path": "input/fill",
+        "ds": "--ds-input-fill"
+      },
+      "resolved": "#FFFFFF"
+    },
+    {
+      "path": "select/icon",
+      "ds": "--ds-select-icon",
+      "group": "select",
+      "name": "icon",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/icon/muted",
+        "ds": "--ds-color-icon-muted"
+      },
+      "resolved": "#64748B"
+    },
+    {
+      "path": "select/iconSize",
+      "ds": "--ds-select-iconsize",
+      "group": "select",
+      "name": "iconSize",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/lg",
+        "ds": "--ds-spacing-component-lg"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "select/paddingRight",
+      "ds": "--ds-select-paddingright",
+      "group": "select",
+      "name": "paddingRight",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "select/size/lg/gap",
+      "ds": "--ds-select-size-lg-gap",
+      "group": "select",
+      "name": "size/lg/gap",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "select/size/lg/minHeight",
+      "ds": "--ds-select-size-lg-minheight",
+      "group": "select",
+      "name": "size/lg/minHeight",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "alias",
+        "path": "input/size/lg/height",
+        "ds": "--ds-input-size-lg-height"
+      },
+      "resolved": "48"
+    },
+    {
+      "path": "select/size/lg/paddingLeft",
+      "ds": "--ds-select-size-lg-paddingleft",
+      "group": "select",
+      "name": "size/lg/paddingLeft",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/lg",
+        "ds": "--ds-spacing-component-lg"
+      },
+      "resolved": "16"
+    },
+    {
+      "path": "select/size/lg/paddingY",
+      "ds": "--ds-select-size-lg-paddingy",
+      "group": "select",
+      "name": "size/lg/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "raw",
+        "value": "9.5"
+      },
+      "resolved": "9.5"
+    },
+    {
+      "path": "select/size/md/gap",
+      "ds": "--ds-select-size-md-gap",
+      "group": "select",
+      "name": "size/md/gap",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "select/size/md/minHeight",
+      "ds": "--ds-select-size-md-minheight",
+      "group": "select",
+      "name": "size/md/minHeight",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "alias",
+        "path": "input/size/md/height",
+        "ds": "--ds-input-size-md-height"
+      },
+      "resolved": "40"
+    },
+    {
+      "path": "select/size/md/paddingLeft",
+      "ds": "--ds-select-size-md-paddingleft",
+      "group": "select",
+      "name": "size/md/paddingLeft",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "select/size/md/paddingY",
+      "ds": "--ds-select-size-md-paddingy",
+      "group": "select",
+      "name": "size/md/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "raw",
+        "value": "7.5"
+      },
+      "resolved": "7.5"
+    },
+    {
+      "path": "select/size/sm/gap",
+      "ds": "--ds-select-size-sm-gap",
+      "group": "select",
+      "name": "size/sm/gap",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/2xs",
+        "ds": "--ds-spacing-component-2xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "select/size/sm/minHeight",
+      "ds": "--ds-select-size-sm-minheight",
+      "group": "select",
+      "name": "size/sm/minHeight",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "alias",
+        "path": "input/size/sm/height",
+        "ds": "--ds-input-size-sm-height"
+      },
+      "resolved": "32"
+    },
+    {
+      "path": "select/size/sm/paddingLeft",
+      "ds": "--ds-select-size-sm-paddingleft",
+      "group": "select",
+      "name": "size/sm/paddingLeft",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/xs",
+        "ds": "--ds-spacing-component-xs"
+      },
+      "resolved": "6"
+    },
+    {
+      "path": "select/size/sm/paddingY",
+      "ds": "--ds-select-size-sm-paddingy",
+      "group": "select",
+      "name": "size/sm/paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "raw",
+        "value": "5.5"
+      },
+      "resolved": "5.5"
+    },
+    {
+      "path": "select/value",
+      "ds": "--ds-select-value",
+      "group": "select",
+      "name": "value",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/content/primary",
+        "ds": "--ds-color-content-primary"
+      },
+      "resolved": "#0F172A"
+    },
+    {
+      "path": "sidebar/accent",
+      "ds": "--ds-sidebar-accent",
+      "group": "sidebar",
+      "name": "accent",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/sidebar-accent",
+        "ds": "--ds-color-sidebar-accent"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "sidebar/accentForeground",
+      "ds": "--ds-sidebar-accentforeground",
+      "group": "sidebar",
+      "name": "accentForeground",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/sidebar-accent-foreground",
+        "ds": "--ds-color-sidebar-accent-foreground"
+      },
+      "resolved": "#0F172A"
+    },
+    {
+      "path": "sidebar/border",
+      "ds": "--ds-sidebar-border",
+      "group": "sidebar",
+      "name": "border",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/sidebar-border",
+        "ds": "--ds-color-sidebar-border"
+      },
+      "resolved": "#E2E8F0"
+    },
+    {
+      "path": "sidebar/fill",
+      "ds": "--ds-sidebar-fill",
+      "group": "sidebar",
+      "name": "fill",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/sidebar",
+        "ds": "--ds-color-sidebar"
+      },
+      "resolved": "#F8FAFC"
+    },
+    {
+      "path": "sidebar/foreground",
+      "ds": "--ds-sidebar-foreground",
+      "group": "sidebar",
+      "name": "foreground",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/sidebar-foreground",
+        "ds": "--ds-color-sidebar-foreground"
+      },
+      "resolved": "#0F172A"
+    },
+    {
+      "path": "sidebar/primary",
+      "ds": "--ds-sidebar-primary",
+      "group": "sidebar",
+      "name": "primary",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/sidebar-primary",
+        "ds": "--ds-color-sidebar-primary"
+      },
+      "resolved": "#FFD242"
+    },
+    {
+      "path": "sidebar/primaryForeground",
+      "ds": "--ds-sidebar-primaryforeground",
+      "group": "sidebar",
+      "name": "primaryForeground",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/sidebar-primary-foreground",
+        "ds": "--ds-color-sidebar-primary-foreground"
+      },
+      "resolved": "#473600"
+    },
+    {
+      "path": "sidebar/ring",
+      "ds": "--ds-sidebar-ring",
+      "group": "sidebar",
+      "name": "ring",
+      "type": "color",
+      "primFamily": "color",
+      "target": {
+        "kind": "semantic",
+        "path": "color/sidebar-ring",
+        "ds": "--ds-color-sidebar-ring"
+      },
+      "resolved": "#06B6D4"
+    },
+    {
+      "path": "tooltip/fontSize",
+      "ds": "--ds-tooltip-fontsize",
+      "group": "tooltip",
+      "name": "fontSize",
+      "type": "dimension",
+      "primFamily": "fontSize",
+      "target": {
+        "kind": "semantic",
+        "path": "typography/labelSm/fontSize",
+        "ds": "--ds-typography-labelsm-fontsize"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "tooltip/maxWidth",
+      "ds": "--ds-tooltip-maxwidth",
+      "group": "tooltip",
+      "name": "maxWidth",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "raw",
+        "value": "240"
+      },
+      "resolved": "240"
+    },
+    {
+      "path": "tooltip/paddingX",
+      "ds": "--ds-tooltip-paddingx",
+      "group": "tooltip",
+      "name": "paddingX",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/md",
+        "ds": "--ds-spacing-component-md"
+      },
+      "resolved": "12"
+    },
+    {
+      "path": "tooltip/paddingY",
+      "ds": "--ds-tooltip-paddingy",
+      "group": "tooltip",
+      "name": "paddingY",
+      "type": "dimension",
+      "primFamily": "spacing",
+      "target": {
+        "kind": "semantic",
+        "path": "spacing/component/sm",
+        "ds": "--ds-spacing-component-sm"
+      },
+      "resolved": "8"
+    },
+    {
+      "path": "tooltip/radius",
+      "ds": "--ds-tooltip-radius",
+      "group": "tooltip",
+      "name": "radius",
+      "type": "dimension",
+      "primFamily": "borderRadius",
+      "target": {
+        "kind": "semantic",
+        "path": "radius/md",
+        "ds": "--ds-radius-md"
+      },
+      "resolved": "6"
+    }
+  ],
+  "usage": {
+    "accordion": [
+      "--ds-card-radius",
+      "--ds-color-border",
+      "--ds-color-border-focus",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-secondary-hover",
+      "--ds-color-surface",
+      "--ds-spacing-component-lg",
+      "--ds-spacing-component-xl",
+      "--ds-typography-bodylg-fontfamily",
+      "--ds-typography-bodylg-fontsize",
+      "--ds-typography-bodylg-fontweight",
+      "--ds-typography-bodylg-lineheight",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-fontweight",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-headingmd-fontfamily",
+      "--ds-typography-headingmd-fontsize",
+      "--ds-typography-headingmd-fontweight",
+      "--ds-typography-headingmd-lineheight"
+    ],
+    "alert-dialog": [
+      "--ds-card-radius",
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-foreground",
+      "--ds-color-overlay",
+      "--ds-spacing-component-lg",
+      "--ds-spacing-component-md",
+      "--ds-spacing-component-sm",
+      "--ds-spacing-component-xl",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-headingmd-fontfamily",
+      "--ds-typography-headingmd-fontsize",
+      "--ds-typography-headingmd-fontweight",
+      "--ds-typography-headingmd-lineheight"
+    ],
+    "alert": [
+      "--ds-alert-borderwidth",
+      "--ds-alert-padding",
+      "--ds-alert-radius",
+      "--ds-color-content-primary",
+      "--ds-color-status-error-bg",
+      "--ds-color-status-error-border",
+      "--ds-color-status-error-foreground",
+      "--ds-color-status-error-icon",
+      "--ds-color-status-info-bg",
+      "--ds-color-status-info-border",
+      "--ds-color-status-info-foreground",
+      "--ds-color-status-info-icon",
+      "--ds-color-status-neutral-bg",
+      "--ds-color-status-neutral-border",
+      "--ds-color-status-neutral-foreground",
+      "--ds-color-status-neutral-icon",
+      "--ds-color-status-success-bg",
+      "--ds-color-status-success-border",
+      "--ds-color-status-success-foreground",
+      "--ds-color-status-success-icon",
+      "--ds-color-status-warning-bg",
+      "--ds-color-status-warning-border",
+      "--ds-color-status-warning-foreground",
+      "--ds-color-status-warning-icon",
+      "--ds-spacing-component-md",
+      "--ds-spacing-component-sm",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-bodysm-lineheight",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight"
+    ],
+    "avatar": [
+      "--ds-avatar-size-2xl",
+      "--ds-avatar-size-lg",
+      "--ds-avatar-size-md",
+      "--ds-avatar-size-sm",
+      "--ds-avatar-size-xl",
+      "--ds-avatar-size-xs",
+      "--ds-badge-slate-content",
+      "--ds-badge-slate-fill",
+      "--ds-color-background",
+      "--ds-radius-full",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-fontweight",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "badge": [
+      "--ds-badge-amber-border",
+      "--ds-badge-amber-content",
+      "--ds-badge-amber-fill",
+      "--ds-badge-blue-border",
+      "--ds-badge-blue-content",
+      "--ds-badge-blue-fill",
+      "--ds-badge-brand-border",
+      "--ds-badge-brand-content",
+      "--ds-badge-brand-fill",
+      "--ds-badge-green-border",
+      "--ds-badge-green-content",
+      "--ds-badge-green-fill",
+      "--ds-badge-orange-border",
+      "--ds-badge-orange-content",
+      "--ds-badge-orange-fill",
+      "--ds-badge-purple-border",
+      "--ds-badge-purple-content",
+      "--ds-badge-purple-fill",
+      "--ds-badge-red-border",
+      "--ds-badge-red-content",
+      "--ds-badge-red-fill",
+      "--ds-badge-size-lg-fontsize",
+      "--ds-badge-size-lg-fontweight",
+      "--ds-badge-size-lg-height",
+      "--ds-badge-size-lg-paddingx",
+      "--ds-badge-size-lg-radiusfull",
+      "--ds-badge-size-lg-radiussquare",
+      "--ds-badge-size-md-fontsize",
+      "--ds-badge-size-md-fontweight",
+      "--ds-badge-size-md-height",
+      "--ds-badge-size-md-paddingx",
+      "--ds-badge-size-md-radius",
+      "--ds-badge-size-md-radiussquare",
+      "--ds-badge-size-sm-fontsize",
+      "--ds-badge-size-sm-fontweight",
+      "--ds-badge-size-sm-height",
+      "--ds-badge-size-sm-paddingx",
+      "--ds-badge-size-sm-radiusfull",
+      "--ds-badge-size-sm-radiussquare",
+      "--ds-badge-slate-border",
+      "--ds-badge-slate-content",
+      "--ds-badge-slate-fill"
+    ],
+    "breadcrumb": [
+      "--ds-button-ghost-fillhover",
+      "--ds-button-ghost-size-xs-paddingx",
+      "--ds-button-size-xs-height",
+      "--ds-button-size-xs-icononlypadding",
+      "--ds-button-size-xs-labelwrapperpaddingx",
+      "--ds-button-size-xs-paddingy",
+      "--ds-button-size-xs-radius",
+      "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-fontweight",
+      "--ds-typography-labelsm-lineheight",
+      "--ds-typography-overline-fontsize",
+      "--ds-typography-overline-fontweight",
+      "--ds-typography-overline-lineheight"
+    ],
+    "button-group": [
+      "--ds-button-size-md-fontsize",
+      "--ds-button-size-md-height",
+      "--ds-button-size-md-paddingx",
+      "--ds-button-size-md-radius",
+      "--ds-color-border",
+      "--ds-color-content-secondary",
+      "--ds-color-muted"
+    ],
+    "button": [
+      "--ds-button-destructive-content",
+      "--ds-button-destructive-contentdisabled",
+      "--ds-button-destructive-fill",
+      "--ds-button-destructive-fillactive",
+      "--ds-button-destructive-filldisabled",
+      "--ds-button-destructive-fillhover",
+      "--ds-button-destructiveghost-border",
+      "--ds-button-destructiveghost-borderdisabled",
+      "--ds-button-destructiveghost-content",
+      "--ds-button-destructiveghost-contentdisabled",
+      "--ds-button-destructiveghost-fill",
+      "--ds-button-destructiveghost-fillactive",
+      "--ds-button-destructiveghost-filldisabled",
+      "--ds-button-destructiveghost-fillhover",
+      "--ds-button-destructivesecondary-border",
+      "--ds-button-destructivesecondary-borderdisabled",
+      "--ds-button-destructivesecondary-content",
+      "--ds-button-destructivesecondary-contentdisabled",
+      "--ds-button-destructivesecondary-fill",
+      "--ds-button-destructivesecondary-fillactive",
+      "--ds-button-destructivesecondary-filldisabled",
+      "--ds-button-destructivesecondary-fillhover",
+      "--ds-button-ghost-content",
+      "--ds-button-ghost-contentdisabled",
+      "--ds-button-ghost-fillactive",
+      "--ds-button-ghost-filldisabled",
+      "--ds-button-ghost-fillhover",
+      "--ds-button-ghost-size-lg-paddingx",
+      "--ds-button-ghost-size-md-paddingx",
+      "--ds-button-ghost-size-sm-paddingx",
+      "--ds-button-ghost-size-xs-paddingx",
+      "--ds-button-primary-content",
+      "--ds-button-primary-contentdisabled",
+      "--ds-button-primary-fill",
+      "--ds-button-primary-fillactive",
+      "--ds-button-primary-filldisabled",
+      "--ds-button-primary-fillhover",
+      "--ds-button-secondary-border",
+      "--ds-button-secondary-content",
+      "--ds-button-secondary-contentdisabled",
+      "--ds-button-secondary-fill",
+      "--ds-button-secondary-fillactive",
+      "--ds-button-secondary-filldisabled",
+      "--ds-button-secondary-fillhover",
+      "--ds-button-size-lg-fontsize",
+      "--ds-button-size-lg-fontweight",
+      "--ds-button-size-lg-height",
+      "--ds-button-size-lg-icononlypadding",
+      "--ds-button-size-lg-paddingx",
+      "--ds-button-size-lg-radius",
+      "--ds-button-size-md-fontsize",
+      "--ds-button-size-md-fontweight",
+      "--ds-button-size-md-height",
+      "--ds-button-size-md-icononlypadding",
+      "--ds-button-size-md-paddingx",
+      "--ds-button-size-md-radius",
+      "--ds-button-size-sm-fontsize",
+      "--ds-button-size-sm-fontweight",
+      "--ds-button-size-sm-height",
+      "--ds-button-size-sm-icononlypadding",
+      "--ds-button-size-sm-paddingx",
+      "--ds-button-size-sm-radius",
+      "--ds-button-size-xs-fontsize",
+      "--ds-button-size-xs-fontweight",
+      "--ds-button-size-xs-height",
+      "--ds-button-size-xs-icononlypadding",
+      "--ds-button-size-xs-paddingx",
+      "--ds-button-size-xs-radius",
+      "--ds-button-tonal-content",
+      "--ds-button-tonal-contentdisabled",
+      "--ds-button-tonal-fill",
+      "--ds-button-tonal-fillactive",
+      "--ds-button-tonal-filldisabled",
+      "--ds-button-tonal-fillhover"
+    ],
+    "calendar": [
+      "--ds-button-ghost-contentdisabled",
+      "--ds-button-ghost-fillhover",
+      "--ds-button-primary-content",
+      "--ds-button-primary-fill",
+      "--ds-button-primary-fillhover",
+      "--ds-button-secondary-content",
+      "--ds-button-secondary-fillhover",
+      "--ds-color-border-strong",
+      "--ds-color-content-disabled",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted",
+      "--ds-radius-sm"
+    ],
+    "card": [
+      "--ds-card-border",
+      "--ds-card-borderwidth",
+      "--ds-card-fill",
+      "--ds-card-foreground",
+      "--ds-card-gap",
+      "--ds-card-padding",
+      "--ds-card-radius",
+      "--ds-color-muted-foreground"
+    ],
+    "checkbox-button": [
+      "--ds-checkbox-bordercolor",
+      "--ds-checkbox-bordererror",
+      "--ds-checkbox-bordererrorhover",
+      "--ds-checkbox-borderhover",
+      "--ds-checkbox-borderwidth",
+      "--ds-checkbox-checkedborder",
+      "--ds-checkbox-checkeddisabled",
+      "--ds-checkbox-containerfill",
+      "--ds-checkbox-containerradius",
+      "--ds-checkbox-fillhover",
+      "--ds-checkbox-gap",
+      "--ds-checkbox-paddingx",
+      "--ds-checkbox-size-lg-minheight",
+      "--ds-checkbox-size-md-minheight",
+      "--ds-checkbox-size-sm-minheight",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-primary-muted",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-placeholder",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "checkbox": [
+      "--ds-checkbox-bordercolor",
+      "--ds-checkbox-bordererror",
+      "--ds-checkbox-bordererrorhover",
+      "--ds-checkbox-borderhover",
+      "--ds-checkbox-borderwidth",
+      "--ds-checkbox-checked",
+      "--ds-checkbox-checkedborder",
+      "--ds-checkbox-checkeddisabled",
+      "--ds-checkbox-checkedhover",
+      "--ds-checkbox-cornerradius",
+      "--ds-checkbox-fill",
+      "--ds-checkbox-filldisabled",
+      "--ds-checkbox-fillhover",
+      "--ds-color-border-focus",
+      "--ds-color-primary-foreground"
+    ],
+    "combobox": [
+      "--ds-chip-outlined-border",
+      "--ds-chip-outlined-content",
+      "--ds-chip-outlined-fill",
+      "--ds-chip-size-md-fontsize",
+      "--ds-chip-size-md-height",
+      "--ds-chip-size-md-paddingx",
+      "--ds-chip-size-md-radius",
+      "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
+      "--ds-color-icon-muted",
+      "--ds-color-muted-foreground",
+      "--ds-color-ring",
+      "--ds-input-bordercolor",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value",
+      "--ds-select-icon",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "command": [
+      "--ds-color-border",
+      "--ds-color-content-tertiary",
+      "--ds-color-icon-muted",
+      "--ds-color-muted-foreground",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-input-placeholder",
+      "--ds-input-value",
+      "--ds-radius-lg",
+      "--ds-typography-labelsm-fontsize"
+    ],
+    "context-menu": [
+      "--ds-color-border",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted-foreground",
+      "--ds-typography-labelsm-fontsize"
+    ],
+    "data-table-cell": [
+      "--ds-color-content-link",
+      "--ds-color-content-link-hover",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-bodysm-lineheight",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "data-table-header": [
+      "--ds-color-border-subtle",
+      "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted",
+      "--ds-color-primary-muted",
+      "--ds-color-secondary-active",
+      "--ds-color-secondary-hover",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight"
+    ],
+    "data-table": [
+      "--ds-button-primary-content",
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-muted",
+      "--ds-color-primary-muted",
+      "--ds-color-secondary-active",
+      "--ds-color-surface",
+      "--ds-radius-lg",
+      "--ds-typography-headingmd-fontsize",
+      "--ds-typography-headingmd-fontweight",
+      "--ds-typography-headingmd-lineheight"
+    ],
+    "date-picker": [
+      "--ds-color-icon-muted",
+      "--ds-input-bordercolor",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "dialog": [
+      "--ds-color-border",
+      "--ds-color-muted",
+      "--ds-color-muted-foreground",
+      "--ds-color-overlay",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-xl"
+    ],
+    "drawer": [
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-muted-foreground",
+      "--ds-color-overlay",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-xl"
+    ],
+    "dropdown-menu": [
+      "--ds-color-border",
+      "--ds-color-content-tertiary",
+      "--ds-color-destructive",
+      "--ds-color-destructive-muted",
+      "--ds-color-muted-foreground",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-menuitem-content",
+      "--ds-menuitem-contentdisabled",
+      "--ds-menuitem-fillhover",
+      "--ds-radius-lg",
+      "--ds-typography-labelsm-fontsize"
+    ],
+    "empty": [
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-icon-default",
+      "--ds-color-icon-muted",
+      "--ds-color-muted",
+      "--ds-radius-lg",
+      "--ds-spacing-component-2xl",
+      "--ds-spacing-component-xl",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-headingmd-fontfamily",
+      "--ds-typography-headingmd-fontsize",
+      "--ds-typography-headingmd-fontweight",
+      "--ds-typography-headingmd-lineheight"
+    ],
+    "form-table-cell": [
+      "--ds-checkbox-bordercolor",
+      "--ds-checkbox-borderhover",
+      "--ds-checkbox-fill",
+      "--ds-color-content-secondary",
+      "--ds-radius-lg",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "hover-card": [
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-lg",
+      "--ds-typography-bodysm-fontfamily",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-bodysm-lineheight",
+      "--ds-typography-labellg-fontfamily",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight"
+    ],
+    "input-otp": [
+      "--ds-color-content-tertiary",
+      "--ds-input-bordercolor",
+      "--ds-input-borderfocus",
+      "--ds-input-fill",
+      "--ds-input-value"
+    ],
+    "input": [
+      "--ds-input-bordercolor",
+      "--ds-input-borderdisabled",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "item": [
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-icon-default",
+      "--ds-color-muted",
+      "--ds-radius-md",
+      "--ds-spacing-component-lg",
+      "--ds-spacing-component-md",
+      "--ds-spacing-component-sm",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-labellg-fontfamily",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight"
+    ],
+    "kbd": [
+      "--ds-color-border",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted",
+      "--ds-radius-sm",
+      "--ds-typography-bodyxs-fontfamily",
+      "--ds-typography-bodyxs-fontsize",
+      "--ds-typography-bodyxs-fontweight"
+    ],
+    "link": [
+      "--ds-color-content-disabled",
+      "--ds-color-content-link",
+      "--ds-color-content-link-active",
+      "--ds-color-content-link-hover",
+      "--ds-color-content-link-visited",
+      "--ds-color-destructive",
+      "--ds-color-destructive-active",
+      "--ds-color-destructive-hover",
+      "--ds-radius-xs",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-linklg-fontsize",
+      "--ds-typography-linklg-fontweight",
+      "--ds-typography-linklg-lineheight",
+      "--ds-typography-linkmd-fontsize",
+      "--ds-typography-linkmd-fontweight",
+      "--ds-typography-linkmd-lineheight",
+      "--ds-typography-linksm-fontsize",
+      "--ds-typography-linksm-fontweight",
+      "--ds-typography-linksm-lineheight",
+      "--ds-typography-linkxs-fontsize",
+      "--ds-typography-linkxs-fontweight",
+      "--ds-typography-linkxs-lineheight"
+    ],
+    "menubar": [
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted-foreground",
+      "--ds-menuitem-fillhover",
+      "--ds-typography-labelsm-fontsize"
+    ],
+    "navigation-menu": [
+      "--ds-color-content-primary",
+      "--ds-color-muted",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-lg"
+    ],
+    "pagination": [
+      "--ds-color-content-tertiary"
+    ],
+    "popover": [
+      "--ds-color-muted-foreground",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-lg",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight"
+    ],
+    "progress": [
+      "--ds-color-content-secondary",
+      "--ds-color-muted",
+      "--ds-color-primary",
+      "--ds-radius-full",
+      "--ds-spacing-2",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontfamily",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "radio-button": [
+      "--ds-checkbox-bordercolor",
+      "--ds-checkbox-bordererror",
+      "--ds-checkbox-bordererrorhover",
+      "--ds-checkbox-borderhover",
+      "--ds-checkbox-borderwidth",
+      "--ds-checkbox-checkedborder",
+      "--ds-checkbox-checkeddisabled",
+      "--ds-checkbox-containerfill",
+      "--ds-checkbox-containerradius",
+      "--ds-checkbox-fillhover",
+      "--ds-checkbox-gap",
+      "--ds-checkbox-paddingx",
+      "--ds-checkbox-size-lg-minheight",
+      "--ds-checkbox-size-md-minheight",
+      "--ds-checkbox-size-sm-minheight",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-primary-muted",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-placeholder",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "radio-group": [
+      "--ds-color-border-focus",
+      "--ds-color-primary-foreground",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-placeholder",
+      "--ds-radio-bordercolor",
+      "--ds-radio-bordererror",
+      "--ds-radio-borderhover",
+      "--ds-radio-borderwidth",
+      "--ds-radio-fill",
+      "--ds-radio-fillerror",
+      "--ds-radio-indicator",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "resizable": [
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-content-tertiary"
+    ],
+    "scroll-area": [
+      "--ds-color-border-strong",
+      "--ds-radius-full"
+    ],
+    "search": [
+      "--ds-color-content-primary",
+      "--ds-color-icon-muted",
+      "--ds-color-status-warning-border",
+      "--ds-color-status-warning-icon",
+      "--ds-input-bordercolor",
+      "--ds-input-borderdisabled",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "select": [
+      "--ds-color-border",
+      "--ds-color-muted-foreground",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-radius",
+      "--ds-menuitem-content",
+      "--ds-menuitem-fillhover",
+      "--ds-select-bordercolor",
+      "--ds-select-borderdisabled",
+      "--ds-select-bordererror",
+      "--ds-select-borderwidth",
+      "--ds-select-fill",
+      "--ds-select-icon",
+      "--ds-select-paddingright",
+      "--ds-select-size-lg-gap",
+      "--ds-select-size-lg-minheight",
+      "--ds-select-size-lg-paddingleft",
+      "--ds-select-size-lg-paddingy",
+      "--ds-select-size-md-gap",
+      "--ds-select-size-md-minheight",
+      "--ds-select-size-md-paddingleft",
+      "--ds-select-size-md-paddingy",
+      "--ds-select-size-sm-gap",
+      "--ds-select-size-sm-minheight",
+      "--ds-select-size-sm-paddingleft",
+      "--ds-select-size-sm-paddingy",
+      "--ds-select-value",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "separator": [
+      "--ds-color-border",
+      "--ds-spacing-0",
+      "--ds-spacing-12",
+      "--ds-spacing-16",
+      "--ds-spacing-24",
+      "--ds-spacing-32",
+      "--ds-spacing-4",
+      "--ds-spacing-8"
+    ],
+    "sidebar": [
+      "--ds-color-background",
+      "--ds-color-content-tertiary",
+      "--ds-color-foreground",
+      "--ds-sidebar-accent",
+      "--ds-sidebar-accentforeground",
+      "--ds-sidebar-border",
+      "--ds-sidebar-fill",
+      "--ds-sidebar-foreground",
+      "--ds-sidebar-primary",
+      "--ds-sidebar-primaryforeground",
+      "--ds-sidebar-ring",
+      "--ds-typography-labelsm-fontsize"
+    ],
+    "skeleton": [
+      "--ds-color-muted",
+      "--ds-radius-md"
+    ],
+    "slider": [
+      "--ds-color-muted",
+      "--ds-color-primary",
+      "--ds-color-white",
+      "--ds-radius-full",
+      "--ds-spacing-2"
+    ],
+    "sonner": [
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-popover",
+      "--ds-color-status-error-border",
+      "--ds-color-status-error-icon",
+      "--ds-color-status-info-border",
+      "--ds-color-status-info-icon",
+      "--ds-color-status-success-border",
+      "--ds-color-status-success-icon",
+      "--ds-color-status-warning-border",
+      "--ds-color-status-warning-icon",
+      "--ds-radius-lg",
+      "--ds-typography-bodysm-fontfamily",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-bodysm-lineheight",
+      "--ds-typography-labelmd-fontfamily",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight"
+    ],
+    "switch": [
+      "--ds-color-border-focus",
+      "--ds-color-content-primary",
+      "--ds-color-primary",
+      "--ds-color-primary-hover",
+      "--ds-color-status-error-border",
+      "--ds-color-white",
+      "--ds-input-bordercolor"
+    ],
+    "table": [
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-muted",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "tabs": [
+      "--ds-card-radius",
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-foreground",
+      "--ds-color-muted-foreground",
+      "--ds-color-primary",
+      "--ds-color-status-neutral-bg",
+      "--ds-color-status-neutral-border",
+      "--ds-radius-lg",
+      "--ds-spacing-component-xs",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight"
+    ],
+    "textarea": [
+      "--ds-input-bordercolor",
+      "--ds-input-borderdisabled",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "time-input": [
+      "--ds-color-icon-muted",
+      "--ds-input-bordercolor",
+      "--ds-input-borderdisabled",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ],
+    "toggle-group": [
+      "--ds-button-secondary-border",
+      "--ds-button-secondary-content",
+      "--ds-button-secondary-fillactive",
+      "--ds-button-secondary-fillhover",
+      "--ds-button-size-lg-fontsize",
+      "--ds-button-size-lg-height",
+      "--ds-button-size-lg-paddingx",
+      "--ds-button-size-lg-radius",
+      "--ds-button-size-md-fontsize",
+      "--ds-button-size-md-height",
+      "--ds-button-size-md-paddingx",
+      "--ds-button-size-md-radius",
+      "--ds-button-size-sm-fontsize",
+      "--ds-button-size-sm-height",
+      "--ds-button-size-sm-paddingx",
+      "--ds-button-size-sm-radius",
+      "--ds-button-size-xs-fontsize",
+      "--ds-button-size-xs-height",
+      "--ds-button-size-xs-paddingx",
+      "--ds-button-size-xs-radius",
+      "--ds-color-border-focus"
+    ],
+    "toggle": [
+      "--ds-button-secondary-border",
+      "--ds-button-secondary-content",
+      "--ds-button-secondary-fillactive",
+      "--ds-button-secondary-fillhover",
+      "--ds-button-size-lg-fontsize",
+      "--ds-button-size-lg-height",
+      "--ds-button-size-lg-paddingx",
+      "--ds-button-size-lg-radius",
+      "--ds-button-size-md-fontsize",
+      "--ds-button-size-md-height",
+      "--ds-button-size-md-paddingx",
+      "--ds-button-size-md-radius",
+      "--ds-button-size-sm-fontsize",
+      "--ds-button-size-sm-height",
+      "--ds-button-size-sm-paddingx",
+      "--ds-button-size-sm-radius",
+      "--ds-color-border-focus"
+    ],
+    "tooltip": [
+      "--ds-color-foreground",
+      "--ds-color-inverse",
+      "--ds-color-inverse-foreground",
+      "--ds-color-muted-foreground",
+      "--ds-tooltip-fontsize",
+      "--ds-tooltip-maxwidth",
+      "--ds-tooltip-paddingx",
+      "--ds-tooltip-paddingy",
+      "--ds-tooltip-radius"
+    ]
+  },
   "primitives": {
     "borderRadius": [
       {
