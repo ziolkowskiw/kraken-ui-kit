@@ -9,10 +9,10 @@ type StoryProps = React.ComponentProps<typeof Checkbox> & {
   label: string
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/Checkbox',
   component: Checkbox,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'a control that toggles between checked and not checked; opt-in/agree or multi-select lists' } } },
   tags: ['autodocs'],
   argTypes: {
     checkedState: { control: 'select', options: CHECKED_OPTIONS, name: 'checked' },
@@ -39,7 +39,7 @@ const meta: Meta<StoryProps> = {
       {label}
     </label>
   ),
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

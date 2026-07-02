@@ -25,7 +25,7 @@ Exclude the docs-only `_preview-labels` collection. Keep aliases intact
 2. Raw CSS vars → `tokens/tokens.raw.css` (`--ds-` prefix, aliases as `var()` chains).
 
 Use the `figma_export_tokens` MCP tool for both. Verify the two files changed and
-still contain the brand modes (`jit`, `randstadt`) before continuing.
+still contain the brand modes (`jit`, `brand`) before continuing.
 
 ## Step 2 — Build the final CSS  (no Figma; CI-safe)
 ```bash
@@ -36,14 +36,14 @@ cascade:
 ```
 :root                         primitives (always on)
 :root, [data-theme="jit"]     semantic, default brand
-[data-theme="randstadt"]      semantic, brand override
+[data-theme="brand"]      semantic, brand override
 :root                         component tokens (always on)
 ```
 Output: `src/styles/tokens.css` (imported by `globals.css`).
 
 ## Step 3 — Verify
 - `npm run build` (or `tsc --noEmit`) passes.
-- Spot-check the brand flip still works: a `[data-theme="randstadt"]` value differs
+- Spot-check the brand flip still works: a `[data-theme="brand"]` value differs
   from default (e.g. `--ds-button-primary-fill` `#FFD242` → `#298EE5`).
 - If component tokens (`--ds-*-fill`, …) changed, that's a red flag — only semantic
   values should differ per brand.

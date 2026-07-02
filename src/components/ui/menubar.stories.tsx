@@ -18,18 +18,29 @@ import {
   MenubarSubContent,
 } from './menubar'
 
+type StoryProps = {
+  showShortcuts: boolean
+  showSubmenu: boolean
+  destructiveItem: boolean
+}
+
 const meta = {
   title: 'Components/Menubar',
-  component: Menubar,
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Menubar as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'A horizontal bar of menus.' } } },
   tags: ['autodocs'],
-} satisfies Meta<typeof Menubar>
-
-export default meta
-type Story = StoryObj<typeof meta>
-
-export const Playground: Story = {
-  render: () => {
+  argTypes: {
+    showShortcuts: { control: 'boolean', name: 'Shortcut hints', table: { category: 'Content' } },
+    showSubmenu: { control: 'boolean', name: 'Submenu (File ▸ Share)', table: { category: 'Content' } },
+    destructiveItem: { control: 'boolean', name: 'Destructive item', table: { category: 'Content' } },
+  },
+  args: {
+    showShortcuts: true,
+    showSubmenu: true,
+    destructiveItem: true,
+  },
+  render: ({ showShortcuts, showSubmenu, destructiveItem }) => {
     const [showStatusBar, setShowStatusBar] = React.useState(true)
     const [showActivityBar, setShowActivityBar] = React.useState(false)
     const [profile, setProfile] = React.useState('benoit')
@@ -40,21 +51,29 @@ export const Playground: Story = {
           <MenubarTrigger>File</MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+              New Tab {showShortcuts && <MenubarShortcut>⌘T</MenubarShortcut>}
             </MenubarItem>
             <MenubarItem>New Window</MenubarItem>
-            <MenubarSeparator />
-            <MenubarSub>
-              <MenubarSubTrigger>Share</MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarItem>Email link</MenubarItem>
-                <MenubarItem>Messages</MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub>
-            <MenubarSeparator />
-            <MenubarItem variant="destructive">
-              Print <MenubarShortcut>⌘P</MenubarShortcut>
-            </MenubarItem>
+            {showSubmenu && (
+              <>
+                <MenubarSeparator />
+                <MenubarSub>
+                  <MenubarSubTrigger>Share</MenubarSubTrigger>
+                  <MenubarSubContent>
+                    <MenubarItem>Email link</MenubarItem>
+                    <MenubarItem>Messages</MenubarItem>
+                  </MenubarSubContent>
+                </MenubarSub>
+              </>
+            )}
+            {destructiveItem && (
+              <>
+                <MenubarSeparator />
+                <MenubarItem variant="destructive">
+                  Print {showShortcuts && <MenubarShortcut>⌘P</MenubarShortcut>}
+                </MenubarItem>
+              </>
+            )}
           </MenubarContent>
         </MenubarMenu>
 
@@ -64,10 +83,10 @@ export const Playground: Story = {
             <MenubarGroup>
               <MenubarLabel>History</MenubarLabel>
               <MenubarItem>
-                Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                Undo {showShortcuts && <MenubarShortcut>⌘Z</MenubarShortcut>}
               </MenubarItem>
               <MenubarItem>
-                Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                Redo {showShortcuts && <MenubarShortcut>⇧⌘Z</MenubarShortcut>}
               </MenubarItem>
             </MenubarGroup>
           </MenubarContent>
@@ -102,4 +121,13 @@ export const Playground: Story = {
       </Menubar>
     )
   },
+} satisfies Meta<StoryProps>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {}
+
+export const Minimal: Story = {
+  args: { showShortcuts: false, showSubmenu: false, destructiveItem: false },
 }

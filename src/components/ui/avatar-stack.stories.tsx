@@ -12,8 +12,9 @@ type StackStoryProps = React.ComponentProps<typeof AvatarStack> & {
   avatarFallback: string
 }
 
-const meta: Meta<StackStoryProps> = {
+const meta = {
   title: 'Components/AvatarStack',
+  component: AvatarStack,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
@@ -59,7 +60,7 @@ const meta: Meta<StackStoryProps> = {
       ))}
     </AvatarStack>
   ),
-}
+} satisfies Meta<StackStoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

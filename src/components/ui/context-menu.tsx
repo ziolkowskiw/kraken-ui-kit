@@ -10,11 +10,29 @@ import { menuItemClasses, menuPopupClasses } from "./dropdown-menu"
 // Mirrors the Figma `context-menu` set (1134:17687): State=default|open. Same item
 // system as the dropdown menu (shared `--ds-menuitem-*` styling) but opened by
 // right-click via Base UI's ContextMenu primitive.
-const ContextMenu = ContextMenuPrimitive.Root
-const ContextMenuTrigger = ContextMenuPrimitive.Trigger
-const ContextMenuGroup = ContextMenuPrimitive.Group
-const ContextMenuSub = ContextMenuPrimitive.SubmenuRoot
-const ContextMenuRadioGroup = ContextMenuPrimitive.RadioGroup
+function ContextMenu({ ...props }: ContextMenuPrimitive.Root.Props) {
+  return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />
+}
+
+function ContextMenuTrigger({ ...props }: ContextMenuPrimitive.Trigger.Props) {
+  return <ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />
+}
+
+function ContextMenuPortal({ ...props }: ContextMenuPrimitive.Portal.Props) {
+  return <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />
+}
+
+function ContextMenuGroup({ ...props }: ContextMenuPrimitive.Group.Props) {
+  return <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />
+}
+
+function ContextMenuSub({ ...props }: ContextMenuPrimitive.SubmenuRoot.Props) {
+  return <ContextMenuPrimitive.SubmenuRoot data-slot="context-menu-sub" {...props} />
+}
+
+function ContextMenuRadioGroup({ ...props }: ContextMenuPrimitive.RadioGroup.Props) {
+  return <ContextMenuPrimitive.RadioGroup data-slot="context-menu-radio-group" {...props} />
+}
 
 function ContextMenuContent({ className, ...props }: ContextMenuPrimitive.Popup.Props) {
   return (
@@ -111,6 +129,7 @@ function ContextMenuSubContent({ className, ...props }: ContextMenuPrimitive.Pop
 export {
   ContextMenu,
   ContextMenuTrigger,
+  ContextMenuPortal,
   ContextMenuContent,
   ContextMenuGroup,
   ContextMenuItem,

@@ -6,6 +6,13 @@ import { SearchIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { menuItemClasses } from "./dropdown-menu"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "./dialog"
 
 // Mirrors the Figma `command` set (1134:17063): Variant=collapsed|expanded — a
 // search box over a filtered list. Built on Base UI's Autocomplete (mode="list")
@@ -107,8 +114,41 @@ function CommandShortcut({ className, ...props }: React.ComponentProps<"span">) 
   )
 }
 
+// The ⌘K pattern: a Command palette inside a Dialog. Title/description are
+// visually hidden but keep the dialog labelled for screen readers.
+function CommandDialog({
+  title = "Command Palette",
+  description = "Search for a command to run…",
+  children,
+  className,
+  showCloseButton = false,
+  ...props
+}: Omit<React.ComponentProps<typeof Dialog>, "children"> & {
+  title?: string
+  description?: string
+  className?: string
+  showCloseButton?: boolean
+  children: React.ReactNode
+}) {
+  return (
+    <Dialog {...props}>
+      <DialogContent
+        className={cn("top-1/3 translate-y-0 overflow-hidden p-0", className)}
+        showCloseButton={showCloseButton}
+      >
+        <DialogHeader className="sr-only">
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>{description}</DialogDescription>
+        </DialogHeader>
+        {children}
+      </DialogContent>
+    </Dialog>
+  )
+}
+
 export {
   Command,
+  CommandDialog,
   CommandInput,
   CommandList,
   CommandEmpty,

@@ -11,12 +11,14 @@ Menubar component. See MAPPING.md for the full shadcn-aligned description.
 - `Menubar`
 - `MenubarMenu`
 - `MenubarGroup`
+- `MenubarPortal`
 - `MenubarRadioGroup`
 - `MenubarSub`
 - `MenubarTrigger`
 - `MenubarContent`
 - `MenubarItem`
 - `MenubarCheckboxItem`
+- `MenubarRadioItem`
 - `MenubarLabel`
 - `MenubarSeparator`
 - `MenubarShortcut`

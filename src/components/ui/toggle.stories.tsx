@@ -19,7 +19,7 @@ type StoryProps = React.ComponentProps<typeof Toggle> & { iconName?: IconName }
 const meta = {
   title: 'Components/Toggle',
   component: Toggle,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'A two-state button that can be either on or off; a single toggleable option (e.g. bold).' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'inline-radio', options: VARIANTS },
@@ -65,5 +65,14 @@ export const IconOnly: Story = {
     <Toggle aria-label="Bold" className="aspect-square px-0">
       <Bold />
     </Toggle>
+  ),
+}
+
+export const Disabled: Story = {
+  render: () => (
+    <div className="flex items-center gap-2">
+      <Toggle disabled>Off</Toggle>
+      <Toggle disabled defaultPressed>On</Toggle>
+    </div>
   ),
 }

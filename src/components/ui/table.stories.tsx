@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import {
   Table,
   TableHeader,
@@ -21,7 +22,9 @@ const rows = [
 
 const meta = {
   title: 'Components/Table',
-  parameters: { layout: 'padded' },
+  // docs-only association; the playground args are story-level props
+  component: Table as React.ComponentType<{ zebra?: boolean }>,
+  parameters: { layout: 'padded', docs: { description: { component: 'A responsive table component; display rows/columns of data.' } } },
   tags: ['autodocs'],
   argTypes: {
     zebra: { control: 'boolean', name: 'Zebra (even/odd parity)' },

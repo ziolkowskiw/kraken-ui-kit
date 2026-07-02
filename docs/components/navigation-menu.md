@@ -14,6 +14,9 @@ Navigation Menu component. See MAPPING.md for the full shadcn-aligned descriptio
 - `NavigationMenuTrigger`
 - `NavigationMenuContent`
 - `NavigationMenuLink`
+- `NavigationMenuViewport`
+- `NavigationMenuPositioner`
+- `NavigationMenuIndicator`
 
 ## Props
 

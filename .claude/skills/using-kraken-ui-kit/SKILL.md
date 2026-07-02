@@ -61,7 +61,7 @@ Rules:
 Set `data-theme` on `<html>` (or any ancestor). Default brand is `jit`.
 ```html
 <html data-theme="jit">       <!-- yellow primary, 6px radius -->
-<html data-theme="randstadt"> <!-- blue primary, 0px radius -->
+<html data-theme="brand"> <!-- blue primary, 0px radius -->
 ```
 Switching only swaps the semantic layer — component tokens are untouched and every
 `var()` re-resolves. Do not add per-brand overrides in app code.

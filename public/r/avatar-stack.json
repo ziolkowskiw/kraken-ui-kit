@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-stack",
+  "title": "Avatar Stack",
+  "description": "Kraken UI Kit avatar-stack — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/avatar-stack.tsx",
+      "content": "// Re-export module so the documented path (MAPPING.md, docs/components) resolves.\n// The implementation lives in ./avatar to keep Avatar + AvatarStack co-located and\n// share the avatarVariants CVA. Importing from either path is supported.\nexport { AvatarStack, Avatar, avatarVariants } from \"./avatar\"\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -5,7 +5,7 @@ import { Card, CardContent } from './card'
 const meta = {
   title: 'Components/Carousel',
   component: Carousel,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'A carousel with motion and swipe built using Embla; browse a set of images/cards.' } } },
   tags: ['autodocs'],
   argTypes: {
     orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'] },

@@ -3,7 +3,7 @@
 // WHY THIS EXISTS
 // ---------------
 // figma-console-mcp exports one CSS block per Figma collection-mode, i.e.
-// [data-theme="global"], [data-theme="jit"], [data-theme="randstadt"],
+// [data-theme="global"], [data-theme="jit"], [data-theme="brand"],
 // [data-theme="component"]. That is wrong for the browser: primitives (global)
 // and component knobs (component) must be ALWAYS on (:root), and only the
 // SEMANTIC brand modes should be switchable themes. This script rewrites those
@@ -12,10 +12,10 @@
 // Result structure (src/styles/tokens.css):
 //   :root                        -> global primitives  (always on)
 //   :root, [data-theme="jit"]    -> semantic, default brand (jit)
-//   [data-theme="randstadt"]     -> semantic, brand override
+//   [data-theme="brand"]     -> semantic, brand override
 //   :root                        -> component tokens   (always on; alias semantic)
 //
-// Switching brand = set data-theme="randstadt" on <html>. Nothing else changes;
+// Switching brand = set data-theme="brand" on <html>. Nothing else changes;
 // component tokens read var(--ds-color-*) which re-resolve to the active brand.
 //
 // No dependencies — pure Node. Run: npm run tokens:build
@@ -33,7 +33,7 @@ const OUT = path.join(root, 'src', 'styles', 'tokens.css');
 const BASE_MODES = ['global', 'component'];
 // The semantic brand shown when no data-theme attribute is set.
 const DEFAULT_BRAND = 'jit';
-// Every other semantic mode (e.g. 'randstadt') becomes [data-theme="<mode>"].
+// Every other semantic mode (e.g. 'brand') becomes [data-theme="<mode>"].
 // -----------------------------------------------------------------------------
 
 const raw = await readFile(SRC, 'utf8');

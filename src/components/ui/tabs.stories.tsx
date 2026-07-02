@@ -43,7 +43,7 @@ function renderTabs({ variant, depth, orientation, tabCount, disableLast }: Stor
 const meta = {
   title: 'Components/Tabs',
   component: Tabs,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'layered sections of content displayed one at a time; switch between related views in the same space' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'inline-radio', options: VARIANTS, name: 'Variant', table: { category: 'Appearance' } },

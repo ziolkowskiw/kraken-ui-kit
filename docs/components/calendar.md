@@ -9,6 +9,7 @@ Calendar component. See MAPPING.md for the full shadcn-aligned description.
 ## Anatomy
 
 - `Calendar`
+- `CalendarDayButton`
 
 ## Props
 
@@ -17,6 +18,15 @@ All props are passed through to the underlying Base UI / HTML element.
 
 ## Token map
 
+**L3 Component**
+- `--ds-button-ghost-contentdisabled`
+- `--ds-button-ghost-fillhover`
+- `--ds-button-primary-content`
+- `--ds-button-primary-fill`
+- `--ds-button-primary-fillhover`
+- `--ds-button-secondary-content`
+- `--ds-button-secondary-fillhover`
+
 **L2 Semantic**
 - `--ds-color-border-strong`
 - `--ds-color-content-disabled`
@@ -24,10 +34,7 @@ All props are passed through to the underlying Base UI / HTML element.
 - `--ds-color-content-secondary`
 - `--ds-color-content-tertiary`
 - `--ds-color-muted`
-- `--ds-color-primary`
-- `--ds-color-primary-foreground`
-- `--ds-color-primary-hover`
-- `--ds-color-primary-muted`
+- `--ds-radius-sm`
 
 ## Accessibility
 

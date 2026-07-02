@@ -9,6 +9,8 @@ Button Group component. See MAPPING.md for the full shadcn-aligned description.
 ## Anatomy
 
 - `ButtonGroup`
+- `ButtonGroupSeparator`
+- `ButtonGroupText`
 
 ## Props
 
@@ -20,7 +22,16 @@ Button Group component. See MAPPING.md for the full shadcn-aligned description.
 
 ## Token map
 
-_No `--ds-*` tokens used directly — relies on Tailwind/shadcn semantic classes._
+**L3 Component**
+- `--ds-button-size-md-fontsize`
+- `--ds-button-size-md-height`
+- `--ds-button-size-md-paddingx`
+- `--ds-button-size-md-radius`
+
+**L2 Semantic**
+- `--ds-color-border`
+- `--ds-color-content-secondary`
+- `--ds-color-muted`
 
 ## Accessibility
 

@@ -38,6 +38,7 @@ Data Table component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-color-primary-muted`
 - `--ds-color-secondary-active`
 - `--ds-color-surface`
+- `--ds-radius-lg`
 - `--ds-typography-headingmd-fontsize`
 - `--ds-typography-headingmd-fontweight`
 - `--ds-typography-headingmd-lineheight`

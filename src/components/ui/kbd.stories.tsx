@@ -4,7 +4,7 @@ import { Kbd, KbdGroup } from './kbd'
 const meta = {
   title: 'Components/Kbd',
   component: Kbd,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'Keyboard shortcut display.' } } },
   tags: ['autodocs'],
   argTypes: {
     children: { control: 'text', name: 'Label' },

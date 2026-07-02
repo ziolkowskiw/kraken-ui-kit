@@ -36,7 +36,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 
-const BRANDS = ["jit", "randstadt"] as const;
+const BRANDS = ["jit", "brand"] as const;
 type Brand = (typeof BRANDS)[number];
 
 export default function Showcase() {
@@ -44,7 +44,7 @@ export default function Showcase() {
 
   function applyBrand(next: Brand) {
     setBrand(next);
-    // jit is the :root default — no attribute needed; randstadt is an override.
+    // jit is the :root default — no attribute needed; brand is an override.
     if (next === "jit") delete document.documentElement.dataset.theme;
     else document.documentElement.dataset.theme = next;
   }

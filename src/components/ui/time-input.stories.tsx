@@ -10,7 +10,7 @@ type TimeStoryProps = React.ComponentProps<typeof TimeInputField> & {
 const meta = {
   title: 'Components/TimeInput',
   component: TimeInputField,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'A time field (native' } } },
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
@@ -57,4 +57,8 @@ export const Sizes: Story = {
 
 export const ErrorState: Story = {
   args: { errorMessage: 'Time must be after 09:00.', defaultValue: '07:15' },
+}
+
+export const Disabled: Story = {
+  args: { disabled: true, defaultValue: '12:30' },
 }

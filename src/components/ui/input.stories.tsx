@@ -25,7 +25,7 @@ type FieldStoryProps = React.ComponentProps<typeof InputField> & {
 const meta = {
   title: 'Components/InputField',
   component: InputField,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'displays a form input field; single-line text entry in forms' } } },
   tags: ['autodocs'],
   argTypes: {
     state: { control: 'select', options: STATES, name: 'State' },

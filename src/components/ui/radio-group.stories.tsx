@@ -10,10 +10,10 @@ type RGFieldStoryProps = React.ComponentProps<typeof RadioGroupField> & {
   tooltipText?: string
 }
 
-const meta: Meta<RGFieldStoryProps> = {
+const meta = {
   title: 'Components/RadioGroup',
   component: RadioGroupField,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'a set of checkable buttons where only one can be checked; choose one from a small visible set' } } },
   tags: ['autodocs'],
   argTypes: {
     state: { control: 'select', options: STATES, name: 'State' },
@@ -54,7 +54,7 @@ const meta: Meta<RGFieldStoryProps> = {
       ))}
     </RadioGroupField>
   ),
-}
+} satisfies Meta<RGFieldStoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

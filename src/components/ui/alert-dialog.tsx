@@ -131,6 +131,13 @@ function AlertDialogDescription({
   )
 }
 
+// shadcn-compat alias: upstream names the dismissing action "Cancel".
+function AlertDialogCancel({ ...props }: AlertDialogPrimitive.Close.Props) {
+  return (
+    <AlertDialogPrimitive.Close data-slot="alert-dialog-cancel" {...props} />
+  )
+}
+
 function AlertDialogClose({ ...props }: AlertDialogPrimitive.Close.Props) {
   return (
     <AlertDialogPrimitive.Close data-slot="alert-dialog-close" {...props} />
@@ -140,6 +147,7 @@ function AlertDialogClose({ ...props }: AlertDialogPrimitive.Close.Props) {
 export {
   AlertDialog,
   AlertDialogClose,
+  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogOverlay,

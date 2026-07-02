@@ -1,37 +1,26 @@
 # Avatar Stack
 
-> See [MAPPING.md](../../MAPPING.md) for Figma node ID and deep link (`605:6567`).
+> See [MAPPING.md](../../MAPPING.md) for Figma node ID and deep link.
 
 ## What it is
 
-A horizontally overlapping group of `Avatar`s with an optional `+N` overflow
-counter. Implemented as `AvatarStack`, exported from both `avatar.tsx` and the
-re-export module `avatar-stack.tsx`.
+Avatar Stack component. See MAPPING.md for the full shadcn-aligned description.
 
 ## Anatomy
 
 - `AvatarStack`
-- `Avatar` (children)
+- `Avatar`
 
 ## Props
 
-| Prop | Type | Values | Default |
-|---|---|---|---|
-| `size` | enum | `"2xl" \| "xs" \| "sm" \| "md" \| "lg" \| "xl"` | `"sm"` |
-| `roundness` | enum | `"round" \| "square"` | `"round"` |
-| `max` | number | max visible avatars before `+N` overflow | — |
+All props are passed through to the underlying Base UI / HTML element.
 
-`size` and `roundness` are applied to every child `Avatar` via `cloneElement`.
-
-> **State note:** `hover`, `focus`, `active` are CSS-only; there is no state prop.
 
 ## Token map
 
-**L2 Semantic**
-- `--ds-color-background` (ring separating overlapping avatars)
-- `--ds-color-primary-muted` / `--ds-color-primary-muted-foreground` (overflow chip)
-- `--ds-radius-full`
+_No `--ds-*` tokens used directly — relies on Tailwind/shadcn semantic classes._
 
 ## Accessibility
 
-- Provide meaningful `alt` / `fallback` on each child `Avatar`.
+- The group needs an accessible count: wrap in an element with `aria-label="5 participants"`.
+- Individual avatars inside the stack should carry `title` or `aria-label`.

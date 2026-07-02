@@ -114,7 +114,7 @@ function AvatarStack({
         <span
           key={i}
           className={cn(
-            "relative ring-2 [ring-color:var(--ds-color-background)]",
+            "relative inline-flex shrink-0 ring-2 ring-background",
             roundness === "round" && "[border-radius:var(--ds-radius-full)]"
           )}
         >
@@ -127,7 +127,7 @@ function AvatarStack({
         <span
           className={cn(
             avatarVariants({ size, roundness }),
-            "relative ring-2 [ring-color:var(--ds-color-background)] [background-color:var(--ds-badge-slate-fill)]"
+            "relative ring-2 ring-background [background-color:var(--ds-badge-slate-fill)]"
           )}
         >
           <span

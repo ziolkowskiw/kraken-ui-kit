@@ -25,10 +25,10 @@ const sampleItems = (
   </>
 )
 
-const meta: Meta<SelectFieldStoryProps> = {
+const meta = {
   title: 'Components/Select',
   component: SelectField,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'displays a list of options to pick from, triggered by a button; single-choice selection in forms' } } },
   tags: ['autodocs'],
   argTypes: {
     state: { control: 'select', options: STATES, name: 'State' },
@@ -67,7 +67,7 @@ const meta: Meta<SelectFieldStoryProps> = {
       className="w-72"
     />
   ),
-}
+} satisfies Meta<SelectFieldStoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

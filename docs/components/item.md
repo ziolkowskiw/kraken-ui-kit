@@ -9,6 +9,10 @@ Item component. See MAPPING.md for the full shadcn-aligned description.
 ## Anatomy
 
 - `Item`
+- `ItemGroup`
+- `ItemHeader`
+- `ItemFooter`
+- `ItemSeparator`
 - `ItemMedia`
 - `ItemContent`
 - `ItemTitle`
@@ -34,6 +38,7 @@ Item component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-radius-md`
 - `--ds-spacing-component-lg`
 - `--ds-spacing-component-md`
+- `--ds-spacing-component-sm`
 - `--ds-typography-bodymd-fontfamily`
 - `--ds-typography-bodymd-fontsize`
 - `--ds-typography-bodymd-lineheight`

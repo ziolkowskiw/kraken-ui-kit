@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import * as React from 'react'
-import { icons } from 'lucide-react'
 import { Button } from './button'
+import { iconArgType, renderIcon, type IconName } from '@/lib/story-helpers'
 
 const VARIANTS = [
   'primary',
@@ -14,16 +14,6 @@ const VARIANTS = [
 ] as const
 const SIZES = ['xs', 'sm', 'md', 'lg'] as const
 
-// Same icon-picker approach as Badge: the full lucide set as a control. The real
-// leftIcon/rightIcon props accept any ReactNode. "none" = no icon.
-type IconName = 'none' | keyof typeof icons
-const ICON_OPTIONS: IconName[] = ['none', ...(Object.keys(icons) as (keyof typeof icons)[])]
-const renderIcon = (name?: IconName): React.ReactNode => {
-  if (!name || name === 'none') return undefined
-  const Icon = icons[name as keyof typeof icons]
-  return Icon ? <Icon /> : undefined
-}
-
 type StoryProps = React.ComponentProps<typeof Button> & {
   leftIconName?: IconName
   rightIconName?: IconName
@@ -32,15 +22,15 @@ type StoryProps = React.ComponentProps<typeof Button> & {
 const meta = {
   title: 'Components/Button',
   component: Button,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'displays a button or a component that looks like a button; primary actions, form submits, dialog/menu triggers' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'select', options: VARIANTS },
     size: { control: 'inline-radio', options: SIZES },
     iconOnly: { control: 'boolean' },
     disabled: { control: 'boolean' },
-    leftIconName: { control: 'select', options: ICON_OPTIONS, name: 'Left icon' },
-    rightIconName: { control: 'select', options: ICON_OPTIONS, name: 'Right icon' },
+    leftIconName: iconArgType('Left icon'),
+    rightIconName: iconArgType('Right icon'),
     leftIcon: { table: { disable: true } },
     rightIcon: { table: { disable: true } },
   },
@@ -93,4 +83,17 @@ export const Sizes: Story = {
 
 export const IconOnly: Story = {
   args: { iconOnly: true, leftIconName: 'Plus', children: undefined, 'aria-label': 'Add' },
+}
+
+// Non-interactive state across the main variants.
+export const Disabled: Story = {
+  render: () => (
+    <div className="flex flex-wrap items-center gap-2">
+      {(['primary', 'secondary', 'tonal', 'destructive'] as const).map((variant) => (
+        <Button key={variant} variant={variant} disabled>
+          {variant}
+        </Button>
+      ))}
+    </div>
+  ),
 }

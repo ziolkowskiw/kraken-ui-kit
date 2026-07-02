@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -11,12 +12,34 @@ import {
 } from './navigation-menu'
 import { NavigationMenu as NavigationMenuPrimitive } from '@base-ui/react/navigation-menu'
 
+const ALL_COMPONENTS = ['Alert', 'Badge', 'Button', 'Card', 'Dialog', 'Tabs', 'Select', 'Tooltip']
+
+type StoryProps = {
+  startLabel: string
+  componentsLabel: string
+  linkLabel: string
+  componentCount: number
+}
+
 const meta = {
   title: 'Components/NavigationMenu',
-  component: NavigationMenu,
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: NavigationMenu as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'A horizontal menu whose triggers reveal a shared floating panel.' } } },
   tags: ['autodocs'],
-} satisfies Meta<typeof NavigationMenu>
+  argTypes: {
+    startLabel: { control: 'text', name: 'Menu 1 label', table: { category: 'Nested: Triggers' } },
+    componentsLabel: { control: 'text', name: 'Menu 2 label', table: { category: 'Nested: Triggers' } },
+    linkLabel: { control: 'text', name: 'Plain link label', table: { category: 'Nested: Triggers' } },
+    componentCount: { control: { type: 'range', min: 2, max: 8, step: 1 }, name: 'Component links', table: { category: 'Content' } },
+  },
+  args: {
+    startLabel: 'Getting started',
+    componentsLabel: 'Components',
+    linkLabel: 'Documentation',
+    componentCount: 6,
+  },
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -25,11 +48,11 @@ type Story = StoryObj<typeof meta>
 // (which itself mounts the `NavigationMenuIndicator` arrow) internally. Triggers reveal
 // rich panels; the last item is a plain link rendered with the trigger style.
 export const Playground: Story = {
-  render: () => (
+  render: ({ startLabel, componentsLabel, linkLabel, componentCount }) => (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{startLabel}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="grid w-80 gap-1">
               <NavigationMenuLink href="#">
@@ -44,10 +67,10 @@ export const Playground: Story = {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{componentsLabel}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="grid w-96 grid-cols-2 gap-1">
-              {['Alert', 'Badge', 'Button', 'Card', 'Dialog', 'Tabs'].map((c) => (
+              {ALL_COMPONENTS.slice(0, componentCount).map((c) => (
                 <NavigationMenuLink key={c} href="#">
                   <span className="font-medium">{c}</span>
                 </NavigationMenuLink>
@@ -57,7 +80,7 @@ export const Playground: Story = {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink href="#" className={navigationMenuTriggerStyle()}>
-            Documentation
+            {linkLabel}
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

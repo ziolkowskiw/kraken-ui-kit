@@ -10,7 +10,7 @@ type DatePickerStoryProps = React.ComponentProps<typeof DatePickerField> & {
 const meta = {
   title: 'Components/DatePicker',
   component: DatePickerField,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'A date picker component; pick a single date or range in forms. Composes' } } },
   tags: ['autodocs'],
   argTypes: {
     mode: { control: 'inline-radio', options: ['single', 'range'] },
@@ -77,4 +77,8 @@ export const RangeSelection: Story = {
 
 export const ErrorState: Story = {
   args: { errorMessage: 'Please select a date.' },
+}
+
+export const Disabled: Story = {
+  args: { disabled: true, label: 'Date', placeholder: 'Pick a date' },
 }

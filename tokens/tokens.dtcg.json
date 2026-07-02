@@ -7321,9 +7321,9 @@
           "$value": "#3B0764"
         }
       },
-      "randstadt": {
+      "brand": {
         "50": {
-          "$description": "50 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "50 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7340,7 +7340,7 @@
           "$value": "#F5FAFE"
         },
         "100": {
-          "$description": "100 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "100 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7357,7 +7357,7 @@
           "$value": "#CCE4F9"
         },
         "200": {
-          "$description": "200 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "200 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7374,7 +7374,7 @@
           "$value": "#A3CEF4"
         },
         "300": {
-          "$description": "300 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "300 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7391,7 +7391,7 @@
           "$value": "#7AB9EF"
         },
         "400": {
-          "$description": "400 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "400 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7408,7 +7408,7 @@
           "$value": "#52A3EA"
         },
         "500": {
-          "$description": "500 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "500 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7425,7 +7425,7 @@
           "$value": "#298EE5"
         },
         "600": {
-          "$description": "600 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "600 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7442,7 +7442,7 @@
           "$value": "#0078E0"
         },
         "700": {
-          "$description": "700 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "700 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7459,7 +7459,7 @@
           "$value": "#0065BC"
         },
         "800": {
-          "$description": "800 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "800 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7476,7 +7476,7 @@
           "$value": "#005298"
         },
         "900": {
-          "$description": "900 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "900 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -7493,7 +7493,7 @@
           "$value": "#002B51"
         },
         "950": {
-          "$description": "950 — Randstadt brand palette — referenced by semantic/color/primary in Randstadt mode.",
+          "$description": "950 — Brand palette — referenced by semantic/color/primary in Brand mode.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
@@ -9075,8 +9075,8 @@
         "$type": "string",
         "$value": "Moderat JIT"
       },
-      "randstadt": {
-        "$description": "randstadt — Global typeface — referenced by semantic/typography tokens, never applied directly.",
+      "brand": {
+        "$description": "brand — Global typeface — referenced by semantic/typography tokens, never applied directly.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:262",
@@ -10020,14 +10020,14 @@
               "jit": {
                 "reference": "{borderWidth.4}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderWidth.4}"
               }
             },
             "variableId": "VariableID:1090:9363"
           },
           "modes": {
-            "randstadt": "{borderWidth.4}"
+            "brand": "{borderWidth.4}"
           }
         },
         "$type": "dimension",
@@ -10043,14 +10043,14 @@
               "jit": {
                 "reference": "{borderWidth.2}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderWidth.2}"
               }
             },
             "variableId": "VariableID:890:3"
           },
           "modes": {
-            "randstadt": "{borderWidth.2}"
+            "brand": "{borderWidth.2}"
           }
         },
         "$type": "dimension",
@@ -10066,14 +10066,14 @@
               "jit": {
                 "reference": "{borderWidth.0}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderWidth.0}"
               }
             },
             "variableId": "VariableID:1090:9362"
           },
           "modes": {
-            "randstadt": "{borderWidth.0}"
+            "brand": "{borderWidth.0}"
           }
         },
         "$type": "dimension",
@@ -10089,14 +10089,14 @@
               "jit": {
                 "reference": "{borderWidth.1}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderWidth.1}"
               }
             },
             "variableId": "VariableID:890:2"
           },
           "modes": {
-            "randstadt": "{borderWidth.1}"
+            "brand": "{borderWidth.1}"
           }
         },
         "$type": "dimension",
@@ -10115,14 +10115,14 @@
                 "jit": {
                   "reference": "{color.jit.500}"
                 },
-                "randstadt": {
-                  "reference": "{color.randstadt.500}"
+                "brand": {
+                  "reference": "{color.brand.500}"
                 }
               },
               "variableId": "VariableID:990:2"
             },
             "modes": {
-              "randstadt": "{color.randstadt.500}"
+              "brand": "{color.brand.500}"
             }
           },
           "$type": "color",
@@ -10138,14 +10138,14 @@
                 "jit": {
                   "reference": "{color.jit.400}"
                 },
-                "randstadt": {
-                  "reference": "{color.randstadt.400}"
+                "brand": {
+                  "reference": "{color.brand.400}"
                 }
               },
               "variableId": "VariableID:990:3"
             },
             "modes": {
-              "randstadt": "{color.randstadt.400}"
+              "brand": "{color.brand.400}"
             }
           },
           "$type": "color",
@@ -10160,14 +10160,14 @@
                 "jit": {
                   "reference": "{color.slate.500}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.500}"
                 }
               },
               "variableId": "VariableID:1252:17449"
             },
             "modes": {
-              "randstadt": "{color.slate.500}"
+              "brand": "{color.slate.500}"
             }
           },
           "$type": "color",
@@ -10182,14 +10182,14 @@
                 "jit": {
                   "reference": "{color.slate.400}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.400}"
                 }
               },
               "variableId": "VariableID:1252:17450"
             },
             "modes": {
-              "randstadt": "{color.slate.400}"
+              "brand": "{color.slate.400}"
             }
           },
           "$type": "color",
@@ -10204,14 +10204,14 @@
                 "jit": {
                   "reference": "{color.slate.300}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.300}"
                 }
               },
               "variableId": "VariableID:1252:17451"
             },
             "modes": {
-              "randstadt": "{color.slate.300}"
+              "brand": "{color.slate.300}"
             }
           },
           "$type": "color",
@@ -10229,14 +10229,14 @@
               "jit": {
                 "reference": "{color.slate.100}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.100}"
               }
             },
             "variableId": "VariableID:1936:4"
           },
           "modes": {
-            "randstadt": "{color.slate.100}"
+            "brand": "{color.slate.100}"
           }
         },
         "$type": "color",
@@ -10251,14 +10251,14 @@
               "jit": {
                 "reference": "{color.slate.900}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.900}"
               }
             },
             "variableId": "VariableID:1936:5"
           },
           "modes": {
-            "randstadt": "{color.slate.900}"
+            "brand": "{color.slate.900}"
           }
         },
         "$type": "color",
@@ -10274,14 +10274,14 @@
               "jit": {
                 "reference": "{color.white}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.white}"
               }
             },
             "variableId": "VariableID:68:594"
           },
           "modes": {
-            "randstadt": "{color.white}"
+            "brand": "{color.white}"
           }
         },
         "$type": "color",
@@ -10297,14 +10297,14 @@
               "jit": {
                 "reference": "{color.slate.200}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.200}"
               }
             },
             "variableId": "VariableID:68:625"
           },
           "modes": {
-            "randstadt": "{color.slate.200}"
+            "brand": "{color.slate.200}"
           }
         },
         "$type": "color",
@@ -10319,14 +10319,14 @@
               "jit": {
                 "reference": "{color.slate.200}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.200}"
               }
             },
             "variableId": "VariableID:1252:17448"
           },
           "modes": {
-            "randstadt": "{color.slate.200}"
+            "brand": "{color.slate.200}"
           }
         },
         "$type": "color",
@@ -10342,14 +10342,14 @@
               "jit": {
                 "reference": "{color.cyan.500}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.cyan.500}"
               }
             },
             "variableId": "VariableID:68:627"
           },
           "modes": {
-            "randstadt": "{color.cyan.500}"
+            "brand": "{color.cyan.500}"
           }
         },
         "$type": "color",
@@ -10365,14 +10365,14 @@
               "jit": {
                 "reference": "{color.slate.200}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.200}"
               }
             },
             "variableId": "VariableID:68:604"
           },
           "modes": {
-            "randstadt": "{color.slate.200}"
+            "brand": "{color.slate.200}"
           }
         },
         "$type": "color",
@@ -10388,14 +10388,14 @@
               "jit": {
                 "reference": "{color.slate.700}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.700}"
               }
             },
             "variableId": "VariableID:1090:9366"
           },
           "modes": {
-            "randstadt": "{color.slate.700}"
+            "brand": "{color.slate.700}"
           }
         },
         "$type": "color",
@@ -10411,14 +10411,14 @@
               "jit": {
                 "reference": "{color.slate.600}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.600}"
               }
             },
             "variableId": "VariableID:1090:9365"
           },
           "modes": {
-            "randstadt": "{color.slate.600}"
+            "brand": "{color.slate.600}"
           }
         },
         "$type": "color",
@@ -10434,14 +10434,14 @@
               "jit": {
                 "reference": "{color.slate.700}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.700}"
               }
             },
             "variableId": "VariableID:68:628"
           },
           "modes": {
-            "randstadt": "{color.slate.700}"
+            "brand": "{color.slate.700}"
           }
         },
         "$type": "color",
@@ -10457,14 +10457,14 @@
               "jit": {
                 "reference": "{color.slate.300}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.300}"
               }
             },
             "variableId": "VariableID:68:626"
           },
           "modes": {
-            "randstadt": "{color.slate.300}"
+            "brand": "{color.slate.300}"
           }
         },
         "$type": "color",
@@ -10480,14 +10480,14 @@
               "jit": {
                 "reference": "{color.slate.100}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.100}"
               }
             },
             "variableId": "VariableID:68:624"
           },
           "modes": {
-            "randstadt": "{color.slate.100}"
+            "brand": "{color.slate.100}"
           }
         },
         "$type": "color",
@@ -10502,14 +10502,14 @@
               "jit": {
                 "reference": "{color.slate.50}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.50}"
               }
             },
             "variableId": "VariableID:1936:2"
           },
           "modes": {
-            "randstadt": "{color.slate.50}"
+            "brand": "{color.slate.50}"
           }
         },
         "$type": "color",
@@ -10524,14 +10524,14 @@
               "jit": {
                 "reference": "{color.slate.800}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.800}"
               }
             },
             "variableId": "VariableID:1936:3"
           },
           "modes": {
-            "randstadt": "{color.slate.800}"
+            "brand": "{color.slate.800}"
           }
         },
         "$type": "color",
@@ -10548,14 +10548,14 @@
                 "jit": {
                   "reference": "{color.slate.400}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.400}"
                 }
               },
               "variableId": "VariableID:68:759"
             },
             "modes": {
-              "randstadt": "{color.slate.400}"
+              "brand": "{color.slate.400}"
             }
           },
           "$type": "color",
@@ -10571,14 +10571,14 @@
                 "jit": {
                   "reference": "{color.slate.500}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.500}"
                 }
               },
               "variableId": "VariableID:1090:9367"
             },
             "modes": {
-              "randstadt": "{color.slate.500}"
+              "brand": "{color.slate.500}"
             }
           },
           "$type": "color",
@@ -10594,14 +10594,14 @@
                 "jit": {
                   "reference": "{color.slate.500}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.500}"
                 }
               },
               "variableId": "VariableID:68:760"
             },
             "modes": {
-              "randstadt": "{color.slate.500}"
+              "brand": "{color.slate.500}"
             }
           },
           "$type": "color",
@@ -10617,14 +10617,14 @@
                 "jit": {
                   "literal": "#FFD2424D"
                 },
-                "randstadt": {
+                "brand": {
                   "literal": "#298EE54D"
                 }
               },
               "variableId": "VariableID:1509:13364"
             },
             "modes": {
-              "randstadt": "#298EE54D"
+              "brand": "#298EE54D"
             }
           },
           "$type": "color",
@@ -10640,14 +10640,14 @@
                 "jit": {
                   "reference": "{color.blue.600}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.blue.600}"
                 }
               },
               "variableId": "VariableID:68:636"
             },
             "modes": {
-              "randstadt": "{color.blue.600}"
+              "brand": "{color.blue.600}"
             }
           },
           "$type": "color",
@@ -10663,14 +10663,14 @@
                 "jit": {
                   "reference": "{color.blue.900}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.blue.900}"
                 }
               },
               "variableId": "VariableID:388:4602"
             },
             "modes": {
-              "randstadt": "{color.blue.900}"
+              "brand": "{color.blue.900}"
             }
           },
           "$type": "color",
@@ -10686,14 +10686,14 @@
                 "jit": {
                   "reference": "{color.blue.800}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.blue.800}"
                 }
               },
               "variableId": "VariableID:68:637"
             },
             "modes": {
-              "randstadt": "{color.blue.800}"
+              "brand": "{color.blue.800}"
             }
           },
           "$type": "color",
@@ -10709,14 +10709,14 @@
                 "jit": {
                   "reference": "{color.blue.500}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.blue.500}"
                 }
               },
               "variableId": "VariableID:388:4601"
             },
             "modes": {
-              "randstadt": "{color.blue.500}"
+              "brand": "{color.blue.500}"
             }
           },
           "$type": "color",
@@ -10732,14 +10732,14 @@
                 "jit": {
                   "reference": "{color.jit.900}"
                 },
-                "randstadt": {
-                  "reference": "{color.randstadt.900}"
+                "brand": {
+                  "reference": "{color.brand.900}"
                 }
               },
               "variableId": "VariableID:68:634"
             },
             "modes": {
-              "randstadt": "{color.randstadt.900}"
+              "brand": "{color.brand.900}"
             }
           },
           "$type": "color",
@@ -10755,14 +10755,14 @@
                 "jit": {
                   "reference": "{color.slate.400}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.400}"
                 }
               },
               "variableId": "VariableID:68:633"
             },
             "modes": {
-              "randstadt": "{color.slate.400}"
+              "brand": "{color.slate.400}"
             }
           },
           "$type": "color",
@@ -10778,14 +10778,14 @@
                 "jit": {
                   "reference": "{color.slate.900}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.900}"
                 }
               },
               "variableId": "VariableID:68:629"
             },
             "modes": {
-              "randstadt": "{color.slate.900}"
+              "brand": "{color.slate.900}"
             }
           },
           "$type": "color",
@@ -10801,14 +10801,14 @@
                 "jit": {
                   "reference": "{color.slate.600}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.600}"
                 }
               },
               "variableId": "VariableID:68:630"
             },
             "modes": {
-              "randstadt": "{color.slate.600}"
+              "brand": "{color.slate.600}"
             }
           },
           "$type": "color",
@@ -10824,14 +10824,14 @@
                 "jit": {
                   "reference": "{color.slate.500}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.500}"
                 }
               },
               "variableId": "VariableID:68:631"
             },
             "modes": {
-              "randstadt": "{color.slate.500}"
+              "brand": "{color.slate.500}"
             }
           },
           "$type": "color",
@@ -10848,14 +10848,14 @@
               "jit": {
                 "reference": "{color.red.600}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.red.600}"
               }
             },
             "variableId": "VariableID:68:590"
           },
           "modes": {
-            "randstadt": "{color.red.600}"
+            "brand": "{color.red.600}"
           }
         },
         "$type": "color",
@@ -10871,14 +10871,14 @@
               "jit": {
                 "reference": "{color.red.800}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.red.800}"
               }
             },
             "variableId": "VariableID:68:758"
           },
           "modes": {
-            "randstadt": "{color.red.800}"
+            "brand": "{color.red.800}"
           }
         },
         "$type": "color",
@@ -10894,14 +10894,14 @@
               "jit": {
                 "reference": "{color.red.300}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.red.300}"
               }
             },
             "variableId": "VariableID:90:221"
           },
           "modes": {
-            "randstadt": "{color.red.300}"
+            "brand": "{color.red.300}"
           }
         },
         "$type": "color",
@@ -10917,14 +10917,14 @@
               "jit": {
                 "reference": "{color.white}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.white}"
               }
             },
             "variableId": "VariableID:68:591"
           },
           "modes": {
-            "randstadt": "{color.white}"
+            "brand": "{color.white}"
           }
         },
         "$type": "color",
@@ -10939,14 +10939,14 @@
               "jit": {
                 "reference": "{color.red.500}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.red.500}"
               }
             },
             "variableId": "VariableID:1252:17447"
           },
           "modes": {
-            "randstadt": "{color.red.500}"
+            "brand": "{color.red.500}"
           }
         },
         "$type": "color",
@@ -10962,14 +10962,14 @@
               "jit": {
                 "reference": "{color.red.100}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.red.100}"
               }
             },
             "variableId": "VariableID:68:592"
           },
           "modes": {
-            "randstadt": "{color.red.100}"
+            "brand": "{color.red.100}"
           }
         },
         "$type": "color",
@@ -10985,14 +10985,14 @@
               "jit": {
                 "reference": "{color.red.900}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.red.900}"
               }
             },
             "variableId": "VariableID:68:593"
           },
           "modes": {
-            "randstadt": "{color.red.900}"
+            "brand": "{color.red.900}"
           }
         },
         "$type": "color",
@@ -11008,14 +11008,14 @@
               "jit": {
                 "reference": "{color.slate.900}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.900}"
               }
             },
             "variableId": "VariableID:68:595"
           },
           "modes": {
-            "randstadt": "{color.slate.900}"
+            "brand": "{color.slate.900}"
           }
         },
         "$type": "color",
@@ -11032,14 +11032,14 @@
                 "jit": {
                   "reference": "{color.jit.400}"
                 },
-                "randstadt": {
-                  "reference": "{color.randstadt.400}"
+                "brand": {
+                  "reference": "{color.brand.400}"
                 }
               },
               "variableId": "VariableID:68:641"
             },
             "modes": {
-              "randstadt": "{color.randstadt.400}"
+              "brand": "{color.brand.400}"
             }
           },
           "$type": "color",
@@ -11055,14 +11055,14 @@
                 "jit": {
                   "reference": "{color.slate.900}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.900}"
                 }
               },
               "variableId": "VariableID:68:638"
             },
             "modes": {
-              "randstadt": "{color.slate.900}"
+              "brand": "{color.slate.900}"
             }
           },
           "$type": "color",
@@ -11078,14 +11078,14 @@
                 "jit": {
                   "reference": "{color.slate.500}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{color.slate.500}"
                 }
               },
               "variableId": "VariableID:68:639"
             },
             "modes": {
-              "randstadt": "{color.slate.500}"
+              "brand": "{color.slate.500}"
             }
           },
           "$type": "color",
@@ -11101,14 +11101,14 @@
               "jit": {
                 "reference": "{color.slate.200}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.200}"
               }
             },
             "variableId": "VariableID:1936:6"
           },
           "modes": {
-            "randstadt": "{color.slate.200}"
+            "brand": "{color.slate.200}"
           }
         },
         "$type": "color",
@@ -11124,14 +11124,14 @@
               "jit": {
                 "reference": "{color.slate.900}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.900}"
               }
             },
             "variableId": "VariableID:68:601"
           },
           "modes": {
-            "randstadt": "{color.slate.900}"
+            "brand": "{color.slate.900}"
           }
         },
         "$type": "color",
@@ -11147,14 +11147,14 @@
               "jit": {
                 "reference": "{color.white}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.white}"
               }
             },
             "variableId": "VariableID:68:635"
           },
           "modes": {
-            "randstadt": "{color.white}"
+            "brand": "{color.white}"
           }
         },
         "$type": "color",
@@ -11172,14 +11172,14 @@
                   "jit": {
                     "reference": "{color.amber.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.amber.500}"
                   }
                 },
                 "variableId": "VariableID:68:686"
               },
               "modes": {
-                "randstadt": "{color.amber.500}"
+                "brand": "{color.amber.500}"
               }
             },
             "$type": "color",
@@ -11195,14 +11195,14 @@
                   "jit": {
                     "reference": "{color.amber.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.amber.200}"
                   }
                 },
                 "variableId": "VariableID:68:685"
               },
               "modes": {
-                "randstadt": "{color.amber.200}"
+                "brand": "{color.amber.200}"
               }
             },
             "$type": "color",
@@ -11218,14 +11218,14 @@
                   "jit": {
                     "reference": "{color.white}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.white}"
                   }
                 },
                 "variableId": "VariableID:68:688"
               },
               "modes": {
-                "randstadt": "{color.white}"
+                "brand": "{color.white}"
               }
             },
             "$type": "color",
@@ -11241,14 +11241,14 @@
                   "jit": {
                     "reference": "{color.amber.700}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.amber.700}"
                   }
                 },
                 "variableId": "VariableID:68:687"
               },
               "modes": {
-                "randstadt": "{color.amber.700}"
+                "brand": "{color.amber.700}"
               }
             },
             "$type": "color",
@@ -11264,14 +11264,14 @@
                   "jit": {
                     "reference": "{color.amber.100}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.amber.100}"
                   }
                 },
                 "variableId": "VariableID:68:684"
               },
               "modes": {
-                "randstadt": "{color.amber.100}"
+                "brand": "{color.amber.100}"
               }
             },
             "$type": "color",
@@ -11289,14 +11289,14 @@
                   "jit": {
                     "reference": "{color.blue.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.blue.500}"
                   }
                 },
                 "variableId": "VariableID:68:721"
               },
               "modes": {
-                "randstadt": "{color.blue.500}"
+                "brand": "{color.blue.500}"
               }
             },
             "$type": "color",
@@ -11312,14 +11312,14 @@
                   "jit": {
                     "reference": "{color.blue.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.blue.200}"
                   }
                 },
                 "variableId": "VariableID:68:720"
               },
               "modes": {
-                "randstadt": "{color.blue.200}"
+                "brand": "{color.blue.200}"
               }
             },
             "$type": "color",
@@ -11335,14 +11335,14 @@
                   "jit": {
                     "reference": "{color.white}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.white}"
                   }
                 },
                 "variableId": "VariableID:68:723"
               },
               "modes": {
-                "randstadt": "{color.white}"
+                "brand": "{color.white}"
               }
             },
             "$type": "color",
@@ -11358,14 +11358,14 @@
                   "jit": {
                     "reference": "{color.blue.700}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.blue.700}"
                   }
                 },
                 "variableId": "VariableID:68:722"
               },
               "modes": {
-                "randstadt": "{color.blue.700}"
+                "brand": "{color.blue.700}"
               }
             },
             "$type": "color",
@@ -11381,14 +11381,14 @@
                   "jit": {
                     "reference": "{color.blue.100}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.blue.100}"
                   }
                 },
                 "variableId": "VariableID:68:719"
               },
               "modes": {
-                "randstadt": "{color.blue.100}"
+                "brand": "{color.blue.100}"
               }
             },
             "$type": "color",
@@ -11406,14 +11406,14 @@
                   "jit": {
                     "reference": "{color.jit.400}"
                   },
-                  "randstadt": {
-                    "reference": "{color.randstadt.400}"
+                  "brand": {
+                    "reference": "{color.brand.400}"
                   }
                 },
                 "variableId": "VariableID:68:666"
               },
               "modes": {
-                "randstadt": "{color.randstadt.400}"
+                "brand": "{color.brand.400}"
               }
             },
             "$type": "color",
@@ -11429,14 +11429,14 @@
                   "jit": {
                     "reference": "{color.jit.200}"
                   },
-                  "randstadt": {
-                    "reference": "{color.randstadt.200}"
+                  "brand": {
+                    "reference": "{color.brand.200}"
                   }
                 },
                 "variableId": "VariableID:68:665"
               },
               "modes": {
-                "randstadt": "{color.randstadt.200}"
+                "brand": "{color.brand.200}"
               }
             },
             "$type": "color",
@@ -11452,14 +11452,14 @@
                   "jit": {
                     "reference": "{color.jit.900}"
                   },
-                  "randstadt": {
-                    "reference": "{color.randstadt.900}"
+                  "brand": {
+                    "reference": "{color.brand.900}"
                   }
                 },
                 "variableId": "VariableID:68:668"
               },
               "modes": {
-                "randstadt": "{color.randstadt.900}"
+                "brand": "{color.brand.900}"
               }
             },
             "$type": "color",
@@ -11475,14 +11475,14 @@
                   "jit": {
                     "reference": "{color.jit.700}"
                   },
-                  "randstadt": {
-                    "reference": "{color.randstadt.700}"
+                  "brand": {
+                    "reference": "{color.brand.700}"
                   }
                 },
                 "variableId": "VariableID:68:667"
               },
               "modes": {
-                "randstadt": "{color.randstadt.700}"
+                "brand": "{color.brand.700}"
               }
             },
             "$type": "color",
@@ -11498,14 +11498,14 @@
                   "jit": {
                     "reference": "{color.jit.100}"
                   },
-                  "randstadt": {
-                    "reference": "{color.randstadt.100}"
+                  "brand": {
+                    "reference": "{color.brand.100}"
                   }
                 },
                 "variableId": "VariableID:68:664"
               },
               "modes": {
-                "randstadt": "{color.randstadt.100}"
+                "brand": "{color.brand.100}"
               }
             },
             "$type": "color",
@@ -11523,14 +11523,14 @@
                   "jit": {
                     "reference": "{color.green.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.green.500}"
                   }
                 },
                 "variableId": "VariableID:68:696"
               },
               "modes": {
-                "randstadt": "{color.green.500}"
+                "brand": "{color.green.500}"
               }
             },
             "$type": "color",
@@ -11546,14 +11546,14 @@
                   "jit": {
                     "reference": "{color.green.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.green.200}"
                   }
                 },
                 "variableId": "VariableID:68:695"
               },
               "modes": {
-                "randstadt": "{color.green.200}"
+                "brand": "{color.green.200}"
               }
             },
             "$type": "color",
@@ -11569,14 +11569,14 @@
                   "jit": {
                     "reference": "{color.white}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.white}"
                   }
                 },
                 "variableId": "VariableID:68:698"
               },
               "modes": {
-                "randstadt": "{color.white}"
+                "brand": "{color.white}"
               }
             },
             "$type": "color",
@@ -11592,14 +11592,14 @@
                   "jit": {
                     "reference": "{color.green.700}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.green.700}"
                   }
                 },
                 "variableId": "VariableID:68:697"
               },
               "modes": {
-                "randstadt": "{color.green.700}"
+                "brand": "{color.green.700}"
               }
             },
             "$type": "color",
@@ -11615,14 +11615,14 @@
                   "jit": {
                     "reference": "{color.green.100}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.green.100}"
                   }
                 },
                 "variableId": "VariableID:68:694"
               },
               "modes": {
-                "randstadt": "{color.green.100}"
+                "brand": "{color.green.100}"
               }
             },
             "$type": "color",
@@ -11640,14 +11640,14 @@
                   "jit": {
                     "reference": "{color.orange.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.orange.500}"
                   }
                 },
                 "variableId": "VariableID:68:681"
               },
               "modes": {
-                "randstadt": "{color.orange.500}"
+                "brand": "{color.orange.500}"
               }
             },
             "$type": "color",
@@ -11663,14 +11663,14 @@
                   "jit": {
                     "reference": "{color.orange.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.orange.200}"
                   }
                 },
                 "variableId": "VariableID:68:680"
               },
               "modes": {
-                "randstadt": "{color.orange.200}"
+                "brand": "{color.orange.200}"
               }
             },
             "$type": "color",
@@ -11686,14 +11686,14 @@
                   "jit": {
                     "reference": "{color.white}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.white}"
                   }
                 },
                 "variableId": "VariableID:68:683"
               },
               "modes": {
-                "randstadt": "{color.white}"
+                "brand": "{color.white}"
               }
             },
             "$type": "color",
@@ -11709,14 +11709,14 @@
                   "jit": {
                     "reference": "{color.orange.700}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.orange.700}"
                   }
                 },
                 "variableId": "VariableID:68:682"
               },
               "modes": {
-                "randstadt": "{color.orange.700}"
+                "brand": "{color.orange.700}"
               }
             },
             "$type": "color",
@@ -11732,14 +11732,14 @@
                   "jit": {
                     "reference": "{color.orange.100}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.orange.100}"
                   }
                 },
                 "variableId": "VariableID:68:679"
               },
               "modes": {
-                "randstadt": "{color.orange.100}"
+                "brand": "{color.orange.100}"
               }
             },
             "$type": "color",
@@ -11757,14 +11757,14 @@
                   "jit": {
                     "reference": "{color.purple.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.purple.500}"
                   }
                 },
                 "variableId": "VariableID:68:736"
               },
               "modes": {
-                "randstadt": "{color.purple.500}"
+                "brand": "{color.purple.500}"
               }
             },
             "$type": "color",
@@ -11780,14 +11780,14 @@
                   "jit": {
                     "reference": "{color.purple.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.purple.200}"
                   }
                 },
                 "variableId": "VariableID:68:735"
               },
               "modes": {
-                "randstadt": "{color.purple.200}"
+                "brand": "{color.purple.200}"
               }
             },
             "$type": "color",
@@ -11803,14 +11803,14 @@
                   "jit": {
                     "reference": "{color.white}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.white}"
                   }
                 },
                 "variableId": "VariableID:68:738"
               },
               "modes": {
-                "randstadt": "{color.white}"
+                "brand": "{color.white}"
               }
             },
             "$type": "color",
@@ -11826,14 +11826,14 @@
                   "jit": {
                     "reference": "{color.purple.700}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.purple.700}"
                   }
                 },
                 "variableId": "VariableID:68:737"
               },
               "modes": {
-                "randstadt": "{color.purple.700}"
+                "brand": "{color.purple.700}"
               }
             },
             "$type": "color",
@@ -11849,14 +11849,14 @@
                   "jit": {
                     "reference": "{color.purple.100}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.purple.100}"
                   }
                 },
                 "variableId": "VariableID:68:734"
               },
               "modes": {
-                "randstadt": "{color.purple.100}"
+                "brand": "{color.purple.100}"
               }
             },
             "$type": "color",
@@ -11874,14 +11874,14 @@
                   "jit": {
                     "reference": "{color.red.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.red.500}"
                   }
                 },
                 "variableId": "VariableID:68:676"
               },
               "modes": {
-                "randstadt": "{color.red.500}"
+                "brand": "{color.red.500}"
               }
             },
             "$type": "color",
@@ -11897,14 +11897,14 @@
                   "jit": {
                     "reference": "{color.red.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.red.200}"
                   }
                 },
                 "variableId": "VariableID:68:675"
               },
               "modes": {
-                "randstadt": "{color.red.200}"
+                "brand": "{color.red.200}"
               }
             },
             "$type": "color",
@@ -11920,14 +11920,14 @@
                   "jit": {
                     "reference": "{color.white}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.white}"
                   }
                 },
                 "variableId": "VariableID:68:678"
               },
               "modes": {
-                "randstadt": "{color.white}"
+                "brand": "{color.white}"
               }
             },
             "$type": "color",
@@ -11943,14 +11943,14 @@
                   "jit": {
                     "reference": "{color.red.700}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.red.700}"
                   }
                 },
                 "variableId": "VariableID:68:677"
               },
               "modes": {
-                "randstadt": "{color.red.700}"
+                "brand": "{color.red.700}"
               }
             },
             "$type": "color",
@@ -11966,14 +11966,14 @@
                   "jit": {
                     "reference": "{color.red.50}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.red.50}"
                   }
                 },
                 "variableId": "VariableID:68:674"
               },
               "modes": {
-                "randstadt": "{color.red.50}"
+                "brand": "{color.red.50}"
               }
             },
             "$type": "color",
@@ -11991,14 +11991,14 @@
                   "jit": {
                     "reference": "{color.slate.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.slate.500}"
                   }
                 },
                 "variableId": "VariableID:68:671"
               },
               "modes": {
-                "randstadt": "{color.slate.500}"
+                "brand": "{color.slate.500}"
               }
             },
             "$type": "color",
@@ -12014,14 +12014,14 @@
                   "jit": {
                     "reference": "{color.slate.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.slate.200}"
                   }
                 },
                 "variableId": "VariableID:68:670"
               },
               "modes": {
-                "randstadt": "{color.slate.200}"
+                "brand": "{color.slate.200}"
               }
             },
             "$type": "color",
@@ -12037,14 +12037,14 @@
                   "jit": {
                     "reference": "{color.white}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.white}"
                   }
                 },
                 "variableId": "VariableID:68:673"
               },
               "modes": {
-                "randstadt": "{color.white}"
+                "brand": "{color.white}"
               }
             },
             "$type": "color",
@@ -12060,14 +12060,14 @@
                   "jit": {
                     "reference": "{color.slate.700}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.slate.700}"
                   }
                 },
                 "variableId": "VariableID:68:672"
               },
               "modes": {
-                "randstadt": "{color.slate.700}"
+                "brand": "{color.slate.700}"
               }
             },
             "$type": "color",
@@ -12083,14 +12083,14 @@
                   "jit": {
                     "reference": "{color.slate.100}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.slate.100}"
                   }
                 },
                 "variableId": "VariableID:68:669"
               },
               "modes": {
-                "randstadt": "{color.slate.100}"
+                "brand": "{color.slate.100}"
               }
             },
             "$type": "color",
@@ -12108,14 +12108,14 @@
               "jit": {
                 "reference": "{color.slate.100}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.100}"
               }
             },
             "variableId": "VariableID:68:596"
           },
           "modes": {
-            "randstadt": "{color.slate.100}"
+            "brand": "{color.slate.100}"
           }
         },
         "$type": "color",
@@ -12131,14 +12131,14 @@
               "jit": {
                 "reference": "{color.slate.600}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.600}"
               }
             },
             "variableId": "VariableID:68:597"
           },
           "modes": {
-            "randstadt": "{color.slate.600}"
+            "brand": "{color.slate.600}"
           }
         },
         "$type": "color",
@@ -12154,14 +12154,14 @@
               "jit": {
                 "reference": "{color.transparent}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.transparent}"
               }
             },
             "variableId": "VariableID:1021:2"
           },
           "modes": {
-            "randstadt": "{color.transparent}"
+            "brand": "{color.transparent}"
           }
         },
         "$type": "color",
@@ -12177,14 +12177,14 @@
               "jit": {
                 "reference": "{color.slate.800}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.800}"
               }
             },
             "variableId": "VariableID:68:622"
           },
           "modes": {
-            "randstadt": "{color.slate.800}"
+            "brand": "{color.slate.800}"
           }
         },
         "$type": "color",
@@ -12199,14 +12199,14 @@
               "jit": {
                 "reference": "{color.white}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.white}"
               }
             },
             "variableId": "VariableID:1252:17445"
           },
           "modes": {
-            "randstadt": "{color.white}"
+            "brand": "{color.white}"
           }
         },
         "$type": "color",
@@ -12221,14 +12221,14 @@
               "jit": {
                 "reference": "{color.slate.900}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.900}"
               }
             },
             "variableId": "VariableID:1252:17446"
           },
           "modes": {
-            "randstadt": "{color.slate.900}"
+            "brand": "{color.slate.900}"
           }
         },
         "$type": "color",
@@ -12244,14 +12244,14 @@
               "jit": {
                 "reference": "{color.jit.400}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.500}"
+              "brand": {
+                "reference": "{color.brand.500}"
               }
             },
             "variableId": "VariableID:68:578"
           },
           "modes": {
-            "randstadt": "{color.randstadt.500}"
+            "brand": "{color.brand.500}"
           }
         },
         "$type": "color",
@@ -12267,14 +12267,14 @@
               "jit": {
                 "reference": "{color.jit.600}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.600}"
+              "brand": {
+                "reference": "{color.brand.600}"
               }
             },
             "variableId": "VariableID:68:754"
           },
           "modes": {
-            "randstadt": "{color.randstadt.600}"
+            "brand": "{color.brand.600}"
           }
         },
         "$type": "color",
@@ -12290,14 +12290,14 @@
               "jit": {
                 "reference": "{color.jit.900}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.50}"
+              "brand": {
+                "reference": "{color.brand.50}"
               }
             },
             "variableId": "VariableID:68:579"
           },
           "modes": {
-            "randstadt": "{color.randstadt.50}"
+            "brand": "{color.brand.50}"
           }
         },
         "$type": "color",
@@ -12313,14 +12313,14 @@
               "jit": {
                 "reference": "{color.jit.300}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.300}"
+              "brand": {
+                "reference": "{color.brand.300}"
               }
             },
             "variableId": "VariableID:105:8139"
           },
           "modes": {
-            "randstadt": "{color.randstadt.300}"
+            "brand": "{color.brand.300}"
           }
         },
         "$type": "color",
@@ -12336,14 +12336,14 @@
               "jit": {
                 "reference": "{color.jit.100}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.100}"
+              "brand": {
+                "reference": "{color.brand.100}"
               }
             },
             "variableId": "VariableID:68:580"
           },
           "modes": {
-            "randstadt": "{color.randstadt.100}"
+            "brand": "{color.brand.100}"
           }
         },
         "$type": "color",
@@ -12359,14 +12359,14 @@
               "jit": {
                 "reference": "{color.jit.300}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.300}"
+              "brand": {
+                "reference": "{color.brand.300}"
               }
             },
             "variableId": "VariableID:68:755"
           },
           "modes": {
-            "randstadt": "{color.randstadt.300}"
+            "brand": "{color.brand.300}"
           }
         },
         "$type": "color",
@@ -12382,14 +12382,14 @@
               "jit": {
                 "reference": "{color.jit.800}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.800}"
+              "brand": {
+                "reference": "{color.brand.800}"
               }
             },
             "variableId": "VariableID:68:581"
           },
           "modes": {
-            "randstadt": "{color.randstadt.800}"
+            "brand": "{color.brand.800}"
           }
         },
         "$type": "color",
@@ -12405,14 +12405,14 @@
               "jit": {
                 "reference": "{color.jit.50}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.50}"
+              "brand": {
+                "reference": "{color.brand.50}"
               }
             },
             "variableId": "VariableID:103:1009"
           },
           "modes": {
-            "randstadt": "{color.randstadt.50}"
+            "brand": "{color.brand.50}"
           }
         },
         "$type": "color",
@@ -12427,14 +12427,14 @@
               "jit": {
                 "reference": "{color.cyan.500}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.cyan.500}"
               }
             },
             "variableId": "VariableID:1936:7"
           },
           "modes": {
-            "randstadt": "{color.cyan.500}"
+            "brand": "{color.cyan.500}"
           }
         },
         "$type": "color",
@@ -12450,14 +12450,14 @@
               "jit": {
                 "reference": "{color.slate.700}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.700}"
               }
             },
             "variableId": "VariableID:68:582"
           },
           "modes": {
-            "randstadt": "{color.slate.700}"
+            "brand": "{color.slate.700}"
           }
         },
         "$type": "color",
@@ -12473,14 +12473,14 @@
               "jit": {
                 "reference": "{color.slate.300}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.300}"
               }
             },
             "variableId": "VariableID:68:756"
           },
           "modes": {
-            "randstadt": "{color.slate.300}"
+            "brand": "{color.slate.300}"
           }
         },
         "$type": "color",
@@ -12496,14 +12496,14 @@
               "jit": {
                 "reference": "{color.white}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.white}"
               }
             },
             "variableId": "VariableID:68:583"
           },
           "modes": {
-            "randstadt": "{color.white}"
+            "brand": "{color.white}"
           }
         },
         "$type": "color",
@@ -12519,14 +12519,14 @@
               "jit": {
                 "reference": "{color.slate.100}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.100}"
               }
             },
             "variableId": "VariableID:277:2572"
           },
           "modes": {
-            "randstadt": "{color.slate.100}"
+            "brand": "{color.slate.100}"
           }
         },
         "$type": "color",
@@ -12542,14 +12542,14 @@
               "jit": {
                 "reference": "{color.slate.300}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.300}"
               }
             },
             "variableId": "VariableID:1312:6095"
           },
           "modes": {
-            "randstadt": "{color.slate.300}"
+            "brand": "{color.slate.300}"
           }
         },
         "$type": "color",
@@ -12564,14 +12564,14 @@
               "jit": {
                 "reference": "{color.slate.50}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.50}"
               }
             },
             "variableId": "VariableID:2005:2"
           },
           "modes": {
-            "randstadt": "{color.slate.50}"
+            "brand": "{color.slate.50}"
           }
         },
         "$type": "color",
@@ -12586,14 +12586,14 @@
               "jit": {
                 "reference": "{color.slate.200}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.200}"
               }
             },
             "variableId": "VariableID:2005:6"
           },
           "modes": {
-            "randstadt": "{color.slate.200}"
+            "brand": "{color.slate.200}"
           }
         },
         "$type": "color",
@@ -12608,14 +12608,14 @@
               "jit": {
                 "reference": "{color.slate.900}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.900}"
               }
             },
             "variableId": "VariableID:2005:7"
           },
           "modes": {
-            "randstadt": "{color.slate.900}"
+            "brand": "{color.slate.900}"
           }
         },
         "$type": "color",
@@ -12630,14 +12630,14 @@
               "jit": {
                 "reference": "{color.slate.200}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.200}"
               }
             },
             "variableId": "VariableID:2005:8"
           },
           "modes": {
-            "randstadt": "{color.slate.200}"
+            "brand": "{color.slate.200}"
           }
         },
         "$type": "color",
@@ -12652,14 +12652,14 @@
               "jit": {
                 "reference": "{color.slate.900}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.900}"
               }
             },
             "variableId": "VariableID:2005:3"
           },
           "modes": {
-            "randstadt": "{color.slate.900}"
+            "brand": "{color.slate.900}"
           }
         },
         "$type": "color",
@@ -12674,14 +12674,14 @@
               "jit": {
                 "reference": "{color.jit.400}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.500}"
+              "brand": {
+                "reference": "{color.brand.500}"
               }
             },
             "variableId": "VariableID:2005:4"
           },
           "modes": {
-            "randstadt": "{color.randstadt.500}"
+            "brand": "{color.brand.500}"
           }
         },
         "$type": "color",
@@ -12696,14 +12696,14 @@
               "jit": {
                 "reference": "{color.jit.900}"
               },
-              "randstadt": {
-                "reference": "{color.randstadt.50}"
+              "brand": {
+                "reference": "{color.brand.50}"
               }
             },
             "variableId": "VariableID:2005:5"
           },
           "modes": {
-            "randstadt": "{color.randstadt.50}"
+            "brand": "{color.brand.50}"
           }
         },
         "$type": "color",
@@ -12718,14 +12718,14 @@
               "jit": {
                 "reference": "{color.cyan.500}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.cyan.500}"
               }
             },
             "variableId": "VariableID:2005:9"
           },
           "modes": {
-            "randstadt": "{color.cyan.500}"
+            "brand": "{color.cyan.500}"
           }
         },
         "$type": "color",
@@ -12743,14 +12743,14 @@
                   "jit": {
                     "reference": "{color.red.50}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.red.50}"
                   }
                 },
                 "variableId": "VariableID:68:652"
               },
               "modes": {
-                "randstadt": "{color.red.50}"
+                "brand": "{color.red.50}"
               }
             },
             "$type": "color",
@@ -12766,14 +12766,14 @@
                   "jit": {
                     "reference": "{color.red.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.red.200}"
                   }
                 },
                 "variableId": "VariableID:68:653"
               },
               "modes": {
-                "randstadt": "{color.red.200}"
+                "brand": "{color.red.200}"
               }
             },
             "$type": "color",
@@ -12789,14 +12789,14 @@
                   "jit": {
                     "reference": "{color.red.800}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.red.800}"
                   }
                 },
                 "variableId": "VariableID:68:654"
               },
               "modes": {
-                "randstadt": "{color.red.800}"
+                "brand": "{color.red.800}"
               }
             },
             "$type": "color",
@@ -12812,14 +12812,14 @@
                   "jit": {
                     "reference": "{color.red.600}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.red.600}"
                   }
                 },
                 "variableId": "VariableID:68:655"
               },
               "modes": {
-                "randstadt": "{color.red.600}"
+                "brand": "{color.red.600}"
               }
             },
             "$type": "color",
@@ -12837,14 +12837,14 @@
                   "jit": {
                     "reference": "{color.blue.50}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.blue.50}"
                   }
                 },
                 "variableId": "VariableID:68:656"
               },
               "modes": {
-                "randstadt": "{color.blue.50}"
+                "brand": "{color.blue.50}"
               }
             },
             "$type": "color",
@@ -12860,14 +12860,14 @@
                   "jit": {
                     "reference": "{color.blue.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.blue.200}"
                   }
                 },
                 "variableId": "VariableID:68:657"
               },
               "modes": {
-                "randstadt": "{color.blue.200}"
+                "brand": "{color.blue.200}"
               }
             },
             "$type": "color",
@@ -12883,14 +12883,14 @@
                   "jit": {
                     "reference": "{color.blue.800}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.blue.800}"
                   }
                 },
                 "variableId": "VariableID:68:658"
               },
               "modes": {
-                "randstadt": "{color.blue.800}"
+                "brand": "{color.blue.800}"
               }
             },
             "$type": "color",
@@ -12906,14 +12906,14 @@
                   "jit": {
                     "reference": "{color.blue.600}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.blue.600}"
                   }
                 },
                 "variableId": "VariableID:68:659"
               },
               "modes": {
-                "randstadt": "{color.blue.600}"
+                "brand": "{color.blue.600}"
               }
             },
             "$type": "color",
@@ -12931,14 +12931,14 @@
                   "jit": {
                     "reference": "{color.slate.50}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.slate.50}"
                   }
                 },
                 "variableId": "VariableID:68:660"
               },
               "modes": {
-                "randstadt": "{color.slate.50}"
+                "brand": "{color.slate.50}"
               }
             },
             "$type": "color",
@@ -12954,14 +12954,14 @@
                   "jit": {
                     "reference": "{color.slate.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.slate.200}"
                   }
                 },
                 "variableId": "VariableID:68:661"
               },
               "modes": {
-                "randstadt": "{color.slate.200}"
+                "brand": "{color.slate.200}"
               }
             },
             "$type": "color",
@@ -12977,14 +12977,14 @@
                   "jit": {
                     "reference": "{color.slate.700}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.slate.700}"
                   }
                 },
                 "variableId": "VariableID:68:662"
               },
               "modes": {
-                "randstadt": "{color.slate.700}"
+                "brand": "{color.slate.700}"
               }
             },
             "$type": "color",
@@ -13000,14 +13000,14 @@
                   "jit": {
                     "reference": "{color.slate.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.slate.500}"
                   }
                 },
                 "variableId": "VariableID:68:663"
               },
               "modes": {
-                "randstadt": "{color.slate.500}"
+                "brand": "{color.slate.500}"
               }
             },
             "$type": "color",
@@ -13025,14 +13025,14 @@
                   "jit": {
                     "reference": "{color.green.50}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.green.50}"
                   }
                 },
                 "variableId": "VariableID:68:644"
               },
               "modes": {
-                "randstadt": "{color.green.50}"
+                "brand": "{color.green.50}"
               }
             },
             "$type": "color",
@@ -13048,14 +13048,14 @@
                   "jit": {
                     "reference": "{color.green.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.green.200}"
                   }
                 },
                 "variableId": "VariableID:68:645"
               },
               "modes": {
-                "randstadt": "{color.green.200}"
+                "brand": "{color.green.200}"
               }
             },
             "$type": "color",
@@ -13071,14 +13071,14 @@
                   "jit": {
                     "reference": "{color.green.800}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.green.800}"
                   }
                 },
                 "variableId": "VariableID:68:646"
               },
               "modes": {
-                "randstadt": "{color.green.800}"
+                "brand": "{color.green.800}"
               }
             },
             "$type": "color",
@@ -13094,14 +13094,14 @@
                   "jit": {
                     "reference": "{color.green.600}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.green.600}"
                   }
                 },
                 "variableId": "VariableID:68:647"
               },
               "modes": {
-                "randstadt": "{color.green.600}"
+                "brand": "{color.green.600}"
               }
             },
             "$type": "color",
@@ -13119,14 +13119,14 @@
                   "jit": {
                     "reference": "{color.amber.50}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.amber.50}"
                   }
                 },
                 "variableId": "VariableID:68:648"
               },
               "modes": {
-                "randstadt": "{color.amber.50}"
+                "brand": "{color.amber.50}"
               }
             },
             "$type": "color",
@@ -13142,14 +13142,14 @@
                   "jit": {
                     "reference": "{color.amber.200}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.amber.200}"
                   }
                 },
                 "variableId": "VariableID:68:649"
               },
               "modes": {
-                "randstadt": "{color.amber.200}"
+                "brand": "{color.amber.200}"
               }
             },
             "$type": "color",
@@ -13165,14 +13165,14 @@
                   "jit": {
                     "reference": "{color.amber.600}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.amber.600}"
                   }
                 },
                 "variableId": "VariableID:68:650"
               },
               "modes": {
-                "randstadt": "{color.amber.600}"
+                "brand": "{color.amber.600}"
               }
             },
             "$type": "color",
@@ -13188,14 +13188,14 @@
                   "jit": {
                     "reference": "{color.amber.500}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{color.amber.500}"
                   }
                 },
                 "variableId": "VariableID:68:651"
               },
               "modes": {
-                "randstadt": "{color.amber.500}"
+                "brand": "{color.amber.500}"
               }
             },
             "$type": "color",
@@ -13213,14 +13213,14 @@
               "jit": {
                 "reference": "{color.slate.50}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.50}"
               }
             },
             "variableId": "VariableID:68:598"
           },
           "modes": {
-            "randstadt": "{color.slate.50}"
+            "brand": "{color.slate.50}"
           }
         },
         "$type": "color",
@@ -13236,14 +13236,14 @@
               "jit": {
                 "reference": "{color.slate.800}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{color.slate.800}"
               }
             },
             "variableId": "VariableID:68:585"
           },
           "modes": {
-            "randstadt": "{color.slate.800}"
+            "brand": "{color.slate.800}"
           }
         },
         "$type": "color",
@@ -13261,14 +13261,14 @@
               "jit": {
                 "reference": "{borderRadius.16}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.16}"
               }
             },
             "variableId": "VariableID:782:8"
           },
           "modes": {
-            "randstadt": "{borderRadius.16}"
+            "brand": "{borderRadius.16}"
           }
         },
         "$type": "dimension",
@@ -13284,14 +13284,14 @@
               "jit": {
                 "reference": "{borderRadius.24}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.24}"
               }
             },
             "variableId": "VariableID:782:9"
           },
           "modes": {
-            "randstadt": "{borderRadius.24}"
+            "brand": "{borderRadius.24}"
           }
         },
         "$type": "dimension",
@@ -13307,21 +13307,21 @@
               "jit": {
                 "reference": "{borderRadius.full}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.full}"
               }
             },
             "variableId": "VariableID:782:10"
           },
           "modes": {
-            "randstadt": "{borderRadius.full}"
+            "brand": "{borderRadius.full}"
           }
         },
         "$type": "dimension",
         "$value": "{borderRadius.full}"
       },
       "lg": {
-        "$description": "Large rounding — md/lg buttons, cards, alerts, standard inputs. JIT 8px / Randstadt 2px.",
+        "$description": "Large rounding — md/lg buttons, cards, alerts, standard inputs. JIT 8px / Brand 2px.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
@@ -13330,21 +13330,21 @@
               "jit": {
                 "reference": "{borderRadius.8}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.2}"
               }
             },
             "variableId": "VariableID:782:6"
           },
           "modes": {
-            "randstadt": "{borderRadius.2}"
+            "brand": "{borderRadius.2}"
           }
         },
         "$type": "dimension",
         "$value": "{borderRadius.8}"
       },
       "md": {
-        "$description": "Standard rounding — xs/sm buttons, tooltips, small inputs. JIT 6px / Randstadt 0px.",
+        "$description": "Standard rounding — xs/sm buttons, tooltips, small inputs. JIT 6px / Brand 0px.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
@@ -13353,14 +13353,14 @@
               "jit": {
                 "reference": "{borderRadius.6}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.none}"
               }
             },
             "variableId": "VariableID:782:5"
           },
           "modes": {
-            "randstadt": "{borderRadius.none}"
+            "brand": "{borderRadius.none}"
           }
         },
         "$type": "dimension",
@@ -13376,21 +13376,21 @@
               "jit": {
                 "reference": "{borderRadius.none}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.none}"
               }
             },
             "variableId": "VariableID:782:2"
           },
           "modes": {
-            "randstadt": "{borderRadius.none}"
+            "brand": "{borderRadius.none}"
           }
         },
         "$type": "dimension",
         "$value": "{borderRadius.none}"
       },
       "sm": {
-        "$description": "Slight rounding — small chips, inner elements. JIT 4px / Randstadt 0px.",
+        "$description": "Slight rounding — small chips, inner elements. JIT 4px / Brand 0px.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
@@ -13399,14 +13399,14 @@
               "jit": {
                 "reference": "{borderRadius.4}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.none}"
               }
             },
             "variableId": "VariableID:782:4"
           },
           "modes": {
-            "randstadt": "{borderRadius.none}"
+            "brand": "{borderRadius.none}"
           }
         },
         "$type": "dimension",
@@ -13422,21 +13422,21 @@
               "jit": {
                 "reference": "{borderRadius.12}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.12}"
               }
             },
             "variableId": "VariableID:782:7"
           },
           "modes": {
-            "randstadt": "{borderRadius.12}"
+            "brand": "{borderRadius.12}"
           }
         },
         "$type": "dimension",
         "$value": "{borderRadius.12}"
       },
       "xs": {
-        "$description": "Minimal rounding — small tags, square badges. JIT 2px / Randstadt 0px.",
+        "$description": "Minimal rounding — small tags, square badges. JIT 2px / Brand 0px.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
@@ -13445,14 +13445,14 @@
               "jit": {
                 "reference": "{borderRadius.2}"
               },
-              "randstadt": {
+              "brand": {
                 "reference": "{borderRadius.none}"
               }
             },
             "variableId": "VariableID:782:3"
           },
           "modes": {
-            "randstadt": "{borderRadius.none}"
+            "brand": "{borderRadius.none}"
           }
         },
         "$type": "dimension",
@@ -13462,7 +13462,7 @@
     "spacing": {
       "component": {
         "2xl": {
-          "$description": "2× extra-large padding — maximum component inner spacing. JIT 32px / Randstadt 28px.",
+          "$description": "2× extra-large padding — maximum component inner spacing. JIT 32px / Brand 28px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13471,14 +13471,14 @@
                 "jit": {
                   "reference": "{spacing.32}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.32}"
                 }
               },
               "variableId": "VariableID:68:826"
             },
             "modes": {
-              "randstadt": "{spacing.32}"
+              "brand": "{spacing.32}"
             }
           },
           "$type": "dimension",
@@ -13494,14 +13494,14 @@
                 "jit": {
                   "reference": "{spacing.6}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.6}"
                 }
               },
               "variableId": "VariableID:1021:3"
             },
             "modes": {
-              "randstadt": "{spacing.6}"
+              "brand": "{spacing.6}"
             }
           },
           "$type": "dimension",
@@ -13518,21 +13518,21 @@
                   "jit": {
                     "reference": "{spacing.80}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{spacing.80}"
                   }
                 },
                 "variableId": "VariableID:1021:4"
               },
               "modes": {
-                "randstadt": "{spacing.80}"
+                "brand": "{spacing.80}"
               }
             },
             "$type": "dimension",
             "$value": "{spacing.80}"
           },
           "2xs": {
-            "$description": "Minimum component height — small dot badges, icons. JIT 20px / Randstadt 16px.",
+            "$description": "Minimum component height — small dot badges, icons. JIT 20px / Brand 16px.",
             "$extensions": {
               "figma-console-mcp": {
                 "collectionId": "VariableCollectionId:68:263",
@@ -13541,21 +13541,21 @@
                   "jit": {
                     "reference": "{spacing.20}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{spacing.20}"
                   }
                 },
                 "variableId": "VariableID:936:2"
               },
               "modes": {
-                "randstadt": "{spacing.20}"
+                "brand": "{spacing.20}"
               }
             },
             "$type": "dimension",
             "$value": "{spacing.20}"
           },
           "lg": {
-            "$description": "LG component height — md button, md input. JIT 40px / Randstadt 32px.",
+            "$description": "LG component height — md button, md input. JIT 40px / Brand 32px.",
             "$extensions": {
               "figma-console-mcp": {
                 "collectionId": "VariableCollectionId:68:263",
@@ -13564,21 +13564,21 @@
                   "jit": {
                     "reference": "{spacing.40}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{spacing.40}"
                   }
                 },
                 "variableId": "VariableID:936:6"
               },
               "modes": {
-                "randstadt": "{spacing.40}"
+                "brand": "{spacing.40}"
               }
             },
             "$type": "dimension",
             "$value": "{spacing.40}"
           },
           "md": {
-            "$description": "MD component height — sm button, md chip, sm input. JIT 32px / Randstadt 28px.",
+            "$description": "MD component height — sm button, md chip, sm input. JIT 32px / Brand 28px.",
             "$extensions": {
               "figma-console-mcp": {
                 "collectionId": "VariableCollectionId:68:263",
@@ -13587,21 +13587,21 @@
                   "jit": {
                     "reference": "{spacing.32}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{spacing.32}"
                   }
                 },
                 "variableId": "VariableID:936:5"
               },
               "modes": {
-                "randstadt": "{spacing.32}"
+                "brand": "{spacing.32}"
               }
             },
             "$type": "dimension",
             "$value": "{spacing.32}"
           },
           "sm": {
-            "$description": "SM component height — xs button, lg badge. JIT 28px / Randstadt 24px.",
+            "$description": "SM component height — xs button, lg badge. JIT 28px / Brand 24px.",
             "$extensions": {
               "figma-console-mcp": {
                 "collectionId": "VariableCollectionId:68:263",
@@ -13610,21 +13610,21 @@
                   "jit": {
                     "reference": "{spacing.28}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{spacing.28}"
                   }
                 },
                 "variableId": "VariableID:936:4"
               },
               "modes": {
-                "randstadt": "{spacing.28}"
+                "brand": "{spacing.28}"
               }
             },
             "$type": "dimension",
             "$value": "{spacing.28}"
           },
           "xl": {
-            "$description": "XL component height — lg button, lg input. JIT 48px / Randstadt 40px.",
+            "$description": "XL component height — lg button, lg input. JIT 48px / Brand 40px.",
             "$extensions": {
               "figma-console-mcp": {
                 "collectionId": "VariableCollectionId:68:263",
@@ -13633,21 +13633,21 @@
                   "jit": {
                     "reference": "{spacing.48}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{spacing.48}"
                   }
                 },
                 "variableId": "VariableID:936:7"
               },
               "modes": {
-                "randstadt": "{spacing.48}"
+                "brand": "{spacing.48}"
               }
             },
             "$type": "dimension",
             "$value": "{spacing.48}"
           },
           "xs": {
-            "$description": "XS component height — xs avatar, compact badge. JIT 24px / Randstadt 20px.",
+            "$description": "XS component height — xs avatar, compact badge. JIT 24px / Brand 20px.",
             "$extensions": {
               "figma-console-mcp": {
                 "collectionId": "VariableCollectionId:68:263",
@@ -13656,14 +13656,14 @@
                   "jit": {
                     "reference": "{spacing.24}"
                   },
-                  "randstadt": {
+                  "brand": {
                     "reference": "{spacing.24}"
                   }
                 },
                 "variableId": "VariableID:936:3"
               },
               "modes": {
-                "randstadt": "{spacing.24}"
+                "brand": "{spacing.24}"
               }
             },
             "$type": "dimension",
@@ -13671,7 +13671,7 @@
           }
         },
         "lg": {
-          "$description": "Large padding — lg button horizontal padding, card gap, alert padding. JIT 16px / Randstadt 12px.",
+          "$description": "Large padding — lg button horizontal padding, card gap, alert padding. JIT 16px / Brand 12px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13680,21 +13680,21 @@
                 "jit": {
                   "reference": "{spacing.16}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.16}"
                 }
               },
               "variableId": "VariableID:68:824"
             },
             "modes": {
-              "randstadt": "{spacing.16}"
+              "brand": "{spacing.16}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.16}"
         },
         "md": {
-          "$description": "Medium padding — md/lg button padding, chip padding, tooltip horizontal padding. JIT 12px / Randstadt 10px.",
+          "$description": "Medium padding — md/lg button padding, chip padding, tooltip horizontal padding. JIT 12px / Brand 10px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13703,21 +13703,21 @@
                 "jit": {
                   "reference": "{spacing.12}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.12}"
                 }
               },
               "variableId": "VariableID:68:823"
             },
             "modes": {
-              "randstadt": "{spacing.12}"
+              "brand": "{spacing.12}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.12}"
         },
         "sm": {
-          "$description": "Small padding — sm/md button padding, input padding, badge and tooltip padding. JIT 8px / Randstadt 6px.",
+          "$description": "Small padding — sm/md button padding, input padding, badge and tooltip padding. JIT 8px / Brand 6px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13726,21 +13726,21 @@
                 "jit": {
                   "reference": "{spacing.8}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.8}"
                 }
               },
               "variableId": "VariableID:68:822"
             },
             "modes": {
-              "randstadt": "{spacing.8}"
+              "brand": "{spacing.8}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.8}"
         },
         "xl": {
-          "$description": "Extra-large padding — card padding. JIT 24px / Randstadt 20px.",
+          "$description": "Extra-large padding — card padding. JIT 24px / Brand 20px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13749,21 +13749,21 @@
                 "jit": {
                   "reference": "{spacing.24}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.24}"
                 }
               },
               "variableId": "VariableID:68:825"
             },
             "modes": {
-              "randstadt": "{spacing.24}"
+              "brand": "{spacing.24}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.24}"
         },
         "xs": {
-          "$description": "Extra-small padding — xs/sm button vertical padding, badge padding. JIT 4px / Randstadt 3px.",
+          "$description": "Extra-small padding — xs/sm button vertical padding, badge padding. JIT 4px / Brand 3px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13772,14 +13772,14 @@
                 "jit": {
                   "reference": "{spacing.6}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.4}"
                 }
               },
               "variableId": "VariableID:68:821"
             },
             "modes": {
-              "randstadt": "{spacing.4}"
+              "brand": "{spacing.4}"
             }
           },
           "$type": "dimension",
@@ -13788,7 +13788,7 @@
       },
       "layout": {
         "2xl": {
-          "$description": "Maximum layout spacing — full-page sections. JIT 96px / Randstadt 80px.",
+          "$description": "Maximum layout spacing — full-page sections. JIT 96px / Brand 80px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13797,21 +13797,21 @@
                 "jit": {
                   "reference": "{spacing.96}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.80}"
                 }
               },
               "variableId": "VariableID:68:832"
             },
             "modes": {
-              "randstadt": "{spacing.80}"
+              "brand": "{spacing.80}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.96}"
         },
         "lg": {
-          "$description": "Large layout spacing — page section gaps, sidebar gutters. JIT 48px / Randstadt 32px.",
+          "$description": "Large layout spacing — page section gaps, sidebar gutters. JIT 48px / Brand 32px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13820,21 +13820,21 @@
                 "jit": {
                   "reference": "{spacing.48}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.32}"
                 }
               },
               "variableId": "VariableID:68:830"
             },
             "modes": {
-              "randstadt": "{spacing.32}"
+              "brand": "{spacing.32}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.48}"
         },
         "md": {
-          "$description": "Default layout spacing — standard section padding. JIT 32px / Randstadt 24px.",
+          "$description": "Default layout spacing — standard section padding. JIT 32px / Brand 24px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13843,21 +13843,21 @@
                 "jit": {
                   "reference": "{spacing.32}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.24}"
                 }
               },
               "variableId": "VariableID:68:829"
             },
             "modes": {
-              "randstadt": "{spacing.24}"
+              "brand": "{spacing.24}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.32}"
         },
         "sm": {
-          "$description": "Small layout spacing — compact section padding. JIT 24px / Randstadt 20px.",
+          "$description": "Small layout spacing — compact section padding. JIT 24px / Brand 20px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13866,21 +13866,21 @@
                 "jit": {
                   "reference": "{spacing.24}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.20}"
                 }
               },
               "variableId": "VariableID:68:828"
             },
             "modes": {
-              "randstadt": "{spacing.20}"
+              "brand": "{spacing.20}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.24}"
         },
         "xl": {
-          "$description": "Extra-large layout spacing — page hero padding. JIT 64px / Randstadt 48px.",
+          "$description": "Extra-large layout spacing — page hero padding. JIT 64px / Brand 48px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13889,21 +13889,21 @@
                 "jit": {
                   "reference": "{spacing.64}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.48}"
                 }
               },
               "variableId": "VariableID:68:831"
             },
             "modes": {
-              "randstadt": "{spacing.48}"
+              "brand": "{spacing.48}"
             }
           },
           "$type": "dimension",
           "$value": "{spacing.64}"
         },
         "xs": {
-          "$description": "Minimum layout gap — tight section padding, small gutters. JIT 16px / Randstadt 12px.",
+          "$description": "Minimum layout gap — tight section padding, small gutters. JIT 16px / Brand 12px.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -13912,14 +13912,14 @@
                 "jit": {
                   "reference": "{spacing.16}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{spacing.12}"
                 }
               },
               "variableId": "VariableID:68:827"
             },
             "modes": {
-              "randstadt": "{spacing.12}"
+              "brand": "{spacing.12}"
             }
           },
           "$type": "dimension",
@@ -13939,14 +13939,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:793"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -13962,14 +13962,14 @@
                 "jit": {
                   "reference": "{fontSize.lg}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.lg}"
                 }
               },
               "variableId": "VariableID:68:794"
             },
             "modes": {
-              "randstadt": "{fontSize.lg}"
+              "brand": "{fontSize.lg}"
             }
           },
           "$type": "dimension",
@@ -13985,14 +13985,14 @@
                 "jit": {
                   "reference": "{fontWeight.regular}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.regular}"
                 }
               },
               "variableId": "VariableID:68:795"
             },
             "modes": {
-              "randstadt": "{fontWeight.regular}"
+              "brand": "{fontWeight.regular}"
             }
           },
           "$type": "fontWeight",
@@ -14008,14 +14008,14 @@
                 "jit": {
                   "reference": "{lineHeight.lg}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.lg}"
                 }
               },
               "variableId": "VariableID:68:796"
             },
             "modes": {
-              "randstadt": "{lineHeight.lg}"
+              "brand": "{lineHeight.lg}"
             }
           },
           "$type": "dimension",
@@ -14033,14 +14033,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:797"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14056,14 +14056,14 @@
                 "jit": {
                   "reference": "{fontSize.md}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.md}"
                 }
               },
               "variableId": "VariableID:68:798"
             },
             "modes": {
-              "randstadt": "{fontSize.md}"
+              "brand": "{fontSize.md}"
             }
           },
           "$type": "dimension",
@@ -14079,14 +14079,14 @@
                 "jit": {
                   "reference": "{fontWeight.regular}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.regular}"
                 }
               },
               "variableId": "VariableID:68:799"
             },
             "modes": {
-              "randstadt": "{fontWeight.regular}"
+              "brand": "{fontWeight.regular}"
             }
           },
           "$type": "fontWeight",
@@ -14102,14 +14102,14 @@
                 "jit": {
                   "reference": "{lineHeight.md}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.md}"
                 }
               },
               "variableId": "VariableID:68:800"
             },
             "modes": {
-              "randstadt": "{lineHeight.md}"
+              "brand": "{lineHeight.md}"
             }
           },
           "$type": "dimension",
@@ -14127,14 +14127,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:801"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14150,14 +14150,14 @@
                 "jit": {
                   "reference": "{fontSize.sm}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.sm}"
                 }
               },
               "variableId": "VariableID:68:802"
             },
             "modes": {
-              "randstadt": "{fontSize.sm}"
+              "brand": "{fontSize.sm}"
             }
           },
           "$type": "dimension",
@@ -14173,14 +14173,14 @@
                 "jit": {
                   "reference": "{fontWeight.regular}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.regular}"
                 }
               },
               "variableId": "VariableID:68:803"
             },
             "modes": {
-              "randstadt": "{fontWeight.regular}"
+              "brand": "{fontWeight.regular}"
             }
           },
           "$type": "fontWeight",
@@ -14196,14 +14196,14 @@
                 "jit": {
                   "reference": "{lineHeight.sm}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.sm}"
                 }
               },
               "variableId": "VariableID:68:804"
             },
             "modes": {
-              "randstadt": "{lineHeight.sm}"
+              "brand": "{lineHeight.sm}"
             }
           },
           "$type": "dimension",
@@ -14221,14 +14221,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:699:724"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14244,14 +14244,14 @@
                 "jit": {
                   "reference": "{fontSize.xs}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.xs}"
                 }
               },
               "variableId": "VariableID:699:725"
             },
             "modes": {
-              "randstadt": "{fontSize.xs}"
+              "brand": "{fontSize.xs}"
             }
           },
           "$type": "dimension",
@@ -14267,14 +14267,14 @@
                 "jit": {
                   "reference": "{fontWeight.regular}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.regular}"
                 }
               },
               "variableId": "VariableID:699:726"
             },
             "modes": {
-              "randstadt": "{fontWeight.regular}"
+              "brand": "{fontWeight.regular}"
             }
           },
           "$type": "fontWeight",
@@ -14290,14 +14290,14 @@
                 "jit": {
                   "reference": "{lineHeight.md}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.md}"
                 }
               },
               "variableId": "VariableID:699:727"
             },
             "modes": {
-              "randstadt": "{lineHeight.md}"
+              "brand": "{lineHeight.md}"
             }
           },
           "$type": "dimension",
@@ -14315,14 +14315,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:761"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14338,14 +14338,14 @@
                 "jit": {
                   "reference": "{fontSize.6xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.6xl}"
                 }
               },
               "variableId": "VariableID:68:762"
             },
             "modes": {
-              "randstadt": "{fontSize.6xl}"
+              "brand": "{fontSize.6xl}"
             }
           },
           "$type": "dimension",
@@ -14361,14 +14361,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:763"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -14384,14 +14384,14 @@
                 "jit": {
                   "reference": "{lineHeight.3xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.3xl}"
                 }
               },
               "variableId": "VariableID:68:764"
             },
             "modes": {
-              "randstadt": "{lineHeight.3xl}"
+              "brand": "{lineHeight.3xl}"
             }
           },
           "$type": "dimension",
@@ -14409,14 +14409,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:769"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14432,14 +14432,14 @@
                 "jit": {
                   "reference": "{fontSize.4xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.4xl}"
                 }
               },
               "variableId": "VariableID:68:770"
             },
             "modes": {
-              "randstadt": "{fontSize.4xl}"
+              "brand": "{fontSize.4xl}"
             }
           },
           "$type": "dimension",
@@ -14455,14 +14455,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:771"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -14478,14 +14478,14 @@
                 "jit": {
                   "reference": "{lineHeight.2xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.2xl}"
                 }
               },
               "variableId": "VariableID:68:772"
             },
             "modes": {
-              "randstadt": "{lineHeight.2xl}"
+              "brand": "{lineHeight.2xl}"
             }
           },
           "$type": "dimension",
@@ -14503,14 +14503,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:773"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14526,14 +14526,14 @@
                 "jit": {
                   "reference": "{fontSize.3xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.3xl}"
                 }
               },
               "variableId": "VariableID:68:774"
             },
             "modes": {
-              "randstadt": "{fontSize.3xl}"
+              "brand": "{fontSize.3xl}"
             }
           },
           "$type": "dimension",
@@ -14549,14 +14549,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:775"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -14572,14 +14572,14 @@
                 "jit": {
                   "reference": "{lineHeight.2xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.2xl}"
                 }
               },
               "variableId": "VariableID:68:776"
             },
             "modes": {
-              "randstadt": "{lineHeight.2xl}"
+              "brand": "{lineHeight.2xl}"
             }
           },
           "$type": "dimension",
@@ -14597,14 +14597,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:765"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14620,14 +14620,14 @@
                 "jit": {
                   "reference": "{fontSize.5xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.5xl}"
                 }
               },
               "variableId": "VariableID:68:766"
             },
             "modes": {
-              "randstadt": "{fontSize.5xl}"
+              "brand": "{fontSize.5xl}"
             }
           },
           "$type": "dimension",
@@ -14643,14 +14643,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:767"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -14666,14 +14666,14 @@
                 "jit": {
                   "reference": "{lineHeight.3xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.3xl}"
                 }
               },
               "variableId": "VariableID:68:768"
             },
             "modes": {
-              "randstadt": "{lineHeight.3xl}"
+              "brand": "{lineHeight.3xl}"
             }
           },
           "$type": "dimension",
@@ -14691,14 +14691,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:781"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14714,14 +14714,14 @@
                 "jit": {
                   "reference": "{fontSize.xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.xl}"
                 }
               },
               "variableId": "VariableID:68:782"
             },
             "modes": {
-              "randstadt": "{fontSize.xl}"
+              "brand": "{fontSize.xl}"
             }
           },
           "$type": "dimension",
@@ -14737,14 +14737,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:783"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -14760,14 +14760,14 @@
                 "jit": {
                   "reference": "{lineHeight.xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.xl}"
                 }
               },
               "variableId": "VariableID:68:784"
             },
             "modes": {
-              "randstadt": "{lineHeight.xl}"
+              "brand": "{lineHeight.xl}"
             }
           },
           "$type": "dimension",
@@ -14785,14 +14785,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:785"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14808,14 +14808,14 @@
                 "jit": {
                   "reference": "{fontSize.lg}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.lg}"
                 }
               },
               "variableId": "VariableID:68:786"
             },
             "modes": {
-              "randstadt": "{fontSize.lg}"
+              "brand": "{fontSize.lg}"
             }
           },
           "$type": "dimension",
@@ -14831,14 +14831,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:787"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -14854,14 +14854,14 @@
                 "jit": {
                   "reference": "{lineHeight.lg}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.lg}"
                 }
               },
               "variableId": "VariableID:68:788"
             },
             "modes": {
-              "randstadt": "{lineHeight.lg}"
+              "brand": "{lineHeight.lg}"
             }
           },
           "$type": "dimension",
@@ -14879,14 +14879,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:789"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14902,14 +14902,14 @@
                 "jit": {
                   "reference": "{fontSize.md}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.md}"
                 }
               },
               "variableId": "VariableID:68:790"
             },
             "modes": {
-              "randstadt": "{fontSize.md}"
+              "brand": "{fontSize.md}"
             }
           },
           "$type": "dimension",
@@ -14925,14 +14925,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:791"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -14948,14 +14948,14 @@
                 "jit": {
                   "reference": "{lineHeight.lg}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.lg}"
                 }
               },
               "variableId": "VariableID:68:792"
             },
             "modes": {
-              "randstadt": "{lineHeight.lg}"
+              "brand": "{lineHeight.lg}"
             }
           },
           "$type": "dimension",
@@ -14973,14 +14973,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:777"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -14996,14 +14996,14 @@
                 "jit": {
                   "reference": "{fontSize.2xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.2xl}"
                 }
               },
               "variableId": "VariableID:68:778"
             },
             "modes": {
-              "randstadt": "{fontSize.2xl}"
+              "brand": "{fontSize.2xl}"
             }
           },
           "$type": "dimension",
@@ -15019,14 +15019,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:779"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -15042,14 +15042,14 @@
                 "jit": {
                   "reference": "{lineHeight.xl}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.xl}"
                 }
               },
               "variableId": "VariableID:68:780"
             },
             "modes": {
-              "randstadt": "{lineHeight.xl}"
+              "brand": "{lineHeight.xl}"
             }
           },
           "$type": "dimension",
@@ -15067,14 +15067,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:805"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -15090,14 +15090,14 @@
                 "jit": {
                   "reference": "{fontSize.md}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.md}"
                 }
               },
               "variableId": "VariableID:68:806"
             },
             "modes": {
-              "randstadt": "{fontSize.md}"
+              "brand": "{fontSize.md}"
             }
           },
           "$type": "dimension",
@@ -15113,14 +15113,14 @@
                 "jit": {
                   "reference": "{fontWeight.medium}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.medium}"
                 }
               },
               "variableId": "VariableID:68:807"
             },
             "modes": {
-              "randstadt": "{fontWeight.medium}"
+              "brand": "{fontWeight.medium}"
             }
           },
           "$type": "fontWeight",
@@ -15136,14 +15136,14 @@
                 "jit": {
                   "reference": "{lineHeight.sm}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.sm}"
                 }
               },
               "variableId": "VariableID:68:808"
             },
             "modes": {
-              "randstadt": "{lineHeight.sm}"
+              "brand": "{lineHeight.sm}"
             }
           },
           "$type": "dimension",
@@ -15161,14 +15161,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:809"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -15184,21 +15184,21 @@
                 "jit": {
                   "reference": "{fontSize.sm}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.sm}"
                 }
               },
               "variableId": "VariableID:68:810"
             },
             "modes": {
-              "randstadt": "{fontSize.sm}"
+              "brand": "{fontSize.sm}"
             }
           },
           "$type": "dimension",
           "$value": "{fontSize.sm}"
         },
         "fontWeight": {
-          "$description": "Label MD weight — regular (JIT) / medium (Randstadt). Per-brand weight differentiation.",
+          "$description": "Label MD weight — regular (JIT) / medium (Brand). Per-brand weight differentiation.",
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
@@ -15207,14 +15207,14 @@
                 "jit": {
                   "reference": "{fontWeight.regular}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.medium}"
                 }
               },
               "variableId": "VariableID:68:811"
             },
             "modes": {
-              "randstadt": "{fontWeight.medium}"
+              "brand": "{fontWeight.medium}"
             }
           },
           "$type": "fontWeight",
@@ -15230,14 +15230,14 @@
                 "jit": {
                   "reference": "{lineHeight.sm}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.sm}"
                 }
               },
               "variableId": "VariableID:68:812"
             },
             "modes": {
-              "randstadt": "{lineHeight.sm}"
+              "brand": "{lineHeight.sm}"
             }
           },
           "$type": "dimension",
@@ -15255,14 +15255,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:813"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -15278,14 +15278,14 @@
                 "jit": {
                   "reference": "{fontSize.xs}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.xs}"
                 }
               },
               "variableId": "VariableID:68:814"
             },
             "modes": {
-              "randstadt": "{fontSize.xs}"
+              "brand": "{fontSize.xs}"
             }
           },
           "$type": "dimension",
@@ -15301,14 +15301,14 @@
                 "jit": {
                   "reference": "{fontWeight.regular}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.regular}"
                 }
               },
               "variableId": "VariableID:68:815"
             },
             "modes": {
-              "randstadt": "{fontWeight.regular}"
+              "brand": "{fontWeight.regular}"
             }
           },
           "$type": "fontWeight",
@@ -15324,14 +15324,14 @@
                 "jit": {
                   "reference": "{lineHeight.xs}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.xs}"
                 }
               },
               "variableId": "VariableID:68:816"
             },
             "modes": {
-              "randstadt": "{lineHeight.xs}"
+              "brand": "{lineHeight.xs}"
             }
           },
           "$type": "dimension",
@@ -15349,14 +15349,14 @@
                 "jit": {
                   "reference": "{typography.bodyLg.fontFamily}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyLg.fontFamily}"
                 }
               },
               "variableId": "VariableID:854:1413"
             },
             "modes": {
-              "randstadt": "{typography.bodyLg.fontFamily}"
+              "brand": "{typography.bodyLg.fontFamily}"
             }
           },
           "$type": "string",
@@ -15372,14 +15372,14 @@
                 "jit": {
                   "reference": "{typography.bodyLg.fontSize}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyLg.fontSize}"
                 }
               },
               "variableId": "VariableID:854:1414"
             },
             "modes": {
-              "randstadt": "{typography.bodyLg.fontSize}"
+              "brand": "{typography.bodyLg.fontSize}"
             }
           },
           "$type": "dimension",
@@ -15395,14 +15395,14 @@
                 "jit": {
                   "reference": "{fontWeight.medium}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.medium}"
                 }
               },
               "variableId": "VariableID:854:1415"
             },
             "modes": {
-              "randstadt": "{fontWeight.medium}"
+              "brand": "{fontWeight.medium}"
             }
           },
           "$type": "fontWeight",
@@ -15418,14 +15418,14 @@
                 "jit": {
                   "reference": "{typography.bodyLg.lineHeight}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyLg.lineHeight}"
                 }
               },
               "variableId": "VariableID:854:1416"
             },
             "modes": {
-              "randstadt": "{typography.bodyLg.lineHeight}"
+              "brand": "{typography.bodyLg.lineHeight}"
             }
           },
           "$type": "dimension",
@@ -15443,14 +15443,14 @@
                 "jit": {
                   "reference": "{typography.bodyMd.fontFamily}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyMd.fontFamily}"
                 }
               },
               "variableId": "VariableID:854:1417"
             },
             "modes": {
-              "randstadt": "{typography.bodyMd.fontFamily}"
+              "brand": "{typography.bodyMd.fontFamily}"
             }
           },
           "$type": "string",
@@ -15466,14 +15466,14 @@
                 "jit": {
                   "reference": "{typography.bodyMd.fontSize}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyMd.fontSize}"
                 }
               },
               "variableId": "VariableID:854:1418"
             },
             "modes": {
-              "randstadt": "{typography.bodyMd.fontSize}"
+              "brand": "{typography.bodyMd.fontSize}"
             }
           },
           "$type": "dimension",
@@ -15489,14 +15489,14 @@
                 "jit": {
                   "reference": "{fontWeight.medium}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.medium}"
                 }
               },
               "variableId": "VariableID:854:1419"
             },
             "modes": {
-              "randstadt": "{fontWeight.medium}"
+              "brand": "{fontWeight.medium}"
             }
           },
           "$type": "fontWeight",
@@ -15512,14 +15512,14 @@
                 "jit": {
                   "reference": "{typography.bodyMd.lineHeight}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyMd.lineHeight}"
                 }
               },
               "variableId": "VariableID:854:1420"
             },
             "modes": {
-              "randstadt": "{typography.bodyMd.lineHeight}"
+              "brand": "{typography.bodyMd.lineHeight}"
             }
           },
           "$type": "dimension",
@@ -15537,14 +15537,14 @@
                 "jit": {
                   "reference": "{typography.bodySm.fontFamily}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodySm.fontFamily}"
                 }
               },
               "variableId": "VariableID:854:1421"
             },
             "modes": {
-              "randstadt": "{typography.bodySm.fontFamily}"
+              "brand": "{typography.bodySm.fontFamily}"
             }
           },
           "$type": "string",
@@ -15560,14 +15560,14 @@
                 "jit": {
                   "reference": "{typography.bodySm.fontSize}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodySm.fontSize}"
                 }
               },
               "variableId": "VariableID:854:1422"
             },
             "modes": {
-              "randstadt": "{typography.bodySm.fontSize}"
+              "brand": "{typography.bodySm.fontSize}"
             }
           },
           "$type": "dimension",
@@ -15583,14 +15583,14 @@
                 "jit": {
                   "reference": "{fontWeight.medium}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.medium}"
                 }
               },
               "variableId": "VariableID:854:1423"
             },
             "modes": {
-              "randstadt": "{fontWeight.medium}"
+              "brand": "{fontWeight.medium}"
             }
           },
           "$type": "fontWeight",
@@ -15606,14 +15606,14 @@
                 "jit": {
                   "reference": "{typography.bodySm.lineHeight}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodySm.lineHeight}"
                 }
               },
               "variableId": "VariableID:854:1424"
             },
             "modes": {
-              "randstadt": "{typography.bodySm.lineHeight}"
+              "brand": "{typography.bodySm.lineHeight}"
             }
           },
           "$type": "dimension",
@@ -15631,14 +15631,14 @@
                 "jit": {
                   "reference": "{typography.bodyXs.fontFamily}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyXs.fontFamily}"
                 }
               },
               "variableId": "VariableID:854:1425"
             },
             "modes": {
-              "randstadt": "{typography.bodyXs.fontFamily}"
+              "brand": "{typography.bodyXs.fontFamily}"
             }
           },
           "$type": "string",
@@ -15654,14 +15654,14 @@
                 "jit": {
                   "reference": "{typography.bodyXs.fontSize}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyXs.fontSize}"
                 }
               },
               "variableId": "VariableID:854:1426"
             },
             "modes": {
-              "randstadt": "{typography.bodyXs.fontSize}"
+              "brand": "{typography.bodyXs.fontSize}"
             }
           },
           "$type": "dimension",
@@ -15677,14 +15677,14 @@
                 "jit": {
                   "reference": "{fontWeight.medium}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.medium}"
                 }
               },
               "variableId": "VariableID:854:1427"
             },
             "modes": {
-              "randstadt": "{fontWeight.medium}"
+              "brand": "{fontWeight.medium}"
             }
           },
           "$type": "fontWeight",
@@ -15700,14 +15700,14 @@
                 "jit": {
                   "reference": "{typography.bodyXs.lineHeight}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{typography.bodyXs.lineHeight}"
                 }
               },
               "variableId": "VariableID:854:1428"
             },
             "modes": {
-              "randstadt": "{typography.bodyXs.lineHeight}"
+              "brand": "{typography.bodyXs.lineHeight}"
             }
           },
           "$type": "dimension",
@@ -15725,14 +15725,14 @@
                 "jit": {
                   "reference": "{fontFamily.jit}"
                 },
-                "randstadt": {
-                  "reference": "{fontFamily.randstadt}"
+                "brand": {
+                  "reference": "{fontFamily.brand}"
                 }
               },
               "variableId": "VariableID:68:817"
             },
             "modes": {
-              "randstadt": "{fontFamily.randstadt}"
+              "brand": "{fontFamily.brand}"
             }
           },
           "$type": "string",
@@ -15748,14 +15748,14 @@
                 "jit": {
                   "reference": "{fontSize.xs}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontSize.xs}"
                 }
               },
               "variableId": "VariableID:68:818"
             },
             "modes": {
-              "randstadt": "{fontSize.xs}"
+              "brand": "{fontSize.xs}"
             }
           },
           "$type": "dimension",
@@ -15771,14 +15771,14 @@
                 "jit": {
                   "reference": "{fontWeight.bold}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:819"
             },
             "modes": {
-              "randstadt": "{fontWeight.bold}"
+              "brand": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
@@ -15794,14 +15794,14 @@
                 "jit": {
                   "reference": "{lineHeight.xs}"
                 },
-                "randstadt": {
+                "brand": {
                   "reference": "{lineHeight.xs}"
                 }
               },
               "variableId": "VariableID:68:820"
             },
             "modes": {
-              "randstadt": "{lineHeight.xs}"
+              "brand": "{lineHeight.xs}"
             }
           },
           "$type": "dimension",

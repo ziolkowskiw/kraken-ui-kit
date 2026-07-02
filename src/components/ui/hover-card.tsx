@@ -8,8 +8,13 @@ import { cn } from "@/lib/utils"
 // Mirrors the Figma `Hover Card` component (1595:20118): Title + Copy shown on
 // hover/focus of a trigger. Built on Base UI's PreviewCard. Surface =
 // `--ds-color-popover`.
-const HoverCard = PreviewCardPrimitive.Root
-const HoverCardTrigger = PreviewCardPrimitive.Trigger
+function HoverCard({ ...props }: PreviewCardPrimitive.Root.Props) {
+  return <PreviewCardPrimitive.Root data-slot="hover-card" {...props} />
+}
+
+function HoverCardTrigger({ ...props }: PreviewCardPrimitive.Trigger.Props) {
+  return <PreviewCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
+}
 
 function HoverCardContent({
   className,

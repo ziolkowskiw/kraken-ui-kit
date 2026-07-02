@@ -40,10 +40,10 @@ type AlertStoryProps = React.ComponentProps<typeof Alert> & {
   actionButtonRightIconName: IconName
 }
 
-const meta: Meta<AlertStoryProps> = {
+const meta = {
   title: 'Components/Alert',
   component: Alert,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'displays a callout for user attention; inline, non-blocking messages (info, success, warning, error)' } } },
   tags: ['autodocs'],
   argTypes: {
     type: { control: 'select', options: TYPE_OPTIONS, name: 'Type' },
@@ -56,7 +56,7 @@ const meta: Meta<AlertStoryProps> = {
       if: { arg: 'hasIcon' },
     },
     hasDescription: { control: 'boolean', name: 'hasDescription' },
-    descriptionText: { control: 'text', name: 'Description' },
+    descriptionText: { control: 'text', name: 'Description', if: { arg: 'hasDescription' } },
     showCloseIcon: { control: 'boolean', name: 'Close icon' },
     showButton: { control: 'boolean', name: 'Show Button' },
     actionButtonVariant: {
@@ -167,7 +167,7 @@ const meta: Meta<AlertStoryProps> = {
       </Alert>
     )
   },
-}
+} satisfies Meta<AlertStoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

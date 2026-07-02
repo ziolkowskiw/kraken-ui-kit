@@ -21,7 +21,9 @@ const renderIcon = (name: IconName): React.ReactNode => {
 type StoryProps = {
   iconName: IconName
   showIcon: boolean
+  showTitle: boolean
   title: string
+  showBody: boolean
   description: string
   showPrimary: boolean
   showSecondary: boolean
@@ -31,21 +33,34 @@ type StoryProps = {
 const meta = {
   title: 'Components/Empty',
   component: Empty,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'A centred empty/zero-state — optional media, title, body, and action slot. Compound (shadcn-faithful):' } } },
   tags: ['autodocs'],
   argTypes: {
-    iconName: { control: 'select', options: ICON_OPTIONS, name: 'Icon' },
-    showIcon: { control: 'boolean', name: 'Show icon' },
-    title: { control: 'text', name: 'Title' },
-    description: { control: 'text', name: 'Body' },
-    showPrimary: { control: 'boolean', name: 'Primary button' },
-    showSecondary: { control: 'boolean', name: 'Secondary button' },
-    showGhost: { control: 'boolean', name: 'Ghost button' },
+    // ── Slot: Media ── (the Icon picker only applies when the media slot is shown)
+    showIcon: { control: 'boolean', name: 'Show icon', table: { category: 'Slot: Media' } },
+    iconName: {
+      control: 'select',
+      options: ICON_OPTIONS,
+      name: 'Icon',
+      table: { category: 'Slot: Media' },
+      if: { arg: 'showIcon' },
+    },
+    // ── Slot: Title / Body ── (text controls gate on their Show toggle)
+    showTitle: { control: 'boolean', name: 'Show title', table: { category: 'Slot: Title' } },
+    title: { control: 'text', name: 'Title', table: { category: 'Slot: Title' }, if: { arg: 'showTitle' } },
+    showBody: { control: 'boolean', name: 'Show body', table: { category: 'Slot: Body' } },
+    description: { control: 'text', name: 'Body', table: { category: 'Slot: Body' }, if: { arg: 'showBody' } },
+    // ── Slot: Actions ── (EmptyContent composes real Buttons)
+    showPrimary: { control: 'boolean', name: 'Primary button', table: { category: 'Slot: Actions' } },
+    showSecondary: { control: 'boolean', name: 'Secondary button', table: { category: 'Slot: Actions' } },
+    showGhost: { control: 'boolean', name: 'Ghost button', table: { category: 'Slot: Actions' } },
   },
   args: {
     iconName: 'Inbox',
     showIcon: true,
+    showTitle: true,
     title: 'No messages yet',
+    showBody: true,
     description: 'When you receive messages they will show up here.',
     showPrimary: true,
     showSecondary: true,
@@ -56,8 +71,8 @@ const meta = {
       <Empty>
         <EmptyHeader>
           {args.showIcon && <EmptyMedia>{renderIcon(args.iconName)}</EmptyMedia>}
-          <EmptyTitle>{args.title}</EmptyTitle>
-          <EmptyDescription>{args.description}</EmptyDescription>
+          {args.showTitle && <EmptyTitle>{args.title}</EmptyTitle>}
+          {args.showBody && <EmptyDescription>{args.description}</EmptyDescription>}
         </EmptyHeader>
         <EmptyContent>
           {args.showPrimary && <Button variant="primary">Get started</Button>}

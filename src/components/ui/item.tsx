@@ -2,6 +2,7 @@ import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { Separator } from "./separator"
 
 // Mirrors the Figma `item` set (1707:23695): Variant=default|muted|outline × State
 // (hover→CSS), with left/right decoration slots (`item/decoration-left|right`) and
@@ -101,8 +102,57 @@ function ItemActions({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
+// No implicit role="list": axe (aria-required-children) forbids the header/
+// footer/separator anatomy inside a list. Pass role="list" and wrap Items in
+// role="listitem" yourself when real list semantics are wanted.
+function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="item-group"
+      className={cn("group/item-group flex w-full flex-col gap-[var(--ds-spacing-component-md)]", className)}
+      {...props}
+    />
+  )
+}
+
+function ItemSeparator({ className, ...props }: React.ComponentProps<typeof Separator>) {
+  return (
+    <Separator
+      data-slot="item-separator"
+      orientation="horizontal"
+      decorative
+      className={cn("my-0", className)}
+      {...props}
+    />
+  )
+}
+
+function ItemHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="item-header"
+      className={cn("flex basis-full items-center justify-between gap-[var(--ds-spacing-component-sm)]", className)}
+      {...props}
+    />
+  )
+}
+
+function ItemFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="item-footer"
+      className={cn("flex basis-full items-center justify-between gap-[var(--ds-spacing-component-sm)]", className)}
+      {...props}
+    />
+  )
+}
+
 export {
   Item,
+  ItemGroup,
+  ItemHeader,
+  ItemFooter,
+  ItemSeparator,
   ItemMedia,
   ItemContent,
   ItemTitle,

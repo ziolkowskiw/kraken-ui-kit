@@ -4,7 +4,7 @@ import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from './resizabl
 const meta = {
   title: 'Components/Resizable',
   component: ResizablePanelGroup,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'Accessible resizable panel groups and layouts; split views and adjustable panes (' } } },
   tags: ['autodocs'],
   argTypes: {
     orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'] },

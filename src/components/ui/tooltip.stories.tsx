@@ -18,7 +18,8 @@ type TooltipBoxStoryProps = {
   content?: string
 }
 
-export const TooltipBox: StoryObj<TooltipBoxStoryProps> = {
+// All controls active — the "Figma property panel" experience (the tooltip box).
+export const Playground: StoryObj<TooltipBoxStoryProps> = {
   argTypes: {
     side: { control: 'select', options: SIDES, name: 'Side' },
     content: { control: 'text', name: 'Content' },
@@ -96,7 +97,7 @@ export const TooltipIconSides: StoryObj = {
 const meta = {
   title: 'Components/Tooltip',
   component: Tooltip,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'A popup that displays information when an element gets focus or is hovered; short hints on icons/controls.' } } },
   tags: ['autodocs'],
 } satisfies Meta<typeof Tooltip>
 

@@ -9,6 +9,14 @@ Combobox component. See MAPPING.md for the full shadcn-aligned description.
 ## Anatomy
 
 - `Combobox`
+- `ComboboxLabel`
+- `ComboboxCollection`
+- `ComboboxTrigger`
+- `ComboboxValue`
+- `ComboboxClear`
+- `ComboboxChips`
+- `ComboboxChip`
+- `ComboboxChipsInput`
 - `ComboboxInput`
 - `ComboboxContent`
 - `ComboboxList`
@@ -24,6 +32,7 @@ Combobox component. See MAPPING.md for the full shadcn-aligned description.
 | Prop | Type | Values | Default |
 |---|---|---|---|
 | `size` | enum | `"sm" \| "md" \| "lg"` | `"md"` |
+| `showRemove` | bool | `true \| false` | `false` |
 | `showClear` | bool | `true \| false` | `false` |
 | `error` | bool | `true \| false` | `false` |
 | `mandatory` | bool | `true \| false` | `false` |
@@ -38,11 +47,21 @@ Combobox component. See MAPPING.md for the full shadcn-aligned description.
 
 ## Token map
 
+**L1 Primitive / Shared**
+- `--ds-chip-outlined-border`
+- `--ds-chip-outlined-content`
+- `--ds-chip-outlined-fill`
+- `--ds-chip-size-md-fontsize`
+- `--ds-chip-size-md-height`
+- `--ds-chip-size-md-paddingx`
+- `--ds-chip-size-md-radius`
+
 **L2 Semantic**
 - `--ds-color-content-primary`
 - `--ds-color-content-tertiary`
 - `--ds-color-icon-muted`
 - `--ds-color-muted-foreground`
+- `--ds-color-ring`
 - `--ds-spacing-component-sm`
 - `--ds-typography-labelsm-fontsize`
 - `--ds-typography-labelsm-lineheight`

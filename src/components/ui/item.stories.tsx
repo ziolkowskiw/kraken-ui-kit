@@ -8,6 +8,10 @@ import {
   ItemTitle,
   ItemDescription,
   ItemActions,
+  ItemGroup,
+  ItemHeader,
+  ItemFooter,
+  ItemSeparator,
 } from './item'
 import { Button } from './button'
 import { Badge } from './badge'
@@ -30,7 +34,7 @@ type StoryProps = React.ComponentProps<typeof Item> & {
 const meta = {
   title: 'Components/Item',
   component: Item,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'A flexible, composable row for displaying content in a structured layout; list rows, option rows, settings entries.' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'inline-radio', options: ['default', 'muted', 'outline'] },
@@ -101,6 +105,36 @@ export const WithButtonAction: Story = {
           <Button variant="primary" size="sm">Upgrade</Button>
         </ItemActions>
       </Item>
+    </div>
+  ),
+}
+
+// A list of Items with group scaffolding: header, separators, footer.
+export const Grouped: Story = {
+  render: () => (
+    <div className="w-96">
+      <ItemGroup>
+        <ItemHeader>
+          <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [color:var(--ds-color-content-secondary)]">Recent files</span>
+          <Button variant="ghost" size="xs">See all</Button>
+        </ItemHeader>
+        <Item>
+          <ItemContent>
+            <ItemTitle>quarterly-report.pdf</ItemTitle>
+            <ItemDescription>Edited 2 hours ago</ItemDescription>
+          </ItemContent>
+        </Item>
+        <ItemSeparator />
+        <Item>
+          <ItemContent>
+            <ItemTitle>design-tokens.json</ItemTitle>
+            <ItemDescription>Edited yesterday</ItemDescription>
+          </ItemContent>
+        </Item>
+        <ItemFooter>
+          <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [color:var(--ds-color-content-tertiary)]">2 of 24 files</span>
+        </ItemFooter>
+      </ItemGroup>
     </div>
   ),
 }

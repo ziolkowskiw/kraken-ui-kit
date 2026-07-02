@@ -33,7 +33,7 @@ npm run tokens:build
 ```
 :root                        primitives (global)        — always on
 :root, [data-theme="jit"]    semantic, default brand    — jit shows by default
-[data-theme="randstadt"]     semantic, brand override
+[data-theme="brand"]     semantic, brand override
 :root                        component tokens           — always on, alias semantic
 ```
 
@@ -43,13 +43,13 @@ The whole kit re-skins by setting one attribute on `<html>`:
 
 ```html
 <html>                          <!-- jit brand (default) -->
-<html data-theme="randstadt">   <!-- randstadt brand -->
+<html data-theme="brand">   <!-- brand brand -->
 ```
 
 Because component tokens (`--ds-button-primary-fill`) alias semantic tokens
 (`--ds-color-primary`) which alias brand primitives, changing the brand mode
 re-resolves everything automatically. Verified: jit → `#FFD242` rounded,
-randstadt → `#298EE5` sharp, with **no change to component tokens**.
+brand → `#298EE5` sharp, with **no change to component tokens**.
 
 ## Adding a brand later
 1. Add the brand as a mode in the Figma `semantic` collection (alias to a primitive ramp).

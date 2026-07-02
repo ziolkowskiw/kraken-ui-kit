@@ -27,8 +27,8 @@ function Progress({
     >
       {showLabels && (
         <div className="flex items-center justify-between [color:var(--ds-color-content-secondary)] [font-family:var(--ds-typography-labelsm-fontfamily)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
-          <ProgressPrimitive.Label>{label}</ProgressPrimitive.Label>
-          <ProgressPrimitive.Value>
+          <ProgressPrimitive.Label data-slot="progress-label">{label}</ProgressPrimitive.Label>
+          <ProgressPrimitive.Value data-slot="progress-value">
             {(_, value) => (value == null ? null : `${Math.round(value)}%`)}
           </ProgressPrimitive.Value>
         </div>
