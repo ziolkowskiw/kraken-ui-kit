@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import {
   Dialog,
   DialogTrigger,
@@ -35,9 +36,11 @@ type DialogStoryProps = {
   confirmVariant: (typeof BUTTON_VARIANTS)[number]
 }
 
-const meta: Meta<DialogStoryProps> = {
+const meta = {
   title: 'Components/Dialog',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Dialog as React.ComponentType<DialogStoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'a window overlaid on the primary window, content underneath inert; focused tasks/forms needing confirmation' } } },
   tags: ['autodocs'],
   argTypes: {
     // ── Content ──
@@ -94,7 +97,7 @@ const meta: Meta<DialogStoryProps> = {
       </DialogContent>
     </Dialog>
   ),
-}
+} satisfies Meta<DialogStoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

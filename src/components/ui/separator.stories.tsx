@@ -6,7 +6,7 @@ const SPACINGS = [0, 4, 8, 12, 16, 24, 32] as const
 const meta = {
   title: 'Components/Separator',
   component: Separator,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'Visually or semantically separates content; between sections, list items, toolbar groups.' } } },
   tags: ['autodocs'],
   argTypes: {
     orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'] },

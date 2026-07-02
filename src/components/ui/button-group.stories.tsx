@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { AlignLeft, AlignCenter, AlignRight, Bold, Italic, Underline } from 'lucide-react'
-import { ButtonGroup } from './button-group'
+import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from './button-group'
 import { Button } from './button'
 import { BUTTON_VARIANTS, type ButtonVariant } from '@/lib/story-helpers'
 
@@ -17,7 +17,7 @@ type StoryProps = {
 const ICONS = [AlignLeft, AlignCenter, AlignRight] as const
 const LABELS = ['One', 'Two', 'Three', 'Four', 'Five'] as const
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/ButtonGroup',
   component: ButtonGroup,
   parameters: { layout: 'centered' },
@@ -52,7 +52,7 @@ const meta: Meta<StoryProps> = {
       })}
     </ButtonGroup>
   ),
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -76,5 +76,18 @@ export const IconToolbar: Story = {
         <Button variant="secondary" size="sm" iconOnly aria-label="Align right"><AlignRight /></Button>
       </ButtonGroup>
     </div>
+  ),
+}
+
+// Mixed toolbar: a text cell and an explicit separator between segments.
+export const WithTextAndSeparator: Story = {
+  render: () => (
+    <ButtonGroup>
+      <ButtonGroupText>Align</ButtonGroupText>
+      <ButtonGroupSeparator />
+      <Button variant="secondary" size="md" iconOnly leftIcon={<AlignLeft />} aria-label="Align left" />
+      <Button variant="secondary" size="md" iconOnly leftIcon={<AlignCenter />} aria-label="Align center" />
+      <Button variant="secondary" size="md" iconOnly leftIcon={<AlignRight />} aria-label="Align right" />
+    </ButtonGroup>
   ),
 }

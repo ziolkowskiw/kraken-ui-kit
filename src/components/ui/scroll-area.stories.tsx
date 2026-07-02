@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import { ScrollArea } from './scroll-area'
 import { Separator } from './separator'
 
@@ -7,9 +8,11 @@ type StoryProps = {
   count: number
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/ScrollArea',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: ScrollArea as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'Augments native scroll for custom, cross-browser styling; wrap scrollable regions with styled scrollbars.' } } },
   tags: ['autodocs'],
   argTypes: {
     orientation: { control: 'inline-radio', options: ['vertical', 'horizontal'], name: 'Orientation' },
@@ -52,7 +55,7 @@ const meta: Meta<StoryProps> = {
       </ScrollArea>
     )
   },
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

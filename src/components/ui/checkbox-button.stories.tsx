@@ -9,10 +9,10 @@ type CBStoryProps = React.ComponentProps<typeof CheckboxButton> & {
   checkedState: 'false' | 'true' | 'indeterminate'
 }
 
-const cbMeta: Meta<CBStoryProps> = {
+const cbMeta = {
   title: 'Components/CheckboxButton',
   component: CheckboxButton,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'A labeled checkbox control; when the checkbox needs an inline label/description.' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'select', options: VARIANTS, name: 'Variant' },
@@ -41,7 +41,7 @@ const cbMeta: Meta<CBStoryProps> = {
       indeterminate={checkedState === 'indeterminate'}
     />
   ),
-}
+} satisfies Meta<CBStoryProps>
 
 export default cbMeta
 type Story = StoryObj<typeof cbMeta>

@@ -109,10 +109,12 @@ function renderBreadcrumb(args: StoryProps) {
 
 const meta = {
   title: 'Components/Breadcrumb',
+  // docs-only association; the playground args are story-level props
+  component: Breadcrumb as React.ComponentType<StoryProps>,
   // No `component:` here — this meta uses a custom args type (StoryProps) whose
   // keys don't overlap Breadcrumb's DOM props, so setting `component` would make
   // the typed `render` unassignable. Matches the popover.stories.tsx pattern.
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'Displays the path to the current resource using a hierarchy of links; navigation context in deep pages.' } } },
   tags: ['autodocs'],
   argTypes: {
     // ── Content ──

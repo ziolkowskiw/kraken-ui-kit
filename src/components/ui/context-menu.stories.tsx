@@ -28,9 +28,11 @@ type StoryProps = {
   destructiveLast: boolean
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/ContextMenu',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: ContextMenu as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'Displays a menu of actions triggered by a right click; contextual actions on an item/row. Full surface' } } },
   tags: ['autodocs'],
   argTypes: {
     triggerLabel: { control: 'text', name: 'Trigger label', table: { category: 'Nested: Trigger' } },
@@ -131,7 +133,7 @@ const meta: Meta<StoryProps> = {
       </ContextMenu>
     )
   },
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

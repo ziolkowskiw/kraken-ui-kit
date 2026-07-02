@@ -10,7 +10,7 @@ type SwitchStoryProps = React.ComponentProps<typeof Switch> & {
 const meta = {
   title: 'Components/Switch',
   component: Switch,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'a control that toggles between checked and not checked; instant on/off settings (no submit)' } } },
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'inline-radio', options: ['default', 'compact'], name: 'Compact' },

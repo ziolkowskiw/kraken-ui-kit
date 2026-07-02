@@ -22,7 +22,7 @@ type StoryProps = React.ComponentProps<typeof Button> & {
 const meta = {
   title: 'Components/Button',
   component: Button,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'displays a button or a component that looks like a button; primary actions, form submits, dialog/menu triggers' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'select', options: VARIANTS },
@@ -83,4 +83,17 @@ export const Sizes: Story = {
 
 export const IconOnly: Story = {
   args: { iconOnly: true, leftIconName: 'Plus', children: undefined, 'aria-label': 'Add' },
+}
+
+// Non-interactive state across the main variants.
+export const Disabled: Story = {
+  render: () => (
+    <div className="flex flex-wrap items-center gap-2">
+      {(['primary', 'secondary', 'tonal', 'destructive'] as const).map((variant) => (
+        <Button key={variant} variant={variant} disabled>
+          {variant}
+        </Button>
+      ))}
+    </div>
+  ),
 }

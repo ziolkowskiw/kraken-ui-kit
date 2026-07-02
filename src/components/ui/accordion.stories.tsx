@@ -37,7 +37,8 @@ type StoryProps = {
 
 const meta = {
   title: 'Components/Accordion',
-  parameters: { layout: 'centered' },
+  component: Accordion,
+  parameters: { layout: 'centered', docs: { description: { component: 'A vertically stacked set of interactive headings that each reveal a section of content; FAQs / progressive disclosure.' } } },
   tags: ['autodocs'],
   argTypes: {
     type: {

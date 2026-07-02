@@ -24,9 +24,11 @@ type StoryProps = {
   destructiveItem: boolean
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/Menubar',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Menubar as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'A horizontal bar of menus.' } } },
   tags: ['autodocs'],
   argTypes: {
     showShortcuts: { control: 'boolean', name: 'Shortcut hints', table: { category: 'Content' } },
@@ -119,7 +121,7 @@ const meta: Meta<StoryProps> = {
       </Menubar>
     )
   },
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

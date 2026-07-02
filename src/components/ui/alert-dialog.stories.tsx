@@ -130,9 +130,11 @@ function collectButton(args: Record<string, unknown>, prefix: string): ButtonCon
   }
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/AlertDialog',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: AlertDialog as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'A modal dialog that interrupts the user with important content and expects a response; destructive/irreversible confirmations.' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'select', options: ['default'], name: 'Variant' },
@@ -220,7 +222,7 @@ const meta: Meta<StoryProps> = {
       </AlertDialog>
     )
   },
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

@@ -8,7 +8,13 @@ conventions by reading one file. Distilled from `dialog`, `select`, `input`,
 
 ## The six rules
 
-1. **CSF3 + `satisfies Meta`.** Typed meta, `tags: ['autodocs']`, `parameters.layout`.
+1. **CSF3 + `satisfies Meta`.** Typed meta, `tags: ['autodocs']`, `parameters.layout`,
+   and **always a `component:` field** — without it autodocs renders no props table.
+   When the meta's args are a wrapper type (a composed playground whose StoryProps
+   isn't a superset of the component props), keep the association docs-only:
+   `component: Dialog as React.ComponentType<StoryProps>`. Also carry the
+   MAPPING.md one-liner as
+   `parameters: { docs: { description: { component: '…' } } }`.
 2. **A `Playground` story with the full control surface.** It mirrors the Figma
    variant matrix 1:1 — every Figma property is an `argType`. Pin the `State` axis
    to `rest` (hover/focus/active are CSS, not props); only `disabled` is a control.

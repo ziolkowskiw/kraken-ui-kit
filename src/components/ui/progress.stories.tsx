@@ -4,7 +4,7 @@ import { Progress } from './progress'
 const meta = {
   title: 'Components/Progress',
   component: Progress,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'Rounded track + indicator with optional label row.' } } },
   tags: ['autodocs'],
   argTypes: {
     value: { control: { type: 'range', min: 0, max: 100, step: 1 } },

@@ -31,7 +31,7 @@ type StoryProps = {
 const meta = {
   title: 'Components/Card',
   component: Card,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'displays a card with header, content, and footer; group related content and actions into a surface' } } },
   tags: ['autodocs'],
   argTypes: {
     filled: { control: 'boolean', name: 'Filled', table: { category: 'Appearance' } },

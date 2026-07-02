@@ -10,7 +10,7 @@ type SearchStoryProps = React.ComponentProps<typeof SearchField> & {
 const meta = {
   title: 'Components/Search',
   component: SearchField,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'A search input specialization (an Input with a search affordance); filter lists/tables, global search.' } } },
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
@@ -69,4 +69,8 @@ export const Bare: Story = {
 
 export const Warning: Story = {
   args: { state: 'warning', description: 'No exact matches — showing similar results.' },
+}
+
+export const Disabled: Story = {
+  args: { disabled: true, placeholder: 'Search…' },
 }

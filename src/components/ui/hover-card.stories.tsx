@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import { CalendarDays } from 'lucide-react'
 import {
   HoverCard,
@@ -18,9 +19,11 @@ type StoryProps = {
   align?: 'start' | 'center' | 'end'
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/HoverCard',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: HoverCard as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'A card that previews a linked item on hover/focus.' } } },
   tags: ['autodocs'],
   argTypes: {
     triggerLabel: { control: 'text', name: 'Label', table: { category: 'Nested: Trigger' } },
@@ -55,7 +58,7 @@ const meta: Meta<StoryProps> = {
       </HoverCardContent>
     </HoverCard>
   ),
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

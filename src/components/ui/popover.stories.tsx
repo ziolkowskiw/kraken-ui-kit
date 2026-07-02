@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import { X } from 'lucide-react'
 import {
   Popover,
+  PopoverHeader,
   PopoverTrigger,
   PopoverContent,
   PopoverClose,
@@ -21,9 +23,11 @@ type StoryProps = {
   align?: 'start' | 'center' | 'end'
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/Popover',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Popover as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'Displays rich content in a portal, triggered by a button; small floating forms, info, pickers.' } } },
   tags: ['autodocs'],
   argTypes: {
     triggerLabel: { control: 'text', name: 'Label', table: { category: 'Nested: Trigger' } },
@@ -47,14 +51,10 @@ const meta: Meta<StoryProps> = {
       <PopoverContent side={side} align={align}>
         <div className="flex flex-col gap-3">
           <div className="flex items-start justify-between gap-2">
-            <div className="flex flex-col gap-1">
-              <PopoverTitle className="[color:var(--ds-color-content-primary)] [font-size:var(--ds-typography-labellg-fontsize)] font-medium">
-                {title}
-              </PopoverTitle>
-              <PopoverDescription className="[color:var(--ds-color-content-secondary)] [font-size:var(--ds-typography-bodysm-fontsize)]">
-                {description}
-              </PopoverDescription>
-            </div>
+            <PopoverHeader>
+              <PopoverTitle>{title}</PopoverTitle>
+              <PopoverDescription>{description}</PopoverDescription>
+            </PopoverHeader>
             <PopoverClose
               render={
                 <Button variant="ghost" size="sm" iconOnly aria-label="Close" leftIcon={<X />} />
@@ -67,7 +67,7 @@ const meta: Meta<StoryProps> = {
       </PopoverContent>
     </Popover>
   ),
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

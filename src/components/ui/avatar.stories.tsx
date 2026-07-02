@@ -11,9 +11,10 @@ type AvatarStoryProps = React.ComponentProps<typeof Avatar> & {
   picture: boolean
 }
 
-const avatarMeta: Meta<AvatarStoryProps> = {
+const avatarMeta = {
   title: 'Components/Avatar',
-  parameters: { layout: 'centered' },
+  component: Avatar,
+  parameters: { layout: 'centered', docs: { description: { component: 'An image element with a fallback for representing the user.' } } },
   tags: ['autodocs'],
   argTypes: {
     picture: { control: 'boolean', name: 'Picture' },
@@ -37,7 +38,7 @@ const avatarMeta: Meta<AvatarStoryProps> = {
       fallback={fallback}
     />
   ),
-}
+} satisfies Meta<AvatarStoryProps>
 
 export default avatarMeta
 type AvatarStory = StoryObj<typeof avatarMeta>

@@ -33,7 +33,7 @@ type StoryProps = {
 const meta = {
   title: 'Components/Empty',
   component: Empty,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'A centred empty/zero-state — optional media, title, body, and action slot. Compound (shadcn-faithful):' } } },
   tags: ['autodocs'],
   argTypes: {
     // ── Slot: Media ── (the Icon picker only applies when the media slot is shown)

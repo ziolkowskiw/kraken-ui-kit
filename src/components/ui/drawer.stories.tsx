@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import {
   Drawer,
   DrawerTrigger,
@@ -24,9 +25,11 @@ type StoryProps = {
   confirmVariant: ButtonVariant
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/Drawer',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Drawer as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'A panel that slides in from an edge of the screen; mobile sheets, filters, side forms.' } } },
   tags: ['autodocs'],
   argTypes: {
     side: { control: 'inline-radio', options: ['top', 'right', 'bottom', 'left'], name: 'Side', table: { category: 'Layout' } },
@@ -67,7 +70,7 @@ const meta: Meta<StoryProps> = {
       </DrawerContent>
     </Drawer>
   ),
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

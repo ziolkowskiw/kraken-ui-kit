@@ -31,9 +31,11 @@ type StoryProps = {
   destructiveLast: boolean
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/DropdownMenu',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: DropdownMenu as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'Displays a menu of actions or functions, triggered by a button; action/overflow menus. Full' } } },
   tags: ['autodocs'],
   argTypes: {
     // ── Nested: Trigger (a real Button) ──
@@ -132,7 +134,7 @@ const meta: Meta<StoryProps> = {
       </DropdownMenu>
     )
   },
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

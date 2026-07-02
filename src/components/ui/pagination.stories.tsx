@@ -30,9 +30,11 @@ function pageList(total: number, current: number): (number | 'ellipsis')[] {
   return out
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/Pagination',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Pagination as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'Pagination with page navigation, next and previous links; page through long lists/tables.' } } },
   tags: ['autodocs'],
   argTypes: {
     totalPages: { control: { type: 'range', min: 1, max: 20, step: 1 }, name: 'Total pages' },
@@ -76,7 +78,7 @@ const meta: Meta<StoryProps> = {
       </Pagination>
     )
   },
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

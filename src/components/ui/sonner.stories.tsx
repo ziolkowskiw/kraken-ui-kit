@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import { Toaster, toast } from './sonner'
 import { Button } from './button'
 import { BUTTON_VARIANTS, type ButtonVariant } from '@/lib/story-helpers'
@@ -24,9 +25,11 @@ function fire({ type, message, description, hasAction, actionLabel }: StoryProps
   toast[type](message, opts)
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/Sonner',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Toaster as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'An opinionated toast component for React; transient success/error notifications.' } } },
   tags: ['autodocs'],
   argTypes: {
     type: { control: 'inline-radio', options: TYPES, name: 'Type', table: { category: 'Toast' } },
@@ -54,7 +57,7 @@ const meta: Meta<StoryProps> = {
       <Toaster />
     </>
   ),
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

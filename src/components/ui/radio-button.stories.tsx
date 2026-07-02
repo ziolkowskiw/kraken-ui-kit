@@ -10,7 +10,7 @@ type StoryProps = React.ComponentProps<typeof RadioButtonGroup> & {
 const meta = {
   title: 'Components/RadioButton',
   component: RadioButtonGroup,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', docs: { description: { component: 'A labeled radio control; when the radio needs an inline label/description.' } } },
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },

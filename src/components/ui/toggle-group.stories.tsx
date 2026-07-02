@@ -5,7 +5,7 @@ import { ToggleGroup, ToggleGroupItem } from './toggle-group'
 const meta = {
   title: 'Components/ToggleGroup',
   component: ToggleGroup,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'A set of two-state buttons that can be toggled on or off; segmented / multi-toggle controls.' } } },
   tags: ['autodocs'],
   argTypes: {
     skin: { control: 'inline-radio', options: ['outlined', 'ghost'] },
@@ -43,5 +43,15 @@ export const IconButtons: Story = {
         <ToggleGroupItem value="justify" iconOnly aria-label="Justify"><AlignJustify /></ToggleGroupItem>
       </ToggleGroup>
     </div>
+  ),
+}
+
+export const Disabled: Story = {
+  render: () => (
+    <ToggleGroup disabled defaultValue={['bold']}>
+      <ToggleGroupItem value="bold" iconOnly aria-label="Bold"><Bold /></ToggleGroupItem>
+      <ToggleGroupItem value="italic" iconOnly aria-label="Italic"><Italic /></ToggleGroupItem>
+      <ToggleGroupItem value="underline" iconOnly aria-label="Underline"><Underline /></ToggleGroupItem>
+    </ToggleGroup>
   ),
 }

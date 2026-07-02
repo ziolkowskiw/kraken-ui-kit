@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from './input-otp'
 
 type StoryArgs = { size?: 'xs' | 'sm' | 'md' | 'lg' }
 
 const meta = {
   title: 'Components/InputOTP',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: InputOTP as React.ComponentType<StoryArgs>,
+  parameters: { layout: 'centered', docs: { description: { component: 'Accessible one-time-password input with copy-paste; verification/2FA code entry.' } } },
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'inline-radio', options: ['xs', 'sm', 'md', 'lg'] },

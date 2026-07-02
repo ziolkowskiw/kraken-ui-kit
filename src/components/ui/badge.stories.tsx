@@ -15,7 +15,7 @@ type StoryProps = React.ComponentProps<typeof Badge> & {
 const meta = {
   title: 'Components/Badge',
   component: Badge,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'displays a badge or a component that looks like a badge; label/categorize items or show counts/status' } } },
   tags: ['autodocs'],
   argTypes: {
     color: { control: 'select', options: COLORS },

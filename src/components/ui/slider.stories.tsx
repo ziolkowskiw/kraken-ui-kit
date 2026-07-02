@@ -4,7 +4,7 @@ import { Slider } from './slider'
 const meta = {
   title: 'Components/Slider',
   component: Slider,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'An input where the user selects a value from within a given range; volume, ranges, numeric tuning.' } } },
   tags: ['autodocs'],
   argTypes: {
     orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'] },

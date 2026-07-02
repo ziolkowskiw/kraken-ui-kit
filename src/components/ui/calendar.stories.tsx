@@ -29,9 +29,11 @@ function CalendarDemo({ mode, numberOfMonths, showOutsideDays }: StoryProps) {
   )
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/Calendar',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Calendar as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'A date field component that allows users to select dates; standalone or inside date-picker. react-day-picker' } } },
   tags: ['autodocs'],
   argTypes: {
     mode: { control: 'inline-radio', options: ['single', 'range'], name: 'Mode' },
@@ -41,7 +43,7 @@ const meta: Meta<StoryProps> = {
   args: { mode: 'single', numberOfMonths: 1, showOutsideDays: true },
   // Remount on mode change so single/range selection state stays consistent.
   render: (args) => <CalendarDemo key={args.mode} {...args} />,
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

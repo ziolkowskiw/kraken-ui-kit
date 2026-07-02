@@ -12,7 +12,7 @@ type TextareaFieldStoryProps = React.ComponentProps<typeof TextareaField> & {
 const meta = {
   title: 'Components/Textarea',
   component: TextareaField,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'displays a form textarea; multi-line text entry (comments, notes)' } } },
   tags: ['autodocs'],
   argTypes: {
     state: { control: 'select', options: STATES, name: 'State' },
@@ -25,7 +25,7 @@ const meta = {
     tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Nested: Tooltip' }, if: { arg: 'hasTooltip' } },
     tooltip: { table: { disable: true } },
     showCounter: { control: 'boolean', name: 'Show counter' },
-    maxLength: { control: 'number', name: 'Max length' },
+    maxLength: { control: 'number', name: 'Max length', if: { arg: 'showCounter' } },
     error: { table: { disable: true } },
     disabled: { table: { disable: true } },
   },

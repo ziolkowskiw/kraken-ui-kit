@@ -14,7 +14,7 @@ const renderIcon = (name?: IconName): React.ReactNode => {
 const meta = {
   title: 'Components/Link',
   component: Link,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'A text hyperlink (the kit\'s answer to shadcn' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'inline-radio', options: ['default', 'destructive'] },
@@ -68,6 +68,16 @@ export const LinkButtonSizes: Story = {
           {size}
         </LinkButton>
       ))}
+    </div>
+  ),
+}
+
+// Link disables via aria-disabled (it stays an anchor); LinkButton via disabled.
+export const Disabled: Story = {
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Link href="#" aria-disabled>Disabled link</Link>
+      <LinkButton disabled>Disabled link button</LinkButton>
     </div>
   ),
 }

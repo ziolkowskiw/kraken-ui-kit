@@ -4,7 +4,7 @@ import { Skeleton } from './skeleton'
 const meta = {
   title: 'Components/Skeleton',
   component: Skeleton,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'Muted, pulsing placeholder.' } } },
   tags: ['autodocs'],
   argTypes: {
     className: { control: 'text', description: 'Tailwind utilities set the footprint' },

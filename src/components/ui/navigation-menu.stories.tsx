@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -20,9 +21,11 @@ type StoryProps = {
   componentCount: number
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/NavigationMenu',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: NavigationMenu as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'A horizontal menu whose triggers reveal a shared floating panel.' } } },
   tags: ['autodocs'],
   argTypes: {
     startLabel: { control: 'text', name: 'Menu 1 label', table: { category: 'Nested: Triggers' } },
@@ -36,7 +39,7 @@ const meta: Meta<StoryProps> = {
     linkLabel: 'Documentation',
     componentCount: 6,
   },
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

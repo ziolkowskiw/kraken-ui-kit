@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import { Autocomplete } from '@base-ui/react/autocomplete'
 import { Calendar, Smile, Calculator, User, CreditCard, Settings } from 'lucide-react'
 import {
   Command,
+  CommandDialog,
   CommandInput,
   CommandList,
   CommandEmpty,
@@ -11,6 +13,7 @@ import {
   CommandItem,
   CommandShortcut,
 } from './command'
+import { Button } from './button'
 
 type Cmd = { label: string; icon: typeof Calendar; shortcut?: string }
 
@@ -58,9 +61,11 @@ type StoryProps = {
   emptyText: string
 }
 
-const meta: Meta<StoryProps> = {
+const meta = {
   title: 'Components/Command',
-  parameters: { layout: 'centered' },
+  // docs-only association; the playground args are story-level props
+  component: Command as React.ComponentType<StoryProps>,
+  parameters: { layout: 'centered', docs: { description: { component: 'Fast, composable command menu; command palettes and quick search/launchers.' } } },
   tags: ['autodocs'],
   argTypes: {
     placeholder: { control: 'text', name: 'Input placeholder', table: { category: 'Nested: Input' } },
@@ -70,7 +75,7 @@ const meta: Meta<StoryProps> = {
     placeholder: 'Type a command or search…',
     emptyText: 'No results found.',
   },
-}
+} satisfies Meta<StoryProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -107,4 +112,27 @@ export const Grouped: Story = {
       </CommandList>
     </Command>
   ),
+}
+
+// The ⌘K pattern: the same palette inside a dialog (CommandDialog).
+export const Palette: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false)
+    return (
+      <>
+        <Button variant="secondary" onClick={() => setOpen(true)}>
+          Open command palette
+        </Button>
+        <CommandDialog open={open} onOpenChange={setOpen}>
+          <Command items={commands.map((c) => c.label)} className="border-0">
+            <CommandInput placeholder="Type a command or search…" />
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandList>
+              {(label: string) => renderItem(commands.find((c) => c.label === label)!)}
+            </CommandList>
+          </Command>
+        </CommandDialog>
+      </>
+    )
+  },
 }
