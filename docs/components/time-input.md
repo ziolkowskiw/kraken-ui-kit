@@ -22,6 +22,7 @@ Time Input component. See MAPPING.md for the full shadcn-aligned description.
 | `description` | string / node | — | — |
 | `errorMessage` | string / node | — | — |
 | `tooltip` | string / node | — | — |
+| `id` | string / node | — | — |
 
 > **State note:** `hover`, `focus`, `active` states are handled by CSS pseudo-classes — there is no state prop. `disabled` is the only state prop.
 

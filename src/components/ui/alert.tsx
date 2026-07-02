@@ -79,7 +79,11 @@ function Alert({
           {children}
         </div>
       </div>
-      {action}
+      {action && (
+        <div data-slot="alert-action" className="flex shrink-0 items-center">
+          {action}
+        </div>
+      )}
       {onClose && (
         <Button
           variant="ghost"

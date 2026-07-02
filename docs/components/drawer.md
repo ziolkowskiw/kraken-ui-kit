@@ -37,6 +37,7 @@ Drawer component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-color-overlay`
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
+- `--ds-radius-xl`
 
 ## Accessibility
 

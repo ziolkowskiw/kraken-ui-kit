@@ -10,7 +10,9 @@ Alert Dialog component. See MAPPING.md for the full shadcn-aligned description.
 
 - `AlertDialog`
 - `AlertDialogClose`
+- `AlertDialogCancel`
 - `AlertDialogContent`
+- `AlertDialogDescription`
 - `AlertDialogOverlay`
 - `AlertDialogPortal`
 - `AlertDialogTrigger`
@@ -21,6 +23,7 @@ Alert Dialog component. See MAPPING.md for the full shadcn-aligned description.
 |---|---|---|---|
 | `closeIcon` | bool | `true \| false` | `false` |
 | `title` | string / node | — | — |
+| `description` | string / node | — | — |
 | `secondaryActions` | string / node | — | — |
 | `primaryActions` | string / node | — | — |
 
@@ -36,9 +39,12 @@ Alert Dialog component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-color-content-primary`
 - `--ds-color-foreground`
 - `--ds-color-overlay`
+- `--ds-spacing-component-lg`
 - `--ds-spacing-component-md`
 - `--ds-spacing-component-sm`
 - `--ds-spacing-component-xl`
+- `--ds-typography-bodymd-fontsize`
+- `--ds-typography-bodymd-lineheight`
 - `--ds-typography-headingmd-fontfamily`
 - `--ds-typography-headingmd-fontsize`
 - `--ds-typography-headingmd-fontweight`

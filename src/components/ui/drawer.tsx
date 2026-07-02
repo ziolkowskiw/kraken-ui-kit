@@ -12,10 +12,21 @@ import { Button } from "@/components/ui/button"
 // header` + `drawer/footer`. A side-anchored sheet built on Base UI's Dialog
 // primitive (reliable backdrop + focus trap); `side` drives the edge it slides
 // from. Surface = `--ds-color-popover`.
-const Drawer = DialogPrimitive.Root
-const DrawerTrigger = DialogPrimitive.Trigger
-const DrawerClose = DialogPrimitive.Close
-const DrawerPortal = DialogPrimitive.Portal
+function Drawer({ ...props }: DialogPrimitive.Root.Props) {
+  return <DialogPrimitive.Root data-slot="drawer" {...props} />
+}
+
+function DrawerTrigger({ ...props }: DialogPrimitive.Trigger.Props) {
+  return <DialogPrimitive.Trigger data-slot="drawer-trigger" {...props} />
+}
+
+function DrawerClose({ ...props }: DialogPrimitive.Close.Props) {
+  return <DialogPrimitive.Close data-slot="drawer-close" {...props} />
+}
+
+function DrawerPortal({ ...props }: DialogPrimitive.Portal.Props) {
+  return <DialogPrimitive.Portal data-slot="drawer-portal" {...props} />
+}
 
 function DrawerOverlay({ className, ...props }: DialogPrimitive.Backdrop.Props) {
   return (

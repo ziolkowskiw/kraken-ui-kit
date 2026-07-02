@@ -1,10 +1,35 @@
 "use client"
 
 import * as React from "react"
-import { DayPicker, getDefaultClassNames } from "react-day-picker"
+import { DayPicker, getDefaultClassNames, type DayButton } from "react-day-picker"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+
+// The day-cell button, exported for customization (badges, tooltips, custom
+// data-attrs). Styling stays on the Calendar's `day_button`/modifier classNames,
+// so overriding this does not fork the look. Keeps the default focus-follow
+// behavior from react-day-picker.
+function CalendarDayButton({
+  day,
+  modifiers,
+  className,
+  ...props
+}: React.ComponentProps<typeof DayButton>) {
+  const ref = React.useRef<HTMLButtonElement>(null)
+  React.useEffect(() => {
+    if (modifiers.focused) ref.current?.focus()
+  }, [modifiers.focused])
+  return (
+    <button
+      ref={ref}
+      data-slot="calendar-day-button"
+      data-day={day.date.toLocaleDateString()}
+      className={className}
+      {...props}
+    />
+  )
+}
 
 // Mirrors the Figma Calendar page: `calendar` (Variant 1/2/3 months, month/year),
 // `calendar/header` and `calendar/day` (State default|active|selected|disabled,
@@ -17,6 +42,7 @@ const navButton =
 function Calendar({
   className,
   classNames,
+  components,
   showOutsideDays = true,
   ...props
 }: React.ComponentProps<typeof DayPicker>) {
@@ -61,10 +87,12 @@ function Calendar({
           ) : (
             <ChevronRight className={cn("size-4", cl)} />
           ),
+        DayButton: CalendarDayButton,
+        ...components,
       }}
       {...props}
     />
   )
 }
 
-export { Calendar }
+export { Calendar, CalendarDayButton }

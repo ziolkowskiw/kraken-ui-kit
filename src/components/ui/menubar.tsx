@@ -24,10 +24,25 @@ function Menubar({ className, ...props }: MenubarPrimitive.Props) {
   )
 }
 
-const MenubarMenu = MenuPrimitive.Root
-const MenubarGroup = MenuPrimitive.Group
-const MenubarRadioGroup = MenuPrimitive.RadioGroup
-const MenubarSub = MenuPrimitive.SubmenuRoot
+function MenubarMenu({ ...props }: MenuPrimitive.Root.Props) {
+  return <MenuPrimitive.Root data-slot="menubar-menu" {...props} />
+}
+
+function MenubarGroup({ ...props }: MenuPrimitive.Group.Props) {
+  return <MenuPrimitive.Group data-slot="menubar-group" {...props} />
+}
+
+function MenubarPortal({ ...props }: MenuPrimitive.Portal.Props) {
+  return <MenuPrimitive.Portal data-slot="menubar-portal" {...props} />
+}
+
+function MenubarRadioGroup({ ...props }: MenuPrimitive.RadioGroup.Props) {
+  return <MenuPrimitive.RadioGroup data-slot="menubar-radio-group" {...props} />
+}
+
+function MenubarSub({ ...props }: MenuPrimitive.SubmenuRoot.Props) {
+  return <MenuPrimitive.SubmenuRoot data-slot="menubar-sub" {...props} />
+}
 
 function MenubarTrigger({ className, ...props }: MenuPrimitive.Trigger.Props) {
   return (
@@ -144,6 +159,7 @@ export {
   Menubar,
   MenubarMenu,
   MenubarGroup,
+  MenubarPortal,
   MenubarRadioGroup,
   MenubarSub,
   MenubarTrigger,

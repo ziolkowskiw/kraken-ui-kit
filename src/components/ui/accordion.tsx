@@ -137,7 +137,7 @@ function AccordionTrigger({
             </>
           )}
         </div>
-        <ChevronDown className="size-6 shrink-0 [color:var(--ds-color-content-secondary)] transition-transform duration-200 group-data-[panel-open]/trigger:rotate-180" />
+        <ChevronDown data-slot="accordion-trigger-icon" className="size-6 shrink-0 [color:var(--ds-color-content-secondary)] transition-transform duration-200 group-data-[panel-open]/trigger:rotate-180" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

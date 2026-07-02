@@ -28,6 +28,9 @@ Form Table Cell component. See MAPPING.md for the full shadcn-aligned descriptio
 
 **L2 Semantic**
 - `--ds-color-content-secondary`
+- `--ds-radius-lg`
+- `--ds-typography-labelsm-fontsize`
+- `--ds-typography-labelsm-lineheight`
 
 ## Accessibility
 

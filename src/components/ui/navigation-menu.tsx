@@ -48,7 +48,9 @@ function NavigationMenuList({ className, ...props }: NavigationMenuPrimitive.Lis
   )
 }
 
-const NavigationMenuItem = NavigationMenuPrimitive.Item
+function NavigationMenuItem({ ...props }: NavigationMenuPrimitive.Item.Props) {
+  return <NavigationMenuPrimitive.Item data-slot="navigation-menu-item" {...props} />
+}
 
 function NavigationMenuTrigger({ className, children, ...props }: NavigationMenuPrimitive.Trigger.Props) {
   return (
@@ -100,6 +102,8 @@ function NavigationMenuLink({ className, ...props }: NavigationMenuPrimitive.Lin
 function NavigationMenuViewport({
   className,
   sideOffset = 8,
+  side,
+  align,
   ...props
 }: NavigationMenuPrimitive.Viewport.Props &
   Pick<NavigationMenuPrimitive.Positioner.Props, "sideOffset" | "side" | "align">) {
@@ -107,6 +111,8 @@ function NavigationMenuViewport({
     <NavigationMenuPrimitive.Portal>
       <NavigationMenuPrimitive.Positioner
         sideOffset={sideOffset}
+        side={side}
+        align={align}
         className="isolate z-50 box-border h-(--positioner-height) w-(--positioner-width) transition-[top,left,right,bottom] duration-200"
       >
         <NavigationMenuPrimitive.Popup
@@ -150,6 +156,10 @@ function NavigationMenuIndicator({ className, ...props }: NavigationMenuPrimitiv
   )
 }
 
+// shadcn-compat alias: upstream calls this composition (Portal > Positioner >
+// Popup > Viewport) `NavigationMenuPositioner`; the kit named it Viewport first.
+const NavigationMenuPositioner = NavigationMenuViewport
+
 export {
   NavigationMenu,
   NavigationMenuList,
@@ -158,6 +168,7 @@ export {
   NavigationMenuContent,
   NavigationMenuLink,
   NavigationMenuViewport,
+  NavigationMenuPositioner,
   NavigationMenuIndicator,
   navigationMenuTriggerStyle,
 }

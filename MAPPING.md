@@ -40,6 +40,36 @@ cascade from `[data-theme]` on an ancestor via the token layer. Never hard-code.
 
 ---
 
+## shadcn divergence contract
+
+The kit forks shadcn's **base-nova** style but is **Figma-first**: where the
+Figma variant matrix and shadcn disagree, Figma wins. These divergences are
+deliberate — do not "fix" them back to shadcn (audited in
+`audit/shadcn-consistency.md`):
+
+| Area | Kit (Figma) | shadcn base-nova |
+|---|---|---|
+| Button variants | `primary/secondary/tonal/ghost/destructive/destructive-secondary/destructive-ghost` | `default/outline/secondary/ghost/destructive/link` (map: `default`→`primary`, `outline`→`secondary`) |
+| Button sizing | `--ds-button-size-*` tokens + `iconOnly` prop | utility classes + `size="icon-*"` |
+| Alert prop | `type` | `variant` |
+| Tabs variant | `badge` | `default` |
+| AlertDialog | prop-driven `AlertDialogContent` (`title/description/primaryActions/secondaryActions`); `AlertDialogCancel` alias provided for copy-paste compat | composable `Header/Footer/Title/Action/Cancel/Media` |
+| Avatar | prop-driven (`src`/`fallback`), `AvatarStack` | composable `AvatarImage/AvatarFallback`, `AvatarBadge/AvatarGroup` |
+| Progress | single `<Progress value label>` | composable `Track/Indicator/Label/Value` |
+| Toast | Base UI Toast (`toast`, `toastManager`) | `sonner` package |
+| Drawer | Base UI dialog | `vaul` |
+| EmptyMedia slot | `data-slot="empty-media"` | `data-slot="empty-icon"` |
+| Slider range slot | `data-slot="slider-indicator"` (Base UI naming) | `data-slot="slider-range"` |
+
+Formerly-backlogged upstream gaps, now shipped: sidebar app-shell
+(`SidebarProvider/Trigger/Inset/Rail/MenuSub*` — no mobile sheet mode yet),
+combobox multi-select (`ComboboxChips*`, binding the `--ds-chip-*` tokens) and
+select-like surface (`ComboboxTrigger/Value/Clear/Label/Collection`),
+`CalendarDayButton` (pass-through override; styling stays on `classNames`),
+`NavigationMenuPositioner` (alias of `NavigationMenuViewport`).
+
+---
+
 ## Part 1 — The v1 12 (full prop maps)
 
 These mirror their Figma component API exactly and carry full Storybook controls.

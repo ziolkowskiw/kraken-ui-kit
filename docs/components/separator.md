@@ -16,6 +16,7 @@ Separator component. See MAPPING.md for the full shadcn-aligned description.
 |---|---|---|---|
 | `orientation` | enum | `"horizontal" \| "vertical"` | `"horizontal"` |
 | `spacing` | enum | `"0" \| "4" \| "8" \| "12" \| "16" \| "24" \| "32"` | — |
+| `decorative` | bool | `true \| false` | `false` |
 
 > **State note:** `hover`, `focus`, `active` states are handled by CSS pseudo-classes — there is no state prop. `disabled` is the only state prop.
 

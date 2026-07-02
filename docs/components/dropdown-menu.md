@@ -10,6 +10,7 @@ Dropdown Menu component. See MAPPING.md for the full shadcn-aligned description.
 
 - `DropdownMenu`
 - `DropdownMenuTrigger`
+- `DropdownMenuPortal`
 - `DropdownMenuContent`
 - `DropdownMenuGroup`
 - `DropdownMenuItem`

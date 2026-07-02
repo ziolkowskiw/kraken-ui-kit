@@ -23,6 +23,7 @@ Displays a form textarea. Use for multi-line text entry (comments, notes). Map t
 | `description` | string / node | — | — |
 | `errorMessage` | string / node | — | — |
 | `tooltip` | string / node | — | — |
+| `id` | string / node | — | — |
 
 > **State note:** `hover`, `focus`, `active` states are handled by CSS pseudo-classes — there is no state prop. `disabled` is the only state prop.
 

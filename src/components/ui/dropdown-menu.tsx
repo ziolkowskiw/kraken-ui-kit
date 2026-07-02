@@ -27,11 +27,29 @@ const menuItemClasses = cn(
   "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 )
 
-const DropdownMenu = MenuPrimitive.Root
-const DropdownMenuTrigger = MenuPrimitive.Trigger
-const DropdownMenuGroup = MenuPrimitive.Group
-const DropdownMenuSub = MenuPrimitive.SubmenuRoot
-const DropdownMenuRadioGroup = MenuPrimitive.RadioGroup
+function DropdownMenu({ ...props }: MenuPrimitive.Root.Props) {
+  return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />
+}
+
+function DropdownMenuTrigger({ ...props }: MenuPrimitive.Trigger.Props) {
+  return <MenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />
+}
+
+function DropdownMenuPortal({ ...props }: MenuPrimitive.Portal.Props) {
+  return <MenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />
+}
+
+function DropdownMenuGroup({ ...props }: MenuPrimitive.Group.Props) {
+  return <MenuPrimitive.Group data-slot="dropdown-menu-group" {...props} />
+}
+
+function DropdownMenuSub({ ...props }: MenuPrimitive.SubmenuRoot.Props) {
+  return <MenuPrimitive.SubmenuRoot data-slot="dropdown-menu-sub" {...props} />
+}
+
+function DropdownMenuRadioGroup({ ...props }: MenuPrimitive.RadioGroup.Props) {
+  return <MenuPrimitive.RadioGroup data-slot="dropdown-menu-radio-group" {...props} />
+}
 
 function DropdownMenuContent({
   className,
@@ -78,7 +96,10 @@ function DropdownMenuCheckboxItem({
       className={cn(menuItemClasses, "pl-8", className)}
       {...props}
     >
-      <span className="pointer-events-none absolute left-2 flex size-4 items-center justify-center">
+      <span
+        data-slot="dropdown-menu-checkbox-item-indicator"
+        className="pointer-events-none absolute left-2 flex size-4 items-center justify-center"
+      >
         <MenuPrimitive.CheckboxItemIndicator>
           <CheckIcon className="size-4" />
         </MenuPrimitive.CheckboxItemIndicator>
@@ -99,7 +120,10 @@ function DropdownMenuRadioItem({
       className={cn(menuItemClasses, "pl-8", className)}
       {...props}
     >
-      <span className="pointer-events-none absolute left-2 flex size-4 items-center justify-center">
+      <span
+        data-slot="dropdown-menu-radio-item-indicator"
+        className="pointer-events-none absolute left-2 flex size-4 items-center justify-center"
+      >
         <MenuPrimitive.RadioItemIndicator>
           <CircleIcon className="size-2 fill-current" />
         </MenuPrimitive.RadioItemIndicator>
@@ -181,6 +205,7 @@ function DropdownMenuSubContent({ className, ...props }: MenuPrimitive.Popup.Pro
 export {
   DropdownMenu,
   DropdownMenuTrigger,
+  DropdownMenuPortal,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,

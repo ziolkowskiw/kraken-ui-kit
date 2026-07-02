@@ -30,6 +30,7 @@ A control that toggles between on and off. Use for instant settings that take ef
 - `--ds-color-primary`
 - `--ds-color-primary-hover`
 - `--ds-color-status-error-border`
+- `--ds-color-white`
 
 **L3 Component**
 - `--ds-input-bordercolor`

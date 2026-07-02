@@ -10,6 +10,7 @@ Context Menu component. See MAPPING.md for the full shadcn-aligned description.
 
 - `ContextMenu`
 - `ContextMenuTrigger`
+- `ContextMenuPortal`
 - `ContextMenuContent`
 - `ContextMenuGroup`
 - `ContextMenuItem`

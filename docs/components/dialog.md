@@ -29,6 +29,7 @@ A window overlaid on the primary window, rendering content underneath inert. Use
 ## Token map
 
 **L2 Semantic**
+- `--ds-color-border`
 - `--ds-color-muted`
 - `--ds-color-muted-foreground`
 - `--ds-color-overlay`

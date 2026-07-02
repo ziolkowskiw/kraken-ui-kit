@@ -33,10 +33,12 @@ Avatar component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-avatar-size-xl`
 - `--ds-avatar-size-xs`
 
+**L3 Component**
+- `--ds-badge-slate-content`
+- `--ds-badge-slate-fill`
+
 **L2 Semantic**
 - `--ds-color-background`
-- `--ds-color-primary-muted`
-- `--ds-color-primary-muted-foreground`
 - `--ds-radius-full`
 - `--ds-typography-labellg-fontsize`
 - `--ds-typography-labellg-fontweight`

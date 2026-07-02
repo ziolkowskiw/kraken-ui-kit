@@ -9,6 +9,7 @@ Command component. See MAPPING.md for the full shadcn-aligned description.
 ## Anatomy
 
 - `Command`
+- `CommandDialog`
 - `CommandInput`
 - `CommandList`
 - `CommandEmpty`
@@ -22,8 +23,11 @@ Command component. See MAPPING.md for the full shadcn-aligned description.
 
 | Prop | Type | Values | Default |
 |---|---|---|---|
+| `showCloseButton` | bool | `true \| false` | `false` |
 | `className` | string / node | — | — |
 | `children` | string / node | — | — |
+| `title` | string / node | — | — |
+| `description` | string / node | — | — |
 
 
 ## Token map
