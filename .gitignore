@@ -24,6 +24,9 @@ yarn-error.log*
 # next auto-generated
 next-env.d.ts
 
+# local work files
+JIT-DS-2.0-execution-plan.md
+
 # os / editor
 .DS_Store
 *.pem
