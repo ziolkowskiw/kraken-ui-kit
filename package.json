@@ -2,7 +2,7 @@
   "name": "kraken-ui-kit",
   "version": "0.0.1",
   "private": true,
-  "description": "Kraken UI Kit — a shadcn-based design system with a 3-layer token architecture (global → semantic → component) and brand theming (jit / brand).",
+  "description": "Kraken UI Kit \u2014 a shadcn-based design system with a 3-layer token architecture (global \u2192 semantic \u2192 component) and brand theming (jit / brand).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +13,6 @@
     "registry:build": "node scripts/build-registry.mjs",
     "registry:bundle": "npm run registry:build && shadcn build",
     "docs:build": "node scripts/build-docs.mjs",
-    "editor:data": "node scripts/build-semantic-editor-data.mjs",
     "figma:binder": "node scripts/figma-binder.mjs",
     "figma:binder:validate": "node scripts/figma-binder.mjs --validate",
     "release": "node scripts/release.mjs",

@@ -61,13 +61,25 @@ Full guide: [`docs/token-pipeline.md`](docs/token-pipeline.md).
   app with `npx shadcn add @kraken/button`; theming comes along automatically.
 - **Figma↔code map** ([`MAPPING.md`](MAPPING.md)) — every Figma component node
   ID → its `.tsx` file + prop table, with deep links.
-- **Theme editor** (`/theme-editor`) — re-point semantic tokens to primitives
-  component-by-component, with live preview, WCAG contrast checks, JSON
-  export/import, and push-back to Figma.
 - **AI layer** — [`design.md`](design.md) (the system as a Claude skill) plus
   workflow skills: `token-sync`, `drift-audit`, `add-component`,
-  `mapping-doctor`, `implement-figma-component`, `theme-apply`,
-  `using-kraken-ui-kit`.
+  `mapping-doctor`, `implement-figma-component`, `using-kraken-ui-kit`.
+
+## Creating a new theme
+
+Themes are authored **in Figma, not in code**. Add a new mode to the semantic
+variable collection in `JIT DS 2.0` (that's the only layer that varies per
+brand), design it there, then export:
+
+```bash
+# after editing variables in Figma:
+#   1. token-sync skill  → tokens/tokens.dtcg.json
+#   2. rebuild the CSS
+npm run tokens:build
+```
+
+The new theme becomes available as `<html data-theme="<mode>">` — no component
+or app code changes needed.
 
 ## Quick start
 
@@ -90,5 +102,5 @@ npx shadcn add @kraken/button    # installs tokenized, brand-switchable
 - ✅ **React kit + Storybook**: 56 components wired to tokens; live brand toggle in showcase and Storybook.
 - ✅ **Figma↔code mapping**: `MAPPING.md` — 40 parent components, node IDs + source links.
 - ✅ **Registry + AI layer**: shadcn registry (58 items), workflow skills, per-component docs, `design.md`.
-- ✅ **Semantic-layer editor**: `/theme-editor` with live preview, WCAG contrast, Figma push-back.
+- ⬜ **Figma-first theming**: author themes as semantic modes in Figma; export via `token-sync` (supporting skills planned).
 - ⬜ **Governance** (ongoing): monthly `drift-audit`, first versioned release via the release agent.
