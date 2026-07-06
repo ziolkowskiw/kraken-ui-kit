@@ -1,0 +1,124 @@
+{
+  "a11y": [
+    "<th> with scope=\"col\"; sortable headers need aria-sort.",
+    "Avoid placing interactive controls inside <th> other than sort buttons."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+  "exports": [
+    "SortingIcons",
+    "TableHeaderDecoration",
+    "TableHeader",
+    "TableHeaderRow"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1824:18395"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/data-table-header",
+    "dependencies": [
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "checkbox",
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "data-table-header"
+  },
+  "keywords": [],
+  "name": "data-table-header",
+  "notes": [
+    "Mapped via the 'data-table' entry in MAPPING.md."
+  ],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "checked"
+    },
+    {
+      "kind": "boolean",
+      "name": "showLabel"
+    },
+    {
+      "kind": "boolean",
+      "name": "selected"
+    },
+    {
+      "kind": "boolean",
+      "name": "showBorder"
+    },
+    {
+      "kind": "boolean",
+      "name": "empty"
+    },
+    {
+      "kind": "string|node",
+      "name": "className"
+    },
+    {
+      "kind": "string|node",
+      "name": "icon"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "kind": "string|node",
+      "name": "avatar"
+    },
+    {
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "leftDecoration"
+    },
+    {
+      "kind": "string|node",
+      "name": "rightDecoration"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "SortingIcons",
+      "TableHeaderDecoration",
+      "TableHeader",
+      "TableHeaderRow"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/data-table-header.tsx",
+  "story": "src/components/ui/data-table-header.stories.tsx",
+  "title": "Data Table Header",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border-subtle",
+      "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted",
+      "--ds-color-primary-muted",
+      "--ds-color-secondary-active",
+      "--ds-color-secondary-hover",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

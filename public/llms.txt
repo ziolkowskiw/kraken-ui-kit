@@ -1,0 +1,26 @@
+# Kraken UI Kit (JIT DS 2.0)
+
+> A shadcn-based design system with a 3-layer --ds-* token architecture
+> (global → semantic → component) and free brand theming (jit / brand) via
+> [data-theme]. 56 tokenized components, Figma-first, machine-readable:
+> every component has a dense JSON contract generated from human-maintained
+> sources. Read foundations first; never guess variant names or tokens.
+
+## Machine-readable layer (start here)
+
+- [foundations.json](manifests/foundations.json): always-on rules — token architecture, brands, conventions, shadcn divergences, scales, install. Read once per session.
+- [Manifest index](manifests/index.json): all components with aliases/keywords for lookup.
+- Per-component contracts: `manifests/components/<name>.json` (e.g. [button](manifests/components/button.json)) — install command, exact variant enums + defaults, props, slots, --ds-* tokens, a11y, usage do/don't.
+- [tokens.json](manifests/tokens.json): compact token index with brand-mode values.
+- MCP server (preferred when available): `claude mcp add kraken-ui -- npx -y @kraken-ui/mcp` — tools: list_components, search_components, get_component, get_foundations, get_tokens, get_usage_rules.
+
+## Install
+
+- [Registry](registry.json): shadcn registry, namespace @kraken — `npx shadcn add @kraken/<name>`; the `ai-foundations` item installs foundations.json into your repo.
+
+## Human docs
+
+- [README.md](README.md): what the kit is and how it fits together.
+- [MAPPING.md](MAPPING.md): Figma node ID ↔ component file ↔ prop tables, conventions, shadcn divergence contract.
+- [design.md](design.md): the design-system rules (tokens, brands, component building).
+- [Component docs](docs/components/): generated per-component markdown.

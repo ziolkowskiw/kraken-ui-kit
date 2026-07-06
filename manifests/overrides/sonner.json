@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["toast", "toaster", "notification", "snackbar"],
+  "keywords": ["transient", "success", "error", "popup message"],
+  "usage": {
+    "do": [
+      "Render one <Toaster /> at the app root and fire notifications with toast().",
+      "Use for transient success/error feedback that needs no response."
+    ],
+    "dont": [
+      "Don't put required user decisions in a toast — use alert-dialog.",
+      "Don't use toasts for persistent inline messages — use alert."
+    ]
+  },
+  "boundaries": [
+    "Built on Base UI Toast (toast, toastManager) — NOT the sonner npm package, despite the shadcn-parity file name; a deliberate divergence."
+  ],
+  "whenToUseInstead": [
+    { "component": "alert", "when": "a persistent inline callout" },
+    { "component": "alert-dialog", "when": "the user must confirm before continuing" }
+  ]
+}

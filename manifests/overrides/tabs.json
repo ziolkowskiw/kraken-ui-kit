@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["tab bar", "segmented control", "tab panel"],
+  "keywords": ["switch", "views", "sections", "panels", "navigation"],
+  "usage": {
+    "do": [
+      "Set variant on TabsList and orientation on Tabs; disable individual tabs via disabled on TabsTrigger."
+    ],
+    "dont": [
+      "Don't use Tabs for page-level navigation — use navigation-menu."
+    ]
+  },
+  "boundaries": [
+    "variant values are line (default, underline strip) and badge (pill/segmented). Figma's variant named \"default\" maps to code value \"badge\" — a deliberate divergence.",
+    "depth on TabsList (1 | 2) is a kit extension with no Figma axis."
+  ],
+  "whenToUseInstead": [
+    { "component": "navigation-menu", "when": "navigating between pages/routes" },
+    { "component": "toggle-group", "when": "a compact value switch that isn't showing panels" }
+  ]
+}

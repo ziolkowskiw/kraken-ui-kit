@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["tag", "pill", "chip", "status badge", "label badge"],
+  "keywords": ["status", "count", "category", "label", "indicator"],
+  "usage": {
+    "do": [
+      "Pick color for meaning, appearance (filled/outlined/ghost) for weight, shape (round/square) for style.",
+      "Pair the color with text or an icon — never color alone."
+    ],
+    "dont": [
+      "Don't make a Badge interactive — for toggleable chips use toggle / toggle-group, for actions use button."
+    ]
+  },
+  "boundaries": [
+    "Axes are color (8 values) × appearance × size × shape — there is no single shadcn-style variant prop."
+  ],
+  "whenToUseInstead": [
+    { "component": "button", "when": "the element triggers an action" },
+    { "component": "kbd", "when": "showing a keyboard shortcut" }
+  ]
+}

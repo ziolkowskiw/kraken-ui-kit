@@ -1,0 +1,226 @@
+{
+  "a11y": [
+    "Built on Base UI Combobox; the input has role=\"combobox\", aria-expanded, aria-autocomplete.",
+    "Keyboard: ArrowDown/ArrowUp navigates options; Escape closes; Enter selects.",
+    "Option list should have role=\"listbox\" with each item as role=\"option\"."
+  ],
+  "aliases": [
+    "autocomplete",
+    "multi-select",
+    "searchable select",
+    "typeahead"
+  ],
+  "boundaries": [
+    "Figma naming trap: in Figma this component is the set named \"Select\" on the dropdown-menu page (node 1292:5274) — resolve duplicates by node ID, not display name."
+  ],
+  "description": "Autocomplete input with a list of suggestions (popover + command); searchable single-select over many options. size. (Figma \"Select\" set on dropdown-menu page — Part 4.)",
+  "exports": [
+    "Combobox",
+    "ComboboxLabel",
+    "ComboboxCollection",
+    "ComboboxTrigger",
+    "ComboboxValue",
+    "ComboboxClear",
+    "ComboboxChips",
+    "ComboboxChip",
+    "ComboboxChipsInput",
+    "ComboboxInput",
+    "ComboboxContent",
+    "ComboboxList",
+    "ComboboxItem",
+    "ComboboxEmpty",
+    "ComboboxGroup",
+    "ComboboxGroupLabel",
+    "ComboboxSeparator",
+    "ComboboxField"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1292:5274"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/combobox",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "dropdown-menu",
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "combobox"
+  },
+  "keywords": [
+    "async options",
+    "chips",
+    "filter",
+    "search",
+    "suggestions"
+  ],
+  "name": "combobox",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "md",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "showRemove"
+    },
+    {
+      "kind": "boolean",
+      "name": "showClear"
+    },
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "kind": "string|node",
+      "name": "placeholder"
+    },
+    {
+      "kind": "string|node",
+      "name": "className"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "ComboboxClear",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxEmpty",
+      "ComboboxGroup",
+      "ComboboxGroupLabel",
+      "ComboboxSeparator",
+      "ComboboxField"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/combobox.tsx",
+  "story": "src/components/ui/combobox.stories.tsx",
+  "title": "Combobox",
+  "tokens": {
+    "layer3": [
+      "--ds-input-bordercolor",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value",
+      "--ds-select-icon"
+    ],
+    "other": [
+      "--ds-chip-outlined-border",
+      "--ds-chip-outlined-content",
+      "--ds-chip-outlined-fill",
+      "--ds-chip-size-md-fontsize",
+      "--ds-chip-size-md-height",
+      "--ds-chip-size-md-paddingx",
+      "--ds-chip-size-md-radius",
+      "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
+      "--ds-color-icon-muted",
+      "--ds-color-muted-foreground",
+      "--ds-color-ring",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Use for single-choice selection over many options where typing-to-filter helps.",
+      "Use the ComboboxChips* parts for multi-select (they bind the --ds-chip-* tokens).",
+      "Use ComboboxTrigger/Value/Clear/Label/Collection for a select-like closed surface."
+    ],
+    "dont": [
+      "Don't use Combobox for a handful of options with no search need — use select.",
+      "Don't use Combobox as an actions menu — use dropdown-menu or command."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": [
+    {
+      "component": "select",
+      "when": "a short, known option list without search"
+    },
+    {
+      "component": "command",
+      "when": "a command palette / quick launcher"
+    },
+    {
+      "component": "dropdown-menu",
+      "when": "the items run actions"
+    }
+  ]
+}

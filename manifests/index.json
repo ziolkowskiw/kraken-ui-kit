@@ -1,0 +1,1027 @@
+[
+  {
+    "aliases": [],
+    "description": "A vertically stacked set of interactive headings that each reveal a section of content; FAQs / progressive disclosure. type=\"single|multiple\"; AccordionItem/Trigger/Content.",
+    "exports": [
+      "Accordion",
+      "AccordionContent",
+      "AccordionItem",
+      "AccordionTrigger"
+    ],
+    "file": "components/accordion.json",
+    "keywords": [],
+    "name": "accordion",
+    "title": "Accordion"
+  },
+  {
+    "aliases": [],
+    "description": "A modal dialog that interrupts the user with important content and expects a response; destructive/irreversible confirmations. AlertDialog + …Content/Overlay/Trigger/Close.",
+    "exports": [
+      "AlertDialog",
+      "AlertDialogClose",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTrigger"
+    ],
+    "file": "components/alert-dialog.json",
+    "keywords": [],
+    "name": "alert-dialog",
+    "title": "Alert Dialog"
+  },
+  {
+    "aliases": [
+      "banner",
+      "callout",
+      "inline message",
+      "notice"
+    ],
+    "description": "displays a callout for user attention; inline, non-blocking messages (info, success, warning, error)",
+    "exports": [
+      "Alert",
+      "AlertTitle",
+      "AlertDescription"
+    ],
+    "file": "components/alert.json",
+    "keywords": [
+      "error",
+      "info",
+      "neutral",
+      "notification",
+      "success",
+      "warning"
+    ],
+    "name": "alert",
+    "title": "Alert"
+  },
+  {
+    "aliases": [],
+    "description": "An image element with a fallback for representing the user. size. Stack → avatar-stack.tsx ( 605:6567).",
+    "exports": [
+      "AvatarStack",
+      "Avatar"
+    ],
+    "file": "components/avatar-stack.json",
+    "keywords": [],
+    "name": "avatar-stack",
+    "title": "Avatar Stack"
+  },
+  {
+    "aliases": [],
+    "description": "An image element with a fallback for representing the user. size. Stack → avatar-stack.tsx ( 605:6567).",
+    "exports": [
+      "Avatar",
+      "AvatarStack"
+    ],
+    "file": "components/avatar.json",
+    "keywords": [],
+    "name": "avatar",
+    "title": "Avatar"
+  },
+  {
+    "aliases": [
+      "chip",
+      "label badge",
+      "pill",
+      "status badge",
+      "tag"
+    ],
+    "description": "displays a badge or a component that looks like a badge; label/categorize items or show counts/status",
+    "exports": [
+      "Badge"
+    ],
+    "file": "components/badge.json",
+    "keywords": [
+      "category",
+      "count",
+      "indicator",
+      "label",
+      "status"
+    ],
+    "name": "badge",
+    "title": "Badge"
+  },
+  {
+    "aliases": [],
+    "description": "Displays the path to the current resource using a hierarchy of links; navigation context in deep pages. Breadcrumb/List/Item/Link/Page/Separator/Ellipsis.",
+    "exports": [
+      "Breadcrumb",
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ],
+    "file": "components/breadcrumb.json",
+    "keywords": [],
+    "name": "breadcrumb",
+    "title": "Breadcrumb"
+  },
+  {
+    "aliases": [],
+    "description": "A joined row of buttons that share borders; grouped related actions. orientation.",
+    "exports": [
+      "ButtonGroup",
+      "ButtonGroupSeparator",
+      "ButtonGroupText"
+    ],
+    "file": "components/button-group.json",
+    "keywords": [],
+    "name": "button-group",
+    "title": "Button Group"
+  },
+  {
+    "aliases": [
+      "action button",
+      "btn",
+      "cta",
+      "icon button",
+      "outline button",
+      "primary button",
+      "submit button"
+    ],
+    "description": "displays a button or a component that looks like a button; primary actions, form submits, dialog/menu triggers",
+    "exports": [
+      "Button"
+    ],
+    "file": "components/button.json",
+    "keywords": [
+      "action",
+      "click",
+      "destructive",
+      "ghost",
+      "icon-only",
+      "submit",
+      "tonal"
+    ],
+    "name": "button",
+    "title": "Button"
+  },
+  {
+    "aliases": [],
+    "description": "A date field component that allows users to select dates; standalone or inside date-picker. react-day-picker; calendar/header, /day compose.",
+    "exports": [
+      "Calendar",
+      "CalendarDayButton"
+    ],
+    "file": "components/calendar.json",
+    "keywords": [],
+    "name": "calendar",
+    "title": "Calendar"
+  },
+  {
+    "aliases": [
+      "content card",
+      "panel",
+      "surface",
+      "tile"
+    ],
+    "description": "displays a card with header, content, and footer; group related content and actions into a surface",
+    "exports": [
+      "Card",
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ],
+    "file": "components/card.json",
+    "keywords": [
+      "container",
+      "footer",
+      "group",
+      "header",
+      "section"
+    ],
+    "name": "card",
+    "title": "Card"
+  },
+  {
+    "aliases": [],
+    "description": "A carousel with motion and swipe built using Embla; browse a set of images/cards. orientation. With-image variant 950:4542.",
+    "exports": [
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext"
+    ],
+    "file": "components/carousel.json",
+    "keywords": [],
+    "name": "carousel",
+    "title": "Carousel"
+  },
+  {
+    "aliases": [],
+    "description": "A labeled checkbox control; when the checkbox needs an inline label/description. variant + size. Group: 1085:8757.",
+    "exports": [
+      "CheckboxButton",
+      "CheckboxButtonGroup"
+    ],
+    "file": "components/checkbox-button.json",
+    "keywords": [],
+    "name": "checkbox-button",
+    "title": "Checkbox Button"
+  },
+  {
+    "aliases": [
+      "check",
+      "check box",
+      "tick box"
+    ],
+    "description": "a control that toggles between checked and not checked; opt-in/agree or multi-select lists",
+    "exports": [
+      "Checkbox"
+    ],
+    "file": "components/checkbox.json",
+    "keywords": [
+      "agree",
+      "form",
+      "indeterminate",
+      "multi-select",
+      "opt-in"
+    ],
+    "name": "checkbox",
+    "title": "Checkbox"
+  },
+  {
+    "aliases": [
+      "autocomplete",
+      "multi-select",
+      "searchable select",
+      "typeahead"
+    ],
+    "description": "Autocomplete input with a list of suggestions (popover + command); searchable single-select over many options. size. (Figma \"Select\" set on dropdown-menu page — Part 4.)",
+    "exports": [
+      "Combobox",
+      "ComboboxLabel",
+      "ComboboxCollection",
+      "ComboboxTrigger",
+      "ComboboxValue",
+      "ComboboxClear",
+      "ComboboxChips",
+      "ComboboxChip",
+      "ComboboxChipsInput",
+      "ComboboxInput",
+      "ComboboxContent",
+      "ComboboxList",
+      "ComboboxItem",
+      "ComboboxEmpty",
+      "ComboboxGroup",
+      "ComboboxGroupLabel",
+      "ComboboxSeparator",
+      "ComboboxField"
+    ],
+    "file": "components/combobox.json",
+    "keywords": [
+      "async options",
+      "chips",
+      "filter",
+      "search",
+      "suggestions"
+    ],
+    "name": "combobox",
+    "title": "Combobox"
+  },
+  {
+    "aliases": [],
+    "description": "Fast, composable command menu; command palettes and quick search/launchers. Command/Input/List/Empty/Group/Item/Shortcut. Focused composition.",
+    "exports": [
+      "Command",
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandGroupLabel",
+      "CommandItem",
+      "CommandSeparator",
+      "CommandShortcut"
+    ],
+    "file": "components/command.json",
+    "keywords": [],
+    "name": "command",
+    "title": "Command"
+  },
+  {
+    "aliases": [],
+    "description": "Displays a menu of actions triggered by a right click; contextual actions on an item/row. Full surface; Label is a plain styled div.",
+    "exports": [
+      "ContextMenu",
+      "ContextMenuTrigger",
+      "ContextMenuPortal",
+      "ContextMenuContent",
+      "ContextMenuGroup",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioGroup",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuSub",
+      "ContextMenuSubTrigger",
+      "ContextMenuSubContent"
+    ],
+    "file": "components/context-menu.json",
+    "keywords": [],
+    "name": "context-menu",
+    "title": "Context Menu"
+  },
+  {
+    "aliases": [],
+    "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+    "exports": [
+      "DataTableCell"
+    ],
+    "file": "components/data-table-cell.json",
+    "keywords": [],
+    "name": "data-table-cell",
+    "title": "Data Table Cell"
+  },
+  {
+    "aliases": [],
+    "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+    "exports": [
+      "SortingIcons",
+      "TableHeaderDecoration",
+      "TableHeader",
+      "TableHeaderRow"
+    ],
+    "file": "components/data-table-header.json",
+    "keywords": [],
+    "name": "data-table-header",
+    "title": "Data Table Header"
+  },
+  {
+    "aliases": [],
+    "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+    "exports": [
+      "TableTitle",
+      "TableRow",
+      "DataTable"
+    ],
+    "file": "components/data-table.json",
+    "keywords": [],
+    "name": "data-table",
+    "title": "Data Table"
+  },
+  {
+    "aliases": [],
+    "description": "A date picker component; pick a single date or range in forms. Composes calendar + popover + button.",
+    "exports": [
+      "DatePicker",
+      "DatePickerField"
+    ],
+    "file": "components/date-picker.json",
+    "keywords": [],
+    "name": "date-picker",
+    "title": "Date Picker"
+  },
+  {
+    "aliases": [
+      "modal",
+      "modal dialog",
+      "popup window"
+    ],
+    "description": "a window overlaid on the primary window, content underneath inert; focused tasks/forms needing confirmation",
+    "exports": [
+      "Dialog",
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ],
+    "file": "components/dialog.json",
+    "keywords": [
+      "confirm",
+      "focused task",
+      "form",
+      "overlay",
+      "portal"
+    ],
+    "name": "dialog",
+    "title": "Dialog"
+  },
+  {
+    "aliases": [
+      "off-canvas",
+      "sheet",
+      "side panel",
+      "slide-over"
+    ],
+    "description": "A panel that slides in from an edge of the screen; mobile sheets, filters, side forms. side (Dialog-based). drawer/header, /footer compose.",
+    "exports": [
+      "Drawer",
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ],
+    "file": "components/drawer.json",
+    "keywords": [
+      "edge",
+      "filters",
+      "mobile",
+      "panel",
+      "side form"
+    ],
+    "name": "drawer",
+    "title": "Drawer"
+  },
+  {
+    "aliases": [
+      "action menu",
+      "context actions",
+      "dropdown",
+      "kebab menu",
+      "menu",
+      "overflow menu"
+    ],
+    "description": "Displays a menu of actions or functions, triggered by a button; action/overflow menus. Full DropdownMenu* surface. dropdown-menu/item, /group-label, /overflow, /decoration compose.",
+    "exports": [
+      "DropdownMenu",
+      "DropdownMenuTrigger",
+      "DropdownMenuPortal",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuLabel",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ],
+    "file": "components/dropdown-menu.json",
+    "keywords": [
+      "actions",
+      "checkable",
+      "items",
+      "radio items",
+      "submenu",
+      "trigger"
+    ],
+    "name": "dropdown-menu",
+    "title": "Dropdown Menu"
+  },
+  {
+    "aliases": [],
+    "description": "A centred empty/zero-state — optional media, title, body, and action slot. Compound (shadcn-faithful): Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent. Media variant: icon (default) · default. EmptyContent is the action slot (composes real Buttons).",
+    "exports": [
+      "Empty",
+      "EmptyHeader",
+      "EmptyMedia",
+      "EmptyTitle",
+      "EmptyDescription",
+      "EmptyContent"
+    ],
+    "file": "components/empty.json",
+    "keywords": [],
+    "name": "empty",
+    "title": "Empty"
+  },
+  {
+    "aliases": [],
+    "description": "Form control sized for a data-table cell (sm). inputType selects the control: text field | select | search | date | switch | checkbox | radio | textarea. Reuses kit form primitives. v1.1.",
+    "exports": [
+      "FormTableCell"
+    ],
+    "file": "components/form-table-cell.json",
+    "keywords": [],
+    "name": "form-table-cell",
+    "title": "Form Table Cell"
+  },
+  {
+    "aliases": [],
+    "description": "A card that previews a linked item on hover/focus. HoverCard/Trigger/Content. Surface = --ds-color-popover.",
+    "exports": [
+      "HoverCard",
+      "HoverCardTrigger",
+      "HoverCardContent",
+      "HoverCardTitle",
+      "HoverCardCopy"
+    ],
+    "file": "components/hover-card.json",
+    "keywords": [],
+    "name": "hover-card",
+    "title": "Hover Card"
+  },
+  {
+    "aliases": [],
+    "description": "Accessible one-time-password input with copy-paste; verification/2FA code entry. size; input-otp lib.",
+    "exports": [
+      "InputOTP",
+      "InputOTPGroup",
+      "InputOTPSlot",
+      "InputOTPSeparator"
+    ],
+    "file": "components/input-otp.json",
+    "keywords": [],
+    "name": "input-otp",
+    "title": "Input Otp"
+  },
+  {
+    "aliases": [
+      "form field",
+      "text box",
+      "text field",
+      "text input",
+      "textfield"
+    ],
+    "description": "displays a form input field; single-line text entry in forms",
+    "exports": [
+      "Input",
+      "InputField"
+    ],
+    "file": "components/input.json",
+    "keywords": [
+      "entry",
+      "error",
+      "form",
+      "label",
+      "mandatory",
+      "placeholder",
+      "single-line"
+    ],
+    "name": "input",
+    "title": "Input"
+  },
+  {
+    "aliases": [],
+    "description": "A flexible, composable row for displaying content in a structured layout; list rows, option rows, settings entries. variant. item/decoration-left|right compose.",
+    "exports": [
+      "Item",
+      "ItemGroup",
+      "ItemHeader",
+      "ItemFooter",
+      "ItemSeparator",
+      "ItemMedia",
+      "ItemContent",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemActions"
+    ],
+    "file": "components/item.json",
+    "keywords": [],
+    "name": "item",
+    "title": "Item"
+  },
+  {
+    "aliases": [],
+    "description": "Keyboard shortcut display. Kbd renders one key; pair with + separator for combos.",
+    "exports": [
+      "Kbd",
+      "KbdGroup"
+    ],
+    "file": "components/kbd.json",
+    "keywords": [],
+    "name": "kbd",
+    "title": "Kbd"
+  },
+  {
+    "aliases": [
+      "anchor",
+      "hyperlink",
+      "link button",
+      "nav link",
+      "text link"
+    ],
+    "description": "A text hyperlink (the kit's answer to shadcn variant=link, since Button has none); inline navigation in text. variant + size.",
+    "exports": [
+      "Link",
+      "LinkButton"
+    ],
+    "file": "components/link.json",
+    "keywords": [
+      "external",
+      "href",
+      "inline",
+      "navigation"
+    ],
+    "name": "link",
+    "title": "Link"
+  },
+  {
+    "aliases": [],
+    "description": "A horizontal bar of menus. Menubar/Menu/Trigger/Content/Item/Separator/Group/Label/Sub/SubTrigger/SubContent.",
+    "exports": [
+      "Menubar",
+      "MenubarMenu",
+      "MenubarGroup",
+      "MenubarPortal",
+      "MenubarRadioGroup",
+      "MenubarSub",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarItem",
+      "MenubarCheckboxItem",
+      "MenubarRadioItem",
+      "MenubarLabel",
+      "MenubarSeparator",
+      "MenubarShortcut",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ],
+    "file": "components/menubar.json",
+    "keywords": [],
+    "name": "menubar",
+    "title": "Menubar"
+  },
+  {
+    "aliases": [],
+    "description": "A horizontal menu whose triggers reveal a shared floating panel. NavigationMenu/List/Item/Trigger/Content/Link/Viewport/Indicator.",
+    "exports": [
+      "NavigationMenu",
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuTrigger",
+      "NavigationMenuContent",
+      "NavigationMenuLink",
+      "NavigationMenuViewport",
+      "NavigationMenuPositioner",
+      "NavigationMenuIndicator"
+    ],
+    "file": "components/navigation-menu.json",
+    "keywords": [],
+    "name": "navigation-menu",
+    "title": "Navigation Menu"
+  },
+  {
+    "aliases": [],
+    "description": "Pagination with page navigation, next and previous links; page through long lists/tables. Pagination/Content/Item/Link/Previous/Next/Ellipsis.",
+    "exports": [
+      "Pagination",
+      "PaginationContent",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationPrevious",
+      "PaginationNext",
+      "PaginationEllipsis"
+    ],
+    "file": "components/pagination.json",
+    "keywords": [],
+    "name": "pagination",
+    "title": "Pagination"
+  },
+  {
+    "aliases": [],
+    "description": "Displays rich content in a portal, triggered by a button; small floating forms, info, pickers. Popover/Trigger/Content/Close/Title/Description.",
+    "exports": [
+      "Popover",
+      "PopoverTrigger",
+      "PopoverHeader",
+      "PopoverContent",
+      "PopoverClose",
+      "PopoverTitle",
+      "PopoverDescription"
+    ],
+    "file": "components/popover.json",
+    "keywords": [],
+    "name": "popover",
+    "title": "Popover"
+  },
+  {
+    "aliases": [],
+    "description": "Rounded track + indicator with optional label row. value (0–100). Progress.",
+    "exports": [
+      "Progress"
+    ],
+    "file": "components/progress.json",
+    "keywords": [],
+    "name": "progress",
+    "title": "Progress"
+  },
+  {
+    "aliases": [],
+    "description": "A labeled radio control; when the radio needs an inline label/description. variant + size.",
+    "exports": [
+      "RadioButton",
+      "RadioButtonGroup"
+    ],
+    "file": "components/radio-button.json",
+    "keywords": [],
+    "name": "radio-button",
+    "title": "Radio Button"
+  },
+  {
+    "aliases": [],
+    "description": "a set of checkable buttons where only one can be checked; choose one from a small visible set",
+    "exports": [
+      "RadioGroup",
+      "RadioGroupField",
+      "RadioGroupItem"
+    ],
+    "file": "components/radio-group.json",
+    "keywords": [],
+    "name": "radio-group",
+    "title": "Radio Group"
+  },
+  {
+    "aliases": [],
+    "description": "Accessible resizable panel groups and layouts; split views and adjustable panes (react-resizable-panels).",
+    "exports": [
+      "ResizablePanelGroup",
+      "ResizablePanel",
+      "ResizableHandle"
+    ],
+    "file": "components/resizable.json",
+    "keywords": [],
+    "name": "resizable",
+    "title": "Resizable"
+  },
+  {
+    "aliases": [],
+    "description": "Augments native scroll for custom, cross-browser styling; wrap scrollable regions with styled scrollbars.",
+    "exports": [
+      "ScrollArea",
+      "ScrollBar"
+    ],
+    "file": "components/scroll-area.json",
+    "keywords": [],
+    "name": "scroll-area",
+    "title": "Scroll Area"
+  },
+  {
+    "aliases": [],
+    "description": "A search input specialization (an Input with a search affordance); filter lists/tables, global search. size.",
+    "exports": [
+      "Search",
+      "SearchField"
+    ],
+    "file": "components/search.json",
+    "keywords": [],
+    "name": "search",
+    "title": "Search"
+  },
+  {
+    "aliases": [
+      "option list",
+      "picker",
+      "single-select"
+    ],
+    "description": "displays a list of options to pick from, triggered by a button; single-choice selection in forms",
+    "exports": [
+      "Select",
+      "SelectContent",
+      "SelectField",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ],
+    "file": "components/select.json",
+    "keywords": [
+      "choice",
+      "dropdown",
+      "form",
+      "listbox",
+      "options",
+      "placeholder"
+    ],
+    "name": "select",
+    "title": "Select"
+  },
+  {
+    "aliases": [],
+    "description": "Visually or semantically separates content; between sections, list items, toolbar groups. orientation.",
+    "exports": [
+      "Separator"
+    ],
+    "file": "components/separator.json",
+    "keywords": [],
+    "name": "separator",
+    "title": "Separator"
+  },
+  {
+    "aliases": [],
+    "description": "A composable, themeable sidebar component; primary app navigation. Sidebar* + useSidebar. sidebar/item, /item-sub, /item-collapsed, /group-label compose.",
+    "exports": [
+      "Sidebar",
+      "SidebarProvider",
+      "SidebarTrigger",
+      "SidebarRail",
+      "SidebarInset",
+      "SidebarInput",
+      "SidebarSeparator",
+      "SidebarHeader",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupLabel",
+      "SidebarGroupContent",
+      "SidebarGroupAction",
+      "SidebarMenu",
+      "SidebarMenuItem",
+      "SidebarMenuButton",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubItem",
+      "SidebarMenuSubButton"
+    ],
+    "file": "components/sidebar.json",
+    "keywords": [],
+    "name": "sidebar",
+    "title": "Sidebar"
+  },
+  {
+    "aliases": [],
+    "description": "Muted, pulsing placeholder. Skeleton (set className for size).",
+    "exports": [
+      "Skeleton"
+    ],
+    "file": "components/skeleton.json",
+    "keywords": [],
+    "name": "skeleton",
+    "title": "Skeleton"
+  },
+  {
+    "aliases": [],
+    "description": "An input where the user selects a value from within a given range; volume, ranges, numeric tuning. slider/marker composes.",
+    "exports": [
+      "Slider"
+    ],
+    "file": "components/slider.json",
+    "keywords": [],
+    "name": "slider",
+    "title": "Slider"
+  },
+  {
+    "aliases": [
+      "notification",
+      "snackbar",
+      "toast",
+      "toaster"
+    ],
+    "description": "An opinionated toast component for React; transient success/error notifications. Toaster + toast().",
+    "exports": [
+      "Toaster"
+    ],
+    "file": "components/sonner.json",
+    "keywords": [
+      "error",
+      "popup message",
+      "success",
+      "transient"
+    ],
+    "name": "sonner",
+    "title": "Sonner"
+  },
+  {
+    "aliases": [],
+    "description": "a control that toggles between checked and not checked; instant on/off settings (no submit)",
+    "exports": [
+      "Switch"
+    ],
+    "file": "components/switch.json",
+    "keywords": [],
+    "name": "switch",
+    "title": "Switch"
+  },
+  {
+    "aliases": [
+      "data grid",
+      "grid",
+      "html table"
+    ],
+    "description": "A responsive table component; display rows/columns of data. Table/Header/Body/Footer/Head/Row/Cell/Caption.",
+    "exports": [
+      "Table",
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ],
+    "file": "components/table.json",
+    "keywords": [
+      "columns",
+      "data",
+      "rows",
+      "tabular"
+    ],
+    "name": "table",
+    "title": "Table"
+  },
+  {
+    "aliases": [
+      "segmented control",
+      "tab bar",
+      "tab panel"
+    ],
+    "description": "layered sections of content displayed one at a time; switch between related views in the same space",
+    "exports": [
+      "Tabs",
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent"
+    ],
+    "file": "components/tabs.json",
+    "keywords": [
+      "navigation",
+      "panels",
+      "sections",
+      "switch",
+      "views"
+    ],
+    "name": "tabs",
+    "title": "Tabs"
+  },
+  {
+    "aliases": [],
+    "description": "displays a form textarea; multi-line text entry (comments, notes)",
+    "exports": [
+      "Textarea",
+      "TextareaField"
+    ],
+    "file": "components/textarea.json",
+    "keywords": [],
+    "name": "textarea",
+    "title": "Textarea"
+  },
+  {
+    "aliases": [],
+    "description": "A time field (native type=\"time\" styled shell); enter a time of day. size.",
+    "exports": [
+      "TimeInput",
+      "TimeInputField"
+    ],
+    "file": "components/time-input.json",
+    "keywords": [],
+    "name": "time-input",
+    "title": "Time Input"
+  },
+  {
+    "aliases": [],
+    "description": "A set of two-state buttons that can be toggled on or off; segmented / multi-toggle controls. ToggleGroup (type, size) + ToggleGroupItem.",
+    "exports": [
+      "ToggleGroup",
+      "ToggleGroupItem"
+    ],
+    "file": "components/toggle-group.json",
+    "keywords": [],
+    "name": "toggle-group",
+    "title": "Toggle Group"
+  },
+  {
+    "aliases": [],
+    "description": "A two-state button that can be either on or off; a single toggleable option (e.g. bold). variant + size.",
+    "exports": [
+      "Toggle"
+    ],
+    "file": "components/toggle.json",
+    "keywords": [],
+    "name": "toggle",
+    "title": "Toggle"
+  },
+  {
+    "aliases": [
+      "hint",
+      "hover hint",
+      "info bubble"
+    ],
+    "description": "A popup that displays information when an element gets focus or is hovered; short hints on icons/controls. Tooltip/Trigger/Content. ⓘ trigger 2115:1280.",
+    "exports": [
+      "Tooltip",
+      "TooltipContent",
+      "TooltipIcon",
+      "TooltipProvider",
+      "TooltipTrigger"
+    ],
+    "file": "components/tooltip.json",
+    "keywords": [
+      "focus",
+      "help",
+      "hover",
+      "icon hint",
+      "short text"
+    ],
+    "name": "tooltip",
+    "title": "Tooltip"
+  }
+]

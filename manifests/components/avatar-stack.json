@@ -1,0 +1,53 @@
+{
+  "a11y": [
+    "The group needs an accessible count: wrap in an element with aria-label=\"5 participants\".",
+    "Individual avatars inside the stack should carry title or aria-label."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "An image element with a fallback for representing the user. size. Stack → avatar-stack.tsx ( 605:6567).",
+  "exports": [
+    "AvatarStack",
+    "Avatar"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "605:6567"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/avatar-stack",
+    "dependencies": [],
+    "registryDependencies": [
+      "avatar",
+      "theme"
+    ],
+    "registryItem": "avatar-stack"
+  },
+  "keywords": [],
+  "name": "avatar-stack",
+  "notes": [
+    "Mapped via the 'avatar' entry in MAPPING.md."
+  ],
+  "props": [],
+  "slots": {
+    "exports": [
+      "Avatar"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/avatar-stack.tsx",
+  "story": "src/components/ui/avatar-stack.stories.tsx",
+  "title": "Avatar Stack",
+  "tokens": {
+    "layer3": [],
+    "other": []
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

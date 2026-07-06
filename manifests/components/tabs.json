@@ -1,0 +1,153 @@
+{
+  "a11y": [
+    "TabsList has role=\"tablist\"; each TabsTrigger has role=\"tab\" with aria-selected and aria-controls.",
+    "Keyboard: ArrowLeft/ArrowRight moves between tabs (automatic activation).",
+    "The active TabsContent has role=\"tabpanel\" with aria-labelledby."
+  ],
+  "aliases": [
+    "segmented control",
+    "tab bar",
+    "tab panel"
+  ],
+  "boundaries": [
+    "variant values are line (default, underline strip) and badge (pill/segmented). Figma's variant named \"default\" maps to code value \"badge\" — a deliberate divergence.",
+    "depth on TabsList (1 | 2) is a kit extension with no Figma axis."
+  ],
+  "description": "layered sections of content displayed one at a time; switch between related views in the same space",
+  "exports": [
+    "Tabs",
+    "TabsList",
+    "TabsTrigger",
+    "TabsContent"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1825:18415"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/tabs",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "tabs"
+  },
+  "keywords": [
+    "navigation",
+    "panels",
+    "sections",
+    "switch",
+    "views"
+  ],
+  "name": "tabs",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "line",
+      "figmaProperty": "Variant",
+      "figmaValues": "Figma line → \"line\" (default, underline strip) · Figma default → \"badge\" (pill/segmented, the \"default\" Figma variant maps to the badge code value)",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "line",
+        "badge"
+      ]
+    },
+    {
+      "figmaProperty": "(depth — code ext.)",
+      "figmaValues": "1 (default) · 2 — controls label scale; no Figma axis, intentional kit extension",
+      "kind": "enum",
+      "name": "depth",
+      "values": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "figmaProperty": "Orientation",
+      "figmaValues": "horizontal · vertical",
+      "kind": "mapped",
+      "name": "orientation on Tabs"
+    },
+    {
+      "figmaProperty": "(disabled tab)",
+      "figmaValues": "bool",
+      "kind": "mapped",
+      "name": "disabled on TabsTrigger"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/tabs.tsx",
+  "story": "src/components/ui/tabs.stories.tsx",
+  "title": "Tabs",
+  "tokens": {
+    "layer3": [
+      "--ds-card-radius"
+    ],
+    "other": [
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-foreground",
+      "--ds-color-muted-foreground",
+      "--ds-color-primary",
+      "--ds-color-status-neutral-bg",
+      "--ds-color-status-neutral-border",
+      "--ds-radius-lg",
+      "--ds-spacing-component-xs",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Set variant on TabsList and orientation on Tabs; disable individual tabs via disabled on TabsTrigger."
+    ],
+    "dont": [
+      "Don't use Tabs for page-level navigation — use navigation-menu."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "depth": {
+        "values": [
+          "1",
+          "2"
+        ]
+      },
+      "variant": {
+        "default": "line",
+        "values": [
+          "line",
+          "badge"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": [
+    {
+      "component": "navigation-menu",
+      "when": "navigating between pages/routes"
+    },
+    {
+      "component": "toggle-group",
+      "when": "a compact value switch that isn't showing panels"
+    }
+  ]
+}

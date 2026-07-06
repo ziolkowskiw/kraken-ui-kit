@@ -1,0 +1,143 @@
+{
+  "a11y": [
+    "Native <textarea> — keyboard accessible by default.",
+    "Always use TextareaField wrapper for a visible, associated <label>.",
+    "Character counter: expose count via aria-describedby so screen readers announce it on change."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "displays a form textarea; multi-line text entry (comments, notes)",
+  "exports": [
+    "Textarea",
+    "TextareaField"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1832:20037"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/textarea",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "textarea"
+  },
+  "keywords": [],
+  "name": "textarea",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "md",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "figmaProperty": "Mandatory",
+      "figmaValues": "bool",
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "figmaProperty": "(counter)",
+      "figmaValues": "bool + number",
+      "kind": "boolean",
+      "name": "showCounter"
+    },
+    {
+      "figmaProperty": "(label/helper)",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "figmaProperty": "State=error",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "kind": "string|node",
+      "name": "id"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "TextareaField"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/textarea.tsx",
+  "story": "src/components/ui/textarea.stories.tsx",
+  "title": "Textarea",
+  "tokens": {
+    "layer3": [
+      "--ds-input-bordercolor",
+      "--ds-input-borderdisabled",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value"
+    ],
+    "other": [
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

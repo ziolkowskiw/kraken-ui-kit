@@ -1,0 +1,59 @@
+{
+  "a11y": [
+    "Use <kbd> semantically to mark keyboard shortcuts; screen readers already handle this element."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Keyboard shortcut display. Kbd renders one key; pair with + separator for combos.",
+  "exports": [
+    "Kbd",
+    "KbdGroup"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1719:48975"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/kbd",
+    "dependencies": [],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "kbd"
+  },
+  "keywords": [],
+  "name": "kbd",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "KbdGroup"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/kbd.tsx",
+  "story": "src/components/ui/kbd.stories.tsx",
+  "title": "Kbd",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted",
+      "--ds-radius-sm",
+      "--ds-typography-bodyxs-fontfamily",
+      "--ds-typography-bodyxs-fontsize",
+      "--ds-typography-bodyxs-fontweight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

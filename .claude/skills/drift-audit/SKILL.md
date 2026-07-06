@@ -32,6 +32,17 @@ of sync. **Report only — do not modify Figma, tokens, or code here.** Hand fix
 4. **`registry.json` ⇄ code:** `npm run registry:build` produces no diff (i.e. the
    committed registry matches the current source). A diff = registry is stale.
 
+5. **Manifests (machine-readable layer):** run `npm run manifests:check` and report:
+   - schema failures (component manifests, foundations, tokens, index, **overrides**
+     — a failing override is a typo in the human judgment layer);
+   - regeneration drift (committed `manifests/**` no longer byte-matches generated
+     output → someone hand-edited a manifest or forgot `npm run manifests:build`
+     after changing a source);
+   - cross-check failures (source ⇄ manifest coverage, registry items, layer-3
+     tokens vs `tokens.css`);
+   - *(informational, not a failure)* components with no
+     `manifests/overrides/<name>.json` usage overlay — candidates for seeding.
+
 ## Output
 A dated report (PASS/FAIL per section) with mismatch tables:
 `item → Figma value/name → code value/name → suggested skill to fix`.
@@ -40,4 +51,5 @@ then cosmetic.
 
 ## Done when
 The three sources agree, or every disagreement is listed with the exact remediation
-(`token-sync`, `mapping-doctor`, or `registry:build`). No files changed by this skill.
+(`token-sync`, `mapping-doctor`, `registry:build`, or `manifests:build`). No files
+changed by this skill.

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["sheet", "side panel", "slide-over", "off-canvas"],
+  "keywords": ["filters", "edge", "mobile", "side form", "panel"],
+  "usage": {
+    "do": [
+      "Pick the edge with the side prop; compose DrawerHeader / DrawerFooter.",
+      "Give the drawer an aria-label describing its purpose (e.g. \"Filters\")."
+    ],
+    "dont": [
+      "Don't use Drawer for centered, focused confirmations — use dialog or alert-dialog."
+    ]
+  },
+  "boundaries": [
+    "Built on the Base UI dialog — NOT the vaul package shadcn uses; a deliberate divergence."
+  ],
+  "whenToUseInstead": [
+    { "component": "dialog", "when": "a centered focused task or confirmation" },
+    { "component": "sidebar", "when": "persistent app navigation rather than a transient panel" }
+  ]
+}

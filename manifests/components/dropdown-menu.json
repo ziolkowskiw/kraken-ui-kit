@@ -1,0 +1,142 @@
+{
+  "a11y": [
+    "The trigger has aria-haspopup=\"menu\" and aria-expanded.",
+    "Keyboard: ArrowUp/ArrowDown moves between items; Escape closes; Enter/Space activates.",
+    "Checkable items use aria-checked; radio items use aria-checked within role=\"radiogroup\"."
+  ],
+  "aliases": [
+    "action menu",
+    "context actions",
+    "dropdown",
+    "kebab menu",
+    "menu",
+    "overflow menu"
+  ],
+  "boundaries": [
+    "Figma naming trap: the Figma set named \"Select\" on the dropdown-menu page (1292:5274) is combobox, not this component; this set is node 1049:6592."
+  ],
+  "description": "Displays a menu of actions or functions, triggered by a button; action/overflow menus. Full DropdownMenu* surface. dropdown-menu/item, /group-label, /overflow, /decoration compose.",
+  "exports": [
+    "DropdownMenu",
+    "DropdownMenuTrigger",
+    "DropdownMenuPortal",
+    "DropdownMenuContent",
+    "DropdownMenuGroup",
+    "DropdownMenuItem",
+    "DropdownMenuCheckboxItem",
+    "DropdownMenuRadioGroup",
+    "DropdownMenuRadioItem",
+    "DropdownMenuLabel",
+    "DropdownMenuSeparator",
+    "DropdownMenuShortcut",
+    "DropdownMenuSub",
+    "DropdownMenuSubTrigger",
+    "DropdownMenuSubContent"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1049:6592"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/dropdown-menu",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "dropdown-menu"
+  },
+  "keywords": [
+    "actions",
+    "checkable",
+    "items",
+    "radio items",
+    "submenu",
+    "trigger"
+  ],
+  "name": "dropdown-menu",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "inset"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "DropdownMenuTrigger",
+      "DropdownMenuPortal",
+      "DropdownMenuContent",
+      "DropdownMenuGroup",
+      "DropdownMenuItem",
+      "DropdownMenuCheckboxItem",
+      "DropdownMenuRadioGroup",
+      "DropdownMenuRadioItem",
+      "DropdownMenuLabel",
+      "DropdownMenuSeparator",
+      "DropdownMenuShortcut",
+      "DropdownMenuSub",
+      "DropdownMenuSubTrigger",
+      "DropdownMenuSubContent"
+    ],
+    "figmaParts": [
+      "dropdown-menu/decoration",
+      "dropdown-menu/group-label",
+      "dropdown-menu/item",
+      "dropdown-menu/overflow"
+    ]
+  },
+  "source": "src/components/ui/dropdown-menu.tsx",
+  "story": "src/components/ui/dropdown-menu.stories.tsx",
+  "title": "Dropdown Menu",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-tertiary",
+      "--ds-color-destructive",
+      "--ds-color-destructive-muted",
+      "--ds-color-muted-foreground",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-menuitem-content",
+      "--ds-menuitem-contentdisabled",
+      "--ds-menuitem-fillhover",
+      "--ds-radius-lg",
+      "--ds-typography-labelsm-fontsize"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Use for action/overflow menus triggered by a button; compose the full DropdownMenu* surface (Item, CheckboxItem, RadioItem, Sub, Separator, Label…)."
+    ],
+    "dont": [
+      "Don't use DropdownMenu to pick a form value — use select (or combobox for searchable lists).",
+      "Don't use it for right-click menus — use context-menu."
+    ]
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": [
+    {
+      "component": "select",
+      "when": "choosing a value in a form"
+    },
+    {
+      "component": "combobox",
+      "when": "searchable value selection"
+    },
+    {
+      "component": "context-menu",
+      "when": "right-click contextual actions"
+    },
+    {
+      "component": "menubar",
+      "when": "a horizontal bar of application menus"
+    }
+  ]
+}

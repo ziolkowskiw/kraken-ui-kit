@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["btn", "cta", "action button", "primary button", "outline button", "icon button", "submit button"],
+  "keywords": ["action", "submit", "click", "destructive", "ghost", "tonal", "icon-only"],
+  "usage": {
+    "do": [
+      "Use variant=\"secondary\" for the outline look — secondary IS the outline variant.",
+      "Give every iconOnly button an aria-label (or title) with a text equivalent.",
+      "Pass lucide-react icons via leftIcon / rightIcon — never bake icons into children markup.",
+      "Use the destructive family (destructive / destructive-secondary / destructive-ghost) for irreversible actions."
+    ],
+    "dont": [
+      "Don't use Button for navigation — use link (inline) or link-button (button-shaped navigation).",
+      "Don't add hover/focus/active props — those states are CSS pseudo-classes; disabled is the only state prop.",
+      "Don't invent variant=\"outline\" or variant=\"link\" — neither exists in this kit."
+    ]
+  },
+  "boundaries": [
+    "variant is exactly: primary | secondary | tonal | ghost | destructive | destructive-secondary | destructive-ghost.",
+    "shadcn mapping: default→primary, outline→secondary; shadcn's link variant is the separate link component.",
+    "Sizing comes from --ds-button-size-* tokens + the iconOnly prop — there is no size=\"icon-*\"."
+  ],
+  "whenToUseInstead": [
+    { "component": "link", "when": "inline text navigation" },
+    { "component": "link-button", "when": "navigation that should look like a button" },
+    { "component": "toggle", "when": "a two-state on/off button (e.g. bold)" }
+  ]
+}

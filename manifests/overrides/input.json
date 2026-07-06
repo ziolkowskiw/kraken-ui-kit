@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["text field", "textfield", "text input", "form field", "text box"],
+  "keywords": ["form", "single-line", "entry", "label", "error", "mandatory", "placeholder"],
+  "usage": {
+    "do": [
+      "Use the InputField wrapper — it adds label / description / errorMessage / mandatory with correct htmlFor association.",
+      "Drive the error look by passing errorMessage (its presence switches the state).",
+      "Use leftDecoration / rightDecoration for icons or affixes inside the field."
+    ],
+    "dont": [
+      "Don't hand-roll a <label> next to a bare Input — InputField exists for that.",
+      "Don't use Input for multi-line text — use textarea (TextareaField)."
+    ]
+  },
+  "boundaries": [
+    "disabled is the only state prop; error is driven by errorMessage presence, not a variant.",
+    "mandatory adds the visual asterisk — still add aria-required on the input."
+  ],
+  "whenToUseInstead": [
+    { "component": "textarea", "when": "multi-line text (comments, notes)" },
+    { "component": "search", "when": "a search box with search affordance" },
+    { "component": "time-input", "when": "entering a time of day" },
+    { "component": "input-otp", "when": "one-time-password / verification codes" },
+    { "component": "combobox", "when": "text entry with suggestions (autocomplete)" }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "a11y": [
+    "Use a heading + description + action pattern so screen readers get full context.",
+    "The action button in an empty state must have an accessible label, not just an icon."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A centred empty/zero-state — optional media, title, body, and action slot. Compound (shadcn-faithful): Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent. Media variant: icon (default) · default. EmptyContent is the action slot (composes real Buttons).",
+  "exports": [
+    "Empty",
+    "EmptyHeader",
+    "EmptyMedia",
+    "EmptyTitle",
+    "EmptyDescription",
+    "EmptyContent"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1686:7468"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/empty",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "empty"
+  },
+  "keywords": [],
+  "name": "empty",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "icon",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "icon",
+        "default"
+      ]
+    }
+  ],
+  "slots": {
+    "exports": [
+      "EmptyHeader",
+      "EmptyMedia",
+      "EmptyTitle",
+      "EmptyDescription",
+      "EmptyContent"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/empty.tsx",
+  "story": "src/components/ui/empty.stories.tsx",
+  "title": "Empty",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-icon-default",
+      "--ds-color-icon-muted",
+      "--ds-color-muted",
+      "--ds-radius-lg",
+      "--ds-spacing-component-2xl",
+      "--ds-spacing-component-xl",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-headingmd-fontfamily",
+      "--ds-typography-headingmd-fontsize",
+      "--ds-typography-headingmd-fontweight",
+      "--ds-typography-headingmd-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "variant": {
+        "default": "icon",
+        "values": [
+          "icon",
+          "default"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

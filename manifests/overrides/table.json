@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["data grid", "grid", "html table"],
+  "keywords": ["rows", "columns", "tabular", "data"],
+  "usage": {
+    "do": [
+      "Use semantic composition: Table / TableHeader / TableBody / TableFooter / TableHead / TableRow / TableCell / TableCaption.",
+      "Use <TableHead scope=\"col\"> semantics for screen-reader support."
+    ],
+    "dont": [
+      "Don't rebuild sortable/data-heavy tables from raw Table parts — use data-table (with data-table-header / data-table-cell).",
+      "Don't put form controls in cells ad hoc — use form-table-cell."
+    ]
+  },
+  "boundaries": [],
+  "whenToUseInstead": [
+    { "component": "data-table", "when": "sortable, composed data tables" },
+    { "component": "form-table-cell", "when": "editable form controls sized for table cells" }
+  ]
+}

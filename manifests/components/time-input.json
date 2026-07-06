@@ -1,0 +1,137 @@
+{
+  "a11y": [
+    "Native type=\"time\" — screen readers announce it as a time input with h/m/s segments.",
+    "Always pair with a visible label via TextareaField-style wrapper or <label for>."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A time field (native type=\"time\" styled shell); enter a time of day. size.",
+  "exports": [
+    "TimeInput",
+    "TimeInputField"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "903:5961"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/time-input",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "time-input"
+  },
+  "keywords": [],
+  "name": "time-input",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "md",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "kind": "string|node",
+      "name": "id"
+    }
+  ],
+  "rationale": "Mirrors the Figma `time-input` set (858:2044): a field for entering a time, with a trailing clock affordance. State=rest|hover|focus|disabled|error × Size × Filled. Reuses the `--ds-input-*` field tokens.",
+  "slots": {
+    "exports": [
+      "TimeInputField"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/time-input.tsx",
+  "story": "src/components/ui/time-input.stories.tsx",
+  "title": "Time Input",
+  "tokens": {
+    "layer3": [
+      "--ds-input-bordercolor",
+      "--ds-input-borderdisabled",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value"
+    ],
+    "other": [
+      "--ds-color-icon-muted",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

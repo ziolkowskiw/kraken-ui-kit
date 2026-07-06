@@ -1,0 +1,62 @@
+{
+  "a11y": [
+    "Add aria-label to the <Carousel> (e.g. \"Product images\").",
+    "Previous/Next buttons need accessible labels; current slide position should be announced (e.g. \"Slide 2 of 5\").",
+    "Pause auto-play (if used) on focus/hover; provide a manual play/pause control."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A carousel with motion and swipe built using Embla; browse a set of images/cards. orientation. With-image variant 950:4542.",
+  "exports": [
+    "Carousel",
+    "CarouselContent",
+    "CarouselItem",
+    "CarouselPrevious",
+    "CarouselNext"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "950:4516"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/carousel",
+    "dependencies": [
+      "embla-carousel-react@8.6.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "button",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "carousel"
+  },
+  "keywords": [],
+  "name": "carousel",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/carousel.tsx",
+  "story": "src/components/ui/carousel.stories.tsx",
+  "title": "Carousel",
+  "tokens": {
+    "layer3": [],
+    "other": []
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

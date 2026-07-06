@@ -1,0 +1,251 @@
+{
+  "a11y": [
+    "Purely visual in most cases; add aria-label when the badge conveys information not in surrounding text (e.g. \"3 unread\").",
+    "Avoid using color alone — pair with text or icon for all eight color variants."
+  ],
+  "aliases": [
+    "chip",
+    "label badge",
+    "pill",
+    "status badge",
+    "tag"
+  ],
+  "boundaries": [
+    "Axes are color (8 values) × appearance × size × shape — there is no single shadcn-style variant prop."
+  ],
+  "description": "displays a badge or a component that looks like a badge; label/categorize items or show counts/status",
+  "exports": [
+    "Badge"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "619:6877"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/badge",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "badge"
+  },
+  "keywords": [
+    "category",
+    "count",
+    "indicator",
+    "label",
+    "status"
+  ],
+  "name": "badge",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "neutral",
+      "figmaProperty": "Color",
+      "figmaValues": "8 colors",
+      "kind": "enum",
+      "name": "color",
+      "values": [
+        "neutral",
+        "brand",
+        "green",
+        "red",
+        "orange",
+        "amber",
+        "blue",
+        "purple"
+      ]
+    },
+    {
+      "default": "filled",
+      "figmaProperty": "Appearance",
+      "figmaValues": "filled · outlined · ghost",
+      "kind": "enum",
+      "name": "appearance",
+      "values": [
+        "filled",
+        "outlined",
+        "ghost"
+      ]
+    },
+    {
+      "default": "md",
+      "figmaProperty": "Size",
+      "figmaValues": "sm · md (default) · lg",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "figmaProperty": "left/right icon",
+      "figmaValues": "lucide icon",
+      "kind": "string|node",
+      "name": "leftIcon"
+    },
+    {
+      "kind": "string|node",
+      "name": "rightIcon"
+    },
+    {
+      "figmaProperty": "Shape",
+      "figmaValues": "round · square",
+      "kind": "mapped",
+      "name": "shape"
+    }
+  ],
+  "rationale": "Mirrors the Figma `badge` component set (619:6877): Color × Appearance × Size × Shape + left/right icon slots. Every visual value binds a Layer-3 token (--ds-badge-*). `color` sets three local vars; `appearance` decides which apply.",
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/badge.tsx",
+  "story": "src/components/ui/badge.stories.tsx",
+  "title": "Badge",
+  "tokens": {
+    "layer3": [
+      "--ds-badge-amber-border",
+      "--ds-badge-amber-content",
+      "--ds-badge-amber-fill",
+      "--ds-badge-blue-border",
+      "--ds-badge-blue-content",
+      "--ds-badge-blue-fill",
+      "--ds-badge-brand-border",
+      "--ds-badge-brand-content",
+      "--ds-badge-brand-fill",
+      "--ds-badge-green-border",
+      "--ds-badge-green-content",
+      "--ds-badge-green-fill",
+      "--ds-badge-orange-border",
+      "--ds-badge-orange-content",
+      "--ds-badge-orange-fill",
+      "--ds-badge-purple-border",
+      "--ds-badge-purple-content",
+      "--ds-badge-purple-fill",
+      "--ds-badge-red-border",
+      "--ds-badge-red-content",
+      "--ds-badge-red-fill",
+      "--ds-badge-size-lg-fontsize",
+      "--ds-badge-size-lg-fontweight",
+      "--ds-badge-size-lg-height",
+      "--ds-badge-size-lg-paddingx",
+      "--ds-badge-size-lg-radiusfull",
+      "--ds-badge-size-lg-radiussquare",
+      "--ds-badge-size-md-fontsize",
+      "--ds-badge-size-md-fontweight",
+      "--ds-badge-size-md-height",
+      "--ds-badge-size-md-paddingx",
+      "--ds-badge-size-md-radius",
+      "--ds-badge-size-md-radiussquare",
+      "--ds-badge-size-sm-fontsize",
+      "--ds-badge-size-sm-fontweight",
+      "--ds-badge-size-sm-height",
+      "--ds-badge-size-sm-paddingx",
+      "--ds-badge-size-sm-radiusfull",
+      "--ds-badge-size-sm-radiussquare",
+      "--ds-badge-slate-border",
+      "--ds-badge-slate-content",
+      "--ds-badge-slate-fill"
+    ],
+    "other": []
+  },
+  "usage": {
+    "do": [
+      "Pick color for meaning, appearance (filled/outlined/ghost) for weight, shape (round/square) for style.",
+      "Pair the color with text or an icon — never color alone."
+    ],
+    "dont": [
+      "Don't make a Badge interactive — for toggleable chips use toggle / toggle-group, for actions use button."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "appearance": {
+        "default": "filled",
+        "values": [
+          "filled",
+          "outlined",
+          "ghost"
+        ]
+      },
+      "color": {
+        "default": "neutral",
+        "values": [
+          "neutral",
+          "brand",
+          "green",
+          "red",
+          "orange",
+          "amber",
+          "blue",
+          "purple"
+        ]
+      },
+      "size": {
+        "default": "md",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    },
+    "compound": [
+      {
+        "when": {
+          "shape": "round",
+          "size": "sm"
+        }
+      },
+      {
+        "when": {
+          "shape": "round",
+          "size": "md"
+        }
+      },
+      {
+        "when": {
+          "shape": "round",
+          "size": "lg"
+        }
+      },
+      {
+        "when": {
+          "shape": "square",
+          "size": "sm"
+        }
+      },
+      {
+        "when": {
+          "shape": "square",
+          "size": "md"
+        }
+      },
+      {
+        "when": {
+          "shape": "square",
+          "size": "lg"
+        }
+      }
+    ]
+  },
+  "whenToUseInstead": [
+    {
+      "component": "button",
+      "when": "the element triggers an action"
+    },
+    {
+      "component": "kbd",
+      "when": "showing a keyboard shortcut"
+    }
+  ]
+}

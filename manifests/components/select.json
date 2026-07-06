@@ -1,0 +1,229 @@
+{
+  "a11y": [
+    "Built on Base UI Select; the trigger has aria-haspopup=\"listbox\" and aria-expanded.",
+    "Always use SelectField wrapper to get a visible <label> correctly linked.",
+    "Keyboard: ArrowUp/ArrowDown navigates options; Enter/Space selects."
+  ],
+  "aliases": [
+    "option list",
+    "picker",
+    "single-select"
+  ],
+  "boundaries": [
+    "Figma naming trap: the set named \"Dropdown\" on the Select page (node 1637:17676) IS this component; the set named \"Select\" on the dropdown-menu page (1292:5274) is combobox."
+  ],
+  "description": "displays a list of options to pick from, triggered by a button; single-choice selection in forms",
+  "exports": [
+    "Select",
+    "SelectContent",
+    "SelectField",
+    "SelectGroup",
+    "SelectItem",
+    "SelectLabel",
+    "SelectScrollDownButton",
+    "SelectScrollUpButton",
+    "SelectSeparator",
+    "SelectTrigger",
+    "SelectValue"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1637:17676"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/select",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "select"
+  },
+  "keywords": [
+    "choice",
+    "dropdown",
+    "form",
+    "listbox",
+    "options",
+    "placeholder"
+  ],
+  "name": "select",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "md",
+      "figmaProperty": "Size",
+      "figmaValues": "sm · md (default) · lg",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "figmaProperty": "Mandatory",
+      "figmaValues": "bool",
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "kind": "boolean",
+      "name": "disabled"
+    },
+    {
+      "figmaProperty": "(label/helper)",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "figmaProperty": "State=error",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "figmaProperty": "(placeholder)",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "placeholder"
+    },
+    {
+      "kind": "string|node",
+      "name": "className"
+    },
+    {
+      "kind": "string|node",
+      "name": "value"
+    },
+    {
+      "kind": "string|node",
+      "name": "defaultValue"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "SelectContent",
+      "SelectField",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectScrollDownButton",
+      "SelectScrollUpButton",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue"
+    ],
+    "figmaParts": [
+      "select/footer",
+      "select/group",
+      "select/item"
+    ]
+  },
+  "source": "src/components/ui/select.tsx",
+  "story": "src/components/ui/select.stories.tsx",
+  "title": "Select",
+  "tokens": {
+    "layer3": [
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-radius",
+      "--ds-select-bordercolor",
+      "--ds-select-borderdisabled",
+      "--ds-select-bordererror",
+      "--ds-select-borderwidth",
+      "--ds-select-fill",
+      "--ds-select-icon",
+      "--ds-select-paddingright",
+      "--ds-select-size-lg-gap",
+      "--ds-select-size-lg-minheight",
+      "--ds-select-size-lg-paddingleft",
+      "--ds-select-size-lg-paddingy",
+      "--ds-select-size-md-gap",
+      "--ds-select-size-md-minheight",
+      "--ds-select-size-md-paddingleft",
+      "--ds-select-size-md-paddingy",
+      "--ds-select-size-sm-gap",
+      "--ds-select-size-sm-minheight",
+      "--ds-select-size-sm-paddingleft",
+      "--ds-select-size-sm-paddingy",
+      "--ds-select-value"
+    ],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-muted-foreground",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-menuitem-content",
+      "--ds-menuitem-fillhover",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Use the SelectField wrapper for label / description / errorMessage / mandatory.",
+      "Compose options from SelectItem / SelectGroup / SelectLabel."
+    ],
+    "dont": [
+      "Don't use Select for long or searchable option lists — use combobox.",
+      "Don't use Select to trigger actions — use dropdown-menu."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": [
+    {
+      "component": "combobox",
+      "when": "many options or type-to-filter is needed"
+    },
+    {
+      "component": "dropdown-menu",
+      "when": "the items run actions instead of picking a form value"
+    },
+    {
+      "component": "radio-group",
+      "when": "few options that should all stay visible"
+    }
+  ]
+}

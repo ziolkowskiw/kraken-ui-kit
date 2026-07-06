@@ -1,0 +1,70 @@
+{
+  "a11y": [
+    "Use <progress> or a <div role=\"progressbar\"> with aria-valuemin, aria-valuemax, aria-valuenow.",
+    "For indeterminate state omit aria-valuenow.",
+    "Include an aria-label or aria-labelledby describing what is progressing."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Rounded track + indicator with optional label row. value (0–100). Progress.",
+  "exports": [
+    "Progress"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1792:1815"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/progress",
+    "dependencies": [
+      "@base-ui/react@1.5.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "progress"
+  },
+  "keywords": [],
+  "name": "progress",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "showLabels"
+    },
+    {
+      "kind": "string|node",
+      "name": "label"
+    }
+  ],
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/progress.tsx",
+  "story": "src/components/ui/progress.stories.tsx",
+  "title": "Progress",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-content-secondary",
+      "--ds-color-muted",
+      "--ds-color-primary",
+      "--ds-radius-full",
+      "--ds-spacing-2",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontfamily",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

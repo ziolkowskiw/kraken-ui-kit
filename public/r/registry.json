@@ -49,6 +49,19 @@
       ]
     },
     {
+      "name": "ai-foundations",
+      "type": "registry:file",
+      "title": "AI foundations (machine-readable rules)",
+      "description": "Always-on design-system rules for AI agents — token architecture, brand contract, conventions, shadcn divergences. Generated from design.md + MAPPING.md; the MCP server (@kraken-ui/mcp) serves the same data on demand.",
+      "files": [
+        {
+          "path": "manifests/foundations.json",
+          "type": "registry:file",
+          "target": "ai/kraken-foundations.json"
+        }
+      ]
+    },
+    {
       "name": "accordion",
       "type": "registry:ui",
       "title": "Accordion",
@@ -194,6 +207,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
+        "separator",
         "theme",
         "utils"
       ],
@@ -358,6 +372,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
+        "dialog",
         "dropdown-menu",
         "theme",
         "utils"
@@ -659,6 +674,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
+        "separator",
         "theme",
         "utils"
       ],
@@ -956,9 +972,14 @@
       "title": "Sidebar",
       "description": "Kraken UI Kit sidebar — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
       "dependencies": [
-        "class-variance-authority@0.7.1"
+        "class-variance-authority@0.7.1",
+        "lucide-react@1.18.0"
       ],
       "registryDependencies": [
+        "button",
+        "input",
+        "separator",
+        "skeleton",
         "theme",
         "utils"
       ],

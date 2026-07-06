@@ -1,0 +1,16 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "$comment": "Template for manifests/overrides/<component>.json — the ONLY hand-edited files under manifests/. Every field is optional; the generator merges these last, on top of the extracted data. Copy, rename to the component's file name, delete this $comment, and fill in what you know. Schema-validated by `npm run manifests:check`.",
+  "aliases": ["synonym-agents-might-search-for", "e.g. 'modal' for dialog"],
+  "keywords": ["lower-signal", "search", "terms"],
+  "usage": {
+    "do": ["A rule the component should be used like."],
+    "dont": ["A misuse to steer agents away from."]
+  },
+  "boundaries": [
+    "A hard API/naming boundary, e.g. 'variant=\"outline\" does not exist — secondary IS the outline.'"
+  ],
+  "whenToUseInstead": [
+    { "component": "other-component-name", "when": "the situation where the other component is the right pick" }
+  ]
+}

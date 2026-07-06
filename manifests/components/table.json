@@ -1,0 +1,97 @@
+{
+  "a11y": [
+    "Use semantic <table>, <thead>, <tbody>, <th scope=\"col\"> for full screen-reader support.",
+    "For complex tables add <caption> or aria-label on the table."
+  ],
+  "aliases": [
+    "data grid",
+    "grid",
+    "html table"
+  ],
+  "boundaries": [],
+  "description": "A responsive table component; display rows/columns of data. Table/Header/Body/Footer/Head/Row/Cell/Caption.",
+  "exports": [
+    "Table",
+    "TableHeader",
+    "TableBody",
+    "TableFooter",
+    "TableHead",
+    "TableRow",
+    "TableCell",
+    "TableCaption"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1824:18395"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/table",
+    "dependencies": [],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "table"
+  },
+  "keywords": [
+    "columns",
+    "data",
+    "rows",
+    "tabular"
+  ],
+  "name": "table",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "TableHeader",
+      "TableBody",
+      "TableFooter",
+      "TableHead",
+      "TableRow",
+      "TableCell",
+      "TableCaption"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/table.tsx",
+  "story": "src/components/ui/table.stories.tsx",
+  "title": "Table",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-muted",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Use semantic composition: Table / TableHeader / TableBody / TableFooter / TableHead / TableRow / TableCell / TableCaption.",
+      "Use <TableHead scope=\"col\"> semantics for screen-reader support."
+    ],
+    "dont": [
+      "Don't rebuild sortable/data-heavy tables from raw Table parts — use data-table (with data-table-header / data-table-cell).",
+      "Don't put form controls in cells ad hoc — use form-table-cell."
+    ]
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": [
+    {
+      "component": "data-table",
+      "when": "sortable, composed data tables"
+    },
+    {
+      "component": "form-table-cell",
+      "when": "editable form controls sized for table cells"
+    }
+  ]
+}

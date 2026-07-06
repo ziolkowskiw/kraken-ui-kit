@@ -1,0 +1,152 @@
+{
+  "a11y": [
+    "Same rules as RadioGroup. The labeled variant puts the label in DOM — no extra aria-label needed."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A labeled radio control; when the radio needs an inline label/description. variant + size.",
+  "exports": [
+    "RadioButton",
+    "RadioButtonGroup"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1084:7716"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/radio-button",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "radio-group",
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "radio-button"
+  },
+  "keywords": [],
+  "name": "radio-button",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "button",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "button",
+        "standalone"
+      ]
+    },
+    {
+      "default": "lg",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "secondLineLabel"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    }
+  ],
+  "rationale": "Mirrors the Figma `Radio button` set (Radio page): the button-style radio that parallels `checkbox-button`. Variant=button|standalone × Size × Semantic (default|error). The selected button gets a brand-muted fill + brand border (the same shell tokens checkbox-button uses); the radio dot is the real `RadioGroupItem` (single source of truth).",
+  "slots": {
+    "exports": [
+      "RadioButtonGroup"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/radio-button.tsx",
+  "story": "src/components/ui/radio-button.stories.tsx",
+  "title": "Radio Button",
+  "tokens": {
+    "layer3": [
+      "--ds-checkbox-bordercolor",
+      "--ds-checkbox-bordererror",
+      "--ds-checkbox-bordererrorhover",
+      "--ds-checkbox-borderhover",
+      "--ds-checkbox-borderwidth",
+      "--ds-checkbox-checkedborder",
+      "--ds-checkbox-checkeddisabled",
+      "--ds-checkbox-containerfill",
+      "--ds-checkbox-containerradius",
+      "--ds-checkbox-fillhover",
+      "--ds-checkbox-gap",
+      "--ds-checkbox-paddingx",
+      "--ds-checkbox-size-lg-minheight",
+      "--ds-checkbox-size-md-minheight",
+      "--ds-checkbox-size-sm-minheight",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-placeholder"
+    ],
+    "other": [
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-primary-muted",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "lg",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "variant": {
+        "default": "button",
+        "values": [
+          "button",
+          "standalone"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

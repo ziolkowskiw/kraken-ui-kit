@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["panel", "surface", "tile", "content card"],
+  "keywords": ["container", "group", "header", "footer", "section"],
+  "usage": {
+    "do": [
+      "Compose CardHeader / CardTitle / CardDescription / CardAction / CardContent / CardFooter for the standard anatomy.",
+      "Give CardTitle an appropriate heading level in document context."
+    ],
+    "dont": [
+      "Don't add onClick to the Card div — if the whole card is clickable, wrap it in an <a> or give it a proper role."
+    ]
+  },
+  "boundaries": [
+    "The only variant axis is filled (true | false)."
+  ],
+  "whenToUseInstead": [
+    { "component": "item", "when": "a structured row inside a list rather than a standalone surface" }
+  ]
+}

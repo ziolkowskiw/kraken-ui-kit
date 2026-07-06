@@ -1,0 +1,106 @@
+{
+  "a11y": [
+    "Operates like a role=\"combobox\" with aria-haspopup=\"listbox\".",
+    "Keyboard: same as combobox; Escape closes the palette.",
+    "Ensure the command input has a visible or visually-hidden label."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Fast, composable command menu; command palettes and quick search/launchers. Command/Input/List/Empty/Group/Item/Shortcut. Focused composition.",
+  "exports": [
+    "Command",
+    "CommandDialog",
+    "CommandInput",
+    "CommandList",
+    "CommandEmpty",
+    "CommandGroup",
+    "CommandGroupLabel",
+    "CommandItem",
+    "CommandSeparator",
+    "CommandShortcut"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1134:17063"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/command",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "dialog",
+      "dropdown-menu",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "command"
+  },
+  "keywords": [],
+  "name": "command",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "showCloseButton"
+    },
+    {
+      "kind": "string|node",
+      "name": "className"
+    },
+    {
+      "kind": "string|node",
+      "name": "children"
+    },
+    {
+      "kind": "string|node",
+      "name": "title"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "CommandDialog",
+      "CommandInput",
+      "CommandList",
+      "CommandEmpty",
+      "CommandGroup",
+      "CommandGroupLabel",
+      "CommandItem",
+      "CommandSeparator",
+      "CommandShortcut"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/command.tsx",
+  "story": "src/components/ui/command.stories.tsx",
+  "title": "Command",
+  "tokens": {
+    "layer3": [
+      "--ds-input-placeholder",
+      "--ds-input-value"
+    ],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-tertiary",
+      "--ds-color-icon-muted",
+      "--ds-color-muted-foreground",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-lg",
+      "--ds-typography-labelsm-fontsize"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

@@ -1,0 +1,80 @@
+{
+  "a11y": [
+    "Wrapped in a <nav aria-label=\"Breadcrumb\">; current page marked with aria-current=\"page\".",
+    "Keyboard: all links are natively focusable."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Displays the path to the current resource using a hierarchy of links; navigation context in deep pages. Breadcrumb/List/Item/Link/Page/Separator/Ellipsis.",
+  "exports": [
+    "Breadcrumb",
+    "BreadcrumbList",
+    "BreadcrumbItem",
+    "BreadcrumbLink",
+    "BreadcrumbPage",
+    "BreadcrumbSeparator",
+    "BreadcrumbEllipsis"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "684:1095"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/breadcrumb",
+    "dependencies": [
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "breadcrumb"
+  },
+  "keywords": [],
+  "name": "breadcrumb",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "BreadcrumbList",
+      "BreadcrumbItem",
+      "BreadcrumbLink",
+      "BreadcrumbPage",
+      "BreadcrumbSeparator",
+      "BreadcrumbEllipsis"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/breadcrumb.tsx",
+  "story": "src/components/ui/breadcrumb.stories.tsx",
+  "title": "Breadcrumb",
+  "tokens": {
+    "layer3": [
+      "--ds-button-ghost-fillhover",
+      "--ds-button-ghost-size-xs-paddingx",
+      "--ds-button-size-xs-height",
+      "--ds-button-size-xs-icononlypadding",
+      "--ds-button-size-xs-labelwrapperpaddingx",
+      "--ds-button-size-xs-paddingy",
+      "--ds-button-size-xs-radius"
+    ],
+    "other": [
+      "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-fontweight",
+      "--ds-typography-labelsm-lineheight",
+      "--ds-typography-overline-fontsize",
+      "--ds-typography-overline-fontweight",
+      "--ds-typography-overline-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

@@ -1,0 +1,143 @@
+{
+  "a11y": [
+    "Wrap in <nav aria-label=\"Primary\"> or use role=\"navigation\".",
+    "Collapsible sidebar: the toggle button needs aria-expanded and aria-controls."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A composable, themeable sidebar component; primary app navigation. Sidebar* + useSidebar. sidebar/item, /item-sub, /item-collapsed, /group-label compose.",
+  "exports": [
+    "Sidebar",
+    "SidebarProvider",
+    "SidebarTrigger",
+    "SidebarRail",
+    "SidebarInset",
+    "SidebarInput",
+    "SidebarSeparator",
+    "SidebarHeader",
+    "SidebarContent",
+    "SidebarFooter",
+    "SidebarGroup",
+    "SidebarGroupLabel",
+    "SidebarGroupContent",
+    "SidebarGroupAction",
+    "SidebarMenu",
+    "SidebarMenuItem",
+    "SidebarMenuButton",
+    "SidebarMenuAction",
+    "SidebarMenuBadge",
+    "SidebarMenuSkeleton",
+    "SidebarMenuSub",
+    "SidebarMenuSubItem",
+    "SidebarMenuSubButton"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1808:15231"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/sidebar",
+    "dependencies": [
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "button",
+      "input",
+      "separator",
+      "skeleton",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "sidebar"
+  },
+  "keywords": [],
+  "name": "sidebar",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "defaultCollapsed"
+    },
+    {
+      "kind": "boolean",
+      "name": "collapsed"
+    },
+    {
+      "kind": "boolean",
+      "name": "isActive"
+    },
+    {
+      "kind": "boolean",
+      "name": "showOnHover"
+    },
+    {
+      "kind": "boolean",
+      "name": "showIcon"
+    },
+    {
+      "kind": "string|node",
+      "name": "children"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "SidebarProvider",
+      "SidebarTrigger",
+      "SidebarRail",
+      "SidebarInset",
+      "SidebarInput",
+      "SidebarSeparator",
+      "SidebarHeader",
+      "SidebarContent",
+      "SidebarFooter",
+      "SidebarGroup",
+      "SidebarGroupLabel",
+      "SidebarGroupContent",
+      "SidebarGroupAction",
+      "SidebarMenu",
+      "SidebarMenuItem",
+      "SidebarMenuButton",
+      "SidebarMenuAction",
+      "SidebarMenuBadge",
+      "SidebarMenuSkeleton",
+      "SidebarMenuSub",
+      "SidebarMenuSubItem",
+      "SidebarMenuSubButton"
+    ],
+    "figmaParts": [
+      "sidebar/group-label",
+      "sidebar/item",
+      "sidebar/item-collapsed",
+      "sidebar/item-sub"
+    ]
+  },
+  "source": "src/components/ui/sidebar.tsx",
+  "story": "src/components/ui/sidebar.stories.tsx",
+  "title": "Sidebar",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-background",
+      "--ds-color-content-tertiary",
+      "--ds-color-foreground",
+      "--ds-sidebar-accent",
+      "--ds-sidebar-accentforeground",
+      "--ds-sidebar-border",
+      "--ds-sidebar-fill",
+      "--ds-sidebar-foreground",
+      "--ds-sidebar-primary",
+      "--ds-sidebar-primaryforeground",
+      "--ds-sidebar-ring",
+      "--ds-typography-labelsm-fontsize"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

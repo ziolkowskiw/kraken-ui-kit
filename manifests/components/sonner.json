@@ -1,0 +1,108 @@
+{
+  "a11y": [
+    "Toasts are delivered to an aria-live=\"polite\" region (Sonner default). Use aria-live=\"assertive\" for critical errors.",
+    "Auto-dismissing toasts: pause the timer on hover/focus; offer a manual close.",
+    "Don't put required user decisions in a toast — use a Dialog instead."
+  ],
+  "aliases": [
+    "notification",
+    "snackbar",
+    "toast",
+    "toaster"
+  ],
+  "boundaries": [
+    "Built on Base UI Toast (toast, toastManager) — NOT the sonner npm package, despite the shadcn-parity file name; a deliberate divergence."
+  ],
+  "description": "An opinionated toast component for React; transient success/error notifications. Toaster + toast().",
+  "exports": [
+    "Toaster"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1813:16630"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/sonner",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "sonner"
+  },
+  "keywords": [
+    "error",
+    "popup message",
+    "success",
+    "transient"
+  ],
+  "name": "sonner",
+  "notes": [],
+  "props": [
+    {
+      "kind": "string|node",
+      "name": "description"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "Toaster"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/sonner.tsx",
+  "story": "src/components/ui/sonner.stories.tsx",
+  "title": "Sonner",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-popover",
+      "--ds-color-status-error-border",
+      "--ds-color-status-error-icon",
+      "--ds-color-status-info-border",
+      "--ds-color-status-info-icon",
+      "--ds-color-status-success-border",
+      "--ds-color-status-success-icon",
+      "--ds-color-status-warning-border",
+      "--ds-color-status-warning-icon",
+      "--ds-radius-lg",
+      "--ds-typography-bodysm-fontfamily",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-bodysm-lineheight",
+      "--ds-typography-labelmd-fontfamily",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Render one <Toaster /> at the app root and fire notifications with toast().",
+      "Use for transient success/error feedback that needs no response."
+    ],
+    "dont": [
+      "Don't put required user decisions in a toast — use alert-dialog.",
+      "Don't use toasts for persistent inline messages — use alert."
+    ]
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": [
+    {
+      "component": "alert",
+      "when": "a persistent inline callout"
+    },
+    {
+      "component": "alert-dialog",
+      "when": "the user must confirm before continuing"
+    }
+  ]
+}

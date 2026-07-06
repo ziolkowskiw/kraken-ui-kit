@@ -26,6 +26,10 @@ next-env.d.ts
 
 # local work files
 JIT-DS-2.0-execution-plan.md
+machine-readable-ds-plan.md
+
+# mcp package build artefacts (dist/ is covered above; manifests are bundled at pack time)
+mcp/manifests/
 
 # os / editor
 .DS_Store

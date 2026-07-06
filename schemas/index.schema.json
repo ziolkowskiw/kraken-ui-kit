@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ziolkowskiw/kraken-ui-kit/schemas/index.schema.json",
+  "title": "Kraken UI Kit manifest index (MCP search lookup table)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name", "title", "description", "aliases", "keywords", "exports", "file"],
+    "properties": {
+      "name": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "title": { "type": "string", "minLength": 1 },
+      "description": { "type": "string", "minLength": 1 },
+      "aliases": { "type": "array", "items": { "type": "string" } },
+      "keywords": { "type": "array", "items": { "type": "string" } },
+      "exports": { "type": "array", "items": { "type": "string" } },
+      "file": { "type": "string", "pattern": "^components/[a-z0-9-]+\\.json$" }
+    }
+  }
+}

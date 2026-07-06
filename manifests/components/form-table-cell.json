@@ -1,0 +1,80 @@
+{
+  "a11y": [
+    "Must be inside a <table>; include headers referencing the column and/or row header."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Form control sized for a data-table cell (sm). inputType selects the control: text field | select | search | date | switch | checkbox | radio | textarea. Reuses kit form primitives. v1.1.",
+  "exports": [
+    "FormTableCell"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1411:0"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/form-table-cell",
+    "dependencies": [
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "button",
+      "checkbox-button",
+      "input",
+      "radio-group",
+      "select",
+      "switch",
+      "textarea",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "form-table-cell"
+  },
+  "keywords": [],
+  "name": "form-table-cell",
+  "notes": [
+    "Mapped via the 'form-table' entry in MAPPING.md."
+  ],
+  "props": [
+    {
+      "kind": "string|node",
+      "name": "placeholder"
+    },
+    {
+      "kind": "string|node",
+      "name": "options"
+    },
+    {
+      "kind": "string|node",
+      "name": "className"
+    }
+  ],
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/form-table-cell.tsx",
+  "story": "src/components/ui/form-table-cell.stories.tsx",
+  "title": "Form Table Cell",
+  "tokens": {
+    "layer3": [
+      "--ds-checkbox-bordercolor",
+      "--ds-checkbox-borderhover",
+      "--ds-checkbox-fill"
+    ],
+    "other": [
+      "--ds-color-content-secondary",
+      "--ds-radius-lg",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

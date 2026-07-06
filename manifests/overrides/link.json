@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["anchor", "hyperlink", "text link", "nav link", "link button"],
+  "keywords": ["navigation", "href", "inline", "external"],
+  "usage": {
+    "do": [
+      "Use link for navigation and button for actions — never a styled <button> for navigation.",
+      "Use LinkButton (same file) for navigation that should look like a button.",
+      "Warn on external links via aria-label or visually-hidden text (\"opens in new tab\")."
+    ],
+    "dont": [
+      "Don't reach for a Button variant=\"link\" — Button has no link variant in this kit; this component is the answer."
+    ]
+  },
+  "boundaries": [
+    "link.tsx exports both Link (variant + size) and LinkButton — the kit's replacement for shadcn's Button variant=link."
+  ],
+  "whenToUseInstead": [
+    { "component": "button", "when": "the element performs an action instead of navigating" },
+    { "component": "breadcrumb", "when": "hierarchical location links" }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "a11y": [
+    "Wrap in a <div role=\"group\" aria-label=\"…\"> to announce the grouping to screen readers.",
+    "Ensure each child button still has its own accessible label."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A joined row of buttons that share borders; grouped related actions. orientation.",
+  "exports": [
+    "ButtonGroup",
+    "ButtonGroupSeparator",
+    "ButtonGroupText"
+  ],
+  "figma": null,
+  "install": {
+    "command": "npx shadcn add @kraken/button-group",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "separator",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "button-group"
+  },
+  "keywords": [],
+  "name": "button-group",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "horizontal",
+      "kind": "enum",
+      "name": "orientation",
+      "values": [
+        "horizontal",
+        "vertical"
+      ]
+    }
+  ],
+  "rationale": "Mirrors the Figma `button-group-container` slot (Button group page, 699:1902): a row/column of <Button>s that read as one segmented control — inner radii are flattened and borders collapse into shared seams. Children are real <Button>s (single source of truth); this only handles the grouping geometry.",
+  "slots": {
+    "exports": [
+      "ButtonGroupSeparator",
+      "ButtonGroupText"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/button-group.tsx",
+  "story": "src/components/ui/button-group.stories.tsx",
+  "title": "Button Group",
+  "tokens": {
+    "layer3": [
+      "--ds-button-size-md-fontsize",
+      "--ds-button-size-md-height",
+      "--ds-button-size-md-paddingx",
+      "--ds-button-size-md-radius"
+    ],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-secondary",
+      "--ds-color-muted"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "orientation": {
+        "default": "horizontal",
+        "values": [
+          "horizontal",
+          "vertical"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

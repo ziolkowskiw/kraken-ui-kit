@@ -1,0 +1,58 @@
+{
+  "a11y": [
+    "Built on Base UI — the thumb has role=\"slider\" with aria-valuemin, aria-valuemax, aria-valuenow, aria-label.",
+    "Keyboard: ArrowLeft/ArrowRight (or Up/Down) adjust value; Home/End go to min/max."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "An input where the user selects a value from within a given range; volume, ranges, numeric tuning. slider/marker composes.",
+  "exports": [
+    "Slider"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1811:15452"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/slider",
+    "dependencies": [
+      "@base-ui/react@1.5.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "slider"
+  },
+  "keywords": [],
+  "name": "slider",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [],
+    "figmaParts": [
+      "slider/marker"
+    ]
+  },
+  "source": "src/components/ui/slider.tsx",
+  "story": "src/components/ui/slider.stories.tsx",
+  "title": "Slider",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-muted",
+      "--ds-color-primary",
+      "--ds-color-white",
+      "--ds-radius-full",
+      "--ds-spacing-2"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

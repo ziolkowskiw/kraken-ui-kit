@@ -1,0 +1,110 @@
+{
+  "a11y": [
+    "When used in a list, wrap in <ul>/<li> or use role=\"list\"/role=\"listitem\".",
+    "If the item is a navigation link, use <a>; if a button, use <button>."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A flexible, composable row for displaying content in a structured layout; list rows, option rows, settings entries. variant. item/decoration-left|right compose.",
+  "exports": [
+    "Item",
+    "ItemGroup",
+    "ItemHeader",
+    "ItemFooter",
+    "ItemSeparator",
+    "ItemMedia",
+    "ItemContent",
+    "ItemTitle",
+    "ItemDescription",
+    "ItemActions"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1707:23695"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/item",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "separator",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "item"
+  },
+  "keywords": [],
+  "name": "item",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "default",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "default",
+        "outline",
+        "muted"
+      ]
+    }
+  ],
+  "rationale": "Mirrors the Figma `item` set (1707:23695): Variant=default|muted|outline × State (hover→CSS), with left/right decoration slots (`item/decoration-left|right`) and a title/description stack. Title = labellg/content-primary, description = bodymd/content-secondary.",
+  "slots": {
+    "exports": [
+      "ItemGroup",
+      "ItemHeader",
+      "ItemFooter",
+      "ItemSeparator",
+      "ItemMedia",
+      "ItemContent",
+      "ItemTitle",
+      "ItemDescription",
+      "ItemActions"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/item.tsx",
+  "story": "src/components/ui/item.stories.tsx",
+  "title": "Item",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-icon-default",
+      "--ds-color-muted",
+      "--ds-radius-md",
+      "--ds-spacing-component-lg",
+      "--ds-spacing-component-md",
+      "--ds-spacing-component-sm",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-labellg-fontfamily",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "variant": {
+        "default": "default",
+        "values": [
+          "default",
+          "outline",
+          "muted"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

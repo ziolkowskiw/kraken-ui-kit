@@ -1,0 +1,123 @@
+{
+  "a11y": [
+    "Composes Calendar + Popover + Button; see individual a11y notes for each.",
+    "The trigger button should announce the current selection: aria-label=\"Choose date, 21 June 2026\".",
+    "The calendar popover traps focus when open; Escape closes and returns focus to the trigger."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A date picker component; pick a single date or range in forms. Composes calendar + popover + button.",
+  "exports": [
+    "DatePicker",
+    "DatePickerField"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "895:1933"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/date-picker",
+    "dependencies": [
+      "lucide-react@1.18.0",
+      "react-day-picker@10.0.1"
+    ],
+    "registryDependencies": [
+      "calendar",
+      "popover",
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "date-picker"
+  },
+  "keywords": [],
+  "name": "date-picker",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "disabled"
+    },
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "kind": "string|node",
+      "name": "placeholder"
+    },
+    {
+      "kind": "string|node",
+      "name": "className"
+    },
+    {
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "DatePickerField"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/date-picker.tsx",
+  "story": "src/components/ui/date-picker.stories.tsx",
+  "title": "Date Picker",
+  "tokens": {
+    "layer3": [
+      "--ds-input-bordercolor",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value"
+    ],
+    "other": [
+      "--ds-color-icon-muted",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

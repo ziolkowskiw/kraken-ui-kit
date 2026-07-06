@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["modal", "modal dialog", "popup window"],
+  "keywords": ["overlay", "focused task", "form", "confirm", "portal"],
+  "usage": {
+    "do": [
+      "Always include a DialogTitle (visible or visually-hidden) — it feeds aria-labelledby.",
+      "Compose DialogHeader / DialogFooter for the standard layout; control the close affordance with showCloseButton on DialogContent."
+    ],
+    "dont": [
+      "Don't use Dialog for destructive or interrupting confirmations — use alert-dialog.",
+      "Don't nest a second Dialog inside an open one."
+    ]
+  },
+  "boundaries": [],
+  "whenToUseInstead": [
+    { "component": "alert-dialog", "when": "destructive / irreversible confirmations that must interrupt" },
+    { "component": "drawer", "when": "an edge-anchored panel (filters, side forms)" },
+    { "component": "popover", "when": "light content anchored to a trigger" }
+  ]
+}

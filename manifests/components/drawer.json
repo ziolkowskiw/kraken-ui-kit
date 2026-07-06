@@ -1,0 +1,139 @@
+{
+  "a11y": [
+    "Same focus-trap and labelling rules as Dialog.",
+    "Add aria-label describing the drawer's purpose (e.g. \"Filters\").",
+    "Ensure the close affordance is keyboard reachable as the first focusable element."
+  ],
+  "aliases": [
+    "off-canvas",
+    "sheet",
+    "side panel",
+    "slide-over"
+  ],
+  "boundaries": [
+    "Built on the Base UI dialog — NOT the vaul package shadcn uses; a deliberate divergence."
+  ],
+  "description": "A panel that slides in from an edge of the screen; mobile sheets, filters, side forms. side (Dialog-based). drawer/header, /footer compose.",
+  "exports": [
+    "Drawer",
+    "DrawerTrigger",
+    "DrawerClose",
+    "DrawerPortal",
+    "DrawerOverlay",
+    "DrawerContent",
+    "DrawerHeader",
+    "DrawerFooter",
+    "DrawerTitle",
+    "DrawerDescription"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1627:895"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/drawer",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "button",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "drawer"
+  },
+  "keywords": [
+    "edge",
+    "filters",
+    "mobile",
+    "panel",
+    "side form"
+  ],
+  "name": "drawer",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "right",
+      "kind": "enum",
+      "name": "side",
+      "values": [
+        "right",
+        "left",
+        "top",
+        "bottom"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "showCloseButton"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "DrawerTrigger",
+      "DrawerClose",
+      "DrawerPortal",
+      "DrawerOverlay",
+      "DrawerContent",
+      "DrawerHeader",
+      "DrawerFooter",
+      "DrawerTitle",
+      "DrawerDescription"
+    ],
+    "figmaParts": [
+      "drawer/footer",
+      "drawer/header"
+    ]
+  },
+  "source": "src/components/ui/drawer.tsx",
+  "story": "src/components/ui/drawer.stories.tsx",
+  "title": "Drawer",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-muted-foreground",
+      "--ds-color-overlay",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-xl"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Pick the edge with the side prop; compose DrawerHeader / DrawerFooter.",
+      "Give the drawer an aria-label describing its purpose (e.g. \"Filters\")."
+    ],
+    "dont": [
+      "Don't use Drawer for centered, focused confirmations — use dialog or alert-dialog."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "side": {
+        "default": "right",
+        "values": [
+          "right",
+          "left",
+          "top",
+          "bottom"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": [
+    {
+      "component": "dialog",
+      "when": "a centered focused task or confirmation"
+    },
+    {
+      "component": "sidebar",
+      "when": "persistent app navigation rather than a transient panel"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "a11y": [
+    "The scrollable region should have tabindex=\"0\" when it contains non-interactive content, so keyboard users can scroll.",
+    "overflow: auto is preferred over overflow: hidden for native keyboard scrollability."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Augments native scroll for custom, cross-browser styling; wrap scrollable regions with styled scrollbars.",
+  "exports": [
+    "ScrollArea",
+    "ScrollBar"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1583:16330"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/scroll-area",
+    "dependencies": [
+      "@base-ui/react@1.5.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "scroll-area"
+  },
+  "keywords": [],
+  "name": "scroll-area",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "ScrollBar"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/scroll-area.tsx",
+  "story": "src/components/ui/scroll-area.stories.tsx",
+  "title": "Scroll Area",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border-strong",
+      "--ds-radius-full"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

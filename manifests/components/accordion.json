@@ -1,0 +1,143 @@
+{
+  "a11y": [
+    "Triggers are <button> elements with aria-expanded and aria-controls.",
+    "Keyboard: Space/Enter toggles, Tab moves focus between triggers.",
+    "Content panel is linked to its trigger via id/aria-labelledby."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A vertically stacked set of interactive headings that each reveal a section of content; FAQs / progressive disclosure. type=\"single|multiple\"; AccordionItem/Trigger/Content.",
+  "exports": [
+    "Accordion",
+    "AccordionContent",
+    "AccordionItem",
+    "AccordionTrigger"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "492:2641"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/accordion",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "accordion"
+  },
+  "keywords": [],
+  "name": "accordion",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "in-box",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "in-box",
+        "standalone"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "hasSubtitle"
+    },
+    {
+      "kind": "boolean",
+      "name": "hasIcon"
+    },
+    {
+      "kind": "boolean",
+      "name": "compact"
+    },
+    {
+      "kind": "boolean",
+      "name": "hasTitle"
+    },
+    {
+      "kind": "boolean",
+      "name": "hasLinkButton"
+    },
+    {
+      "kind": "string|node",
+      "name": "title"
+    },
+    {
+      "kind": "string|node",
+      "name": "subtitle"
+    },
+    {
+      "kind": "string|node",
+      "name": "icon"
+    },
+    {
+      "kind": "string|node",
+      "name": "contentTitle"
+    },
+    {
+      "kind": "string|node",
+      "name": "linkButton"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "AccordionContent",
+      "AccordionItem",
+      "AccordionTrigger"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/accordion.tsx",
+  "story": "src/components/ui/accordion.stories.tsx",
+  "title": "Accordion",
+  "tokens": {
+    "layer3": [
+      "--ds-card-radius"
+    ],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-border-focus",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-secondary-hover",
+      "--ds-color-surface",
+      "--ds-spacing-component-lg",
+      "--ds-spacing-component-xl",
+      "--ds-typography-bodylg-fontfamily",
+      "--ds-typography-bodylg-fontsize",
+      "--ds-typography-bodylg-fontweight",
+      "--ds-typography-bodylg-lineheight",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-fontweight",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-headingmd-fontfamily",
+      "--ds-typography-headingmd-fontsize",
+      "--ds-typography-headingmd-fontweight",
+      "--ds-typography-headingmd-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "variant": {
+        "default": "in-box",
+        "values": [
+          "in-box",
+          "standalone"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}
