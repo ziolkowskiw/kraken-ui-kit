@@ -1,0 +1,130 @@
+{
+  "a11y": [
+    "Provide meaningful alt on the image; use aria-label on the fallback when it shows initials.",
+    "Decorative avatars (no semantic identity): alt=\"\" and aria-hidden=\"true\"."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "An image element with a fallback for representing the user. size. Stack → avatar-stack.tsx ( 605:6567).",
+  "exports": [
+    "Avatar",
+    "AvatarStack"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "579:6117"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/avatar",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "avatar"
+  },
+  "keywords": [],
+  "name": "avatar",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "md",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "2xl",
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ]
+    },
+    {
+      "default": "round",
+      "kind": "enum",
+      "name": "roundness",
+      "values": [
+        "round",
+        "square"
+      ]
+    },
+    {
+      "kind": "string|node",
+      "name": "src"
+    },
+    {
+      "kind": "string|node",
+      "name": "alt"
+    },
+    {
+      "kind": "string|node",
+      "name": "fallback"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "AvatarStack"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/avatar.tsx",
+  "story": "src/components/ui/avatar.stories.tsx",
+  "title": "Avatar",
+  "tokens": {
+    "layer3": [
+      "--ds-badge-slate-content",
+      "--ds-badge-slate-fill"
+    ],
+    "other": [
+      "--ds-avatar-size-2xl",
+      "--ds-avatar-size-lg",
+      "--ds-avatar-size-md",
+      "--ds-avatar-size-sm",
+      "--ds-avatar-size-xl",
+      "--ds-avatar-size-xs",
+      "--ds-color-background",
+      "--ds-radius-full",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-fontweight",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "roundness": {
+        "default": "round",
+        "values": [
+          "round",
+          "square"
+        ]
+      },
+      "size": {
+        "default": "md",
+        "values": [
+          "2xl",
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

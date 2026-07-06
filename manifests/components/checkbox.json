@@ -1,0 +1,113 @@
+{
+  "a11y": [
+    "Native <input type=\"checkbox\"> via Base UI — keyboard and screen-reader accessible.",
+    "Indeterminate state: set the DOM indeterminate property (not an HTML attribute); assistive technology announces \"mixed\".",
+    "Always pair with a visible <label> or aria-label."
+  ],
+  "aliases": [
+    "check",
+    "check box",
+    "tick box"
+  ],
+  "boundaries": [
+    "error is a bool prop; disabled is the only state prop — checked/hover looks are CSS."
+  ],
+  "description": "a control that toggles between checked and not checked; opt-in/agree or multi-select lists",
+  "exports": [
+    "Checkbox"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1074:5701"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/checkbox",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "checkbox"
+  },
+  "keywords": [
+    "agree",
+    "form",
+    "indeterminate",
+    "multi-select",
+    "opt-in"
+  ],
+  "name": "checkbox",
+  "notes": [],
+  "props": [
+    {
+      "figmaProperty": "State=error",
+      "figmaValues": "bool",
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "figmaProperty": "Checked",
+      "figmaValues": "false · true · indeterminate (indeterminate prop)",
+      "kind": "mapped",
+      "name": "checked"
+    }
+  ],
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/checkbox.tsx",
+  "story": "src/components/ui/checkbox.stories.tsx",
+  "title": "Checkbox",
+  "tokens": {
+    "layer3": [
+      "--ds-checkbox-bordercolor",
+      "--ds-checkbox-bordererror",
+      "--ds-checkbox-bordererrorhover",
+      "--ds-checkbox-borderhover",
+      "--ds-checkbox-borderwidth",
+      "--ds-checkbox-checked",
+      "--ds-checkbox-checkedborder",
+      "--ds-checkbox-checkeddisabled",
+      "--ds-checkbox-checkedhover",
+      "--ds-checkbox-cornerradius",
+      "--ds-checkbox-fill",
+      "--ds-checkbox-filldisabled",
+      "--ds-checkbox-fillhover"
+    ],
+    "other": [
+      "--ds-color-border-focus",
+      "--ds-color-primary-foreground"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Always pair with a visible <label> or aria-label.",
+      "Use the indeterminate prop for mixed parent states (sets the DOM property, announced as \"mixed\")."
+    ],
+    "dont": [
+      "Don't use Checkbox for instant on/off settings — use switch.",
+      "Don't use a group of checkboxes for a single-choice — use radio-group."
+    ]
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": [
+    {
+      "component": "switch",
+      "when": "an instant setting with no submit step"
+    },
+    {
+      "component": "radio-group",
+      "when": "exactly one option can be chosen"
+    },
+    {
+      "component": "checkbox-button",
+      "when": "the checkbox needs an inline label/description card"
+    }
+  ]
+}

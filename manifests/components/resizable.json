@@ -1,0 +1,66 @@
+{
+  "a11y": [
+    "Each resize handle needs aria-label (e.g. \"Resize panel\") and keyboard support (ArrowLeft/ArrowRight).",
+    "react-resizable-panels provides this by default."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Accessible resizable panel groups and layouts; split views and adjustable panes (react-resizable-panels).",
+  "exports": [
+    "ResizablePanelGroup",
+    "ResizablePanel",
+    "ResizableHandle"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1799:3154"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/resizable",
+    "dependencies": [
+      "lucide-react@1.18.0",
+      "react-resizable-panels@4.11.2"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "resizable"
+  },
+  "keywords": [],
+  "name": "resizable",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "withHandle"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "ResizablePanelGroup",
+      "ResizablePanel",
+      "ResizableHandle"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/resizable.tsx",
+  "story": "src/components/ui/resizable.stories.tsx",
+  "title": "Resizable",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-content-tertiary"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

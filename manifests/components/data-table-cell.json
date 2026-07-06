@@ -1,0 +1,127 @@
+{
+  "a11y": [
+    "Must be a descendant of a <table> element to preserve semantic meaning.",
+    "Provide headers attribute when complex column/row spanning is used."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+  "exports": [
+    "DataTableCell"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1824:18395"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/data-table-cell",
+    "dependencies": [
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "badge",
+      "button",
+      "checkbox",
+      "input",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "data-table-cell"
+  },
+  "keywords": [],
+  "name": "data-table-cell",
+  "notes": [
+    "Mapped via the 'data-table' entry in MAPPING.md."
+  ],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "showLeftDecoration"
+    },
+    {
+      "kind": "boolean",
+      "name": "showRightDecoration"
+    },
+    {
+      "kind": "boolean",
+      "name": "checked"
+    },
+    {
+      "kind": "string|node",
+      "name": "value"
+    },
+    {
+      "kind": "string|node",
+      "name": "oldValue"
+    },
+    {
+      "kind": "string|node",
+      "name": "secondValue"
+    },
+    {
+      "kind": "string|node",
+      "name": "icon"
+    },
+    {
+      "kind": "string|node",
+      "name": "leftDecoration"
+    },
+    {
+      "kind": "string|node",
+      "name": "rightDecoration"
+    },
+    {
+      "kind": "string|node",
+      "name": "href"
+    },
+    {
+      "kind": "string|node",
+      "name": "badgeLabel"
+    },
+    {
+      "kind": "string|node",
+      "name": "fileName"
+    },
+    {
+      "kind": "string|node",
+      "name": "actionLabel"
+    },
+    {
+      "kind": "string|node",
+      "name": "input"
+    },
+    {
+      "kind": "string|node",
+      "name": "className"
+    }
+  ],
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/data-table-cell.tsx",
+  "story": "src/components/ui/data-table-cell.stories.tsx",
+  "title": "Data Table Cell",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-content-link",
+      "--ds-color-content-link-hover",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-bodysm-lineheight",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

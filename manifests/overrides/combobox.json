@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["autocomplete", "typeahead", "searchable select", "multi-select"],
+  "keywords": ["suggestions", "filter", "search", "chips", "async options"],
+  "usage": {
+    "do": [
+      "Use for single-choice selection over many options where typing-to-filter helps.",
+      "Use the ComboboxChips* parts for multi-select (they bind the --ds-chip-* tokens).",
+      "Use ComboboxTrigger/Value/Clear/Label/Collection for a select-like closed surface."
+    ],
+    "dont": [
+      "Don't use Combobox for a handful of options with no search need — use select.",
+      "Don't use Combobox as an actions menu — use dropdown-menu or command."
+    ]
+  },
+  "boundaries": [
+    "Figma naming trap: in Figma this component is the set named \"Select\" on the dropdown-menu page (node 1292:5274) — resolve duplicates by node ID, not display name."
+  ],
+  "whenToUseInstead": [
+    { "component": "select", "when": "a short, known option list without search" },
+    { "component": "command", "when": "a command palette / quick launcher" },
+    { "component": "dropdown-menu", "when": "the items run actions" }
+  ]
+}

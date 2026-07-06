@@ -1,0 +1,96 @@
+{
+  "a11y": [
+    "Each digit slot should be individually focusable with a logical tab order.",
+    "The group needs an overall aria-label=\"Enter your one-time password\".",
+    "Announce completion state to screen readers (e.g. via a live region)."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Accessible one-time-password input with copy-paste; verification/2FA code entry. size; input-otp lib.",
+  "exports": [
+    "InputOTP",
+    "InputOTPGroup",
+    "InputOTPSlot",
+    "InputOTPSeparator"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1698:13679"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/input-otp",
+    "dependencies": [
+      "class-variance-authority@0.7.1",
+      "input-otp@1.4.2",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "input-otp"
+  },
+  "keywords": [],
+  "name": "input-otp",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "md",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "string|node",
+      "name": "containerClassName"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "InputOTP",
+      "InputOTPGroup",
+      "InputOTPSlot",
+      "InputOTPSeparator"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/input-otp.tsx",
+  "story": "src/components/ui/input-otp.stories.tsx",
+  "title": "Input Otp",
+  "tokens": {
+    "layer3": [
+      "--ds-input-bordercolor",
+      "--ds-input-borderfocus",
+      "--ds-input-fill",
+      "--ds-input-value"
+    ],
+    "other": [
+      "--ds-color-content-tertiary"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "xs",
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

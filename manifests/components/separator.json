@@ -1,0 +1,108 @@
+{
+  "a11y": [
+    "Use role=\"separator\" (default). For decorative separators: role=\"none\" or aria-hidden=\"true\"."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Visually or semantically separates content; between sections, list items, toolbar groups. orientation.",
+  "exports": [
+    "Separator"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "449:1463"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/separator",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "separator"
+  },
+  "keywords": [],
+  "name": "separator",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "horizontal",
+      "kind": "enum",
+      "name": "orientation",
+      "values": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    {
+      "kind": "enum",
+      "name": "spacing",
+      "values": [
+        "0",
+        "4",
+        "8",
+        "12",
+        "16",
+        "24",
+        "32"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "decorative"
+    }
+  ],
+  "rationale": "Mirrors the Figma `separator` set (449:1463): Direction × Spacing scale (0/4/8/12/16/24/32). The rule is 1px `--ds-color-border`; `spacing` adds equal margin on the cross axis (block for horizontal, inline for vertical), pulled from the `--ds-spacing-*` scale. Direction maps to Base UI's `orientation`.",
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/separator.tsx",
+  "story": "src/components/ui/separator.stories.tsx",
+  "title": "Separator",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-spacing-0",
+      "--ds-spacing-12",
+      "--ds-spacing-16",
+      "--ds-spacing-24",
+      "--ds-spacing-32",
+      "--ds-spacing-4",
+      "--ds-spacing-8"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "orientation": {
+        "default": "horizontal",
+        "values": [
+          "horizontal",
+          "vertical"
+        ]
+      },
+      "spacing": {
+        "values": [
+          "0",
+          "4",
+          "8",
+          "12",
+          "16",
+          "24",
+          "32"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["dropdown", "menu", "action menu", "overflow menu", "kebab menu", "context actions"],
+  "keywords": ["actions", "trigger", "items", "checkable", "radio items", "submenu"],
+  "usage": {
+    "do": [
+      "Use for action/overflow menus triggered by a button; compose the full DropdownMenu* surface (Item, CheckboxItem, RadioItem, Sub, Separator, Label…)."
+    ],
+    "dont": [
+      "Don't use DropdownMenu to pick a form value — use select (or combobox for searchable lists).",
+      "Don't use it for right-click menus — use context-menu."
+    ]
+  },
+  "boundaries": [
+    "Figma naming trap: the Figma set named \"Select\" on the dropdown-menu page (1292:5274) is combobox, not this component; this set is node 1049:6592."
+  ],
+  "whenToUseInstead": [
+    { "component": "select", "when": "choosing a value in a form" },
+    { "component": "combobox", "when": "searchable value selection" },
+    { "component": "context-menu", "when": "right-click contextual actions" },
+    { "component": "menubar", "when": "a horizontal bar of application menus" }
+  ]
+}

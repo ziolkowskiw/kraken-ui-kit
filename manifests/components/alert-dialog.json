@@ -1,0 +1,107 @@
+{
+  "a11y": [
+    "Built on Base UI AlertDialog; focus is trapped inside while open.",
+    "Required: DialogTitle (visible or visually-hidden) for aria-labelledby.",
+    "Destructive confirmations: place the Cancel button before the destructive one in DOM order."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A modal dialog that interrupts the user with important content and expects a response; destructive/irreversible confirmations. AlertDialog + …Content/Overlay/Trigger/Close.",
+  "exports": [
+    "AlertDialog",
+    "AlertDialogClose",
+    "AlertDialogCancel",
+    "AlertDialogContent",
+    "AlertDialogDescription",
+    "AlertDialogOverlay",
+    "AlertDialogPortal",
+    "AlertDialogTrigger"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "674:2802"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/alert-dialog",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "button",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "alert-dialog"
+  },
+  "keywords": [],
+  "name": "alert-dialog",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "closeIcon"
+    },
+    {
+      "kind": "string|node",
+      "name": "title"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "kind": "string|node",
+      "name": "secondaryActions"
+    },
+    {
+      "kind": "string|node",
+      "name": "primaryActions"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "AlertDialogClose",
+      "AlertDialogCancel",
+      "AlertDialogContent",
+      "AlertDialogDescription",
+      "AlertDialogOverlay",
+      "AlertDialogPortal",
+      "AlertDialogTrigger"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/alert-dialog.tsx",
+  "story": "src/components/ui/alert-dialog.stories.tsx",
+  "title": "Alert Dialog",
+  "tokens": {
+    "layer3": [
+      "--ds-card-radius"
+    ],
+    "other": [
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-foreground",
+      "--ds-color-overlay",
+      "--ds-spacing-component-lg",
+      "--ds-spacing-component-md",
+      "--ds-spacing-component-sm",
+      "--ds-spacing-component-xl",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-headingmd-fontfamily",
+      "--ds-typography-headingmd-fontsize",
+      "--ds-typography-headingmd-fontweight",
+      "--ds-typography-headingmd-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

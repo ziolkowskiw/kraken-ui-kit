@@ -1,0 +1,122 @@
+{
+  "a11y": [
+    "The group has role=\"group\" with aria-label describing the option set.",
+    "Each ToggleGroupItem has aria-pressed (single/multiple).",
+    "Keyboard: Tab enters the group; ArrowLeft/ArrowRight moves between items (roving tabindex)."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A set of two-state buttons that can be toggled on or off; segmented / multi-toggle controls. ToggleGroup (type, size) + ToggleGroupItem.",
+  "exports": [
+    "ToggleGroup",
+    "ToggleGroupItem"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1429:3301"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/toggle-group",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "toggle-group"
+  },
+  "keywords": [],
+  "name": "toggle-group",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "outlined",
+      "kind": "enum",
+      "name": "skin",
+      "values": [
+        "outlined",
+        "ghost"
+      ]
+    },
+    {
+      "default": "md",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "iconOnly"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "ToggleGroupItem"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/toggle-group.tsx",
+  "story": "src/components/ui/toggle-group.stories.tsx",
+  "title": "Toggle Group",
+  "tokens": {
+    "layer3": [
+      "--ds-button-secondary-border",
+      "--ds-button-secondary-content",
+      "--ds-button-secondary-fillactive",
+      "--ds-button-secondary-fillhover",
+      "--ds-button-size-lg-fontsize",
+      "--ds-button-size-lg-height",
+      "--ds-button-size-lg-paddingx",
+      "--ds-button-size-lg-radius",
+      "--ds-button-size-md-fontsize",
+      "--ds-button-size-md-height",
+      "--ds-button-size-md-paddingx",
+      "--ds-button-size-md-radius",
+      "--ds-button-size-sm-fontsize",
+      "--ds-button-size-sm-height",
+      "--ds-button-size-sm-paddingx",
+      "--ds-button-size-sm-radius",
+      "--ds-button-size-xs-fontsize",
+      "--ds-button-size-xs-height",
+      "--ds-button-size-xs-paddingx",
+      "--ds-button-size-xs-radius"
+    ],
+    "other": [
+      "--ds-color-border-focus"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "xs",
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "skin": {
+        "default": "outlined",
+        "values": [
+          "outlined",
+          "ghost"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

@@ -1,0 +1,97 @@
+{
+  "a11y": [
+    "The root element has role=\"menubar\"; each trigger role=\"menuitem\".",
+    "Keyboard: ArrowLeft/ArrowRight moves between top-level items; ArrowDown opens a menu.",
+    "Focus returns to the triggering menubar item on close."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A horizontal bar of menus. Menubar/Menu/Trigger/Content/Item/Separator/Group/Label/Sub/SubTrigger/SubContent.",
+  "exports": [
+    "Menubar",
+    "MenubarMenu",
+    "MenubarGroup",
+    "MenubarPortal",
+    "MenubarRadioGroup",
+    "MenubarSub",
+    "MenubarTrigger",
+    "MenubarContent",
+    "MenubarItem",
+    "MenubarCheckboxItem",
+    "MenubarRadioItem",
+    "MenubarLabel",
+    "MenubarSeparator",
+    "MenubarShortcut",
+    "MenubarSubTrigger",
+    "MenubarSubContent"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1696:13412"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/menubar",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "dropdown-menu",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "menubar"
+  },
+  "keywords": [],
+  "name": "menubar",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "inset"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "MenubarMenu",
+      "MenubarGroup",
+      "MenubarPortal",
+      "MenubarRadioGroup",
+      "MenubarSub",
+      "MenubarTrigger",
+      "MenubarContent",
+      "MenubarItem",
+      "MenubarCheckboxItem",
+      "MenubarRadioItem",
+      "MenubarLabel",
+      "MenubarSeparator",
+      "MenubarShortcut",
+      "MenubarSubTrigger",
+      "MenubarSubContent"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/menubar.tsx",
+  "story": "src/components/ui/menubar.stories.tsx",
+  "title": "Menubar",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted-foreground",
+      "--ds-menuitem-fillhover",
+      "--ds-typography-labelsm-fontsize"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

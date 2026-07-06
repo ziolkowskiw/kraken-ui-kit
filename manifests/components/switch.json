@@ -1,0 +1,110 @@
+{
+  "a11y": [
+    "Built on Base UI — the element has role=\"switch\" and aria-checked.",
+    "Always provide a visible label or aria-label describing what the switch controls.",
+    "Keyboard: Space toggles the switch."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "a control that toggles between checked and not checked; instant on/off settings (no submit)",
+  "exports": [
+    "Switch"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1814:16852"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/switch",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "switch"
+  },
+  "keywords": [],
+  "name": "switch",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "default",
+      "figmaProperty": "Size",
+      "figmaValues": "default · compact",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "default",
+        "compact"
+      ]
+    },
+    {
+      "figmaProperty": "State=error",
+      "figmaValues": "bool",
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "figmaProperty": "left/right label",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "leftLabel"
+    },
+    {
+      "kind": "string|node",
+      "name": "rightLabel"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "figmaProperty": "Checked",
+      "figmaValues": "bool",
+      "kind": "mapped",
+      "name": "checked / defaultChecked"
+    }
+  ],
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/switch.tsx",
+  "story": "src/components/ui/switch.stories.tsx",
+  "title": "Switch",
+  "tokens": {
+    "layer3": [
+      "--ds-input-bordercolor"
+    ],
+    "other": [
+      "--ds-color-border-focus",
+      "--ds-color-content-primary",
+      "--ds-color-primary",
+      "--ds-color-primary-hover",
+      "--ds-color-status-error-border",
+      "--ds-color-white"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "default",
+        "values": [
+          "default",
+          "compact"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

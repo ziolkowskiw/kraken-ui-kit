@@ -1,0 +1,74 @@
+{
+  "a11y": [
+    "The date grid is navigable with arrow keys (react-day-picker behavior).",
+    "Selected date is announced via aria-selected=\"true\"; today is aria-label-annotated.",
+    "Provide an accessible month/year heading so the grid context is always announced."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A date field component that allows users to select dates; standalone or inside date-picker. react-day-picker; calendar/header, /day compose.",
+  "exports": [
+    "Calendar",
+    "CalendarDayButton"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "897:4967"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/calendar",
+    "dependencies": [
+      "lucide-react@1.18.0",
+      "react-day-picker@10.0.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "calendar"
+  },
+  "keywords": [],
+  "name": "calendar",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "CalendarDayButton"
+    ],
+    "figmaParts": [
+      "calendar/day",
+      "calendar/header"
+    ]
+  },
+  "source": "src/components/ui/calendar.tsx",
+  "story": "src/components/ui/calendar.stories.tsx",
+  "title": "Calendar",
+  "tokens": {
+    "layer3": [
+      "--ds-button-ghost-contentdisabled",
+      "--ds-button-ghost-fillhover",
+      "--ds-button-primary-content",
+      "--ds-button-primary-fill",
+      "--ds-button-primary-fillhover",
+      "--ds-button-secondary-content",
+      "--ds-button-secondary-fillhover"
+    ],
+    "other": [
+      "--ds-color-border-strong",
+      "--ds-color-content-disabled",
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted",
+      "--ds-radius-sm"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

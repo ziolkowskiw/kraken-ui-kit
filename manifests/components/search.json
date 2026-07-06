@@ -1,0 +1,133 @@
+{
+  "a11y": [
+    "Input has type=\"search\" — screen readers announce it as a search field.",
+    "Add aria-label=\"Search\" or associate with a visible label.",
+    "Results: use a live region (aria-live=\"polite\") to announce the number of results."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A search input specialization (an Input with a search affordance); filter lists/tables, global search. size.",
+  "exports": [
+    "Search",
+    "SearchField"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1134:13835"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/search",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "search"
+  },
+  "keywords": [],
+  "name": "search",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "md",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    }
+  ],
+  "rationale": "Mirrors the Figma `search` set (858:2055): an input with a leading magnifier and an optional clear control. State=rest|hover|focus|disabled|error|warning × Size × Filled. Reuses the `--ds-input-*` field tokens; warning adds the status-warning border/icon.",
+  "slots": {
+    "exports": [
+      "SearchField"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/search.tsx",
+  "story": "src/components/ui/search.stories.tsx",
+  "title": "Search",
+  "tokens": {
+    "layer3": [
+      "--ds-input-bordercolor",
+      "--ds-input-borderdisabled",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value"
+    ],
+    "other": [
+      "--ds-color-content-primary",
+      "--ds-color-icon-muted",
+      "--ds-color-status-warning-border",
+      "--ds-color-status-warning-icon",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

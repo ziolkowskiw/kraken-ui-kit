@@ -1,0 +1,109 @@
+{
+  "a11y": [
+    "Element has aria-pressed (not aria-checked); toggled-on state is announced.",
+    "Provide a descriptive aria-label for icon-only toggles."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A two-state button that can be either on or off; a single toggleable option (e.g. bold). variant + size.",
+  "exports": [
+    "Toggle"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "2010:3650"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/toggle",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "toggle"
+  },
+  "keywords": [],
+  "name": "toggle",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "outline",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "outline",
+        "ghost"
+      ]
+    },
+    {
+      "default": "md",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    }
+  ],
+  "rationale": "Mirrors the Figma `toggle` set (2010:3650): Variant=outline|ghost × Active. Active maps to Base UI's pressed state (`data-pressed`) — not a styling prop; only `disabled` is a real prop. Reuses the secondary-button Layer-3 tokens.",
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/toggle.tsx",
+  "story": "src/components/ui/toggle.stories.tsx",
+  "title": "Toggle",
+  "tokens": {
+    "layer3": [
+      "--ds-button-secondary-border",
+      "--ds-button-secondary-content",
+      "--ds-button-secondary-fillactive",
+      "--ds-button-secondary-fillhover",
+      "--ds-button-size-lg-fontsize",
+      "--ds-button-size-lg-height",
+      "--ds-button-size-lg-paddingx",
+      "--ds-button-size-lg-radius",
+      "--ds-button-size-md-fontsize",
+      "--ds-button-size-md-height",
+      "--ds-button-size-md-paddingx",
+      "--ds-button-size-md-radius",
+      "--ds-button-size-sm-fontsize",
+      "--ds-button-size-sm-height",
+      "--ds-button-size-sm-paddingx",
+      "--ds-button-size-sm-radius"
+    ],
+    "other": [
+      "--ds-color-border-focus"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "variant": {
+        "default": "outline",
+        "values": [
+          "outline",
+          "ghost"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

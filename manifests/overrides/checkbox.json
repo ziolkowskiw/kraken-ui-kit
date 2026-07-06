@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["check box", "tick box", "check"],
+  "keywords": ["multi-select", "opt-in", "form", "indeterminate", "agree"],
+  "usage": {
+    "do": [
+      "Always pair with a visible <label> or aria-label.",
+      "Use the indeterminate prop for mixed parent states (sets the DOM property, announced as \"mixed\")."
+    ],
+    "dont": [
+      "Don't use Checkbox for instant on/off settings — use switch.",
+      "Don't use a group of checkboxes for a single-choice — use radio-group."
+    ]
+  },
+  "boundaries": [
+    "error is a bool prop; disabled is the only state prop — checked/hover looks are CSS."
+  ],
+  "whenToUseInstead": [
+    { "component": "switch", "when": "an instant setting with no submit step" },
+    { "component": "radio-group", "when": "exactly one option can be chosen" },
+    { "component": "checkbox-button", "when": "the checkbox needs an inline label/description card" }
+  ]
+}

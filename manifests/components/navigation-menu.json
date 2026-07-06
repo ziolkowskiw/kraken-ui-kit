@@ -1,0 +1,76 @@
+{
+  "a11y": [
+    "Wrap in <nav aria-label=\"Main\"> to give the landmark a name.",
+    "Keyboard: Tab / Shift+Tab navigates top-level items; submenus open on Enter/Space/ArrowDown."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A horizontal menu whose triggers reveal a shared floating panel. NavigationMenu/List/Item/Trigger/Content/Link/Viewport/Indicator.",
+  "exports": [
+    "NavigationMenu",
+    "NavigationMenuList",
+    "NavigationMenuItem",
+    "NavigationMenuTrigger",
+    "NavigationMenuContent",
+    "NavigationMenuLink",
+    "NavigationMenuViewport",
+    "NavigationMenuPositioner",
+    "NavigationMenuIndicator"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1696:13337"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/navigation-menu",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "navigation-menu"
+  },
+  "keywords": [],
+  "name": "navigation-menu",
+  "notes": [],
+  "props": [],
+  "rationale": "Mirrors the Figma `Navigation menu` (1696:13337): a horizontal menu whose triggers reveal a shared floating panel. Built on Base UI's NavigationMenu; the panel uses the `--ds-color-popover` surface. The Content of every item is portaled into the single Popup/Viewport rendered by `NavigationMenu`, and the `NavigationMenuIndicator` arrow points at whichever trigger is currently open.",
+  "slots": {
+    "exports": [
+      "NavigationMenuList",
+      "NavigationMenuItem",
+      "NavigationMenuTrigger",
+      "NavigationMenuContent",
+      "NavigationMenuLink",
+      "NavigationMenuViewport",
+      "NavigationMenuPositioner",
+      "NavigationMenuIndicator"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/navigation-menu.tsx",
+  "story": "src/components/ui/navigation-menu.stories.tsx",
+  "title": "Navigation Menu",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-content-primary",
+      "--ds-color-muted",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-lg"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

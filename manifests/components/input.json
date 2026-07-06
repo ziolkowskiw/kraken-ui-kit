@@ -1,0 +1,198 @@
+{
+  "a11y": [
+    "Native <input> — keyboard accessible by default.",
+    "Always use InputField wrapper to get a visible <label> properly associated via htmlFor.",
+    "Error state: errorMessage renders as an associated description — prefer aria-describedby over aria-invalid alone.",
+    "Mandatory: mandatory prop adds a visual asterisk; also add aria-required=\"true\" on the input."
+  ],
+  "aliases": [
+    "form field",
+    "text box",
+    "text field",
+    "text input",
+    "textfield"
+  ],
+  "boundaries": [
+    "disabled is the only state prop; error is driven by errorMessage presence, not a variant.",
+    "mandatory adds the visual asterisk — still add aria-required on the input."
+  ],
+  "description": "displays a form input field; single-line text entry in forms",
+  "exports": [
+    "Input",
+    "InputField"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "868:6657"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/input",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "input"
+  },
+  "keywords": [
+    "entry",
+    "error",
+    "form",
+    "label",
+    "mandatory",
+    "placeholder",
+    "single-line"
+  ],
+  "name": "input",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "md",
+      "figmaProperty": "Size",
+      "figmaValues": "sm · md (default) · lg",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "figmaProperty": "Mandatory",
+      "figmaValues": "bool",
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "figmaProperty": "(label)",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "figmaProperty": "(helper)",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "figmaProperty": "State=error",
+      "figmaValues": "string (presence drives the error look)",
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "figmaProperty": "left/right decoration",
+      "figmaValues": "node / lucide icon",
+      "kind": "string|node",
+      "name": "leftDecoration"
+    },
+    {
+      "kind": "string|node",
+      "name": "rightDecoration"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "InputField"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/input.tsx",
+  "story": "src/components/ui/input.stories.tsx",
+  "title": "Input",
+  "tokens": {
+    "layer3": [
+      "--ds-input-bordercolor",
+      "--ds-input-borderdisabled",
+      "--ds-input-bordererror",
+      "--ds-input-borderfocus",
+      "--ds-input-borderhover",
+      "--ds-input-borderwidth",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-fill",
+      "--ds-input-filldisabled",
+      "--ds-input-placeholder",
+      "--ds-input-size-lg-fontsize",
+      "--ds-input-size-lg-height",
+      "--ds-input-size-lg-paddingx",
+      "--ds-input-size-lg-radius",
+      "--ds-input-size-md-fontsize",
+      "--ds-input-size-md-height",
+      "--ds-input-size-md-paddingx",
+      "--ds-input-size-md-radius",
+      "--ds-input-size-sm-fontsize",
+      "--ds-input-size-sm-height",
+      "--ds-input-size-sm-paddingx",
+      "--ds-input-size-sm-radius",
+      "--ds-input-value"
+    ],
+    "other": [
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Use the InputField wrapper — it adds label / description / errorMessage / mandatory with correct htmlFor association.",
+      "Drive the error look by passing errorMessage (its presence switches the state).",
+      "Use leftDecoration / rightDecoration for icons or affixes inside the field."
+    ],
+    "dont": [
+      "Don't hand-roll a <label> next to a bare Input — InputField exists for that.",
+      "Don't use Input for multi-line text — use textarea (TextareaField)."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": [
+    {
+      "component": "textarea",
+      "when": "multi-line text (comments, notes)"
+    },
+    {
+      "component": "search",
+      "when": "a search box with search affordance"
+    },
+    {
+      "component": "time-input",
+      "when": "entering a time of day"
+    },
+    {
+      "component": "input-otp",
+      "when": "one-time-password / verification codes"
+    },
+    {
+      "component": "combobox",
+      "when": "text entry with suggestions (autocomplete)"
+    }
+  ]
+}

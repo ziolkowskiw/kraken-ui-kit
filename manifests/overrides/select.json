@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["picker", "single-select", "option list"],
+  "keywords": ["dropdown", "options", "choice", "form", "listbox", "placeholder"],
+  "usage": {
+    "do": [
+      "Use the SelectField wrapper for label / description / errorMessage / mandatory.",
+      "Compose options from SelectItem / SelectGroup / SelectLabel."
+    ],
+    "dont": [
+      "Don't use Select for long or searchable option lists — use combobox.",
+      "Don't use Select to trigger actions — use dropdown-menu."
+    ]
+  },
+  "boundaries": [
+    "Figma naming trap: the set named \"Dropdown\" on the Select page (node 1637:17676) IS this component; the set named \"Select\" on the dropdown-menu page (1292:5274) is combobox."
+  ],
+  "whenToUseInstead": [
+    { "component": "combobox", "when": "many options or type-to-filter is needed" },
+    { "component": "dropdown-menu", "when": "the items run actions instead of picking a form value" },
+    { "component": "radio-group", "when": "few options that should all stay visible" }
+  ]
+}

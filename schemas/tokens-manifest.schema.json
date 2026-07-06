@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ziolkowskiw/kraken-ui-kit/schemas/tokens-manifest.schema.json",
+  "title": "Kraken UI Kit tokens manifest (compact index of tokens.dtcg.json)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source", "brandNote", "layers"],
+  "properties": {
+    "source": { "const": "tokens/tokens.dtcg.json" },
+    "brandNote": { "type": "string" },
+    "layers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["global", "semantic", "component"],
+      "properties": {
+        "global": { "$ref": "#/$defs/tokenList" },
+        "semantic": { "$ref": "#/$defs/tokenList" },
+        "component": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/tokenList" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "tokenList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cssVar", "type", "value"],
+        "properties": {
+          "cssVar": { "type": "string", "pattern": "^--ds-[a-z0-9.-]+$" },
+          "type": { "type": "string" },
+          "value": { "type": ["string", "number", "boolean", "object", "array"] },
+          "brandValue": { "type": ["string", "number", "boolean", "object", "array"] },
+          "description": { "type": "string" },
+          "figmaVariableId": { "type": "string", "pattern": "^VariableID:" }
+        }
+      }
+    }
+  }
+}

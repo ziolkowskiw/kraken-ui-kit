@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["callout", "banner", "inline message", "notice"],
+  "keywords": ["info", "success", "warning", "error", "neutral", "notification"],
+  "usage": {
+    "do": [
+      "Use for inline, non-blocking messages; pass onClose to render the dismiss affordance and action for an action button."
+    ],
+    "dont": [
+      "Don't use Alert for transient notifications — use sonner (toast).",
+      "Don't use Alert to block the flow — use alert-dialog."
+    ]
+  },
+  "boundaries": [
+    "The kind prop is named type (neutral | error | success | informational | warning) — NOT variant; this is a deliberate shadcn divergence."
+  ],
+  "whenToUseInstead": [
+    { "component": "sonner", "when": "transient success/error toasts" },
+    { "component": "alert-dialog", "when": "the user must respond before continuing" }
+  ]
+}

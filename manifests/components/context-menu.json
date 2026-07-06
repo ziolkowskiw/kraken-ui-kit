@@ -1,0 +1,92 @@
+{
+  "a11y": [
+    "Triggered by right-click; add a keyboard alternative (e.g. Shift+F10 or a toolbar button) for keyboard-only users.",
+    "Menu items use role=\"menuitem\"; checkable items role=\"menuitemcheckbox\".",
+    "Keyboard: ArrowUp/ArrowDown moves focus; Escape closes."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Displays a menu of actions triggered by a right click; contextual actions on an item/row. Full surface; Label is a plain styled div.",
+  "exports": [
+    "ContextMenu",
+    "ContextMenuTrigger",
+    "ContextMenuPortal",
+    "ContextMenuContent",
+    "ContextMenuGroup",
+    "ContextMenuItem",
+    "ContextMenuCheckboxItem",
+    "ContextMenuRadioGroup",
+    "ContextMenuRadioItem",
+    "ContextMenuLabel",
+    "ContextMenuSeparator",
+    "ContextMenuShortcut",
+    "ContextMenuSub",
+    "ContextMenuSubTrigger",
+    "ContextMenuSubContent"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1134:17687"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/context-menu",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "dropdown-menu",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "context-menu"
+  },
+  "keywords": [],
+  "name": "context-menu",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "inset"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "ContextMenuTrigger",
+      "ContextMenuPortal",
+      "ContextMenuContent",
+      "ContextMenuGroup",
+      "ContextMenuItem",
+      "ContextMenuCheckboxItem",
+      "ContextMenuRadioGroup",
+      "ContextMenuRadioItem",
+      "ContextMenuLabel",
+      "ContextMenuSeparator",
+      "ContextMenuShortcut",
+      "ContextMenuSub",
+      "ContextMenuSubTrigger",
+      "ContextMenuSubContent"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/context-menu.tsx",
+  "story": "src/components/ui/context-menu.stories.tsx",
+  "title": "Context Menu",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-content-tertiary",
+      "--ds-color-muted-foreground",
+      "--ds-typography-labelsm-fontsize"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

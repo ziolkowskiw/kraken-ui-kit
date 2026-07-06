@@ -1,0 +1,155 @@
+{
+  "a11y": [
+    "Same rules as Checkbox. The labeled variant puts the label in the DOM — no extra aria-label needed.",
+    "Error state: the error prop should companion with a visible errorMessage for non-color feedback."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A labeled checkbox control; when the checkbox needs an inline label/description. variant + size. Group: 1085:8757.",
+  "exports": [
+    "CheckboxButton",
+    "CheckboxButtonGroup"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "950:9032"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/checkbox-button",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "checkbox",
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "checkbox-button"
+  },
+  "keywords": [],
+  "name": "checkbox-button",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "button",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "button",
+        "standalone"
+      ]
+    },
+    {
+      "default": "lg",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "secondLineLabel"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "kind": "string|node",
+      "name": "className"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "CheckboxButtonGroup"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/checkbox-button.tsx",
+  "story": "src/components/ui/checkbox-button.stories.tsx",
+  "title": "Checkbox Button",
+  "tokens": {
+    "layer3": [
+      "--ds-checkbox-bordercolor",
+      "--ds-checkbox-bordererror",
+      "--ds-checkbox-bordererrorhover",
+      "--ds-checkbox-borderhover",
+      "--ds-checkbox-borderwidth",
+      "--ds-checkbox-checkedborder",
+      "--ds-checkbox-checkeddisabled",
+      "--ds-checkbox-containerfill",
+      "--ds-checkbox-containerradius",
+      "--ds-checkbox-fillhover",
+      "--ds-checkbox-gap",
+      "--ds-checkbox-paddingx",
+      "--ds-checkbox-size-lg-minheight",
+      "--ds-checkbox-size-md-minheight",
+      "--ds-checkbox-size-sm-minheight",
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-placeholder"
+    ],
+    "other": [
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-content-tertiary",
+      "--ds-color-primary-muted",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-fontweight",
+      "--ds-typography-labelmd-lineheight",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "lg",
+        "values": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "variant": {
+        "default": "button",
+        "values": [
+          "button",
+          "standalone"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

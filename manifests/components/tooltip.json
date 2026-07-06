@@ -1,0 +1,96 @@
+{
+  "a11y": [
+    "Tooltip content should be supplementary — never the only source of required info.",
+    "Must appear on both hover and keyboard focus of the trigger.",
+    "Use role=\"tooltip\" on the content element; trigger has aria-describedby pointing at it.",
+    "TooltipIcon trigger includes these semantics by default."
+  ],
+  "aliases": [
+    "hint",
+    "hover hint",
+    "info bubble"
+  ],
+  "boundaries": [],
+  "description": "A popup that displays information when an element gets focus or is hovered; short hints on icons/controls. Tooltip/Trigger/Content. ⓘ trigger 2115:1280.",
+  "exports": [
+    "Tooltip",
+    "TooltipContent",
+    "TooltipIcon",
+    "TooltipProvider",
+    "TooltipTrigger"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "2115:1317"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/tooltip",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "tooltip"
+  },
+  "keywords": [
+    "focus",
+    "help",
+    "hover",
+    "icon hint",
+    "short text"
+  ],
+  "name": "tooltip",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "TooltipContent",
+      "TooltipIcon",
+      "TooltipProvider",
+      "TooltipTrigger"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/tooltip.tsx",
+  "story": "src/components/ui/tooltip.stories.tsx",
+  "title": "Tooltip",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-foreground",
+      "--ds-color-inverse",
+      "--ds-color-inverse-foreground",
+      "--ds-color-muted-foreground",
+      "--ds-tooltip-fontsize",
+      "--ds-tooltip-maxwidth",
+      "--ds-tooltip-paddingx",
+      "--ds-tooltip-paddingy",
+      "--ds-tooltip-radius"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Keep content short and supplementary; it must appear on keyboard focus as well as hover.",
+      "Use TooltipIcon for the ⓘ info-icon trigger pattern."
+    ],
+    "dont": [
+      "Don't put required information or interactive content in a Tooltip — use popover or hover-card."
+    ]
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": [
+    {
+      "component": "popover",
+      "when": "interactive or form content anchored to a trigger"
+    },
+    {
+      "component": "hover-card",
+      "when": "a rich preview of a linked item"
+    }
+  ]
+}

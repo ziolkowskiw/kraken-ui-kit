@@ -1,0 +1,114 @@
+{
+  "a11y": [
+    "Group has role=\"radiogroup\" with aria-labelledby pointing at the group label.",
+    "Keyboard: ArrowUp/ArrowDown moves between options (roving tabindex).",
+    "Error state: pair errorMessage with aria-describedby on the group."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "a set of checkable buttons where only one can be checked; choose one from a small visible set",
+  "exports": [
+    "RadioGroup",
+    "RadioGroupField",
+    "RadioGroupItem"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1104:10652"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/radio-group",
+    "dependencies": [
+      "@base-ui/react@1.5.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "radio-group"
+  },
+  "keywords": [],
+  "name": "radio-group",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "error"
+    },
+    {
+      "figmaProperty": "Mandatory",
+      "figmaValues": "bool",
+      "kind": "boolean",
+      "name": "mandatory"
+    },
+    {
+      "figmaProperty": "(label/helper)",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "label"
+    },
+    {
+      "kind": "string|node",
+      "name": "description"
+    },
+    {
+      "figmaProperty": "State=error",
+      "figmaValues": "string",
+      "kind": "string|node",
+      "name": "errorMessage"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "figmaProperty": "Direction",
+      "figmaValues": "vertical · horizontal",
+      "kind": "mapped",
+      "name": "direction"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "RadioGroupField",
+      "RadioGroupItem"
+    ],
+    "figmaParts": [
+      "radio-group/item",
+      "radio-group/item-labeled"
+    ]
+  },
+  "source": "src/components/ui/radio-group.tsx",
+  "story": "src/components/ui/radio-group.stories.tsx",
+  "title": "Radio Group",
+  "tokens": {
+    "layer3": [
+      "--ds-input-content",
+      "--ds-input-contenterror",
+      "--ds-input-placeholder",
+      "--ds-radio-bordercolor",
+      "--ds-radio-bordererror",
+      "--ds-radio-borderhover",
+      "--ds-radio-borderwidth",
+      "--ds-radio-fill",
+      "--ds-radio-fillerror",
+      "--ds-radio-indicator"
+    ],
+    "other": [
+      "--ds-color-border-focus",
+      "--ds-color-primary-foreground",
+      "--ds-spacing-component-sm",
+      "--ds-typography-labelsm-fontsize",
+      "--ds-typography-labelsm-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

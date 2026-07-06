@@ -1,0 +1,303 @@
+{
+  "a11y": [
+    "Native <button> (via Base UI) — keyboard and screen-reader accessible by default.",
+    "iconOnly buttons: always provide aria-label (or title) with a text equivalent.",
+    "Avoid div/span click handlers — use <button> or <a> as appropriate."
+  ],
+  "aliases": [
+    "action button",
+    "btn",
+    "cta",
+    "icon button",
+    "outline button",
+    "primary button",
+    "submit button"
+  ],
+  "boundaries": [
+    "variant is exactly: primary | secondary | tonal | ghost | destructive | destructive-secondary | destructive-ghost.",
+    "shadcn mapping: default→primary, outline→secondary; shadcn's link variant is the separate link component.",
+    "Sizing comes from --ds-button-size-* tokens + the iconOnly prop — there is no size=\"icon-*\"."
+  ],
+  "description": "displays a button or a component that looks like a button; primary actions, form submits, dialog/menu triggers",
+  "exports": [
+    "Button"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1854:52960"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/button",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "button"
+  },
+  "keywords": [
+    "action",
+    "click",
+    "destructive",
+    "ghost",
+    "icon-only",
+    "submit",
+    "tonal"
+  ],
+  "name": "button",
+  "notes": [
+    "Button-size decision (was open): Figma xs/sm/md/lg already match the code strings 1:1 — no mapping table needed. outline is not a Button variant (secondary *is* the outline); link is its own component.",
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "primary",
+      "figmaProperty": "Variant",
+      "figmaValues": "primary (default) · secondary · tonal · ghost · destructive · destructive-secondary · destructive-ghost",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "destructive-secondary",
+        "destructive-ghost",
+        "primary",
+        "secondary",
+        "tonal",
+        "ghost",
+        "destructive"
+      ]
+    },
+    {
+      "default": "md",
+      "figmaProperty": "Size",
+      "figmaValues": "xs · sm · md (default) · lg",
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "figmaProperty": "(left/right icon swap)",
+      "figmaValues": "lucide icon",
+      "kind": "string|node",
+      "name": "leftIcon"
+    },
+    {
+      "kind": "string|node",
+      "name": "rightIcon"
+    },
+    {
+      "figmaProperty": "Icon only",
+      "figmaValues": "true / false",
+      "kind": "mapped",
+      "name": "iconOnly"
+    }
+  ],
+  "rationale": "Mirrors the Figma `button` component set (1854:52960): Variant × Size + iconOnly + left/right icon slots. Figma's State axis (rest/hover/focus/active/ disabled) maps to CSS states here — only `disabled` is a real prop. Each variant sets local --btn-* vars from its Layer-3 tokens; the base consumes them.",
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/button.tsx",
+  "story": "src/components/ui/button.stories.tsx",
+  "title": "Button",
+  "tokens": {
+    "layer3": [
+      "--ds-button-destructive-content",
+      "--ds-button-destructive-contentdisabled",
+      "--ds-button-destructive-fill",
+      "--ds-button-destructive-fillactive",
+      "--ds-button-destructive-filldisabled",
+      "--ds-button-destructive-fillhover",
+      "--ds-button-destructiveghost-border",
+      "--ds-button-destructiveghost-borderdisabled",
+      "--ds-button-destructiveghost-content",
+      "--ds-button-destructiveghost-contentdisabled",
+      "--ds-button-destructiveghost-fill",
+      "--ds-button-destructiveghost-fillactive",
+      "--ds-button-destructiveghost-filldisabled",
+      "--ds-button-destructiveghost-fillhover",
+      "--ds-button-destructivesecondary-border",
+      "--ds-button-destructivesecondary-borderdisabled",
+      "--ds-button-destructivesecondary-content",
+      "--ds-button-destructivesecondary-contentdisabled",
+      "--ds-button-destructivesecondary-fill",
+      "--ds-button-destructivesecondary-fillactive",
+      "--ds-button-destructivesecondary-filldisabled",
+      "--ds-button-destructivesecondary-fillhover",
+      "--ds-button-ghost-content",
+      "--ds-button-ghost-contentdisabled",
+      "--ds-button-ghost-fillactive",
+      "--ds-button-ghost-filldisabled",
+      "--ds-button-ghost-fillhover",
+      "--ds-button-ghost-size-lg-paddingx",
+      "--ds-button-ghost-size-md-paddingx",
+      "--ds-button-ghost-size-sm-paddingx",
+      "--ds-button-ghost-size-xs-paddingx",
+      "--ds-button-primary-content",
+      "--ds-button-primary-contentdisabled",
+      "--ds-button-primary-fill",
+      "--ds-button-primary-fillactive",
+      "--ds-button-primary-filldisabled",
+      "--ds-button-primary-fillhover",
+      "--ds-button-secondary-border",
+      "--ds-button-secondary-content",
+      "--ds-button-secondary-contentdisabled",
+      "--ds-button-secondary-fill",
+      "--ds-button-secondary-fillactive",
+      "--ds-button-secondary-filldisabled",
+      "--ds-button-secondary-fillhover",
+      "--ds-button-size-lg-fontsize",
+      "--ds-button-size-lg-fontweight",
+      "--ds-button-size-lg-height",
+      "--ds-button-size-lg-icononlypadding",
+      "--ds-button-size-lg-paddingx",
+      "--ds-button-size-lg-radius",
+      "--ds-button-size-md-fontsize",
+      "--ds-button-size-md-fontweight",
+      "--ds-button-size-md-height",
+      "--ds-button-size-md-icononlypadding",
+      "--ds-button-size-md-paddingx",
+      "--ds-button-size-md-radius",
+      "--ds-button-size-sm-fontsize",
+      "--ds-button-size-sm-fontweight",
+      "--ds-button-size-sm-height",
+      "--ds-button-size-sm-icononlypadding",
+      "--ds-button-size-sm-paddingx",
+      "--ds-button-size-sm-radius",
+      "--ds-button-size-xs-fontsize",
+      "--ds-button-size-xs-fontweight",
+      "--ds-button-size-xs-height",
+      "--ds-button-size-xs-icononlypadding",
+      "--ds-button-size-xs-paddingx",
+      "--ds-button-size-xs-radius",
+      "--ds-button-tonal-content",
+      "--ds-button-tonal-contentdisabled",
+      "--ds-button-tonal-fill",
+      "--ds-button-tonal-fillactive",
+      "--ds-button-tonal-filldisabled",
+      "--ds-button-tonal-fillhover"
+    ],
+    "other": []
+  },
+  "usage": {
+    "do": [
+      "Use variant=\"secondary\" for the outline look — secondary IS the outline variant.",
+      "Give every iconOnly button an aria-label (or title) with a text equivalent.",
+      "Pass lucide-react icons via leftIcon / rightIcon — never bake icons into children markup.",
+      "Use the destructive family (destructive / destructive-secondary / destructive-ghost) for irreversible actions."
+    ],
+    "dont": [
+      "Don't use Button for navigation — use link (inline) or link-button (button-shaped navigation).",
+      "Don't add hover/focus/active props — those states are CSS pseudo-classes; disabled is the only state prop.",
+      "Don't invent variant=\"outline\" or variant=\"link\" — neither exists in this kit."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "default": "md",
+        "values": [
+          "xs",
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "variant": {
+        "default": "primary",
+        "values": [
+          "destructive-secondary",
+          "destructive-ghost",
+          "primary",
+          "secondary",
+          "tonal",
+          "ghost",
+          "destructive"
+        ]
+      }
+    },
+    "compound": [
+      {
+        "note": "icon-only uses a square padding token per size",
+        "when": {
+          "iconOnly": true,
+          "size": "xs"
+        }
+      },
+      {
+        "note": "icon-only uses a square padding token per size",
+        "when": {
+          "iconOnly": true,
+          "size": "sm"
+        }
+      },
+      {
+        "note": "icon-only uses a square padding token per size",
+        "when": {
+          "iconOnly": true,
+          "size": "md"
+        }
+      },
+      {
+        "note": "icon-only uses a square padding token per size",
+        "when": {
+          "iconOnly": true,
+          "size": "lg"
+        }
+      },
+      {
+        "note": "ghost has its own horizontal padding when it has a label",
+        "when": {
+          "iconOnly": false,
+          "size": "xs",
+          "variant": "ghost"
+        }
+      },
+      {
+        "note": "ghost has its own horizontal padding when it has a label",
+        "when": {
+          "iconOnly": false,
+          "size": "sm",
+          "variant": "ghost"
+        }
+      },
+      {
+        "note": "ghost has its own horizontal padding when it has a label",
+        "when": {
+          "iconOnly": false,
+          "size": "md",
+          "variant": "ghost"
+        }
+      },
+      {
+        "note": "ghost has its own horizontal padding when it has a label",
+        "when": {
+          "iconOnly": false,
+          "size": "lg",
+          "variant": "ghost"
+        }
+      }
+    ]
+  },
+  "whenToUseInstead": [
+    {
+      "component": "link",
+      "when": "inline text navigation"
+    },
+    {
+      "component": "link-button",
+      "when": "navigation that should look like a button"
+    },
+    {
+      "component": "toggle",
+      "when": "a two-state on/off button (e.g. bold)"
+    }
+  ]
+}

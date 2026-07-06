@@ -1,0 +1,51 @@
+{
+  "a11y": [
+    "Hide skeletons from screen readers: aria-hidden=\"true\" on all skeleton elements.",
+    "Announce loading state via a live region outside the skeleton area."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Muted, pulsing placeholder. Skeleton (set className for size).",
+  "exports": [
+    "Skeleton"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1808:15417"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/skeleton",
+    "dependencies": [],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "skeleton"
+  },
+  "keywords": [],
+  "name": "skeleton",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/skeleton.tsx",
+  "story": "src/components/ui/skeleton.stories.tsx",
+  "title": "Skeleton",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-muted",
+      "--ds-radius-md"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

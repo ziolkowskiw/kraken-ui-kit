@@ -1,0 +1,72 @@
+{
+  "a11y": [
+    "Wrap in <nav aria-label=\"Pagination\">.",
+    "Current page link: aria-current=\"page\".",
+    "Previous/Next links need accessible text (not icon-only)."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Pagination with page navigation, next and previous links; page through long lists/tables. Pagination/Content/Item/Link/Previous/Next/Ellipsis.",
+  "exports": [
+    "Pagination",
+    "PaginationContent",
+    "PaginationItem",
+    "PaginationLink",
+    "PaginationPrevious",
+    "PaginationNext",
+    "PaginationEllipsis"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1760:679"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/pagination",
+    "dependencies": [
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "button",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "pagination"
+  },
+  "keywords": [],
+  "name": "pagination",
+  "notes": [],
+  "props": [
+    {
+      "kind": "boolean",
+      "name": "isActive"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "PaginationContent",
+      "PaginationItem",
+      "PaginationLink",
+      "PaginationPrevious",
+      "PaginationNext",
+      "PaginationEllipsis"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/pagination.tsx",
+  "story": "src/components/ui/pagination.stories.tsx",
+  "title": "Pagination",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-content-tertiary"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

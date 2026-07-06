@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ziolkowskiw/kraken-ui-kit/schemas/foundations.schema.json",
+  "title": "Kraken UI Kit foundations manifest (always-on agent layer)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "system", "sources", "tokenArchitecture", "brands", "corePrinciples",
+    "figmaCodeConventions", "shadcnDivergences", "scales", "install"
+  ],
+  "properties": {
+    "system": { "type": "string" },
+    "sources": { "type": "array", "items": { "type": "string" } },
+    "tokenArchitecture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["layers", "naming"],
+      "properties": {
+        "layers": { "type": "array", "items": { "type": "string" }, "minItems": 3, "maxItems": 3 },
+        "naming": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    },
+    "brands": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attribute", "default", "values", "contract"],
+      "properties": {
+        "attribute": { "type": "string" },
+        "default": { "type": "string" },
+        "values": { "type": "object", "additionalProperties": { "type": "string" } },
+        "contract": { "type": "string" }
+      }
+    },
+    "corePrinciples": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "figmaCodeConventions": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "shadcnDivergences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["area", "kit", "shadcn"],
+        "properties": {
+          "area": { "type": "string" },
+          "kit": { "type": "string" },
+          "shadcn": { "type": "string" }
+        }
+      }
+    },
+    "scales": { "type": "object", "additionalProperties": { "type": "string" } },
+    "install": { "type": "object", "additionalProperties": { "type": "string" } }
+  }
+}

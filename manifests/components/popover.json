@@ -1,0 +1,73 @@
+{
+  "a11y": [
+    "Focus moves into the popover on open (Base UI behavior); Escape closes and returns focus to the trigger.",
+    "If the popover is complex (a form, etc.) use role=\"dialog\" with aria-modal=\"true\".",
+    "For purely informational hover-cards prefer role=\"tooltip\"."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Displays rich content in a portal, triggered by a button; small floating forms, info, pickers. Popover/Trigger/Content/Close/Title/Description.",
+  "exports": [
+    "Popover",
+    "PopoverTrigger",
+    "PopoverHeader",
+    "PopoverContent",
+    "PopoverClose",
+    "PopoverTitle",
+    "PopoverDescription"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1762:1829"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/popover",
+    "dependencies": [
+      "@base-ui/react@1.5.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "popover"
+  },
+  "keywords": [],
+  "name": "popover",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "PopoverTrigger",
+      "PopoverHeader",
+      "PopoverContent",
+      "PopoverClose",
+      "PopoverTitle",
+      "PopoverDescription"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/popover.tsx",
+  "story": "src/components/ui/popover.stories.tsx",
+  "title": "Popover",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-muted-foreground",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-lg",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}

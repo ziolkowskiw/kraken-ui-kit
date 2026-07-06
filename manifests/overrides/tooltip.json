@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["hint", "info bubble", "hover hint"],
+  "keywords": ["hover", "focus", "help", "short text", "icon hint"],
+  "usage": {
+    "do": [
+      "Keep content short and supplementary; it must appear on keyboard focus as well as hover.",
+      "Use TooltipIcon for the ⓘ info-icon trigger pattern."
+    ],
+    "dont": [
+      "Don't put required information or interactive content in a Tooltip — use popover or hover-card."
+    ]
+  },
+  "boundaries": [],
+  "whenToUseInstead": [
+    { "component": "popover", "when": "interactive or form content anchored to a trigger" },
+    { "component": "hover-card", "when": "a rich preview of a linked item" }
+  ]
+}

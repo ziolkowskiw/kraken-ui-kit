@@ -1,0 +1,104 @@
+{
+  "a11y": [
+    "A card is a presentational container — it needs no role by default.",
+    "If the card is interactive as a unit (clickable), use role=\"article\" or a wrapping <a>; never add onClick to a plain <div>.",
+    "Ensure CardTitle uses an appropriate heading level (as=\"h2\" etc.) in document context."
+  ],
+  "aliases": [
+    "content card",
+    "panel",
+    "surface",
+    "tile"
+  ],
+  "boundaries": [
+    "The only variant axis is filled (true | false)."
+  ],
+  "description": "displays a card with header, content, and footer; group related content and actions into a surface",
+  "exports": [
+    "Card",
+    "CardHeader",
+    "CardFooter",
+    "CardTitle",
+    "CardAction",
+    "CardDescription",
+    "CardContent"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "950:3279"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/card",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "card"
+  },
+  "keywords": [
+    "container",
+    "footer",
+    "group",
+    "header",
+    "section"
+  ],
+  "name": "card",
+  "notes": [],
+  "props": [
+    {
+      "figmaProperty": "Filled",
+      "figmaValues": "true · false",
+      "kind": "mapped",
+      "name": "filled"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "CardHeader",
+      "CardFooter",
+      "CardTitle",
+      "CardAction",
+      "CardDescription",
+      "CardContent"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/card.tsx",
+  "story": "src/components/ui/card.stories.tsx",
+  "title": "Card",
+  "tokens": {
+    "layer3": [
+      "--ds-card-border",
+      "--ds-card-borderwidth",
+      "--ds-card-fill",
+      "--ds-card-foreground",
+      "--ds-card-gap",
+      "--ds-card-padding",
+      "--ds-card-radius"
+    ],
+    "other": [
+      "--ds-color-muted-foreground"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Compose CardHeader / CardTitle / CardDescription / CardAction / CardContent / CardFooter for the standard anatomy.",
+      "Give CardTitle an appropriate heading level in document context."
+    ],
+    "dont": [
+      "Don't add onClick to the Card div — if the whole card is clickable, wrap it in an <a> or give it a proper role."
+    ]
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": [
+    {
+      "component": "item",
+      "when": "a structured row inside a list rather than a standalone surface"
+    }
+  ]
+}

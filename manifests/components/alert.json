@@ -1,0 +1,168 @@
+{
+  "a11y": [
+    "Use role=\"alert\" for live, assertive announcements (errors). For non-urgent info prefer role=\"status\".",
+    "Include both an icon and text — never color alone to convey type.",
+    "Dismissible alerts: the close button needs an accessible label (aria-label=\"Dismiss\")."
+  ],
+  "aliases": [
+    "banner",
+    "callout",
+    "inline message",
+    "notice"
+  ],
+  "boundaries": [
+    "The kind prop is named type (neutral | error | success | informational | warning) — NOT variant; this is a deliberate shadcn divergence."
+  ],
+  "description": "displays a callout for user attention; inline, non-blocking messages (info, success, warning, error)",
+  "exports": [
+    "Alert",
+    "AlertTitle",
+    "AlertDescription"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "535:3894"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/alert",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "button",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "alert"
+  },
+  "keywords": [
+    "error",
+    "info",
+    "neutral",
+    "notification",
+    "success",
+    "warning"
+  ],
+  "name": "alert",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "neutral",
+      "figmaProperty": "Type",
+      "figmaValues": "neutral · error · success · informational · warning",
+      "kind": "enum",
+      "name": "type",
+      "values": [
+        "neutral",
+        "error",
+        "success",
+        "informational",
+        "warning"
+      ]
+    },
+    {
+      "figmaProperty": "(icon)",
+      "figmaValues": "lucide icon / bool",
+      "kind": "string|node",
+      "name": "icon"
+    },
+    {
+      "kind": "string|node",
+      "name": "closeIcon"
+    },
+    {
+      "figmaProperty": "(action)",
+      "figmaValues": "node (renders action Button)",
+      "kind": "string|node",
+      "name": "action"
+    },
+    {
+      "figmaProperty": "(dismiss)",
+      "figmaValues": "handler (renders close affordance)",
+      "kind": "mapped",
+      "name": "onClose"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "AlertTitle",
+      "AlertDescription"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/alert.tsx",
+  "story": "src/components/ui/alert.stories.tsx",
+  "title": "Alert",
+  "tokens": {
+    "layer3": [
+      "--ds-alert-borderwidth",
+      "--ds-alert-padding",
+      "--ds-alert-radius"
+    ],
+    "other": [
+      "--ds-color-content-primary",
+      "--ds-color-status-error-bg",
+      "--ds-color-status-error-border",
+      "--ds-color-status-error-foreground",
+      "--ds-color-status-error-icon",
+      "--ds-color-status-info-bg",
+      "--ds-color-status-info-border",
+      "--ds-color-status-info-foreground",
+      "--ds-color-status-info-icon",
+      "--ds-color-status-neutral-bg",
+      "--ds-color-status-neutral-border",
+      "--ds-color-status-neutral-foreground",
+      "--ds-color-status-neutral-icon",
+      "--ds-color-status-success-bg",
+      "--ds-color-status-success-border",
+      "--ds-color-status-success-foreground",
+      "--ds-color-status-success-icon",
+      "--ds-color-status-warning-bg",
+      "--ds-color-status-warning-border",
+      "--ds-color-status-warning-foreground",
+      "--ds-color-status-warning-icon",
+      "--ds-spacing-component-md",
+      "--ds-spacing-component-sm",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-bodysm-lineheight",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Use for inline, non-blocking messages; pass onClose to render the dismiss affordance and action for an action button."
+    ],
+    "dont": [
+      "Don't use Alert for transient notifications — use sonner (toast).",
+      "Don't use Alert to block the flow — use alert-dialog."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "type": {
+        "default": "neutral",
+        "values": [
+          "neutral",
+          "error",
+          "success",
+          "informational",
+          "warning"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": [
+    {
+      "component": "sonner",
+      "when": "transient success/error toasts"
+    },
+    {
+      "component": "alert-dialog",
+      "when": "the user must respond before continuing"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "a11y": [
+    "Renders as <a> — inherently keyboard and screen-reader accessible.",
+    "Use link for navigation; use button for actions (do not style a <button> as a link for navigation).",
+    "External links: add aria-label or visually-hidden text to warn users (\"opens in new tab\")."
+  ],
+  "aliases": [
+    "anchor",
+    "hyperlink",
+    "link button",
+    "nav link",
+    "text link"
+  ],
+  "boundaries": [
+    "link.tsx exports both Link (variant + size) and LinkButton — the kit's replacement for shadcn's Button variant=link."
+  ],
+  "description": "A text hyperlink (the kit's answer to shadcn variant=link, since Button has none); inline navigation in text. variant + size.",
+  "exports": [
+    "Link",
+    "LinkButton"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "372:4599"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/link",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "link"
+  },
+  "keywords": [
+    "external",
+    "href",
+    "inline",
+    "navigation"
+  ],
+  "name": "link",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "default",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "default",
+        "destructive"
+      ]
+    },
+    {
+      "kind": "enum",
+      "name": "size",
+      "values": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    {
+      "kind": "string|node",
+      "name": "leftIcon"
+    },
+    {
+      "kind": "string|node",
+      "name": "rightIcon"
+    }
+  ],
+  "rationale": "Mirrors two Figma sets on the Link page: • `link` (372:4599): an inline text link. State axis (default/hover/active/ visited/focused/disabled) → CSS; `destructive` is a real variant. • `link-button` (492:2073): a text+icon button styled as a link, Size lg/md/sm/xs. Colors bind the `--ds-color-content-link*` semantic tokens (blue ramp).",
+  "slots": {
+    "exports": [
+      "LinkButton"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/link.tsx",
+  "story": "src/components/ui/link.stories.tsx",
+  "title": "Link",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-content-disabled",
+      "--ds-color-content-link",
+      "--ds-color-content-link-active",
+      "--ds-color-content-link-hover",
+      "--ds-color-content-link-visited",
+      "--ds-color-destructive",
+      "--ds-color-destructive-active",
+      "--ds-color-destructive-hover",
+      "--ds-radius-xs",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-bodymd-lineheight",
+      "--ds-typography-linklg-fontsize",
+      "--ds-typography-linklg-fontweight",
+      "--ds-typography-linklg-lineheight",
+      "--ds-typography-linkmd-fontsize",
+      "--ds-typography-linkmd-fontweight",
+      "--ds-typography-linkmd-lineheight",
+      "--ds-typography-linksm-fontsize",
+      "--ds-typography-linksm-fontweight",
+      "--ds-typography-linksm-lineheight",
+      "--ds-typography-linkxs-fontsize",
+      "--ds-typography-linkxs-fontweight",
+      "--ds-typography-linkxs-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Use link for navigation and button for actions — never a styled <button> for navigation.",
+      "Use LinkButton (same file) for navigation that should look like a button.",
+      "Warn on external links via aria-label or visually-hidden text (\"opens in new tab\")."
+    ],
+    "dont": [
+      "Don't reach for a Button variant=\"link\" — Button has no link variant in this kit; this component is the answer."
+    ]
+  },
+  "variants": {
+    "axes": {
+      "size": {
+        "values": [
+          "xs",
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "variant": {
+        "default": "default",
+        "values": [
+          "default",
+          "destructive"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": [
+    {
+      "component": "button",
+      "when": "the element performs an action instead of navigating"
+    },
+    {
+      "component": "breadcrumb",
+      "when": "hierarchical location links"
+    }
+  ]
+}

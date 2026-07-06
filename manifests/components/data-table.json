@@ -1,0 +1,118 @@
+{
+  "a11y": [
+    "Use <th scope=\"col\"> for column headers and <th scope=\"row\"> for row headers.",
+    "Sortable columns: the sort button inside <th> needs aria-sort=\"ascending|descending|none\".",
+    "Interactive rows: prefer row-level action buttons over whole-row click targets."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+  "exports": [
+    "TableTitle",
+    "TableRow",
+    "DataTable"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1824:18395"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/data-table",
+    "dependencies": [
+      "class-variance-authority@0.7.1"
+    ],
+    "registryDependencies": [
+      "button",
+      "theme",
+      "tooltip",
+      "utils"
+    ],
+    "registryItem": "data-table"
+  },
+  "keywords": [],
+  "name": "data-table",
+  "notes": [
+    "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+  ],
+  "props": [
+    {
+      "default": "title",
+      "kind": "enum",
+      "name": "variant",
+      "values": [
+        "title",
+        "section",
+        "white",
+        "grey",
+        "selected"
+      ]
+    },
+    {
+      "kind": "boolean",
+      "name": "showTooltip"
+    },
+    {
+      "kind": "boolean",
+      "name": "showAction"
+    },
+    {
+      "kind": "string|node",
+      "name": "title"
+    },
+    {
+      "kind": "string|node",
+      "name": "tooltip"
+    },
+    {
+      "kind": "string|node",
+      "name": "actions"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "TableTitle",
+      "TableRow"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/data-table.tsx",
+  "story": "src/components/ui/data-table.stories.tsx",
+  "title": "Data Table",
+  "tokens": {
+    "layer3": [
+      "--ds-button-primary-content"
+    ],
+    "other": [
+      "--ds-color-background",
+      "--ds-color-border",
+      "--ds-color-content-primary",
+      "--ds-color-muted",
+      "--ds-color-primary-muted",
+      "--ds-color-secondary-active",
+      "--ds-color-surface",
+      "--ds-radius-lg",
+      "--ds-typography-headingmd-fontsize",
+      "--ds-typography-headingmd-fontweight",
+      "--ds-typography-headingmd-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {
+      "variant": {
+        "default": "title",
+        "values": [
+          "title",
+          "section",
+          "white",
+          "grey",
+          "selected"
+        ]
+      }
+    }
+  },
+  "whenToUseInstead": []
+}

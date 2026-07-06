@@ -1,0 +1,120 @@
+{
+  "a11y": [
+    "Built on Base UI Dialog; focus is trapped inside while open.",
+    "Required: DialogTitle (visible or visually-hidden) linked via aria-labelledby.",
+    "Optional: DialogDescription linked via aria-describedby.",
+    "Restore focus to the trigger element on close."
+  ],
+  "aliases": [
+    "modal",
+    "modal dialog",
+    "popup window"
+  ],
+  "boundaries": [],
+  "description": "a window overlaid on the primary window, content underneath inert; focused tasks/forms needing confirmation",
+  "exports": [
+    "Dialog",
+    "DialogClose",
+    "DialogContent",
+    "DialogDescription",
+    "DialogFooter",
+    "DialogHeader",
+    "DialogOverlay",
+    "DialogPortal",
+    "DialogTitle",
+    "DialogTrigger"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1595:18496"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/dialog",
+    "dependencies": [
+      "@base-ui/react@1.5.0",
+      "lucide-react@1.18.0"
+    ],
+    "registryDependencies": [
+      "button",
+      "theme",
+      "utils"
+    ],
+    "registryItem": "dialog"
+  },
+  "keywords": [
+    "confirm",
+    "focused task",
+    "form",
+    "overlay",
+    "portal"
+  ],
+  "name": "dialog",
+  "notes": [],
+  "props": [
+    {
+      "figmaProperty": "(close button)",
+      "figmaValues": "bool",
+      "kind": "boolean",
+      "name": "showCloseButton"
+    }
+  ],
+  "slots": {
+    "exports": [
+      "DialogClose",
+      "DialogContent",
+      "DialogDescription",
+      "DialogFooter",
+      "DialogHeader",
+      "DialogOverlay",
+      "DialogPortal",
+      "DialogTitle",
+      "DialogTrigger"
+    ],
+    "figmaParts": [
+      "dialog/footer",
+      "dialog/header"
+    ]
+  },
+  "source": "src/components/ui/dialog.tsx",
+  "story": "src/components/ui/dialog.stories.tsx",
+  "title": "Dialog",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-border",
+      "--ds-color-muted",
+      "--ds-color-muted-foreground",
+      "--ds-color-overlay",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-xl"
+    ]
+  },
+  "usage": {
+    "do": [
+      "Always include a DialogTitle (visible or visually-hidden) — it feeds aria-labelledby.",
+      "Compose DialogHeader / DialogFooter for the standard layout; control the close affordance with showCloseButton on DialogContent."
+    ],
+    "dont": [
+      "Don't use Dialog for destructive or interrupting confirmations — use alert-dialog.",
+      "Don't nest a second Dialog inside an open one."
+    ]
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": [
+    {
+      "component": "alert-dialog",
+      "when": "destructive / irreversible confirmations that must interrupt"
+    },
+    {
+      "component": "drawer",
+      "when": "an edge-anchored panel (filters, side forms)"
+    },
+    {
+      "component": "popover",
+      "when": "light content anchored to a trigger"
+    }
+  ]
+}

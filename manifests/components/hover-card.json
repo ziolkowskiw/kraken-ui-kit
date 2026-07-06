@@ -1,0 +1,73 @@
+{
+  "a11y": [
+    "Content is supplementary — never put required information only in a hover card.",
+    "Must also open on keyboard focus (not just mouseenter); Base UI handles this.",
+    "Add role=\"tooltip\" or role=\"dialog\" depending on whether it's interactive."
+  ],
+  "aliases": [],
+  "boundaries": [],
+  "description": "A card that previews a linked item on hover/focus. HoverCard/Trigger/Content. Surface = --ds-color-popover.",
+  "exports": [
+    "HoverCard",
+    "HoverCardTrigger",
+    "HoverCardContent",
+    "HoverCardTitle",
+    "HoverCardCopy"
+  ],
+  "figma": {
+    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "nodeId": "1595:20118"
+  },
+  "install": {
+    "command": "npx shadcn add @kraken/hover-card",
+    "dependencies": [
+      "@base-ui/react@1.5.0"
+    ],
+    "registryDependencies": [
+      "theme",
+      "utils"
+    ],
+    "registryItem": "hover-card"
+  },
+  "keywords": [],
+  "name": "hover-card",
+  "notes": [],
+  "props": [],
+  "slots": {
+    "exports": [
+      "HoverCardTrigger",
+      "HoverCardContent",
+      "HoverCardTitle",
+      "HoverCardCopy"
+    ],
+    "figmaParts": []
+  },
+  "source": "src/components/ui/hover-card.tsx",
+  "story": "src/components/ui/hover-card.stories.tsx",
+  "title": "Hover Card",
+  "tokens": {
+    "layer3": [],
+    "other": [
+      "--ds-color-content-primary",
+      "--ds-color-content-secondary",
+      "--ds-color-popover",
+      "--ds-color-popover-foreground",
+      "--ds-radius-lg",
+      "--ds-typography-bodysm-fontfamily",
+      "--ds-typography-bodysm-fontsize",
+      "--ds-typography-bodysm-lineheight",
+      "--ds-typography-labellg-fontfamily",
+      "--ds-typography-labellg-fontsize",
+      "--ds-typography-labellg-fontweight",
+      "--ds-typography-labellg-lineheight"
+    ]
+  },
+  "usage": {
+    "do": [],
+    "dont": []
+  },
+  "variants": {
+    "axes": {}
+  },
+  "whenToUseInstead": []
+}
