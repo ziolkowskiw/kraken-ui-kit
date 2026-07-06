@@ -11,6 +11,29 @@ re-explanation. Repo: `github.com/ziolkowskiw/kraken-ui-kit`.
 
 **Stack:** Next.js 16 / React 19 / Tailwind v4 / Base UI / CVA / Storybook 10.
 
+## 0. Prefer the MCP server / manifests
+
+The kit ships a **machine-readable layer** — dense per-component JSON contracts
+served by an MCP server. When it's available, answer component questions from it
+instead of reading source or guessing:
+
+```bash
+claude mcp add kraken-ui -- npx -y @kraken-ui/mcp
+```
+
+| Tool | Use it for |
+|---|---|
+| `get_foundations` | call **once per session** — token architecture, brands, conventions, shadcn divergences |
+| `search_components query` | find a component by concept ("modal", "outline button", "dropdown") |
+| `get_component name` | the full contract: install cmd, exact variant enums + defaults, props, slots, `--ds-*` tokens, a11y |
+| `get_tokens layer?/component?/brand?` | token slices; `brand:"brand"` resolves brand-mode values |
+| `get_usage_rules name?` | do/don't, boundaries, when-to-use-something-else |
+| `list_components` | the full component list |
+
+Without MCP, the same data is committed under `manifests/` (start at
+`manifests/foundations.json`, then `manifests/components/<name>.json`) and the
+`ai-foundations` registry item installs `foundations.json` into consuming repos.
+
 ## 1. Install components (registry)
 
 The kit publishes a shadcn registry (`registry.json`, compiled to `public/r/*.json`).
