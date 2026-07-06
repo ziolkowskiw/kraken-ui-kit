@@ -1,0 +1,36 @@
+{
+  "name": "@kraken-ui/mcp",
+  "version": "0.0.1",
+  "description": "MCP server exposing the Kraken UI Kit machine-readable design-system manifests (components, tokens, foundations) to AI agents.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "kraken-ui-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "manifests",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziolkowskiw/kraken-ui-kit.git",
+    "directory": "mcp"
+  },
+  "scripts": {
+    "bundle-manifests": "node scripts/copy-manifests.mjs",
+    "build": "npm run bundle-manifests && tsc",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  }
+}
