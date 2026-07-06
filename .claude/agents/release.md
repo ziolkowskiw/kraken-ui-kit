@@ -16,14 +16,13 @@ Automates the release ritual for kraken-ui-kit. Dry-run unless `--yes` is passed
 
 ## Steps (in order)
 1. `npm run tokens:build` — regenerate `src/styles/tokens.css`
-2. `npm run editor:data` — regenerate `src/lib/semantic-tokens.json`
-3. `npm run registry:build` — regenerate `registry.json` + `public/r/*.json`
-4. Bump `package.json` version (`--patch` default, `--minor`, or `--major`)
-5. Prepend a CHANGELOG.md entry from `git log` since the last tag
-6. Stage: `package.json CHANGELOG.md registry.json src/styles/tokens.css src/lib/semantic-tokens.json`
-7. Commit: `chore(release): vX.Y.Z`
-8. Tag: `vX.Y.Z`
-9. Print push instructions
+2. `npm run registry:build` — regenerate `registry.json` + `public/r/*.json`
+3. Bump `package.json` version (`--patch` default, `--minor`, or `--major`)
+4. Prepend a CHANGELOG.md entry from `git log` since the last tag
+5. Stage: `package.json CHANGELOG.md registry.json src/styles/tokens.css`
+6. Commit: `chore(release): vX.Y.Z`
+7. Tag: `vX.Y.Z`
+8. Print push instructions
 
 ## Usage
 

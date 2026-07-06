@@ -127,7 +127,7 @@ Before shipping a component or UI change:
 - [ ] Colors bound at Layer 3 (or semantic), not primitives
 - [ ] All five states styled (default, hover, active, disabled, focus)
 - [ ] Renders correctly in **both** brands (`jit` and `brand`)
-- [ ] WCAG AA contrast: 4.5:1 text, 3:1 UI elements (theme editor verifies)
+- [ ] WCAG AA contrast: 4.5:1 text, 3:1 UI elements
 - [ ] Variant/prop names match Figma enums and shadcn conventions exactly
 - [ ] Story follows the conventions doc (Playground, pickers, `if:` gating)
 - [ ] `MAPPING.md` entry present and current (run `mapping-doctor` if unsure)
@@ -157,5 +157,7 @@ npx shadcn add @kraken/button   # install a tokenized component elsewhere
 
 `using-kraken-ui-kit` (consume the kit), `token-sync` (Figma → tokens),
 `add-component` (scaffold), `mapping-doctor` (verify MAPPING.md),
-`drift-audit` (3-way Figma ⇄ tokens ⇄ code check), `theme-apply` (apply an
-editor-exported theme).
+`drift-audit` (3-way Figma ⇄ tokens ⇄ code check).
+
+New themes are authored in Figma as semantic-collection modes, then exported
+via `token-sync` — never built in code.
