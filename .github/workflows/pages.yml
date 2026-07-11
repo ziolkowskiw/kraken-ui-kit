@@ -38,6 +38,10 @@ jobs:
           cp llms.txt _site/llms.txt
           cp MAPPING.md _site/MAPPING.md
           cp -r manifests _site/manifests
+          cp README.md _site/README.md
+          cp design.md _site/design.md
+          mkdir -p _site/docs/components
+          cp -r docs/components/. _site/docs/components/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
