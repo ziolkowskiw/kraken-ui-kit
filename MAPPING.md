@@ -273,6 +273,8 @@ Legacy `Menu`×2 and `Sorting icons`×2 are now distinct — match on **node ID*
 | Sorting icons (data-table) | `data-table/sorting-icons` | composes into [data-table.tsx](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/data-table.tsx) |
 | Sorting icons (form-table) | `form-table/sorting-icons` | composes into the form-table family |
 
+2026-07-11 — JIT DS 2.1 hygiene rename: tabs set 2248:18598 is the composed bar (maps to `tabs.tsx`); 1825:18415 renamed `tabs/trigger` (sub-part).
+
 ---
 
 ## Coverage
