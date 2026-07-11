@@ -232,7 +232,7 @@ emit("index.json", indexEntries);
 
 // ── foundations.json — the always-on layer ───────────────────────────────────
 const foundations = {
-  system: "Kraken UI Kit (JIT DS 2.0) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 2 brands.",
+  system: "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 2 brands.",
   sources: ["design.md", "MAPPING.md"],
   tokenArchitecture: {
     layers: [
