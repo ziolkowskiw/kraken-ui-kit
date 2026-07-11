@@ -90,7 +90,15 @@ npm run dev            # showcase at http://localhost:3000 (brand toggle top-rig
 npm run storybook      # component explorer at :6006 (Brand toggle in the toolbar)
 ```
 
-To consume the kit from another app:
+To consume the kit from another app, add the Kraken registry to your
+`components.json`, then install any component:
+
+```jsonc
+// components.json
+"registries": {
+  "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json"
+}
+```
 
 ```bash
 npx shadcn add @kraken/button    # installs tokenized, brand-switchable

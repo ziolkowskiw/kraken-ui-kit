@@ -16,7 +16,8 @@
 
 ## Install
 
-- [Registry](registry.json): shadcn registry, namespace @kraken — `npx shadcn add @kraken/<name>`; the `ai-foundations` item installs foundations.json into your repo.
+- Configure the registry once in your `components.json`: `"registries": { "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json" }`.
+- [Registry](registry.json): shadcn registry, namespace @kraken — then `npx shadcn add @kraken/<name>`; the `ai-foundations` item installs foundations.json into your repo.
 
 ## Human docs
 

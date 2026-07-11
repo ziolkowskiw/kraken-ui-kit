@@ -292,6 +292,8 @@ const foundations = {
   },
   install: {
     registryNamespace: "@kraken",
+    registriesConfig:
+      'Add to consumer components.json before installing: "registries": { "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json" }',
     component: "npx shadcn add @kraken/<name>",
     bootstrap: "npx shadcn add @kraken/theme (pulls the tokens item automatically)",
     mcp: "claude mcp add kraken-ui -- npx -y @kraken-ui/mcp",

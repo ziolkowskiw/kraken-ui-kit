@@ -31,6 +31,7 @@
     "bootstrap": "npx shadcn add @kraken/theme (pulls the tokens item automatically)",
     "component": "npx shadcn add @kraken/<name>",
     "mcp": "claude mcp add kraken-ui -- npx -y @kraken-ui/mcp",
+    "registriesConfig": "Add to consumer components.json before installing: \"registries\": { \"@kraken\": \"https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json\" }",
     "registryNamespace": "@kraken"
   },
   "scales": {
