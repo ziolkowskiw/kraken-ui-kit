@@ -526,7 +526,7 @@ Every step here is irreversible or outward-facing. Do **not** execute any of it 
 
 - [ ] **Step 1 (B1) — Publish the MCP.** GATE: ask the user to run `! npm login` (claims the `@kraken-ui` scope). If the scope is unclaimable, STOP and resurface the fallback decision (`kraken-ui-mcp`) — that would require re-doing the `@kraken-ui/mcp` references in Task 3 docs + `mcp/package.json` before proceeding. Once logged in and the user OKs the packed contents from Task 5, run `npm publish ./mcp` (NOT `--prefix` — that targets the private root). Verify: `npm view @kraken-ui/mcp version` returns the published version.
 
-- [ ] **Step 2 (B2) — Enable Pages.** GATE: ask the user to set repo Settings → Pages → Source: **GitHub Actions**, then push `main` (or trigger `workflow_dispatch`) to fire the Task-2 workflow. Verify: `curl -fsSL https://ziolkowskiw.github.io/kraken-ui-kit/r/button.json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).registryDependencies))"` returns `[ '@kraken/theme', 'utils' ]` (200 + namespaced deps).
+- [ ] **Step 2 (B2) — Enable Pages.** GATE: ask the user to set repo Settings → Pages → Source: **GitHub Actions**, then push `main` (or trigger `workflow_dispatch`) to fire the Task-2 workflow. **Expected wrinkle:** if Phase A is merged to `main` *before* Pages is enabled, that merge auto-fires `pages.yml` and the `deploy` job fails with "Get Pages site failed" — this is normal (nothing deployed; the deploy target doesn't exist yet), not a defect. Enabling Pages here and re-running turns it green. Verify: `curl -fsSL https://ziolkowskiw.github.io/kraken-ui-kit/r/button.json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).registryDependencies))"` returns `[ '@kraken/theme', 'utils' ]` (200 + namespaced deps).
 
 - [ ] **Step 3 (B3) — End-to-end proof.** In a scratch repo (outside this tree):
   - Create `components.json` carrying `"registries": { "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json" }`.
@@ -549,6 +549,7 @@ Every step here is irreversible or outward-facing. Do **not** execute any of it 
 ## Out of scope (deferred)
 
 - CI beyond the Pages job (tsc/manifests-drift/lint/tests) — Milestone 2.
+- **Release does not restage the compiled registry** (final-review finding): `scripts/release.mjs` runs `registry:build` (not `registry:bundle`) and its `git add` list omits `public/r/`, so a token/registry-affecting release can leave committed `public/r/*.json` stale until the next Pages CI run regenerates it. Pre-existing; fold into the Milestone 2 drift gate (regenerate + `git diff --exit-code`).
 - Publishing Storybook — Milestone 2.
 - The Figma "randstadt" name flagged by the background token-drift task — Figma-side rename, tracked separately.
 - README `## Status` count refresh (`56 components / 58 items / 827 tokens`) and the `llms.txt` "JIT DS 2.0" header — doc-rot, Milestone 4.
