@@ -21,7 +21,7 @@ import { join } from "node:path";
 const ROOT = process.cwd();
 const UI_DIR = join(ROOT, "src/components/ui");
 const MAPPING_PATH = join(ROOT, "MAPPING.md");
-const FILE_KEY = "es0hWOiLEplsUrpR3EkBOK";
+const FILE_KEY = "Y3gNgjmXe1t67fPlDjM2iH";
 const VALIDATE = process.argv.includes("--validate");
 
 // ── 1. Scan .tsx files for Figma node IDs ────────────────────────────────────

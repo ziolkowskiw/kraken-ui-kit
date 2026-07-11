@@ -8,9 +8,9 @@ description: Implement a Figma component as a React component with Storybook sto
 # Implement Figma Component in Storybook with 1:1 Validation Loop
 
 ## Context
-You are building components for Kraken UI Kit (JIT DS 2.0), a shadcn-based design system with a 3-layer token architecture (global → semantic → component). The code lives in `~/Downloads/kraken-ui-kit`.
+You are building components for Kraken UI Kit (JIT DS 2.1), a shadcn-based design system with a 3-layer token architecture (global → semantic → component). The code lives in `~/Downloads/kraken-ui-kit`.
 **Stack:** Next.js 16 / React 19 / Tailwind v4 / Base UI / CVA / Storybook 10 (nextjs-vite).
-**Source of truth:** Figma file `es0hWOiLEplsUrpR3EkBOK` (accessible via Figma Console MCP and Figma Dev Mode MCP). Every component must match its Figma component set's properties 1:1.
+**Source of truth:** Figma file `Y3gNgjmXe1t67fPlDjM2iH` (accessible via Figma Console MCP and Figma Dev Mode MCP). Every component must match its Figma component set's properties 1:1.
 
 ---
 

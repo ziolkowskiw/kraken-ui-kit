@@ -1,11 +1,11 @@
 ---
 name: design-system
-description: Apply the Kraken UI Kit (JIT DS 2.0) design system — --ds-* tokens, 3-layer architecture, brand theming (jit/brand), shadcn-named components, Figma parity, Storybook conventions — to all UI, component, and design work.
+description: Apply the Kraken UI Kit (JIT DS 2.1) design system — --ds-* tokens, 3-layer architecture, brand theming (jit/brand), shadcn-named components, Figma parity, Storybook conventions — to all UI, component, and design work.
 ---
 
 # Kraken UI Kit — Design System Skill
 
-The single source of truth for building UI with the Kraken UI Kit (JIT DS 2.0):
+The single source of truth for building UI with the Kraken UI Kit (JIT DS 2.1):
 a shadcn-based kit designed in Figma, generated into code, kept in sync via a
 token pipeline. 827 tokens across 3 layers, 56 components, 2 brands.
 

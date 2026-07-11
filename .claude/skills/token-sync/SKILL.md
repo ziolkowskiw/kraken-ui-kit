@@ -1,6 +1,6 @@
 ---
 name: token-sync
-description: Sync design tokens from the Figma JIT DS 2.0 file into the repo and regenerate the CSS the kit uses, in one ritual. Trigger when tokens changed in Figma, when asked to "sync tokens", "rebuild tokens", or after a variable edit in Figma.
+description: Sync design tokens from the Figma JIT DS 2.1 file into the repo and regenerate the CSS the kit uses, in one ritual. Trigger when tokens changed in Figma, when asked to "sync tokens", "rebuild tokens", or after a variable edit in Figma.
 ---
 
 # token-sync — Figma variables → tokens.json → CSS
@@ -11,7 +11,7 @@ stylesheet. Figma is the source of truth for token **decisions**;
 `docs/token-pipeline.md`. **Never hand-edit any token CSS.**
 
 ## Preconditions
-- Figma desktop app open on **JIT DS 2.0** (`es0hWOiLEplsUrpR3EkBOK`) with the
+- Figma desktop app open on **JIT DS 2.1** (`Y3gNgjmXe1t67fPlDjM2iH`) with the
   Figma Console MCP desktop bridge running. Check with `figma_get_status` (probe).
 - If the bridge is down, stop and ask the user to open Figma + the bridge — step 1
   cannot run without it. (Step 2 runs anywhere, no Figma needed.)

@@ -1,9 +1,9 @@
 ---
 name: using-kraken-ui-kit
-description: Use the Kraken UI Kit (JIT DS 2.0) correctly — install tokenized components from the registry, use the right --ds-* tokens and shadcn-named props, and switch brands. Trigger whenever building UI in or with kraken-ui-kit, adding a component, or wiring tokens/themes.
+description: Use the Kraken UI Kit (JIT DS 2.1) correctly — install tokenized components from the registry, use the right --ds-* tokens and shadcn-named props, and switch brands. Trigger whenever building UI in or with kraken-ui-kit, adding a component, or wiring tokens/themes.
 ---
 
-# Using the Kraken UI Kit (JIT DS 2.0)
+# Using the Kraken UI Kit (JIT DS 2.1)
 
 A shadcn-based company UI kit with a **3-layer token architecture** and **shadcn
 parity**. This skill pre-loads everything an agent needs to consume it without

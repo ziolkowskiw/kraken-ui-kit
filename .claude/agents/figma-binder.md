@@ -36,5 +36,5 @@ FIGMA_PAT=figd_… npm run figma:binder:validate
 
 ## Notes
 - `FIGMA_PAT` is a personal access token from Figma account settings. Never commit it — use env var or `.env.local`.
-- The file key is hardcoded to `es0hWOiLEplsUrpR3EkBOK` (JIT DS 2.0).
+- The file key is hardcoded to `Y3gNgjmXe1t67fPlDjM2iH` (JIT DS 2.1).
 - Extensions (`avatar-stack`, etc.) that live inside another component's `.tsx` are handled via known aliases — no false positives.
