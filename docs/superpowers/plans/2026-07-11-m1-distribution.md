@@ -371,7 +371,7 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 ### Task 4: Publish the MCP package from the release script (A4)
 
-`scripts/release.mjs` already version-bumps `mcp/package.json` in lockstep (lines 133–140) but never publishes it. Add a guarded `npm --prefix mcp publish` after the git tag, preserving the dry-run default (publish only under `--yes`).
+`scripts/release.mjs` already version-bumps `mcp/package.json` in lockstep (lines 133–140) but never publishes it. Add a guarded `npm publish ./mcp` after the git tag, preserving the dry-run default (publish only under `--yes`). **Note:** use `npm publish ./mcp`, NOT `npm --prefix mcp publish` — `--prefix` only sets config/node_modules resolution and packs the ROOT package (`kraken-ui-kit`, which is `private:true`), so `--prefix` would fail to publish the MCP. `npm publish ./mcp` packs the folder's own `@kraken-ui/mcp` package. (Corrected during execution after the Task 5 smoke test caught it.)
 
 **Files:**
 - Modify: `scripts/release.mjs` — dry-run summary (around lines 97–107) and the execute path (after line 156, the `git tag` step)
@@ -385,7 +385,7 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 In `scripts/release.mjs`, the dry-run step list ends at line 107 with `console.log(\`   10. (print push instructions)\`);`. Insert a step before it:
 
 ```js
-  console.log(`   10. npm --prefix mcp publish  (publishes @kraken-ui/mcp@${nextVersion})`);
+  console.log(`   10. npm publish ./mcp  (publishes @kraken-ui/mcp@${nextVersion})`);
   console.log(`   11. (print push instructions)`);
 ```
 and delete the old line 107 (`   10. (print push instructions)`).
@@ -410,9 +410,10 @@ console.log("\n9. Tag");
 run(`git tag v${nextVersion}`);
 
 console.log("\n10. Publish @kraken-ui/mcp to npm");
-// mcp/package.json has prepack -> build, so pack/publish rebuilds dist + bundled
-// manifests. publishConfig.access is "public", so the scoped package goes public.
-run(`npm --prefix mcp publish`);
+// `npm publish ./mcp` packs the folder's own package (NOT `--prefix`, which
+// packs the private root). mcp/package.json has prepack -> build, so it rebuilds
+// dist + bundled manifests. publishConfig.access is "public".
+run(`npm publish ./mcp`);
 
 console.log(`\n✅  Release v${nextVersion} committed, tagged, and @kraken-ui/mcp published.\n`);
 console.log(`   Push with:\n`);
@@ -425,7 +426,7 @@ Run:
 ```bash
 npm run release -- --minor
 ```
-Expected: dry-run summary lists `npm --prefix mcp publish (publishes @kraken-ui/mcp@0.1.0)` under step 10, every command prefixed `[dry-run]`, and exits without publishing or tagging. Confirm nothing was published:
+Expected: dry-run summary lists `npm publish ./mcp (publishes @kraken-ui/mcp@0.1.0)` under step 10, every command prefixed `[dry-run]`, and exits without publishing or tagging. Confirm nothing was published:
 ```bash
 npm view @kraken-ui/mcp version 2>&1 | head -1
 ```
@@ -465,18 +466,19 @@ Expected: installs mcp deps, runs `bundle-manifests` + `tsc`, leaves `mcp/dist/i
 
 Run:
 ```bash
-npm --prefix mcp pack --dry-run 2>&1 | tail -40
+npm pack ./mcp --dry-run 2>&1 | tail -40
 ```
-Expected: the file list includes `dist/index.js`, `dist/tools.js`, `dist/store.js`, `dist/search.js`, a bundled `manifests/` tree (foundations + components + index + tokens), and `README.md`. It must NOT include `src/`, `node_modules/`, or `package-lock.json`.
+Use `npm pack ./mcp` (or `cd mcp && npm pack`), NOT `npm --prefix mcp pack` — `--prefix` packs the ROOT package (`kraken-ui-kit`), not `@kraken-ui/mcp`. Expected: the file list includes `dist/index.js`, `dist/tools.js`, `dist/store.js`, `dist/search.js`, a bundled `manifests/` tree (foundations + components + index + tokens), and `README.md`. It must NOT include `src/`, `node_modules/`, or `package-lock.json`.
 
 - [ ] **Step 3: Assert the required files are actually in the pack**
 
 Run:
 ```bash
-npm --prefix mcp pack --dry-run --json 2>/dev/null \
+npm pack ./mcp --dry-run --json 2>/dev/null \
   | node -e '
     let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{
-      const files=JSON.parse(s)[0].files.map(f=>f.path);
+      // prepack prints a "✓ bundled…" line to stdout ahead of the JSON — slice from the first "["
+      const files=JSON.parse(s.slice(s.indexOf("[")))[0].files.map(f=>f.path);
       const need=["dist/index.js","README.md"];
       const hasManifests=files.some(f=>f.startsWith("manifests/"));
       const missing=need.filter(n=>!files.includes(n));
@@ -522,7 +524,7 @@ Every step here is irreversible or outward-facing. Do **not** execute any of it 
 - Consumes: everything from Tasks 1–5 (namespaced registry, Pages workflow, docs, publish-capable release script, verified pack).
 - Produces: the live v0.1.0 release — published MCP, hosted registry, passing e2e proof, git tag.
 
-- [ ] **Step 1 (B1) — Publish the MCP.** GATE: ask the user to run `! npm login` (claims the `@kraken-ui` scope). If the scope is unclaimable, STOP and resurface the fallback decision (`kraken-ui-mcp`) — that would require re-doing the `@kraken-ui/mcp` references in Task 3 docs + `mcp/package.json` before proceeding. Once logged in and the user OKs the packed contents from Task 5, run `npm --prefix mcp publish`. Verify: `npm view @kraken-ui/mcp version` returns the published version.
+- [ ] **Step 1 (B1) — Publish the MCP.** GATE: ask the user to run `! npm login` (claims the `@kraken-ui` scope). If the scope is unclaimable, STOP and resurface the fallback decision (`kraken-ui-mcp`) — that would require re-doing the `@kraken-ui/mcp` references in Task 3 docs + `mcp/package.json` before proceeding. Once logged in and the user OKs the packed contents from Task 5, run `npm publish ./mcp` (NOT `--prefix` — that targets the private root). Verify: `npm view @kraken-ui/mcp version` returns the published version.
 
 - [ ] **Step 2 (B2) — Enable Pages.** GATE: ask the user to set repo Settings → Pages → Source: **GitHub Actions**, then push `main` (or trigger `workflow_dispatch`) to fire the Task-2 workflow. Verify: `curl -fsSL https://ziolkowskiw.github.io/kraken-ui-kit/r/button.json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).registryDependencies))"` returns `[ '@kraken/theme', 'utils' ]` (200 + namespaced deps).
 
