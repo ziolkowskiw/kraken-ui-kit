@@ -19,7 +19,8 @@
  *   7. git add (changed artefacts)
  *   8. git commit: chore(release): vX.Y.Z
  *   9. git tag vX.Y.Z
- *  10. Print push instructions
+ *  10. npm --prefix mcp publish  (@kraken-ui/mcp)
+ *  11. Print push instructions
  *
  * Usage:
  *   npm run release               # dry-run patch
