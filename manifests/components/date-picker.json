@@ -22,10 +22,10 @@
       "react-day-picker@10.0.1"
     ],
     "registryDependencies": [
-      "calendar",
-      "popover",
-      "theme",
-      "tooltip",
+      "@kraken/calendar",
+      "@kraken/popover",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "date-picker"

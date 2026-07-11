@@ -22,9 +22,9 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "button",
-      "theme",
-      "tooltip",
+      "@kraken/button",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "data-table"

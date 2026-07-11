@@ -36,8 +36,8 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "dropdown-menu",
-      "theme",
+      "@kraken/dropdown-menu",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "menubar"

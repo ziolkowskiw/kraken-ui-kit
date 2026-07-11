@@ -22,7 +22,7 @@
       "react-resizable-panels@4.11.2"
     ],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "resizable"

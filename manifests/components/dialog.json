@@ -35,8 +35,8 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "button",
-      "theme",
+      "@kraken/button",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "dialog"

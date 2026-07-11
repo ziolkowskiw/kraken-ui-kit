@@ -23,8 +23,8 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "theme",
-      "tooltip",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "search"

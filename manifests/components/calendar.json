@@ -22,7 +22,7 @@
       "react-day-picker@10.0.1"
     ],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "calendar"

@@ -38,7 +38,7 @@
       "title": "Kraken theme mapping",
       "description": "Maps shadcn semantic vars (--primary, --background, …) onto the --ds-* tokens + @theme inline. Depends on `tokens`.",
       "registryDependencies": [
-        "tokens"
+        "@kraken/tokens"
       ],
       "files": [
         {
@@ -72,7 +72,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -92,8 +92,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "button",
-        "theme",
+        "@kraken/button",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -112,8 +112,8 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "button",
-        "theme",
+        "@kraken/button",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -130,8 +130,8 @@
       "description": "Kraken UI Kit avatar-stack — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
       "dependencies": [],
       "registryDependencies": [
-        "avatar",
-        "theme"
+        "@kraken/avatar",
+        "@kraken/theme"
       ],
       "files": [
         {
@@ -149,7 +149,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -169,7 +169,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -188,7 +188,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -207,8 +207,8 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "separator",
-        "theme",
+        "@kraken/separator",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -228,7 +228,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -248,7 +248,7 @@
         "react-day-picker@10.0.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -267,7 +267,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -287,8 +287,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "button",
-        "theme",
+        "@kraken/button",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -307,9 +307,9 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "checkbox",
-        "theme",
-        "tooltip",
+        "@kraken/checkbox",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -329,7 +329,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -350,9 +350,9 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "dropdown-menu",
-        "theme",
-        "tooltip",
+        "@kraken/dropdown-menu",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -372,9 +372,9 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "dialog",
-        "dropdown-menu",
-        "theme",
+        "@kraken/dialog",
+        "@kraken/dropdown-menu",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -394,8 +394,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "dropdown-menu",
-        "theme",
+        "@kraken/dropdown-menu",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -414,11 +414,11 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "badge",
-        "button",
-        "checkbox",
-        "input",
-        "theme",
+        "@kraken/badge",
+        "@kraken/button",
+        "@kraken/checkbox",
+        "@kraken/input",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -438,10 +438,10 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "avatar",
-        "checkbox",
-        "theme",
-        "tooltip",
+        "@kraken/avatar",
+        "@kraken/checkbox",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -460,9 +460,9 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "button",
-        "theme",
-        "tooltip",
+        "@kraken/button",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -482,10 +482,10 @@
         "react-day-picker@10.0.1"
       ],
       "registryDependencies": [
-        "calendar",
-        "popover",
-        "theme",
-        "tooltip",
+        "@kraken/calendar",
+        "@kraken/popover",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -505,8 +505,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "button",
-        "theme",
+        "@kraken/button",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -527,8 +527,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "button",
-        "theme",
+        "@kraken/button",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -548,7 +548,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -567,7 +567,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -586,14 +586,14 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "button",
-        "checkbox-button",
-        "input",
-        "radio-group",
-        "select",
-        "switch",
-        "textarea",
-        "theme",
+        "@kraken/button",
+        "@kraken/checkbox-button",
+        "@kraken/input",
+        "@kraken/radio-group",
+        "@kraken/select",
+        "@kraken/switch",
+        "@kraken/textarea",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -612,7 +612,7 @@
         "@base-ui/react@1.5.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -633,7 +633,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -654,8 +654,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
-        "tooltip",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -674,8 +674,8 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "separator",
-        "theme",
+        "@kraken/separator",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -692,7 +692,7 @@
       "description": "Kraken UI Kit kbd — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
       "dependencies": [],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -711,7 +711,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -731,8 +731,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "dropdown-menu",
-        "theme",
+        "@kraken/dropdown-menu",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -753,7 +753,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -772,8 +772,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "button",
-        "theme",
+        "@kraken/button",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -792,7 +792,7 @@
         "@base-ui/react@1.5.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -811,7 +811,7 @@
         "@base-ui/react@1.5.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -831,9 +831,9 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "radio-group",
-        "theme",
-        "tooltip",
+        "@kraken/radio-group",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -852,8 +852,8 @@
         "@base-ui/react@1.5.0"
       ],
       "registryDependencies": [
-        "theme",
-        "tooltip",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -873,7 +873,7 @@
         "react-resizable-panels@4.11.2"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -892,7 +892,7 @@
         "@base-ui/react@1.5.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -913,8 +913,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
-        "tooltip",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -935,8 +935,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
-        "tooltip",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -956,7 +956,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -976,11 +976,11 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "separator",
-        "skeleton",
-        "theme",
+        "@kraken/button",
+        "@kraken/input",
+        "@kraken/separator",
+        "@kraken/skeleton",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -997,7 +997,7 @@
       "description": "Kraken UI Kit skeleton — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
       "dependencies": [],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -1016,7 +1016,7 @@
         "@base-ui/react@1.5.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -1036,7 +1036,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -1056,8 +1056,8 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
-        "tooltip",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -1074,7 +1074,7 @@
       "description": "Kraken UI Kit table — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
       "dependencies": [],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -1094,7 +1094,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -1113,8 +1113,8 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
-        "tooltip",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -1135,8 +1135,8 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
-        "tooltip",
+        "@kraken/theme",
+        "@kraken/tooltip",
         "utils"
       ],
       "files": [
@@ -1156,7 +1156,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -1176,7 +1176,7 @@
         "class-variance-authority@0.7.1"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [
@@ -1196,7 +1196,7 @@
         "lucide-react@1.18.0"
       ],
       "registryDependencies": [
-        "theme",
+        "@kraken/theme",
         "utils"
       ],
       "files": [

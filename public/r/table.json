@@ -5,7 +5,7 @@
   "description": "Kraken UI Kit table — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
   "dependencies": [],
   "registryDependencies": [
-    "theme",
+    "@kraken/theme",
     "utils"
   ],
   "files": [

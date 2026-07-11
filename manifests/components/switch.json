@@ -21,8 +21,8 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "theme",
-      "tooltip",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "switch"

@@ -5,8 +5,8 @@
   "description": "Kraken UI Kit avatar-stack — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
   "dependencies": [],
   "registryDependencies": [
-    "avatar",
-    "theme"
+    "@kraken/avatar",
+    "@kraken/theme"
   ],
   "files": [
     {

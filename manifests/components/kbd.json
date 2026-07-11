@@ -17,7 +17,7 @@
     "command": "npx shadcn add @kraken/kbd",
     "dependencies": [],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "kbd"

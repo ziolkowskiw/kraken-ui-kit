@@ -4,7 +4,7 @@
   "title": "Kraken theme mapping",
   "description": "Maps shadcn semantic vars (--primary, --background, …) onto the --ds-* tokens + @theme inline. Depends on `tokens`.",
   "registryDependencies": [
-    "tokens"
+    "@kraken/tokens"
   ],
   "files": [
     {

@@ -8,11 +8,11 @@
     "lucide-react@1.18.0"
   ],
   "registryDependencies": [
-    "button",
-    "input",
-    "separator",
-    "skeleton",
-    "theme",
+    "@kraken/button",
+    "@kraken/input",
+    "@kraken/separator",
+    "@kraken/skeleton",
+    "@kraken/theme",
     "utils"
   ],
   "files": [

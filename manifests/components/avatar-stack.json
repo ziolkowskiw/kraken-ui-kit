@@ -18,8 +18,8 @@
     "command": "npx shadcn add @kraken/avatar-stack",
     "dependencies": [],
     "registryDependencies": [
-      "avatar",
-      "theme"
+      "@kraken/avatar",
+      "@kraken/theme"
     ],
     "registryItem": "avatar-stack"
   },

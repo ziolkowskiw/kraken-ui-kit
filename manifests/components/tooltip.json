@@ -30,7 +30,7 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "tooltip"

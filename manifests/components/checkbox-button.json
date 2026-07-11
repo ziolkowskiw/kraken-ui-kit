@@ -20,9 +20,9 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "checkbox",
-      "theme",
-      "tooltip",
+      "@kraken/checkbox",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "checkbox-button"

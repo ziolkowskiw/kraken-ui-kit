@@ -29,8 +29,8 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "button",
-      "theme",
+      "@kraken/button",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "alert"

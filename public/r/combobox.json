@@ -9,9 +9,9 @@
     "lucide-react@1.18.0"
   ],
   "registryDependencies": [
-    "dropdown-menu",
-    "theme",
-    "tooltip",
+    "@kraken/dropdown-menu",
+    "@kraken/theme",
+    "@kraken/tooltip",
     "utils"
   ],
   "files": [

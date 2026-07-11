@@ -28,7 +28,7 @@
     "command": "npx shadcn add @kraken/table",
     "dependencies": [],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "table"

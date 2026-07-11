@@ -19,11 +19,11 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "badge",
-      "button",
-      "checkbox",
-      "input",
-      "theme",
+      "@kraken/badge",
+      "@kraken/button",
+      "@kraken/checkbox",
+      "@kraken/input",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "data-table-cell"
