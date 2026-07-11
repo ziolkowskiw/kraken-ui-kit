@@ -104,7 +104,8 @@ if (!YES) {
   console.log(`    7. git add package.json CHANGELOG.md registry.json src/styles/tokens.css mcp/package.json manifests/ schemas/ llms.txt public/llms.txt`);
   console.log(`    8. git commit -m "chore(release): v${nextVersion}"`);
   console.log(`    9. git tag v${nextVersion}`);
-  console.log(`   10. (print push instructions)`);
+  console.log(`   10. npm --prefix mcp publish  (publishes @kraken-ui/mcp@${nextVersion})`);
+  console.log(`   11. (print push instructions)`);
   console.log(`\n  Changelog entry that will be prepended:`);
   console.log(`  ─────────────────────────────────────────`);
   console.log(changelogEntry.split("\n").map((l) => `  ${l}`).join("\n"));
@@ -155,6 +156,11 @@ run(`git commit -m "chore(release): v${nextVersion}"`);
 console.log("\n9. Tag");
 run(`git tag v${nextVersion}`);
 
-console.log(`\n✅  Release v${nextVersion} committed and tagged.\n`);
+console.log("\n10. Publish @kraken-ui/mcp to npm");
+// mcp/package.json has prepack -> build, so pack/publish rebuilds dist + bundled
+// manifests. publishConfig.access is "public", so the scoped package goes public.
+run(`npm --prefix mcp publish`);
+
+console.log(`\n✅  Release v${nextVersion} committed, tagged, and @kraken-ui/mcp published.\n`);
 console.log(`   Push with:\n`);
 console.log(`     git push && git push --tags\n`);
