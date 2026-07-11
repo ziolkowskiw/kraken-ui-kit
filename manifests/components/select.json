@@ -27,7 +27,7 @@
     "SelectValue"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1637:17676"
   },
   "install": {
@@ -138,6 +138,7 @@
     "figmaParts": [
       "select/footer",
       "select/group",
+      "select/header",
       "select/item"
     ]
   },

@@ -21,8 +21,8 @@
     "TabsContent"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
-    "nodeId": "1825:18415"
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
+    "nodeId": "2248:18598"
   },
   "install": {
     "command": "npx shadcn add @kraken/tabs",
@@ -88,7 +88,9 @@
       "TabsTrigger",
       "TabsContent"
     ],
-    "figmaParts": []
+    "figmaParts": [
+      "tabs/trigger"
+    ]
   },
   "source": "src/components/ui/tabs.tsx",
   "story": "src/components/ui/tabs.stories.tsx",

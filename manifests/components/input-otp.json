@@ -6,7 +6,7 @@
   ],
   "aliases": [],
   "boundaries": [],
-  "description": "Accessible one-time-password input with copy-paste; verification/2FA code entry. size; input-otp lib.",
+  "description": "Accessible one-time-password input with copy-paste; verification/2FA code entry. size; input-otp lib. input-otp/slot → InputOTPSlot.",
   "exports": [
     "InputOTP",
     "InputOTPGroup",
@@ -14,8 +14,8 @@
     "InputOTPSeparator"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
-    "nodeId": "1698:13679"
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
+    "nodeId": "2225:15955"
   },
   "install": {
     "command": "npx shadcn add @kraken/input-otp",
@@ -59,7 +59,9 @@
       "InputOTPSlot",
       "InputOTPSeparator"
     ],
-    "figmaParts": []
+    "figmaParts": [
+      "input-otp/slot"
+    ]
   },
   "source": "src/components/ui/input-otp.tsx",
   "story": "src/components/ui/input-otp.stories.tsx",

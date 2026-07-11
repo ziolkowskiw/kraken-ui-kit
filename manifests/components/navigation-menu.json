@@ -18,8 +18,8 @@
     "NavigationMenuIndicator"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
-    "nodeId": "1696:13337"
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
+    "nodeId": "1755:1748"
   },
   "install": {
     "command": "npx shadcn add @kraken/navigation-menu",

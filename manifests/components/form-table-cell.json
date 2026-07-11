@@ -9,8 +9,8 @@
     "FormTableCell"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
-    "nodeId": "1411:0"
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
+    "nodeId": "1411:18819"
   },
   "install": {
     "command": "npx shadcn add @kraken/form-table-cell",
