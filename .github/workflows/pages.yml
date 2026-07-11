@@ -26,8 +26,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      # Regenerate from source in CI — a drift guard: if a generated file was
-      # hand-edited, the assembled artifact won't match what's committed.
+      # Regenerate the registry from source so the served files are always
+      # canonical (a true drift gate — regenerate + git diff — lands in M2).
       - run: npm run registry:bundle
       - name: Assemble the static site
         run: |
