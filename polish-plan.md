@@ -61,12 +61,16 @@ no hosted Storybook (Chromatic addon installed but unconfigured).
 
 ## Part 3 — The plan
 
-### Milestone 1 — Make distribution real, GitHub-only (the v0.1.0 tag) · ~1.5 d
+### Milestone 1 — Make distribution real, GitHub-only (the v0.1.0 tag) · ✅ SHIPPED 2026-07-13
 
 > **Scope pivot (2026-07-13):** this is a portfolio case study, not a product.
 > **No npm publish.** Components install from a GitHub Pages registry; the MCP
 > runs local-only from a clone. See memory/`project-purpose-portfolio` +
 > `mcp-publish-decision-open`.
+>
+> **Shipped:** registry live at `https://ziolkowskiw.github.io/kraken-ui-kit/r/`;
+> `npx shadcn add @kraken/dialog` proven (tokenized, 0 hex, composes deps); local
+> MCP proven (6 tools, serves the `destructive` variant); `v0.1.0` tagged (0f7bf59).
 
 1. **Host the registry on GitHub Pages.** ✅ `.github/workflows/pages.yml` added
    (regenerates + serves `r/*.json`, `registry.json`, `llms.txt`, `manifests/`);
