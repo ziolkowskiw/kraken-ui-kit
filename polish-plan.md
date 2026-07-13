@@ -88,20 +88,32 @@ add @kraken/dialog` from the hosted registry (assert tokenized install, no hex),
 4. **Cut v0.1.0** — a **local/GitHub tag only** (never npm), first release
    containing the machine-readable layer.
 
-### Milestone 2 — Make the invariants self-defending (CI + tests) · ~1.5 d
+### Milestone 2 — Make the invariants self-defending (CI + tests) · ✅ SHIPPED 2026-07-13
 
-1. **GitHub Actions `ci.yml`**: `npm ci` → `tsc --noEmit` → `manifests:check`
-   (the byte-drift gate CLAUDE.md already promises) → `registry:build` +
-   `tokens:build` drift check (regenerate, `git diff --exit-code`) →
-   `next build` → `build-storybook`.
-2. **Wire the dormant test rig**: add `"test": "vitest"` (storybook browser-mode
-   project already configured); enable a11y assertions per story via
-   addon-a11y's test integration; run headless in CI. Promote
-   `scripts/sb-test.mjs` (console-error catcher) into the suite or retire it.
-3. **Lint/format**: ESLint 9 flat config + Prettier, matching current style,
-   `lint` script in CI. Cheap now, expensive later.
-4. **Publish Storybook** (GitHub Pages job or Chromatic — Chromatic also gives
-   visual regression, replacing the manual parity QA pass for future changes).
+> **Shipped:** PR #9 merged (fb91f32); `ci.yml` `verify` job green on real GitHub
+> Actions (tsc, manifests:check, drift gate, lint, format:check, build,
+> build-storybook — all blocking); `story-tests` job wired non-blocking.
+> Storybook deployed alongside the registry and confirmed live:
+> `https://ziolkowskiw.github.io/kraken-ui-kit/storybook/` (200; registry
+> unaffected). `pages.yml` on Node 22 + actions v5. `release.mjs` now stages
+> `registry:bundle` output correctly; `scripts/sb-test.mjs` retired.
+
+1. **GitHub Actions `ci.yml`**. ✅ `npm ci` → `tsc --noEmit` → `manifests:check`
+   (the byte-drift gate CLAUDE.md already promises) → drift gate
+   (`registry:bundle` + `manifests:build` + `docs:build`, `git diff --exit-code`)
+   → `lint` → `format:check` → `next build` → `build-storybook`.
+2. **Wire the dormant test rig.** ✅ `"test": "vitest --run"` (storybook
+   browser-mode project, headless chromium via `@vitest/browser-playwright`);
+   runs in CI as the non-blocking `story-tests` job (a11y assertions surface
+   via addon-a11y, promote to blocking after a stabilization period).
+   `scripts/sb-test.mjs` retired — one test path.
+3. **Lint/format.** ✅ ESLint 9 flat config (Next + typescript-eslint,
+   lightly relaxed) + Prettier, matching current style; both block CI.
+   Caught a real bug in review: a blind `prettier --write .` sweep corrupted
+   the regex-extracted manifest layer — fixed via `.prettierignore` excluding
+   generator inputs (`src/components/ui/`, `MAPPING.md`, `tokens/`, etc.).
+4. **Publish Storybook.** ✅ Same Pages site, `/storybook/` subpath —
+   zero new infra, one deploy alongside the registry.
 
 ### Milestone 3 — Complete the theming story (the actual product promise) · ~1 d
 
@@ -135,9 +147,11 @@ add @kraken/dialog` from the hosted registry (assert tokenized install, no hex),
 
 ### Sequencing & effort
 
-M1 → M2 are the polish-critical path (~3 days) and independent of Figma access.
-M3 needs the Figma file. M4 is a half-day anytime after M1. Total to "polished
-v0.2": **~4.5 days** of focused work.
+M1 and M2 are ✅ shipped — distribution is real and the invariants are
+self-defending in CI. **M3 is next** and needs the Figma file (add-brand
+runbook, elevation tokens, font doc, dark-mode plan). M4 is a half-day,
+independent of Figma, and can run any time. Total remaining to "polished
+v0.2": **~1.5 days** of focused work.
 
 ### Definition of "polished"
 
