@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from "react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // Mirrors the Figma `table/header` (1824:18391) and `table/cell` (1824:18395)
 // sets: a plain data table. Header cell = heading (labelsm/content-secondary);
@@ -13,12 +13,12 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
         data-slot="table"
         className={cn(
           "w-full caption-bottom border-collapse [font-family:var(--ds-typography-bodymd-fontfamily)] [font-size:var(--ds-typography-bodymd-fontsize)]",
-          className,
+          className
         )}
         {...props}
       />
     </div>
-  );
+  )
 }
 
 function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
@@ -28,7 +28,7 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
       className={cn("[&_tr]:border-b [&_tr]:[border-color:var(--ds-color-border)]", className)}
       {...props}
     />
-  );
+  )
 }
 
 function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
@@ -38,7 +38,7 @@ function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
       className={cn("[&_tr:last-child]:border-0", className)}
       {...props}
     />
-  );
+  )
 }
 
 function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
@@ -47,11 +47,11 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
       data-slot="table-footer"
       className={cn(
         "border-t [border-color:var(--ds-color-border)] [background-color:var(--ds-color-muted)] font-medium [&>tr]:last:border-b-0",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
@@ -61,11 +61,11 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
       className={cn(
         "border-b [border-color:var(--ds-color-border)] transition-colors",
         "hover:[background-color:var(--ds-color-muted)] data-[state=selected]:[background-color:var(--ds-color-muted)]",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function TableHead({ className, ...props }: React.ComponentProps<"th">) {
@@ -76,11 +76,11 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
         "h-10 px-3 text-left align-middle whitespace-nowrap",
         "[color:var(--ds-color-content-secondary)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] font-medium",
         "[&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-px",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function TableCell({ className, ...props }: React.ComponentProps<"td">) {
@@ -90,28 +90,25 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
       className={cn(
         "h-10 px-3 align-middle whitespace-nowrap [color:var(--ds-color-content-primary)]",
         "[&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-px",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function TableCaption({ className, ...props }: React.ComponentProps<"caption">) {
   return (
     <caption
       data-slot="table-caption"
-      className={cn(
-        "mt-4 [color:var(--ds-color-content-secondary)] [font-size:var(--ds-typography-bodysm-fontsize)]",
-        className,
-      )}
+      className={cn("mt-4 [color:var(--ds-color-content-secondary)] [font-size:var(--ds-typography-bodysm-fontsize)]", className)}
       {...props}
     />
-  );
+  )
 }
 
 /** Add to <TableBody> to get the Figma zebra (even rows = muted fill). */
-const tableZebra = "[&_tr:nth-child(even)]:[background-color:var(--ds-color-muted)]";
+const tableZebra = "[&_tr:nth-child(even)]:[background-color:var(--ds-color-muted)]"
 
 export {
   Table,
@@ -123,4 +120,4 @@ export {
   TableCell,
   TableCaption,
   tableZebra,
-};
+}

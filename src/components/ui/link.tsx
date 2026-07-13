@@ -1,7 +1,7 @@
-import * as React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // Mirrors two Figma sets on the Link page:
 //  • `link` (372:4599): an inline text link. State axis (default/hover/active/
@@ -26,15 +26,17 @@ const linkVariants = cva(
       },
     },
     defaultVariants: { variant: "default" },
-  },
-);
+  }
+)
 
 function Link({
   className,
   variant,
   ...props
 }: React.ComponentProps<"a"> & VariantProps<typeof linkVariants>) {
-  return <a data-slot="link" className={cn(linkVariants({ variant }), className)} {...props} />;
+  return (
+    <a data-slot="link" className={cn(linkVariants({ variant }), className)} {...props} />
+  )
 }
 
 const linkButtonVariants = cva(
@@ -55,14 +57,14 @@ const linkButtonVariants = cva(
       },
     },
     defaultVariants: { size: "md" },
-  },
-);
+  }
+)
 
 type LinkButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof linkButtonVariants> & {
-    leftIcon?: React.ReactNode;
-    rightIcon?: React.ReactNode;
-  };
+    leftIcon?: React.ReactNode
+    rightIcon?: React.ReactNode
+  }
 
 function LinkButton({
   className,
@@ -84,7 +86,7 @@ function LinkButton({
       {children}
       {rightIcon}
     </button>
-  );
+  )
 }
 
-export { Link, LinkButton, linkVariants, linkButtonVariants };
+export { Link, LinkButton, linkVariants, linkButtonVariants }

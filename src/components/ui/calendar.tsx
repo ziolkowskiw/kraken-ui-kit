@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { DayPicker, getDefaultClassNames, type DayButton } from "react-day-picker";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import * as React from "react"
+import { DayPicker, getDefaultClassNames, type DayButton } from "react-day-picker"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // The day-cell button, exported for customization (badges, tooltips, custom
 // data-attrs). Styling stays on the Calendar's `day_button`/modifier classNames,
@@ -16,10 +16,10 @@ function CalendarDayButton({
   className,
   ...props
 }: React.ComponentProps<typeof DayButton>) {
-  const ref = React.useRef<HTMLButtonElement>(null);
+  const ref = React.useRef<HTMLButtonElement>(null)
   React.useEffect(() => {
-    if (modifiers.focused) ref.current?.focus();
-  }, [modifiers.focused]);
+    if (modifiers.focused) ref.current?.focus()
+  }, [modifiers.focused])
   return (
     <button
       ref={ref}
@@ -28,7 +28,7 @@ function CalendarDayButton({
       className={className}
       {...props}
     />
-  );
+  )
 }
 
 // Mirrors the Figma Calendar page: `calendar` (Variant 1/2/3 months, month/year),
@@ -37,7 +37,7 @@ function CalendarDayButton({
 // Day cells are 32px (button/size/sm/height), radius/sm corners.
 // active=selected endpoint (primary fill), selected=range-middle (secondary-fillhover).
 const navButton =
-  "inline-flex size-7 items-center justify-center rounded-md outline-none transition-colors [color:var(--ds-color-content-secondary)] hover:[background-color:var(--ds-color-muted)] focus-visible:ring-2 focus-visible:ring-ring/50 disabled:opacity-40";
+  "inline-flex size-7 items-center justify-center rounded-md outline-none transition-colors [color:var(--ds-color-content-secondary)] hover:[background-color:var(--ds-color-muted)] focus-visible:ring-2 focus-visible:ring-ring/50 disabled:opacity-40"
 
 function Calendar({
   className,
@@ -46,7 +46,7 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: React.ComponentProps<typeof DayPicker>) {
-  const defaults = getDefaultClassNames();
+  const defaults = getDefaultClassNames()
   return (
     <DayPicker
       data-slot="calendar"
@@ -72,8 +72,7 @@ function Calendar({
           "[&>button]:[background-color:var(--ds-button-primary-fill)] [&>button]:[color:var(--ds-button-primary-content)] [&>button]:hover:[background-color:var(--ds-button-primary-fillhover)]",
         today: "[&>button]:border [&>button]:[border-color:var(--ds-color-border-strong)]",
         outside: "[&>button]:[color:var(--ds-color-content-disabled)] [&>button]:opacity-50",
-        disabled:
-          "[&>button]:opacity-50 [&>button]:pointer-events-none [&>button]:[color:var(--ds-button-ghost-contentdisabled)]",
+        disabled: "[&>button]:opacity-50 [&>button]:pointer-events-none [&>button]:[color:var(--ds-button-ghost-contentdisabled)]",
         range_start: "[&>button]:rounded-l-[var(--ds-radius-sm)] [&>button]:rounded-r-none",
         range_end: "[&>button]:rounded-r-[var(--ds-radius-sm)] [&>button]:rounded-l-none",
         range_middle:
@@ -93,7 +92,7 @@ function Calendar({
       }}
       {...props}
     />
-  );
+  )
 }
 
-export { Calendar, CalendarDayButton };
+export { Calendar, CalendarDayButton }

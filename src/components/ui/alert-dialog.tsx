@@ -1,35 +1,42 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog";
+import * as React from "react"
+import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog"
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { XIcon } from "lucide-react";
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { XIcon } from "lucide-react"
 
 function AlertDialog({ ...props }: AlertDialogPrimitive.Root.Props) {
-  return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />;
+  return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
 }
 
 function AlertDialogTrigger({ ...props }: AlertDialogPrimitive.Trigger.Props) {
-  return <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />;
+  return (
+    <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
+  )
 }
 
 function AlertDialogPortal({ ...props }: AlertDialogPrimitive.Portal.Props) {
-  return <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />;
+  return (
+    <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
+  )
 }
 
-function AlertDialogOverlay({ className, ...props }: AlertDialogPrimitive.Backdrop.Props) {
+function AlertDialogOverlay({
+  className,
+  ...props
+}: AlertDialogPrimitive.Backdrop.Props) {
   return (
     <AlertDialogPrimitive.Backdrop
       data-slot="alert-dialog-overlay"
       className={cn(
         "fixed inset-0 isolate z-50 [background-color:var(--ds-color-overlay)]/20 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function AlertDialogContent({
@@ -42,11 +49,11 @@ function AlertDialogContent({
   primaryActions,
   ...props
 }: AlertDialogPrimitive.Popup.Props & {
-  title?: React.ReactNode;
-  description?: React.ReactNode;
-  closeIcon?: boolean;
-  secondaryActions?: React.ReactNode;
-  primaryActions?: React.ReactNode;
+  title?: React.ReactNode
+  description?: React.ReactNode
+  closeIcon?: boolean
+  secondaryActions?: React.ReactNode
+  primaryActions?: React.ReactNode
 }) {
   return (
     <AlertDialogPortal>
@@ -59,7 +66,7 @@ function AlertDialogContent({
           "border [border-color:var(--ds-color-border)] [border-radius:var(--ds-card-radius)]",
           "shadow-lg",
           "duration-100 sm:max-w-[480px] data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
-          className,
+          className
         )}
         {...props}
       >
@@ -87,7 +94,9 @@ function AlertDialogContent({
           data-slot="alert-dialog-body"
           className="[padding-inline:var(--ds-spacing-component-xl)] [padding-block:var(--ds-spacing-component-lg)]"
         >
-          {description != null && <AlertDialogDescription>{description}</AlertDialogDescription>}
+          {description != null && (
+            <AlertDialogDescription>{description}</AlertDialogDescription>
+          )}
           {children}
         </div>
 
@@ -97,38 +106,42 @@ function AlertDialogContent({
           <div className="flex items-center" data-slot="alert-dialog-secondary-actions">
             {secondaryActions}
           </div>
-          <div
-            className="flex flex-1 items-center justify-end gap-[var(--ds-spacing-component-sm)] min-w-0"
-            data-slot="alert-dialog-primary-actions"
-          >
+          <div className="flex flex-1 items-center justify-end gap-[var(--ds-spacing-component-sm)] min-w-0" data-slot="alert-dialog-primary-actions">
             {primaryActions}
           </div>
         </div>
       </AlertDialogPrimitive.Popup>
     </AlertDialogPortal>
-  );
+  )
 }
 
-function AlertDialogDescription({ className, ...props }: AlertDialogPrimitive.Description.Props) {
+function AlertDialogDescription({
+  className,
+  ...props
+}: AlertDialogPrimitive.Description.Props) {
   return (
     <AlertDialogPrimitive.Description
       data-slot="alert-dialog-description"
       className={cn(
         "[font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)] [color:var(--ds-color-content-primary)]",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
 // shadcn-compat alias: upstream names the dismissing action "Cancel".
 function AlertDialogCancel({ ...props }: AlertDialogPrimitive.Close.Props) {
-  return <AlertDialogPrimitive.Close data-slot="alert-dialog-cancel" {...props} />;
+  return (
+    <AlertDialogPrimitive.Close data-slot="alert-dialog-cancel" {...props} />
+  )
 }
 
 function AlertDialogClose({ ...props }: AlertDialogPrimitive.Close.Props) {
-  return <AlertDialogPrimitive.Close data-slot="alert-dialog-close" {...props} />;
+  return (
+    <AlertDialogPrimitive.Close data-slot="alert-dialog-close" {...props} />
+  )
 }
 
 export {
@@ -140,4 +153,4 @@ export {
   AlertDialogOverlay,
   AlertDialogPortal,
   AlertDialogTrigger,
-};
+}

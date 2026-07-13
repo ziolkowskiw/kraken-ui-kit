@@ -16,3 +16,12 @@ coverage/
 package-lock.json
 mcp/package-lock.json
 CHANGELOG.md
+
+# generator inputs & registry-embedded sources — regex extractors depend on their
+# exact formatting (CLAUDE.md), and some are generated. Prettier must not touch them.
+src/components/ui/
+MAPPING.md
+tokens/
+src/styles/
+src/lib/utils.ts
+scripts/data/

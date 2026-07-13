@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Button as ButtonPrimitive } from "@base-ui/react/button";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { Button as ButtonPrimitive } from "@base-ui/react/button"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // Mirrors the Figma `button` component set (1854:52960): Variant × Size +
 // iconOnly + left/right icon slots. Figma's State axis (rest/hover/focus/active/
@@ -45,61 +45,25 @@ const buttonVariants = cva(
     },
     compoundVariants: [
       // icon-only uses a square padding token per size
-      {
-        iconOnly: true,
-        size: "xs",
-        class: "[padding-inline:var(--ds-button-size-xs-icononlypadding)]",
-      },
-      {
-        iconOnly: true,
-        size: "sm",
-        class: "[padding-inline:var(--ds-button-size-sm-icononlypadding)]",
-      },
-      {
-        iconOnly: true,
-        size: "md",
-        class: "[padding-inline:var(--ds-button-size-md-icononlypadding)]",
-      },
-      {
-        iconOnly: true,
-        size: "lg",
-        class: "[padding-inline:var(--ds-button-size-lg-icononlypadding)]",
-      },
+      { iconOnly: true, size: "xs", class: "[padding-inline:var(--ds-button-size-xs-icononlypadding)]" },
+      { iconOnly: true, size: "sm", class: "[padding-inline:var(--ds-button-size-sm-icononlypadding)]" },
+      { iconOnly: true, size: "md", class: "[padding-inline:var(--ds-button-size-md-icononlypadding)]" },
+      { iconOnly: true, size: "lg", class: "[padding-inline:var(--ds-button-size-lg-icononlypadding)]" },
       // ghost has its own horizontal padding when it has a label
-      {
-        variant: "ghost",
-        iconOnly: false,
-        size: "xs",
-        class: "[padding-inline:var(--ds-button-ghost-size-xs-paddingx)]",
-      },
-      {
-        variant: "ghost",
-        iconOnly: false,
-        size: "sm",
-        class: "[padding-inline:var(--ds-button-ghost-size-sm-paddingx)]",
-      },
-      {
-        variant: "ghost",
-        iconOnly: false,
-        size: "md",
-        class: "[padding-inline:var(--ds-button-ghost-size-md-paddingx)]",
-      },
-      {
-        variant: "ghost",
-        iconOnly: false,
-        size: "lg",
-        class: "[padding-inline:var(--ds-button-ghost-size-lg-paddingx)]",
-      },
+      { variant: "ghost", iconOnly: false, size: "xs", class: "[padding-inline:var(--ds-button-ghost-size-xs-paddingx)]" },
+      { variant: "ghost", iconOnly: false, size: "sm", class: "[padding-inline:var(--ds-button-ghost-size-sm-paddingx)]" },
+      { variant: "ghost", iconOnly: false, size: "md", class: "[padding-inline:var(--ds-button-ghost-size-md-paddingx)]" },
+      { variant: "ghost", iconOnly: false, size: "lg", class: "[padding-inline:var(--ds-button-ghost-size-lg-paddingx)]" },
     ],
     defaultVariants: { variant: "primary", size: "md", iconOnly: false },
-  },
-);
+  }
+)
 
 type ButtonProps = ButtonPrimitive.Props &
   VariantProps<typeof buttonVariants> & {
-    leftIcon?: React.ReactNode;
-    rightIcon?: React.ReactNode;
-  };
+    leftIcon?: React.ReactNode
+    rightIcon?: React.ReactNode
+  }
 
 function Button({
   className,
@@ -118,7 +82,7 @@ function Button({
       {...props}
     >
       {iconOnly ? (
-        (leftIcon ?? rightIcon ?? children)
+        leftIcon ?? rightIcon ?? children
       ) : (
         <>
           {leftIcon}
@@ -127,7 +91,7 @@ function Button({
         </>
       )}
     </ButtonPrimitive>
-  );
+  )
 }
 
-export { Button, buttonVariants };
+export { Button, buttonVariants }

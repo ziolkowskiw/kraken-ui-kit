@@ -1,64 +1,64 @@
-"use client";
+"use client"
 
 // Mirrors the Figma `data-table/header` (1824:18391) — sortable column header
 // cell with asc/desc/neutral sort icons and optional checkbox column.
 
-import * as React from "react";
-import { ArrowDownUp, ArrowUp, ArrowDown, SquareDashed } from "lucide-react";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { ArrowDownUp, ArrowUp, ArrowDown, SquareDashed } from "lucide-react"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
-import { Checkbox } from "./checkbox";
-import { TooltipIcon, TooltipProvider } from "./tooltip";
-import { Avatar } from "./avatar";
+import { cn } from "@/lib/utils"
+import { Checkbox } from "./checkbox"
+import { TooltipIcon, TooltipProvider } from "./tooltip"
+import { Avatar } from "./avatar"
 
 // ─── Sorting icons (data-table/sorting-icons 1385:14056) ──────────────────────
 // default = unsorted (up/down), ascending = up, descending = down.
 
-type SortVariant = "default" | "ascending" | "descending";
-const SORT_ICON = { default: ArrowDownUp, ascending: ArrowUp, descending: ArrowDown };
+type SortVariant = "default" | "ascending" | "descending"
+const SORT_ICON = { default: ArrowDownUp, ascending: ArrowUp, descending: ArrowDown }
 
 function SortingIcons({
   variant = "default",
   className,
 }: {
-  variant?: SortVariant;
-  className?: string;
+  variant?: SortVariant
+  className?: string
 }) {
-  const Icon = SORT_ICON[variant];
+  const Icon = SORT_ICON[variant]
   return (
     <span
       data-slot="sorting-icons"
       className={cn(
         "inline-flex size-4 shrink-0 items-center justify-center [color:var(--ds-color-content-primary)]",
-        className,
+        className
       )}
     >
       <Icon className="size-3.5" />
     </span>
-  );
+  )
 }
 
 // ─── Header decoration (data-table/header-decoration-left|right 1205:22478) ───
 // One of: icon | sortable | checkbox | tooltip | avatar. Reuses the kit primitives.
 
-type DecorationType = "icon" | "sortable" | "checkbox" | "tooltip" | "avatar";
+type DecorationType = "icon" | "sortable" | "checkbox" | "tooltip" | "avatar"
 
 type TableHeaderDecorationProps = {
-  type?: DecorationType;
+  type?: DecorationType
   /** type="icon": the glyph to render (defaults to a dashed placeholder) */
-  icon?: React.ReactNode;
+  icon?: React.ReactNode
   /** type="sortable": current sort direction */
-  sort?: SortVariant;
+  sort?: SortVariant
   /** type="checkbox" */
-  checked?: boolean | "indeterminate";
-  onCheckedChange?: (checked: boolean) => void;
+  checked?: boolean | "indeterminate"
+  onCheckedChange?: (checked: boolean) => void
   /** type="tooltip": tooltip content */
-  tooltip?: React.ReactNode;
+  tooltip?: React.ReactNode
   /** type="avatar": pass a configured <Avatar/>, otherwise a default xs avatar renders */
-  avatar?: React.ReactNode;
-  className?: string;
-};
+  avatar?: React.ReactNode
+  className?: string
+}
 
 function TableHeaderDecoration({
   type = "icon",
@@ -93,7 +93,7 @@ function TableHeaderDecoration({
       )}
       {type === "avatar" && (avatar ?? <Avatar size="xs" fallback="" />)}
     </span>
-  );
+  )
 }
 
 // ─── Header cell (data-table/header 1205:19194) ───────────────────────────────
@@ -115,19 +115,19 @@ const tableHeaderVariants = cva(
       alignment: { left: "justify-start text-left", right: "justify-end text-right" },
     },
     defaultVariants: { alignment: "left" },
-  },
-);
+  }
+)
 
 type TableHeaderProps = React.ComponentProps<"div"> &
   VariantProps<typeof tableHeaderVariants> & {
-    label?: string;
-    showLabel?: boolean;
-    selected?: boolean;
-    showBorder?: boolean;
-    empty?: boolean;
-    leftDecoration?: React.ReactNode;
-    rightDecoration?: React.ReactNode;
-  };
+    label?: string
+    showLabel?: boolean
+    selected?: boolean
+    showBorder?: boolean
+    empty?: boolean
+    leftDecoration?: React.ReactNode
+    rightDecoration?: React.ReactNode
+  }
 
 function TableHeader({
   className,
@@ -151,7 +151,7 @@ function TableHeader({
     >
       {!empty && leftDecoration}
       {!empty && showLabel && <span className="min-w-0 truncate">{label}</span>}
-      {!empty && !showLabel && !props["aria-label"] && <span className="sr-only">{label}</span>}
+      {!empty && !showLabel && !props['aria-label'] && <span className="sr-only">{label}</span>}
       {!empty && rightDecoration}
       {showBorder && (
         <span
@@ -160,7 +160,7 @@ function TableHeader({
         />
       )}
     </div>
-  );
+  )
 }
 
 // ─── Header row (Table header row 1343:9008) ──────────────────────────────────
@@ -173,11 +173,17 @@ function TableHeaderRow({ className, ...props }: React.ComponentProps<"div">) {
       role="row"
       className={cn(
         "flex w-full items-stretch px-1.5 [background-color:var(--ds-color-muted)]",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
-export { SortingIcons, TableHeaderDecoration, TableHeader, TableHeaderRow, tableHeaderVariants };
+export {
+  SortingIcons,
+  TableHeaderDecoration,
+  TableHeader,
+  TableHeaderRow,
+  tableHeaderVariants,
+}

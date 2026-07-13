@@ -1,9 +1,9 @@
-import * as React from "react";
-import { mergeProps } from "@base-ui/react/merge-props";
-import { useRender } from "@base-ui/react/use-render";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { mergeProps } from "@base-ui/react/merge-props"
+import { useRender } from "@base-ui/react/use-render"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // Mirrors the Figma `badge` component set (619:6877): Color × Appearance × Size
 // × Shape + left/right icon slots. Every visual value binds a Layer-3 token
@@ -50,21 +50,9 @@ const badgeVariants = cva(
       { size: "sm", shape: "round", class: "[border-radius:var(--ds-badge-size-sm-radiusfull)]" },
       { size: "md", shape: "round", class: "[border-radius:var(--ds-badge-size-md-radius)]" },
       { size: "lg", shape: "round", class: "[border-radius:var(--ds-badge-size-lg-radiusfull)]" },
-      {
-        size: "sm",
-        shape: "square",
-        class: "[border-radius:var(--ds-badge-size-sm-radiussquare)]",
-      },
-      {
-        size: "md",
-        shape: "square",
-        class: "[border-radius:var(--ds-badge-size-md-radiussquare)]",
-      },
-      {
-        size: "lg",
-        shape: "square",
-        class: "[border-radius:var(--ds-badge-size-lg-radiussquare)]",
-      },
+      { size: "sm", shape: "square", class: "[border-radius:var(--ds-badge-size-sm-radiussquare)]" },
+      { size: "md", shape: "square", class: "[border-radius:var(--ds-badge-size-md-radiussquare)]" },
+      { size: "lg", shape: "square", class: "[border-radius:var(--ds-badge-size-lg-radiussquare)]" },
     ],
     defaultVariants: {
       color: "neutral",
@@ -72,8 +60,8 @@ const badgeVariants = cva(
       size: "md",
       shape: "round",
     },
-  },
-);
+  }
+)
 
 function Badge({
   className,
@@ -88,8 +76,8 @@ function Badge({
   ...props
 }: useRender.ComponentProps<"span"> &
   VariantProps<typeof badgeVariants> & {
-    leftIcon?: React.ReactNode;
-    rightIcon?: React.ReactNode;
+    leftIcon?: React.ReactNode
+    rightIcon?: React.ReactNode
   }) {
   return useRender({
     defaultTagName: "span",
@@ -104,11 +92,11 @@ function Badge({
           </>
         ),
       },
-      props,
+      props
     ),
     render,
     state: { slot: "badge", color, appearance, size, shape },
-  });
+  })
 }
 
-export { Badge, badgeVariants };
+export { Badge, badgeVariants }

@@ -1,24 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { Skeleton } from "./skeleton";
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Skeleton } from './skeleton'
 
 const meta = {
-  title: "Components/Skeleton",
+  title: 'Components/Skeleton',
   component: Skeleton,
-  parameters: {
-    layout: "centered",
-    docs: { description: { component: "Muted, pulsing placeholder." } },
-  },
-  tags: ["autodocs"],
+  parameters: { layout: 'centered', docs: { description: { component: 'Muted, pulsing placeholder.' } } },
+  tags: ['autodocs'],
   argTypes: {
-    className: { control: "text", description: "Tailwind utilities set the footprint" },
+    className: { control: 'text', description: 'Tailwind utilities set the footprint' },
   },
-  args: { className: "h-10 w-40" },
-} satisfies Meta<typeof Skeleton>;
+  args: { className: 'h-10 w-40' },
+} satisfies Meta<typeof Skeleton>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {};
+export const Playground: Story = {}
 
 export const Card: Story = {
   render: () => (
@@ -30,7 +27,7 @@ export const Card: Story = {
       </div>
     </div>
   ),
-};
+}
 
 export const Block: Story = {
   render: () => (
@@ -41,4 +38,4 @@ export const Block: Story = {
       <Skeleton className="h-4 w-1/2" />
     </div>
   ),
-};
+}

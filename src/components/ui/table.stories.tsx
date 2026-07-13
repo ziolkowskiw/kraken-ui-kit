@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import * as React from "react";
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import * as React from 'react'
 import {
   Table,
   TableHeader,
@@ -10,29 +10,24 @@ import {
   TableCell,
   TableCaption,
   tableZebra,
-} from "./table";
-import { Badge } from "./badge";
+} from './table'
+import { Badge } from './badge'
 
 const rows = [
-  { invoice: "INV001", status: "Paid", method: "Credit Card", amount: "$250.00" },
-  { invoice: "INV002", status: "Pending", method: "PayPal", amount: "$150.00" },
-  { invoice: "INV003", status: "Unpaid", method: "Bank Transfer", amount: "$350.00" },
-  { invoice: "INV004", status: "Paid", method: "Credit Card", amount: "$450.00" },
-];
+  { invoice: 'INV001', status: 'Paid', method: 'Credit Card', amount: '$250.00' },
+  { invoice: 'INV002', status: 'Pending', method: 'PayPal', amount: '$150.00' },
+  { invoice: 'INV003', status: 'Unpaid', method: 'Bank Transfer', amount: '$350.00' },
+  { invoice: 'INV004', status: 'Paid', method: 'Credit Card', amount: '$450.00' },
+]
 
 const meta = {
-  title: "Components/Table",
+  title: 'Components/Table',
   // docs-only association; the playground args are story-level props
   component: Table as React.ComponentType<{ zebra?: boolean }>,
-  parameters: {
-    layout: "padded",
-    docs: {
-      description: { component: "A responsive table component; display rows/columns of data." },
-    },
-  },
-  tags: ["autodocs"],
+  parameters: { layout: 'padded', docs: { description: { component: 'A responsive table component; display rows/columns of data.' } } },
+  tags: ['autodocs'],
   argTypes: {
-    zebra: { control: "boolean", name: "Zebra (even/odd parity)" },
+    zebra: { control: 'boolean', name: 'Zebra (even/odd parity)' },
   },
   args: { zebra: true },
   render: ({ zebra }: { zebra?: boolean }) => (
@@ -52,7 +47,7 @@ const meta = {
             <TableCell className="font-medium">{r.invoice}</TableCell>
             <TableCell>
               <Badge
-                color={r.status === "Paid" ? "green" : r.status === "Pending" ? "amber" : "red"}
+                color={r.status === 'Paid' ? 'green' : r.status === 'Pending' ? 'amber' : 'red'}
                 appearance="outlined"
                 size="sm"
               >
@@ -72,11 +67,11 @@ const meta = {
       </TableFooter>
     </Table>
   ),
-} satisfies Meta<{ zebra?: boolean }>;
+} satisfies Meta<{ zebra?: boolean }>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {};
+export const Playground: Story = {}
 
-export const NoZebra: Story = { args: { zebra: false } };
+export const NoZebra: Story = { args: { zebra: false } }

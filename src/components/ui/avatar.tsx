@@ -1,7 +1,7 @@
-import * as React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 const avatarVariants = cva(
   "relative inline-flex shrink-0 items-center justify-center overflow-clip",
@@ -13,7 +13,8 @@ const avatarVariants = cva(
         md: "[width:var(--ds-avatar-size-md)] [height:var(--ds-avatar-size-md)]",
         lg: "[width:var(--ds-avatar-size-lg)] [height:var(--ds-avatar-size-lg)]",
         xl: "[width:var(--ds-avatar-size-xl)] [height:var(--ds-avatar-size-xl)]",
-        "2xl": "[width:var(--ds-avatar-size-2xl)] [height:var(--ds-avatar-size-2xl)]",
+        "2xl":
+          "[width:var(--ds-avatar-size-2xl)] [height:var(--ds-avatar-size-2xl)]",
       },
       roundness: {
         round: "[border-radius:var(--ds-radius-full)]",
@@ -21,8 +22,8 @@ const avatarVariants = cva(
       },
     },
     defaultVariants: { size: "md", roundness: "round" },
-  },
-);
+  }
+)
 
 const fallbackTypography: Record<string, string> = {
   xs: "[font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] [font-weight:var(--ds-typography-labelsm-fontweight)]",
@@ -32,14 +33,14 @@ const fallbackTypography: Record<string, string> = {
   xl: "[font-size:var(--ds-typography-labellg-fontsize)] [line-height:var(--ds-typography-labellg-lineheight)] [font-weight:var(--ds-typography-labellg-fontweight)]",
   "2xl":
     "[font-size:var(--ds-typography-labellg-fontsize)] [line-height:var(--ds-typography-labellg-lineheight)] [font-weight:var(--ds-typography-labellg-fontweight)]",
-};
+}
 
 type AvatarProps = React.ComponentProps<"span"> &
   VariantProps<typeof avatarVariants> & {
-    src?: string;
-    alt?: string;
-    fallback?: string;
-  };
+    src?: string
+    alt?: string
+    fallback?: string
+  }
 
 function Avatar({
   className,
@@ -50,8 +51,8 @@ function Avatar({
   fallback,
   ...props
 }: AvatarProps) {
-  const [imgError, setImgError] = React.useState(false);
-  const showImage = src && !imgError;
+  const [imgError, setImgError] = React.useState(false)
+  const showImage = src && !imgError
 
   return (
     <span
@@ -61,7 +62,7 @@ function Avatar({
         showImage
           ? "[background-color:var(--ds-color-background)]"
           : "[background-color:var(--ds-badge-slate-fill)]",
-        className,
+        className
       )}
       {...props}
     >
@@ -76,20 +77,20 @@ function Avatar({
         <span
           className={cn(
             "select-none [color:var(--ds-badge-slate-content)]",
-            fallbackTypography[size ?? "md"],
+            fallbackTypography[size ?? "md"]
           )}
         >
           {fallback}
         </span>
       )}
     </span>
-  );
+  )
 }
 
 type AvatarStackProps = React.ComponentProps<"div"> &
   VariantProps<typeof avatarVariants> & {
-    max?: number;
-  };
+    max?: number
+  }
 
 function AvatarStack({
   className,
@@ -99,9 +100,9 @@ function AvatarStack({
   children,
   ...props
 }: AvatarStackProps) {
-  const items = React.Children.toArray(children);
-  const visible = max && max < items.length ? items.slice(0, max) : items;
-  const overflow = max && max < items.length ? items.length - max : 0;
+  const items = React.Children.toArray(children)
+  const visible = max && max < items.length ? items.slice(0, max) : items
+  const overflow = max && max < items.length ? items.length - max : 0
 
   return (
     <div
@@ -114,7 +115,7 @@ function AvatarStack({
           key={i}
           className={cn(
             "relative inline-flex shrink-0 ring-2 ring-background",
-            roundness === "round" && "[border-radius:var(--ds-radius-full)]",
+            roundness === "round" && "[border-radius:var(--ds-radius-full)]"
           )}
         >
           {React.isValidElement<AvatarProps>(child)
@@ -126,13 +127,13 @@ function AvatarStack({
         <span
           className={cn(
             avatarVariants({ size, roundness }),
-            "relative ring-2 ring-background [background-color:var(--ds-badge-slate-fill)]",
+            "relative ring-2 ring-background [background-color:var(--ds-badge-slate-fill)]"
           )}
         >
           <span
             className={cn(
               "select-none [color:var(--ds-badge-slate-content)]",
-              fallbackTypography[size ?? "sm"],
+              fallbackTypography[size ?? "sm"]
             )}
           >
             +{overflow}
@@ -140,7 +141,7 @@ function AvatarStack({
         </span>
       )}
     </div>
-  );
+  )
 }
 
-export { Avatar, AvatarStack, avatarVariants };
+export { Avatar, AvatarStack, avatarVariants }

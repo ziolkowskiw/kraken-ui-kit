@@ -1,18 +1,27 @@
-import * as React from "react";
-import { ChevronRight, Ellipsis } from "lucide-react";
+import * as React from "react"
+import { ChevronRight, Ellipsis } from "lucide-react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 function Breadcrumb({ className, ...props }: React.ComponentProps<"nav">) {
   return (
-    <nav data-slot="breadcrumb" aria-label="breadcrumb" className={cn(className)} {...props} />
-  );
+    <nav
+      data-slot="breadcrumb"
+      aria-label="breadcrumb"
+      className={cn(className)}
+      {...props}
+    />
+  )
 }
 
 function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
   return (
-    <ol data-slot="breadcrumb-list" className={cn("flex items-center", className)} {...props} />
-  );
+    <ol
+      data-slot="breadcrumb-list"
+      className={cn("flex items-center", className)}
+      {...props}
+    />
+  )
 }
 
 function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
@@ -22,10 +31,13 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
       className={cn("inline-flex items-center", className)}
       {...props}
     />
-  );
+  )
 }
 
-function BreadcrumbLink({ className, ...props }: React.ComponentProps<"a">) {
+function BreadcrumbLink({
+  className,
+  ...props
+}: React.ComponentProps<"a">) {
   return (
     <a
       data-slot="breadcrumb-link"
@@ -43,15 +55,17 @@ function BreadcrumbLink({ className, ...props }: React.ComponentProps<"a">) {
           "hover:[background-color:var(--ds-button-ghost-fillhover)]",
           "transition-colors",
         ].join(" "),
-        className,
+        className
       )}
       {...props}
     >
-      <span className="inline-flex items-center justify-center [padding-inline:var(--ds-button-size-xs-labelwrapperpaddingx)]">
+      <span
+        className="inline-flex items-center justify-center [padding-inline:var(--ds-button-size-xs-labelwrapperpaddingx)]"
+      >
         {props.children}
       </span>
     </a>
-  );
+  )
 }
 
 function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
@@ -73,15 +87,17 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
           "[line-height:var(--ds-typography-overline-lineheight)]",
           "[color:var(--ds-color-content-primary)]",
         ].join(" "),
-        className,
+        className
       )}
       {...props}
     >
-      <span className="inline-flex items-center justify-center [padding-inline:var(--ds-button-size-xs-labelwrapperpaddingx)]">
+      <span
+        className="inline-flex items-center justify-center [padding-inline:var(--ds-button-size-xs-labelwrapperpaddingx)]"
+      >
         {props.children}
       </span>
     </span>
-  );
+  )
 }
 
 function BreadcrumbSeparator({ className, ...props }: React.ComponentProps<"li">) {
@@ -95,7 +111,7 @@ function BreadcrumbSeparator({ className, ...props }: React.ComponentProps<"li">
     >
       {props.children ?? <ChevronRight className="size-4" />}
     </li>
-  );
+  )
 }
 
 function BreadcrumbEllipsis({ className, ...props }: React.ComponentProps<"button">) {
@@ -114,14 +130,14 @@ function BreadcrumbEllipsis({ className, ...props }: React.ComponentProps<"butto
           "hover:[background-color:var(--ds-button-ghost-fillhover)]",
           "transition-colors",
         ].join(" "),
-        className,
+        className
       )}
       {...props}
     >
       <Ellipsis className="size-4" />
       <span className="sr-only">More</span>
     </button>
-  );
+  )
 }
 
 export {
@@ -132,4 +148,4 @@ export {
   BreadcrumbPage,
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
-};
+}

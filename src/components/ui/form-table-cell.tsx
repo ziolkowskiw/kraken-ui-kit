@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Search, Calendar } from "lucide-react";
+import * as React from "react"
+import { Search, Calendar } from "lucide-react"
 
-import { cn } from "@/lib/utils";
-import { InputField } from "./input";
-import { SelectField, SelectItem } from "./select";
-import { Switch } from "./switch";
-import { CheckboxButton } from "./checkbox-button";
-import { RadioGroup, RadioGroupItem } from "./radio-group";
-import { TextareaField } from "./textarea";
-import { Button } from "./button";
+import { cn } from "@/lib/utils"
+import { InputField } from "./input"
+import { SelectField, SelectItem } from "./select"
+import { Switch } from "./switch"
+import { CheckboxButton } from "./checkbox-button"
+import { RadioGroup, RadioGroupItem } from "./radio-group"
+import { TextareaField } from "./textarea"
+import { Button } from "./button"
 
 // form-table/cell (1411:18819). A form control sized for a data-table cell (sm).
 // Reuses the kit form primitives. Container: `px-2 w-full`.
@@ -24,17 +24,17 @@ type InputType =
   | "switch"
   | "checkbox"
   | "radio"
-  | "textarea";
+  | "textarea"
 
 type FormTableCellProps = {
-  inputType?: InputType;
-  placeholder?: string;
+  inputType?: InputType
+  placeholder?: string
   /** options for select / radio / checkbox */
-  options?: string[];
-  className?: string;
-};
+  options?: string[]
+  className?: string
+}
 
-const DEFAULT_OPTIONS = ["Option A", "Option B", "Option C"];
+const DEFAULT_OPTIONS = ["Option A", "Option B", "Option C"]
 
 function FormTableCell({
   inputType = "text field",
@@ -42,11 +42,11 @@ function FormTableCell({
   options = DEFAULT_OPTIONS,
   className,
 }: FormTableCellProps) {
-  let control: React.ReactNode;
+  let control: React.ReactNode
   switch (inputType) {
     case "text field":
-      control = <InputField size="sm" placeholder={placeholder} aria-label={placeholder} />;
-      break;
+      control = <InputField size="sm" placeholder={placeholder} aria-label={placeholder} />
+      break
     case "select":
       control = (
         <SelectField size="sm" placeholder={placeholder} aria-label={placeholder}>
@@ -56,18 +56,13 @@ function FormTableCell({
             </SelectItem>
           ))}
         </SelectField>
-      );
-      break;
+      )
+      break
     case "search":
       control = (
-        <InputField
-          size="sm"
-          placeholder={placeholder}
-          aria-label={placeholder}
-          leftDecoration={<Search />}
-        />
-      );
-      break;
+        <InputField size="sm" placeholder={placeholder} aria-label={placeholder} leftDecoration={<Search />} />
+      )
+      break
     case "date":
       control = (
         <InputField
@@ -76,18 +71,18 @@ function FormTableCell({
           aria-label={placeholder === "Placeholder" ? "Choose a date" : placeholder}
           leftDecoration={<Calendar />}
         />
-      );
-      break;
+      )
+      break
     case "file uploader":
       control = (
         <Button variant="secondary" size="sm" className="w-full">
           Action verb
         </Button>
-      );
-      break;
+      )
+      break
     case "switch":
-      control = <Switch aria-label="Toggle" />;
-      break;
+      control = <Switch aria-label="Toggle" />
+      break
     case "checkbox":
       control = (
         <div className="flex flex-wrap gap-2">
@@ -95,8 +90,8 @@ function FormTableCell({
             <CheckboxButton key={o} size="sm" label={o} />
           ))}
         </div>
-      );
-      break;
+      )
+      break
     case "radio":
       // The kit has no button-style radio; compose RadioGroupItem in a bordered
       // container to mirror Figma's button-style radio options.
@@ -108,28 +103,19 @@ function FormTableCell({
               className={cn(
                 "flex min-h-8 cursor-pointer items-center gap-2 [border-radius:var(--ds-radius-lg)] border border-solid px-3 py-2",
                 "[border-color:var(--ds-checkbox-bordercolor)] [background-color:var(--ds-checkbox-fill)]",
-                "hover:[border-color:var(--ds-checkbox-borderhover)]",
+                "hover:[border-color:var(--ds-checkbox-borderhover)]"
               )}
             >
               <RadioGroupItem value={o} />
-              <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] [color:var(--ds-color-content-secondary)]">
-                {o}
-              </span>
+              <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] [color:var(--ds-color-content-secondary)]">{o}</span>
             </label>
           ))}
         </RadioGroup>
-      );
-      break;
+      )
+      break
     case "textarea":
-      control = (
-        <TextareaField
-          size="sm"
-          placeholder={placeholder}
-          aria-label={placeholder}
-          className="min-h-16"
-        />
-      );
-      break;
+      control = <TextareaField size="sm" placeholder={placeholder} aria-label={placeholder} className="min-h-16" />
+      break
   }
 
   return (
@@ -140,8 +126,8 @@ function FormTableCell({
     >
       {control}
     </div>
-  );
+  )
 }
 
-export { FormTableCell };
-export type { InputType };
+export { FormTableCell }
+export type { InputType }

@@ -1,31 +1,28 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { Progress } from "./progress";
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Progress } from './progress'
 
 const meta = {
-  title: "Components/Progress",
+  title: 'Components/Progress',
   component: Progress,
-  parameters: {
-    layout: "padded",
-    docs: { description: { component: "Rounded track + indicator with optional label row." } },
-  },
-  tags: ["autodocs"],
+  parameters: { layout: 'padded', docs: { description: { component: 'Rounded track + indicator with optional label row.' } } },
+  tags: ['autodocs'],
   argTypes: {
-    value: { control: { type: "range", min: 0, max: 100, step: 1 } },
-    showLabels: { control: "boolean" },
-    label: { control: "text", if: { arg: "showLabels" } },
+    value: { control: { type: 'range', min: 0, max: 100, step: 1 } },
+    showLabels: { control: 'boolean' },
+    label: { control: 'text', if: { arg: 'showLabels' } },
   },
-  args: { value: 60, label: "Uploading…", showLabels: true },
+  args: { value: 60, label: 'Uploading…', showLabels: true },
   render: (args) => (
     <div className="w-80">
       <Progress {...args} />
     </div>
   ),
-} satisfies Meta<typeof Progress>;
+} satisfies Meta<typeof Progress>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {};
+export const Playground: Story = {}
 
 export const NoLabels: Story = {
   args: { showLabels: false, value: 40 },
@@ -34,7 +31,7 @@ export const NoLabels: Story = {
       <Progress {...args} aria-label="Progress" />
     </div>
   ),
-};
+}
 
 export const Steps: Story = {
   render: () => (
@@ -44,4 +41,4 @@ export const Steps: Story = {
       ))}
     </div>
   ),
-};
+}

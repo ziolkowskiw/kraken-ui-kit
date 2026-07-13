@@ -1,22 +1,22 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip";
+import * as React from "react"
+import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip"
 
-import { CircleQuestionMark } from "lucide-react";
+import { CircleQuestionMark } from "lucide-react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 function TooltipProvider({ ...props }: TooltipPrimitive.Provider.Props) {
-  return <TooltipPrimitive.Provider data-slot="tooltip-provider" {...props} />;
+  return <TooltipPrimitive.Provider data-slot="tooltip-provider" {...props} />
 }
 
 function Tooltip({ ...props }: TooltipPrimitive.Root.Props) {
-  return <TooltipPrimitive.Root data-slot="tooltip" {...props} />;
+  return <TooltipPrimitive.Root data-slot="tooltip" {...props} />
 }
 
 function TooltipTrigger({ ...props }: TooltipPrimitive.Trigger.Props) {
-  return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />;
+  return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />
 }
 
 function TooltipContent({
@@ -40,7 +40,7 @@ function TooltipContent({
               "[max-width:var(--ds-tooltip-maxwidth)]",
               "animate-in fade-in-0 zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
             ].join(" "),
-            className,
+            className
           )}
           {...props}
         >
@@ -52,7 +52,7 @@ function TooltipContent({
         </TooltipPrimitive.Popup>
       </TooltipPrimitive.Positioner>
     </TooltipPrimitive.Portal>
-  );
+  )
 }
 
 function TooltipIcon({
@@ -63,11 +63,11 @@ function TooltipIcon({
   className,
   ...props
 }: Omit<TooltipPrimitive.Trigger.Props, "content"> & {
-  side?: "top" | "bottom" | "left" | "right";
-  sideOffset?: number;
+  side?: "top" | "bottom" | "left" | "right"
+  sideOffset?: number
   /** Open delay in ms. Defaults to 0 so the help tooltip appears instantly. */
-  delay?: number;
-  content: React.ReactNode;
+  delay?: number
+  content: React.ReactNode
 }) {
   return (
     <TooltipProvider delay={delay}>
@@ -76,7 +76,7 @@ function TooltipIcon({
           aria-label="More information"
           className={cn(
             "inline-flex shrink-0 items-center justify-center [color:var(--ds-color-muted-foreground)] hover:[color:var(--ds-color-foreground)] transition-colors",
-            className,
+            className
           )}
           {...props}
         >
@@ -87,7 +87,7 @@ function TooltipIcon({
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  );
+  )
 }
 
-export { Tooltip, TooltipContent, TooltipIcon, TooltipProvider, TooltipTrigger };
+export { Tooltip, TooltipContent, TooltipIcon, TooltipProvider, TooltipTrigger }

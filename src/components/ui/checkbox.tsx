@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
-import { CheckIcon, MinusIcon } from "lucide-react";
+import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox"
+import { CheckIcon, MinusIcon } from "lucide-react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 type CheckboxProps = CheckboxPrimitive.Root.Props & {
-  error?: boolean;
+  error?: boolean
   /**
    * Where the box's hover styling comes from:
    * - "self"  (default): the box reacts to its own :hover — used for a bare checkbox.
@@ -14,8 +14,8 @@ type CheckboxProps = CheckboxPrimitive.Root.Props & {
    *   CheckboxButton so hovering anywhere on the label/button highlights the box.
    * - "none":  no hover styling.
    */
-  hoverScope?: "self" | "group" | "none";
-};
+  hoverScope?: "self" | "group" | "none"
+}
 
 // Literal class lists (Tailwind must see them statically — no string interpolation).
 const hoverSelf = [
@@ -23,13 +23,13 @@ const hoverSelf = [
   "data-checked:hover:[background-color:var(--ds-checkbox-checkedhover)] data-indeterminate:hover:[background-color:var(--ds-checkbox-checkedhover)]",
   "data-[error]:hover:[border-color:var(--ds-checkbox-bordererrorhover)]",
   "data-[error]:data-checked:hover:[background-color:var(--ds-checkbox-bordererrorhover)] data-[error]:data-indeterminate:hover:[background-color:var(--ds-checkbox-bordererrorhover)]",
-];
+]
 const hoverGroup = [
   "group-hover/cb:[background-color:var(--ds-checkbox-fillhover)] group-hover/cb:[border-color:var(--ds-checkbox-borderhover)]",
   "data-checked:group-hover/cb:[background-color:var(--ds-checkbox-checkedhover)] data-indeterminate:group-hover/cb:[background-color:var(--ds-checkbox-checkedhover)]",
   "data-[error]:group-hover/cb:[border-color:var(--ds-checkbox-bordererrorhover)]",
   "data-[error]:data-checked:group-hover/cb:[background-color:var(--ds-checkbox-bordererrorhover)] data-[error]:data-indeterminate:group-hover/cb:[background-color:var(--ds-checkbox-bordererrorhover)]",
-];
+]
 
 function Checkbox({ className, error, hoverScope = "self", ...props }: CheckboxProps) {
   return (
@@ -53,7 +53,7 @@ function Checkbox({ className, error, hoverScope = "self", ...props }: CheckboxP
         // hover styling — own :hover, or driven by an ancestor .group/cb
         hoverScope === "self" && hoverSelf,
         hoverScope === "group" && hoverGroup,
-        className,
+        className
       )}
       {...props}
     >
@@ -61,11 +61,13 @@ function Checkbox({ className, error, hoverScope = "self", ...props }: CheckboxP
         data-slot="checkbox-indicator"
         className="flex items-center justify-center text-current [&>svg]:size-3.5"
         render={(indicatorProps, state) => (
-          <span {...indicatorProps}>{state.indeterminate ? <MinusIcon /> : <CheckIcon />}</span>
+          <span {...indicatorProps}>
+            {state.indeterminate ? <MinusIcon /> : <CheckIcon />}
+          </span>
         )}
       />
     </CheckboxPrimitive.Root>
-  );
+  )
 }
 
-export { Checkbox };
+export { Checkbox }

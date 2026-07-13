@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Switch as SwitchPrimitive } from "@base-ui/react/switch";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { Switch as SwitchPrimitive } from "@base-ui/react/switch"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
-import { TooltipIcon, TooltipProvider } from "./tooltip";
+import { cn } from "@/lib/utils"
+import { TooltipIcon, TooltipProvider } from "./tooltip"
 
 const switchVariants = cva(
   [
@@ -25,8 +25,8 @@ const switchVariants = cva(
       },
     },
     defaultVariants: { size: "default" },
-  },
-);
+  }
+)
 
 const thumbVariants = cva(
   "pointer-events-none block rounded-full [background-color:var(--ds-color-white)] ring-0 transition-transform",
@@ -38,17 +38,17 @@ const thumbVariants = cva(
       },
     },
     defaultVariants: { size: "default" },
-  },
-);
+  }
+)
 
 type SwitchProps = SwitchPrimitive.Root.Props &
   VariantProps<typeof switchVariants> & {
-    leftLabel?: string;
-    rightLabel?: string;
-    error?: boolean;
+    leftLabel?: string
+    rightLabel?: string
+    error?: boolean
     /** When provided, shows the ⓘ info tooltip-icon trigger after the label row. */
-    tooltip?: React.ReactNode;
-  };
+    tooltip?: React.ReactNode
+  }
 
 function Switch({ className, size, leftLabel, rightLabel, error, tooltip, ...props }: SwitchProps) {
   const switchEl = (
@@ -58,11 +58,14 @@ function Switch({ className, size, leftLabel, rightLabel, error, tooltip, ...pro
       className={cn(switchVariants({ size }), className)}
       {...props}
     >
-      <SwitchPrimitive.Thumb data-slot="switch-thumb" className={thumbVariants({ size })} />
+      <SwitchPrimitive.Thumb
+        data-slot="switch-thumb"
+        className={thumbVariants({ size })}
+      />
     </SwitchPrimitive.Root>
-  );
+  )
 
-  if (!leftLabel && !rightLabel && !tooltip) return switchEl;
+  if (!leftLabel && !rightLabel && !tooltip) return switchEl
 
   // The <label> wraps the toggle so clicking the text flips it. The info ⓘ is a
   // sibling OUTSIDE the label, so hovering/clicking it never toggles the switch.
@@ -72,9 +75,9 @@ function Switch({ className, size, leftLabel, rightLabel, error, tooltip, ...pro
       {switchEl}
       {rightLabel && <span>{rightLabel}</span>}
     </label>
-  );
+  )
 
-  if (!tooltip) return row;
+  if (!tooltip) return row
 
   return (
     <div className="flex items-center gap-1.5">
@@ -83,7 +86,7 @@ function Switch({ className, size, leftLabel, rightLabel, error, tooltip, ...pro
         <TooltipIcon content={tooltip} />
       </TooltipProvider>
     </div>
-  );
+  )
 }
 
-export { Switch, switchVariants };
+export { Switch, switchVariants }

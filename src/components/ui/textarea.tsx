@@ -1,8 +1,8 @@
-import * as React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
-import { TooltipIcon, TooltipProvider } from "./tooltip";
+import { cn } from "@/lib/utils"
+import { TooltipIcon, TooltipProvider } from "./tooltip"
 
 const textareaVariants = cva(
   [
@@ -23,10 +23,11 @@ const textareaVariants = cva(
       },
     },
     defaultVariants: { size: "md" },
-  },
-);
+  }
+)
 
-type TextareaProps = React.ComponentProps<"textarea"> & VariantProps<typeof textareaVariants>;
+type TextareaProps = React.ComponentProps<"textarea"> &
+  VariantProps<typeof textareaVariants>
 
 function Textarea({ className, size, ...props }: TextareaProps) {
   return (
@@ -35,21 +36,21 @@ function Textarea({ className, size, ...props }: TextareaProps) {
       className={cn(textareaVariants({ size }), className)}
       {...props}
     />
-  );
+  )
 }
 
 type TextareaFieldProps = React.ComponentProps<"textarea"> &
   VariantProps<typeof textareaVariants> & {
-    label?: string;
-    description?: string;
-    errorMessage?: string;
-    error?: boolean;
-    mandatory?: boolean;
+    label?: string
+    description?: string
+    errorMessage?: string
+    error?: boolean
+    mandatory?: boolean
     /** When provided, shows the ⓘ tooltip-icon trigger next to the label. */
-    tooltip?: React.ReactNode;
-    showCounter?: boolean;
-    maxLength?: number;
-  };
+    tooltip?: React.ReactNode
+    showCounter?: boolean
+    maxLength?: number
+  }
 
 function TextareaField({
   className,
@@ -69,34 +70,32 @@ function TextareaField({
   onChange,
   ...props
 }: TextareaFieldProps & { id?: string }) {
-  const generatedId = React.useId();
-  const id = idProp ?? generatedId;
-  const hasError = error || !!errorMessage;
-  const initialLength = String(value ?? defaultValue ?? "").length;
-  const [charCount, setCharCount] = React.useState(initialLength);
+  const generatedId = React.useId()
+  const id = idProp ?? generatedId
+  const hasError = error || !!errorMessage
+  const initialLength = String(value ?? defaultValue ?? "").length
+  const [charCount, setCharCount] = React.useState(initialLength)
   React.useEffect(() => {
-    if (value !== undefined) setCharCount(String(value).length);
-  }, [value]);
-  const counter =
-    showCounter && maxLength ? (
-      <span className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] tabular-nums shrink-0">
-        {charCount}/{maxLength}
-      </span>
-    ) : null;
+    if (value !== undefined) setCharCount(String(value).length)
+  }, [value])
+  const counter = showCounter && maxLength ? (
+    <span className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] tabular-nums shrink-0">
+      {charCount}/{maxLength}
+    </span>
+  ) : null
   return (
     <div className="flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start">
       {(label || counter) && (
         // Top row: label on the left, character counter pinned to the top-right.
         <div className="flex w-full items-center gap-1 min-h-4">
           {label && (
-            <label
-              htmlFor={id}
-              className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]"
-            >
+            <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
               {label}
             </label>
           )}
-          {label && mandatory && <span className="[color:var(--ds-input-contenterror)]">*</span>}
+          {label && mandatory && (
+            <span className="[color:var(--ds-input-contenterror)]">*</span>
+          )}
           {label && tooltip && (
             <TooltipProvider>
               <TooltipIcon content={tooltip} />
@@ -116,8 +115,8 @@ function TextareaField({
         defaultValue={defaultValue}
         {...props}
         onChange={(e) => {
-          setCharCount(e.target.value.length);
-          onChange?.(e);
+          setCharCount(e.target.value.length)
+          onChange?.(e)
         }}
       />
       {hasError && errorMessage ? (
@@ -130,7 +129,7 @@ function TextareaField({
         </p>
       ) : null}
     </div>
-  );
+  )
 }
 
-export { Textarea, TextareaField, textareaVariants };
+export { Textarea, TextareaField, textareaVariants }

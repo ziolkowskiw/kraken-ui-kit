@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Slider as SliderPrimitive } from "@base-ui/react/slider";
+import * as React from "react"
+import { Slider as SliderPrimitive } from "@base-ui/react/slider"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // Mirrors the Figma `slider` set (1811:15452): Type=default|range × Direction
 // (orientation). A range slider is just a value array → two thumbs (`slider/marker`,
@@ -19,10 +19,10 @@ function Slider({
   ...props
 }: SliderPrimitive.Root.Props) {
   const thumbCount = React.useMemo(() => {
-    if (Array.isArray(value)) return value.length;
-    if (Array.isArray(defaultValue)) return defaultValue.length;
-    return 1;
-  }, [value, defaultValue]);
+    if (Array.isArray(value)) return value.length
+    if (Array.isArray(defaultValue)) return defaultValue.length
+    return 1
+  }, [value, defaultValue])
 
   return (
     <SliderPrimitive.Root
@@ -36,7 +36,7 @@ function Slider({
         "relative flex touch-none items-center select-none",
         "data-[orientation=horizontal]:w-full",
         "data-[orientation=vertical]:h-44 data-[orientation=vertical]:flex-col",
-        className,
+        className
       )}
       {...props}
     >
@@ -44,7 +44,7 @@ function Slider({
         data-slot="slider-control"
         className={cn(
           "relative flex grow items-center",
-          "data-[orientation=vertical]:h-full data-[orientation=vertical]:justify-center",
+          "data-[orientation=vertical]:h-full data-[orientation=vertical]:justify-center"
         )}
       >
         <SliderPrimitive.Track
@@ -52,7 +52,7 @@ function Slider({
           className={cn(
             "relative grow overflow-hidden [border-radius:var(--ds-radius-full)] [background-color:var(--ds-color-muted)]",
             "data-[orientation=horizontal]:[height:var(--ds-spacing-2)] data-[orientation=horizontal]:w-full",
-            "data-[orientation=vertical]:[width:var(--ds-spacing-2)] data-[orientation=vertical]:h-full",
+            "data-[orientation=vertical]:[width:var(--ds-spacing-2)] data-[orientation=vertical]:h-full"
           )}
         >
           <SliderPrimitive.Indicator
@@ -70,13 +70,13 @@ function Slider({
               "[border-radius:var(--ds-radius-full)] [border-color:var(--ds-color-primary)] [background-color:var(--ds-color-white)]",
               "hover:ring-4 hover:ring-ring/20",
               "focus-visible:ring-4 focus-visible:ring-ring/50",
-              "data-disabled:pointer-events-none data-disabled:opacity-50",
+              "data-disabled:pointer-events-none data-disabled:opacity-50"
             )}
           />
         ))}
       </SliderPrimitive.Control>
     </SliderPrimitive.Root>
-  );
+  )
 }
 
-export { Slider };
+export { Slider }

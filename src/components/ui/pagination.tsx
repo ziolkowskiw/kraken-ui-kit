@@ -1,8 +1,8 @@
-import * as React from "react";
-import { ChevronLeftIcon, ChevronRightIcon, MoreHorizontalIcon } from "lucide-react";
+import * as React from "react"
+import { ChevronLeftIcon, ChevronRightIcon, MoreHorizontalIcon } from "lucide-react"
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "./button";
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "./button"
 
 // Mirrors the Figma `pagination` set (1760:679). Page controls reuse the real
 // button styling (`buttonVariants`) so they stay in lockstep with <Button>: the
@@ -16,7 +16,7 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
       className={cn("mx-auto flex w-full justify-center", className)}
       {...props}
     />
-  );
+  )
 }
 
 function PaginationContent({ className, ...props }: React.ComponentProps<"ul">) {
@@ -26,16 +26,16 @@ function PaginationContent({ className, ...props }: React.ComponentProps<"ul">) 
       className={cn("flex flex-row items-center gap-1", className)}
       {...props}
     />
-  );
+  )
 }
 
 function PaginationItem({ ...props }: React.ComponentProps<"li">) {
-  return <li data-slot="pagination-item" {...props} />;
+  return <li data-slot="pagination-item" {...props} />
 }
 
 type PaginationLinkProps = {
-  isActive?: boolean;
-} & React.ComponentProps<"a">;
+  isActive?: boolean
+} & React.ComponentProps<"a">
 
 function PaginationLink({ className, isActive, ...props }: PaginationLinkProps) {
   return (
@@ -50,11 +50,11 @@ function PaginationLink({ className, isActive, ...props }: PaginationLinkProps) 
           iconOnly: true,
         }),
         "cursor-pointer",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function PaginationPrevious({ className, ...props }: React.ComponentProps<"a">) {
@@ -65,14 +65,14 @@ function PaginationPrevious({ className, ...props }: React.ComponentProps<"a">) 
       className={cn(
         buttonVariants({ variant: "ghost", size: "sm" }),
         "cursor-pointer gap-1 px-2.5",
-        className,
+        className
       )}
       {...props}
     >
       <ChevronLeftIcon />
       <span className="hidden sm:inline">Previous</span>
     </a>
-  );
+  )
 }
 
 function PaginationNext({ className, ...props }: React.ComponentProps<"a">) {
@@ -83,14 +83,14 @@ function PaginationNext({ className, ...props }: React.ComponentProps<"a">) {
       className={cn(
         buttonVariants({ variant: "ghost", size: "sm" }),
         "cursor-pointer gap-1 px-2.5",
-        className,
+        className
       )}
       {...props}
     >
       <span className="hidden sm:inline">Next</span>
       <ChevronRightIcon />
     </a>
-  );
+  )
 }
 
 function PaginationEllipsis({ className, ...props }: React.ComponentProps<"span">) {
@@ -98,16 +98,13 @@ function PaginationEllipsis({ className, ...props }: React.ComponentProps<"span"
     <span
       aria-hidden
       data-slot="pagination-ellipsis"
-      className={cn(
-        "flex size-8 items-center justify-center [color:var(--ds-color-content-tertiary)]",
-        className,
-      )}
+      className={cn("flex size-8 items-center justify-center [color:var(--ds-color-content-tertiary)]", className)}
       {...props}
     >
       <MoreHorizontalIcon className="size-4" />
       <span className="sr-only">More pages</span>
     </span>
-  );
+  )
 }
 
 export {
@@ -118,4 +115,4 @@ export {
   PaginationPrevious,
   PaginationNext,
   PaginationEllipsis,
-};
+}

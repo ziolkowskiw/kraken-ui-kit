@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { CalendarIcon } from "lucide-react";
-import type { DateRange } from "react-day-picker";
+import * as React from "react"
+import { CalendarIcon } from "lucide-react"
+import type { DateRange } from "react-day-picker"
 
-import { cn } from "@/lib/utils";
-import { Calendar } from "./calendar";
-import { Popover, PopoverTrigger, PopoverContent } from "./popover";
-import { TooltipIcon, TooltipProvider } from "./tooltip";
+import { cn } from "@/lib/utils"
+import { Calendar } from "./calendar"
+import { Popover, PopoverTrigger, PopoverContent } from "./popover"
+import { TooltipIcon, TooltipProvider } from "./tooltip"
 
 // Mirrors the Figma `date-picker` set (895:1933): a field whose trigger opens a
 // Calendar popover. State=rest|hover|focus|disabled|error × Size × Filled. Reuses
@@ -18,55 +18,55 @@ const SIZE_CLASS = {
   sm: "[height:var(--ds-input-size-sm-height)] [padding-inline:var(--ds-input-size-sm-paddingx)] [border-radius:var(--ds-input-size-sm-radius)] [font-size:var(--ds-input-size-sm-fontsize)]",
   md: "[height:var(--ds-input-size-md-height)] [padding-inline:var(--ds-input-size-md-paddingx)] [border-radius:var(--ds-input-size-md-radius)] [font-size:var(--ds-input-size-md-fontsize)]",
   lg: "[height:var(--ds-input-size-lg-height)] [padding-inline:var(--ds-input-size-lg-paddingx)] [border-radius:var(--ds-input-size-lg-radius)] [font-size:var(--ds-input-size-lg-fontsize)]",
-};
+}
 
 type DatePickerBaseProps = {
-  placeholder?: string;
-  size?: "sm" | "md" | "lg";
-  disabled?: boolean;
-  error?: boolean;
-  className?: string;
-};
+  placeholder?: string
+  size?: "sm" | "md" | "lg"
+  disabled?: boolean
+  error?: boolean
+  className?: string
+}
 
 type SingleProps = DatePickerBaseProps & {
-  mode?: "single";
-  value?: Date;
-  defaultValue?: Date;
-  onValueChange?: (date: Date | undefined) => void;
-  format?: (date: Date) => string;
-};
+  mode?: "single"
+  value?: Date
+  defaultValue?: Date
+  onValueChange?: (date: Date | undefined) => void
+  format?: (date: Date) => string
+}
 
 type RangeProps = DatePickerBaseProps & {
-  mode: "range";
-  value?: DateRange;
-  defaultValue?: DateRange;
-  onValueChange?: (range: DateRange | undefined) => void;
-  format?: (range: DateRange) => string;
-};
+  mode: "range"
+  value?: DateRange
+  defaultValue?: DateRange
+  onValueChange?: (range: DateRange | undefined) => void
+  format?: (range: DateRange) => string
+}
 
-type DatePickerProps = SingleProps | RangeProps;
+type DatePickerProps = SingleProps | RangeProps
 
 /** Coerce anything (Date, ISO string, timestamp) to a valid Date or undefined.
  *  Guards against non-Date values (e.g. a Storybook date control returns a number),
  *  so we never call Date methods on a non-Date. */
 function toDate(value: unknown): Date | undefined {
-  if (value == null || value === "") return undefined;
-  const d = value instanceof Date ? value : new Date(value as string | number);
-  return Number.isNaN(d.getTime()) ? undefined : d;
+  if (value == null || value === "") return undefined
+  const d = value instanceof Date ? value : new Date(value as string | number)
+  return Number.isNaN(d.getTime()) ? undefined : d
 }
 
 /** Normalize a DateRange's endpoints through `toDate` (or undefined if neither set). */
 function toRange(value: unknown): DateRange | undefined {
-  if (value == null) return undefined;
-  const r = value as DateRange;
-  const from = toDate(r.from);
-  const to = toDate(r.to);
-  if (!from && !to) return undefined;
-  return { from, to };
+  if (value == null) return undefined
+  const r = value as DateRange
+  const from = toDate(r.from)
+  const to = toDate(r.to)
+  if (!from && !to) return undefined
+  return { from, to }
 }
 
 const formatOne = (d: Date) =>
-  d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+  d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })
 
 function DatePicker(props: DatePickerProps) {
   const {
@@ -76,51 +76,51 @@ function DatePicker(props: DatePickerProps) {
     error,
     className,
     mode = "single",
-  } = props;
-  const isRange = mode === "range";
+  } = props
+  const isRange = mode === "range"
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
   const [internalSingle, setInternalSingle] = React.useState<Date | undefined>(() =>
-    isRange ? undefined : toDate((props as SingleProps).defaultValue),
-  );
+    isRange ? undefined : toDate((props as SingleProps).defaultValue)
+  )
   const [internalRange, setInternalRange] = React.useState<DateRange | undefined>(() =>
-    isRange ? toRange((props as RangeProps).defaultValue) : undefined,
-  );
+    isRange ? toRange((props as RangeProps).defaultValue) : undefined
+  )
 
-  const selectedSingle = toDate((props as SingleProps).value) ?? internalSingle;
-  const selectedRange = toRange((props as RangeProps).value) ?? internalRange;
-  const controlled = props.value !== undefined;
+  const selectedSingle = toDate((props as SingleProps).value) ?? internalSingle
+  const selectedRange = toRange((props as RangeProps).value) ?? internalRange
+  const controlled = props.value !== undefined
 
   const setSingle = (date: Date | undefined) => {
-    const next = toDate(date);
-    if (!controlled) setInternalSingle(next);
-    (props as SingleProps).onValueChange?.(next);
-    setOpen(false);
-  };
+    const next = toDate(date)
+    if (!controlled) setInternalSingle(next)
+    ;(props as SingleProps).onValueChange?.(next)
+    setOpen(false)
+  }
 
   const setRange = (range: DateRange | undefined) => {
-    const next = toRange(range);
-    if (!controlled) setInternalRange(next);
-    (props as RangeProps).onValueChange?.(next);
+    const next = toRange(range)
+    if (!controlled) setInternalRange(next)
+    ;(props as RangeProps).onValueChange?.(next)
     // Close only once both ends are picked, so the user can complete the range.
-    if (next?.from && next?.to) setOpen(false);
-  };
+    if (next?.from && next?.to) setOpen(false)
+  }
 
   const label = (() => {
     if (isRange) {
-      if (!selectedRange?.from) return placeholder;
-      const fmt = (props as RangeProps).format;
-      if (fmt) return fmt(selectedRange);
+      if (!selectedRange?.from) return placeholder
+      const fmt = (props as RangeProps).format
+      if (fmt) return fmt(selectedRange)
       return selectedRange.to
         ? `${formatOne(selectedRange.from)} – ${formatOne(selectedRange.to)}`
-        : formatOne(selectedRange.from);
+        : formatOne(selectedRange.from)
     }
-    if (!selectedSingle) return placeholder;
-    const fmt = (props as SingleProps).format ?? formatOne;
-    return fmt(selectedSingle);
-  })();
+    if (!selectedSingle) return placeholder
+    const fmt = (props as SingleProps).format ?? formatOne
+    return fmt(selectedSingle)
+  })()
 
-  const hasValue = isRange ? !!selectedRange?.from : !!selectedSingle;
+  const hasValue = isRange ? !!selectedRange?.from : !!selectedSingle
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -138,18 +138,13 @@ function DatePicker(props: DatePickerProps) {
               "aria-invalid:[border-color:var(--ds-input-bordererror)]",
               "disabled:cursor-not-allowed disabled:opacity-50",
               SIZE_CLASS[size],
-              className,
+              className
             )}
           />
         }
       >
         <CalendarIcon className="size-4 shrink-0 [color:var(--ds-color-icon-muted)]" />
-        <span
-          className={cn(
-            "flex-1 truncate",
-            hasValue ? "[color:var(--ds-input-value)]" : "[color:var(--ds-input-placeholder)]",
-          )}
-        >
+        <span className={cn("flex-1 truncate", hasValue ? "[color:var(--ds-input-value)]" : "[color:var(--ds-input-placeholder)]")}>
           {label}
         </span>
       </PopoverTrigger>
@@ -161,16 +156,16 @@ function DatePicker(props: DatePickerProps) {
         )}
       </PopoverContent>
     </Popover>
-  );
+  )
 }
 
 type DatePickerFieldProps = DatePickerProps & {
-  label?: string;
-  description?: string;
-  errorMessage?: string;
-  mandatory?: boolean;
-  tooltip?: React.ReactNode;
-};
+  label?: string
+  description?: string
+  errorMessage?: string
+  mandatory?: boolean
+  tooltip?: React.ReactNode
+}
 
 function DatePickerField({
   label,
@@ -182,14 +177,9 @@ function DatePickerField({
   className,
   ...props
 }: DatePickerFieldProps) {
-  const hasError = error || !!errorMessage;
+  const hasError = error || !!errorMessage
   return (
-    <div
-      className={cn(
-        "flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start",
-        className,
-      )}
-    >
+    <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
       {label && (
         <div className="flex items-center gap-1 h-4">
           <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
@@ -214,8 +204,8 @@ function DatePickerField({
         </p>
       ) : null}
     </div>
-  );
+  )
 }
 
-export { DatePicker, DatePickerField };
-export type { DatePickerProps, DatePickerFieldProps };
+export { DatePicker, DatePickerField }
+export type { DatePickerProps, DatePickerFieldProps }

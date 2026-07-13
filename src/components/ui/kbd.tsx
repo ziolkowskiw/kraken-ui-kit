@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from "react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // Mirrors the Figma `Kbd` component (1719:48975) and its "⌘ + K" example group.
 // A compact keycap: muted fill, subtle border, secondary content. `KbdGroup`
@@ -15,11 +15,11 @@ function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
         "[background-color:var(--ds-color-muted)] [color:var(--ds-color-content-secondary)]",
         "[font-family:var(--ds-typography-bodyxs-fontfamily)] [font-size:var(--ds-typography-bodyxs-fontsize)] [font-weight:var(--ds-typography-bodyxs-fontweight)]",
         "[&_svg]:size-3 [&_svg]:pointer-events-none",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
 function KbdGroup({ className, ...props }: React.ComponentProps<"span">) {
@@ -28,11 +28,11 @@ function KbdGroup({ className, ...props }: React.ComponentProps<"span">) {
       data-slot="kbd-group"
       className={cn(
         "inline-flex items-center gap-1 [color:var(--ds-color-content-tertiary)] [font-size:var(--ds-typography-bodyxs-fontsize)]",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
-export { Kbd, KbdGroup };
+export { Kbd, KbdGroup }

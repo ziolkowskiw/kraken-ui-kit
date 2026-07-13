@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Progress as ProgressPrimitive } from "@base-ui/react/progress";
+import * as React from "react"
+import { Progress as ProgressPrimitive } from "@base-ui/react/progress"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 // Mirrors the Figma `Progress` component (1792:1815): a rounded track + indicator
 // with an optional label row (Label on the left, percentage Value on the right).
@@ -15,8 +15,8 @@ function Progress({
   showLabels = false,
   ...props
 }: ProgressPrimitive.Root.Props & {
-  label?: React.ReactNode;
-  showLabels?: boolean;
+  label?: React.ReactNode
+  showLabels?: boolean
 }) {
   return (
     <ProgressPrimitive.Root
@@ -43,7 +43,7 @@ function Progress({
         />
       </ProgressPrimitive.Track>
     </ProgressPrimitive.Root>
-  );
+  )
 }
 
-export { Progress };
+export { Progress }

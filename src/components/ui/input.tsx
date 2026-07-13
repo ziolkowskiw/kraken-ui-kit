@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Input as InputPrimitive } from "@base-ui/react/input";
-import { cva, type VariantProps } from "class-variance-authority";
-import { CircleAlert } from "lucide-react";
+import * as React from "react"
+import { Input as InputPrimitive } from "@base-ui/react/input"
+import { cva, type VariantProps } from "class-variance-authority"
+import { CircleAlert } from "lucide-react"
 
-import { cn } from "@/lib/utils";
-import { TooltipIcon, TooltipProvider } from "./tooltip";
+import { cn } from "@/lib/utils"
+import { TooltipIcon, TooltipProvider } from "./tooltip"
 
 const inputVariants = cva(
   [
@@ -29,21 +29,21 @@ const inputVariants = cva(
       },
     },
     defaultVariants: { size: "md" },
-  },
-);
+  }
+)
 
 type InputFieldProps = Omit<React.ComponentProps<"input">, "size"> &
   VariantProps<typeof inputVariants> & {
-    label?: string;
-    description?: string;
-    errorMessage?: string;
-    error?: boolean;
-    mandatory?: boolean;
+    label?: string
+    description?: string
+    errorMessage?: string
+    error?: boolean
+    mandatory?: boolean
     /** When provided, shows the ⓘ tooltip-icon trigger next to the label. */
-    tooltip?: React.ReactNode;
-    leftDecoration?: React.ReactNode;
-    rightDecoration?: React.ReactNode;
-  };
+    tooltip?: React.ReactNode
+    leftDecoration?: React.ReactNode
+    rightDecoration?: React.ReactNode
+  }
 
 function InputField({
   className,
@@ -61,20 +61,19 @@ function InputField({
   id: idProp,
   ...props
 }: InputFieldProps) {
-  const generatedId = React.useId();
-  const id = idProp ?? generatedId;
-  const hasError = error || !!errorMessage;
+  const generatedId = React.useId()
+  const id = idProp ?? generatedId
+  const hasError = error || !!errorMessage
   return (
     <div className="flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start">
       {label && (
         <div className="flex items-center gap-1 h-4">
-          <label
-            htmlFor={id}
-            className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]"
-          >
+          <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
             {label}
           </label>
-          {mandatory && <span className="[color:var(--ds-input-contenterror)]">*</span>}
+          {mandatory && (
+            <span className="[color:var(--ds-input-contenterror)]">*</span>
+          )}
           {tooltip && (
             <TooltipProvider>
               <TooltipIcon content={tooltip} />
@@ -82,7 +81,10 @@ function InputField({
           )}
         </div>
       )}
-      <div data-slot="input" className={cn(inputVariants({ size }), className)}>
+      <div
+        data-slot="input"
+        className={cn(inputVariants({ size }), className)}
+      >
         {leftDecoration}
         <InputPrimitive
           id={id}
@@ -91,7 +93,9 @@ function InputField({
           aria-invalid={hasError || undefined}
           {...props}
         />
-        {hasError && <CircleAlert className="shrink-0 [color:var(--ds-input-bordererror)]" />}
+        {hasError && (
+          <CircleAlert className="shrink-0 [color:var(--ds-input-bordererror)]" />
+        )}
         {rightDecoration}
       </div>
       {hasError && errorMessage ? (
@@ -104,10 +108,14 @@ function InputField({
         </p>
       ) : null}
     </div>
-  );
+  )
 }
 
-function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+function Input({
+  className,
+  type,
+  ...props
+}: React.ComponentProps<"input">) {
   return (
     <InputPrimitive
       type={type}
@@ -121,11 +129,11 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
         "focus-visible:[border-color:var(--ds-input-borderfocus)]",
         "disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-input-borderdisabled)] disabled:cursor-not-allowed disabled:opacity-50 disabled:[color:var(--ds-input-placeholder)]",
         "aria-invalid:[border-color:var(--ds-input-bordererror)]",
-        className,
+        className
       )}
       {...props}
     />
-  );
+  )
 }
 
-export { Input, InputField, inputVariants };
+export { Input, InputField, inputVariants }

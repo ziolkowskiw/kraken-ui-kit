@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Select as SelectPrimitive } from "@base-ui/react/select";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { Select as SelectPrimitive } from "@base-ui/react/select"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
-import { TooltipIcon, TooltipProvider } from "./tooltip";
-import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react";
+import { cn } from "@/lib/utils"
+import { TooltipIcon, TooltipProvider } from "./tooltip"
+import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react"
 
-const Select = SelectPrimitive.Root;
+const Select = SelectPrimitive.Root
 
 function SelectGroup({ className, ...props }: SelectPrimitive.Group.Props) {
   return (
@@ -17,7 +17,7 @@ function SelectGroup({ className, ...props }: SelectPrimitive.Group.Props) {
       className={cn("scroll-my-1 p-1", className)}
       {...props}
     />
-  );
+  )
 }
 
 function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
@@ -27,7 +27,7 @@ function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
       className={cn("flex flex-1 text-left [color:var(--ds-select-value)]", className)}
       {...props}
     />
-  );
+  )
 }
 
 const selectTriggerVariants = cva(
@@ -52,8 +52,8 @@ const selectTriggerVariants = cva(
       },
     },
     defaultVariants: { size: "md" },
-  },
-);
+  }
+)
 
 function SelectTrigger({
   className,
@@ -74,7 +74,7 @@ function SelectTrigger({
         }
       />
     </SelectPrimitive.Trigger>
-  );
+  )
 }
 
 function SelectContent({
@@ -109,7 +109,7 @@ function SelectContent({
             "[background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
             "shadow-md ring-1 ring-foreground/10",
             "duration-100 data-[align-trigger=true]:animate-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
-            className,
+            className
           )}
           {...props}
         >
@@ -119,20 +119,27 @@ function SelectContent({
         </SelectPrimitive.Popup>
       </SelectPrimitive.Positioner>
     </SelectPrimitive.Portal>
-  );
+  )
 }
 
-function SelectLabel({ className, ...props }: SelectPrimitive.GroupLabel.Props) {
+function SelectLabel({
+  className,
+  ...props
+}: SelectPrimitive.GroupLabel.Props) {
   return (
     <SelectPrimitive.GroupLabel
       data-slot="select-label"
       className={cn("px-1.5 py-1 text-xs [color:var(--ds-color-muted-foreground)]", className)}
       {...props}
     />
-  );
+  )
 }
 
-function SelectItem({ className, children, ...props }: SelectPrimitive.Item.Props) {
+function SelectItem({
+  className,
+  children,
+  ...props
+}: SelectPrimitive.Item.Props) {
   return (
     <SelectPrimitive.Item
       data-slot="select-item"
@@ -141,7 +148,7 @@ function SelectItem({ className, children, ...props }: SelectPrimitive.Item.Prop
         "focus:[background-color:var(--ds-menuitem-fillhover)] focus:[color:var(--ds-menuitem-content)]",
         "data-disabled:pointer-events-none data-disabled:opacity-50",
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-        className,
+        className
       )}
       {...props}
     >
@@ -156,20 +163,20 @@ function SelectItem({ className, children, ...props }: SelectPrimitive.Item.Prop
         <CheckIcon className="pointer-events-none" />
       </SelectPrimitive.ItemIndicator>
     </SelectPrimitive.Item>
-  );
+  )
 }
 
-function SelectSeparator({ className, ...props }: SelectPrimitive.Separator.Props) {
+function SelectSeparator({
+  className,
+  ...props
+}: SelectPrimitive.Separator.Props) {
   return (
     <SelectPrimitive.Separator
       data-slot="select-separator"
-      className={cn(
-        "pointer-events-none -mx-1 my-1 h-px [background-color:var(--ds-color-border)]",
-        className,
-      )}
+      className={cn("pointer-events-none -mx-1 my-1 h-px [background-color:var(--ds-color-border)]", className)}
       {...props}
     />
-  );
+  )
 }
 
 function SelectScrollUpButton({
@@ -181,13 +188,13 @@ function SelectScrollUpButton({
       data-slot="select-scroll-up-button"
       className={cn(
         "top-0 z-10 flex w-full cursor-default items-center justify-center [background-color:var(--ds-color-popover)] py-1 [&_svg:not([class*='size-'])]:size-4",
-        className,
+        className
       )}
       {...props}
     >
       <ChevronUpIcon />
     </SelectPrimitive.ScrollUpArrow>
-  );
+  )
 }
 
 function SelectScrollDownButton({
@@ -199,33 +206,33 @@ function SelectScrollDownButton({
       data-slot="select-scroll-down-button"
       className={cn(
         "bottom-0 z-10 flex w-full cursor-default items-center justify-center [background-color:var(--ds-color-popover)] py-1 [&_svg:not([class*='size-'])]:size-4",
-        className,
+        className
       )}
       {...props}
     >
       <ChevronDownIcon />
     </SelectPrimitive.ScrollDownArrow>
-  );
+  )
 }
 
 type SelectFieldProps = {
-  label?: string;
-  description?: string;
-  errorMessage?: string;
-  error?: boolean;
-  mandatory?: boolean;
+  label?: string
+  description?: string
+  errorMessage?: string
+  error?: boolean
+  mandatory?: boolean
   /** When provided, shows the ⓘ tooltip-icon trigger next to the label. */
-  tooltip?: React.ReactNode;
-  size?: "sm" | "md" | "lg";
-  disabled?: boolean;
-  placeholder?: string;
-  children: React.ReactNode;
-  className?: string;
-  value?: string;
-  defaultValue?: string;
-  onValueChange?: (value: string | null) => void;
-  "aria-label"?: string;
-};
+  tooltip?: React.ReactNode
+  size?: "sm" | "md" | "lg"
+  disabled?: boolean
+  placeholder?: string
+  children: React.ReactNode
+  className?: string
+  value?: string
+  defaultValue?: string
+  onValueChange?: (value: string | null) => void
+  "aria-label"?: string
+}
 
 function SelectField({
   label,
@@ -244,24 +251,18 @@ function SelectField({
   onValueChange,
   "aria-label": ariaLabel,
 }: SelectFieldProps) {
-  const labelId = React.useId();
-  const hasError = error || !!errorMessage;
+  const labelId = React.useId()
+  const hasError = error || !!errorMessage
   return (
-    <div
-      className={cn(
-        "flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start",
-        className,
-      )}
-    >
+    <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
       {label && (
         <div className="flex items-center gap-1 h-4">
-          <span
-            id={labelId}
-            className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]"
-          >
+          <span id={labelId} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
             {label}
           </span>
-          {mandatory && <span className="[color:var(--ds-input-contenterror)]">*</span>}
+          {mandatory && (
+            <span className="[color:var(--ds-input-contenterror)]">*</span>
+          )}
           {tooltip && (
             <TooltipProvider>
               <TooltipIcon content={tooltip} />
@@ -269,12 +270,7 @@ function SelectField({
           )}
         </div>
       )}
-      <Select
-        value={value}
-        defaultValue={defaultValue}
-        onValueChange={onValueChange}
-        disabled={disabled}
-      >
+      <Select value={value} defaultValue={defaultValue} onValueChange={onValueChange} disabled={disabled}>
         <SelectTrigger
           size={size}
           className="w-full"
@@ -284,7 +280,9 @@ function SelectField({
         >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
-        <SelectContent>{children}</SelectContent>
+        <SelectContent>
+          {children}
+        </SelectContent>
       </Select>
       {hasError && errorMessage ? (
         <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
@@ -296,7 +294,7 @@ function SelectField({
         </p>
       ) : null}
     </div>
-  );
+  )
 }
 
 export {
@@ -312,4 +310,4 @@ export {
   SelectTrigger,
   SelectValue,
   selectTriggerVariants,
-};
+}

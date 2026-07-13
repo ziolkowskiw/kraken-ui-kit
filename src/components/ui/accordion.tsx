@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
-import { cva, type VariantProps } from "class-variance-authority";
-import { ChevronDown } from "lucide-react";
+import * as React from "react"
+import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
+import { cva, type VariantProps } from "class-variance-authority"
+import { ChevronDown } from "lucide-react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 const accordionItemVariants = cva("flex flex-col", {
   variants: {
@@ -18,7 +18,7 @@ const accordionItemVariants = cva("flex flex-col", {
     },
   },
   defaultVariants: { variant: "in-box" },
-});
+})
 
 type AccordionRootProps = Omit<AccordionPrimitive.Root.Props, "multiple"> & {
   /**
@@ -27,8 +27,8 @@ type AccordionRootProps = Omit<AccordionPrimitive.Root.Props, "multiple"> & {
    * `multiple` boolean internally.
    * @default "single"
    */
-  type?: "single" | "multiple";
-};
+  type?: "single" | "multiple"
+}
 
 function Accordion({ className, type = "single", children, ...props }: AccordionRootProps) {
   // Base UI matches `defaultValue`/`value` against each item's `value`, which
@@ -36,12 +36,13 @@ function Accordion({ className, type = "single", children, ...props }: Accordion
   // value to any AccordionItem that doesn't set one, so `defaultValue={[0]}` and
   // friends resolve predictably.
   const items = React.Children.map(children, (child, index) =>
-    React.isValidElement(child) && (child.props as { value?: unknown }).value === undefined
+    React.isValidElement(child) &&
+    (child.props as { value?: unknown }).value === undefined
       ? React.cloneElement(child as React.ReactElement<{ value?: unknown }>, {
           value: index,
         })
-      : child,
-  );
+      : child
+  )
 
   return (
     <AccordionPrimitive.Root
@@ -52,7 +53,7 @@ function Accordion({ className, type = "single", children, ...props }: Accordion
     >
       {items}
     </AccordionPrimitive.Root>
-  );
+  )
 }
 
 function AccordionItem({
@@ -67,7 +68,7 @@ function AccordionItem({
       className={cn(accordionItemVariants({ variant }), className)}
       {...props}
     />
-  );
+  )
 }
 
 function AccordionTrigger({
@@ -81,12 +82,12 @@ function AccordionTrigger({
   compact = false,
   ...props
 }: AccordionPrimitive.Trigger.Props & {
-  title?: React.ReactNode;
-  subtitle?: React.ReactNode;
-  hasSubtitle?: boolean;
-  icon?: React.ReactNode;
-  hasIcon?: boolean;
-  compact?: boolean;
+  title?: React.ReactNode
+  subtitle?: React.ReactNode
+  hasSubtitle?: boolean
+  icon?: React.ReactNode
+  hasIcon?: boolean
+  compact?: boolean
 }) {
   return (
     <AccordionPrimitive.Header data-slot="accordion-header">
@@ -102,7 +103,7 @@ function AccordionTrigger({
           // Base UI strips the native `disabled` attr on composite triggers, so
           // hook the disabled look on data-disabled / aria-disabled instead.
           "aria-disabled:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-          className,
+          className
         )}
         {...props}
       >
@@ -136,13 +137,10 @@ function AccordionTrigger({
             </>
           )}
         </div>
-        <ChevronDown
-          data-slot="accordion-trigger-icon"
-          className="size-6 shrink-0 [color:var(--ds-color-content-secondary)] transition-transform duration-200 group-data-[panel-open]/trigger:rotate-180"
-        />
+        <ChevronDown data-slot="accordion-trigger-icon" className="size-6 shrink-0 [color:var(--ds-color-content-secondary)] transition-transform duration-200 group-data-[panel-open]/trigger:rotate-180" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
-  );
+  )
 }
 
 function AccordionContent({
@@ -154,10 +152,10 @@ function AccordionContent({
   hasLinkButton = false,
   ...props
 }: AccordionPrimitive.Panel.Props & {
-  contentTitle?: React.ReactNode;
-  hasTitle?: boolean;
-  linkButton?: React.ReactNode;
-  hasLinkButton?: boolean;
+  contentTitle?: React.ReactNode
+  hasTitle?: boolean
+  linkButton?: React.ReactNode
+  hasLinkButton?: boolean
 }) {
   return (
     <AccordionPrimitive.Panel
@@ -170,7 +168,7 @@ function AccordionContent({
         "h-[var(--accordion-panel-height)] transition-[height,opacity] duration-200 ease-out",
         "data-[starting-style]:h-0 data-[ending-style]:h-0 data-[ending-style]:opacity-0",
         "[padding-inline:var(--ds-spacing-component-lg)] [padding-bottom:var(--ds-spacing-component-xl)]",
-        className,
+        className
       )}
       {...props}
     >
@@ -185,7 +183,7 @@ function AccordionContent({
       </div>
       {hasLinkButton && linkButton}
     </AccordionPrimitive.Panel>
-  );
+  )
 }
 
-export { Accordion, AccordionContent, AccordionItem, AccordionTrigger };
+export { Accordion, AccordionContent, AccordionItem, AccordionTrigger }
