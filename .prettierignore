@@ -1,0 +1,18 @@
+# generated
+src/styles/tokens.css
+registry.json
+public/r/
+manifests/
+docs/components/
+llms.txt
+public/llms.txt
+# build output
+.next/
+storybook-static/
+mcp/dist/
+mcp/manifests/
+coverage/
+# lockfiles / vendored
+package-lock.json
+mcp/package-lock.json
+CHANGELOG.md
