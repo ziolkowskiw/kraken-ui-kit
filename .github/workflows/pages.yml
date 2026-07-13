@@ -20,15 +20,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
       # Regenerate the registry from source so the served files are always
       # canonical (a true drift gate — regenerate + git diff — lands in M2).
       - run: npm run registry:bundle
+      - run: npm run build-storybook
       - name: Assemble the static site
         run: |
           rm -rf _site
@@ -42,6 +43,8 @@ jobs:
           cp design.md _site/design.md
           mkdir -p _site/docs/components
           cp -r docs/components/. _site/docs/components/
+          mkdir -p _site/storybook
+          cp -r storybook-static/. _site/storybook/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
