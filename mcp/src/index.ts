@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /* kraken-ui MCP server — stdio transport.
- * Install downstream:  claude mcp add kraken-ui -- npx -y @kraken-ui/mcp
+ * Local-only (not on npm). Build the clone, then:
+ *   claude mcp add kraken-ui -- node <abs-path-to-clone>/mcp/dist/index.js
  */
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";

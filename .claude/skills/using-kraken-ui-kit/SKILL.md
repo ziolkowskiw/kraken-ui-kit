@@ -18,7 +18,9 @@ served by an MCP server. When it's available, answer component questions from it
 instead of reading source or guessing:
 
 ```bash
-claude mcp add kraken-ui -- npx -y @kraken-ui/mcp
+# local-only — build the clone once, then register by absolute path:
+npm --prefix mcp install && npm --prefix mcp run build
+claude mcp add kraken-ui -- node <abs-path-to-clone>/mcp/dist/index.js
 ```
 
 | Tool | Use it for |

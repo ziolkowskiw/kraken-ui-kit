@@ -19,8 +19,10 @@
  *   7. git add (changed artefacts)
  *   8. git commit: chore(release): vX.Y.Z
  *   9. git tag vX.Y.Z
- *  10. npm publish ./mcp  (@kraken-ui/mcp)
- *  11. Print push instructions
+ *  10. Print push instructions
+ *
+ * Note: the MCP server is NOT published to npm — it runs local-only from a
+ * clone (see mcp/README.md). This script only version-mirrors mcp/package.json.
  *
  * Usage:
  *   npm run release               # dry-run patch
@@ -105,8 +107,7 @@ if (!YES) {
   console.log(`    7. git add package.json CHANGELOG.md registry.json src/styles/tokens.css mcp/package.json manifests/ schemas/ llms.txt public/llms.txt`);
   console.log(`    8. git commit -m "chore(release): v${nextVersion}"`);
   console.log(`    9. git tag v${nextVersion}`);
-  console.log(`   10. npm publish ./mcp  (publishes @kraken-ui/mcp@${nextVersion})`);
-  console.log(`   11. (print push instructions)`);
+  console.log(`   10. (print push instructions)`);
   console.log(`\n  Changelog entry that will be prepended:`);
   console.log(`  ─────────────────────────────────────────`);
   console.log(changelogEntry.split("\n").map((l) => `  ${l}`).join("\n"));
@@ -157,11 +158,6 @@ run(`git commit -m "chore(release): v${nextVersion}"`);
 console.log("\n9. Tag");
 run(`git tag v${nextVersion}`);
 
-console.log("\n10. Publish @kraken-ui/mcp to npm");
-// mcp/package.json has prepack -> build, so pack/publish rebuilds dist + bundled
-// manifests. publishConfig.access is "public", so the scoped package goes public.
-run(`npm publish ./mcp`);
-
-console.log(`\n✅  Release v${nextVersion} committed, tagged, and @kraken-ui/mcp published.\n`);
+console.log(`\n✅  Release v${nextVersion} committed and tagged.\n`);
 console.log(`   Push with:\n`);
 console.log(`     git push && git push --tags\n`);
