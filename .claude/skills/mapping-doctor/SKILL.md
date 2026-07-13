@@ -16,7 +16,7 @@ re-verifies it against both sides and fixes drift. Source of names/IDs:
    ID in `MAPPING.md` via `figma.getNodeByIdAsync`. Any "not found" = the set moved;
    re-locate it by name (`figma.root.findAll` for COMPONENT_SET/COMPONENT) and update
    both the ID and its Figma deep link (`?node-id=<id with ':'→'-'>`).
-   *(Known precedent: tooltip moved `2077:*` → `2115:*`.)*
+   _(Known precedent: tooltip moved `2077:*` → `2115:*`.)_
 2. **Every component file is mapped.** Diff `src/components/ui/*.tsx` (minus
    `*.stories.tsx`) against the files referenced in `MAPPING.md`. Flag any `.tsx`
    with no entry, and any entry pointing at a missing file.
@@ -33,16 +33,19 @@ re-verifies it against both sides and fixes drift. Source of names/IDs:
    Part 4 still hold (e.g. "Select" page set → `combobox`; "Dropdown" page → `select`).
 
 ## Conventions to preserve (don't "fix" these)
+
 - `State` axis → CSS, no prop except `disabled`.
 - Variant values are exact lowercase code enums (1:1, no transform).
 - Sub-parts (`dialog/header`, `select/item`, …) compose into the parent file — they
   get **no** standalone `.tsx` and no own row beyond a compose note.
 
 ## Output
+
 A short report: per-check PASS/FAIL + a table of `node/file → issue → fix applied`.
 Apply safe fixes (stale IDs, links, descriptions) directly; for anything that
 changes the component inventory or prop contract, list it and ask before editing.
 
 ## Done when
+
 Every node ID resolves, every component file is mapped, prop tables match the code,
 and (if the bridge is live) Figma metadata matches `MAPPING.md`.

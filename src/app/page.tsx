@@ -114,10 +114,18 @@ export default function Showcase() {
               <Badge color="brand">Brand</Badge>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <Badge color="blue" appearance="filled">Filled</Badge>
-              <Badge color="blue" appearance="outlined">Outlined</Badge>
-              <Badge color="blue" appearance="ghost">Ghost</Badge>
-              <Badge color="blue" shape="square">Square</Badge>
+              <Badge color="blue" appearance="filled">
+                Filled
+              </Badge>
+              <Badge color="blue" appearance="outlined">
+                Outlined
+              </Badge>
+              <Badge color="blue" appearance="ghost">
+                Ghost
+              </Badge>
+              <Badge color="blue" shape="square">
+                Square
+              </Badge>
             </div>
           </CardContent>
         </Card>
@@ -188,9 +196,7 @@ export default function Showcase() {
               <AlertDescription>This alert uses semantic tokens.</AlertDescription>
             </Alert>
             <Dialog>
-              <DialogTrigger
-                render={<Button variant="secondary">Open dialog</Button>}
-              />
+              <DialogTrigger render={<Button variant="secondary">Open dialog</Button>} />
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Brand-aware dialog</DialogTitle>

@@ -42,11 +42,7 @@ export type ComponentManifest = Record<string, unknown> & {
   rationale?: string;
 };
 
-const DEFAULT_DIR = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "..",
-  "manifests"
-);
+const DEFAULT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "manifests");
 
 export class Store {
   readonly index: IndexEntry[];
@@ -60,7 +56,7 @@ export class Store {
     if (!existsSync(path.join(dir, "index.json"))) {
       throw new Error(
         `Bundled manifests not found at ${dir} — the package was built without ` +
-          `'npm run bundle-manifests'.`
+          `'npm run bundle-manifests'.`,
       );
     }
     this.index = this.#read("index.json") as IndexEntry[];

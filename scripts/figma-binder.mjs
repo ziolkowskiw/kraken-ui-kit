@@ -122,7 +122,9 @@ const W = 32;
 let hasGaps = false;
 
 console.log("\n── Figma Binder Audit ──────────────────────────────────────────");
-console.log(`  Scanned: ${codeFiles.length} component files  |  MAPPING.md node IDs: ${mappingIds.size}`);
+console.log(
+  `  Scanned: ${codeFiles.length} component files  |  MAPPING.md node IDs: ${mappingIds.size}`,
+);
 if (VALIDATE && apiResults) {
   const total = allCodeIds.size;
   const resolved = Object.values(apiResults).filter(Boolean).length;

@@ -12,6 +12,7 @@ accumulated learnings); this skill is the wrapper that makes the result a
 first-class kit citizen.
 
 ## Inputs
+
 - Component name (lowercase-kebab, shadcn registry name where one exists).
 - Its Figma component set node ID (from `JIT-DS-2.0-figma-shadcn-names.md` /
   `MAPPING.md`), if it exists in Figma.
@@ -56,6 +57,7 @@ first-class kit citizen.
    derived from its imports). Then `npx shadcn build` to refresh `public/r/`.
 
 ## Done when
+
 The component renders in Storybook with Figma-parity controls (every dependent
 control gated with `if:` — no editable-but-ignored controls), uses only `--ds-*`
 tokens, has a `MAPPING.md` entry, and installs via `npx shadcn add @kraken/<name>`.

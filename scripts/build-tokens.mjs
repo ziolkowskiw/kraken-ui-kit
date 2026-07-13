@@ -20,35 +20,32 @@
 //
 // No dependencies — pure Node. Run: npm run tokens:build
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SRC = path.join(root, 'tokens', 'tokens.raw.css');
-const OUT = path.join(root, 'src', 'styles', 'tokens.css');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const SRC = path.join(root, "tokens", "tokens.raw.css");
+const OUT = path.join(root, "src", "styles", "tokens.css");
 
 // --- selector mapping (the only thing to touch when brands change) -----------
 // Single-mode Figma collections that must always apply -> :root.
-const BASE_MODES = ['global', 'component'];
+const BASE_MODES = ["global", "component"];
 // The semantic brand shown when no data-theme attribute is set.
-const DEFAULT_BRAND = 'jit';
+const DEFAULT_BRAND = "jit";
 // Every other semantic mode (e.g. 'brand') becomes [data-theme="<mode>"].
 // -----------------------------------------------------------------------------
 
-const raw = await readFile(SRC, 'utf8');
+const raw = await readFile(SRC, "utf8");
 
-const remapped = raw.replace(
-  /\[data-theme="([^"]+)"\]\s*\{/g,
-  (_match, mode) => {
-    if (BASE_MODES.includes(mode)) return ':root {';
-    if (mode === DEFAULT_BRAND) return `:root,\n[data-theme="${mode}"] {`;
-    return `[data-theme="${mode}"] {`;
-  },
-);
+const remapped = raw.replace(/\[data-theme="([^"]+)"\]\s*\{/g, (_match, mode) => {
+  if (BASE_MODES.includes(mode)) return ":root {";
+  if (mode === DEFAULT_BRAND) return `:root,\n[data-theme="${mode}"] {`;
+  return `[data-theme="${mode}"] {`;
+});
 
 // Strip the tool's generated-by comment (first line) and add our own header.
-const body = remapped.replace(/^\/\*[^\n]*\*\/\n/, '');
+const body = remapped.replace(/^\/\*[^\n]*\*\/\n/, "");
 const header =
   `/* AUTO-GENERATED — do not edit by hand.\n` +
   `   Source: tokens/tokens.dtcg.json (canonical) -> tokens/tokens.raw.css (export).\n` +
@@ -61,4 +58,4 @@ await writeFile(OUT, header + body);
 
 const themeCount = [...raw.matchAll(/\[data-theme="([^"]+)"\]/g)].length;
 console.log(`✓ Built ${path.relative(root, OUT)} from ${themeCount} source blocks`);
-console.log(`  base -> :root (${BASE_MODES.join(', ')}); default brand: ${DEFAULT_BRAND}`);
+console.log(`  base -> :root (${BASE_MODES.join(", ")}); default brand: ${DEFAULT_BRAND}`);

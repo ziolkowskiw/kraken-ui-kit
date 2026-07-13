@@ -65,9 +65,11 @@ export function parseMapping(md) {
     const body = chunk.split(/\n[ \t]*\n/)[0];
     conventions.push(body.replace(/\s+/g, " ").trim());
   }
-  const brandNote = convSection.match(/Brand\/theme[\s\S]*?(?=\n[ \t]*\n|$(?![\s\S]))/)?.[0]
-    ?.replace(/\s+/g, " ")
-    .trim() ?? null;
+  const brandNote =
+    convSection
+      .match(/Brand\/theme[\s\S]*?(?=\n[ \t]*\n|$(?![\s\S]))/)?.[0]
+      ?.replace(/\s+/g, " ")
+      .trim() ?? null;
   if (brandNote) conventions.push(brandNote);
 
   // ── shadcn divergence contract ───────────────────────────────────────────
@@ -79,10 +81,11 @@ export function parseMapping(md) {
     if (cells.length < 3 || cells[0] === "Area") continue;
     divergences.push({ area: cells[0], kit: cells[1], shadcn: cells[2] });
   }
-  const divergenceNote = divSection
-    .match(/Formerly-backlogged[\s\S]*?(?=\n[ \t]*\n|$(?![\s\S]))/)?.[0]
-    ?.replace(/\s+/g, " ")
-    .trim() ?? null;
+  const divergenceNote =
+    divSection
+      .match(/Formerly-backlogged[\s\S]*?(?=\n[ \t]*\n|$(?![\s\S]))/)?.[0]
+      ?.replace(/\s+/g, " ")
+      .trim() ?? null;
 
   const entries = {};
 
@@ -94,7 +97,7 @@ export function parseMapping(md) {
     const name = h[1];
     const body = part1.slice(
       h.index + h[0].length,
-      i + 1 < headings.length ? headings[i + 1].index : undefined
+      i + 1 < headings.length ? headings[i + 1].index : undefined,
     );
     const propTable = [];
     const tableLines = body.split("\n").filter((l) => l.trim().startsWith("|"));
@@ -108,13 +111,11 @@ export function parseMapping(md) {
       }
       const get = (label) => {
         const idx = header.findIndex((c) => c.includes(label));
-        return idx === -1 ? null : cells[idx] ?? null;
+        return idx === -1 ? null : (cells[idx] ?? null);
       };
       propTable.push({
         figmaProperty: flattenLinks(get("figma property") ?? ""),
-        ...(get("type") != null && header.some((c) => c === "type")
-          ? { type: get("type") }
-          : {}),
+        ...(get("type") != null && header.some((c) => c === "type") ? { type: get("type") } : {}),
         codeProp: flattenLinks(get("code prop") ?? ""),
         values: flattenLinks((get("values") ?? "").replace(/\\\|/g, "|")),
       });
@@ -204,7 +205,7 @@ export function assertCoverage(mapping, fileNames) {
     console.error(
       `✖ MAPPING.md coverage failure — no entry resolves for: ${missing.join(", ")}\n` +
         `  Every src/components/ui/*.tsx must be reachable from MAPPING.md ` +
-        `(by name, Source link, or a \`<file>.tsx\` mention).`
+        `(by name, Source link, or a \`<file>.tsx\` mention).`,
     );
     process.exit(1);
   }

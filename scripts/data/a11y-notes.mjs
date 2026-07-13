@@ -124,7 +124,7 @@ export const A11Y = {
 - Keyboard: \`ArrowLeft\`/\`ArrowRight\` moves between top-level items; \`ArrowDown\` opens a menu.
 - Focus returns to the triggering menubar item on close.`,
 
-  "navigation-menu": `- Wrap in \`<nav aria-label="Main"\>\` to give the landmark a name.
+  "navigation-menu": `- Wrap in \`<nav aria-label="Main">\` to give the landmark a name.
 - Keyboard: \`Tab\` / \`Shift+Tab\` navigates top-level items; submenus open on \`Enter\`/\`Space\`/\`ArrowDown\`.`,
 
   pagination: `- Wrap in \`<nav aria-label="Pagination">\`.
@@ -161,7 +161,7 @@ export const A11Y = {
 
   separator: `- Use \`role="separator"\` (default). For decorative separators: \`role="none"\` or \`aria-hidden="true"\`.`,
 
-  sidebar: `- Wrap in \`<nav aria-label="Primary"\>\` or use \`role="navigation"\`.
+  sidebar: `- Wrap in \`<nav aria-label="Primary">\` or use \`role="navigation"\`.
 - Collapsible sidebar: the toggle button needs \`aria-expanded\` and \`aria-controls\`.`,
 
   skeleton: `- Hide skeletons from screen readers: \`aria-hidden="true"\` on all skeleton elements.

@@ -40,16 +40,18 @@ of sync. **Report only — do not modify Figma, tokens, or code here.** Hand fix
      after changing a source);
    - cross-check failures (source ⇄ manifest coverage, registry items, layer-3
      tokens vs `tokens.css`);
-   - *(informational, not a failure)* components with no
+   - _(informational, not a failure)_ components with no
      `manifests/overrides/<name>.json` usage overlay — candidates for seeding.
 
 ## Output
+
 A dated report (PASS/FAIL per section) with mismatch tables:
 `item → Figma value/name → code value/name → suggested skill to fix`.
 Order findings by severity: shadcn-name drift first (highest), then sync staleness,
 then cosmetic.
 
 ## Done when
+
 The three sources agree, or every disagreement is listed with the exact remediation
 (`token-sync`, `mapping-doctor`, `registry:build`, or `manifests:build`). No files
 changed by this skill.

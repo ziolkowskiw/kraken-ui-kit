@@ -5,9 +5,24 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "name", "title", "description", "install", "source", "figma", "exports",
-    "variants", "props", "slots", "tokens", "a11y", "usage", "boundaries",
-    "whenToUseInstead", "aliases", "keywords", "notes"
+    "name",
+    "title",
+    "description",
+    "install",
+    "source",
+    "figma",
+    "exports",
+    "variants",
+    "props",
+    "slots",
+    "tokens",
+    "a11y",
+    "usage",
+    "boundaries",
+    "whenToUseInstead",
+    "aliases",
+    "keywords",
+    "notes"
   ],
   "properties": {
     "name": { "type": "string", "pattern": "^[a-z0-9-]+$" },
@@ -98,7 +113,10 @@
       "required": ["exports", "figmaParts"],
       "properties": {
         "exports": { "type": "array", "items": { "type": "string" } },
-        "figmaParts": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9-]+/[a-z0-9-]+$" } }
+        "figmaParts": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z0-9-]+/[a-z0-9-]+$" }
+        }
       }
     },
     "tokens": {
@@ -106,7 +124,10 @@
       "additionalProperties": false,
       "required": ["layer3", "other"],
       "properties": {
-        "layer3": { "type": "array", "items": { "type": "string", "pattern": "^--ds-[a-z0-9-]+$" } },
+        "layer3": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^--ds-[a-z0-9-]+$" }
+        },
         "other": { "type": "array", "items": { "type": "string", "pattern": "^--ds-[a-z0-9-]+$" } }
       }
     },

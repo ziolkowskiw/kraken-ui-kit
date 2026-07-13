@@ -55,7 +55,7 @@ function sortKeysDeep(value) {
     return Object.fromEntries(
       Object.keys(value)
         .sort()
-        .map((k) => [k, sortKeysDeep(value[k])])
+        .map((k) => [k, sortKeysDeep(value[k])]),
     );
   }
   return value;
@@ -123,7 +123,7 @@ for (const file of files) {
   const tokens = extractTokens(src);
   const boolProps = [...new Set(extractBoolProps(src))].filter((p) => !(p in axes));
   const strProps = [...new Set(extractStringProps(src))].filter(
-    (p) => !(p in axes) && !boolProps.includes(p)
+    (p) => !(p in axes) && !boolProps.includes(p),
   );
 
   // Props: extracted surface first, then Figma prop-map info from MAPPING.
@@ -155,14 +155,14 @@ for (const file of files) {
   const other = tokens.filter((t) => tokenLayer(t) !== "L3 Component");
 
   const partExports = exports.filter(
-    (e) => e !== titleCase(name).replace(/ /g, "") && !/Variants$|^use[A-Z]/.test(e)
+    (e) => e !== titleCase(name).replace(/ /g, "") && !/Variants$|^use[A-Z]/.test(e),
   );
 
   const notes = [];
   if (entry?.notes?.length) notes.push(...entry.notes.map(clean));
   if (Object.keys(axes).length)
     notes.push(
-      "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
+      "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop.",
     );
   if (entry?.viaEntry && entry.viaEntry !== name)
     notes.push(`Mapped via the '${entry.viaEntry}' entry in MAPPING.md.`);
@@ -182,16 +182,14 @@ for (const file of files) {
     ...(existsSync(join(UI_DIR, `${name}.stories.tsx`))
       ? { story: `src/components/ui/${name}.stories.tsx` }
       : {}),
-    figma: entry?.figmaNodeId
-      ? { nodeId: entry.figmaNodeId, fileKey: mapping.fileKey }
-      : null,
+    figma: entry?.figmaNodeId ? { nodeId: entry.figmaNodeId, fileKey: mapping.fileKey } : null,
     exports,
     variants: {
       axes: Object.fromEntries(
         Object.entries(axes).map(([prop, values]) => [
           prop,
           { values, ...(defaults[prop] !== undefined ? { default: defaults[prop] } : {}) },
-        ])
+        ]),
       ),
       ...(compound.length ? { compound } : {}),
     },
@@ -232,7 +230,8 @@ emit("index.json", indexEntries);
 
 // ── foundations.json — the always-on layer ───────────────────────────────────
 const foundations = {
-  system: "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 2 brands.",
+  system:
+    "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 2 brands.",
   sources: ["design.md", "MAPPING.md"],
   tokenArchitecture: {
     layers: [
@@ -361,9 +360,9 @@ sources under \`src/components/ui/\`, \`MAPPING.md\`, \`registry.json\`,
 Agents propose; humans direct. To change a manifest, change its source.
 
 Served to agents by the \`@kraken-ui/mcp\` server (see \`mcp/\`).
-`
+`,
 );
 
 console.log(
-  `✅  Generated ${indexEntries.length} component manifests + foundations.json, tokens.json, index.json in ${OUT_DIR.replace(ROOT + "/", "")}/`
+  `✅  Generated ${indexEntries.length} component manifests + foundations.json, tokens.json, index.json in ${OUT_DIR.replace(ROOT + "/", "")}/`,
 );

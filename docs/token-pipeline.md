@@ -6,15 +6,16 @@ make changes in Figma; this pipeline turns them into the CSS the components use.
 
 ## The three files
 
-| File | What it is | Edited by |
-|---|---|---|
-| `tokens/tokens.dtcg.json` | The **canonical** token data — every variable, its layer, value, and alias chain, in the industry-standard W3C DTCG format. The source of truth in code. | Figma export (never by hand) |
-| `tokens/tokens.raw.css` | The raw CSS export from the Figma plugin — correct values, but one block per Figma collection-mode. An intermediate. | Figma export (never by hand) |
-| `src/styles/tokens.css` | The **final** stylesheet the app imports. Correct `:root` / brand-theme structure. | `npm run tokens:build` (never by hand) |
+| File                      | What it is                                                                                                                                               | Edited by                              |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| `tokens/tokens.dtcg.json` | The **canonical** token data — every variable, its layer, value, and alias chain, in the industry-standard W3C DTCG format. The source of truth in code. | Figma export (never by hand)           |
+| `tokens/tokens.raw.css`   | The raw CSS export from the Figma plugin — correct values, but one block per Figma collection-mode. An intermediate.                                     | Figma export (never by hand)           |
+| `src/styles/tokens.css`   | The **final** stylesheet the app imports. Correct `:root` / brand-theme structure.                                                                       | `npm run tokens:build` (never by hand) |
 
 ## The two steps
 
-### 1. Sync from Figma  (needs the Figma desktop bridge running)
+### 1. Sync from Figma (needs the Figma desktop bridge running)
+
 Done with Claude + the Figma Console MCP. Claude runs two exports against the live
 `JIT DS 2.0` file, writing **only the three real collections** (`global`, `semantic`,
 `component`) — the `_preview-labels` collection is docs-only and excluded:
@@ -24,10 +25,12 @@ Done with Claude + the Figma Console MCP. Claude runs two exports against the li
 
 (This becomes the `token-sync` Claude skill — see the project plan, Phase 7.)
 
-### 2. Build the final CSS  (no Figma needed — runs anywhere, incl. CI)
+### 2. Build the final CSS (no Figma needed — runs anywhere, incl. CI)
+
 ```bash
 npm run tokens:build
 ```
+
 `scripts/build-tokens.mjs` rewrites the selectors so the layers cascade correctly:
 
 ```
@@ -42,8 +45,12 @@ npm run tokens:build
 The whole kit re-skins by setting one attribute on `<html>`:
 
 ```html
-<html>                          <!-- jit brand (default) -->
-<html data-theme="brand">   <!-- brand brand -->
+<html>
+  <!-- jit brand (default) -->
+  <html data-theme="brand">
+    <!-- brand brand -->
+  </html>
+</html>
 ```
 
 Because component tokens (`--ds-button-primary-fill`) alias semantic tokens
@@ -52,12 +59,14 @@ re-resolves everything automatically. Verified: jit → `#FFD242` rounded,
 brand → `#298EE5` sharp, with **no change to component tokens**.
 
 ## Adding a brand later
+
 1. Add the brand as a mode in the Figma `semantic` collection (alias to a primitive ramp).
 2. Re-run step 1 (sync) and step 2 (build).
 3. If it should be the default brand, change `DEFAULT_BRAND` at the top of
    `scripts/build-tokens.mjs`; otherwise it just works as `[data-theme="<brand>"]`.
 
 ## Naming rule (for reference)
+
 CSS variable = `--ds-` + the full Figma token path, slashes → dashes, lowercased.
 `button/primary/fill` → `--ds-button-primary-fill`. See
 `../JIT-DS-2.0-naming-conventions.md` (in the design-docs folder).

@@ -11,17 +11,17 @@ distribution, CI, and test surfaces directly.
 
 ## Part 1 — What has been done (verified, not self-reported)
 
-| Pillar | State | Evidence |
-|---|---|---|
-| 3-layer token architecture | ✅ | 827 tokens (302 global / 249 semantic / 276 component) in `tokens/tokens.dtcg.json`; `tokens:build` produces cascade-correct CSS; jit⇄brand switch verified end-to-end |
-| Component kit | ✅ | 56 tokenized components + 57 stories; 53/53 visual parity QA (2026-06-23); shadcn base-nova consistency audit run **and applied in two sweeps** (36/45 exact-match, remainder is the documented divergence contract in MAPPING.md) |
-| Figma ↔ code mapping | ✅ | MAPPING.md — 40 parents, node-ID disambiguation, conventions block; `figma-binder` + `mapping-doctor` keep it honest |
-| Machine-readable layer | ✅ | 56 component manifests + foundations/tokens/index, 5 JSON schemas, overrides judgment layer; `manifests:check` (schemas + byte-drift + cross-checks) passes today |
-| MCP server | ✅ | `@kraken-ui/mcp` package complete (6 tools, self-contained bundle) — **local-only by design** (run from a clone; deliberately not published to npm); install docs point at `node <clone>/mcp/dist/index.js`, `mcp/package.json` is `private` |
-| shadcn registry | 🟡 | `registry.json` (58 items) + compiled `public/r/*.json`, internal deps namespaced to `@kraken/*`; **GitHub Pages workflow ready, hosting not yet enabled**; consumer `registries` config now documented (README, foundations.json, llms.txt, skill) |
-| AI entry points | ✅ | `llms.txt` (root + public), `CLAUDE.md`, 7 skills, 3 agents, Storybook addon-mcp installed |
-| Governance | 🟡 | Release script works, `v0.0.1` tagged (2026-06-28) — but everything since (storybook quality, consistency sweeps, machine-readable layer) is unreleased, and **no CI exists** despite CLAUDE.md promising "CI byte-diffs them" |
-| Figma-first theming | ⬜ | Direction locked (theme editor removed 2026-07; themes = Figma semantic modes + token-sync) but the "add a new brand" runbook/skill doesn't exist yet |
+| Pillar                     | State | Evidence                                                                                                                                                                                                                                            |
+| -------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 3-layer token architecture | ✅    | 827 tokens (302 global / 249 semantic / 276 component) in `tokens/tokens.dtcg.json`; `tokens:build` produces cascade-correct CSS; jit⇄brand switch verified end-to-end                                                                              |
+| Component kit              | ✅    | 56 tokenized components + 57 stories; 53/53 visual parity QA (2026-06-23); shadcn base-nova consistency audit run **and applied in two sweeps** (36/45 exact-match, remainder is the documented divergence contract in MAPPING.md)                  |
+| Figma ↔ code mapping       | ✅    | MAPPING.md — 40 parents, node-ID disambiguation, conventions block; `figma-binder` + `mapping-doctor` keep it honest                                                                                                                                |
+| Machine-readable layer     | ✅    | 56 component manifests + foundations/tokens/index, 5 JSON schemas, overrides judgment layer; `manifests:check` (schemas + byte-drift + cross-checks) passes today                                                                                   |
+| MCP server                 | ✅    | `@kraken-ui/mcp` package complete (6 tools, self-contained bundle) — **local-only by design** (run from a clone; deliberately not published to npm); install docs point at `node <clone>/mcp/dist/index.js`, `mcp/package.json` is `private`        |
+| shadcn registry            | 🟡    | `registry.json` (58 items) + compiled `public/r/*.json`, internal deps namespaced to `@kraken/*`; **GitHub Pages workflow ready, hosting not yet enabled**; consumer `registries` config now documented (README, foundations.json, llms.txt, skill) |
+| AI entry points            | ✅    | `llms.txt` (root + public), `CLAUDE.md`, 7 skills, 3 agents, Storybook addon-mcp installed                                                                                                                                                          |
+| Governance                 | 🟡    | Release script works, `v0.0.1` tagged (2026-06-28) — but everything since (storybook quality, consistency sweeps, machine-readable layer) is unreleased, and **no CI exists** despite CLAUDE.md promising "CI byte-diffs them"                      |
+| Figma-first theming        | ⬜    | Direction locked (theme editor removed 2026-07; themes = Figma semantic modes + token-sync) but the "add a new brand" runbook/skill doesn't exist yet                                                                                               |
 
 ## Part 2 — Gap analysis (why it isn't "polished" yet)
 
@@ -75,14 +75,14 @@ no hosted Storybook (Chromatic addon installed but unconfigured).
 1. **Host the registry on GitHub Pages.** ✅ `.github/workflows/pages.yml` added
    (regenerates + serves `r/*.json`, `registry.json`, `llms.txt`, `manifests/`);
    internal registry deps namespaced to `@kraken/*`; consumer `registries: {
-   "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json" }` block
+"@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json" }` block
    documented (README, foundations.json `install`, llms.txt, skill). **Remaining:
    enable Pages in repo Settings (Source: GitHub Actions).**
 2. **Keep `@kraken-ui/mcp` local-only.** ✅ No npm publish. Install docs point at
    `claude mcp add kraken-ui -- node <clone>/mcp/dist/index.js`; `scripts/release.mjs`
    no longer publishes; `mcp/package.json` marked `private` as a guard.
 3. **Run the end-to-end proof** (never executed): in a scratch repo, `npx shadcn
-   add @kraken/dialog` from the hosted registry (assert tokenized install, no hex),
+add @kraken/dialog` from the hosted registry (assert tokenized install, no hex),
    add the local MCP, prompt an agent for a destructive confirm dialog, assert
    `variant="destructive"`, tokens, no hex.
 4. **Cut v0.1.0** — a **local/GitHub tag only** (never npm), first release
@@ -113,7 +113,7 @@ no hosted Storybook (Chromatic addon installed but unconfigured).
    to Figma + pipeline; rebind the 10 files using Tailwind shadows.
 3. **Font strategy doc**: what consumers without Moderat JIT get (fallback
    stack), and how a client brand supplies its own font via one semantic token.
-4. **Dark mode**: *plan only* in this milestone — decide the
+4. **Dark mode**: _plan only_ in this milestone — decide the
    `brand × light/dark` mode-matrix shape in Figma before any code. Ship as v0.2.
 
 ### Milestone 4 — Truth pass on the docs · ~0.5 d

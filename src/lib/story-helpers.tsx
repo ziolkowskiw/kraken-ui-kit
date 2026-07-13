@@ -16,18 +16,15 @@
  * Dev-only: pulls the whole `lucide-react` set, which is fine for Storybook but is
  * never shipped to consumers (stories aren't part of the registry).
  */
-import * as React from 'react'
-import { icons } from 'lucide-react'
+import * as React from "react";
+import { icons } from "lucide-react";
 
 /* ── Icon picker ──────────────────────────────────────────────────────────── */
 
-export type IconName = 'none' | keyof typeof icons
+export type IconName = "none" | keyof typeof icons;
 
 /** The full lucide set plus a "none" sentinel, for a Storybook `select` control. */
-export const ICON_OPTIONS: IconName[] = [
-  'none',
-  ...(Object.keys(icons) as (keyof typeof icons)[]),
-]
+export const ICON_OPTIONS: IconName[] = ["none", ...(Object.keys(icons) as (keyof typeof icons)[])];
 
 /**
  * Resolve an icon-picker value to a real React node. `undefined`/`'none'` → no
@@ -35,9 +32,9 @@ export const ICON_OPTIONS: IconName[] = [
  * ReactNode; this just bridges the string control to a nested `<Icon />` instance.
  */
 export function renderIcon(name?: IconName): React.ReactNode {
-  if (!name || name === 'none') return undefined
-  const Icon = icons[name as keyof typeof icons]
-  return Icon ? <Icon /> : undefined
+  if (!name || name === "none") return undefined;
+  const Icon = icons[name as keyof typeof icons];
+  return Icon ? <Icon /> : undefined;
 }
 
 /**
@@ -46,48 +43,45 @@ export function renderIcon(name?: IconName): React.ReactNode {
  */
 export function iconArgType(label: string, category?: string) {
   return {
-    control: 'select' as const,
+    control: "select" as const,
     options: ICON_OPTIONS,
     name: label,
     ...(category ? { table: { category } } : {}),
-  }
+  };
 }
 
 /* ── Nested Button controls ───────────────────────────────────────────────── */
 
 /** Figma Button variant axis — reused wherever a story nests a real Button. */
 export const BUTTON_VARIANTS = [
-  'primary',
-  'secondary',
-  'tonal',
-  'ghost',
-  'destructive',
-  'destructive-secondary',
-  'destructive-ghost',
-] as const
-export type ButtonVariant = (typeof BUTTON_VARIANTS)[number]
+  "primary",
+  "secondary",
+  "tonal",
+  "ghost",
+  "destructive",
+  "destructive-secondary",
+  "destructive-ghost",
+] as const;
+export type ButtonVariant = (typeof BUTTON_VARIANTS)[number];
 
 /**
  * `argTypes` for a nested Button, grouped under a `Nested: <part>` category so
  * the controls panel reads like Figma's nested-instance overrides.
  * @example ...nestedButtonArgTypes('Trigger') → `triggerLabel`, `triggerVariant`
  */
-export function nestedButtonArgTypes(
-  part: string,
-  keyPrefix = part.toLowerCase(),
-) {
-  const category = `Nested: ${part}`
+export function nestedButtonArgTypes(part: string, keyPrefix = part.toLowerCase()) {
+  const category = `Nested: ${part}`;
   return {
     [`${keyPrefix}Label`]: {
-      control: 'text' as const,
-      name: 'Label',
+      control: "text" as const,
+      name: "Label",
       table: { category },
     },
     [`${keyPrefix}Variant`]: {
-      control: 'select' as const,
+      control: "select" as const,
       options: BUTTON_VARIANTS,
-      name: 'Variant',
+      name: "Variant",
       table: { category },
     },
-  }
+  };
 }

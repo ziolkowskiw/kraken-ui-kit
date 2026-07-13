@@ -54,7 +54,12 @@ export function score(entry: IndexEntry, query: string): number {
 
 export function search(index: IndexEntry[], query: string, limit = 5): SearchResult[] {
   return index
-    .map((e) => ({ name: e.name, title: e.title, description: e.description, score: score(e, query) }))
+    .map((e) => ({
+      name: e.name,
+      title: e.title,
+      description: e.description,
+      score: score(e, query),
+    }))
     .filter((r) => r.score > 0)
     .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name))
     .slice(0, limit);

@@ -8,8 +8,18 @@ export function extractExports(src) {
   const m = src.match(/export\s*\{([^}]+)\}/g);
   if (!m) return [];
   return m
-    .flatMap((b) => b.replace(/export\s*\{/, "").replace("}", "").split(","))
-    .map((s) => s.trim().split(/\s+as\s+/)[0].trim())
+    .flatMap((b) =>
+      b
+        .replace(/export\s*\{/, "")
+        .replace("}", "")
+        .split(","),
+    )
+    .map((s) =>
+      s
+        .trim()
+        .split(/\s+as\s+/)[0]
+        .trim(),
+    )
     .filter((s) => s && /^[A-Z]/.test(s))
     .filter((v, i, a) => a.indexOf(v) === i);
 }
@@ -17,7 +27,8 @@ export function extractExports(src) {
 export function extractVariants(src) {
   const result = {};
   // find every `variants: { ... defaultVariants/compoundVariants` block
-  const blocksRe = /variants:\s*\{([\s\S]*?)\n[ \t]*\},?\s*\n[ \t]*(defaultVariants|compoundVariants)/g;
+  const blocksRe =
+    /variants:\s*\{([\s\S]*?)\n[ \t]*\},?\s*\n[ \t]*(defaultVariants|compoundVariants)/g;
   let bm;
   while ((bm = blocksRe.exec(src))) {
     const block = bm[1];
@@ -31,14 +42,13 @@ export function extractVariants(src) {
       // value keys: bare identifiers OR quoted (may contain hyphens)
       const vals = [
         ...[...inner.matchAll(/["']([\w-]+)["']\s*:/g)].map((m) => m[1]),
-        ...[...inner.matchAll(/^[ \t]+(\w+)\s*:/gm)].map((m) => m[1])
+        ...[...inner.matchAll(/^[ \t]+(\w+)\s*:/gm)]
+          .map((m) => m[1])
           .filter((v) => !["class", "className", "true", "false"].includes(v)),
       ];
       const unique = [...new Set(vals)];
       if (unique.length) {
-        result[key] = result[key]
-          ? [...new Set([...result[key], ...unique])]
-          : unique;
+        result[key] = result[key] ? [...new Set([...result[key], ...unique])] : unique;
       }
     }
   }
@@ -92,7 +102,8 @@ export function extractBoolProps(src) {
 
 export function extractStringProps(src) {
   const props = [];
-  for (const m of src.matchAll(/(\w+)\?:\s*(?:React\.ReactNode|string|LucideIcon)/g)) props.push(m[1]);
+  for (const m of src.matchAll(/(\w+)\?:\s*(?:React\.ReactNode|string|LucideIcon)/g))
+    props.push(m[1]);
   return props;
 }
 
@@ -113,14 +124,30 @@ export function extractLeadingComment(src) {
 
 // ── Token layer classification (from build-docs.mjs) ───────────────────────
 export function tokenLayer(name) {
-  if (name.startsWith("button-") || name.startsWith("input-") || name.startsWith("badge-") ||
-      name.startsWith("card-") || name.startsWith("alert-") || name.startsWith("select-") ||
-      name.startsWith("checkbox-") || name.startsWith("radio-") || name.startsWith("switch-") ||
-      name.startsWith("tabs-") || name.startsWith("sidebar-token") || name.startsWith("toggle-")) {
+  if (
+    name.startsWith("button-") ||
+    name.startsWith("input-") ||
+    name.startsWith("badge-") ||
+    name.startsWith("card-") ||
+    name.startsWith("alert-") ||
+    name.startsWith("select-") ||
+    name.startsWith("checkbox-") ||
+    name.startsWith("radio-") ||
+    name.startsWith("switch-") ||
+    name.startsWith("tabs-") ||
+    name.startsWith("sidebar-token") ||
+    name.startsWith("toggle-")
+  ) {
     return "L3 Component";
   }
-  if (name.startsWith("color-") || name.startsWith("radius-") || name.startsWith("spacing-") ||
-      name.startsWith("typography-") || name.startsWith("shadow-")) return "L2 Semantic";
+  if (
+    name.startsWith("color-") ||
+    name.startsWith("radius-") ||
+    name.startsWith("spacing-") ||
+    name.startsWith("typography-") ||
+    name.startsWith("shadow-")
+  )
+    return "L2 Semantic";
   return "L1 Primitive / Shared";
 }
 
@@ -147,9 +174,18 @@ export function parseImports(src) {
   while ((m = re.exec(src))) {
     const spec = m[1] || m[2];
     if (!spec) continue;
-    if (spec === "@/lib/utils") { usesUtils = true; continue; }
-    if (spec.startsWith("@/components/ui/")) { registryDeps.add(spec.split("/").pop()); continue; }
-    if (spec.startsWith("./")) { registryDeps.add(spec.split("/").pop()); continue; } // sibling ui file
+    if (spec === "@/lib/utils") {
+      usesUtils = true;
+      continue;
+    }
+    if (spec.startsWith("@/components/ui/")) {
+      registryDeps.add(spec.split("/").pop());
+      continue;
+    }
+    if (spec.startsWith("./")) {
+      registryDeps.add(spec.split("/").pop());
+      continue;
+    } // sibling ui file
     if (spec.startsWith("@/") || spec.startsWith(".")) continue; // other internal
     const p = pkgName(spec);
     if (!SKIP_PKGS.has(p)) npm.add(p);

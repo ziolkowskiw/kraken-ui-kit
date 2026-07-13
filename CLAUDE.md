@@ -17,13 +17,13 @@ Generated, **never hand-edit** (CI byte-diffs them): `manifests/**` (except
 `overrides/`), `docs/components/**`, `registry.json`, `src/styles/tokens.css`.
 To change them, edit the **source** and regenerate:
 
-| To change… | Edit… | Then run |
-|---|---|---|
-| a component's API/tokens | `src/components/ui/<name>.tsx` | `npm run registry:build && npm run manifests:build && npm run docs:build` |
-| Figma mapping / descriptions | `MAPPING.md` | `npm run manifests:build` |
-| aliases, keywords, usage do/don't | `manifests/overrides/<name>.json` (the only hand-edited JSON under manifests/) | `npm run manifests:build` |
-| a11y notes | `scripts/data/a11y-notes.mjs` | `npm run docs:build && npm run manifests:build` |
-| design tokens | `tokens/tokens.dtcg.json` (via token-sync) | `npm run tokens:build && npm run manifests:build` |
+| To change…                        | Edit…                                                                          | Then run                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| a component's API/tokens          | `src/components/ui/<name>.tsx`                                                 | `npm run registry:build && npm run manifests:build && npm run docs:build` |
+| Figma mapping / descriptions      | `MAPPING.md`                                                                   | `npm run manifests:build`                                                 |
+| aliases, keywords, usage do/don't | `manifests/overrides/<name>.json` (the only hand-edited JSON under manifests/) | `npm run manifests:build`                                                 |
+| a11y notes                        | `scripts/data/a11y-notes.mjs`                                                  | `npm run docs:build && npm run manifests:build`                           |
+| design tokens                     | `tokens/tokens.dtcg.json` (via token-sync)                                     | `npm run tokens:build && npm run manifests:build`                         |
 
 Validate with `npm run manifests:check` (schemas + drift byte-diff +
 cross-checks). Agents propose; humans direct: overrides are the human judgment

@@ -22,22 +22,22 @@ parity sweep held). Remaining px literals are geometry (switch travel, focus
 
 ## 1. Intentional divergences — keep, but they are the contract
 
-These are Figma-first decisions recorded in MAPPING.md. They are *correct* for
+These are Figma-first decisions recorded in MAPPING.md. They are _correct_ for
 this kit; the audit lists them so nobody "fixes" them back to shadcn:
 
-| Area | Kit | shadcn base-nova | Verdict |
-|---|---|---|---|
-| Button variants | `primary/secondary/tonal/ghost/destructive/destructive-secondary/destructive-ghost` | `default/outline/secondary/ghost/destructive/link` | Figma axis wins; document mapping for migrators (`default`→`primary`, `outline`→`secondary`) |
-| Button sizing | token-driven (`--ds-button-size-*`), `iconOnly` prop | class-driven, `size="icon-*"` values | Kit approach is the design-system point |
-| Alert prop | `type` | `variant` | Figma axis name |
-| Tabs variant | `badge` | `default` | Documented in MAPPING.md |
-| AlertDialog API | prop-driven `AlertDialogContent` (`title`, `description`, `primaryActions`, `secondaryActions`) | composable `Header/Footer/Title/Action/Cancel/Media` parts | Matches the Figma dialog anatomy; see §2 for the migration cost |
-| Avatar API | prop-driven (`fallback`, `src` props), `AvatarStack` | composable `AvatarImage/AvatarFallback` + `AvatarBadge/AvatarGroup` | Same trade as AlertDialog |
-| Progress | single `<Progress value>` with optional label row | composable `Track/Indicator/Label/Value` | Kit is simpler; fine |
-| Sonner | Base UI Toast (`toast`, `toastManager`) | `sonner` package | Intentional (parity checklist #40) |
-| Drawer | Base UI dialog, no `vaul` | `vaul` | Intentional |
-| `*Variants` exports | kit exports `cardVariants`, `switchVariants`, … | ref mostly doesn't | Harmless, useful — keep |
-| `*Field` wrappers | `InputField`, `SelectField`, `ComboboxField`, `TextareaField`, `RadioGroupField` | none | Kit extension — keep |
+| Area                | Kit                                                                                             | shadcn base-nova                                                    | Verdict                                                                                      |
+| ------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Button variants     | `primary/secondary/tonal/ghost/destructive/destructive-secondary/destructive-ghost`             | `default/outline/secondary/ghost/destructive/link`                  | Figma axis wins; document mapping for migrators (`default`→`primary`, `outline`→`secondary`) |
+| Button sizing       | token-driven (`--ds-button-size-*`), `iconOnly` prop                                            | class-driven, `size="icon-*"` values                                | Kit approach is the design-system point                                                      |
+| Alert prop          | `type`                                                                                          | `variant`                                                           | Figma axis name                                                                              |
+| Tabs variant        | `badge`                                                                                         | `default`                                                           | Documented in MAPPING.md                                                                     |
+| AlertDialog API     | prop-driven `AlertDialogContent` (`title`, `description`, `primaryActions`, `secondaryActions`) | composable `Header/Footer/Title/Action/Cancel/Media` parts          | Matches the Figma dialog anatomy; see §2 for the migration cost                              |
+| Avatar API          | prop-driven (`fallback`, `src` props), `AvatarStack`                                            | composable `AvatarImage/AvatarFallback` + `AvatarBadge/AvatarGroup` | Same trade as AlertDialog                                                                    |
+| Progress            | single `<Progress value>` with optional label row                                               | composable `Track/Indicator/Label/Value`                            | Kit is simpler; fine                                                                         |
+| Sonner              | Base UI Toast (`toast`, `toastManager`)                                                         | `sonner` package                                                    | Intentional (parity checklist #40)                                                           |
+| Drawer              | Base UI dialog, no `vaul`                                                                       | `vaul`                                                              | Intentional                                                                                  |
+| `*Variants` exports | kit exports `cardVariants`, `switchVariants`, …                                                 | ref mostly doesn't                                                  | Harmless, useful — keep                                                                      |
+| `*Field` wrappers   | `InputField`, `SelectField`, `ComboboxField`, `TextareaField`, `RadioGroupField`                | none                                                                | Kit extension — keep                                                                         |
 
 ## 2. Real gaps, ranked
 
@@ -166,8 +166,8 @@ missing exports 39 → 15, missing slots 36 → 17):
 - **Sidebar app-shell**: `SidebarProvider` (controlled/uncontrolled collapse,
   cookie persistence, ⌘/Ctrl+B), `SidebarTrigger`, `SidebarRail`,
   `SidebarInset`, `SidebarInput`, `SidebarSeparator`, `SidebarGroupContent/
-  Action`, `SidebarMenuAction/Badge/Skeleton`, `SidebarMenuSub/SubItem/
-  SubButton`. The existing Figma-driven `Sidebar collapsed` prop still works
+Action`, `SidebarMenuAction/Badge/Skeleton`, `SidebarMenuSub/SubItem/
+SubButton`. The existing Figma-driven `Sidebar collapsed` prop still works
   standalone; it reads the provider only when the prop is unset. No mobile
   sheet mode yet. New `AppShell` story.
 - **Combobox multi-select + select-surface**: `ComboboxChips/Chip/ChipsInput`

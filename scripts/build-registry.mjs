@@ -59,23 +59,40 @@ const base = [
     name: "tokens",
     type: "registry:file",
     title: "Design tokens (--ds-*)",
-    description: "Generated 3-layer token CSS (primitives + component tokens + brand semantics). Brand-switchable via [data-theme] on <html>.",
-    files: [{ path: "src/styles/tokens.css", type: "registry:file", target: "src/styles/tokens.css" }],
+    description:
+      "Generated 3-layer token CSS (primitives + component tokens + brand semantics). Brand-switchable via [data-theme] on <html>.",
+    files: [
+      { path: "src/styles/tokens.css", type: "registry:file", target: "src/styles/tokens.css" },
+    ],
   },
   {
     name: "theme",
     type: "registry:file",
     title: "Kraken theme mapping",
-    description: "Maps shadcn semantic vars (--primary, --background, …) onto the --ds-* tokens + @theme inline. Depends on `tokens`.",
+    description:
+      "Maps shadcn semantic vars (--primary, --background, …) onto the --ds-* tokens + @theme inline. Depends on `tokens`.",
     registryDependencies: ["tokens"],
-    files: [{ path: "src/styles/kraken-theme.css", type: "registry:file", target: "src/styles/kraken-theme.css" }],
+    files: [
+      {
+        path: "src/styles/kraken-theme.css",
+        type: "registry:file",
+        target: "src/styles/kraken-theme.css",
+      },
+    ],
   },
   {
     name: "ai-foundations",
     type: "registry:file",
     title: "AI foundations (machine-readable rules)",
-    description: "Always-on design-system rules for AI agents — token architecture, brand contract, conventions, shadcn divergences. Generated from design.md + MAPPING.md; the MCP server (@kraken-ui/mcp) serves the same data on demand.",
-    files: [{ path: "manifests/foundations.json", type: "registry:file", target: "ai/kraken-foundations.json" }],
+    description:
+      "Always-on design-system rules for AI agents — token architecture, brand contract, conventions, shadcn divergences. Generated from design.md + MAPPING.md; the MCP server (@kraken-ui/mcp) serves the same data on demand.",
+    files: [
+      {
+        path: "manifests/foundations.json",
+        type: "registry:file",
+        target: "ai/kraken-foundations.json",
+      },
+    ],
   },
 ];
 
@@ -85,8 +102,7 @@ const base = [
 // either 404 (theme/tokens) or silently pull shadcn's un-tokenized base.
 const SHADCN_PRIMITIVES = new Set(["utils"]);
 const krakenNames = new Set([...base, ...items].map((i) => i.name));
-const nsDep = (d) =>
-  krakenNames.has(d) && !SHADCN_PRIMITIVES.has(d) ? `@kraken/${d}` : d;
+const nsDep = (d) => (krakenNames.has(d) && !SHADCN_PRIMITIVES.has(d) ? `@kraken/${d}` : d);
 for (const item of [...base, ...items]) {
   if (item.registryDependencies) {
     item.registryDependencies = item.registryDependencies.map(nsDep);
@@ -101,4 +117,6 @@ const registry = {
 };
 
 writeFileSync(join(ROOT, "registry.json"), JSON.stringify(registry, null, 2) + "\n");
-console.log(`registry.json written: ${registry.items.length} items (${items.length} components + ${base.length} base).`);
+console.log(
+  `registry.json written: ${registry.items.length} items (${items.length} components + ${base.length} base).`,
+);

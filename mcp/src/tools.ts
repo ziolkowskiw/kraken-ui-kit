@@ -28,9 +28,7 @@ export function registerTools(server: McpServer, store: Store): void {
       inputSchema: {},
     },
     async () =>
-      json(
-        store.index.map(({ name, title, description }) => ({ name, title, description }))
-      )
+      json(store.index.map(({ name, title, description }) => ({ name, title, description }))),
   );
 
   server.registerTool(
@@ -40,7 +38,7 @@ export function registerTools(server: McpServer, store: Store): void {
         "Search components by name, alias, export, or keyword (e.g. 'modal', 'outline button', 'dropdown'). Returns the top 5 matches with scores.",
       inputSchema: { query: z.string().min(1).describe("Free-text query") },
     },
-    async ({ query }) => json(search(store.index, query))
+    async ({ query }) => json(search(store.index, query)),
   );
 
   server.registerTool(
@@ -62,13 +60,13 @@ export function registerTools(server: McpServer, store: Store): void {
         const suggestions = search(store.index, name, 3).map((r) => r.name);
         return error(
           `Unknown component '${name}'.` +
-            (suggestions.length ? ` Did you mean: ${suggestions.join(", ")}?` : "")
+            (suggestions.length ? ` Did you mean: ${suggestions.join(", ")}?` : ""),
         );
       }
       if (dense === false) return json(manifest);
       const { rationale, notes, ...denseManifest } = manifest;
       return json(denseManifest);
-    }
+    },
   );
 
   server.registerTool(
@@ -78,7 +76,7 @@ export function registerTools(server: McpServer, store: Store): void {
         "The always-on rules of the kit: 3-layer --ds-* token architecture, brand switching (data-theme jit/brand), core principles, Figma↔code conventions, shadcn divergences, scales, install bootstrap. Call once per session before building UI.",
       inputSchema: {},
     },
-    async () => json(store.foundations)
+    async () => json(store.foundations),
   );
 
   server.registerTool(
@@ -101,7 +99,7 @@ export function registerTools(server: McpServer, store: Store): void {
         const group = layers.component[component];
         if (!group)
           return error(
-            `No component token group '${component}'. Available: ${Object.keys(layers.component).join(", ")}`
+            `No component token group '${component}'. Available: ${Object.keys(layers.component).join(", ")}`,
           );
         return json({ brandNote, component: group.map((t) => resolveBrand(t, brand)) });
       }
@@ -114,12 +112,12 @@ export function registerTools(server: McpServer, store: Store): void {
                 Object.entries(layers.component).map(([c, ts]) => [
                   c,
                   ts.map((t) => resolveBrand(t, brand)),
-                ])
+                ]),
               )
             : layers[l].map((t) => resolveBrand(t, brand));
       }
       return json(out);
-    }
+    },
   );
 
   server.registerTool(
@@ -151,6 +149,6 @@ export function registerTools(server: McpServer, store: Store): void {
           notes: manifest.notes,
         },
       });
-    }
+    },
   );
 }

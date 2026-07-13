@@ -29,8 +29,7 @@ const fail = (msg) => {
 };
 
 const ajv = new Ajv2020.default({ allErrors: true, strict: true, allowUnionTypes: true });
-const loadSchema = (file) =>
-  ajv.compile(JSON.parse(readFileSync(join(SCHEMAS, file), "utf8")));
+const loadSchema = (file) => ajv.compile(JSON.parse(readFileSync(join(SCHEMAS, file), "utf8")));
 
 const validators = {
   component: loadSchema("component-manifest.schema.json"),
@@ -51,7 +50,7 @@ const validate = (kind, path) => {
 
 // ── 1. Schema validation ─────────────────────────────────────────────────────
 const componentFiles = readdirSync(join(MANIFESTS, "components")).filter((f) =>
-  f.endsWith(".json")
+  f.endsWith(".json"),
 );
 for (const f of componentFiles) validate("component", join(MANIFESTS, "components", f));
 validate("foundations", join(MANIFESTS, "foundations.json"));
@@ -60,7 +59,7 @@ validate("index", join(MANIFESTS, "index.json"));
 for (const f of readdirSync(join(MANIFESTS, "overrides")).filter((f) => f.endsWith(".json")))
   validate("override", join(MANIFESTS, "overrides", f));
 console.log(
-  `• schemas: ${componentFiles.length} component manifests + foundations/tokens/index + overrides validated`
+  `• schemas: ${componentFiles.length} component manifests + foundations/tokens/index + overrides validated`,
 );
 
 // ── 2. Drift check: regenerate and byte-diff ─────────────────────────────────
@@ -73,15 +72,20 @@ try {
   const compare = (rel) => {
     const committed = join(MANIFESTS, rel);
     const fresh = join(tmp, rel);
-    if (!existsSync(committed)) return fail(`manifests/${rel} missing — run npm run manifests:build`);
+    if (!existsSync(committed))
+      return fail(`manifests/${rel} missing — run npm run manifests:build`);
     if (readFileSync(committed, "utf8") !== readFileSync(fresh, "utf8"))
-      fail(`manifests/${rel} drifted from generated output — run npm run manifests:build (never hand-edit)`);
+      fail(
+        `manifests/${rel} drifted from generated output — run npm run manifests:build (never hand-edit)`,
+      );
   };
   for (const f of readdirSync(join(tmp, "components"))) compare(`components/${f}`);
   for (const f of ["foundations.json", "tokens.json", "index.json", "README.md"]) compare(f);
   for (const f of componentFiles)
     if (!existsSync(join(tmp, "components", f)))
-      fail(`manifests/components/${f} is stale — no source generates it; run npm run manifests:build`);
+      fail(
+        `manifests/components/${f} is stale — no source generates it; run npm run manifests:build`,
+      );
   if (!failures) console.log("• drift: committed manifests byte-match regenerated output");
 } finally {
   rmSync(tmp, { recursive: true, force: true });
@@ -110,7 +114,9 @@ for (const f of componentFiles) {
     if (!tokensCss.includes(`${t}:`))
       fail(`${f}: layer-3 token ${t} not found in src/styles/tokens.css`);
 }
-console.log(`• cross-checks: ${uiNames.length} sources ⇄ manifests, registry items, layer-3 tokens vs tokens.css`);
+console.log(
+  `• cross-checks: ${uiNames.length} sources ⇄ manifests, registry items, layer-3 tokens vs tokens.css`,
+);
 
 if (failures) {
   console.error(`\n✖ manifests:check failed with ${failures} error(s).`);

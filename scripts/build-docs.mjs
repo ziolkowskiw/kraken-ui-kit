@@ -47,10 +47,9 @@ for (const file of files) {
   })();
 
   // ── Anatomy ──────────────────────────────────────────────────────────────
-  const anatomy =
-    exports.length
-      ? exports.map((e) => `- \`${e}\``).join("\n")
-      : `- \`${title.replace(/ /g, "")}\` (default export)`;
+  const anatomy = exports.length
+    ? exports.map((e) => `- \`${e}\``).join("\n")
+    : `- \`${title.replace(/ /g, "")}\` (default export)`;
 
   // ── Props table ──────────────────────────────────────────────────────────
   const rows = [];
@@ -61,14 +60,13 @@ for (const file of files) {
   for (const p of boolProps.filter((p) => !Object.keys(variants).includes(p)))
     rows.push(`| \`${p}\` | bool | \`true \\| false\` | \`false\` |`);
   for (const p of strProps.filter(
-    (p) => !Object.keys(variants).includes(p) && !boolProps.includes(p)
+    (p) => !Object.keys(variants).includes(p) && !boolProps.includes(p),
   ))
     rows.push(`| \`${p}\` | string / node | — | — |`);
 
-  const propsSection =
-    rows.length
-      ? `| Prop | Type | Values | Default |\n|---|---|---|---|\n${rows.join("\n")}`
-      : `All props are passed through to the underlying Base UI / HTML element.`;
+  const propsSection = rows.length
+    ? `| Prop | Type | Values | Default |\n|---|---|---|---|\n${rows.join("\n")}`
+    : `All props are passed through to the underlying Base UI / HTML element.`;
 
   // ── Token map ────────────────────────────────────────────────────────────
   const byLayer = {};
@@ -93,19 +91,31 @@ for (const file of files) {
 ## What it is
 
 ${
-  name === "button" ? "Displays a button or a component that looks like a button. Use for primary actions, form submits, and dialog/menu triggers. For navigation styled as a button, use `link-button`." :
-  name === "badge" ? "Displays a badge or a component that looks like a badge. Use to label or categorize an item, or to show counts/status." :
-  name === "input" ? "Displays a form input field. Use for single-line text entry in forms. Always map to the `InputField` wrapper to get label/description/error/mandatory." :
-  name === "textarea" ? "Displays a form textarea. Use for multi-line text entry (comments, notes). Map to `TextareaField`." :
-  name === "select" ? "Displays a list of options to pick from, triggered by a button. Use for single-choice selection. Map to `SelectField`." :
-  name === "checkbox" ? "A control that toggles between checked and not checked. Use for opt-in/agree flows or multi-select lists." :
-  name === "radio-group" ? "A set of checkable buttons where only one can be checked at a time. Use to choose one option from a small visible set." :
-  name === "switch" ? "A control that toggles between on and off. Use for instant settings that take effect without a submit step." :
-  name === "card" ? "Displays a card with header, content, and footer. Use to group related content and actions into a surface." :
-  name === "alert" ? "Displays a callout for user attention. Use for inline, non-blocking messages (info, success, warning, error)." :
-  name === "dialog" ? "A window overlaid on the primary window, rendering content underneath inert. Use for focused tasks or confirmations." :
-  name === "tabs" ? "Layered sections of content displayed one at a time. Use to switch between related views in the same space." :
-  `${title} component. See MAPPING.md for the full shadcn-aligned description.`
+  name === "button"
+    ? "Displays a button or a component that looks like a button. Use for primary actions, form submits, and dialog/menu triggers. For navigation styled as a button, use `link-button`."
+    : name === "badge"
+      ? "Displays a badge or a component that looks like a badge. Use to label or categorize an item, or to show counts/status."
+      : name === "input"
+        ? "Displays a form input field. Use for single-line text entry in forms. Always map to the `InputField` wrapper to get label/description/error/mandatory."
+        : name === "textarea"
+          ? "Displays a form textarea. Use for multi-line text entry (comments, notes). Map to `TextareaField`."
+          : name === "select"
+            ? "Displays a list of options to pick from, triggered by a button. Use for single-choice selection. Map to `SelectField`."
+            : name === "checkbox"
+              ? "A control that toggles between checked and not checked. Use for opt-in/agree flows or multi-select lists."
+              : name === "radio-group"
+                ? "A set of checkable buttons where only one can be checked at a time. Use to choose one option from a small visible set."
+                : name === "switch"
+                  ? "A control that toggles between on and off. Use for instant settings that take effect without a submit step."
+                  : name === "card"
+                    ? "Displays a card with header, content, and footer. Use to group related content and actions into a surface."
+                    : name === "alert"
+                      ? "Displays a callout for user attention. Use for inline, non-blocking messages (info, success, warning, error)."
+                      : name === "dialog"
+                        ? "A window overlaid on the primary window, rendering content underneath inert. Use for focused tasks or confirmations."
+                        : name === "tabs"
+                          ? "Layered sections of content displayed one at a time. Use to switch between related views in the same space."
+                          : `${title} component. See MAPPING.md for the full shadcn-aligned description.`
 }
 
 ## Anatomy
