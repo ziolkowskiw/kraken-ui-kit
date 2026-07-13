@@ -13,13 +13,14 @@
  *   1. npm run tokens:build
  *   2. npm run registry:bundle
  *   3. npm run manifests:build
- *   4. npm run manifests:check
- *   5. Bump version in package.json (+ mirror to mcp/package.json)
- *   6. Prepend CHANGELOG.md entry from git log
- *   7. git add (changed artefacts)
- *   8. git commit: chore(release): vX.Y.Z
- *   9. git tag vX.Y.Z
- *  10. Print push instructions
+ *   4. npm run docs:build
+ *   5. npm run manifests:check
+ *   6. Bump version in package.json (+ mirror to mcp/package.json)
+ *   7. Prepend CHANGELOG.md entry from git log
+ *   8. git add (changed artefacts)
+ *   9. git commit: chore(release): vX.Y.Z
+ *  10. git tag vX.Y.Z
+ *  11. Print push instructions
  *
  * Note: the MCP server is NOT published to npm — it runs local-only from a
  * clone (see mcp/README.md). This script only version-mirrors mcp/package.json.
@@ -99,17 +100,18 @@ if (!YES) {
   console.log(`    1. npm run tokens:build`);
   console.log(`    2. npm run registry:bundle`);
   console.log(`    3. npm run manifests:build`);
-  console.log(`    4. npm run manifests:check`);
+  console.log(`    4. npm run docs:build`);
+  console.log(`    5. npm run manifests:check`);
   console.log(
-    `    5. Bump package.json: ${pkg.version} → ${nextVersion} (+ mirror mcp/package.json)`,
+    `    6. Bump package.json: ${pkg.version} → ${nextVersion} (+ mirror mcp/package.json)`,
   );
-  console.log(`    6. Prepend CHANGELOG.md entry`);
+  console.log(`    7. Prepend CHANGELOG.md entry`);
   console.log(
-    `    7. git add package.json CHANGELOG.md registry.json public/r/ src/styles/tokens.css mcp/package.json manifests/ schemas/ docs/components/ llms.txt public/llms.txt`,
+    `    8. git add package.json CHANGELOG.md registry.json public/r/ src/styles/tokens.css mcp/package.json manifests/ schemas/ docs/components/ llms.txt public/llms.txt`,
   );
-  console.log(`    8. git commit -m "chore(release): v${nextVersion}"`);
-  console.log(`    9. git tag v${nextVersion}`);
-  console.log(`   10. (print push instructions)`);
+  console.log(`    9. git commit -m "chore(release): v${nextVersion}"`);
+  console.log(`   10. git tag v${nextVersion}`);
+  console.log(`   11. (print push instructions)`);
   console.log(`\n  Changelog entry that will be prepended:`);
   console.log(`  ─────────────────────────────────────────`);
   console.log(
@@ -133,10 +135,13 @@ run("npm run registry:bundle");
 console.log("\n3. Rebuild manifests");
 run("npm run manifests:build");
 
-console.log("\n4. Validate manifests (schemas + drift + cross-checks)");
+console.log("\n4. Rebuild component docs");
+run("npm run docs:build");
+
+console.log("\n5. Validate manifests (schemas + drift + cross-checks)");
 run("npm run manifests:check");
 
-console.log("\n5. Bump package.json");
+console.log("\n6. Bump package.json");
 pkg.version = nextVersion;
 writeFileSync(PKG_PATH, JSON.stringify(pkg, null, 2) + "\n");
 console.log(`   package.json → ${nextVersion}`);
@@ -149,20 +154,20 @@ if (existsSync(MCP_PKG_PATH)) {
   console.log(`   mcp/package.json → ${nextVersion}`);
 }
 
-console.log("\n6. Prepend CHANGELOG.md");
+console.log("\n7. Prepend CHANGELOG.md");
 const existing = existsSync(CHANGELOG_PATH) ? readFileSync(CHANGELOG_PATH, "utf8") : "";
 writeFileSync(CHANGELOG_PATH, changelogEntry + "\n" + existing);
 console.log(`   CHANGELOG.md prepended`);
 
-console.log("\n7. Stage artefacts");
+console.log("\n8. Stage artefacts");
 run(
   "git add package.json CHANGELOG.md registry.json public/r/ src/styles/tokens.css mcp/package.json manifests/ schemas/ docs/components/ llms.txt public/llms.txt",
 );
 
-console.log("\n8. Commit");
+console.log("\n9. Commit");
 run(`git commit -m "chore(release): v${nextVersion}"`);
 
-console.log("\n9. Tag");
+console.log("\n10. Tag");
 run(`git tag v${nextVersion}`);
 
 console.log(`\n✅  Release v${nextVersion} committed and tagged.\n`);
