@@ -6,12 +6,13 @@ manifests/
 docs/components/
 llms.txt
 public/llms.txt
-# build output
+# build output & gitignored scratch (not in CI's checkout)
 .next/
 storybook-static/
 mcp/dist/
 mcp/manifests/
 coverage/
+.superpowers/
 # lockfiles / vendored
 package-lock.json
 mcp/package-lock.json
