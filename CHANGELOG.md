@@ -1,3 +1,37 @@
+## v0.1.0 — 2026-07-13
+
+- refactor(dist): pivot M1 to GitHub-only — drop npm publish, MCP runs local
+- docs(plan): note the first-run Pages red X (B2) and log the release-restage finding for M2
+- ci(pages): correct the registry:bundle comment (regenerate, not a drift gate)
+- docs(plan): correct MCP publish/pack idiom to 'npm publish ./mcp' (—prefix packs root)
+- fix(release): publish @kraken-ui/mcp via 'npm publish ./mcp' (—prefix packs the root)
+- docs(release): refresh header step list to include the mcp publish step
+- chore(release): publish @kraken-ui/mcp alongside the version tag
+- docs: document the consumer registries config for @kraken installs
+- ci(pages): also publish README, design.md, docs/components so llms.txt links resolve
+- ci(pages): deploy the shadcn registry + AI files to GitHub Pages
+- fix(registry): namespace cross-item deps as @kraken/* so consumers resolve them
+- docs(plan): M1 distribution implementation plan
+- docs(spec): M1 distribution design — hosted registry + published MCP
+- chore: retire JIT DS 2.0 name from manifest generator
+- chore: retire JIT DS 2.0 file key from tooling and skills
+- fix(mapping): re-point at JIT DS 2.1 (Y3gNgjmXe1t67fPlDjM2iH), fix 4 stale node IDs
+- docs(mapping): record JIT DS 2.1 hygiene renames
+- feat(agents): entry points + governance wiring for the machine-readable layer
+- feat(mcp): @kraken-ui/mcp — self-contained MCP server over the manifests
+- feat(manifests): machine-readable design-system layer + schemas + drift validation
+- refactor(scripts): factor extraction + MAPPING parser into scripts/lib, a11y notes into scripts/data
+- chore: remove theme editor — theming moves to Figma-first workflow
+- docs: rewrite README — lead with the idea, not the phase log
+- chore: untrack JIT-DS-2.0-execution-plan.md (local work file)
+- docs: add design.md — design-system-as-a-Claude-skill guide
+- chore(storybook): conventions conformance pass across all 57 stories
+- feat(parity): shadcn base-nova consistency audit + compat sweep
+- feat(theme-editor): component-by-component theme designer
+- feat(storybook): controllable story sweep, dark toggle, control gating
+- chore: remove unused scaffold SVGs and stop tracking next-env.d.ts
+- fix(build): resizable argTypes type error + separator orientation null guard; add figma-binder & release agents; update execution plan to completed
+
 ## v0.0.1 — 2026-06-28
 
 - fix(parity): component and story tokenization tweaks
