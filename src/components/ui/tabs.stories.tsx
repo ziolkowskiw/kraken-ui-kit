@@ -1,27 +1,27 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
 
-const VARIANTS = ['line', 'badge'] as const
-const ORIENTATIONS = ['horizontal', 'vertical'] as const
-const DEPTHS = [1, 2] as const
+const VARIANTS = ["line", "badge"] as const;
+const ORIENTATIONS = ["horizontal", "vertical"] as const;
+const DEPTHS = [1, 2] as const;
 
 // `variant`/`depth` live on TabsList and `orientation` on Tabs, so the Playground
 // drives them through story-only args plus a dynamic tab count — the controls
 // behave like a real tabs API rather than a fixed snapshot.
 type StoryProps = {
-  variant: (typeof VARIANTS)[number]
-  depth: (typeof DEPTHS)[number]
-  orientation: (typeof ORIENTATIONS)[number]
-  tabCount: number
-  disableLast: boolean
-}
+  variant: (typeof VARIANTS)[number];
+  depth: (typeof DEPTHS)[number];
+  orientation: (typeof ORIENTATIONS)[number];
+  tabCount: number;
+  disableLast: boolean;
+};
 
-const TAB_LABELS = ['Account', 'Password', 'Settings', 'Billing', 'Team', 'Advanced']
+const TAB_LABELS = ["Account", "Password", "Settings", "Billing", "Team", "Advanced"];
 
 function renderTabs({ variant, depth, orientation, tabCount, disableLast }: StoryProps) {
-  const count = Math.max(2, Math.min(tabCount, TAB_LABELS.length))
-  const labels = TAB_LABELS.slice(0, count)
-  const pad = orientation === 'vertical' ? 'pl-3' : 'pt-3'
+  const count = Math.max(2, Math.min(tabCount, TAB_LABELS.length));
+  const labels = TAB_LABELS.slice(0, count);
+  const pad = orientation === "vertical" ? "pl-3" : "pt-3";
   return (
     <Tabs orientation={orientation} defaultValue={labels[0]} className="w-80">
       <TabsList variant={variant} depth={depth}>
@@ -37,46 +37,73 @@ function renderTabs({ variant, depth, orientation, tabCount, disableLast }: Stor
         </TabsContent>
       ))}
     </Tabs>
-  )
+  );
 }
 
 const meta = {
-  title: 'Components/Tabs',
+  title: "Components/Tabs",
   component: Tabs,
-  parameters: { layout: 'centered', docs: { description: { component: 'layered sections of content displayed one at a time; switch between related views in the same space' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "layered sections of content displayed one at a time; switch between related views in the same space",
+      },
+    },
+  },
+  tags: ["autodocs"],
   argTypes: {
-    variant: { control: 'inline-radio', options: VARIANTS, name: 'Variant', table: { category: 'Appearance' } },
-    depth: { control: 'inline-radio', options: DEPTHS, name: 'Depth', table: { category: 'Appearance' } },
-    orientation: { control: 'inline-radio', options: ORIENTATIONS, name: 'Orientation', table: { category: 'Appearance' } },
-    tabCount: { control: { type: 'range', min: 2, max: TAB_LABELS.length, step: 1 }, name: 'Number of tabs', table: { category: 'Content' } },
-    disableLast: { control: 'boolean', name: 'Disable last tab', table: { category: 'Content' } },
+    variant: {
+      control: "inline-radio",
+      options: VARIANTS,
+      name: "Variant",
+      table: { category: "Appearance" },
+    },
+    depth: {
+      control: "inline-radio",
+      options: DEPTHS,
+      name: "Depth",
+      table: { category: "Appearance" },
+    },
+    orientation: {
+      control: "inline-radio",
+      options: ORIENTATIONS,
+      name: "Orientation",
+      table: { category: "Appearance" },
+    },
+    tabCount: {
+      control: { type: "range", min: 2, max: TAB_LABELS.length, step: 1 },
+      name: "Number of tabs",
+      table: { category: "Content" },
+    },
+    disableLast: { control: "boolean", name: "Disable last tab", table: { category: "Content" } },
   },
   args: {
-    variant: 'line',
+    variant: "line",
     depth: 1,
-    orientation: 'horizontal',
+    orientation: "horizontal",
     tabCount: 3,
     disableLast: false,
   },
   render: (args: StoryProps) => renderTabs(args),
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // All controls active — the "Figma property panel" experience.
-export const Playground: Story = {}
+export const Playground: Story = {};
 
-export const Line: Story = { args: { variant: 'line' } }
+export const Line: Story = { args: { variant: "line" } };
 
-export const Badge: Story = { args: { variant: 'badge' } }
+export const Badge: Story = { args: { variant: "badge" } };
 
-export const Depth2: Story = { args: { variant: 'line', depth: 2 } }
+export const Depth2: Story = { args: { variant: "line", depth: 2 } };
 
-export const Vertical: Story = { args: { orientation: 'vertical' } }
+export const Vertical: Story = { args: { orientation: "vertical" } };
 
-export const WithDisabledTab: Story = { args: { disableLast: true } }
+export const WithDisabledTab: Story = { args: { disableLast: true } };
 
 export const AllVariants: Story = {
   render: () => (
@@ -95,4 +122,4 @@ export const AllVariants: Story = {
       ))}
     </div>
   ),
-}
+};

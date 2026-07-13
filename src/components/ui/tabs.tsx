@@ -1,37 +1,30 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Tabs as TabsPrimitive } from "@base-ui/react/tabs"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { Tabs as TabsPrimitive } from "@base-ui/react/tabs";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-type TabsVariant = "line" | "badge"
-type TabsDepth = 1 | 2
+type TabsVariant = "line" | "badge";
+type TabsDepth = 1 | 2;
 
 // TabsList tells each TabsTrigger which visual variant and depth to render, so
 // triggers can style themselves directly (cleaner than deep group-data chains).
 const TabsListContext = React.createContext<{ variant: TabsVariant; depth: TabsDepth }>({
   variant: "line",
   depth: 1,
-})
+});
 
-function Tabs({
-  className,
-  orientation = "horizontal",
-  ...props
-}: TabsPrimitive.Root.Props) {
+function Tabs({ className, orientation = "horizontal", ...props }: TabsPrimitive.Root.Props) {
   return (
     <TabsPrimitive.Root
       data-slot="tabs"
       data-orientation={orientation}
-      className={cn(
-        "group/tabs flex gap-2 data-horizontal:flex-col",
-        className
-      )}
+      className={cn("group/tabs flex gap-2 data-horizontal:flex-col", className)}
       {...props}
     />
-  )
+  );
 }
 
 const tabsListVariants = cva(
@@ -46,16 +39,15 @@ const tabsListVariants = cva(
       },
     },
     defaultVariants: { variant: "line" },
-  }
-)
+  },
+);
 
 function TabsList({
   className,
   variant = "line",
   depth = 1,
   ...props
-}: TabsPrimitive.List.Props &
-  VariantProps<typeof tabsListVariants> & { depth?: TabsDepth }) {
+}: TabsPrimitive.List.Props & VariantProps<typeof tabsListVariants> & { depth?: TabsDepth }) {
   return (
     <TabsListContext.Provider value={{ variant: variant ?? "line", depth }}>
       <TabsPrimitive.List
@@ -66,7 +58,7 @@ function TabsList({
         {...props}
       />
     </TabsListContext.Provider>
-  )
+  );
 }
 
 const tabsTriggerVariants = cva(
@@ -101,18 +93,18 @@ const tabsTriggerVariants = cva(
       },
     },
     defaultVariants: { variant: "line", depth: 1 },
-  }
-)
+  },
+);
 
 function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
-  const { variant, depth } = React.useContext(TabsListContext)
+  const { variant, depth } = React.useContext(TabsListContext);
   return (
     <TabsPrimitive.Tab
       data-slot="tabs-trigger"
       className={cn(tabsTriggerVariants({ variant, depth }), className)}
       {...props}
     />
-  )
+  );
 }
 
 function TabsContent({ className, ...props }: TabsPrimitive.Panel.Props) {
@@ -122,7 +114,7 @@ function TabsContent({ className, ...props }: TabsPrimitive.Panel.Props) {
       className={cn("flex-1 text-sm outline-none", className)}
       {...props}
     />
-  )
+  );
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants, tabsTriggerVariants }
+export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants, tabsTriggerVariants };

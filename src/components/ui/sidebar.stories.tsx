@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Home, Inbox, Calendar, Search, Settings, ChevronRight } from 'lucide-react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { Home, Inbox, Calendar, Search, Settings, ChevronRight } from "lucide-react";
 import {
   Sidebar,
   SidebarProvider,
@@ -20,37 +20,54 @@ import {
   SidebarMenuSubItem,
   SidebarMenuSub,
   SidebarMenuBadge,
-} from './sidebar'
+} from "./sidebar";
 
 const items = [
-  { title: 'Home', icon: Home, active: true },
-  { title: 'Inbox', icon: Inbox },
-  { title: 'Calendar', icon: Calendar },
-  { title: 'Search', icon: Search },
-  { title: 'Settings', icon: Settings },
-]
+  { title: "Home", icon: Home, active: true },
+  { title: "Inbox", icon: Inbox },
+  { title: "Calendar", icon: Calendar },
+  { title: "Search", icon: Search },
+  { title: "Settings", icon: Settings },
+];
 
 type StoryProps = {
-  collapsed: boolean
-  showHeader: boolean
-  showFooter: boolean
-  groupLabel: string
-  itemCount: number
-}
+  collapsed: boolean;
+  showHeader: boolean;
+  showFooter: boolean;
+  groupLabel: string;
+  itemCount: number;
+};
 
 const meta = {
-  title: 'Components/Sidebar',
+  title: "Components/Sidebar",
   component: Sidebar,
-  parameters: { layout: 'fullscreen', docs: { description: { component: 'A composable, themeable sidebar component; primary app navigation.' } } },
-  tags: ['autodocs'],
-  argTypes: {
-    collapsed: { control: 'boolean', name: 'Collapsed', table: { category: 'Layout' } },
-    showHeader: { control: 'boolean', name: 'Header', table: { category: 'Slots' } },
-    showFooter: { control: 'boolean', name: 'Footer', table: { category: 'Slots' } },
-    groupLabel: { control: 'text', name: 'Group label', table: { category: 'Content' } },
-    itemCount: { control: { type: 'range', min: 1, max: 5, step: 1 }, name: 'Menu items', table: { category: 'Content' } },
+  parameters: {
+    layout: "fullscreen",
+    docs: {
+      description: {
+        component: "A composable, themeable sidebar component; primary app navigation.",
+      },
+    },
   },
-  args: { collapsed: false, showHeader: true, showFooter: true, groupLabel: 'Platform', itemCount: 5 },
+  tags: ["autodocs"],
+  argTypes: {
+    collapsed: { control: "boolean", name: "Collapsed", table: { category: "Layout" } },
+    showHeader: { control: "boolean", name: "Header", table: { category: "Slots" } },
+    showFooter: { control: "boolean", name: "Footer", table: { category: "Slots" } },
+    groupLabel: { control: "text", name: "Group label", table: { category: "Content" } },
+    itemCount: {
+      control: { type: "range", min: 1, max: 5, step: 1 },
+      name: "Menu items",
+      table: { category: "Content" },
+    },
+  },
+  args: {
+    collapsed: false,
+    showHeader: true,
+    showFooter: true,
+    groupLabel: "Platform",
+    itemCount: 5,
+  },
   render: ({ collapsed, showHeader, showFooter, groupLabel, itemCount }) => (
     <div className="flex h-96">
       <Sidebar collapsed={collapsed}>
@@ -86,17 +103,19 @@ const meta = {
           </SidebarFooter>
         )}
       </Sidebar>
-      <div className="flex-1 p-6 text-sm [color:var(--ds-color-content-secondary)]">Main content area</div>
+      <div className="flex-1 p-6 text-sm [color:var(--ds-color-content-secondary)]">
+        Main content area
+      </div>
     </div>
   ),
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
-export const Collapsed: Story = { args: { collapsed: true } }
+export const Collapsed: Story = { args: { collapsed: true } };
 
 export const WithSubItems: Story = {
   render: () => (
@@ -132,10 +151,12 @@ export const WithSubItems: Story = {
           </SidebarGroup>
         </SidebarContent>
       </Sidebar>
-      <div className="flex-1 p-6 text-sm [color:var(--ds-color-content-secondary)]">Main content area</div>
+      <div className="flex-1 p-6 text-sm [color:var(--ds-color-content-secondary)]">
+        Main content area
+      </div>
     </div>
   ),
-}
+};
 
 /* The app-shell composition: SidebarProvider owns the collapsed state
  * (toggle via SidebarTrigger, the rail, or ⌘/Ctrl+B); SidebarInset is the
@@ -201,4 +222,4 @@ export const AppShell: Story = {
       </SidebarInset>
     </SidebarProvider>
   ),
-}
+};

@@ -1,31 +1,47 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Toast } from "@base-ui/react/toast"
-import { CheckCircle2, CircleAlert, Info, TriangleAlert, X } from "lucide-react"
+import * as React from "react";
+import { Toast } from "@base-ui/react/toast";
+import { CheckCircle2, CircleAlert, Info, TriangleAlert, X } from "lucide-react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 // Mirrors the Figma `sonner` set (1813:16630): a stacked toast notification with
 // Variant=success|error|warning|info. Built on Base UI's Toast (no extra dep);
 // each type drives an accent icon + status tokens. `toast.*` adds toasts from
 // anywhere; render <Toaster /> once near the app root.
-const toastManager = Toast.createToastManager()
+const toastManager = Toast.createToastManager();
 
 const TYPE_META = {
-  success: { Icon: CheckCircle2, accent: "var(--ds-color-status-success-icon)", bar: "var(--ds-color-status-success-border)" },
-  error: { Icon: CircleAlert, accent: "var(--ds-color-status-error-icon)", bar: "var(--ds-color-status-error-border)" },
-  warning: { Icon: TriangleAlert, accent: "var(--ds-color-status-warning-icon)", bar: "var(--ds-color-status-warning-border)" },
-  info: { Icon: Info, accent: "var(--ds-color-status-info-icon)", bar: "var(--ds-color-status-info-border)" },
-} as const
+  success: {
+    Icon: CheckCircle2,
+    accent: "var(--ds-color-status-success-icon)",
+    bar: "var(--ds-color-status-success-border)",
+  },
+  error: {
+    Icon: CircleAlert,
+    accent: "var(--ds-color-status-error-icon)",
+    bar: "var(--ds-color-status-error-border)",
+  },
+  warning: {
+    Icon: TriangleAlert,
+    accent: "var(--ds-color-status-warning-icon)",
+    bar: "var(--ds-color-status-warning-border)",
+  },
+  info: {
+    Icon: Info,
+    accent: "var(--ds-color-status-info-icon)",
+    bar: "var(--ds-color-status-info-border)",
+  },
+} as const;
 
-type ToastType = keyof typeof TYPE_META
+type ToastType = keyof typeof TYPE_META;
 
 function ToastList() {
-  const { toasts } = Toast.useToastManager()
+  const { toasts } = Toast.useToastManager();
   return toasts.map((item) => {
-    const meta = TYPE_META[(item.type as ToastType) ?? "info"] ?? TYPE_META.info
-    const Icon = meta.Icon
+    const meta = TYPE_META[(item.type as ToastType) ?? "info"] ?? TYPE_META.info;
+    const Icon = meta.Icon;
     return (
       <Toast.Root
         key={item.id}
@@ -50,8 +66,8 @@ function ToastList() {
           <X className="size-4" />
         </Toast.Close>
       </Toast.Root>
-    )
-  })
+    );
+  });
 }
 
 function Toaster({
@@ -66,14 +82,14 @@ function Toaster({
         </Toast.Viewport>
       </Toast.Portal>
     </Toast.Provider>
-  )
+  );
 }
 
-type ToastOptions = { description?: React.ReactNode; timeout?: number }
+type ToastOptions = { description?: React.ReactNode; timeout?: number };
 
 function make(type: ToastType) {
   return (title: React.ReactNode, opts?: ToastOptions) =>
-    toastManager.add({ title, type, ...opts })
+    toastManager.add({ title, type, ...opts });
 }
 
 const toast = {
@@ -81,6 +97,6 @@ const toast = {
   error: make("error"),
   warning: make("warning"),
   info: make("info"),
-}
+};
 
-export { Toaster, toast, toastManager }
+export { Toaster, toast, toastManager };

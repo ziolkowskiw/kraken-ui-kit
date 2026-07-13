@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { X } from 'lucide-react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { X } from "lucide-react";
 import {
   Popover,
   PopoverHeader,
@@ -9,41 +9,62 @@ import {
   PopoverClose,
   PopoverTitle,
   PopoverDescription,
-} from './popover'
-import { Button } from './button'
-import { InputField } from './input'
-import { BUTTON_VARIANTS, type ButtonVariant } from '@/lib/story-helpers'
+} from "./popover";
+import { Button } from "./button";
+import { InputField } from "./input";
+import { BUTTON_VARIANTS, type ButtonVariant } from "@/lib/story-helpers";
 
 type StoryProps = {
-  triggerLabel: string
-  triggerVariant: ButtonVariant
-  title: string
-  description: string
-  side?: 'top' | 'right' | 'bottom' | 'left'
-  align?: 'start' | 'center' | 'end'
-}
+  triggerLabel: string;
+  triggerVariant: ButtonVariant;
+  title: string;
+  description: string;
+  side?: "top" | "right" | "bottom" | "left";
+  align?: "start" | "center" | "end";
+};
 
 const meta = {
-  title: 'Components/Popover',
+  title: "Components/Popover",
   // docs-only association; the playground args are story-level props
   component: Popover as React.ComponentType<StoryProps>,
-  parameters: { layout: 'centered', docs: { description: { component: 'Displays rich content in a portal, triggered by a button; small floating forms, info, pickers.' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Displays rich content in a portal, triggered by a button; small floating forms, info, pickers.",
+      },
+    },
+  },
+  tags: ["autodocs"],
   argTypes: {
-    triggerLabel: { control: 'text', name: 'Label', table: { category: 'Nested: Trigger' } },
-    triggerVariant: { control: 'select', options: BUTTON_VARIANTS, name: 'Variant', table: { category: 'Nested: Trigger' } },
-    title: { control: 'text', name: 'Title', table: { category: 'Content' } },
-    description: { control: 'text', name: 'Description', table: { category: 'Content' } },
-    side: { control: 'inline-radio', options: ['top', 'right', 'bottom', 'left'], table: { category: 'Position' } },
-    align: { control: 'inline-radio', options: ['start', 'center', 'end'], table: { category: 'Position' } },
+    triggerLabel: { control: "text", name: "Label", table: { category: "Nested: Trigger" } },
+    triggerVariant: {
+      control: "select",
+      options: BUTTON_VARIANTS,
+      name: "Variant",
+      table: { category: "Nested: Trigger" },
+    },
+    title: { control: "text", name: "Title", table: { category: "Content" } },
+    description: { control: "text", name: "Description", table: { category: "Content" } },
+    side: {
+      control: "inline-radio",
+      options: ["top", "right", "bottom", "left"],
+      table: { category: "Position" },
+    },
+    align: {
+      control: "inline-radio",
+      options: ["start", "center", "end"],
+      table: { category: "Position" },
+    },
   },
   args: {
-    triggerLabel: 'Open popover',
-    triggerVariant: 'secondary',
-    title: 'Dimensions',
-    description: 'Set the dimensions for the layer.',
-    side: 'bottom',
-    align: 'center',
+    triggerLabel: "Open popover",
+    triggerVariant: "secondary",
+    title: "Dimensions",
+    description: "Set the dimensions for the layer.",
+    side: "bottom",
+    align: "center",
   },
   render: ({ triggerLabel, triggerVariant, title, description, side, align }) => (
     <Popover>
@@ -67,9 +88,9 @@ const meta = {
       </PopoverContent>
     </Popover>
   ),
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};

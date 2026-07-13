@@ -35,9 +35,12 @@ conventions by reading one file. Distilled from `dialog`, `select`, `input`,
 
 ```ts
 import {
-  ICON_OPTIONS, renderIcon, iconArgType,   // icon nesting
-  BUTTON_VARIANTS, nestedButtonArgTypes,    // component nesting
-} from '@/lib/story-helpers'
+  ICON_OPTIONS,
+  renderIcon,
+  iconArgType, // icon nesting
+  BUTTON_VARIANTS,
+  nestedButtonArgTypes, // component nesting
+} from "@/lib/story-helpers";
 ```
 
 - `iconArgType(label, category?)` → an icon-picker `argType`.
@@ -48,64 +51,68 @@ import {
 ## Canonical template
 
 ```tsx
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { iconArgType, renderIcon, type IconName } from '@/lib/story-helpers'
-import { Thing } from './thing'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { iconArgType, renderIcon, type IconName } from "@/lib/story-helpers";
+import { Thing } from "./thing";
 
-const VARIANTS = ['primary', 'secondary'] as const   // ← Figma variant axis
-const SIZES = ['sm', 'md', 'lg'] as const
+const VARIANTS = ["primary", "secondary"] as const; // ← Figma variant axis
+const SIZES = ["sm", "md", "lg"] as const;
 
 // Story-only props that back the pickers/toggles the panel exposes.
 type StoryProps = React.ComponentProps<typeof Thing> & {
-  leftIconName?: IconName
-  rightIconName?: IconName
-}
+  leftIconName?: IconName;
+  rightIconName?: IconName;
+};
 
 const meta = {
-  title: 'Components/Thing',
+  title: "Components/Thing",
   component: Thing,
-  parameters: { layout: 'centered' },
-  tags: ['autodocs'],
+  parameters: { layout: "centered" },
+  tags: ["autodocs"],
   argTypes: {
-    variant: { control: 'select', options: VARIANTS },
-    size: { control: 'inline-radio', options: SIZES },
-    disabled: { control: 'boolean' },
-    leftIconName: iconArgType('Left icon'),
-    rightIconName: iconArgType('Right icon'),
+    variant: { control: "select", options: VARIANTS },
+    size: { control: "inline-radio", options: SIZES },
+    disabled: { control: "boolean" },
+    leftIconName: iconArgType("Left icon"),
+    rightIconName: iconArgType("Right icon"),
     // hide the raw ReactNode props — the pickers drive them
     leftIcon: { table: { disable: true } },
     rightIcon: { table: { disable: true } },
   },
   args: {
-    children: 'Label',
-    variant: 'primary',
-    size: 'md',
+    children: "Label",
+    variant: "primary",
+    size: "md",
     disabled: false,
-    leftIconName: 'none',
-    rightIconName: 'none',
+    leftIconName: "none",
+    rightIconName: "none",
   },
   render: ({ leftIconName, rightIconName, ...args }: StoryProps) => (
     <Thing {...args} leftIcon={renderIcon(leftIconName)} rightIcon={renderIcon(rightIconName)} />
   ),
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // All controls active — the "Figma property panel" experience.
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const Variants: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-2">
-      {VARIANTS.map((v) => <Thing key={v} variant={v}>{v}</Thing>)}
+      {VARIANTS.map((v) => (
+        <Thing key={v} variant={v}>
+          {v}
+        </Thing>
+      ))}
     </div>
   ),
-}
+};
 
-export const WithIcons: Story = { args: { leftIconName: 'Wrench', rightIconName: 'Check' } }
-export const Disabled: Story = { args: { disabled: true } }
+export const WithIcons: Story = { args: { leftIconName: "Wrench", rightIconName: "Check" } };
+export const Disabled: Story = { args: { disabled: true } };
 ```
 
 ## Nesting a component (the Dialog pattern)
@@ -146,16 +153,16 @@ its dependent control so the panel reads top-down.
   type:       { control: 'select', options: TYPES },
   badgeLabel: { control: 'text', if: { arg: 'type', eq: 'badge' } },
   ```
-- **Nothing to gate** — if the toggle drives a *hardcoded* child (a menu's icons, a
+- **Nothing to gate** — if the toggle drives a _hardcoded_ child (a menu's icons, a
   footer's fixed Buttons), there's no separate control, so no `if:` is needed.
 - **Limit** — `if:` supports single-value `eq` / `neq` / `truthy` / `exists` only
-  (no `in: [...]`). A control shared by *several* enum values (e.g. an icon used by
+  (no `in: [...]`). A control shared by _several_ enum values (e.g. an icon used by
   both `icon + text` and `icon only`) can't be cleanly gated — leave it, and prefer
   the `'none'` self-gating picker where possible.
 
 ## Per-story QA checklist
 
-Adapted from *"Design Systems in 2026 → turn your system into a Claude Skill."*
+Adapted from _"Design Systems in 2026 → turn your system into a Claude Skill."_
 
 - [ ] `Playground` exposes **every Figma property** as a control (parity with `MAPPING.md`).
 - [ ] Enum props use the exact code enum strings (lowercase, 1:1 with Figma).

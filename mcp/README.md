@@ -20,14 +20,14 @@ claude mcp add kraken-ui -- node /abs/path/to/kraken-ui-kit/mcp/dist/index.js
 
 ## Tools
 
-| Tool | Params | Returns |
-|---|---|---|
-| `list_components` | — | all components (name, title, one-liner) |
-| `search_components` | `query` | top-5 ranked matches with scores |
-| `get_component` | `name`, `dense?=true` | full manifest; `dense:false` adds rationale + prose |
-| `get_foundations` | — | always-on rules — call once per session |
-| `get_tokens` | `layer?`, `component?`, `brand?` | filtered token slice; `brand:"brand"` resolves brand-mode values |
-| `get_usage_rules` | `name?` | global principles + per-component do/don't |
+| Tool                | Params                           | Returns                                                          |
+| ------------------- | -------------------------------- | ---------------------------------------------------------------- |
+| `list_components`   | —                                | all components (name, title, one-liner)                          |
+| `search_components` | `query`                          | top-5 ranked matches with scores                                 |
+| `get_component`     | `name`, `dense?=true`            | full manifest; `dense:false` adds rationale + prose              |
+| `get_foundations`   | —                                | always-on rules — call once per session                          |
+| `get_tokens`        | `layer?`, `component?`, `brand?` | filtered token slice; `brand:"brand"` resolves brand-mode values |
+| `get_usage_rules`   | `name?`                          | global principles + per-component do/don't                       |
 
 ## Development (inside the kit repo)
 

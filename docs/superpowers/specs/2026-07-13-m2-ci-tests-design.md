@@ -16,6 +16,7 @@ contributor (or an agent) can hand-edit a generated file, break a type, or
 regress a story and nothing catches it.
 
 Two carry-forwards from M1 also land here:
+
 - `scripts/release.mjs` stages `registry:build` (not `registry:bundle`) and its
   `git add` omits `public/r/`, so a release can leave committed `public/r/*.json`
   stale until the next Pages CI run.
@@ -23,13 +24,13 @@ Two carry-forwards from M1 also land here:
 
 ## Locked decisions
 
-| Decision | Choice | Rationale |
-|---|---|---|
-| Test ambition | **Pragmatic gate** | Blocking: tsc, manifests:check, drift gate, next build, build-storybook, lint, format. Story browser tests + a11y wired but **non-blocking** first (stabilize before promoting). Best value-to-effort for a portfolio. |
-| Storybook host | **Same Pages site, `/storybook/`** | Zero new infra, GitHub-only, one deploy alongside the registry. |
-| Lint strictness | **Match current style** | ESLint 9 flat (Next + typescript-eslint recommended, lightly relaxed) + Prettier so existing code passes with minimal churn; one format sweep, then both block. |
-| `scripts/sb-test.mjs` | **Retire (delete)** | The addon-vitest story rig supersedes its render-smoke role; one test path. |
-| Node version | **Node 22 LTS** | Matches Next 16 / React 19; clears the Node-20 deprecation. |
+| Decision              | Choice                             | Rationale                                                                                                                                                                                                              |
+| --------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Test ambition         | **Pragmatic gate**                 | Blocking: tsc, manifests:check, drift gate, next build, build-storybook, lint, format. Story browser tests + a11y wired but **non-blocking** first (stabilize before promoting). Best value-to-effort for a portfolio. |
+| Storybook host        | **Same Pages site, `/storybook/`** | Zero new infra, GitHub-only, one deploy alongside the registry.                                                                                                                                                        |
+| Lint strictness       | **Match current style**            | ESLint 9 flat (Next + typescript-eslint recommended, lightly relaxed) + Prettier so existing code passes with minimal churn; one format sweep, then both block.                                                        |
+| `scripts/sb-test.mjs` | **Retire (delete)**                | The addon-vitest story rig supersedes its render-smoke role; one test path.                                                                                                                                            |
+| Node version          | **Node 22 LTS**                    | Matches Next 16 / React 19; clears the Node-20 deprecation.                                                                                                                                                            |
 
 ## Current state (verified 2026-07-13)
 
@@ -53,6 +54,7 @@ Two workflows plus repo config. Each unit is independently testable.
 - **Setup (shared):** `actions/checkout@v5`, `actions/setup-node@v5` (node 22, `cache: npm`), `npm ci`.
 
 **Job `verify` (blocking):**
+
 1. `npm run tokens:build` — needed before drift diff / build.
 2. `tsc --noEmit` (via `npx tsc --noEmit`).
 3. `npm run manifests:check` (schemas + existing manifest byte-drift + cross-checks).
@@ -67,6 +69,7 @@ failures surface quickly.
 
 **Job `story-tests` (non-blocking):** `continue-on-error: true` at job level so
 its status is visible on the PR but never fails the required check.
+
 - `npx playwright install --with-deps chromium`
 - `npm test` — vitest Storybook browser project (renders every story headless;
   `@storybook/addon-a11y` assertions surface as part of the run).
@@ -106,7 +109,7 @@ its status is visible on the PR but never fails the required check.
 
 ## Testing strategy
 
-- **The CI *is* the test deliverable.** Verify by: (a) opening the M2 PR and
+- **The CI _is_ the test deliverable.** Verify by: (a) opening the M2 PR and
   confirming the `verify` job passes on the clean tree; (b) a deliberate local
   drift (edit one generated file, e.g. a `public/r/*.json`) makes the drift-gate
   step fail with a non-empty `git diff` — then revert; (c) `story-tests` runs and

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
 import {
   Menubar,
   MenubarMenu,
@@ -16,24 +16,35 @@ import {
   MenubarSub,
   MenubarSubTrigger,
   MenubarSubContent,
-} from './menubar'
+} from "./menubar";
 
 type StoryProps = {
-  showShortcuts: boolean
-  showSubmenu: boolean
-  destructiveItem: boolean
-}
+  showShortcuts: boolean;
+  showSubmenu: boolean;
+  destructiveItem: boolean;
+};
 
 const meta = {
-  title: 'Components/Menubar',
+  title: "Components/Menubar",
   // docs-only association; the playground args are story-level props
   component: Menubar as React.ComponentType<StoryProps>,
-  parameters: { layout: 'centered', docs: { description: { component: 'A horizontal bar of menus.' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "centered",
+    docs: { description: { component: "A horizontal bar of menus." } },
+  },
+  tags: ["autodocs"],
   argTypes: {
-    showShortcuts: { control: 'boolean', name: 'Shortcut hints', table: { category: 'Content' } },
-    showSubmenu: { control: 'boolean', name: 'Submenu (File ▸ Share)', table: { category: 'Content' } },
-    destructiveItem: { control: 'boolean', name: 'Destructive item', table: { category: 'Content' } },
+    showShortcuts: { control: "boolean", name: "Shortcut hints", table: { category: "Content" } },
+    showSubmenu: {
+      control: "boolean",
+      name: "Submenu (File ▸ Share)",
+      table: { category: "Content" },
+    },
+    destructiveItem: {
+      control: "boolean",
+      name: "Destructive item",
+      table: { category: "Content" },
+    },
   },
   args: {
     showShortcuts: true,
@@ -41,9 +52,9 @@ const meta = {
     destructiveItem: true,
   },
   render: ({ showShortcuts, showSubmenu, destructiveItem }) => {
-    const [showStatusBar, setShowStatusBar] = React.useState(true)
-    const [showActivityBar, setShowActivityBar] = React.useState(false)
-    const [profile, setProfile] = React.useState('benoit')
+    const [showStatusBar, setShowStatusBar] = React.useState(true);
+    const [showActivityBar, setShowActivityBar] = React.useState(false);
+    const [profile, setProfile] = React.useState("benoit");
 
     return (
       <Menubar>
@@ -119,15 +130,15 @@ const meta = {
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
-    )
+    );
   },
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const Minimal: Story = {
   args: { showShortcuts: false, showSubmenu: false, destructiveItem: false },
-}
+};

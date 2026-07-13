@@ -1,21 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Kbd, KbdGroup } from './kbd'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { Kbd, KbdGroup } from "./kbd";
 
 const meta = {
-  title: 'Components/Kbd',
+  title: "Components/Kbd",
   component: Kbd,
-  parameters: { layout: 'centered', docs: { description: { component: 'Keyboard shortcut display.' } } },
-  tags: ['autodocs'],
-  argTypes: {
-    children: { control: 'text', name: 'Label' },
+  parameters: {
+    layout: "centered",
+    docs: { description: { component: "Keyboard shortcut display." } },
   },
-  args: { children: '⌘' },
-} satisfies Meta<typeof Kbd>
+  tags: ["autodocs"],
+  argTypes: {
+    children: { control: "text", name: "Label" },
+  },
+  args: { children: "⌘" },
+} satisfies Meta<typeof Kbd>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const Chord: Story = {
   render: () => (
@@ -25,7 +28,7 @@ export const Chord: Story = {
       <Kbd>K</Kbd>
     </KbdGroup>
   ),
-}
+};
 
 export const Examples: Story = {
   render: () => (
@@ -45,4 +48,4 @@ export const Examples: Story = {
       <Kbd>Esc</Kbd>
     </div>
   ),
-}
+};

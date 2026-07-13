@@ -1,7 +1,7 @@
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const alertVariants = cva(
   [
@@ -25,8 +25,8 @@ const alertVariants = cva(
       },
     },
     defaultVariants: { type: "neutral" },
-  }
-)
+  },
+);
 
 const alertTitleColorMap = {
   neutral: "[color:var(--ds-color-status-neutral-foreground)]",
@@ -34,7 +34,7 @@ const alertTitleColorMap = {
   success: "[color:var(--ds-color-status-success-foreground)]",
   informational: "[color:var(--ds-color-status-info-foreground)]",
   warning: "[color:var(--ds-color-status-warning-foreground)]",
-} as const
+} as const;
 
 const alertIconColorMap = {
   neutral: "[color:var(--ds-color-status-neutral-icon)]",
@@ -42,15 +42,15 @@ const alertIconColorMap = {
   success: "[color:var(--ds-color-status-success-icon)]",
   informational: "[color:var(--ds-color-status-info-icon)]",
   warning: "[color:var(--ds-color-status-warning-icon)]",
-} as const
+} as const;
 
 type AlertProps = React.ComponentProps<"div"> &
   VariantProps<typeof alertVariants> & {
-    icon?: React.ReactNode
-    closeIcon?: React.ReactNode
-    onClose?: () => void
-    action?: React.ReactNode
-  }
+    icon?: React.ReactNode;
+    closeIcon?: React.ReactNode;
+    onClose?: () => void;
+    action?: React.ReactNode;
+  };
 
 function Alert({
   className,
@@ -71,7 +71,12 @@ function Alert({
     >
       <div className="flex flex-1 items-start gap-[var(--ds-spacing-component-md)] min-w-0">
         {icon && (
-          <div className={cn("flex shrink-0 items-center pt-0.5 [&_svg]:size-4", alertIconColorMap[type ?? "neutral"])}>
+          <div
+            className={cn(
+              "flex shrink-0 items-center pt-0.5 [&_svg]:size-4",
+              alertIconColorMap[type ?? "neutral"],
+            )}
+          >
             {icon}
           </div>
         )}
@@ -85,18 +90,12 @@ function Alert({
         </div>
       )}
       {onClose && (
-        <Button
-          variant="ghost"
-          size="xs"
-          iconOnly
-          onClick={onClose}
-          aria-label="Dismiss"
-        >
+        <Button variant="ghost" size="xs" iconOnly onClick={onClose} aria-label="Dismiss">
           {closeIcon}
         </Button>
       )}
     </div>
-  )
+  );
 }
 
 function AlertTitle({ className, ...props }: React.ComponentProps<"p">) {
@@ -106,27 +105,24 @@ function AlertTitle({ className, ...props }: React.ComponentProps<"p">) {
       className={cn(
         "[font-size:var(--ds-typography-labellg-fontsize)] [line-height:var(--ds-typography-labellg-lineheight)] [font-weight:var(--ds-typography-labellg-fontweight)]",
         "w-full group-data-[slot=alert]/alert:[color:inherit]",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
-function AlertDescription({
-  className,
-  ...props
-}: React.ComponentProps<"p">) {
+function AlertDescription({ className, ...props }: React.ComponentProps<"p">) {
   return (
     <p
       data-slot="alert-description"
       className={cn(
         "[font-size:var(--ds-typography-bodysm-fontsize)] [line-height:var(--ds-typography-bodysm-lineheight)] [color:var(--ds-color-content-primary)] w-full",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
-export { Alert, AlertTitle, AlertDescription, alertVariants }
+export { Alert, AlertTitle, AlertDescription, alertVariants };

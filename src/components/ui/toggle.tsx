@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Toggle as TogglePrimitive } from "@base-ui/react/toggle"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { Toggle as TogglePrimitive } from "@base-ui/react/toggle";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 // Mirrors the Figma `toggle` set (2010:3650): Variant=outline|ghost × Active.
 // Active maps to Base UI's pressed state (`data-pressed`) — not a styling prop;
@@ -32,8 +32,8 @@ const toggleVariants = cva(
       },
     },
     defaultVariants: { variant: "outline", size: "md" },
-  }
-)
+  },
+);
 
 function Toggle({
   className,
@@ -47,7 +47,7 @@ function Toggle({
       className={cn(toggleVariants({ variant, size }), className)}
       {...props}
     />
-  )
+  );
 }
 
-export { Toggle, toggleVariants }
+export { Toggle, toggleVariants };

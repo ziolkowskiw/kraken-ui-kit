@@ -13,7 +13,9 @@ const src = path.resolve(here, "../../manifests");
 const dest = path.resolve(here, "../manifests");
 
 if (!existsSync(path.join(src, "index.json"))) {
-  console.error("✖ ../manifests/index.json not found — run `npm run manifests:build` at the repo root first.");
+  console.error(
+    "✖ ../manifests/index.json not found — run `npm run manifests:build` at the repo root first.",
+  );
   process.exit(1);
 }
 

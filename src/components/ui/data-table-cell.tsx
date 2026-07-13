@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 // Mirrors the Figma `data-table/cell` (1824:18395) — a table data cell with
 // optional inline controls (input, select, badge, checkbox, button, action menu).
 
-import * as React from "react"
+import * as React from "react";
 import {
   SquareDashed,
   ArrowRight,
@@ -12,13 +12,13 @@ import {
   Trash2,
   EllipsisVertical,
   File as FileIcon,
-} from "lucide-react"
+} from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { Badge } from "./badge"
-import { Button } from "./button"
-import { Checkbox } from "./checkbox"
-import { Input } from "./input"
+import { cn } from "@/lib/utils";
+import { Badge } from "./badge";
+import { Button } from "./button";
+import { Checkbox } from "./checkbox";
+import { Input } from "./input";
 
 // data-table/cell (1227:14311). One cell of body content. `type` selects what the
 // cell renders; `alignment` flips horizontal alignment. Reuses Badge/Button/
@@ -37,52 +37,55 @@ type CellType =
   | "action text"
   | "badge"
   | "file"
-  | "input"
+  | "input";
 
-type CellAlignment = "left" | "right"
+type CellAlignment = "left" | "right";
 
 type DataTableCellProps = {
-  type?: CellType
-  alignment?: CellAlignment
+  type?: CellType;
+  alignment?: CellAlignment;
   /** primary value (text, link, diff "new", icon+text) */
-  value?: string
+  value?: string;
   /** diff "old" value (struck through) */
-  oldValue?: string
+  oldValue?: string;
   /** second line (text 2 rows) */
-  secondValue?: string
+  secondValue?: string;
   /** glyph for icon / icon+text, and the default text decoration */
-  icon?: React.ReactNode
-  showLeftDecoration?: boolean
-  showRightDecoration?: boolean
-  leftDecoration?: React.ReactNode
-  rightDecoration?: React.ReactNode
+  icon?: React.ReactNode;
+  showLeftDecoration?: boolean;
+  showRightDecoration?: boolean;
+  leftDecoration?: React.ReactNode;
+  rightDecoration?: React.ReactNode;
   /** link href (type=link) */
-  href?: string
+  href?: string;
   /** badge (type=badge) */
-  badgeLabel?: string
-  badgeColor?: React.ComponentProps<typeof Badge>["color"]
+  badgeLabel?: string;
+  badgeColor?: React.ComponentProps<typeof Badge>["color"];
   /** file (type=file) */
-  fileName?: string
+  fileName?: string;
   /** checkbox (type=checkbox) */
-  checked?: boolean | "indeterminate"
-  onCheckedChange?: (checked: boolean) => void
+  checked?: boolean | "indeterminate";
+  onCheckedChange?: (checked: boolean) => void;
   /** action text (type=action text) */
-  actionLabel?: string
-  onAction?: () => void
+  actionLabel?: string;
+  onAction?: () => void;
   /** actions icon (type=actions icon) */
-  onEdit?: () => void
-  onDownload?: () => void
-  onDelete?: () => void
+  onEdit?: () => void;
+  onDownload?: () => void;
+  onDelete?: () => void;
   /** action overflow (type=action overflow) */
-  onOverflow?: () => void
+  onOverflow?: () => void;
   /** input (type=input) — defaults to a small placeholder input */
-  input?: React.ReactNode
-  className?: string
-}
+  input?: React.ReactNode;
+  className?: string;
+};
 
-const text = "[font-size:var(--ds-typography-bodysm-fontsize)] [line-height:var(--ds-typography-bodysm-lineheight)]"
-const dashed = <SquareDashed className="size-4 shrink-0 [color:var(--ds-color-content-tertiary)]" />
-const iconBtn = "shrink-0 rounded-full"
+const text =
+  "[font-size:var(--ds-typography-bodysm-fontsize)] [line-height:var(--ds-typography-bodysm-lineheight)]";
+const dashed = (
+  <SquareDashed className="size-4 shrink-0 [color:var(--ds-color-content-tertiary)]" />
+);
+const iconBtn = "shrink-0 rounded-full";
 
 function DataTableCell({
   type = "text",
@@ -116,14 +119,10 @@ function DataTableCell({
     type === "action text" ||
     type === "action overflow" ||
     type === "file" ||
-    type === "input"
-  const pad = isControl
-    ? alignment === "right"
-      ? "pl-2 pr-0"
-      : "pl-0 pr-2"
-    : "px-2"
+    type === "input";
+  const pad = isControl ? (alignment === "right" ? "pl-2 pr-0" : "pl-0 pr-2") : "px-2";
 
-  let content: React.ReactNode
+  let content: React.ReactNode;
   switch (type) {
     case "text":
       content = (
@@ -134,49 +133,72 @@ function DataTableCell({
           </span>
           {showRightDecoration && (rightDecoration ?? dashed)}
         </>
-      )
-      break
+      );
+      break;
     case "text 2 rows":
       content = (
         <span className="flex min-w-0 flex-col">
-          <span className={cn("truncate", text, "[color:var(--ds-color-content-primary)]")}>{value}</span>
-          <span className={cn("truncate", text, "[color:var(--ds-color-content-tertiary)]")}>{secondValue}</span>
+          <span className={cn("truncate", text, "[color:var(--ds-color-content-primary)]")}>
+            {value}
+          </span>
+          <span className={cn("truncate", text, "[color:var(--ds-color-content-tertiary)]")}>
+            {secondValue}
+          </span>
         </span>
-      )
-      break
+      );
+      break;
     case "link":
       content = (
-        <a href={href} className={cn("min-w-0 truncate underline", text, "[color:var(--ds-color-content-link)] hover:[color:var(--ds-color-content-link-hover)]")}>
+        <a
+          href={href}
+          className={cn(
+            "min-w-0 truncate underline",
+            text,
+            "[color:var(--ds-color-content-link)] hover:[color:var(--ds-color-content-link-hover)]",
+          )}
+        >
           {value}
         </a>
-      )
-      break
+      );
+      break;
     case "diff":
       content = (
         <>
-          <span className={cn("truncate line-through", text, "[color:var(--ds-color-content-tertiary)]")}>{oldValue}</span>
+          <span
+            className={cn(
+              "truncate line-through",
+              text,
+              "[color:var(--ds-color-content-tertiary)]",
+            )}
+          >
+            {oldValue}
+          </span>
           <ArrowRight className="size-4 shrink-0 [color:var(--ds-color-content-tertiary)]" />
-          <span className={cn("truncate", text, "[color:var(--ds-color-content-primary)]")}>{value}</span>
+          <span className={cn("truncate", text, "[color:var(--ds-color-content-primary)]")}>
+            {value}
+          </span>
         </>
-      )
-      break
+      );
+      break;
     case "icon + text":
       content = (
         <>
           <span className="inline-flex size-4 shrink-0 items-center justify-center [color:var(--ds-color-content-primary)] [&_svg]:size-4">
             {icon ?? dashed}
           </span>
-          <span className={cn("min-w-0 truncate", text, "[color:var(--ds-color-content-primary)]")}>{value}</span>
+          <span className={cn("min-w-0 truncate", text, "[color:var(--ds-color-content-primary)]")}>
+            {value}
+          </span>
         </>
-      )
-      break
+      );
+      break;
     case "icon only":
       content = (
         <span className="inline-flex size-4 shrink-0 items-center justify-center [color:var(--ds-color-content-primary)] [&_svg]:size-4">
           {icon ?? dashed}
         </span>
-      )
-      break
+      );
+      break;
     case "checkbox":
       content = (
         <Checkbox
@@ -185,49 +207,86 @@ function DataTableCell({
           indeterminate={checked === "indeterminate"}
           onCheckedChange={onCheckedChange}
         />
-      )
-      break
+      );
+      break;
     case "badge":
       content = (
         <Badge color={badgeColor} appearance="filled" size="sm" shape="square">
           {badgeLabel}
         </Badge>
-      )
-      break
+      );
+      break;
     case "file":
       content = (
-        <span className={cn("inline-flex items-center gap-1.5 rounded-[2px] px-2 py-1", "[color:var(--ds-color-content-secondary)]")}>
+        <span
+          className={cn(
+            "inline-flex items-center gap-1.5 rounded-[2px] px-2 py-1",
+            "[color:var(--ds-color-content-secondary)]",
+          )}
+        >
           <FileIcon className="size-3 shrink-0" />
           <span className="truncate [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
             {fileName}
           </span>
         </span>
-      )
-      break
+      );
+      break;
     case "action text":
       content = (
         <Button variant="ghost" size="xs" onClick={onAction}>
           {actionLabel}
         </Button>
-      )
-      break
+      );
+      break;
     case "actions icon":
       content = (
         <>
-          <Button variant="ghost" size="xs" iconOnly className={iconBtn} leftIcon={<Pencil />} onClick={onEdit} aria-label="Edit" />
-          <Button variant="ghost" size="xs" iconOnly className={iconBtn} leftIcon={<Download />} onClick={onDownload} aria-label="Download" />
-          <Button variant="destructive-ghost" size="xs" iconOnly className={cn(iconBtn, "[--btn-border:transparent]")} leftIcon={<Trash2 />} onClick={onDelete} aria-label="Delete" />
+          <Button
+            variant="ghost"
+            size="xs"
+            iconOnly
+            className={iconBtn}
+            leftIcon={<Pencil />}
+            onClick={onEdit}
+            aria-label="Edit"
+          />
+          <Button
+            variant="ghost"
+            size="xs"
+            iconOnly
+            className={iconBtn}
+            leftIcon={<Download />}
+            onClick={onDownload}
+            aria-label="Download"
+          />
+          <Button
+            variant="destructive-ghost"
+            size="xs"
+            iconOnly
+            className={cn(iconBtn, "[--btn-border:transparent]")}
+            leftIcon={<Trash2 />}
+            onClick={onDelete}
+            aria-label="Delete"
+          />
         </>
-      )
-      break
+      );
+      break;
     case "action overflow":
       content = (
-        <Button variant="ghost" size="xs" iconOnly className={iconBtn} leftIcon={<EllipsisVertical />} onClick={onOverflow} aria-label="More actions" />
-      )
-      break
+        <Button
+          variant="ghost"
+          size="xs"
+          iconOnly
+          className={iconBtn}
+          leftIcon={<EllipsisVertical />}
+          onClick={onOverflow}
+          aria-label="More actions"
+        />
+      );
+      break;
     case "input":
-      content = input ?? <Input placeholder="Placeholder" className="h-8 w-full" />
-      break
+      content = input ?? <Input placeholder="Placeholder" className="h-8 w-full" />;
+      break;
   }
 
   return (
@@ -240,13 +299,13 @@ function DataTableCell({
         pad,
         alignment === "right" ? "justify-end text-right" : "justify-start text-left",
         type === "input" && "flex-col items-stretch",
-        className
+        className,
       )}
     >
       {content}
     </div>
-  )
+  );
 }
 
-export { DataTableCell }
-export type { CellType, CellAlignment }
+export { DataTableCell };
+export type { CellType, CellAlignment };

@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Input as InputPrimitive } from "@base-ui/react/input"
-import { cva, type VariantProps } from "class-variance-authority"
-import { Clock } from "lucide-react"
+import * as React from "react";
+import { Input as InputPrimitive } from "@base-ui/react/input";
+import { cva, type VariantProps } from "class-variance-authority";
+import { Clock } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { TooltipIcon, TooltipProvider } from "./tooltip"
+import { cn } from "@/lib/utils";
+import { TooltipIcon, TooltipProvider } from "./tooltip";
 
 // Mirrors the Figma `time-input` set (858:2044): a field for entering a time, with
 // a trailing clock affordance. State=rest|hover|focus|disabled|error × Size × Filled.
@@ -32,11 +32,11 @@ const timeInputVariants = cva(
       },
     },
     defaultVariants: { size: "md" },
-  }
-)
+  },
+);
 
 type TimeInputProps = Omit<React.ComponentProps<"input">, "size" | "type"> &
-  VariantProps<typeof timeInputVariants> & { error?: boolean }
+  VariantProps<typeof timeInputVariants> & { error?: boolean };
 
 function TimeInput({ className, size, error, ...props }: TimeInputProps) {
   return (
@@ -44,16 +44,16 @@ function TimeInput({ className, size, error, ...props }: TimeInputProps) {
       <InputPrimitive type="time" aria-invalid={error || undefined} {...props} />
       <Clock />
     </div>
-  )
+  );
 }
 
 type TimeInputFieldProps = TimeInputProps & {
-  label?: string
-  description?: string
-  errorMessage?: string
-  mandatory?: boolean
-  tooltip?: React.ReactNode
-}
+  label?: string;
+  description?: string;
+  errorMessage?: string;
+  mandatory?: boolean;
+  tooltip?: React.ReactNode;
+};
 
 function TimeInputField({
   label,
@@ -66,14 +66,22 @@ function TimeInputField({
   className,
   ...props
 }: TimeInputFieldProps & { id?: string }) {
-  const generatedId = React.useId()
-  const id = idProp ?? generatedId
-  const hasError = error || !!errorMessage
+  const generatedId = React.useId();
+  const id = idProp ?? generatedId;
+  const hasError = error || !!errorMessage;
   return (
-    <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
+    <div
+      className={cn(
+        "flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start",
+        className,
+      )}
+    >
       {label && (
         <div className="flex items-center gap-1 h-4">
-          <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+          <label
+            htmlFor={id}
+            className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]"
+          >
             {label}
           </label>
           {mandatory && <span className="[color:var(--ds-input-contenterror)]">*</span>}
@@ -95,7 +103,7 @@ function TimeInputField({
         </p>
       ) : null}
     </div>
-  )
+  );
 }
 
-export { TimeInput, TimeInputField, timeInputVariants }
+export { TimeInput, TimeInputField, timeInputVariants };

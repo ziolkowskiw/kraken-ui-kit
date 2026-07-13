@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Input as InputPrimitive } from "@base-ui/react/input"
-import { cva, type VariantProps } from "class-variance-authority"
-import { SearchIcon, XIcon, TriangleAlert } from "lucide-react"
+import * as React from "react";
+import { Input as InputPrimitive } from "@base-ui/react/input";
+import { cva, type VariantProps } from "class-variance-authority";
+import { SearchIcon, XIcon, TriangleAlert } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { TooltipIcon, TooltipProvider } from "./tooltip"
+import { cn } from "@/lib/utils";
+import { TooltipIcon, TooltipProvider } from "./tooltip";
 
 // Mirrors the Figma `search` set (858:2055): an input with a leading magnifier and
 // an optional clear control. State=rest|hover|focus|disabled|error|warning × Size ×
@@ -34,26 +34,24 @@ const searchVariants = cva(
       },
     },
     defaultVariants: { size: "md" },
-  }
-)
+  },
+);
 
 type SearchProps = Omit<React.ComponentProps<"input">, "size"> &
   VariantProps<typeof searchVariants> & {
-    onClear?: () => void
-    state?: "default" | "error" | "warning"
-  }
+    onClear?: () => void;
+    state?: "default" | "error" | "warning";
+  };
 
 function Search({ className, size, value, onClear, state = "default", ...props }: SearchProps) {
-  const showClear = !!onClear && value != null && String(value).length > 0
+  const showClear = !!onClear && value != null && String(value).length > 0;
   return (
-    <div
-      data-slot="search"
-      data-state={state}
-      className={cn(searchVariants({ size }), className)}
-    >
+    <div data-slot="search" data-state={state} className={cn(searchVariants({ size }), className)}>
       <SearchIcon className="[color:var(--ds-color-icon-muted)]" />
       <InputPrimitive type="search" value={value} {...props} />
-      {state === "warning" && <TriangleAlert className="[color:var(--ds-color-status-warning-icon)]" />}
+      {state === "warning" && (
+        <TriangleAlert className="[color:var(--ds-color-status-warning-icon)]" />
+      )}
       {showClear && (
         <button
           type="button"
@@ -65,16 +63,16 @@ function Search({ className, size, value, onClear, state = "default", ...props }
         </button>
       )}
     </div>
-  )
+  );
 }
 
 type SearchFieldProps = SearchProps & {
-  label?: string
-  description?: string
-  errorMessage?: string
-  mandatory?: boolean
-  tooltip?: React.ReactNode
-}
+  label?: string;
+  description?: string;
+  errorMessage?: string;
+  mandatory?: boolean;
+  tooltip?: React.ReactNode;
+};
 
 function SearchField({
   label,
@@ -86,9 +84,14 @@ function SearchField({
   className,
   ...props
 }: SearchFieldProps) {
-  const resolvedState = errorMessage ? "error" : state
+  const resolvedState = errorMessage ? "error" : state;
   return (
-    <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
+    <div
+      className={cn(
+        "flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start",
+        className,
+      )}
+    >
       {label && (
         <div className="flex items-center gap-1 h-4">
           <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
@@ -113,7 +116,7 @@ function SearchField({
         </p>
       ) : null}
     </div>
-  )
+  );
 }
 
-export { Search, SearchField, searchVariants }
+export { Search, SearchField, searchVariants };

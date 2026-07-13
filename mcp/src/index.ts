@@ -19,7 +19,7 @@ const server = new McpServer(
   {
     instructions:
       "Machine-readable Kraken UI Kit (JIT DS 2.0). Call get_foundations once per session before building UI; answer component questions from get_component / search_components — never guess variant names or tokens.",
-  }
+  },
 );
 
 registerTools(server, store);

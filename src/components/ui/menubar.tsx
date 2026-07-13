@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Menubar as MenubarPrimitive } from "@base-ui/react/menubar"
-import { Menu as MenuPrimitive } from "@base-ui/react/menu"
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
+import * as React from "react";
+import { Menubar as MenubarPrimitive } from "@base-ui/react/menubar";
+import { Menu as MenuPrimitive } from "@base-ui/react/menu";
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { menuItemClasses, menuPopupClasses } from "./dropdown-menu"
+import { cn } from "@/lib/utils";
+import { menuItemClasses, menuPopupClasses } from "./dropdown-menu";
 
 // Mirrors the Figma `Menubar` component (1696:13412): a horizontal bar of menus.
 // Built on Base UI's Menubar wrapping per-menu `Menu` primitives; items reuse the
@@ -17,31 +17,31 @@ function Menubar({ className, ...props }: MenubarPrimitive.Props) {
       data-slot="menubar"
       className={cn(
         "flex items-center gap-1 rounded-md border p-1 [border-color:var(--ds-color-border)] [background-color:var(--ds-color-background)] shadow-xs",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 function MenubarMenu({ ...props }: MenuPrimitive.Root.Props) {
-  return <MenuPrimitive.Root data-slot="menubar-menu" {...props} />
+  return <MenuPrimitive.Root data-slot="menubar-menu" {...props} />;
 }
 
 function MenubarGroup({ ...props }: MenuPrimitive.Group.Props) {
-  return <MenuPrimitive.Group data-slot="menubar-group" {...props} />
+  return <MenuPrimitive.Group data-slot="menubar-group" {...props} />;
 }
 
 function MenubarPortal({ ...props }: MenuPrimitive.Portal.Props) {
-  return <MenuPrimitive.Portal data-slot="menubar-portal" {...props} />
+  return <MenuPrimitive.Portal data-slot="menubar-portal" {...props} />;
 }
 
 function MenubarRadioGroup({ ...props }: MenuPrimitive.RadioGroup.Props) {
-  return <MenuPrimitive.RadioGroup data-slot="menubar-radio-group" {...props} />
+  return <MenuPrimitive.RadioGroup data-slot="menubar-radio-group" {...props} />;
 }
 
 function MenubarSub({ ...props }: MenuPrimitive.SubmenuRoot.Props) {
-  return <MenuPrimitive.SubmenuRoot data-slot="menubar-sub" {...props} />
+  return <MenuPrimitive.SubmenuRoot data-slot="menubar-sub" {...props} />;
 }
 
 function MenubarTrigger({ className, ...props }: MenuPrimitive.Trigger.Props) {
@@ -51,11 +51,11 @@ function MenubarTrigger({ className, ...props }: MenuPrimitive.Trigger.Props) {
       className={cn(
         "flex cursor-default items-center rounded-sm px-2 py-1 text-sm font-medium outline-none select-none [color:var(--ds-color-content-primary)]",
         "data-highlighted:[background-color:var(--ds-menuitem-fillhover)] data-popup-open:[background-color:var(--ds-menuitem-fillhover)]",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 function MenubarContent({
@@ -68,11 +68,20 @@ function MenubarContent({
   Pick<MenuPrimitive.Positioner.Props, "side" | "align" | "sideOffset">) {
   return (
     <MenuPrimitive.Portal>
-      <MenuPrimitive.Positioner side={side} align={align} sideOffset={sideOffset} className="isolate z-50">
-        <MenuPrimitive.Popup data-slot="menubar-content" className={cn(menuPopupClasses, className)} {...props} />
+      <MenuPrimitive.Positioner
+        side={side}
+        align={align}
+        sideOffset={sideOffset}
+        className="isolate z-50"
+      >
+        <MenuPrimitive.Popup
+          data-slot="menubar-content"
+          className={cn(menuPopupClasses, className)}
+          {...props}
+        />
       </MenuPrimitive.Positioner>
     </MenuPrimitive.Portal>
-  )
+  );
 }
 
 function MenubarItem({
@@ -88,12 +97,16 @@ function MenubarItem({
       className={cn(menuItemClasses, inset && "pl-8", className)}
       {...props}
     />
-  )
+  );
 }
 
 function MenubarCheckboxItem({ className, children, ...props }: MenuPrimitive.CheckboxItem.Props) {
   return (
-    <MenuPrimitive.CheckboxItem data-slot="menubar-checkbox-item" className={cn(menuItemClasses, "pl-8", className)} {...props}>
+    <MenuPrimitive.CheckboxItem
+      data-slot="menubar-checkbox-item"
+      className={cn(menuItemClasses, "pl-8", className)}
+      {...props}
+    >
       <span className="pointer-events-none absolute left-2 flex size-4 items-center justify-center">
         <MenuPrimitive.CheckboxItemIndicator>
           <CheckIcon className="size-4" />
@@ -101,12 +114,16 @@ function MenubarCheckboxItem({ className, children, ...props }: MenuPrimitive.Ch
       </span>
       {children}
     </MenuPrimitive.CheckboxItem>
-  )
+  );
 }
 
 function MenubarRadioItem({ className, children, ...props }: MenuPrimitive.RadioItem.Props) {
   return (
-    <MenuPrimitive.RadioItem data-slot="menubar-radio-item" className={cn(menuItemClasses, "pl-8", className)} {...props}>
+    <MenuPrimitive.RadioItem
+      data-slot="menubar-radio-item"
+      className={cn(menuItemClasses, "pl-8", className)}
+      {...props}
+    >
       <span className="pointer-events-none absolute left-2 flex size-4 items-center justify-center">
         <MenuPrimitive.RadioItemIndicator>
           <CircleIcon className="size-2 fill-current" />
@@ -114,45 +131,81 @@ function MenubarRadioItem({ className, children, ...props }: MenuPrimitive.Radio
       </span>
       {children}
     </MenuPrimitive.RadioItem>
-  )
+  );
 }
 
 // Standalone section header — plain div so it doesn't require a Menu.Group ancestor.
-function MenubarLabel({ className, inset, ...props }: React.ComponentProps<"div"> & { inset?: boolean }) {
+function MenubarLabel({
+  className,
+  inset,
+  ...props
+}: React.ComponentProps<"div"> & { inset?: boolean }) {
   return (
     <div
       data-slot="menubar-label"
-      className={cn("px-2 py-1.5 [color:var(--ds-color-muted-foreground)] [font-size:var(--ds-typography-labelsm-fontsize)] font-medium", inset && "pl-8", className)}
+      className={cn(
+        "px-2 py-1.5 [color:var(--ds-color-muted-foreground)] [font-size:var(--ds-typography-labelsm-fontsize)] font-medium",
+        inset && "pl-8",
+        className,
+      )}
       {...props}
     />
-  )
+  );
 }
 
 function MenubarSeparator({ className, ...props }: MenuPrimitive.Separator.Props) {
-  return <MenuPrimitive.Separator data-slot="menubar-separator" className={cn("-mx-1 my-1 h-px [background-color:var(--ds-color-border)]", className)} {...props} />
+  return (
+    <MenuPrimitive.Separator
+      data-slot="menubar-separator"
+      className={cn("-mx-1 my-1 h-px [background-color:var(--ds-color-border)]", className)}
+      {...props}
+    />
+  );
 }
 
 function MenubarShortcut({ className, ...props }: React.ComponentProps<"span">) {
-  return <span data-slot="menubar-shortcut" className={cn("ml-auto text-xs tracking-widest [color:var(--ds-color-content-tertiary)]", className)} {...props} />
+  return (
+    <span
+      data-slot="menubar-shortcut"
+      className={cn(
+        "ml-auto text-xs tracking-widest [color:var(--ds-color-content-tertiary)]",
+        className,
+      )}
+      {...props}
+    />
+  );
 }
 
-function MenubarSubTrigger({ className, inset, children, ...props }: MenuPrimitive.SubmenuTrigger.Props & { inset?: boolean }) {
+function MenubarSubTrigger({
+  className,
+  inset,
+  children,
+  ...props
+}: MenuPrimitive.SubmenuTrigger.Props & { inset?: boolean }) {
   return (
-    <MenuPrimitive.SubmenuTrigger data-slot="menubar-sub-trigger" className={cn(menuItemClasses, inset && "pl-8", className)} {...props}>
+    <MenuPrimitive.SubmenuTrigger
+      data-slot="menubar-sub-trigger"
+      className={cn(menuItemClasses, inset && "pl-8", className)}
+      {...props}
+    >
       {children}
       <ChevronRightIcon className="ml-auto size-4" />
     </MenuPrimitive.SubmenuTrigger>
-  )
+  );
 }
 
 function MenubarSubContent({ className, ...props }: MenuPrimitive.Popup.Props) {
   return (
     <MenuPrimitive.Portal>
       <MenuPrimitive.Positioner side="right" align="start" sideOffset={4} className="isolate z-50">
-        <MenuPrimitive.Popup data-slot="menubar-sub-content" className={cn(menuPopupClasses, className)} {...props} />
+        <MenuPrimitive.Popup
+          data-slot="menubar-sub-content"
+          className={cn(menuPopupClasses, className)}
+          {...props}
+        />
       </MenuPrimitive.Positioner>
     </MenuPrimitive.Portal>
-  )
+  );
 }
 
 export {
@@ -172,4 +225,4 @@ export {
   MenubarShortcut,
   MenubarSubTrigger,
   MenubarSubContent,
-}
+};

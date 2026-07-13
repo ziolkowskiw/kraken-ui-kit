@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
 import {
   Dialog,
   DialogTrigger,
@@ -9,65 +9,97 @@ import {
   DialogDescription,
   DialogFooter,
   DialogClose,
-} from './dialog'
-import { Button } from './button'
-import { Input } from './input'
+} from "./dialog";
+import { Button } from "./button";
+import { Input } from "./input";
 
 const BUTTON_VARIANTS = [
-  'primary',
-  'secondary',
-  'tonal',
-  'ghost',
-  'destructive',
-  'destructive-secondary',
-  'destructive-ghost',
-] as const
+  "primary",
+  "secondary",
+  "tonal",
+  "ghost",
+  "destructive",
+  "destructive-secondary",
+  "destructive-ghost",
+] as const;
 
 type DialogStoryProps = {
-  titleLabel: string
-  subtitleText: string
-  hasSubtitle: boolean
-  hasTitle: boolean
-  showCloseButton: boolean
-  triggerLabel: string
-  triggerVariant: (typeof BUTTON_VARIANTS)[number]
-  cancelLabel: string
-  confirmLabel: string
-  confirmVariant: (typeof BUTTON_VARIANTS)[number]
-}
+  titleLabel: string;
+  subtitleText: string;
+  hasSubtitle: boolean;
+  hasTitle: boolean;
+  showCloseButton: boolean;
+  triggerLabel: string;
+  triggerVariant: (typeof BUTTON_VARIANTS)[number];
+  cancelLabel: string;
+  confirmLabel: string;
+  confirmVariant: (typeof BUTTON_VARIANTS)[number];
+};
 
 const meta = {
-  title: 'Components/Dialog',
+  title: "Components/Dialog",
   // docs-only association; the playground args are story-level props
   component: Dialog as React.ComponentType<DialogStoryProps>,
-  parameters: { layout: 'centered', docs: { description: { component: 'a window overlaid on the primary window, content underneath inert; focused tasks/forms needing confirmation' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "a window overlaid on the primary window, content underneath inert; focused tasks/forms needing confirmation",
+      },
+    },
+  },
+  tags: ["autodocs"],
   argTypes: {
     // ── Content ──
-    hasTitle: { control: 'boolean', name: 'hasTitle', table: { category: 'Content' } },
-    titleLabel: { control: 'text', name: 'Title', table: { category: 'Content' }, if: { arg: 'hasTitle' } },
-    hasSubtitle: { control: 'boolean', name: 'hasSubtitle', table: { category: 'Content' } },
-    subtitleText: { control: 'text', name: 'Subtitle', table: { category: 'Content' }, if: { arg: 'hasSubtitle' } },
-    showCloseButton: { control: 'boolean', name: 'showCloseButton', table: { category: 'Content' } },
+    hasTitle: { control: "boolean", name: "hasTitle", table: { category: "Content" } },
+    titleLabel: {
+      control: "text",
+      name: "Title",
+      table: { category: "Content" },
+      if: { arg: "hasTitle" },
+    },
+    hasSubtitle: { control: "boolean", name: "hasSubtitle", table: { category: "Content" } },
+    subtitleText: {
+      control: "text",
+      name: "Subtitle",
+      table: { category: "Content" },
+      if: { arg: "hasSubtitle" },
+    },
+    showCloseButton: {
+      control: "boolean",
+      name: "showCloseButton",
+      table: { category: "Content" },
+    },
     // ── Nested: Trigger button ──
-    triggerLabel: { control: 'text', name: 'Label', table: { category: 'Nested: Trigger' } },
-    triggerVariant: { control: 'select', options: BUTTON_VARIANTS, name: 'Variant', table: { category: 'Nested: Trigger' } },
+    triggerLabel: { control: "text", name: "Label", table: { category: "Nested: Trigger" } },
+    triggerVariant: {
+      control: "select",
+      options: BUTTON_VARIANTS,
+      name: "Variant",
+      table: { category: "Nested: Trigger" },
+    },
     // ── Nested: Footer buttons ──
-    cancelLabel: { control: 'text', name: 'Cancel label', table: { category: 'Nested: Footer' } },
-    confirmLabel: { control: 'text', name: 'Confirm label', table: { category: 'Nested: Footer' } },
-    confirmVariant: { control: 'select', options: BUTTON_VARIANTS, name: 'Confirm variant', table: { category: 'Nested: Footer' } },
+    cancelLabel: { control: "text", name: "Cancel label", table: { category: "Nested: Footer" } },
+    confirmLabel: { control: "text", name: "Confirm label", table: { category: "Nested: Footer" } },
+    confirmVariant: {
+      control: "select",
+      options: BUTTON_VARIANTS,
+      name: "Confirm variant",
+      table: { category: "Nested: Footer" },
+    },
   },
   args: {
-    titleLabel: 'Title',
-    subtitleText: 'This is supporting text',
+    titleLabel: "Title",
+    subtitleText: "This is supporting text",
     hasTitle: true,
     hasSubtitle: true,
     showCloseButton: true,
-    triggerLabel: 'Open dialog',
-    triggerVariant: 'secondary',
-    cancelLabel: 'Cancel',
-    confirmLabel: 'Confirm',
-    confirmVariant: 'primary',
+    triggerLabel: "Open dialog",
+    triggerVariant: "secondary",
+    cancelLabel: "Cancel",
+    confirmLabel: "Confirm",
+    confirmVariant: "primary",
   },
   render: ({
     titleLabel,
@@ -86,9 +118,7 @@ const meta = {
       <DialogContent showCloseButton={showCloseButton}>
         <DialogHeader>
           {hasTitle && <DialogTitle>{titleLabel}</DialogTitle>}
-          {hasSubtitle && (
-            <DialogDescription>{subtitleText}</DialogDescription>
-          )}
+          {hasSubtitle && <DialogDescription>{subtitleText}</DialogDescription>}
         </DialogHeader>
         <DialogFooter>
           <DialogClose render={<Button variant="secondary">{cancelLabel}</Button>} />
@@ -97,23 +127,23 @@ const meta = {
       </DialogContent>
     </Dialog>
   ),
-} satisfies Meta<DialogStoryProps>
+} satisfies Meta<DialogStoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // All controls active — the "Figma property panel" experience.
-export const Playground: Story = {}
+export const Playground: Story = {};
 
-export const Default: Story = {}
+export const Default: Story = {};
 
 export const NoCloseButton: Story = {
   args: { showCloseButton: false },
-}
+};
 
 export const TitleOnly: Story = {
   args: { hasSubtitle: false },
-}
+};
 
 export const WithForm: Story = {
   render: () => (
@@ -122,9 +152,7 @@ export const WithForm: Story = {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>New project</DialogTitle>
-          <DialogDescription>
-            Enter a name for your new project.
-          </DialogDescription>
+          <DialogDescription>Enter a name for your new project.</DialogDescription>
         </DialogHeader>
         <Input placeholder="Project name" />
         <DialogFooter showCloseButton>
@@ -133,7 +161,7 @@ export const WithForm: Story = {
       </DialogContent>
     </Dialog>
   ),
-}
+};
 
 export const Destructive: Story = {
   render: () => (
@@ -153,4 +181,4 @@ export const Destructive: Story = {
       </DialogContent>
     </Dialog>
   ),
-}
+};

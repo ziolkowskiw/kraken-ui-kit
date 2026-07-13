@@ -1,49 +1,54 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { TimeInputField } from './time-input'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { TimeInputField } from "./time-input";
 
 type TimeStoryProps = React.ComponentProps<typeof TimeInputField> & {
-  hasTooltip?: boolean
-  tooltipText?: string
-}
+  hasTooltip?: boolean;
+  tooltipText?: string;
+};
 
 const meta = {
-  title: 'Components/TimeInput',
+  title: "Components/TimeInput",
   component: TimeInputField,
-  parameters: { layout: 'padded', docs: { description: { component: 'A time field (native' } } },
-  tags: ['autodocs'],
+  parameters: { layout: "padded", docs: { description: { component: "A time field (native" } } },
+  tags: ["autodocs"],
   argTypes: {
-    size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
-    label: { control: 'text' },
-    description: { control: 'text', name: 'Help text' },
-    errorMessage: { control: 'text' },
-    mandatory: { control: 'boolean' },
-    disabled: { control: 'boolean' },
-    hasTooltip: { control: 'boolean', name: 'Show info tooltip', table: { category: 'Tooltip' } },
-    tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Tooltip' }, if: { arg: 'hasTooltip' } },
+    size: { control: "inline-radio", options: ["sm", "md", "lg"] },
+    label: { control: "text" },
+    description: { control: "text", name: "Help text" },
+    errorMessage: { control: "text" },
+    mandatory: { control: "boolean" },
+    disabled: { control: "boolean" },
+    hasTooltip: { control: "boolean", name: "Show info tooltip", table: { category: "Tooltip" } },
+    tooltipText: {
+      control: "text",
+      name: "Tooltip content",
+      table: { category: "Tooltip" },
+      if: { arg: "hasTooltip" },
+    },
     tooltip: { table: { disable: true } },
   },
   args: {
-    label: 'Start time',
-    description: '24-hour format.',
-    size: 'md',
-    defaultValue: '09:30',
+    label: "Start time",
+    description: "24-hour format.",
+    size: "md",
+    defaultValue: "09:30",
     mandatory: false,
     disabled: false,
     hasTooltip: false,
-    tooltipText: 'Times are shown in your local timezone.',
+    tooltipText: "Times are shown in your local timezone.",
   },
   render: ({ hasTooltip, tooltipText, ...args }: TimeStoryProps) => (
     <div className="w-56">
       <TimeInputField {...args} tooltip={hasTooltip ? tooltipText : undefined} />
     </div>
   ),
-} satisfies Meta<TimeStoryProps>
+} satisfies Meta<TimeStoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const Sizes: Story = {
   render: () => (
@@ -53,12 +58,12 @@ export const Sizes: Story = {
       <TimeInputField size="lg" label="Large" defaultValue="18:45" />
     </div>
   ),
-}
+};
 
 export const ErrorState: Story = {
-  args: { errorMessage: 'Time must be after 09:00.', defaultValue: '07:15' },
-}
+  args: { errorMessage: "Time must be after 09:00.", defaultValue: "07:15" },
+};
 
 export const Disabled: Story = {
-  args: { disabled: true, defaultValue: '12:30' },
-}
+  args: { disabled: true, defaultValue: "12:30" },
+};

@@ -23,14 +23,14 @@ npm --prefix mcp install && npm --prefix mcp run build
 claude mcp add kraken-ui -- node <abs-path-to-clone>/mcp/dist/index.js
 ```
 
-| Tool | Use it for |
-|---|---|
-| `get_foundations` | call **once per session** — token architecture, brands, conventions, shadcn divergences |
-| `search_components query` | find a component by concept ("modal", "outline button", "dropdown") |
-| `get_component name` | the full contract: install cmd, exact variant enums + defaults, props, slots, `--ds-*` tokens, a11y |
-| `get_tokens layer?/component?/brand?` | token slices; `brand:"brand"` resolves brand-mode values |
-| `get_usage_rules name?` | do/don't, boundaries, when-to-use-something-else |
-| `list_components` | the full component list |
+| Tool                                  | Use it for                                                                                          |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `get_foundations`                     | call **once per session** — token architecture, brands, conventions, shadcn divergences             |
+| `search_components query`             | find a component by concept ("modal", "outline button", "dropdown")                                 |
+| `get_component name`                  | the full contract: install cmd, exact variant enums + defaults, props, slots, `--ds-*` tokens, a11y |
+| `get_tokens layer?/component?/brand?` | token slices; `brand:"brand"` resolves brand-mode values                                            |
+| `get_usage_rules name?`               | do/don't, boundaries, when-to-use-something-else                                                    |
+| `list_components`                     | the full component list                                                                             |
 
 Without MCP, the same data is committed under `manifests/` (start at
 `manifests/foundations.json`, then `manifests/components/<name>.json`) and the
@@ -49,6 +49,7 @@ npx shadcn add @kraken/input @kraken/select @kraken/dialog
 ```
 
 Installing a component also pulls its dependencies automatically:
+
 - the `theme` item (shadcn vars → `--ds-*` mapping) → which pulls `tokens` (the
   `--ds-*` values) → so theming always comes along;
 - the `utils` item (`cn()`); and any sibling components (e.g. `date-picker` pulls
@@ -56,9 +57,10 @@ Installing a component also pulls its dependencies automatically:
 
 After install, ensure `globals.css` imports the token + theme layers (the kit's
 `src/app/globals.css` is the reference):
+
 ```css
-@import "../styles/tokens.css";       /* --ds-* values, brand-switchable */
-@import "../styles/kraken-theme.css";  /* shadcn vars -> --ds-*  + @theme inline */
+@import "../styles/tokens.css"; /* --ds-* values, brand-switchable */
+@import "../styles/kraken-theme.css"; /* shadcn vars -> --ds-*  + @theme inline */
 ```
 
 ## 2. The token contract (NEVER hard-code values)
@@ -74,6 +76,7 @@ Layer 1 (pure dimensions).**
    — per-component knobs; aliases to semantic.
 
 Rules:
+
 - Use `--ds-*` custom properties for every color, radius, spacing, font value.
 - Never write a hex/px literal in a component. Never bind a component straight to
   a primitive when a Layer-3 token exists.
@@ -84,10 +87,16 @@ Rules:
 ## 3. Brand / theme switching
 
 Set `data-theme` on `<html>` (or any ancestor). Default brand is `jit`.
+
 ```html
-<html data-theme="jit">       <!-- yellow primary, 6px radius -->
-<html data-theme="brand"> <!-- blue primary, 0px radius -->
+<html data-theme="jit">
+  <!-- yellow primary, 6px radius -->
+  <html data-theme="brand">
+    <!-- blue primary, 0px radius -->
+  </html>
+</html>
 ```
+
 Switching only swaps the semantic layer — component tokens are untouched and every
 `var()` re-resolves. Do not add per-brand overrides in app code.
 
@@ -103,7 +112,7 @@ Switching only swaps the semantic layer — component tokens are untouched and e
   `icon` props (or children).
 - Button: `variant` (primary | secondary | tonal | ghost | destructive |
   destructive-secondary | destructive-ghost), `size` (xs | sm | md | lg),
-  `iconOnly`. `secondary` *is* the outline; `link` is a separate component.
+  `iconOnly`. `secondary` _is_ the outline; `link` is a separate component.
 
 ## 5. Figma ↔ code
 
@@ -118,6 +127,7 @@ Figma node to the right component and props. Keep it current with the
 alert, dialog, tabs`. 40+ more parents exist (see `MAPPING.md` / `registry.json`).
 
 ## Related skills
+
 - `token-sync` — Figma variables → tokens.json → regenerate CSS.
 - `add-component` — scaffold a new tokenized component + story + mapping entry.
 - `mapping-doctor` — verify/regenerate `MAPPING.md` against live Figma.

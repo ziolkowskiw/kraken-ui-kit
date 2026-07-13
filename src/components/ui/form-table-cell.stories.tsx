@@ -1,42 +1,42 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { FormTableCell, type InputType } from './form-table-cell'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { FormTableCell, type InputType } from "./form-table-cell";
 
 const INPUT_TYPES: InputType[] = [
-  'text field',
-  'select',
-  'search',
-  'date',
-  'file uploader',
-  'switch',
-  'checkbox',
-  'radio',
-  'textarea',
-]
+  "text field",
+  "select",
+  "search",
+  "date",
+  "file uploader",
+  "switch",
+  "checkbox",
+  "radio",
+  "textarea",
+];
 
 const meta = {
-  title: 'Components/DataTable/FormCell',
+  title: "Components/DataTable/FormCell",
   component: FormTableCell,
-  parameters: { layout: 'centered' },
-  tags: ['autodocs'],
+  parameters: { layout: "centered" },
+  tags: ["autodocs"],
   argTypes: {
-    inputType: { control: 'select', options: INPUT_TYPES, name: 'Input type' },
-    placeholder: { control: 'text', name: 'Placeholder' },
+    inputType: { control: "select", options: INPUT_TYPES, name: "Input type" },
+    placeholder: { control: "text", name: "Placeholder" },
   },
   args: {
-    inputType: 'text field',
-    placeholder: 'Placeholder',
+    inputType: "text field",
+    placeholder: "Placeholder",
   },
   render: (args) => (
     <div className="w-[420px]">
       <FormTableCell {...args} />
     </div>
   ),
-} satisfies Meta<typeof FormTableCell>
+} satisfies Meta<typeof FormTableCell>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const AllInputTypes: Story = {
   render: () => (
@@ -49,4 +49,4 @@ export const AllInputTypes: Story = {
       ))}
     </div>
   ),
-}
+};

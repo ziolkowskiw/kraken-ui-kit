@@ -44,17 +44,17 @@ Layer 3  --ds-button-primary-fill   ─►  Layer 2  --ds-color-primary   ─►
 
 ### Naming conventions
 
-| Category | Pattern | Example |
-|---|---|---|
-| Color primitive | `--ds-color-{ramp}-{shade}` | `--ds-color-slate-500`, `--ds-color-jit-400` |
-| Color semantic | `--ds-color-{role}[-{state}]` | `--ds-color-primary`, `--ds-color-primary-hover` |
-| Status semantic | `--ds-color-status-{kind}-{part}` | `--ds-color-status-error-bg` |
-| Content/border | `--ds-color-{content\|border}-{role}` | `--ds-color-content-secondary`, `--ds-color-border-focus` |
-| Component token | `--ds-{component}-{variant}-{property}` | `--ds-button-primary-fillhover` |
-| Spacing | `--ds-spacing-{px}` / `--ds-spacing-{context}-{size}` | `--ds-spacing-16`, `--ds-spacing-component-md` |
-| Radius | `--ds-radius-{size}` (aliases `--ds-borderradius-{px}`) | `--ds-radius-md` → 6px |
-| Typography | `--ds-typography-{role}{size}-{prop}` | `--ds-typography-labellg-fontweight` |
-| Font primitives | `--ds-{fontsize\|lineheight\|fontweight\|fontfamily}-{key}` | `--ds-fontsize-sm` (14px) |
+| Category        | Pattern                                                     | Example                                                   |
+| --------------- | ----------------------------------------------------------- | --------------------------------------------------------- |
+| Color primitive | `--ds-color-{ramp}-{shade}`                                 | `--ds-color-slate-500`, `--ds-color-jit-400`              |
+| Color semantic  | `--ds-color-{role}[-{state}]`                               | `--ds-color-primary`, `--ds-color-primary-hover`          |
+| Status semantic | `--ds-color-status-{kind}-{part}`                           | `--ds-color-status-error-bg`                              |
+| Content/border  | `--ds-color-{content\|border}-{role}`                       | `--ds-color-content-secondary`, `--ds-color-border-focus` |
+| Component token | `--ds-{component}-{variant}-{property}`                     | `--ds-button-primary-fillhover`                           |
+| Spacing         | `--ds-spacing-{px}` / `--ds-spacing-{context}-{size}`       | `--ds-spacing-16`, `--ds-spacing-component-md`            |
+| Radius          | `--ds-radius-{size}` (aliases `--ds-borderradius-{px}`)     | `--ds-radius-md` → 6px                                    |
+| Typography      | `--ds-typography-{role}{size}-{prop}`                       | `--ds-typography-labellg-fontweight`                      |
+| Font primitives | `--ds-{fontsize\|lineheight\|fontweight\|fontfamily}-{key}` | `--ds-fontsize-sm` (14px)                                 |
 
 ### Scales (Layer 1)
 
@@ -69,10 +69,10 @@ Layer 3  --ds-button-primary-fill   ─►  Layer 2  --ds-color-primary   ─►
 
 Set `data-theme` on `<html>` (or any ancestor). Default is `jit`.
 
-| Brand | Primary | Radius feel | Font |
-|---|---|---|---|
+| Brand           | Primary                               | Radius feel   | Font        |
+| --------------- | ------------------------------------- | ------------- | ----------- |
 | `jit` (default) | `--ds-color-jit-400` #FFD242 (yellow) | rounded (6px) | Moderat JIT |
-| `brand` | `--ds-color-brand-500` #298EE5 (blue) | sharp (0px) | Noto Sans |
+| `brand`         | `--ds-color-brand-500` #298EE5 (blue) | sharp (0px)   | Noto Sans   |
 
 The second brand is named **`brand`** — nothing else. Switching swaps only
 `[data-theme]` semantic values; every `var()` re-resolves down the chain.
@@ -84,7 +84,7 @@ in `src/styles/kraken-theme.css`, so plain Tailwind classes (`bg-primary`,
 
 1. Start from Figma: `MAPPING.md` maps every Figma node ID → `.tsx` file + prop
    table. New components go through the `add-component` skill (tokenized `.tsx`
-   + story + mapping entry + registry item).
+   - story + mapping entry + registry item).
 2. Structure: CVA variants in `src/components/ui/{name}.tsx`, styled with
    Tailwind utilities that resolve to `--ds-*` (via `kraken-theme.css`) or
    direct `var(--ds-…)` arbitrary values.
@@ -101,7 +101,7 @@ in `src/styles/kraken-theme.css`, so plain Tailwind classes (`bg-primary`,
    showcase (`npm run dev`) or the Storybook toolbar.
 8. Reference API: Button — `variant` (primary | secondary | tonal | ghost |
    destructive | destructive-secondary | destructive-ghost), `size`
-   (xs | sm | md | lg), `iconOnly`. `secondary` *is* the outline; `link` is a
+   (xs | sm | md | lg), `iconOnly`. `secondary` _is_ the outline; `link` is a
    separate component.
 
 ## Storybook requirements

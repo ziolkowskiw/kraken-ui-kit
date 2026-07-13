@@ -5,8 +5,15 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "system", "sources", "tokenArchitecture", "brands", "corePrinciples",
-    "figmaCodeConventions", "shadcnDivergences", "scales", "install"
+    "system",
+    "sources",
+    "tokenArchitecture",
+    "brands",
+    "corePrinciples",
+    "figmaCodeConventions",
+    "shadcnDivergences",
+    "scales",
+    "install"
   ],
   "properties": {
     "system": { "type": "string" },

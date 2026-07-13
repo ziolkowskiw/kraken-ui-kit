@@ -77,9 +77,7 @@ try {
   // no tags yet — use the whole history
 }
 const logRange = lastTag ? `${lastTag}..HEAD` : "HEAD";
-const logOutput = readCmd(
-  `git log ${logRange} --pretty=format:"%s" --no-merges`,
-);
+const logOutput = readCmd(`git log ${logRange} --pretty=format:"%s" --no-merges`);
 const bullets = logOutput
   .split("\n")
   .filter(Boolean)
@@ -102,15 +100,24 @@ if (!YES) {
   console.log(`    2. npm run registry:build`);
   console.log(`    3. npm run manifests:build`);
   console.log(`    4. npm run manifests:check`);
-  console.log(`    5. Bump package.json: ${pkg.version} → ${nextVersion} (+ mirror mcp/package.json)`);
+  console.log(
+    `    5. Bump package.json: ${pkg.version} → ${nextVersion} (+ mirror mcp/package.json)`,
+  );
   console.log(`    6. Prepend CHANGELOG.md entry`);
-  console.log(`    7. git add package.json CHANGELOG.md registry.json src/styles/tokens.css mcp/package.json manifests/ schemas/ llms.txt public/llms.txt`);
+  console.log(
+    `    7. git add package.json CHANGELOG.md registry.json src/styles/tokens.css mcp/package.json manifests/ schemas/ llms.txt public/llms.txt`,
+  );
   console.log(`    8. git commit -m "chore(release): v${nextVersion}"`);
   console.log(`    9. git tag v${nextVersion}`);
   console.log(`   10. (print push instructions)`);
   console.log(`\n  Changelog entry that will be prepended:`);
   console.log(`  ─────────────────────────────────────────`);
-  console.log(changelogEntry.split("\n").map((l) => `  ${l}`).join("\n"));
+  console.log(
+    changelogEntry
+      .split("\n")
+      .map((l) => `  ${l}`)
+      .join("\n"),
+  );
   process.exit(0);
 }
 

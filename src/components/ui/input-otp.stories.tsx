@@ -1,19 +1,27 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from './input-otp'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "./input-otp";
 
-type StoryArgs = { size?: 'xs' | 'sm' | 'md' | 'lg' }
+type StoryArgs = { size?: "xs" | "sm" | "md" | "lg" };
 
 const meta = {
-  title: 'Components/InputOTP',
+  title: "Components/InputOTP",
   // docs-only association; the playground args are story-level props
   component: InputOTP as React.ComponentType<StoryArgs>,
-  parameters: { layout: 'centered', docs: { description: { component: 'Accessible one-time-password input with copy-paste; verification/2FA code entry.' } } },
-  tags: ['autodocs'],
-  argTypes: {
-    size: { control: 'inline-radio', options: ['xs', 'sm', 'md', 'lg'] },
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Accessible one-time-password input with copy-paste; verification/2FA code entry.",
+      },
+    },
   },
-  args: { size: 'md' },
+  tags: ["autodocs"],
+  argTypes: {
+    size: { control: "inline-radio", options: ["xs", "sm", "md", "lg"] },
+  },
+  args: { size: "md" },
   render: (args: StoryArgs) => (
     <InputOTP maxLength={6} aria-label="One-time password">
       <InputOTPGroup>
@@ -29,12 +37,12 @@ const meta = {
       </InputOTPGroup>
     </InputOTP>
   ),
-} satisfies Meta<StoryArgs>
+} satisfies Meta<StoryArgs>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const FourDigits: Story = {
   render: () => (
@@ -47,4 +55,4 @@ export const FourDigits: Story = {
       </InputOTPGroup>
     </InputOTP>
   ),
-}
+};

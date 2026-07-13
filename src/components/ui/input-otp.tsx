@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { OTPInput, OTPInputContext } from "input-otp"
-import { MinusIcon } from "lucide-react"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { OTPInput, OTPInputContext } from "input-otp";
+import { MinusIcon } from "lucide-react";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 // Mirrors the Figma `input-otp-elements` set (84 variants): Size xs|sm|md|lg ×
 // Position left|middle|right × State (empty/placeholder/value/focus/error/disabled).
@@ -23,7 +23,7 @@ function InputOTP({
       className={cn("disabled:cursor-not-allowed", className)}
       {...props}
     />
-  )
+  );
 }
 
 function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
@@ -32,11 +32,11 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="input-otp-group"
       className={cn(
         "flex items-center [&>[data-slot=input-otp-slot]:not(:first-child)]:-ml-px [&>[data-slot=input-otp-slot]:first-child]:rounded-l-md [&>[data-slot=input-otp-slot]:last-child]:rounded-r-md",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 const otpSlotVariants = cva(
@@ -55,8 +55,8 @@ const otpSlotVariants = cva(
       },
     },
     defaultVariants: { size: "md" },
-  }
-)
+  },
+);
 
 function InputOTPSlot({
   index,
@@ -64,8 +64,8 @@ function InputOTPSlot({
   size,
   ...props
 }: React.ComponentProps<"div"> & VariantProps<typeof otpSlotVariants> & { index: number }) {
-  const context = React.useContext(OTPInputContext)
-  const { char, hasFakeCaret, isActive } = context?.slots?.[index] ?? {}
+  const context = React.useContext(OTPInputContext);
+  const { char, hasFakeCaret, isActive } = context?.slots?.[index] ?? {};
   return (
     <div
       data-slot="input-otp-slot"
@@ -80,7 +80,7 @@ function InputOTPSlot({
         </div>
       )}
     </div>
-  )
+  );
 }
 
 function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
@@ -88,7 +88,7 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
     <div data-slot="input-otp-separator" role="separator" {...props}>
       <MinusIcon className="size-4 [color:var(--ds-color-content-tertiary)]" />
     </div>
-  )
+  );
 }
 
-export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator, otpSlotVariants }
+export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator, otpSlotVariants };

@@ -1,61 +1,65 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { Button } from './button'
-import { iconArgType, renderIcon, type IconName } from '@/lib/story-helpers'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { Button } from "./button";
+import { iconArgType, renderIcon, type IconName } from "@/lib/story-helpers";
 
 const VARIANTS = [
-  'primary',
-  'secondary',
-  'tonal',
-  'ghost',
-  'destructive',
-  'destructive-secondary',
-  'destructive-ghost',
-] as const
-const SIZES = ['xs', 'sm', 'md', 'lg'] as const
+  "primary",
+  "secondary",
+  "tonal",
+  "ghost",
+  "destructive",
+  "destructive-secondary",
+  "destructive-ghost",
+] as const;
+const SIZES = ["xs", "sm", "md", "lg"] as const;
 
 type StoryProps = React.ComponentProps<typeof Button> & {
-  leftIconName?: IconName
-  rightIconName?: IconName
-}
+  leftIconName?: IconName;
+  rightIconName?: IconName;
+};
 
 const meta = {
-  title: 'Components/Button',
+  title: "Components/Button",
   component: Button,
-  parameters: { layout: 'centered', docs: { description: { component: 'displays a button or a component that looks like a button; primary actions, form submits, dialog/menu triggers' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "displays a button or a component that looks like a button; primary actions, form submits, dialog/menu triggers",
+      },
+    },
+  },
+  tags: ["autodocs"],
   argTypes: {
-    variant: { control: 'select', options: VARIANTS },
-    size: { control: 'inline-radio', options: SIZES },
-    iconOnly: { control: 'boolean' },
-    disabled: { control: 'boolean' },
-    leftIconName: iconArgType('Left icon'),
-    rightIconName: iconArgType('Right icon'),
+    variant: { control: "select", options: VARIANTS },
+    size: { control: "inline-radio", options: SIZES },
+    iconOnly: { control: "boolean" },
+    disabled: { control: "boolean" },
+    leftIconName: iconArgType("Left icon"),
+    rightIconName: iconArgType("Right icon"),
     leftIcon: { table: { disable: true } },
     rightIcon: { table: { disable: true } },
   },
   args: {
-    children: 'Action verb',
-    variant: 'primary',
-    size: 'md',
+    children: "Action verb",
+    variant: "primary",
+    size: "md",
     iconOnly: false,
     disabled: false,
-    leftIconName: 'none',
-    rightIconName: 'none',
+    leftIconName: "none",
+    rightIconName: "none",
   },
   render: ({ leftIconName, rightIconName, ...args }: StoryProps) => (
-    <Button
-      {...args}
-      leftIcon={renderIcon(leftIconName)}
-      rightIcon={renderIcon(rightIconName)}
-    />
+    <Button {...args} leftIcon={renderIcon(leftIconName)} rightIcon={renderIcon(rightIconName)} />
   ),
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const Variants: Story = {
   render: () => (
@@ -67,7 +71,7 @@ export const Variants: Story = {
       ))}
     </div>
   ),
-}
+};
 
 export const Sizes: Story = {
   render: () => (
@@ -79,21 +83,21 @@ export const Sizes: Story = {
       ))}
     </div>
   ),
-}
+};
 
 export const IconOnly: Story = {
-  args: { iconOnly: true, leftIconName: 'Plus', children: undefined, 'aria-label': 'Add' },
-}
+  args: { iconOnly: true, leftIconName: "Plus", children: undefined, "aria-label": "Add" },
+};
 
 // Non-interactive state across the main variants.
 export const Disabled: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-2">
-      {(['primary', 'secondary', 'tonal', 'destructive'] as const).map((variant) => (
+      {(["primary", "secondary", "tonal", "destructive"] as const).map((variant) => (
         <Button key={variant} variant={variant} disabled>
           {variant}
         </Button>
       ))}
     </div>
   ),
-}
+};

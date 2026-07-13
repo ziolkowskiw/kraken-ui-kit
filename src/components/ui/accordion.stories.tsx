@@ -1,107 +1,110 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { icons } from 'lucide-react'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from './accordion'
-import { Button } from './button'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { icons } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./accordion";
+import { Button } from "./button";
 
-const VARIANTS = ['in-box', 'standalone'] as const
+const VARIANTS = ["in-box", "standalone"] as const;
 
-type IconName = 'none' | keyof typeof icons
-const ICON_OPTIONS: IconName[] = ['none', ...(Object.keys(icons) as (keyof typeof icons)[])]
+type IconName = "none" | keyof typeof icons;
+const ICON_OPTIONS: IconName[] = ["none", ...(Object.keys(icons) as (keyof typeof icons)[])];
 const renderIcon = (name?: IconName): React.ReactNode => {
-  if (!name || name === 'none') return undefined
-  const Icon = icons[name as keyof typeof icons]
-  return Icon ? <Icon /> : undefined
-}
+  if (!name || name === "none") return undefined;
+  const Icon = icons[name as keyof typeof icons];
+  return Icon ? <Icon /> : undefined;
+};
 
 type StoryProps = {
-  type?: 'single' | 'multiple'
-  variant?: (typeof VARIANTS)[number]
-  title?: string
-  hasSubtitle?: boolean
-  subtitle?: string
-  hasIcon?: boolean
-  iconName?: IconName
-  compact?: boolean
-  contentTitle?: string
-  hasTitle?: boolean
-  content?: string
-  hasLinkButton?: boolean
-  linkButtonLabel?: string
-}
+  type?: "single" | "multiple";
+  variant?: (typeof VARIANTS)[number];
+  title?: string;
+  hasSubtitle?: boolean;
+  subtitle?: string;
+  hasIcon?: boolean;
+  iconName?: IconName;
+  compact?: boolean;
+  contentTitle?: string;
+  hasTitle?: boolean;
+  content?: string;
+  hasLinkButton?: boolean;
+  linkButtonLabel?: string;
+};
 
 const meta = {
-  title: 'Components/Accordion',
+  title: "Components/Accordion",
   component: Accordion,
-  parameters: { layout: 'centered', docs: { description: { component: 'A vertically stacked set of interactive headings that each reveal a section of content; FAQs / progressive disclosure.' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A vertically stacked set of interactive headings that each reveal a section of content; FAQs / progressive disclosure.",
+      },
+    },
+  },
+  tags: ["autodocs"],
   argTypes: {
     type: {
-      control: 'inline-radio',
-      options: ['single', 'multiple'],
-      name: 'Type',
+      control: "inline-radio",
+      options: ["single", "multiple"],
+      name: "Type",
     },
-    variant: { control: 'select', options: VARIANTS, name: 'Variant' },
-    compact: { control: 'boolean', name: 'Compact' },
-    title: { control: 'text', name: 'Title' },
-    hasSubtitle: { control: 'boolean', name: 'hasSubtitle' },
-    subtitle: { control: 'text', name: 'Subtitle', if: { arg: 'hasSubtitle' } },
-    hasIcon: { control: 'boolean', name: 'hasIcon' },
+    variant: { control: "select", options: VARIANTS, name: "Variant" },
+    compact: { control: "boolean", name: "Compact" },
+    title: { control: "text", name: "Title" },
+    hasSubtitle: { control: "boolean", name: "hasSubtitle" },
+    subtitle: { control: "text", name: "Subtitle", if: { arg: "hasSubtitle" } },
+    hasIcon: { control: "boolean", name: "hasIcon" },
     iconName: {
-      control: 'select',
+      control: "select",
       options: ICON_OPTIONS,
-      name: 'Icon',
-      table: { category: 'Nested: Header' },
-      if: { arg: 'hasIcon' },
+      name: "Icon",
+      table: { category: "Nested: Header" },
+      if: { arg: "hasIcon" },
     },
     hasTitle: {
-      control: 'boolean',
-      name: 'hasTitle',
-      table: { category: 'Nested: Content' },
+      control: "boolean",
+      name: "hasTitle",
+      table: { category: "Nested: Content" },
     },
     contentTitle: {
-      control: 'text',
-      name: 'Content title',
-      table: { category: 'Nested: Content' },
-      if: { arg: 'hasTitle' },
+      control: "text",
+      name: "Content title",
+      table: { category: "Nested: Content" },
+      if: { arg: "hasTitle" },
     },
     content: {
-      control: 'text',
-      name: 'Content',
-      table: { category: 'Nested: Content' },
+      control: "text",
+      name: "Content",
+      table: { category: "Nested: Content" },
     },
     hasLinkButton: {
-      control: 'boolean',
-      name: 'hasLinkButton',
-      table: { category: 'Nested: Content' },
+      control: "boolean",
+      name: "hasLinkButton",
+      table: { category: "Nested: Content" },
     },
     linkButtonLabel: {
-      control: 'text',
-      name: 'Link button label',
-      table: { category: 'Nested: Content' },
-      if: { arg: 'hasLinkButton' },
+      control: "text",
+      name: "Link button label",
+      table: { category: "Nested: Content" },
+      if: { arg: "hasLinkButton" },
     },
   },
   args: {
-    type: 'single',
-    variant: 'in-box',
+    type: "single",
+    variant: "in-box",
     compact: false,
-    title: 'Accordion title',
+    title: "Accordion title",
     hasSubtitle: true,
-    subtitle: 'Accordion Subtitle',
+    subtitle: "Accordion Subtitle",
     hasIcon: true,
-    iconName: 'SquircleDashed' as IconName,
+    iconName: "SquircleDashed" as IconName,
     hasTitle: true,
-    contentTitle: 'Accordion content title',
+    contentTitle: "Accordion content title",
     content:
-      'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.',
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
     hasLinkButton: false,
-    linkButtonLabel: 'Learn more',
+    linkButtonLabel: "Learn more",
   },
   render: ({
     type,
@@ -143,27 +146,31 @@ const meta = {
       </AccordionItem>
     </Accordion>
   ),
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const Variants: Story = {
   render: () => (
     <div className="flex flex-col gap-8 w-[510px]">
       {VARIANTS.map((variant) => (
-        <Accordion key={variant} defaultValue={[0]} aria-label={`${variant === 'in-box' ? 'In-box' : 'Standalone'} variant`}>
+        <Accordion
+          key={variant}
+          defaultValue={[0]}
+          aria-label={`${variant === "in-box" ? "In-box" : "Standalone"} variant`}
+        >
           <AccordionItem variant={variant}>
             <AccordionTrigger
-              title={`${variant === 'in-box' ? 'In-box' : 'Standalone'} accordion`}
+              title={`${variant === "in-box" ? "In-box" : "Standalone"} accordion`}
               subtitle="Accordion Subtitle"
-              icon={renderIcon('SquircleDashed' as IconName)}
+              icon={renderIcon("SquircleDashed" as IconName)}
             />
             <AccordionContent
               hasTitle
-              contentTitle={`${variant === 'in-box' ? 'In-box' : 'Standalone'} content`}
+              contentTitle={`${variant === "in-box" ? "In-box" : "Standalone"} content`}
             >
               Lorem ipsum dolor sit amet consectetur adipiscing elit.
             </AccordionContent>
@@ -172,20 +179,20 @@ export const Variants: Story = {
       ))}
     </div>
   ),
-}
+};
 
-const sampleItems = (['First', 'Second', 'Third'] as const).map((label, i) => (
+const sampleItems = (["First", "Second", "Third"] as const).map((label, i) => (
   <AccordionItem key={i} variant="in-box">
     <AccordionTrigger
       title={`${label} item`}
       subtitle="Details"
-      icon={renderIcon('SquircleDashed' as IconName)}
+      icon={renderIcon("SquircleDashed" as IconName)}
     />
     <AccordionContent hasTitle contentTitle={`${label} content`}>
       Content for the {label.toLowerCase()} accordion item.
     </AccordionContent>
   </AccordionItem>
-))
+));
 
 /** `type="single"` — opening one item closes the others. */
 export const Single: Story = {
@@ -194,7 +201,7 @@ export const Single: Story = {
       {sampleItems}
     </Accordion>
   ),
-}
+};
 
 /** `type="multiple"` — several items stay open at once (here items 0 and 2). */
 export const Multiple: Story = {
@@ -203,23 +210,23 @@ export const Multiple: Story = {
       {sampleItems}
     </Accordion>
   ),
-}
+};
 
 export const Compact: Story = {
   args: { compact: true },
-}
+};
 
 export const NoSubtitle: Story = {
   args: { hasSubtitle: false },
-}
+};
 
 export const NoIcon: Story = {
   args: { hasIcon: false },
-}
+};
 
 export const WithLinkButton: Story = {
-  args: { hasLinkButton: true, linkButtonLabel: 'Learn more' },
-}
+  args: { hasLinkButton: true, linkButtonLabel: "Learn more" },
+};
 
 /** `disabled` on an individual `AccordionItem` — the middle item can't open. */
 export const DisabledItem: Story = {
@@ -239,4 +246,4 @@ export const DisabledItem: Story = {
       </AccordionItem>
     </Accordion>
   ),
-}
+};

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -9,40 +9,59 @@ import {
   NavigationMenuLink,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
-} from './navigation-menu'
-import { NavigationMenu as NavigationMenuPrimitive } from '@base-ui/react/navigation-menu'
+} from "./navigation-menu";
+import { NavigationMenu as NavigationMenuPrimitive } from "@base-ui/react/navigation-menu";
 
-const ALL_COMPONENTS = ['Alert', 'Badge', 'Button', 'Card', 'Dialog', 'Tabs', 'Select', 'Tooltip']
+const ALL_COMPONENTS = ["Alert", "Badge", "Button", "Card", "Dialog", "Tabs", "Select", "Tooltip"];
 
 type StoryProps = {
-  startLabel: string
-  componentsLabel: string
-  linkLabel: string
-  componentCount: number
-}
+  startLabel: string;
+  componentsLabel: string;
+  linkLabel: string;
+  componentCount: number;
+};
 
 const meta = {
-  title: 'Components/NavigationMenu',
+  title: "Components/NavigationMenu",
   // docs-only association; the playground args are story-level props
   component: NavigationMenu as React.ComponentType<StoryProps>,
-  parameters: { layout: 'centered', docs: { description: { component: 'A horizontal menu whose triggers reveal a shared floating panel.' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component: "A horizontal menu whose triggers reveal a shared floating panel.",
+      },
+    },
+  },
+  tags: ["autodocs"],
   argTypes: {
-    startLabel: { control: 'text', name: 'Menu 1 label', table: { category: 'Nested: Triggers' } },
-    componentsLabel: { control: 'text', name: 'Menu 2 label', table: { category: 'Nested: Triggers' } },
-    linkLabel: { control: 'text', name: 'Plain link label', table: { category: 'Nested: Triggers' } },
-    componentCount: { control: { type: 'range', min: 2, max: 8, step: 1 }, name: 'Component links', table: { category: 'Content' } },
+    startLabel: { control: "text", name: "Menu 1 label", table: { category: "Nested: Triggers" } },
+    componentsLabel: {
+      control: "text",
+      name: "Menu 2 label",
+      table: { category: "Nested: Triggers" },
+    },
+    linkLabel: {
+      control: "text",
+      name: "Plain link label",
+      table: { category: "Nested: Triggers" },
+    },
+    componentCount: {
+      control: { type: "range", min: 2, max: 8, step: 1 },
+      name: "Component links",
+      table: { category: "Content" },
+    },
   },
   args: {
-    startLabel: 'Getting started',
-    componentsLabel: 'Components',
-    linkLabel: 'Documentation',
+    startLabel: "Getting started",
+    componentsLabel: "Components",
+    linkLabel: "Documentation",
     componentCount: 6,
   },
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // Default usage: `NavigationMenu` renders the shared floating `NavigationMenuViewport`
 // (which itself mounts the `NavigationMenuIndicator` arrow) internally. Triggers reveal
@@ -57,11 +76,15 @@ export const Playground: Story = {
             <div className="grid w-80 gap-1">
               <NavigationMenuLink href="#">
                 <span className="font-medium">Introduction</span>
-                <span className="[color:var(--ds-color-content-secondary)]">Re-usable components built with Base UI and tokens.</span>
+                <span className="[color:var(--ds-color-content-secondary)]">
+                  Re-usable components built with Base UI and tokens.
+                </span>
               </NavigationMenuLink>
               <NavigationMenuLink href="#">
                 <span className="font-medium">Installation</span>
-                <span className="[color:var(--ds-color-content-secondary)]">How to install dependencies and structure your app.</span>
+                <span className="[color:var(--ds-color-content-secondary)]">
+                  How to install dependencies and structure your app.
+                </span>
               </NavigationMenuLink>
             </div>
           </NavigationMenuContent>
@@ -86,7 +109,7 @@ export const Playground: Story = {
       </NavigationMenuList>
     </NavigationMenu>
   ),
-}
+};
 
 // Explicit composition: opt out of the `NavigationMenu` convenience wrapper and mount
 // the standalone `NavigationMenuViewport` (the shared floating panel, including the
@@ -102,11 +125,15 @@ export const ExplicitViewport: Story = {
             <div className="grid w-80 gap-1">
               <NavigationMenuLink href="#">
                 <span className="font-medium">Overview</span>
-                <span className="[color:var(--ds-color-content-secondary)]">Everything in one place.</span>
+                <span className="[color:var(--ds-color-content-secondary)]">
+                  Everything in one place.
+                </span>
               </NavigationMenuLink>
               <NavigationMenuLink href="#">
                 <span className="font-medium">Pricing</span>
-                <span className="[color:var(--ds-color-content-secondary)]">Plans for every team size.</span>
+                <span className="[color:var(--ds-color-content-secondary)]">
+                  Plans for every team size.
+                </span>
               </NavigationMenuLink>
             </div>
           </NavigationMenuContent>
@@ -120,4 +147,4 @@ export const ExplicitViewport: Story = {
       <NavigationMenuViewport />
     </NavigationMenuPrimitive.Root>
   ),
-}
+};

@@ -1,29 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { DataTable, TableRow, TableTitle } from './data-table'
-import { TableHeader, TableHeaderRow, TableHeaderDecoration } from './data-table-header'
-import { DataTableCell } from './data-table-cell'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { DataTable, TableRow, TableTitle } from "./data-table";
+import { TableHeader, TableHeaderRow, TableHeaderDecoration } from "./data-table-header";
+import { DataTableCell } from "./data-table-cell";
 
-const TITLE_VARIANTS = ['title', 'section'] as const
+const TITLE_VARIANTS = ["title", "section"] as const;
 
-type StoryProps = React.ComponentProps<typeof TableTitle>
+type StoryProps = React.ComponentProps<typeof TableTitle>;
 
 const meta = {
-  title: 'Components/DataTable/Title',
+  title: "Components/DataTable/Title",
   component: TableTitle,
-  parameters: { layout: 'padded', docs: { description: { component: 'Composed data table. Also' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "padded",
+    docs: { description: { component: "Composed data table. Also" } },
+  },
+  tags: ["autodocs"],
   argTypes: {
-    variant: { control: 'inline-radio', options: TITLE_VARIANTS, name: 'Variant' },
-    title: { control: 'text', name: 'Title' },
-    showTooltip: { control: 'boolean', name: 'Show info tooltip' },
-    showAction: { control: 'boolean', name: 'Show action' },
+    variant: { control: "inline-radio", options: TITLE_VARIANTS, name: "Variant" },
+    title: { control: "text", name: "Title" },
+    showTooltip: { control: "boolean", name: "Show info tooltip" },
+    showAction: { control: "boolean", name: "Show action" },
     tooltip: { table: { disable: true } },
     actions: { table: { disable: true } },
   },
   args: {
-    variant: 'title',
-    title: 'Table title',
+    variant: "title",
+    title: "Table title",
     showTooltip: true,
     showAction: true,
   },
@@ -32,25 +35,29 @@ const meta = {
       <TableTitle {...args} />
     </div>
   ),
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
-export const SectionTitle: Story = { args: { variant: 'section', title: 'Section title' } }
+export const SectionTitle: Story = { args: { variant: "section", title: "Section title" } };
 
 // ─── Full assembled data table ────────────────────────────────────────────────
 
-const COLS = ['col-checkbox', 'name', 'status', 'amount', 'actions'] as const
+const COLS = ["col-checkbox", "name", "status", "amount", "actions"] as const;
 
 export const FullTable: Story = {
   parameters: {
-    a11y: { config: { rules: [
-      { id: 'aria-required-children', enabled: false },
-      { id: 'color-contrast', enabled: false },
-    ]}},
+    a11y: {
+      config: {
+        rules: [
+          { id: "aria-required-children", enabled: false },
+          { id: "color-contrast", enabled: false },
+        ],
+      },
+    },
   },
   render: () => (
     <div className="w-[900px]">
@@ -75,15 +82,19 @@ export const FullTable: Story = {
         </TableHeaderRow>
 
         {[
-          { variant: 'white', checked: true, name: 'Acme Corp', amount: '$1,200.00' },
-          { variant: 'grey', name: 'Globex', amount: '$840.00' },
-          { variant: 'selected', checked: true, name: 'Initech', amount: '$2,310.00' },
-          { variant: 'white', name: 'Umbrella', amount: '$95.00' },
+          { variant: "white", checked: true, name: "Acme Corp", amount: "$1,200.00" },
+          { variant: "grey", name: "Globex", amount: "$840.00" },
+          { variant: "selected", checked: true, name: "Initech", amount: "$2,310.00" },
+          { variant: "white", name: "Umbrella", amount: "$95.00" },
         ].map((row, i) => (
-          <TableRow key={i} variant={row.variant as 'white' | 'grey' | 'selected'} interactive>
+          <TableRow key={i} variant={row.variant as "white" | "grey" | "selected"} interactive>
             <DataTableCell className="max-w-12" type="checkbox" checked={row.checked} />
             <DataTableCell type="text" value={row.name} />
-            <DataTableCell type="badge" badgeColor={i % 2 ? 'green' : 'brand'} badgeLabel={i % 2 ? 'Paid' : 'Pending'} />
+            <DataTableCell
+              type="badge"
+              badgeColor={i % 2 ? "green" : "brand"}
+              badgeLabel={i % 2 ? "Paid" : "Pending"}
+            />
             <DataTableCell type="text" value={row.amount} alignment="right" />
             <DataTableCell type="actions icon" />
           </TableRow>
@@ -101,4 +112,4 @@ export const FullTable: Story = {
       </DataTable>
     </div>
   ),
-}
+};

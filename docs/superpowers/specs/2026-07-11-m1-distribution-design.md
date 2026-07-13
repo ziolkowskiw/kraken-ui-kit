@@ -18,17 +18,17 @@ A third, latent gap surfaced during design: the registry's cross-item
 dependencies are emitted as **bare names** (`registryDependencies: ["theme",
 "utils"]`). From a consumer, shadcn resolves bare deps against the default
 registry (ui.shadcn.com), not `@kraken`. So Kraken-only items (`theme`,
-`tokens`) 404, and names Kraken tokenizes *and* shadcn ships (`button`,
+`tokens`) 404, and names Kraken tokenizes _and_ shadcn ships (`button`,
 `dialog`, `input`, …) silently resolve to shadcn's un-tokenized base with no
 `--ds-*` bindings. Distribution cannot be "real" until this is fixed.
 
 ## Locked decisions
 
-| Decision | Choice | Rationale |
-|---|---|---|
-| Registry host | **GitHub Pages** → `https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json` | Repo is already public; zero new paid infra; clean-enough URL. Pulls a small Pages CI job forward from M2 (acceptable). |
-| npm package name | **`@kraken-ui/mcp`** (scoped) | Already in `mcp/package.json` and every doc (`foundations.json`, `llms.txt`, README, MCP README) — zero doc churn. Fallback: unscoped `kraken-ui-mcp` only if the org is taken. |
-| Sequencing | **Reversible prep autonomous; irreversible ship gated** | `npm publish`, enabling Pages, and the `v0.1.0` tag are outward-facing and hard to reverse — each gets an explicit confirm. |
+| Decision         | Choice                                                                         | Rationale                                                                                                                                                                       |
+| ---------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Registry host    | **GitHub Pages** → `https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json` | Repo is already public; zero new paid infra; clean-enough URL. Pulls a small Pages CI job forward from M2 (acceptable).                                                         |
+| npm package name | **`@kraken-ui/mcp`** (scoped)                                                  | Already in `mcp/package.json` and every doc (`foundations.json`, `llms.txt`, README, MCP README) — zero doc churn. Fallback: unscoped `kraken-ui-mcp` only if the org is taken. |
+| Sequencing       | **Reversible prep autonomous; irreversible ship gated**                        | `npm publish`, enabling Pages, and the `v0.1.0` tag are outward-facing and hard to reverse — each gets an explicit confirm.                                                     |
 
 Verified facts (2026-07-11): repo is PUBLIC; not logged into npm (user must
 `npm login`); neither `@kraken-ui/mcp` nor `kraken-ui-mcp` exists on npm yet.
@@ -46,7 +46,7 @@ Verified facts (2026-07-11): repo is PUBLIC; not logged into npm (user must
 - **Regenerate:** `npm run registry:bundle` (registry:build + manifests:build +
   shadcn build).
 - **Verify:** `npm run manifests:check` green; `git diff` on `registry.json` and
-  `public/r/*.json` shows *only* `@kraken/` prefixes added to internal deps
+  `public/r/*.json` shows _only_ `@kraken/` prefixes added to internal deps
   (`utils` unchanged).
 
 ### A2. GitHub Pages workflow
@@ -75,6 +75,7 @@ Add, immediately ahead of the `npx shadcn add @kraken/button` line, the
 ```
 
 Locations:
+
 - **README** install section — edit directly (authored).
 - **`llms.txt`** — locate source (authored vs generated) and update there.
 - **`foundations.json` `install` block** — generated; edit the source that feeds

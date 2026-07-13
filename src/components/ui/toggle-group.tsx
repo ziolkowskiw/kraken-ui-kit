@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui/react/toggle-group"
-import { Toggle as TogglePrimitive } from "@base-ui/react/toggle"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui/react/toggle-group";
+import { Toggle as TogglePrimitive } from "@base-ui/react/toggle";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 // Mirrors the Figma `toggle-group/button` (256 variants) and
 // `toggle-group/icon-button` sets: Skin=ghost|outlined × Size × Position × Selected
@@ -13,9 +13,9 @@ import { cn } from "@/lib/utils"
 // (left/middle/right/single) is handled by the group's seam geometry rather than a
 // prop. Skin/size flow to items via context. Selected → Base UI `data-pressed`.
 const ToggleGroupContext = React.createContext<{
-  skin: "ghost" | "outlined"
-  size: "xs" | "sm" | "md" | "lg"
-}>({ skin: "outlined", size: "md" })
+  skin: "ghost" | "outlined";
+  size: "xs" | "sm" | "md" | "lg";
+}>({ skin: "outlined", size: "md" });
 
 const toggleGroupItemVariants = cva(
   [
@@ -41,8 +41,8 @@ const toggleGroupItemVariants = cva(
       },
     },
     defaultVariants: { skin: "outlined", size: "md" },
-  }
-)
+  },
+);
 
 function ToggleGroup({
   className,
@@ -51,8 +51,7 @@ function ToggleGroup({
   orientation = "horizontal",
   children,
   ...props
-}: ToggleGroupPrimitive.Props &
-  VariantProps<typeof toggleGroupItemVariants>) {
+}: ToggleGroupPrimitive.Props & VariantProps<typeof toggleGroupItemVariants>) {
   return (
     <ToggleGroupPrimitive
       data-slot="toggle-group"
@@ -67,7 +66,7 @@ function ToggleGroup({
         "data-[orientation=vertical]:[&>*:not(:first-child)]:ml-0 data-[orientation=vertical]:[&>*:not(:first-child)]:-mt-px",
         "data-[orientation=vertical]:[&>*:not(:first-child)]:rounded-t-none data-[orientation=vertical]:[&>*:not(:last-child)]:rounded-b-none",
         "data-[orientation=vertical]:[&>*:not(:first-child)]:rounded-l-md data-[orientation=vertical]:[&>*:not(:last-child)]:rounded-r-md",
-        className
+        className,
       )}
       {...props}
     >
@@ -75,7 +74,7 @@ function ToggleGroup({
         {children}
       </ToggleGroupContext.Provider>
     </ToggleGroupPrimitive>
-  )
+  );
 }
 
 function ToggleGroupItem({
@@ -85,20 +84,23 @@ function ToggleGroupItem({
   iconOnly,
   children,
   ...props
-}: TogglePrimitive.Props &
-  VariantProps<typeof toggleGroupItemVariants> & { iconOnly?: boolean }) {
-  const ctx = React.useContext(ToggleGroupContext)
-  const skin = skinProp ?? ctx.skin
-  const size = sizeProp ?? ctx.size
+}: TogglePrimitive.Props & VariantProps<typeof toggleGroupItemVariants> & { iconOnly?: boolean }) {
+  const ctx = React.useContext(ToggleGroupContext);
+  const skin = skinProp ?? ctx.skin;
+  const size = sizeProp ?? ctx.size;
   return (
     <TogglePrimitive
       data-slot="toggle-group-item"
-      className={cn(toggleGroupItemVariants({ skin, size }), iconOnly && "aspect-square px-0", className)}
+      className={cn(
+        toggleGroupItemVariants({ skin, size }),
+        iconOnly && "aspect-square px-0",
+        className,
+      )}
       {...props}
     >
       {children}
     </TogglePrimitive>
-  )
+  );
 }
 
-export { ToggleGroup, ToggleGroupItem, toggleGroupItemVariants }
+export { ToggleGroup, ToggleGroupItem, toggleGroupItemVariants };

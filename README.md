@@ -30,8 +30,12 @@ only thing that changes per brand. Set `data-theme` and every `var()` in the
 tree re-resolves:
 
 ```html
-<html>                       <!-- jit (default): yellow #FFD242, rounded, Moderat JIT -->
-<html data-theme="brand">    <!-- brand: blue #298EE5, sharp corners, Noto Sans -->
+<html>
+  <!-- jit (default): yellow #FFD242, rounded, Moderat JIT -->
+  <html data-theme="brand">
+    <!-- brand: blue #298EE5, sharp corners, Noto Sans -->
+  </html>
+</html>
 ```
 
 **3. shadcn parity as the contract.** Token names, component APIs, and variant
@@ -43,10 +47,10 @@ works here — but themed and brand-switchable for free.
 
 Tokens flow one way: Figma → JSON → CSS. You never hand-edit the CSS.
 
-| Step | Command | Needs Figma? |
-|---|---|---|
+| Step                                                                  | Command                                         | Needs Figma?         |
+| --------------------------------------------------------------------- | ----------------------------------------------- | -------------------- |
 | Sync from Figma → `tokens/tokens.dtcg.json` + `tokens/tokens.raw.css` | Claude + Figma Console MCP (`token-sync` skill) | yes (desktop bridge) |
-| Build final CSS → `src/styles/tokens.css` | `npm run tokens:build` | no |
+| Build final CSS → `src/styles/tokens.css`                             | `npm run tokens:build`                          | no                   |
 
 Full guide: [`docs/token-pipeline.md`](docs/token-pipeline.md).
 

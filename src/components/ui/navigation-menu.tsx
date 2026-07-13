@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { NavigationMenu as NavigationMenuPrimitive } from "@base-ui/react/navigation-menu"
-import { cva } from "class-variance-authority"
-import { ChevronDownIcon } from "lucide-react"
+import * as React from "react";
+import { NavigationMenu as NavigationMenuPrimitive } from "@base-ui/react/navigation-menu";
+import { cva } from "class-variance-authority";
+import { ChevronDownIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 // Mirrors the Figma `Navigation menu` (1696:13337): a horizontal menu whose
 // triggers reveal a shared floating panel. Built on Base UI's NavigationMenu;
@@ -17,15 +17,11 @@ const navigationMenuTriggerStyle = cva(
     "group inline-flex h-9 w-max items-center justify-center gap-1 rounded-md px-3 py-2 text-sm font-medium outline-none transition-colors",
     "[color:var(--ds-color-content-primary)]",
     "hover:[background-color:var(--ds-color-muted)] focus-visible:ring-2 focus-visible:ring-ring/50",
-    "data-popup-open:[background-color:var(--ds-color-muted)]"
-  )
-)
+    "data-popup-open:[background-color:var(--ds-color-muted)]",
+  ),
+);
 
-function NavigationMenu({
-  className,
-  children,
-  ...props
-}: NavigationMenuPrimitive.Root.Props) {
+function NavigationMenu({ className, children, ...props }: NavigationMenuPrimitive.Root.Props) {
   return (
     <NavigationMenuPrimitive.Root
       data-slot="navigation-menu"
@@ -35,7 +31,7 @@ function NavigationMenu({
       {children}
       <NavigationMenuViewport />
     </NavigationMenuPrimitive.Root>
-  )
+  );
 }
 
 function NavigationMenuList({ className, ...props }: NavigationMenuPrimitive.List.Props) {
@@ -45,14 +41,18 @@ function NavigationMenuList({ className, ...props }: NavigationMenuPrimitive.Lis
       className={cn("flex flex-1 list-none items-center justify-center gap-1", className)}
       {...props}
     />
-  )
+  );
 }
 
 function NavigationMenuItem({ ...props }: NavigationMenuPrimitive.Item.Props) {
-  return <NavigationMenuPrimitive.Item data-slot="navigation-menu-item" {...props} />
+  return <NavigationMenuPrimitive.Item data-slot="navigation-menu-item" {...props} />;
 }
 
-function NavigationMenuTrigger({ className, children, ...props }: NavigationMenuPrimitive.Trigger.Props) {
+function NavigationMenuTrigger({
+  className,
+  children,
+  ...props
+}: NavigationMenuPrimitive.Trigger.Props) {
   return (
     <NavigationMenuPrimitive.Trigger
       data-slot="navigation-menu-trigger"
@@ -64,7 +64,7 @@ function NavigationMenuTrigger({ className, children, ...props }: NavigationMenu
         <ChevronDownIcon className="size-3.5" aria-hidden />
       </NavigationMenuPrimitive.Icon>
     </NavigationMenuPrimitive.Trigger>
-  )
+  );
 }
 
 function NavigationMenuContent({ className, ...props }: NavigationMenuPrimitive.Content.Props) {
@@ -74,11 +74,11 @@ function NavigationMenuContent({ className, ...props }: NavigationMenuPrimitive.
       className={cn(
         "w-full p-3",
         "data-[starting-style]:opacity-0 data-[ending-style]:opacity-0 transition-opacity duration-200",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 function NavigationMenuLink({ className, ...props }: NavigationMenuPrimitive.Link.Props) {
@@ -88,11 +88,11 @@ function NavigationMenuLink({ className, ...props }: NavigationMenuPrimitive.Lin
       className={cn(
         "flex flex-col gap-1 rounded-md p-2 text-sm outline-none transition-colors",
         "[color:var(--ds-color-content-primary)] hover:[background-color:var(--ds-color-muted)] focus-visible:ring-2 focus-visible:ring-ring/50",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 // The shared floating panel. Every `NavigationMenuContent` is portaled into the
@@ -121,7 +121,7 @@ function NavigationMenuViewport({
             "relative h-(--popup-height) w-full origin-(--transform-origin) overflow-hidden",
             "[border-radius:var(--ds-radius-lg)] [background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
             "shadow-md ring-1 ring-foreground/10",
-            "data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"
+            "data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
           )}
         >
           <NavigationMenuIndicator />
@@ -133,7 +133,7 @@ function NavigationMenuViewport({
         </NavigationMenuPrimitive.Popup>
       </NavigationMenuPrimitive.Positioner>
     </NavigationMenuPrimitive.Portal>
-  )
+  );
 }
 
 // Visual feedback for which trigger is active. Base UI exposes this as `Arrow`
@@ -147,18 +147,18 @@ function NavigationMenuIndicator({ className, ...props }: NavigationMenuPrimitiv
       className={cn(
         "z-1 flex h-2.5 w-full items-end justify-center overflow-hidden",
         "data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
-        className
+        className,
       )}
       {...props}
     >
       <div className="relative top-[60%] size-2 rotate-45 rounded-tl-sm [background-color:var(--ds-color-popover)] ring-1 ring-foreground/10" />
     </NavigationMenuPrimitive.Arrow>
-  )
+  );
 }
 
 // shadcn-compat alias: upstream calls this composition (Portal > Positioner >
 // Popup > Viewport) `NavigationMenuPositioner`; the kit named it Viewport first.
-const NavigationMenuPositioner = NavigationMenuViewport
+const NavigationMenuPositioner = NavigationMenuViewport;
 
 export {
   NavigationMenu,
@@ -171,4 +171,4 @@ export {
   NavigationMenuPositioner,
   NavigationMenuIndicator,
   navigationMenuTriggerStyle,
-}
+};

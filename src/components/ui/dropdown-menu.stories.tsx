@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { User, CreditCard, Settings, LogOut, Plus, Cloud } from 'lucide-react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { User, CreditCard, Settings, LogOut, Plus, Cloud } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -16,42 +16,59 @@ import {
   DropdownMenuSub,
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
-} from './dropdown-menu'
-import { Button } from './button'
-import { BUTTON_VARIANTS, type ButtonVariant } from '@/lib/story-helpers'
+} from "./dropdown-menu";
+import { Button } from "./button";
+import { BUTTON_VARIANTS, type ButtonVariant } from "@/lib/story-helpers";
 
 type StoryProps = {
-  triggerLabel: string
-  triggerVariant: ButtonVariant
-  showIcons: boolean
-  showShortcuts: boolean
-  showCheckbox: boolean
-  showRadioGroup: boolean
-  showSubmenu: boolean
-  destructiveLast: boolean
-}
+  triggerLabel: string;
+  triggerVariant: ButtonVariant;
+  showIcons: boolean;
+  showShortcuts: boolean;
+  showCheckbox: boolean;
+  showRadioGroup: boolean;
+  showSubmenu: boolean;
+  destructiveLast: boolean;
+};
 
 const meta = {
-  title: 'Components/DropdownMenu',
+  title: "Components/DropdownMenu",
   // docs-only association; the playground args are story-level props
   component: DropdownMenu as React.ComponentType<StoryProps>,
-  parameters: { layout: 'centered', docs: { description: { component: 'Displays a menu of actions or functions, triggered by a button; action/overflow menus. Full' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Displays a menu of actions or functions, triggered by a button; action/overflow menus. Full",
+      },
+    },
+  },
+  tags: ["autodocs"],
   argTypes: {
     // ── Nested: Trigger (a real Button) ──
-    triggerLabel: { control: 'text', name: 'Label', table: { category: 'Nested: Trigger' } },
-    triggerVariant: { control: 'select', options: BUTTON_VARIANTS, name: 'Variant', table: { category: 'Nested: Trigger' } },
+    triggerLabel: { control: "text", name: "Label", table: { category: "Nested: Trigger" } },
+    triggerVariant: {
+      control: "select",
+      options: BUTTON_VARIANTS,
+      name: "Variant",
+      table: { category: "Nested: Trigger" },
+    },
     // ── Content slots ──
-    showIcons: { control: 'boolean', name: 'Item icons', table: { category: 'Content' } },
-    showShortcuts: { control: 'boolean', name: 'Shortcut hints', table: { category: 'Content' } },
-    showCheckbox: { control: 'boolean', name: 'Checkbox item', table: { category: 'Content' } },
-    showRadioGroup: { control: 'boolean', name: 'Radio group', table: { category: 'Content' } },
-    showSubmenu: { control: 'boolean', name: 'Submenu', table: { category: 'Content' } },
-    destructiveLast: { control: 'boolean', name: 'Destructive item', table: { category: 'Content' } },
+    showIcons: { control: "boolean", name: "Item icons", table: { category: "Content" } },
+    showShortcuts: { control: "boolean", name: "Shortcut hints", table: { category: "Content" } },
+    showCheckbox: { control: "boolean", name: "Checkbox item", table: { category: "Content" } },
+    showRadioGroup: { control: "boolean", name: "Radio group", table: { category: "Content" } },
+    showSubmenu: { control: "boolean", name: "Submenu", table: { category: "Content" } },
+    destructiveLast: {
+      control: "boolean",
+      name: "Destructive item",
+      table: { category: "Content" },
+    },
   },
   args: {
-    triggerLabel: 'Open menu',
-    triggerVariant: 'secondary',
+    triggerLabel: "Open menu",
+    triggerVariant: "secondary",
     showIcons: true,
     showShortcuts: true,
     showCheckbox: true,
@@ -69,8 +86,8 @@ const meta = {
     showSubmenu,
     destructiveLast,
   }) => {
-    const [bookmarks, setBookmarks] = React.useState(true)
-    const [position, setPosition] = React.useState('top')
+    const [bookmarks, setBookmarks] = React.useState(true);
+    const [position, setPosition] = React.useState("top");
     return (
       <DropdownMenu>
         <DropdownMenuTrigger render={<Button variant={triggerVariant}>{triggerLabel}</Button>} />
@@ -82,12 +99,8 @@ const meta = {
               {showIcons && <User />} Profile
               {showShortcuts && <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>}
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              {showIcons && <CreditCard />} Billing
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              {showIcons && <Settings />} Settings
-            </DropdownMenuItem>
+            <DropdownMenuItem>{showIcons && <CreditCard />} Billing</DropdownMenuItem>
+            <DropdownMenuItem>{showIcons && <Settings />} Settings</DropdownMenuItem>
           </DropdownMenuGroup>
           {showCheckbox && (
             <>
@@ -112,9 +125,7 @@ const meta = {
             <>
               <DropdownMenuSeparator />
               <DropdownMenuSub>
-                <DropdownMenuSubTrigger>
-                  {showIcons && <Plus />} New
-                </DropdownMenuSubTrigger>
+                <DropdownMenuSubTrigger>{showIcons && <Plus />} New</DropdownMenuSubTrigger>
                 <DropdownMenuSubContent>
                   <DropdownMenuItem>{showIcons && <Cloud />} Project</DropdownMenuItem>
                   <DropdownMenuItem>Team</DropdownMenuItem>
@@ -132,15 +143,15 @@ const meta = {
           )}
         </DropdownMenuContent>
       </DropdownMenu>
-    )
+    );
   },
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // All controls active — the "Figma property panel" experience.
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 // Minimal action menu — no checkbox/radio/submenu.
 export const Simple: Story = {
@@ -150,7 +161,7 @@ export const Simple: Story = {
     showSubmenu: false,
     destructiveLast: false,
   },
-}
+};
 
 // Labels only, no nested icon instances.
-export const NoIcons: Story = { args: { showIcons: false } }
+export const NoIcons: Story = { args: { showIcons: false } };

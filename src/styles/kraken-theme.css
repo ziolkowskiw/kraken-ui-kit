@@ -55,7 +55,8 @@
 
 :root {
   /* App font follows the active brand: jit → "Moderat JIT", brand → "Noto Sans". */
-  --font-sans: var(--ds-typography-bodymd-fontfamily), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans:
+    var(--ds-typography-bodymd-fontfamily), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --background: var(--ds-color-background);
   --foreground: var(--ds-color-foreground);
   --card: var(--ds-color-card);

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
-import { Button } from "./button"
-import { TooltipIcon, TooltipProvider } from "./tooltip"
+import { cn } from "@/lib/utils";
+import { Button } from "./button";
+import { TooltipIcon, TooltipProvider } from "./tooltip";
 
 // ─── Table title / section title (Container/Title 1411:15601, ──────────────────
 //     Container/Section title 1411:15724) ──────────────────────────────────────
@@ -15,22 +15,23 @@ import { TooltipIcon, TooltipProvider } from "./tooltip"
 const tableTitleVariants = cva("flex w-full items-center gap-1", {
   variants: {
     variant: {
-      title: "[background-color:var(--ds-color-primary-muted)] px-4 py-3 [border-top-left-radius:var(--ds-radius-lg)] [border-top-right-radius:var(--ds-radius-lg)]",
+      title:
+        "[background-color:var(--ds-color-primary-muted)] px-4 py-3 [border-top-left-radius:var(--ds-radius-lg)] [border-top-right-radius:var(--ds-radius-lg)]",
       section: "[background-color:var(--ds-color-surface)] px-4 pt-4 pb-2",
     },
   },
   defaultVariants: { variant: "title" },
-})
+});
 
 type TableTitleProps = React.ComponentProps<"div"> &
   VariantProps<typeof tableTitleVariants> & {
-    title?: string
-    showTooltip?: boolean
-    tooltip?: React.ReactNode
-    showAction?: boolean
+    title?: string;
+    showTooltip?: boolean;
+    tooltip?: React.ReactNode;
+    showAction?: boolean;
     /** override the default ghost/secondary/primary action buttons */
-    actions?: React.ReactNode
-  }
+    actions?: React.ReactNode;
+  };
 
 function TableTitle({
   className,
@@ -43,14 +44,19 @@ function TableTitle({
   ...props
 }: TableTitleProps) {
   return (
-    <div data-slot="table-title" data-variant={variant} className={cn(tableTitleVariants({ variant }), className)} {...props}>
+    <div
+      data-slot="table-title"
+      data-variant={variant}
+      className={cn(tableTitleVariants({ variant }), className)}
+      {...props}
+    >
       <div className="flex min-w-0 flex-1 items-center gap-1">
         <span
           className={cn(
             "font-heading truncate [font-size:var(--ds-typography-headingmd-fontsize)] [font-weight:var(--ds-typography-headingmd-fontweight)] [line-height:var(--ds-typography-headingmd-lineheight)]",
             variant === "section"
               ? "[color:var(--ds-color-content-primary)]"
-              : "[color:var(--ds-button-primary-content)]"
+              : "[color:var(--ds-button-primary-content)]",
           )}
         >
           {title}
@@ -79,7 +85,7 @@ function TableTitle({
         </div>
       )}
     </div>
-  )
+  );
 }
 
 // ─── Table body row (data-table/row 1333:8324) ────────────────────────────────
@@ -98,9 +104,9 @@ const tableRowVariants = cva("flex w-full items-stretch min-h-7 p-1.5", {
     },
   },
   defaultVariants: { variant: "white", interactive: false },
-})
+});
 
-type TableRowProps = React.ComponentProps<"div"> & VariantProps<typeof tableRowVariants>
+type TableRowProps = React.ComponentProps<"div"> & VariantProps<typeof tableRowVariants>;
 
 function TableRow({ className, variant, interactive, ...props }: TableRowProps) {
   return (
@@ -110,7 +116,7 @@ function TableRow({ className, variant, interactive, ...props }: TableRowProps) 
       className={cn(tableRowVariants({ variant, interactive }), className)}
       {...props}
     />
-  )
+  );
 }
 
 // ─── Data table container (Data table 2225:12619) ─────────────────────────────
@@ -124,17 +130,11 @@ function DataTable({ className, ...props }: React.ComponentProps<"div">) {
       className={cn(
         "flex w-full flex-col overflow-hidden [border-radius:var(--ds-radius-lg)] border border-solid",
         "[border-color:var(--ds-color-border)] [background-color:var(--ds-color-background)]",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
-export {
-  TableTitle,
-  TableRow,
-  DataTable,
-  tableTitleVariants,
-  tableRowVariants,
-}
+export { TableTitle, TableRow, DataTable, tableTitleVariants, tableRowVariants };

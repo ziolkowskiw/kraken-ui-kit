@@ -26,20 +26,24 @@
 Registry items reference sibling items by **bare** name (`registryDependencies: ["theme","utils"]`). From a consumer, shadcn resolves bare names against ui.shadcn.com, not `@kraken` — so `theme`/`tokens` 404 and `button`/`dialog`/etc. silently resolve to shadcn's un-tokenized base. Fix: `@kraken/`-prefix every dep that is a Kraken registry item, except the shadcn-standard `utils`.
 
 **Files:**
+
 - Modify: `scripts/build-registry.mjs` (the source — `registry.json` and `public/r/*.json` are generated)
 - Regenerated (do not hand-edit): `registry.json`, `public/r/*.json`
 
 **Interfaces:**
+
 - Consumes: nothing from earlier tasks.
 - Produces: `registry.json` / `public/r/*.json` whose internal `registryDependencies` are `@kraken/`-prefixed (except `utils`). Task 2 (Pages workflow) ships these files; Task 6 (B3 proof) is their arbiter.
 
 - [ ] **Step 1: Capture the failing "before" state**
 
 Run:
+
 ```bash
 node -e "console.log(require('./public/r/button.json').registryDependencies)"
 node -e "console.log(require('./public/r/theme.json').registryDependencies)"
 ```
+
 Expected (current, wrong): `[ 'theme', 'utils' ]` and `[ 'tokens' ]` — bare names. This is the bug.
 
 - [ ] **Step 2: Add the namespacing pass to the build script**
@@ -53,8 +57,7 @@ In `scripts/build-registry.mjs`, the `base` array is defined at lines 49–80 an
 // either 404 (theme/tokens) or silently pull shadcn's un-tokenized base.
 const SHADCN_PRIMITIVES = new Set(["utils"]);
 const krakenNames = new Set([...base, ...items].map((i) => i.name));
-const nsDep = (d) =>
-  krakenNames.has(d) && !SHADCN_PRIMITIVES.has(d) ? `@kraken/${d}` : d;
+const nsDep = (d) => (krakenNames.has(d) && !SHADCN_PRIMITIVES.has(d) ? `@kraken/${d}` : d);
 for (const item of [...base, ...items]) {
   if (item.registryDependencies) {
     item.registryDependencies = item.registryDependencies.map(nsDep);
@@ -65,23 +68,28 @@ for (const item of [...base, ...items]) {
 - [ ] **Step 3: Regenerate the registry and manifests**
 
 Run:
+
 ```bash
 npm run registry:bundle
 ```
+
 Expected: `registry.json written: 60 items (56 components + 4 base).` followed by the shadcn build compiling `public/r/*.json`, no errors.
 
 - [ ] **Step 4: Verify the deps are now namespaced (the passing state)**
 
 Run:
+
 ```bash
 node -e "console.log(require('./public/r/button.json').registryDependencies)"
 node -e "console.log(require('./public/r/theme.json').registryDependencies)"
 ```
+
 Expected: `[ '@kraken/theme', 'utils' ]` and `[ '@kraken/tokens' ]`.
 
 - [ ] **Step 5: Assert no bare Kraken deps remain anywhere, and `utils` stayed bare**
 
 Run:
+
 ```bash
 node -e '
 const fs=require("fs");
@@ -99,23 +107,28 @@ console.log(bad.length ? "FAIL:\n"+bad.join("\n") : "OK: all internal deps names
 process.exit(bad.length?1:0);
 '
 ```
+
 Expected: `OK: all internal deps namespaced, utils bare`.
 
 - [ ] **Step 6: Confirm the drift gate is green**
 
 Run:
+
 ```bash
 npm run manifests:check
 ```
+
 Expected: passes (schemas + drift byte-diff + cross-checks). If it reports drift, a generated file was left stale — re-run `npm run registry:bundle && npm run manifests:build`.
 
 - [ ] **Step 7: Sanity-check the diff is deps-only**
 
 Run:
+
 ```bash
 git diff --stat registry.json public/r/ scripts/build-registry.mjs
 git diff registry.json | grep -E '^[+-]' | grep -i 'registrydependenc\|@kraken\|"theme"\|"tokens"\|"utils"' | head -40
 ```
+
 Expected: changes are limited to the build script and `@kraken/` prefixes on internal deps (`utils` unchanged). No titles/descriptions/file paths changed.
 
 - [ ] **Step 8: Commit**
@@ -134,9 +147,11 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 Add a CI workflow that regenerates the registry (doubling as a drift guard) and publishes `r/*.json` plus the AI-facing files to GitHub Pages. Enabling Pages in repo Settings is deferred to Phase B; this task only lands the workflow file.
 
 **Files:**
+
 - Create: `.github/workflows/pages.yml`
 
 **Interfaces:**
+
 - Consumes: the namespaced `public/r/*.json` from Task 1 (regenerated fresh in CI).
 - Produces: a Pages deployment serving `https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json`, `.../registry.json`, `.../llms.txt`, `.../MAPPING.md`, `.../manifests/**`. Task 6 (B2/B3) consumes these URLs.
 
@@ -203,23 +218,28 @@ jobs:
 - [ ] **Step 2: Validate the YAML parses**
 
 Run:
+
 ```bash
 node -e "const fs=require('fs');const s=fs.readFileSync('.github/workflows/pages.yml','utf8');require('child_process');console.log('bytes:',s.length)"
 python3 -c "import yaml,sys; yaml.safe_load(open('.github/workflows/pages.yml')); print('YAML OK')"
 ```
+
 Expected: `YAML OK` (if PyYAML is unavailable, skip — the `actionlint` check below is the real gate).
 
 - [ ] **Step 3: Lint the workflow if actionlint is available (optional)**
 
 Run:
+
 ```bash
 command -v actionlint >/dev/null && actionlint .github/workflows/pages.yml || echo "actionlint not installed — skipping (CI will surface errors on first push)"
 ```
+
 Expected: `actionlint` passes, or the skip message. Do not install actionlint just for this.
 
 - [ ] **Step 4: Dry-run the artifact assembly locally**
 
 Run:
+
 ```bash
 rm -rf /tmp/_site_check && mkdir -p /tmp/_site_check/r \
   && cp -r public/r/. /tmp/_site_check/r/ \
@@ -229,6 +249,7 @@ rm -rf /tmp/_site_check && mkdir -p /tmp/_site_check/r \
   && node -e "console.log('button deps served:', require('/tmp/_site_check/r/button.json').registryDependencies)" \
   && rm -rf /tmp/_site_check
 ```
+
 Expected: `button deps served: [ '@kraken/theme', 'utils' ]` — proving the assembled site carries the Task-1 fix.
 
 - [ ] **Step 5: Commit**
@@ -247,6 +268,7 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 A consumer needs a `registries` block in their `components.json` before `npx shadcn add @kraken/*` can resolve. Document it everywhere the install line appears: README (authored), `llms.txt` + `public/llms.txt` (authored duplicates), and the generated `foundations.json` install block (edit its source in `build-manifests.mjs`).
 
 **Files:**
+
 - Modify: `README.md:93-97` (Quick-start consume block)
 - Modify: `llms.txt:17-19` (Install section)
 - Modify: `public/llms.txt` (identical duplicate of `llms.txt` — same edit)
@@ -254,6 +276,7 @@ A consumer needs a `registries` block in their `components.json` before `npx sha
 - Regenerated (do not hand-edit): `manifests/foundations.json`
 
 **Interfaces:**
+
 - Consumes: the locked URL base from Global Constraints.
 - Produces: a copy-paste `registries` snippet in all four surfaces. No later task depends on the text; Task 6 (B3) uses the same snippet in the scratch repo.
 
@@ -261,13 +284,15 @@ A consumer needs a `registries` block in their `components.json` before `npx sha
 
 In `README.md`, replace the block at lines 93–97:
 
-```markdown
+````markdown
 To consume the kit from another app:
 
 ```bash
 npx shadcn add @kraken/button    # installs tokenized, brand-switchable
 ```
-```
+````
+
+````
 
 with:
 
@@ -280,12 +305,13 @@ To consume the kit from another app, add the Kraken registry to your
 "registries": {
   "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json"
 }
-```
+````
 
 ```bash
 npx shadcn add @kraken/button    # installs tokenized, brand-switchable
 ```
-```
+
+````
 
 - [ ] **Step 2: Update the `llms.txt` Install section**
 
@@ -295,7 +321,7 @@ In `llms.txt`, replace the Install section (lines 17–19):
 ## Install
 
 - [Registry](registry.json): shadcn registry, namespace @kraken — `npx shadcn add @kraken/<name>`; the `ai-foundations` item installs foundations.json into your repo.
-```
+````
 
 with:
 
@@ -313,6 +339,7 @@ with:
 ```bash
 diff -q llms.txt public/llms.txt && echo "IDENTICAL (good)"
 ```
+
 Expected: `IDENTICAL (good)`.
 
 - [ ] **Step 4: Add the registries URL to the generated foundations install block (source edit)**
@@ -344,18 +371,22 @@ Add the `registriesConfig` field so agents reading `foundations.json` get the co
 - [ ] **Step 5: Regenerate and verify foundations.json picked it up**
 
 Run:
+
 ```bash
 npm run manifests:build
 node -e "console.log(require('./manifests/foundations.json').install)"
 ```
+
 Expected: the printed object includes `registriesConfig` with the Pages URL.
 
 - [ ] **Step 6: Confirm the drift gate is green**
 
 Run:
+
 ```bash
 npm run manifests:check
 ```
+
 Expected: passes. (If the `install` object is schema-validated and rejects the new key, add `registriesConfig` to the foundations schema under `schemas/` — search `grep -rl "registryNamespace" schemas/` — then re-run. Only touch the schema if the check fails.)
 
 - [ ] **Step 7: Commit**
@@ -374,20 +405,23 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 `scripts/release.mjs` already version-bumps `mcp/package.json` in lockstep (lines 133–140) but never publishes it. Add a guarded `npm publish ./mcp` after the git tag, preserving the dry-run default (publish only under `--yes`). **Note:** use `npm publish ./mcp`, NOT `npm --prefix mcp publish` — `--prefix` only sets config/node_modules resolution and packs the ROOT package (`kraken-ui-kit`, which is `private:true`), so `--prefix` would fail to publish the MCP. `npm publish ./mcp` packs the folder's own `@kraken-ui/mcp` package. (Corrected during execution after the Task 5 smoke test caught it.)
 
 **Files:**
+
 - Modify: `scripts/release.mjs` — dry-run summary (around lines 97–107) and the execute path (after line 156, the `git tag` step)
 
 **Interfaces:**
+
 - Consumes: the `run()` helper (line 43) which already no-ops unless `--yes` is passed.
 - Produces: on `--yes`, `@kraken-ui/mcp@<version>` published to npm as the last release step. Task 6 (B4) invokes this via `npm run release:minor -- --yes`.
 
 - [ ] **Step 1: Add the publish step to the dry-run summary**
 
-In `scripts/release.mjs`, the dry-run step list ends at line 107 with `console.log(\`   10. (print push instructions)\`);`. Insert a step before it:
+In `scripts/release.mjs`, the dry-run step list ends at line 107 with `console.log(\` 10. (print push instructions)\`);`. Insert a step before it:
 
 ```js
-  console.log(`   10. npm publish ./mcp  (publishes @kraken-ui/mcp@${nextVersion})`);
-  console.log(`   11. (print push instructions)`);
+console.log(`   10. npm publish ./mcp  (publishes @kraken-ui/mcp@${nextVersion})`);
+console.log(`   11. (print push instructions)`);
 ```
+
 and delete the old line 107 (`   10. (print push instructions)`).
 
 - [ ] **Step 2: Add the publish step to the execute path**
@@ -423,13 +457,17 @@ console.log(`     git push && git push --tags\n`);
 - [ ] **Step 3: Verify dry-run shows the publish step and does NOT execute it**
 
 Run:
+
 ```bash
 npm run release -- --minor
 ```
+
 Expected: dry-run summary lists `npm publish ./mcp (publishes @kraken-ui/mcp@0.1.0)` under step 10, every command prefixed `[dry-run]`, and exits without publishing or tagging. Confirm nothing was published:
+
 ```bash
 npm view @kraken-ui/mcp version 2>&1 | head -1
 ```
+
 Expected: a 404 / "not found" (still unpublished) — the dry-run must not have shipped anything.
 
 - [ ] **Step 4: Commit**
@@ -448,31 +486,38 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 Before any publish, prove `@kraken-ui/mcp` packs the right files and boots. Fully local and reversible — no network writes.
 
 **Files:**
+
 - None modified. Verification only. (If a gap is found, fix `mcp/package.json` `files`, `mcp/scripts/copy-manifests.mjs`, or `mcp/src/**` and re-run — but do not pre-emptively change anything.)
 
 **Interfaces:**
+
 - Consumes: `mcp/package.json` (`prepack` → build) and the built `mcp/dist/*`.
 - Produces: confidence that Task 6 (B1) publishes a working tarball. No artifact committed.
 
 - [ ] **Step 1: Build the MCP package**
 
 Run:
+
 ```bash
 npm run mcp:build
 ```
+
 Expected: installs mcp deps, runs `bundle-manifests` + `tsc`, leaves `mcp/dist/index.js` present.
 
 - [ ] **Step 2: Pack and inspect the tarball contents (dry-run pack)**
 
 Run:
+
 ```bash
 npm pack ./mcp --dry-run 2>&1 | tail -40
 ```
+
 Use `npm pack ./mcp` (or `cd mcp && npm pack`), NOT `npm --prefix mcp pack` — `--prefix` packs the ROOT package (`kraken-ui-kit`), not `@kraken-ui/mcp`. Expected: the file list includes `dist/index.js`, `dist/tools.js`, `dist/store.js`, `dist/search.js`, a bundled `manifests/` tree (foundations + components + index + tokens), and `README.md`. It must NOT include `src/`, `node_modules/`, or `package-lock.json`.
 
 - [ ] **Step 3: Assert the required files are actually in the pack**
 
 Run:
+
 ```bash
 npm pack ./mcp --dry-run --json 2>/dev/null \
   | node -e '
@@ -489,11 +534,13 @@ npm pack ./mcp --dry-run --json 2>/dev/null \
       process.exit(missing.length||leaked.length||!hasManifests?1:0);
     });'
 ```
+
 Expected: `manifests bundled: true`, no MISSING, no LEAKED, exit 0.
 
 - [ ] **Step 4: Boot the built server and confirm it starts**
 
 Run (10s timeout; the server speaks stdio JSON-RPC and will wait for input, so we just prove it starts without crashing):
+
 ```bash
 node -e '
 const {spawn}=require("child_process");
@@ -506,6 +553,7 @@ setTimeout(()=>{
 },2500);
 '
 ```
+
 Expected: `OK: server booted and is listening on stdio`. (A clean MCP stdio server prints nothing to stdout until it gets a request; a nonzero early exit or a stack trace on stderr is the failure signal.)
 
 - [ ] **Step 5: No commit**
@@ -521,12 +569,13 @@ Every step here is irreversible or outward-facing. Do **not** execute any of it 
 **Files:** none (operational).
 
 **Interfaces:**
+
 - Consumes: everything from Tasks 1–5 (namespaced registry, Pages workflow, docs, publish-capable release script, verified pack).
 - Produces: the live v0.1.0 release — published MCP, hosted registry, passing e2e proof, git tag.
 
 - [ ] **Step 1 (B1) — Publish the MCP.** GATE: ask the user to run `! npm login` (claims the `@kraken-ui` scope). If the scope is unclaimable, STOP and resurface the fallback decision (`kraken-ui-mcp`) — that would require re-doing the `@kraken-ui/mcp` references in Task 3 docs + `mcp/package.json` before proceeding. Once logged in and the user OKs the packed contents from Task 5, run `npm publish ./mcp` (NOT `--prefix` — that targets the private root). Verify: `npm view @kraken-ui/mcp version` returns the published version.
 
-- [ ] **Step 2 (B2) — Enable Pages.** GATE: ask the user to set repo Settings → Pages → Source: **GitHub Actions**, then push `main` (or trigger `workflow_dispatch`) to fire the Task-2 workflow. **Expected wrinkle:** if Phase A is merged to `main` *before* Pages is enabled, that merge auto-fires `pages.yml` and the `deploy` job fails with "Get Pages site failed" — this is normal (nothing deployed; the deploy target doesn't exist yet), not a defect. Enabling Pages here and re-running turns it green. Verify: `curl -fsSL https://ziolkowskiw.github.io/kraken-ui-kit/r/button.json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).registryDependencies))"` returns `[ '@kraken/theme', 'utils' ]` (200 + namespaced deps).
+- [ ] **Step 2 (B2) — Enable Pages.** GATE: ask the user to set repo Settings → Pages → Source: **GitHub Actions**, then push `main` (or trigger `workflow_dispatch`) to fire the Task-2 workflow. **Expected wrinkle:** if Phase A is merged to `main` _before_ Pages is enabled, that merge auto-fires `pages.yml` and the `deploy` job fails with "Get Pages site failed" — this is normal (nothing deployed; the deploy target doesn't exist yet), not a defect. Enabling Pages here and re-running turns it green. Verify: `curl -fsSL https://ziolkowskiw.github.io/kraken-ui-kit/r/button.json | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>console.log(JSON.parse(s).registryDependencies))"` returns `[ '@kraken/theme', 'utils' ]` (200 + namespaced deps).
 
 - [ ] **Step 3 (B3) — End-to-end proof.** In a scratch repo (outside this tree):
   - Create `components.json` carrying `"registries": { "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json" }`.

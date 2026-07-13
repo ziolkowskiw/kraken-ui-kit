@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Radio as RadioPrimitive } from "@base-ui/react/radio"
-import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group"
+import * as React from "react";
+import { Radio as RadioPrimitive } from "@base-ui/react/radio";
+import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
 
-import { cn } from "@/lib/utils"
-import { TooltipIcon, TooltipProvider } from "./tooltip"
+import { cn } from "@/lib/utils";
+import { TooltipIcon, TooltipProvider } from "./tooltip";
 
 function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props) {
   return (
@@ -14,12 +14,12 @@ function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props) {
       className={cn("grid w-full gap-2", className)}
       {...props}
     />
-  )
+  );
 }
 
 type RadioGroupItemProps = RadioPrimitive.Root.Props & {
-  error?: boolean
-}
+  error?: boolean;
+};
 
 function RadioGroupItem({ className, error, ...props }: RadioGroupItemProps) {
   return (
@@ -35,7 +35,7 @@ function RadioGroupItem({ className, error, ...props }: RadioGroupItemProps) {
         "data-checked:[border-color:var(--ds-radio-indicator)] data-checked:[background-color:var(--ds-radio-indicator)] data-checked:text-[var(--ds-color-primary-foreground)]",
         "data-[error]:[border-color:var(--ds-radio-bordererror)]",
         "data-[error]:data-checked:[background-color:var(--ds-radio-fillerror)] data-[error]:data-checked:[border-color:var(--ds-radio-fillerror)]",
-        className
+        className,
       )}
       {...props}
     >
@@ -46,19 +46,19 @@ function RadioGroupItem({ className, error, ...props }: RadioGroupItemProps) {
         <span className="absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current" />
       </RadioPrimitive.Indicator>
     </RadioPrimitive.Root>
-  )
+  );
 }
 
 type RadioGroupFieldProps = RadioGroupPrimitive.Props & {
-  label?: string
-  description?: string
-  errorMessage?: string
-  error?: boolean
-  mandatory?: boolean
+  label?: string;
+  description?: string;
+  errorMessage?: string;
+  error?: boolean;
+  mandatory?: boolean;
   /** When provided, shows the ⓘ tooltip-icon trigger next to the label. */
-  tooltip?: React.ReactNode
-  direction?: "horizontal" | "vertical"
-}
+  tooltip?: React.ReactNode;
+  direction?: "horizontal" | "vertical";
+};
 
 function RadioGroupField({
   className,
@@ -72,18 +72,24 @@ function RadioGroupField({
   children,
   ...props
 }: RadioGroupFieldProps) {
-  const labelId = React.useId()
-  const hasError = error || !!errorMessage
+  const labelId = React.useId();
+  const hasError = error || !!errorMessage;
   return (
-    <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
+    <div
+      className={cn(
+        "flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start",
+        className,
+      )}
+    >
       {label && (
         <div className="flex items-center gap-1 h-4">
-          <span id={labelId} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+          <span
+            id={labelId}
+            className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]"
+          >
             {label}
           </span>
-          {mandatory && (
-            <span className="[color:var(--ds-input-contenterror)]">*</span>
-          )}
+          {mandatory && <span className="[color:var(--ds-input-contenterror)]">*</span>}
           {tooltip && (
             <TooltipProvider>
               <TooltipIcon content={tooltip} />
@@ -113,7 +119,7 @@ function RadioGroupField({
         </p>
       ) : null}
     </div>
-  )
+  );
 }
 
-export { RadioGroup, RadioGroupField, RadioGroupItem }
+export { RadioGroup, RadioGroupField, RadioGroupItem };

@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import * as React from 'react'
-import { icons, ChevronRight } from 'lucide-react'
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import * as React from "react";
+import { icons, ChevronRight } from "lucide-react";
 import {
   Item,
   ItemMedia,
@@ -12,48 +12,56 @@ import {
   ItemHeader,
   ItemFooter,
   ItemSeparator,
-} from './item'
-import { Button } from './button'
-import { Badge } from './badge'
+} from "./item";
+import { Button } from "./button";
+import { Badge } from "./badge";
 
-type IconName = 'none' | keyof typeof icons
-const ICON_OPTIONS: IconName[] = ['none', ...(Object.keys(icons) as (keyof typeof icons)[])]
+type IconName = "none" | keyof typeof icons;
+const ICON_OPTIONS: IconName[] = ["none", ...(Object.keys(icons) as (keyof typeof icons)[])];
 const renderIcon = (name?: IconName): React.ReactNode => {
-  if (!name || name === 'none') return null
-  const Icon = icons[name as keyof typeof icons]
-  return Icon ? <Icon /> : null
-}
+  if (!name || name === "none") return null;
+  const Icon = icons[name as keyof typeof icons];
+  return Icon ? <Icon /> : null;
+};
 
 type StoryProps = React.ComponentProps<typeof Item> & {
-  title?: string
-  description?: string
-  iconName?: IconName
-  showAction?: boolean
-}
+  title?: string;
+  description?: string;
+  iconName?: IconName;
+  showAction?: boolean;
+};
 
 const meta = {
-  title: 'Components/Item',
+  title: "Components/Item",
   component: Item,
-  parameters: { layout: 'padded', docs: { description: { component: 'A flexible, composable row for displaying content in a structured layout; list rows, option rows, settings entries.' } } },
-  tags: ['autodocs'],
+  parameters: {
+    layout: "padded",
+    docs: {
+      description: {
+        component:
+          "A flexible, composable row for displaying content in a structured layout; list rows, option rows, settings entries.",
+      },
+    },
+  },
+  tags: ["autodocs"],
   argTypes: {
-    variant: { control: 'inline-radio', options: ['default', 'muted', 'outline'] },
-    title: { control: 'text', name: 'Title' },
-    description: { control: 'text', name: 'Description' },
-    iconName: { control: 'select', options: ICON_OPTIONS, name: 'Left icon' },
-    showAction: { control: 'boolean', name: 'Right action' },
+    variant: { control: "inline-radio", options: ["default", "muted", "outline"] },
+    title: { control: "text", name: "Title" },
+    description: { control: "text", name: "Description" },
+    iconName: { control: "select", options: ICON_OPTIONS, name: "Left icon" },
+    showAction: { control: "boolean", name: "Right action" },
   },
   args: {
-    variant: 'outline',
-    title: 'Notifications',
-    description: 'Manage how you receive alerts and updates.',
-    iconName: 'Bell',
+    variant: "outline",
+    title: "Notifications",
+    description: "Manage how you receive alerts and updates.",
+    iconName: "Bell",
     showAction: true,
   },
   render: ({ title, description, iconName, showAction, ...args }: StoryProps) => (
     <div className="w-96">
       <Item {...args}>
-        {iconName !== 'none' && <ItemMedia>{renderIcon(iconName)}</ItemMedia>}
+        {iconName !== "none" && <ItemMedia>{renderIcon(iconName)}</ItemMedia>}
         <ItemContent>
           <ItemTitle>{title}</ItemTitle>
           {description && <ItemDescription>{description}</ItemDescription>}
@@ -68,17 +76,17 @@ const meta = {
       </Item>
     </div>
   ),
-} satisfies Meta<StoryProps>
+} satisfies Meta<StoryProps>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {}
+export const Playground: Story = {};
 
 export const Variants: Story = {
   render: () => (
     <div className="flex w-96 flex-col gap-3">
-      {(['default', 'muted', 'outline'] as const).map((variant) => (
+      {(["default", "muted", "outline"] as const).map((variant) => (
         <Item key={variant} variant={variant}>
           <ItemContent>
             <ItemTitle>{variant} item</ItemTitle>
@@ -91,7 +99,7 @@ export const Variants: Story = {
       ))}
     </div>
   ),
-}
+};
 
 export const WithButtonAction: Story = {
   render: () => (
@@ -102,12 +110,14 @@ export const WithButtonAction: Story = {
           <ItemDescription>Unlock advanced analytics and more seats.</ItemDescription>
         </ItemContent>
         <ItemActions>
-          <Button variant="primary" size="sm">Upgrade</Button>
+          <Button variant="primary" size="sm">
+            Upgrade
+          </Button>
         </ItemActions>
       </Item>
     </div>
   ),
-}
+};
 
 // A list of Items with group scaffolding: header, separators, footer.
 export const Grouped: Story = {
@@ -115,8 +125,12 @@ export const Grouped: Story = {
     <div className="w-96">
       <ItemGroup>
         <ItemHeader>
-          <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [color:var(--ds-color-content-secondary)]">Recent files</span>
-          <Button variant="ghost" size="xs">See all</Button>
+          <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [color:var(--ds-color-content-secondary)]">
+            Recent files
+          </span>
+          <Button variant="ghost" size="xs">
+            See all
+          </Button>
         </ItemHeader>
         <Item>
           <ItemContent>
@@ -132,9 +146,11 @@ export const Grouped: Story = {
           </ItemContent>
         </Item>
         <ItemFooter>
-          <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [color:var(--ds-color-content-tertiary)]">2 of 24 files</span>
+          <span className="[font-size:var(--ds-typography-labelsm-fontsize)] [color:var(--ds-color-content-tertiary)]">
+            2 of 24 files
+          </span>
         </ItemFooter>
       </ItemGroup>
     </div>
   ),
-}
+};
