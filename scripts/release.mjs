@@ -11,7 +11,7 @@
  *
  * Steps (in order):
  *   1. npm run tokens:build
- *   2. npm run registry:build
+ *   2. npm run registry:bundle
  *   3. npm run manifests:build
  *   4. npm run manifests:check
  *   5. Bump version in package.json (+ mirror to mcp/package.json)
@@ -97,7 +97,7 @@ if (!YES) {
   console.log(`\n  Dry-run mode — pass --yes to execute.\n`);
   console.log(`  Steps that will run:`);
   console.log(`    1. npm run tokens:build`);
-  console.log(`    2. npm run registry:build`);
+  console.log(`    2. npm run registry:bundle`);
   console.log(`    3. npm run manifests:build`);
   console.log(`    4. npm run manifests:check`);
   console.log(
@@ -105,7 +105,7 @@ if (!YES) {
   );
   console.log(`    6. Prepend CHANGELOG.md entry`);
   console.log(
-    `    7. git add package.json CHANGELOG.md registry.json src/styles/tokens.css mcp/package.json manifests/ schemas/ llms.txt public/llms.txt`,
+    `    7. git add package.json CHANGELOG.md registry.json public/r/ src/styles/tokens.css mcp/package.json manifests/ schemas/ docs/components/ llms.txt public/llms.txt`,
   );
   console.log(`    8. git commit -m "chore(release): v${nextVersion}"`);
   console.log(`    9. git tag v${nextVersion}`);
@@ -127,8 +127,8 @@ console.log(`\n  Executing release v${nextVersion}…\n`);
 console.log("1. Rebuild tokens CSS");
 run("npm run tokens:build");
 
-console.log("\n2. Rebuild registry");
-run("npm run registry:build");
+console.log("\n2. Rebuild registry (+ compiled public/r via shadcn build)");
+run("npm run registry:bundle");
 
 console.log("\n3. Rebuild manifests");
 run("npm run manifests:build");
@@ -156,7 +156,7 @@ console.log(`   CHANGELOG.md prepended`);
 
 console.log("\n7. Stage artefacts");
 run(
-  "git add package.json CHANGELOG.md registry.json src/styles/tokens.css mcp/package.json manifests/ schemas/ llms.txt public/llms.txt",
+  "git add package.json CHANGELOG.md registry.json public/r/ src/styles/tokens.css mcp/package.json manifests/ schemas/ docs/components/ llms.txt public/llms.txt",
 );
 
 console.log("\n8. Commit");
