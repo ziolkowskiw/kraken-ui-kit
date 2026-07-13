@@ -10,14 +10,14 @@
     "KbdGroup"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1719:48975"
   },
   "install": {
     "command": "npx shadcn add @kraken/kbd",
     "dependencies": [],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "kbd"

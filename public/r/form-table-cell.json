@@ -7,14 +7,14 @@
     "lucide-react@1.18.0"
   ],
   "registryDependencies": [
-    "button",
-    "checkbox-button",
-    "input",
-    "radio-group",
-    "select",
-    "switch",
-    "textarea",
-    "theme",
+    "@kraken/button",
+    "@kraken/checkbox-button",
+    "@kraken/input",
+    "@kraken/radio-group",
+    "@kraken/select",
+    "@kraken/switch",
+    "@kraken/textarea",
+    "@kraken/theme",
     "utils"
   ],
   "files": [

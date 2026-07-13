@@ -10,7 +10,7 @@
     "Toggle"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "2010:3650"
   },
   "install": {
@@ -20,7 +20,7 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "toggle"

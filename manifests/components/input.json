@@ -22,7 +22,7 @@
     "InputField"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "868:6657"
   },
   "install": {
@@ -33,8 +33,8 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "theme",
-      "tooltip",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "input"

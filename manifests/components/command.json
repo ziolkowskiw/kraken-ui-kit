@@ -20,7 +20,7 @@
     "CommandShortcut"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1134:17063"
   },
   "install": {
@@ -30,9 +30,9 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "dialog",
-      "dropdown-menu",
-      "theme",
+      "@kraken/dialog",
+      "@kraken/dropdown-menu",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "command"

@@ -8,10 +8,10 @@
     "lucide-react@1.18.0"
   ],
   "registryDependencies": [
-    "avatar",
-    "checkbox",
-    "theme",
-    "tooltip",
+    "@kraken/avatar",
+    "@kraken/checkbox",
+    "@kraken/theme",
+    "@kraken/tooltip",
     "utils"
   ],
   "files": [

@@ -11,7 +11,7 @@
     "CheckboxButtonGroup"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "950:9032"
   },
   "install": {
@@ -20,9 +20,9 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "checkbox",
-      "theme",
-      "tooltip",
+      "@kraken/checkbox",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "checkbox-button"

@@ -5,7 +5,7 @@
   ],
   "aliases": [],
   "boundaries": [],
-  "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+  "description": "Composed data table (composed set). Also data-table-header.tsx, data-table-cell.tsx.",
   "exports": [
     "SortingIcons",
     "TableHeaderDecoration",
@@ -13,8 +13,8 @@
     "TableHeaderRow"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
-    "nodeId": "1824:18395"
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
+    "nodeId": "2225:12619"
   },
   "install": {
     "command": "npx shadcn add @kraken/data-table-header",
@@ -23,10 +23,10 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "avatar",
-      "checkbox",
-      "theme",
-      "tooltip",
+      "@kraken/avatar",
+      "@kraken/checkbox",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "data-table-header"

@@ -9,7 +9,7 @@
     "Separator"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "449:1463"
   },
   "install": {
@@ -19,7 +19,7 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "separator"

@@ -6,10 +6,16 @@ machine-readable design-system layer to AI agents: per-component contracts
 foundations rules, and the full token index — self-contained, no repo or
 network access at runtime.
 
-## Install (in any repo consuming `@kraken/*` components)
+## Install (local-only — not published to npm)
+
+This server runs from a local clone of the kit; it is not published to npm.
+Clone the repo, build the server once, then register it by absolute path:
 
 ```bash
-claude mcp add kraken-ui -- npx -y @kraken-ui/mcp
+# in your clone of kraken-ui-kit:
+npm --prefix mcp install && npm --prefix mcp run build
+# then register it (use the absolute path to your clone):
+claude mcp add kraken-ui -- node /abs/path/to/kraken-ui-kit/mcp/dist/index.js
 ```
 
 ## Tools

@@ -1,7 +1,8 @@
 {
   "name": "@kraken-ui/mcp",
   "version": "0.0.1",
-  "description": "MCP server exposing the Kraken UI Kit machine-readable design-system manifests (components, tokens, foundations) to AI agents.",
+  "private": true,
+  "description": "MCP server exposing the Kraken UI Kit machine-readable design-system manifests (components, tokens, foundations) to AI agents. Runs local-only from a clone — not published to npm.",
   "license": "MIT",
   "type": "module",
   "bin": {
@@ -12,9 +13,6 @@
     "manifests",
     "README.md"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ziolkowskiw/kraken-ui-kit.git",

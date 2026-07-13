@@ -18,8 +18,8 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "separator",
-      "theme",
+      "@kraken/separator",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "button-group"

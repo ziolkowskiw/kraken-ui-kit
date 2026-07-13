@@ -5,13 +5,13 @@
   ],
   "aliases": [],
   "boundaries": [],
-  "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+  "description": "Composed data table (composed set). Also data-table-header.tsx, data-table-cell.tsx.",
   "exports": [
     "DataTableCell"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
-    "nodeId": "1824:18395"
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
+    "nodeId": "2225:12619"
   },
   "install": {
     "command": "npx shadcn add @kraken/data-table-cell",
@@ -19,11 +19,11 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "badge",
-      "button",
-      "checkbox",
-      "input",
-      "theme",
+      "@kraken/badge",
+      "@kraken/button",
+      "@kraken/checkbox",
+      "@kraken/input",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "data-table-cell"

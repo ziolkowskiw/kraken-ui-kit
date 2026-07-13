@@ -9,8 +9,8 @@
     "FormTableCell"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
-    "nodeId": "1411:0"
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
+    "nodeId": "1411:18819"
   },
   "install": {
     "command": "npx shadcn add @kraken/form-table-cell",
@@ -18,14 +18,14 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "button",
-      "checkbox-button",
-      "input",
-      "radio-group",
-      "select",
-      "switch",
-      "textarea",
-      "theme",
+      "@kraken/button",
+      "@kraken/checkbox-button",
+      "@kraken/input",
+      "@kraken/radio-group",
+      "@kraken/select",
+      "@kraken/switch",
+      "@kraken/textarea",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "form-table-cell"

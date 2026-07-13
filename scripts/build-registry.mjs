@@ -79,6 +79,20 @@ const base = [
   },
 ];
 
+// shadcn ships `utils` (cn helper) as a built-in; keep it bare so a consumer's
+// default registry resolves it. Every other item we own is Kraken-only and must
+// carry the @kraken namespace, or bare deps resolve against ui.shadcn.com and
+// either 404 (theme/tokens) or silently pull shadcn's un-tokenized base.
+const SHADCN_PRIMITIVES = new Set(["utils"]);
+const krakenNames = new Set([...base, ...items].map((i) => i.name));
+const nsDep = (d) =>
+  krakenNames.has(d) && !SHADCN_PRIMITIVES.has(d) ? `@kraken/${d}` : d;
+for (const item of [...base, ...items]) {
+  if (item.registryDependencies) {
+    item.registryDependencies = item.registryDependencies.map(nsDep);
+  }
+}
+
 const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "kraken",

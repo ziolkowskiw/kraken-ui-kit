@@ -21,6 +21,9 @@
  *   9. git tag vX.Y.Z
  *  10. Print push instructions
  *
+ * Note: the MCP server is NOT published to npm — it runs local-only from a
+ * clone (see mcp/README.md). This script only version-mirrors mcp/package.json.
+ *
  * Usage:
  *   npm run release               # dry-run patch
  *   npm run release -- --minor --yes

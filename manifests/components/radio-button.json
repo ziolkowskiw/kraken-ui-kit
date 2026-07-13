@@ -10,7 +10,7 @@
     "RadioButtonGroup"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1084:7716"
   },
   "install": {
@@ -20,9 +20,9 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "radio-group",
-      "theme",
-      "tooltip",
+      "@kraken/radio-group",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "radio-button"

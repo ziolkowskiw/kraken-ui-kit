@@ -10,14 +10,14 @@
     "Skeleton"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1808:15417"
   },
   "install": {
     "command": "npx shadcn add @kraken/skeleton",
     "dependencies": [],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "skeleton"

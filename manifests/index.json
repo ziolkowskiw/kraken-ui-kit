@@ -334,7 +334,7 @@
   },
   {
     "aliases": [],
-    "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+    "description": "Composed data table (composed set). Also data-table-header.tsx, data-table-cell.tsx.",
     "exports": [
       "DataTableCell"
     ],
@@ -345,7 +345,7 @@
   },
   {
     "aliases": [],
-    "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+    "description": "Composed data table (composed set). Also data-table-header.tsx, data-table-cell.tsx.",
     "exports": [
       "SortingIcons",
       "TableHeaderDecoration",
@@ -359,7 +359,7 @@
   },
   {
     "aliases": [],
-    "description": "Composed data table. Also data-table-header.tsx, data-table-cell.tsx.",
+    "description": "Composed data table (composed set). Also data-table-header.tsx, data-table-cell.tsx.",
     "exports": [
       "TableTitle",
       "TableRow",
@@ -526,7 +526,7 @@
   },
   {
     "aliases": [],
-    "description": "Accessible one-time-password input with copy-paste; verification/2FA code entry. size; input-otp lib.",
+    "description": "Accessible one-time-password input with copy-paste; verification/2FA code entry. size; input-otp lib. input-otp/slot → InputOTPSlot.",
     "exports": [
       "InputOTP",
       "InputOTPGroup",

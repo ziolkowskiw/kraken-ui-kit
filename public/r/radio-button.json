@@ -8,9 +8,9 @@
     "class-variance-authority@0.7.1"
   ],
   "registryDependencies": [
-    "radio-group",
-    "theme",
-    "tooltip",
+    "@kraken/radio-group",
+    "@kraken/theme",
+    "@kraken/tooltip",
     "utils"
   ],
   "files": [

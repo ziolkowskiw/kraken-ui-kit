@@ -12,11 +12,12 @@
 - [Manifest index](manifests/index.json): all components with aliases/keywords for lookup.
 - Per-component contracts: `manifests/components/<name>.json` (e.g. [button](manifests/components/button.json)) — install command, exact variant enums + defaults, props, slots, --ds-* tokens, a11y, usage do/don't.
 - [tokens.json](manifests/tokens.json): compact token index with brand-mode values.
-- MCP server (preferred when available): `claude mcp add kraken-ui -- npx -y @kraken-ui/mcp` — tools: list_components, search_components, get_component, get_foundations, get_tokens, get_usage_rules.
+- MCP server (local-only, run from a clone — not published to npm): build once with `npm --prefix mcp install && npm --prefix mcp run build`, then `claude mcp add kraken-ui -- node <abs-path-to-clone>/mcp/dist/index.js` — tools: list_components, search_components, get_component, get_foundations, get_tokens, get_usage_rules.
 
 ## Install
 
-- [Registry](registry.json): shadcn registry, namespace @kraken — `npx shadcn add @kraken/<name>`; the `ai-foundations` item installs foundations.json into your repo.
+- Configure the registry once in your `components.json`: `"registries": { "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json" }`.
+- [Registry](registry.json): shadcn registry, namespace @kraken — then `npx shadcn add @kraken/<name>`; the `ai-foundations` item installs foundations.json into your repo.
 
 ## Human docs
 

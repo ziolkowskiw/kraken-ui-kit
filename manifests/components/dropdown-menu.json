@@ -34,7 +34,7 @@
     "DropdownMenuSubContent"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1049:6592"
   },
   "install": {
@@ -44,7 +44,7 @@
       "lucide-react@1.18.0"
     ],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "dropdown-menu"

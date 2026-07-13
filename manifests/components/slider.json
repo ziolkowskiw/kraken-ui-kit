@@ -10,7 +10,7 @@
     "Slider"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1811:15452"
   },
   "install": {
@@ -19,7 +19,7 @@
       "@base-ui/react@1.5.0"
     ],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "slider"

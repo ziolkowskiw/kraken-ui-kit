@@ -1,9 +1,9 @@
 ---
 name: using-kraken-ui-kit
-description: Use the Kraken UI Kit (JIT DS 2.0) correctly — install tokenized components from the registry, use the right --ds-* tokens and shadcn-named props, and switch brands. Trigger whenever building UI in or with kraken-ui-kit, adding a component, or wiring tokens/themes.
+description: Use the Kraken UI Kit (JIT DS 2.1) correctly — install tokenized components from the registry, use the right --ds-* tokens and shadcn-named props, and switch brands. Trigger whenever building UI in or with kraken-ui-kit, adding a component, or wiring tokens/themes.
 ---
 
-# Using the Kraken UI Kit (JIT DS 2.0)
+# Using the Kraken UI Kit (JIT DS 2.1)
 
 A shadcn-based company UI kit with a **3-layer token architecture** and **shadcn
 parity**. This skill pre-loads everything an agent needs to consume it without
@@ -18,7 +18,9 @@ served by an MCP server. When it's available, answer component questions from it
 instead of reading source or guessing:
 
 ```bash
-claude mcp add kraken-ui -- npx -y @kraken-ui/mcp
+# local-only — build the clone once, then register by absolute path:
+npm --prefix mcp install && npm --prefix mcp run build
+claude mcp add kraken-ui -- node <abs-path-to-clone>/mcp/dist/index.js
 ```
 
 | Tool | Use it for |

@@ -1,7 +1,7 @@
 # Kraken UI Kit
 
 A shadcn-based company design system that is **designed in Figma and generated
-into code** — and stays that way. One Figma file (`JIT DS 2.0`) is the source of
+into code** — and stays that way. One Figma file (`JIT DS 2.1`) is the source of
 truth for 827 design tokens and 56 components; a token pipeline, a Figma↔code
 map, and a set of AI skills keep the two sides from drifting apart.
 
@@ -68,7 +68,7 @@ Full guide: [`docs/token-pipeline.md`](docs/token-pipeline.md).
 ## Creating a new theme
 
 Themes are authored **in Figma, not in code**. Add a new mode to the semantic
-variable collection in `JIT DS 2.0` (that's the only layer that varies per
+variable collection in `JIT DS 2.1` (that's the only layer that varies per
 brand), design it there, then export:
 
 ```bash
@@ -90,7 +90,15 @@ npm run dev            # showcase at http://localhost:3000 (brand toggle top-rig
 npm run storybook      # component explorer at :6006 (Brand toggle in the toolbar)
 ```
 
-To consume the kit from another app:
+To consume the kit from another app, add the Kraken registry to your
+`components.json`, then install any component:
+
+```jsonc
+// components.json
+"registries": {
+  "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json"
+}
+```
 
 ```bash
 npx shadcn add @kraken/button    # installs tokenized, brand-switchable

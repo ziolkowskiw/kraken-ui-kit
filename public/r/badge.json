@@ -8,7 +8,7 @@
     "class-variance-authority@0.7.1"
   ],
   "registryDependencies": [
-    "theme",
+    "@kraken/theme",
     "utils"
   ],
   "files": [

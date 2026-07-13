@@ -21,14 +21,14 @@
     "TableCaption"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1824:18395"
   },
   "install": {
     "command": "npx shadcn add @kraken/table",
     "dependencies": [],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "table"

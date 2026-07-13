@@ -232,7 +232,7 @@ emit("index.json", indexEntries);
 
 // ── foundations.json — the always-on layer ───────────────────────────────────
 const foundations = {
-  system: "Kraken UI Kit (JIT DS 2.0) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 2 brands.",
+  system: "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 2 brands.",
   sources: ["design.md", "MAPPING.md"],
   tokenArchitecture: {
     layers: [
@@ -292,9 +292,11 @@ const foundations = {
   },
   install: {
     registryNamespace: "@kraken",
+    registriesConfig:
+      'Add to consumer components.json before installing: "registries": { "@kraken": "https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json" }',
     component: "npx shadcn add @kraken/<name>",
     bootstrap: "npx shadcn add @kraken/theme (pulls the tokens item automatically)",
-    mcp: "claude mcp add kraken-ui -- npx -y @kraken-ui/mcp",
+    mcp: "Local-only (not on npm). In a clone: npm --prefix mcp install && npm --prefix mcp run build, then: claude mcp add kraken-ui -- node <abs-path-to-clone>/mcp/dist/index.js",
   },
 };
 emit("foundations.json", foundations);

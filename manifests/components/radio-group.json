@@ -13,7 +13,7 @@
     "RadioGroupItem"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1104:10652"
   },
   "install": {
@@ -22,8 +22,8 @@
       "@base-ui/react@1.5.0"
     ],
     "registryDependencies": [
-      "theme",
-      "tooltip",
+      "@kraken/theme",
+      "@kraken/tooltip",
       "utils"
     ],
     "registryItem": "radio-group"

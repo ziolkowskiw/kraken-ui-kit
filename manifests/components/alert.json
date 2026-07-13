@@ -20,7 +20,7 @@
     "AlertDescription"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "535:3894"
   },
   "install": {
@@ -29,8 +29,8 @@
       "class-variance-authority@0.7.1"
     ],
     "registryDependencies": [
-      "button",
-      "theme",
+      "@kraken/button",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "alert"

@@ -12,7 +12,7 @@
     "ResizableHandle"
   ],
   "figma": {
-    "fileKey": "es0hWOiLEplsUrpR3EkBOK",
+    "fileKey": "Y3gNgjmXe1t67fPlDjM2iH",
     "nodeId": "1799:3154"
   },
   "install": {
@@ -22,7 +22,7 @@
       "react-resizable-panels@4.11.2"
     ],
     "registryDependencies": [
-      "theme",
+      "@kraken/theme",
       "utils"
     ],
     "registryItem": "resizable"
