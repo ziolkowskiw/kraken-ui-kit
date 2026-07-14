@@ -7,6 +7,7 @@ The goal (from the Southleft "machine-readable, not machine-governed" essay, Ind
 Decisions made with the user: **MCP server only** (no CLI manifest command), **structured keyword/alias lookup** (no RAG/vector DB), primary consumer is **agents in other repos** installing `@kraken/*` via the shadcn registry — so the layer ships with the published artifacts.
 
 Verified ground truth:
+
 - Root `package.json` is `private: true` → the MCP server must be a **separate publishable package**.
 - `scripts/build-docs.mjs` already has the extraction core to reuse: `extractExports`, `extractVariants` (CVA axes), `extractDefaults`, `extractTokens` (`var(--ds-*)` scan), `extractBoolProps`, `extractStringProps`, and a hand-authored `A11Y` map (lines 17–221). Note: duplicate `accordion` key at lines 18 and 30 — dedupe while extracting.
 - `scripts/build-registry.mjs` derives npm deps + `registryDependencies` from imports — reuse for manifest `install` blocks.
@@ -17,12 +18,14 @@ Verified ground truth:
 ## Phase 1 — Shared extraction lib + manifest generator (~1.5 d)
 
 **1a. Factor extraction into `scripts/lib/`**
+
 - `scripts/lib/extract.mjs`: move the extract* helpers + `tokenLayer` from `build-docs.mjs`; add `extractCompoundVariants(src)` and `extractLeadingComment(src)` (rationale comment above the cva call, e.g. button.tsx:6–10); lift `parseImports` from `build-registry.mjs`.
 - `scripts/lib/mapping-parser.mjs`: deterministic MAPPING.md parser → per-component `{ figmaNodeId, description, propTable[], subParts[], notes }` + global `conventions` and `divergences`. **Fail loudly (exit 1)** when a component file has no MAPPING entry.
 - `scripts/data/a11y-notes.mjs`: the `A11Y` map moved out of build-docs.mjs (dedupe `accordion`), imported by both docs and manifest generators so surfaces can't diverge.
 - Refactor `build-docs.mjs` / `build-registry.mjs` to import from `scripts/lib/` — behavior-preserving; diff regenerated docs/registry output before/after to prove it.
 
 **1b. Human-authored overlay (the judgment layer)**
+
 - `manifests/overrides/<name>.json` (optional per component) + `_template.json`: `aliases`, `keywords`, `usage.do[]`, `usage.dont[]`, `boundaries[]`, `whenToUseInstead`. The **only** hand-edited files under `manifests/`; schema-validated; merged last by the generator.
 - Seed ~15 high-traffic components (button, input, select, dialog, badge, alert, tabs, checkbox, card, combobox, link, table, tooltip, drawer, dropdown-menu) from MAPPING.md prose + the shadcn divergence table.
 
@@ -47,14 +50,14 @@ Files: `src/index.ts` (stdio bootstrap), `src/tools.ts`, `src/store.ts` (sync-lo
 
 Tools (raw JSON, dense by default per Astryx):
 
-| Tool | Params | Returns |
-|---|---|---|
-| `list_components` | — | index entries (name, title, one-liner) |
-| `search_components` | `query` | top-5 ranked matches with scores |
-| `get_component` | `name`, `dense?=true` | full manifest; `dense:false` adds rationale + prose |
-| `get_foundations` | — | foundations.json (call once per session) |
-| `get_tokens` | `layer?`, `component?`, `brand?` | filtered tokens slice; `brand` resolves brandValue |
-| `get_usage_rules` | `name?` | foundations rules + per-component do/don't |
+| Tool                | Params                           | Returns                                             |
+| ------------------- | -------------------------------- | --------------------------------------------------- |
+| `list_components`   | —                                | index entries (name, title, one-liner)              |
+| `search_components` | `query`                          | top-5 ranked matches with scores                    |
+| `get_component`     | `name`, `dense?=true`            | full manifest; `dense:false` adds rationale + prose |
+| `get_foundations`   | —                                | foundations.json (call once per session)            |
+| `get_tokens`        | `layer?`, `component?`, `brand?` | filtered tokens slice; `brand` resolves brandValue  |
+| `get_usage_rules`   | `name?`                          | foundations rules + per-component do/don't          |
 
 Search scorer (zero deps, deterministic): normalize → exact name (100) > alias (90) > export name (80) > keyword (60) > title/description token overlap (10/term); alphabetical tie-break. Encode the "Select vs Dropdown/Combobox" disambiguation (MAPPING Part 4) in aliases.
 

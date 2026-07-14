@@ -26,11 +26,11 @@ too unless the count is generated.
 
 ## Locked decisions
 
-| Decision | Choice | Rationale |
-| --- | --- | --- |
-| Count-drift fix | **Auto-generate the block** (not a one-time manual fix) | A manual fix resets the clock but doesn't close the gap — the exact same drift recurs at the next component/token change. Matches this project's existing "generated, never hand-edited" philosophy for everything else that can drift. |
-| Sequencing vs. M3 | **Start now, based on `main`** (M3 not yet merged) | User's explicit choice. The generated README counts will reflect pre-M3 numbers (827 tokens, no shadow tokens) until M3 merges, at which point a re-run of the generator (not a plan change) picks up the new numbers automatically — this is the generator working as intended, not a gap in this milestone. |
-| Stale Phase-8 record | **Superseded banner, not a rewrite** | Preserves the historical record (the theme editor genuinely shipped 2026-06-28, then was later removed per the Figma-first theming direction) rather than silently erasing what happened. |
+| Decision             | Choice                                                  | Rationale                                                                                                                                                                                                                                                                                                     |
+| -------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Count-drift fix      | **Auto-generate the block** (not a one-time manual fix) | A manual fix resets the clock but doesn't close the gap — the exact same drift recurs at the next component/token change. Matches this project's existing "generated, never hand-edited" philosophy for everything else that can drift.                                                                       |
+| Sequencing vs. M3    | **Start now, based on `main`** (M3 not yet merged)      | User's explicit choice. The generated README counts will reflect pre-M3 numbers (827 tokens, no shadow tokens) until M3 merges, at which point a re-run of the generator (not a plan change) picks up the new numbers automatically — this is the generator working as intended, not a gap in this milestone. |
+| Stale Phase-8 record | **Superseded banner, not a rewrite**                    | Preserves the historical record (the theme editor genuinely shipped 2026-06-28, then was later removed per the Figma-first theming direction) rather than silently erasing what happened.                                                                                                                     |
 
 ## Current state (verified 2026-07-14, against `main`)
 
@@ -93,6 +93,7 @@ Four independent deliverables.
 ### 1. Auto-generated README status counts
 
 **New file:** `scripts/build-readme-status.mjs`. Reads:
+
 - `manifests/tokens.json` → global/semantic/component counts, summed for the
   total.
 - `manifests/index.json` → component count.
@@ -103,12 +104,15 @@ Four independent deliverables.
 
 **`README.md` change:** wrap the Status section's count-bearing lines in
 marker comments:
+
 ```markdown
 <!-- STATUS:START -->
+
 ...existing prose, with {{TOKEN_COUNT}}, {{COMPONENT_COUNT}},
 {{PARENT_COUNT}}, {{REGISTRY_COUNT}} placeholders where numbers appear...
 <!-- STATUS:END -->
 ```
+
 The script replaces only the content between the markers with the template's
 placeholders substituted — hand-curated prose and the ✅/⬜ checkmarks outside
 the numbers survive every regen untouched. The Governance line's ⬜ gets a
@@ -155,6 +159,7 @@ this is the change that actually closes the drift gap going forward.
 
 Run the `mapping-doctor` skill's checks (via the Figma MCP already proven
 working this session) against the live JIT DS 2.1 file:
+
 1. Every node ID in `MAPPING.md` resolves.
 2. Every `src/components/ui/*.tsx` (excluding `*.stories.tsx`) has a
    `MAPPING.md` entry, and every entry points at a file that exists.
@@ -171,6 +176,7 @@ done — the milestone's value is the verification, not manufacturing fixes.
 
 Add one line to README's Status section (inside or immediately after the
 generated block, hand-authored since it's not a count):
+
 ```markdown
 Full roadmap: [`polish-plan.md`](polish-plan.md) Part 3.
 ```

@@ -14,11 +14,11 @@ A shadcn-based company UI kit with four pillars:
 
 1. **3-layer token architecture** — global (primitives) → semantic (meaning) → component (per-component knobs). Theme-switching = changing only the semantic layer.
 2. **shadcn parity** — every component mirrors a real shadcn component + props, so AI agents and the shadcn ecosystem understand it natively.
-3. **AI-native bridge** — Figma↔code mapping (which Figma component = which `.tsx` file + prop), a shadcn registry so anyone/any agent installs the *tokenized* version, and project skills/agents that keep design and code in sync.
+3. **AI-native bridge** — Figma↔code mapping (which Figma component = which `.tsx` file + prop), a shadcn registry so anyone/any agent installs the _tokenized_ version, and project skills/agents that keep design and code in sync.
 4. **Live semantic-layer theme editor** — a non-technical person edits Layer 2 with color pickers and the whole kit (code + Figma) restyles.
 
 **Repo (home for all code, tokens, docs):** `github.com/ziolkowskiw/kraken-ui-kit`
-*(Confirmed 2026-06-13: public, default branch `main`, empty except a one-line README — clean slate, ready to scaffold. "Kraken" is the kit's codename; the old stale-`.figma.tsx` kraken repo is retired — this is the fresh one.)*
+_(Confirmed 2026-06-13: public, default branch `main`, empty except a one-line README — clean slate, ready to scaffold. "Kraken" is the kit's codename; the old stale-`.figma.tsx` kraken repo is retired — this is the fresh one.)_
 
 **Source-of-truth model:** Figma is the source of truth for design **decisions**; `tokens.json` in the repo is the canonical **machine-readable** artifact. The two stay in sync via the MCP export ritual (Phase 4) and the drift audit (Phase 9).
 
@@ -30,12 +30,13 @@ A shadcn-based company UI kit with four pillars:
 
 The operating model: **Opus plans, orchestrates, and does the hard work; Sonnet does the high-volume work.** (Fable 5 isn't available right now, so Opus wears both the art-director and senior-engineer hats; if Fable comes back, lift the orchestrator role to it.) Think of it like a studio — Opus is the senior who breaks the brief into jobs, handles the get-it-right-first-time ones, and reviews everything; Sonnet is the fast hands who does the repetitive jobs.
 
-| Model | Role | Use it for |
-|---|---|---|
-| **Opus 4.8** | **Planner + orchestrator + deep-reasoning execution** (the main session) | Decomposing each phase into tasks, sequencing, choosing which model runs each, reviewing outputs against this plan + the convention/parity docs, and keeping this plan current — **plus** the get-it-right-once work: the Style Dictionary config + CSS-variable name rule, `MAPPING.md` conventions, the shadcn `registry.json` schema, the theme-editor "push-to-Figma" logic, authoring the Claude Skill, any code where correctness/accessibility matters on the first pass, and the go/no-go parity reviews. |
-| **Sonnet 4.6** | **High-volume mechanical execution** | Repetitive, well-specified work: scaffolding, generating component `.tsx` from the shadcn CLI and retargeting them to Layer-3 vars, batch Figma variable binding over the MCP, per-component docs, Storybook stories, re-running the CSS build, screenshot QA passes. |
+| Model          | Role                                                                     | Use it for                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| -------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Opus 4.8**   | **Planner + orchestrator + deep-reasoning execution** (the main session) | Decomposing each phase into tasks, sequencing, choosing which model runs each, reviewing outputs against this plan + the convention/parity docs, and keeping this plan current — **plus** the get-it-right-once work: the Style Dictionary config + CSS-variable name rule, `MAPPING.md` conventions, the shadcn `registry.json` schema, the theme-editor "push-to-Figma" logic, authoring the Claude Skill, any code where correctness/accessibility matters on the first pass, and the go/no-go parity reviews. |
+| **Sonnet 4.6** | **High-volume mechanical execution**                                     | Repetitive, well-specified work: scaffolding, generating component `.tsx` from the shadcn CLI and retargeting them to Layer-3 vars, batch Figma variable binding over the MCP, per-component docs, Storybook stories, re-running the CSS build, screenshot QA passes.                                                                                                                                                                                                                                             |
 
 **How you actually run it (plain language):**
+
 - Keep the main Claude Code session on **Opus** (the model picker). That session owns this plan and acts as orchestrator.
 - Opus spins up **subagents** for the bulk jobs with the model set to **Sonnet** (in Claude Code, a subagent is a fresh helper given one scoped task and a chosen model). You review what comes back; Opus folds it in. For the hard jobs Opus just does them in-session.
 - Rule of thumb: **if a task is "decide the right shape," Opus does it; if it's "apply the known shape 40 times," hand it to Sonnet; Opus always reviews.** Every task below carries a `[model]` tag as the default — Opus can override per run.
@@ -44,9 +45,10 @@ The operating model: **Opus plans, orchestrates, and does the hard work; Sonnet 
 
 ## Project skills & agents that live in the repo
 
-Part of the goal is a kit that is *self-maintaining* via AI. These ship inside the repo under `.claude/` and become reusable on every future session (yours or a teammate's). Build them in Phase 7, but they're listed here so the earlier phases produce the right hooks.
+Part of the goal is a kit that is _self-maintaining_ via AI. These ship inside the repo under `.claude/` and become reusable on every future session (yours or a teammate's). Build them in Phase 7, but they're listed here so the earlier phases produce the right hooks.
 
 **`.claude/` layout (in the repo):**
+
 - `CLAUDE.md` — project context (the verification-handoff CLAUDE.md is the seed: token names, conventions, parity rules, the orchestration model above).
 - `.claude/skills/` — repeatable playbooks Claude can invoke by name:
   - `token-sync` — Figma variables → `tokens.json` → regenerate CSS, in one ritual. `[Opus to author, Sonnet to run]`
@@ -65,24 +67,24 @@ Part of the goal is a kit that is *self-maintaining* via AI. These ship inside t
 
 ## Where things stand (snapshot)
 
-| Phase | What | Status |
-|---|---|---|
-| 0 | Decisions & setup | ✅ v1 list frozen, repo confirmed |
-| 1 | Token architecture on paper | ✅ (dark mode deferred to v1.1 — semantic modes are brands `jit`/`brand`) |
-| 2 | Variable system built in Figma | ✅ 3 clean layers, 100% alias chains, +6 shadcn tokens, sidebar added |
-| 3 | Component sets mirror shadcn | ✅ All open items resolved (button-size 1:1, outline/link confirmed, zero-hardcoded sweep done via parity review) |
-| 4 | Token pipeline: Figma → JSON → CSS | ✅ (2026-06-13 — 827 tokens, jit⇄brand verified, committed to repo) |
-| 5 | React kit + Storybook | ✅ (2026-06-14 all 12 rebuilt; visual QA pass COMPLETE 2026-06-23 — all 53 components PASS/FIXED) |
-| 6 | Figma ↔ code mapping (`MAPPING.md`) | ✅ (2026-06-17 — 40 parents mapped, v1-12 full prop maps, conventions + dup-by-nodeID locked) |
-| 7 | AI-native layer (registry + skills/agents) | ✅ (2026-06-28 — registry, using-kraken-ui-kit skill, all 4 skills + 3 agents complete) |
-| 8 | Visual semantic-layer theme editor | ✅ (2026-06-28 — 249-token editor, import/export round-trip, push-to-Figma, per-mode jit/brand) |
-| **9** | **Governance (ongoing)** | **🟡 infrastructure in place; first release not yet cut** |
+| Phase | What                                       | Status                                                                                                            |
+| ----- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| 0     | Decisions & setup                          | ✅ v1 list frozen, repo confirmed                                                                                 |
+| 1     | Token architecture on paper                | ✅ (dark mode deferred to v1.1 — semantic modes are brands `jit`/`brand`)                                         |
+| 2     | Variable system built in Figma             | ✅ 3 clean layers, 100% alias chains, +6 shadcn tokens, sidebar added                                             |
+| 3     | Component sets mirror shadcn               | ✅ All open items resolved (button-size 1:1, outline/link confirmed, zero-hardcoded sweep done via parity review) |
+| 4     | Token pipeline: Figma → JSON → CSS         | ✅ (2026-06-13 — 827 tokens, jit⇄brand verified, committed to repo)                                               |
+| 5     | React kit + Storybook                      | ✅ (2026-06-14 all 12 rebuilt; visual QA pass COMPLETE 2026-06-23 — all 53 components PASS/FIXED)                 |
+| 6     | Figma ↔ code mapping (`MAPPING.md`)        | ✅ (2026-06-17 — 40 parents mapped, v1-12 full prop maps, conventions + dup-by-nodeID locked)                     |
+| 7     | AI-native layer (registry + skills/agents) | ✅ (2026-06-28 — registry, using-kraken-ui-kit skill, all 4 skills + 3 agents complete)                           |
+| 8     | Visual semantic-layer theme editor         | ✅ (2026-06-28 — 249-token editor, import/export round-trip, push-to-Figma, per-mode jit/brand)                   |
+| **9** | **Governance (ongoing)**                   | **🟡 infrastructure in place; first release not yet cut**                                                         |
 
 **All four pillars are live.** The kit ships: theme editor restyles real components, registry installs tokenized components, MAPPING.md maps every Figma node to code, skills/agents maintain it. Phase 9 is ongoing governance — run `npm run release -- --yes` to cut the first tagged version.
 
 ---
 
-## Phase 0 — Decisions & setup  ✅
+## Phase 0 — Decisions & setup ✅
 
 1. ✅ Tooling: Claude + Figma Console MCP + Dev Mode MCP.
 2. ✅ Naming convention doc (`JIT-DS-2.0-naming-conventions.md`) + parity audit (`JIT-DS-2.0-shadcn-parity-audit.md`).
@@ -92,25 +94,26 @@ Part of the goal is a kit that is *self-maintaining* via AI. These ship inside t
 
 ---
 
-## Phase 1 — Token architecture on paper  ✅
+## Phase 1 — Token architecture on paper ✅
 
 Complete. 3-layer map exists; OKLCH primitives; semantic uses shadcn names verbatim + documented `success`/`warning` extensions; `content`→`foreground` export mapping documented. Dark mode **deferred to v1.1** (current semantic modes are brands `jit`/`brand`; matrix `brand×light/dark` modes come later).
 
 ---
 
-## Phase 2 — Variable system built in Figma  ✅
+## Phase 2 — Variable system built in Figma ✅
 
 Complete & verified 2026-06-10: three collections (`global`, `semantic`, `component`), zero raw values in Layers 2–3, 100% alias chains, +6 missing shadcn tokens added, `sidebar-*` family added and applied (175 bindings, zero visual change), `card/*` Layer-3 set added. Dark-mode caveat per Phase 1.
 
 ---
 
-## Phase 3 — Component sets mirror shadcn  ✅
+## Phase 3 — Component sets mirror shadcn ✅
 
 Done: Button folded 512→244 variants (Danger boolean → `destructive*` variants, double-encoded `Focused` removed); all 86 sets renamed to lowercase-kebab shadcn names; typography bound 4,924/5,782 text nodes (85%), stray fonts corrected, off-scale hidden button labels resolved.
 
 All open items resolved:
+
 1. ✅ Button-size: Figma `xs/sm/md/lg` already match code 1:1 — no mapping table needed. (Resolved P6.)
-2. ✅ `Outline`/`Link`: `secondary` *is* outline; `link` is a separate component. (Confirmed P6.)
+2. ✅ `Outline`/`Link`: `secondary` _is_ outline; `link` is a separate component. (Confirmed P6.)
 3. ✅ Zero-hardcoded sweep (v1 12): completed via the full parity review (see `audit/parity-checklist.md`). All hardcoded `bg-white`, radius literals, etc. replaced with `--ds-*` tokens. `rounded-full` on circular controls (radio, switch track) is intentional structural geometry.
 4. `[v1.1]` Pages (Charts, Collapsible, Button group, Form table) — deferred.
 
@@ -118,9 +121,9 @@ All open items resolved:
 
 ---
 
-## Phase 4 — Token pipeline: Figma → JSON → CSS  ✅ (2026-06-13)
+## Phase 4 — Token pipeline: Figma → JSON → CSS ✅ (2026-06-13)
 
-**Goal:** the code twin of the variable system, *generated*, never hand-written.
+**Goal:** the code twin of the variable system, _generated_, never hand-written.
 
 Built in `kraken-ui-kit` (commit `b295cac`). Decision: the figma-console-mcp export replaces Style Dictionary — it understands this token system's brand-mode + reference format natively; a tiny committed Node script does the deterministic selector-shaping (CI-safe, no Figma needed). Result:
 
@@ -135,7 +138,7 @@ Built in `kraken-ui-kit` (commit `b295cac`). Decision: the figma-console-mcp exp
 
 ---
 
-## Phase 5 — React kit + Storybook  ✅ (2026-06-14, all 12 rebuilt)
+## Phase 5 — React kit + Storybook ✅ (2026-06-14, all 12 rebuilt)
 
 **Goal:** the working, visually-verifiable code kit.
 
@@ -149,20 +152,20 @@ Built in `kraken-ui-kit`. Stack: Next.js 16 / React 19 / Tailwind v4 / shadcn (B
 **Component API parity (Phase 5.1) — ✅ ALL 12 REBUILT (2026-06-14).**
 Every v1 component has been rebuilt from the stock shadcn version to mirror its Figma component API, with Layer-3 token bindings and full Storybook controls matching Figma properties.
 
-| Component | Code API (key props) | Figma-parity controls in Storybook | Token layer |
-|---|---|---|---|
-| **badge** | `color` (8 colors) × `appearance` (filled/outlined/ghost) × `size` (sm/md/lg) × `shape` (round/square) + `leftIcon`/`rightIcon` | All props + full lucide icon picker (1,715 icons) | `--ds-badge-*` |
-| **button** | `variant` (primary/secondary/tonal/ghost/destructive/destructive-secondary/destructive-ghost) × `size` (xs/sm/md/lg) + `iconOnly` + `leftIcon`/`rightIcon` | All props + full lucide icon picker + disabled | `--ds-button-*` |
-| **input** | `InputField` wrapper: `size` (sm/md/lg) + `label`/`description`/`errorMessage`/`mandatory` + `leftDecoration`/`rightDecoration` | State (rest/error/disabled), size, label, description, error message, mandatory, full lucide icon pickers for L/R decorations | `--ds-input-*` |
-| **textarea** | `TextareaField` wrapper: `label`/`description`/`errorMessage`/`mandatory`/`showCounter`/`maxLength` | State (rest/error/disabled), label, help text, error message, mandatory, show counter, max length | `--ds-input-*` (shared) |
-| **select** | `SelectField` wrapper: `size` (sm/md/lg) + `label`/`description`/`errorMessage`/`mandatory`/`placeholder` | State (rest/error/disabled), size, label, description, error message, placeholder, mandatory | `--ds-select-*` |
-| **checkbox** | `error` + `indeterminate` | checkedState (false/true/indeterminate), error, disabled, label | `--ds-checkbox-*` |
-| **radio-group** | `RadioGroupField` wrapper: `direction` (vertical/horizontal) + `label`/`description`/`errorMessage`/`mandatory` | State (default/error), direction, label, help text, error message, mandatory | `--ds-radio-*` |
-| **switch** | `size` (default/compact) + `leftLabel`/`rightLabel`/`error` | Size (compact toggle), active (defaultChecked), disabled, error, left/right labels | `--ds-color-primary` (semantic) |
-| **card** | `filled` (true/false) | filled toggle | `--ds-card-*` |
-| **alert** | `type` (neutral/error/success/informational/warning) + `icon`/`onClose`/`action` | Type, title, description, hasIcon, hasDescription, close icon, show button + action button variant/size | `--ds-alert-*`, `--ds-color-status-*` |
-| **dialog** | `DialogContent` with `showCloseButton`; composed: `DialogHeader`/`DialogFooter`/`DialogTitle`/`DialogDescription` | Title text, subtitle text, hasTitle, hasSubtitle, showClose | `--ds-color-popover*`, `--ds-radius-*` |
-| **tabs** | `TabsList` with `variant` (default/line); `Tabs` with `orientation` (horizontal/vertical) | Orientation, variant (shown via separate stories: Badge/Line/Vertical/WithDisabledTab/AllVariants) | `--ds-color-muted*`, `--ds-radius-*` |
+| Component       | Code API (key props)                                                                                                                                       | Figma-parity controls in Storybook                                                                                            | Token layer                            |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| **badge**       | `color` (8 colors) × `appearance` (filled/outlined/ghost) × `size` (sm/md/lg) × `shape` (round/square) + `leftIcon`/`rightIcon`                            | All props + full lucide icon picker (1,715 icons)                                                                             | `--ds-badge-*`                         |
+| **button**      | `variant` (primary/secondary/tonal/ghost/destructive/destructive-secondary/destructive-ghost) × `size` (xs/sm/md/lg) + `iconOnly` + `leftIcon`/`rightIcon` | All props + full lucide icon picker + disabled                                                                                | `--ds-button-*`                        |
+| **input**       | `InputField` wrapper: `size` (sm/md/lg) + `label`/`description`/`errorMessage`/`mandatory` + `leftDecoration`/`rightDecoration`                            | State (rest/error/disabled), size, label, description, error message, mandatory, full lucide icon pickers for L/R decorations | `--ds-input-*`                         |
+| **textarea**    | `TextareaField` wrapper: `label`/`description`/`errorMessage`/`mandatory`/`showCounter`/`maxLength`                                                        | State (rest/error/disabled), label, help text, error message, mandatory, show counter, max length                             | `--ds-input-*` (shared)                |
+| **select**      | `SelectField` wrapper: `size` (sm/md/lg) + `label`/`description`/`errorMessage`/`mandatory`/`placeholder`                                                  | State (rest/error/disabled), size, label, description, error message, placeholder, mandatory                                  | `--ds-select-*`                        |
+| **checkbox**    | `error` + `indeterminate`                                                                                                                                  | checkedState (false/true/indeterminate), error, disabled, label                                                               | `--ds-checkbox-*`                      |
+| **radio-group** | `RadioGroupField` wrapper: `direction` (vertical/horizontal) + `label`/`description`/`errorMessage`/`mandatory`                                            | State (default/error), direction, label, help text, error message, mandatory                                                  | `--ds-radio-*`                         |
+| **switch**      | `size` (default/compact) + `leftLabel`/`rightLabel`/`error`                                                                                                | Size (compact toggle), active (defaultChecked), disabled, error, left/right labels                                            | `--ds-color-primary` (semantic)        |
+| **card**        | `filled` (true/false)                                                                                                                                      | filled toggle                                                                                                                 | `--ds-card-*`                          |
+| **alert**       | `type` (neutral/error/success/informational/warning) + `icon`/`onClose`/`action`                                                                           | Type, title, description, hasIcon, hasDescription, close icon, show button + action button variant/size                       | `--ds-alert-*`, `--ds-color-status-*`  |
+| **dialog**      | `DialogContent` with `showCloseButton`; composed: `DialogHeader`/`DialogFooter`/`DialogTitle`/`DialogDescription`                                          | Title text, subtitle text, hasTitle, hasSubtitle, showClose                                                                   | `--ds-color-popover*`, `--ds-radius-*` |
+| **tabs**        | `TabsList` with `variant` (default/line); `Tabs` with `orientation` (horizontal/vertical)                                                                  | Orientation, variant (shown via separate stories: Badge/Line/Vertical/WithDisabledTab/AllVariants)                            | `--ds-color-muted*`, `--ds-radius-*`   |
 
 - ✅ Brand fonts wired (Moderat JIT / Noto Sans); Moderat JIT not bundled (proprietary, public repo).
 - ✅ Side-by-side Figma QA via `parity-reviewer`: all 53 components PASS/FIXED (2026-06-23). See `audit/parity-checklist.md`.
@@ -171,11 +174,12 @@ Every v1 component has been rebuilt from the stock shadcn version to mirror its 
 
 ---
 
-## Phase 6 — Figma ↔ code mapping  ✅ (2026-06-17)
+## Phase 6 — Figma ↔ code mapping ✅ (2026-06-17)
 
 **Goal:** inspecting a Figma component yields the real `.tsx` + prop map, for humans and AI.
 
 Authored `MAPPING.md` at the repo root (Professional-plan route — no Code Connect).
+
 - ✅ All **40 parent components** mapped `set name + node ID → src/components/ui/<file>.tsx`. v1-12 carry **full prop-map tables** (Figma property → code prop → values); the other 28 + extensions get file + key props + compose notes.
 - ✅ Conventions locked once at the top (apply to all): `State` axis → CSS, no prop except `disabled`; `iconOnly=true` ↔ icon semantics; Figma variant values = exact lowercase code enums (1:1); icons = lucide via `leftIcon`/`rightIcon`; brand/theme cascades from `[data-theme]`, never a prop.
 - ✅ Sub-parts (`dialog/footer`, `select/item`, `sidebar/item`, …) documented as composing into the parent file — no standalone `.tsx`.
@@ -187,7 +191,7 @@ Authored `MAPPING.md` at the repo root (Professional-plan route — no Code Conn
 
 ---
 
-## Phase 7 — AI-native layer  ✅ (2026-06-28 — all items complete)
+## Phase 7 — AI-native layer ✅ (2026-06-28 — all items complete)
 
 **Goal:** the kit is discoverable, installable, and explainable to AI agents — and it maintains itself.
 
@@ -200,7 +204,7 @@ Authored `MAPPING.md` at the repo root (Professional-plan route — no Code Conn
 
 ---
 
-## Phase 8 — Visual semantic-layer theme editor  ✅ (2026-06-28 — complete including import/export and push-to-Figma)
+## Phase 8 — Visual semantic-layer theme editor ✅ (2026-06-28 — complete including import/export and push-to-Figma)
 
 **Goal:** a non-technical person restyles the whole kit by editing only Layer 2, live.
 
@@ -213,30 +217,30 @@ exact control surface. Lives at the `/theme-editor` route in the Next app.
 Reframed again (2026-06-21) per user → a **semantic-layer editor (variables studio)**:
 "control over the semantic layer of the DS." Earlier passes (brand tweaker, then a
 colors+fonts style builder) exposed only a curated slice and edited primitives; the
-user wants the *actual semantic layer*. Decisions: **re-point each semantic token to a
+user wants the _actual semantic layer_. Decisions: **re-point each semantic token to a
 Layer-1 primitive** (keep the alias contract), **full 249-token semantic layer**,
 **token-table + live preview** layout.
 
 1. ✅ **Semantic-layer editor** (`src/app/theme-editor/page.tsx` + `src/lib/theme-editor.ts`
-   + generated `src/lib/semantic-tokens.json` + `scripts/build-semantic-editor-data.mjs`,
-   `npm run editor:data`):
-   - **Data sourced from `tokens.dtcg.json`** (never drifts): all **249 semantic tokens**
+   - generated `src/lib/semantic-tokens.json` + `scripts/build-semantic-editor-data.mjs`,
+     `npm run editor:data`):
+   * **Data sourced from `tokens.dtcg.json`** (never drifts): all **249 semantic tokens**
      (their CSS var, type, current primitive alias, and which primitive family they may
      re-point to) + all **302 primitives** grouped by ramp.
-   - **Re-point model:** every semantic token row shows its current alias (e.g.
+   * **Re-point model:** every semantic token row shows its current alias (e.g.
      `primary → color/jit/500`); colors get a **ramp swatch popover** (22 ramps × 11),
      dimensions/typography get a **primitive dropdown** of the right family. Keeps the
      contract: semantic = alias to primitive.
-   - **Full coverage, grouped + searchable:** color (content/border/status/label/core),
+   * **Full coverage, grouped + searchable:** color (content/border/status/label/core),
      typography (per text style), spacing, radius, borderWidth, chart — collapsible
      `<details>` per major group, live search across all 249.
-   - **Live preview:** real-component dashboard beside the table; overrides inject as
+   * **Live preview:** real-component dashboard beside the table; overrides inject as
      `<style>` at **`:root`** (`--ds-color-primary: var(--ds-color-blue-500)`) so the
      alias chains re-resolve.
-   - **A11y:** live WCAG contrast panel (6 pairs).
-   - **Save & switch:** named styles in `localStorage`; **Export** the authored semantic
+   * **A11y:** live WCAG contrast panel (6 pairs).
+   * **Save & switch:** named styles in `localStorage`; **Export** the authored semantic
      layer as a DTCG-ish alias-map JSON (Copy + Download).
-   - Verified: `tsc` clean, `next build` prerenders. (Run: `npm run dev` → `/theme-editor`.)
+   * Verified: `tsc` clean, `next build` prerenders. (Run: `npm run dev` → `/theme-editor`.)
 2. ✅ Live preview wired to the component dashboard (part of #1).
 3. ✅ **Import-JSON box** — `ImportPanel` in `theme-editor/page.tsx`; paste a previously exported `kraken-semantic@1` JSON to reload a saved style.
 4. ✅ **Per-mode (jit/brand) editing** — the push-to-Figma panel lets you select the target Figma semantic mode before pushing; the editor table edits whichever style is active (brand-agnostic overrides that can be pushed to either mode).
@@ -246,7 +250,7 @@ Layer-1 primitive** (keep the alias contract), **full 249-token semantic layer**
 
 ---
 
-## Phase 9 — Governance  🟡 (infrastructure ready; first release pending)
+## Phase 9 — Governance 🟡 (infrastructure ready; first release pending)
 
 All governance infrastructure is in place. Run the rituals:
 
