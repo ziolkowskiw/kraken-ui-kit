@@ -85,6 +85,9 @@ npm run tokens:build
 The new theme becomes available as `<html data-theme="<mode>">` — no component
 or app code changes needed.
 
+Fonts follow the same ritual — see [`docs/font-strategy.md`](docs/font-strategy.md)
+for what each brand renders as and how a new brand supplies its own.
+
 ## Quick start
 
 ```bash
@@ -112,11 +115,11 @@ npx shadcn add @kraken/button    # installs tokenized, brand-switchable
 
 <!-- STATUS:START -->
 
-- ✅ **Token pipeline**: 827 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ brand).
+- ✅ **Token pipeline**: 835 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ brand).
 - ✅ **React kit + Storybook**: 56 components wired to tokens; live brand toggle in showcase and Storybook.
 - ✅ **Figma↔code mapping**: `MAPPING.md` — 47 parent components, node IDs + source links.
 - ✅ **Registry + AI layer**: shadcn registry (60 items), workflow skills, per-component docs, `design.md`.
-- ⬜ **Figma-first theming**: author themes as semantic modes in Figma; export via `token-sync` (supporting skills planned).
+- ✅ **Figma-first theming**: author themes as semantic modes in Figma; export via `token-sync`, onboard a new brand via the `add-brand` skill.
 - ⬜ **Governance** (ongoing): monthly `drift-audit` scheduling pending; `v0.1.0` already released 2026-07-13 via the release agent.
 
 <!-- STATUS:END -->

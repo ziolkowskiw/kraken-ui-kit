@@ -62,7 +62,8 @@
       "--ds-color-muted",
       "--ds-color-popover",
       "--ds-color-popover-foreground",
-      "--ds-radius-lg"
+      "--ds-radius-lg",
+      "--ds-shadow-overlay"
     ]
   },
   "usage": {

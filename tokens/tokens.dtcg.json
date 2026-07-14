@@ -9524,6 +9524,93 @@
         "$value": 16
       }
     },
+    "shadow": {
+      "xs": {
+        "$description": "xs — Global shadow step — referenced by semantic/shadow tokens, never applied directly.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:262",
+            "lastSyncedAt": "2026-07-13T12:00:00.000Z",
+            "lastSyncedValue": {
+              "global": {
+                "literal": "0 1px 2px 0 rgb(0 0 0 / 0.05)"
+              }
+            },
+            "variableId": "VariableID:4026:2"
+          }
+        },
+        "$type": "string",
+        "$value": "0 1px 2px 0 rgb(0 0 0 / 0.05)"
+      },
+      "sm": {
+        "$description": "sm — Global shadow step — referenced by semantic/shadow tokens, never applied directly.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:262",
+            "lastSyncedAt": "2026-07-13T12:00:00.000Z",
+            "lastSyncedValue": {
+              "global": {
+                "literal": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)"
+              }
+            },
+            "variableId": "VariableID:4026:3"
+          }
+        },
+        "$type": "string",
+        "$value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)"
+      },
+      "md": {
+        "$description": "md — Global shadow step — referenced by semantic/shadow tokens, never applied directly.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:262",
+            "lastSyncedAt": "2026-07-13T12:00:00.000Z",
+            "lastSyncedValue": {
+              "global": {
+                "literal": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)"
+              }
+            },
+            "variableId": "VariableID:4026:4"
+          }
+        },
+        "$type": "string",
+        "$value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)"
+      },
+      "lg": {
+        "$description": "lg — Global shadow step — referenced by semantic/shadow tokens, never applied directly.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:262",
+            "lastSyncedAt": "2026-07-13T12:00:00.000Z",
+            "lastSyncedValue": {
+              "global": {
+                "literal": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)"
+              }
+            },
+            "variableId": "VariableID:4026:5"
+          }
+        },
+        "$type": "string",
+        "$value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)"
+      },
+      "xl": {
+        "$description": "xl — Global shadow step — referenced by semantic/shadow tokens, never applied directly.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:262",
+            "lastSyncedAt": "2026-07-13T12:00:00.000Z",
+            "lastSyncedValue": {
+              "global": {
+                "literal": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)"
+              }
+            },
+            "variableId": "VariableID:4026:6"
+          }
+        },
+        "$type": "string",
+        "$value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)"
+      }
+    },
     "spacing": {
       "0": {
         "$description": "0 — Global spacing step — referenced by semantic/spacing tokens, never applied to components directly.",
@@ -13457,6 +13544,77 @@
         },
         "$type": "dimension",
         "$value": "{borderRadius.2}"
+      }
+    },
+    "shadow": {
+      "control": {
+        "$description": "Elevation for form controls (e.g. checkbox). Both brands: shadow.sm.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:263",
+            "lastSyncedAt": "2026-07-13T12:00:00.000Z",
+            "lastSyncedValue": {
+              "jit": {
+                "reference": "{shadow.sm}"
+              },
+              "brand": {
+                "reference": "{shadow.sm}"
+              }
+            },
+            "variableId": "VariableID:4026:7"
+          },
+          "modes": {
+            "brand": "{shadow.sm}"
+          }
+        },
+        "$type": "string",
+        "$value": "{shadow.sm}"
+      },
+      "overlay": {
+        "$description": "Elevation for floating transient content (menus, popovers, toasts). Both brands: shadow.md.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:263",
+            "lastSyncedAt": "2026-07-13T12:00:00.000Z",
+            "lastSyncedValue": {
+              "jit": {
+                "reference": "{shadow.md}"
+              },
+              "brand": {
+                "reference": "{shadow.md}"
+              }
+            },
+            "variableId": "VariableID:4026:8"
+          },
+          "modes": {
+            "brand": "{shadow.md}"
+          }
+        },
+        "$type": "string",
+        "$value": "{shadow.md}"
+      },
+      "modal": {
+        "$description": "Elevation for blocking modal surfaces (dialogs, drawers). Both brands: shadow.lg.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:263",
+            "lastSyncedAt": "2026-07-13T12:00:00.000Z",
+            "lastSyncedValue": {
+              "jit": {
+                "reference": "{shadow.lg}"
+              },
+              "brand": {
+                "reference": "{shadow.lg}"
+              }
+            },
+            "variableId": "VariableID:4026:9"
+          },
+          "modes": {
+            "brand": "{shadow.lg}"
+          }
+        },
+        "$type": "string",
+        "$value": "{shadow.lg}"
       }
     },
     "spacing": {

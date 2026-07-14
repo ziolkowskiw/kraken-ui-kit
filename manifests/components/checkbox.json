@@ -80,7 +80,8 @@
     ],
     "other": [
       "--ds-color-border-focus",
-      "--ds-color-primary-foreground"
+      "--ds-color-primary-foreground",
+      "--ds-shadow-control"
     ]
   },
   "usage": {

@@ -106,6 +106,7 @@
       "--ds-menuitem-contentdisabled",
       "--ds-menuitem-fillhover",
       "--ds-radius-lg",
+      "--ds-shadow-overlay",
       "--ds-typography-labelsm-fontsize"
     ]
   },

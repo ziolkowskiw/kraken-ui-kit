@@ -120,7 +120,7 @@ function NavigationMenuViewport({
           className={cn(
             "relative h-(--popup-height) w-full origin-(--transform-origin) overflow-hidden",
             "[border-radius:var(--ds-radius-lg)] [background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
-            "shadow-md ring-1 ring-foreground/10",
+            "[box-shadow:var(--ds-shadow-overlay)] ring-1 ring-foreground/10",
             "data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"
           )}
         >

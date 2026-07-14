@@ -307,6 +307,11 @@
   --ds-spacing-7: 7px;
   --ds-spacing-36: 36px;
   --ds-spacing-44: 44px;
+  --ds-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ds-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --ds-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --ds-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --ds-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 :root,
@@ -560,6 +565,9 @@
   --ds-color-sidebar-accent-foreground: var(--ds-color-slate-900);
   --ds-color-sidebar-border: var(--ds-color-slate-200);
   --ds-color-sidebar-ring: var(--ds-color-cyan-500);
+  --ds-shadow-control: var(--ds-shadow-sm);
+  --ds-shadow-overlay: var(--ds-shadow-md);
+  --ds-shadow-modal: var(--ds-shadow-lg);
 }
 
 [data-theme="brand"] {
@@ -812,6 +820,9 @@
   --ds-color-sidebar-accent-foreground: var(--ds-color-slate-900);
   --ds-color-sidebar-border: var(--ds-color-slate-200);
   --ds-color-sidebar-ring: var(--ds-color-cyan-500);
+  --ds-shadow-control: var(--ds-shadow-sm);
+  --ds-shadow-overlay: var(--ds-shadow-md);
+  --ds-shadow-modal: var(--ds-shadow-lg);
 }
 
 :root {

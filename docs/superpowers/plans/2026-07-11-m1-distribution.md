@@ -14,7 +14,7 @@
 - **Registry host URL base (locked):** `https://ziolkowskiw.github.io/kraken-ui-kit/` — registry served at `https://ziolkowskiw.github.io/kraken-ui-kit/r/{name}.json`.
 - **npm package name (locked):** `@kraken-ui/mcp` (scoped). Fallback `kraken-ui-mcp` only if the scope is unclaimable — a Phase B decision, not assumed here.
 - **Namespace token in consumer config / deps:** `@kraken` (e.g. `@kraken/dialog`). The scoped npm name `@kraken-ui/mcp` is unrelated to the `@kraken` registry namespace — do not conflate them.
-- **Banned name:** never introduce "randstadt". The second brand is `brand`.
+- **Banned name:** never introduce the second brand's retired internal name. The second brand is `brand`.
 - **Irreversible / outward-facing steps are user-gated:** `npm publish`, enabling GitHub Pages, and the `v0.1.0` git tag each require an explicit user confirm. Phase A never triggers any of them.
 - **shadcn-standard primitive kept bare:** `utils` (shadcn resolves it against its own default registry; our copy is byte-identical clsx+tailwind-merge with no token dependency).
 - One `cva()` per component, `defaultVariants` present, rationale comment directly above — do not disturb (extractors depend on it). This plan touches no component `.tsx`.
@@ -600,5 +600,5 @@ Every step here is irreversible or outward-facing. Do **not** execute any of it 
 - CI beyond the Pages job (tsc/manifests-drift/lint/tests) — Milestone 2.
 - **Release does not restage the compiled registry** (final-review finding): `scripts/release.mjs` runs `registry:build` (not `registry:bundle`) and its `git add` list omits `public/r/`, so a token/registry-affecting release can leave committed `public/r/*.json` stale until the next Pages CI run regenerates it. Pre-existing; fold into the Milestone 2 drift gate (regenerate + `git diff --exit-code`).
 - Publishing Storybook — Milestone 2.
-- The Figma "randstadt" name flagged by the background token-drift task — Figma-side rename, tracked separately.
+- The Figma retired-name variables flagged by the background token-drift task — Figma-side rename, tracked separately. (Resolved 2026-07-13: 12 stale variables found and renamed during M3 — see `docs/superpowers/plans/2026-07-13-m3-theming.md` Global Constraints.)
 - README `## Status` count refresh (`56 components / 58 items / 827 tokens`) and the `llms.txt` "JIT DS 2.0" header — doc-rot, Milestone 4.

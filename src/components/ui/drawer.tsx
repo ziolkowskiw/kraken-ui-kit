@@ -44,7 +44,7 @@ function DrawerOverlay({ className, ...props }: DialogPrimitive.Backdrop.Props) 
 const drawerVariants = cva(
   [
     "fixed z-50 flex flex-col gap-4 outline-none transition-transform duration-200 ease-out",
-    "[background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)] shadow-lg",
+    "[background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)] [box-shadow:var(--ds-shadow-modal)]",
   ].join(" "),
   {
     variants: {

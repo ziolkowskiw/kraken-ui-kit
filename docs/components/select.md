@@ -46,6 +46,7 @@ Displays a list of options to pick from, triggered by a button. Use for single-c
 - `--ds-color-muted-foreground`
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
+- `--ds-shadow-overlay`
 - `--ds-spacing-component-sm`
 - `--ds-typography-labelsm-fontsize`
 - `--ds-typography-labelsm-lineheight`

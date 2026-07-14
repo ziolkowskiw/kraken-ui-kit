@@ -186,6 +186,7 @@
       "--ds-color-popover-foreground",
       "--ds-menuitem-content",
       "--ds-menuitem-fillhover",
+      "--ds-shadow-overlay",
       "--ds-spacing-component-sm",
       "--ds-typography-labelsm-fontsize",
       "--ds-typography-labelsm-lineheight"

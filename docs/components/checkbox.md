@@ -37,6 +37,7 @@ A control that toggles between checked and not checked. Use for opt-in/agree flo
 **L2 Semantic**
 - `--ds-color-border-focus`
 - `--ds-color-primary-foreground`
+- `--ds-shadow-control`
 
 ## Accessibility
 

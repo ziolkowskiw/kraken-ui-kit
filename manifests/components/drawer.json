@@ -101,7 +101,8 @@
       "--ds-color-overlay",
       "--ds-color-popover",
       "--ds-color-popover-foreground",
-      "--ds-radius-xl"
+      "--ds-radius-xl",
+      "--ds-shadow-modal"
     ]
   },
   "usage": {

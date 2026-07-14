@@ -34,6 +34,7 @@ Sonner component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-color-status-warning-border`
 - `--ds-color-status-warning-icon`
 - `--ds-radius-lg`
+- `--ds-shadow-overlay`
 - `--ds-typography-bodysm-fontfamily`
 - `--ds-typography-bodysm-fontsize`
 - `--ds-typography-bodysm-lineheight`

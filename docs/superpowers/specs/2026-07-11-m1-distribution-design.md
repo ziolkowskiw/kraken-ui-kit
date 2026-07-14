@@ -143,5 +143,6 @@ Locations:
 
 - CI beyond the Pages job (tsc/manifests-drift/lint/tests) — Milestone 2.
 - Publishing Storybook — Milestone 2.
-- The Figma "randstadt" name reintroduction flagged by the background
-  token-drift task — a Figma-side rename, tracked separately.
+- The Figma retired-name reintroduction flagged by the background
+  token-drift task — a Figma-side rename, tracked separately. (Resolved
+  2026-07-13 during M3 — see `docs/superpowers/plans/2026-07-13-m3-theming.md`.)
