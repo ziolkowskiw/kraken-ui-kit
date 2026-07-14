@@ -22,7 +22,7 @@ code changes.
 
 ## Step 1 — Add a mode in Figma
 
-In the `semantic` variable collection (the *only* layer that varies per
+In the `semantic` variable collection (the _only_ layer that varies per
 brand — `global` and `component` never change per brand), add a new mode
 named after the brand. Figma requires a value for every semantic variable in
 the new mode — copy from an existing mode (`jit` or `brand`) as a starting

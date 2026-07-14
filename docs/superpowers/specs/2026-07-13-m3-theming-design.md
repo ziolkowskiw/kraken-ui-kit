@@ -25,11 +25,11 @@ updated to reflect this when M3 ships.
 
 ## Locked decisions
 
-| Decision                  | Choice                                          | Rationale                                                                                                                                                                                       |
-| -------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Add-brand proof            | **Live demo, then delete**                       | Add a real third mode (`acme`) to the live semantic collection, run the full pipeline, verify it renders, then delete it from Figma. Real proof, zero permanent trace in the shared team file — same throwaway pattern as M1's registry proof. |
-| Elevation semantic roles   | **control / overlay / modal**                    | Names the role by UI pattern rather than raw size, so a future component binding a shadow knows *when* to use which without a legend.                                                          |
-| Dark-mode plan             | **Dropped from M3 (MVP descope)**                 | Not needed for the portfolio MVP; deferred entirely, not just deprioritized — no shape decision recorded.                                                                                     |
+| Decision                 | Choice                            | Rationale                                                                                                                                                                                                                                      |
+| ------------------------ | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Add-brand proof          | **Live demo, then delete**        | Add a real third mode (`acme`) to the live semantic collection, run the full pipeline, verify it renders, then delete it from Figma. Real proof, zero permanent trace in the shared team file — same throwaway pattern as M1's registry proof. |
+| Elevation semantic roles | **control / overlay / modal**     | Names the role by UI pattern rather than raw size, so a future component binding a shadow knows _when_ to use which without a legend.                                                                                                          |
+| Dark-mode plan           | **Dropped from M3 (MVP descope)** | Not needed for the portfolio MVP; deferred entirely, not just deprioritized — no shape decision recorded.                                                                                                                                      |
 
 ## Current state (verified 2026-07-13)
 
@@ -95,6 +95,7 @@ committable.
 ### 1. Elevation tokens
 
 **Figma (via `use_figma`):**
+
 - Add a `--ds-shadow-*` global ramp to the `global` collection: `xs`, `sm`,
   `md`, `lg`, `xl` — composite box-shadow values copied verbatim from the
   installed Tailwind v4.3.1 default scale (`node_modules/tailwindcss/theme.css:406-411`),
@@ -111,6 +112,7 @@ committable.
 
 **Repo (hand-mirrored from the live Figma values, since `figma_export_tokens`
 isn't available this session):**
+
 - Append the new global + semantic entries to `tokens/tokens.dtcg.json`,
   matching the existing DTCG shape for a comparable token family.
 - Append the corresponding flat custom-property blocks to
@@ -125,7 +127,7 @@ isn't available this session):**
 
 **Verification:** visual diff (Storybook or the showcase app) on all 9
 components before/after — the shadow must render pixel-identical, since this
-is a token *rebind*, not a redesign. `manifests:check` green.
+is a token _rebind_, not a redesign. `manifests:check` green.
 
 ### 2. Add-brand runbook
 
@@ -151,6 +153,7 @@ numbered steps, a "Done when" section). Content:
    `token-sync`'s own Step 3).
 
 **Live proof (this session, throwaway):**
+
 - Add a mode named `acme` to the live `semantic` collection via `use_figma`,
   giving every variable a visibly-different placeholder value (e.g. a shifted
   hue) so the flip is unmistakable.
