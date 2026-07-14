@@ -264,14 +264,13 @@ from the top apply. Figma 🎨 and source 💻 are linked per row.
 
 ## Part 4 — Duplicate-name disambiguation (resolve by node ID)
 
-Legacy `Menu`×2 and `Sorting icons`×2 are now distinct — match on **node ID**, not name:
+Legacy `Menu`×2 is now distinct — match on **node ID**, not name:
 
 | Display-name collision | node id | → resolves to |
 |---|---|---|
 | "Select" set on the **dropdown-menu** page | [1292:5274](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1292-5274) | `combobox` → [combobox.tsx](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/combobox.tsx) |
 | "Dropdown" set on the **Select** page | [1637:17676](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1637-17676) | `select` → [select.tsx](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/select.tsx) |
-| Sorting icons (data-table) | `data-table/sorting-icons` | composes into [data-table.tsx](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/data-table.tsx) |
-| Sorting icons (form-table) | `form-table/sorting-icons` | composes into the form-table family |
+| Sorting icons (data-table) | [1385:14056](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1385-14056) `data-table/sorting-icons` | composes into [data-table-header.tsx](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/data-table-header.tsx) |
 
 2026-07-11 — JIT DS 2.1 hygiene rename: tabs set 2248:18598 is the composed bar (maps to `tabs.tsx`); 1825:18415 renamed `tabs/trigger` (sub-part).
 
