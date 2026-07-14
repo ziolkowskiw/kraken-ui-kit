@@ -17,7 +17,8 @@ code changes.
   (probe). If the bridge is down, stop and ask the user to open Figma + the
   bridge — step 1 cannot run without it.
 - Know the new brand's name up front (kebab-case, e.g. `acme`) — this becomes
-  the `data-theme` value everywhere. Never use "randstadt" (banned name).
+  the `data-theme` value everywhere. Never reuse the second brand's retired
+  internal name — confirm the exact naming constraint with the user first.
 
 ## Step 1 — Add a mode in Figma
 
