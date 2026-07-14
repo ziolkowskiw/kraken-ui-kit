@@ -41,7 +41,8 @@ jobs:
             registry.json \
             public/r \
             manifests \
-            docs/components
+            docs/components \
+            README.md
 
       - name: Lint
         run: npm run lint
