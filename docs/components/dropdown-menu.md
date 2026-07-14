@@ -42,6 +42,7 @@ Dropdown Menu component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
 - `--ds-radius-lg`
+- `--ds-shadow-overlay`
 - `--ds-typography-labelsm-fontsize`
 
 **L1 Primitive / Shared**

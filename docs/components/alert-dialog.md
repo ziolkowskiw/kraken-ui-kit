@@ -39,6 +39,7 @@ Alert Dialog component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-color-content-primary`
 - `--ds-color-foreground`
 - `--ds-color-overlay`
+- `--ds-shadow-modal`
 - `--ds-spacing-component-lg`
 - `--ds-spacing-component-md`
 - `--ds-spacing-component-sm`

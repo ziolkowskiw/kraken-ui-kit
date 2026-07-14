@@ -28,6 +28,7 @@ All props are passed through to the underlying Base UI / HTML element.
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
 - `--ds-radius-lg`
+- `--ds-shadow-overlay`
 - `--ds-typography-bodymd-fontsize`
 - `--ds-typography-bodymd-lineheight`
 - `--ds-typography-labellg-fontsize`
