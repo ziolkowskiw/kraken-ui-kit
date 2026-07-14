@@ -33,7 +33,7 @@ function ToastList() {
         className={cn(
           "flex w-full items-start gap-3 border p-4",
           "[border-radius:var(--ds-radius-lg)] [border-color:var(--ds-color-border)] [background-color:var(--ds-color-popover)]",
-          "shadow-md ring-1 ring-foreground/5",
+          "[box-shadow:var(--ds-shadow-overlay)] ring-1 ring-foreground/5",
           "data-[starting-style]:translate-x-full data-[ending-style]:translate-x-full transition-transform duration-300",
         )}
         style={{ "--accent": meta.accent } as React.CSSProperties}

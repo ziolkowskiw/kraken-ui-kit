@@ -107,7 +107,7 @@ function SelectContent({
           className={cn(
             "relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-36 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-lg",
             "[background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
-            "shadow-md ring-1 ring-foreground/10",
+            "[box-shadow:var(--ds-shadow-overlay)] ring-1 ring-foreground/10",
             "duration-100 data-[align-trigger=true]:animate-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
             className
           )}

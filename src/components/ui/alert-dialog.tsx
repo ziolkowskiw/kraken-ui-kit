@@ -64,7 +64,7 @@ function AlertDialogContent({
           "fixed top-1/2 left-1/2 z-50 flex w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 flex-col outline-none",
           "[background-color:var(--ds-color-background)] [color:var(--ds-color-foreground)]",
           "border [border-color:var(--ds-color-border)] [border-radius:var(--ds-card-radius)]",
-          "shadow-lg",
+          "[box-shadow:var(--ds-shadow-modal)]",
           "duration-100 sm:max-w-[480px] data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
           className
         )}

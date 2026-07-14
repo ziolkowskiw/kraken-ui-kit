@@ -38,7 +38,7 @@ function Checkbox({ className, error, hoverScope = "self", ...props }: CheckboxP
       data-error={error || undefined}
       className={cn(
         "peer relative flex size-4 shrink-0 items-center justify-center transition-colors outline-none",
-        "[border-width:var(--ds-checkbox-borderwidth)] [border-radius:var(--ds-checkbox-cornerradius)] border-solid shadow-sm",
+        "[border-width:var(--ds-checkbox-borderwidth)] [border-radius:var(--ds-checkbox-cornerradius)] border-solid [box-shadow:var(--ds-shadow-control)]",
         "[background-color:var(--ds-checkbox-fill)] [border-color:var(--ds-checkbox-bordercolor)]",
         "focus-visible:shadow-[0px_0px_0px_3px_var(--ds-color-border-focus)]",
         "disabled:opacity-50 disabled:cursor-not-allowed disabled:[background-color:var(--ds-checkbox-filldisabled)]",
