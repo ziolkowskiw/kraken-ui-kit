@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Kraken UI Kit: a design system AI assistants can look things up in, and new brands plug into
+    </title>
+    <style>
+      body {
+        margin: 0 auto;
+        padding: 3rem 1.25rem 5rem;
+        max-width: 42rem;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #1a1a1a;
+        background: #ffffff;
+      }
+      h1 {
+        margin: 0 0 1rem;
+        font-size: 2.25rem;
+        line-height: 1.2;
+      }
+      h2 {
+        margin: 3rem 0 0.75rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      h3 {
+        margin: 2.25rem 0 0.5rem;
+        font-size: 1.05rem;
+        line-height: 1.4;
+        font-weight: 700;
+      }
+      p {
+        margin: 0 0 1rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+      figcaption {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: #6b6b6b;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Kraken UI Kit: a design system AI assistants can look things up in, and new brands plug into
+    </h1>
+    <p>
+      <strong
+        >How do you make a family of internal apps feel like one product, when AI is writing a
+        growing share of the screens?</strong
+      >
+    </p>
+
+    <section>
+      <h2>Problem</h2>
+      <p>
+        AI assistants make things up and type raw colors and numbers straight into the code, so
+        JIT's internal apps stop matching the design and each other. I wanted one system that keeps
+        every screen on brand, whether a person or a machine builds it.
+      </p>
+    </section>
+
+    <section>
+      <h2>Solution</h2>
+      <p>
+        Kraken UI Kit is a fully tokenized design system. Every color, size and font is a design
+        token in one source of truth, designers edit the tokens in Figma, and skills keep the code,
+        the documentation and the AI assistants in sync.
+      </p>
+    </section>
+
+    <section>
+      <h2>Users</h2>
+      <p>
+        Designers and developers building JIT's internal apps, the AI assistants working next to
+        them, and teams on client projects that have no design system of their own. Behind them, the
+        people who use those apps every day.
+      </p>
+    </section>
+
+    <section>
+      <h2>Result</h2>
+      <p>
+        In a test, an assistant connected to the kit built an on-brand delete dialog from one casual
+        prompt, in both brands, with no hardcoded color. It is one test, not a study.
+      </p>
+    </section>
+
+    <section>
+      <h2>TL;DR</h2>
+      <p>
+        JIT's internal apps needed to feel like one product, and AI assistants kept making things up
+        and hardcoding values, so screens drifted away from the design. I built a design system
+        where the tokens are the source of truth, Figma is where designers edit them, and assistants
+        look facts up instead of guessing. In one test, a casual prompt produced an on-brand dialog
+        in both brands.
+      </p>
+    </section>
+
+    <section>
+      <h2>Context</h2>
+      <p>
+        JIT's internal apps grew over many years, and they were built on different technologies.
+        Each one looks and behaves a little differently, and there is no shared source of truth, so
+        maintaining them is hard.
+      </p>
+      <p>
+        Now all of them are moving into one place. Side by side, every difference is something the
+        user has to learn again. We wanted one visual language and one set of behaviors, so no app
+        overloads its users and nobody has to learn each one from scratch.
+      </p>
+      <p>
+        The same need showed up outside the company. We take on small, fixed-term projects for
+        clients that have no design system of their own, and each one meant a new brand to set up
+        and screens to build fast. We wanted a universal toolkit: a quick way to add a new theme,
+        and tools that make building the screens smooth.
+      </p>
+      <p>
+        Then AI assistants started writing real screens. They are fast, and they are confident. Ask
+        for a settings page and you get a good-looking one in a minute that belongs to no brand.
+      </p>
+    </section>
+
+    <section>
+      <h2>The problem</h2>
+      <p>
+        An AI assistant without a design system invents one, and nothing in our setup stopped it. It
+        made up button styles and names, and it hardcoded values: a raw color or number typed
+        straight into the code, instead of the one the design system defines. It did all of this
+        with total confidence.
+      </p>
+      <p>
+        For the people using the apps, a difference in how a button looks or a dialog behaves is
+        something to learn again. Each of those breaks the link between the design and what ships,
+        so the apps and the design files stop matching. A person has to find and fix every
+        discrepancy, and the faster the assistants get, the more there are to find.
+      </p>
+      <figure>
+        <!-- IMAGE SLOT: left, the dialog built by an assistant prompted with our font only -->
+        <p>
+          [IMAGE: left, labeled "Prompted with our font only". The delete dialog the assistant built
+          when it was given our font and nothing else. Add three numbered dots with a short label
+          each: 1, no close button; 2, warning triangle and bold title instead of the kit's info
+          icon; 3, footer buttons all grouped right instead of Cancel on the left.]
+        </p>
+        <figcaption>
+          Giving the assistant our font got the typeface right and left everything else to a guess.
+        </figcaption>
+      </figure>
+      <figure>
+        <!-- IMAGE SLOT: right, the same dialog built with the kit -->
+        <p>
+          [IMAGE: right, labeled "Built with the kit". The same dialog built from the kit, at the
+          same size and crop as the left one. Mark the same three places with matching numbered
+          dots: 1, the close button; 2, the info icon and lighter title; 3, Cancel on the left of
+          the footer.]
+        </p>
+        <figcaption>
+          Built with the kit, the same dialog arrived with its close button, dividers and footer
+          layout already in place.
+        </figcaption>
+      </figure>
+      <p>
+        Both dialogs say the same words in the same font. The left one has no close button, a
+        warning triangle where the kit uses an info circle, and every button grouped on the right.
+        None of it fails a glance, which is why a person still has to look.
+      </p>
+      <p>
+        Coherence across the internal apps was the goal. AI made it urgent. And client projects with
+        no design system were the test of whether the answer was reusable: setting up a new brand
+        had to be nearly frictionless.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I noticed before building</h2>
+      <ul>
+        <li>
+          A design decision is only <strong>real</strong> when it lives in exactly one place. Two
+          editable copies of a color means the color has no owner.
+        </li>
+        <li>
+          An AI is most <strong>confident</strong> exactly when it is guessing. The fix is not
+          better prose. It is giving it somewhere to look things up.
+        </li>
+        <li>
+          Documentation is only <strong>honest</strong> if it can fail. A wiki page goes stale
+          silently. A playbook that gets run either works or breaks loudly.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What I decided</h2>
+
+      <h3>Decision one: the tokens are the source of truth, and Figma is where they get edited</h3>
+      <p>
+        The whole kit is tokenized. Every color, size, radius and font is a named value, called a
+        design token, and the components contain no raw values at all. That rule is easy for a
+        machine to check: a raw value is something you can search for and block.
+      </p>
+      <p>
+        The tokens live in a file in the W3C design token format, an open standard, not inside any
+        one tool, because tokens should outlive the tools around them. Figma is the editor.
+        Designers change tokens there using Figma variables, and a Claude skill pulls the changes
+        into the token file. A build step then writes the stylesheet the components use. Nobody
+        edits the stylesheet by hand.
+      </p>
+      <figure>
+        <!-- IMAGE SLOT: the token flow from Figma variables to the live app -->
+        <p>
+          [IMAGE: follow one token, the main brand color, from start to finish in three readable
+          crops, left to right. Crop 1: the Figma variables panel zoomed on "primary" with its value
+          in both brands. Crop 2: the same token in the token file, five or six lines. Crop 3: that
+          color on a real button in the running app. Join the crops with two arrows labeled "skill
+          syncs" and "build step". No full-page Figma screenshot.]
+        </p>
+        <figcaption>
+          Designers edit in Figma, a skill syncs the token file, and a build step writes the
+          stylesheet.
+        </figcaption>
+      </figure>
+      <p>
+        One value, three places. A designer changes "primary" in Figma, a skill copies the change
+        into the token file, and the build step carries it into every component that uses it. Nobody
+        retypes the color along the way.
+      </p>
+      <p>
+        The tokens sit in three layers: the raw palette, the meaning ("primary"), and per-component
+        settings. Only the meaning layer changes per brand. So a new brand is a new set of values in
+        Figma and one playbook run, and the whole product switches with a single attribute. No
+        screen changes and no component changes.
+      </p>
+      <figure>
+        <!-- IMAGE SLOT: the same screen in both brands, side by side -->
+        <p>
+          [IMAGE: the same screen twice, side by side, at the same size with the same content. Left:
+          the yellow brand with rounded corners. Right: the blue brand with sharp corners and its
+          own font. Label each side with its theme name. Under the pair, add one small crop of the
+          single line that switches them, the theme attribute set to "jit" and then to "brand". Pick
+          a screen with a form, a primary button and a card so the differences are obvious.]
+        </p>
+        <figcaption>One setting switches colors, corner rounding and fonts.</figcaption>
+      </figure>
+      <p>
+        Only one setting differs between these two. That is what makes a new client brand quick: a
+        new set of values, not a new set of screens.
+      </p>
+      <p>
+        The trade-offs were real. Nobody can "just quickly fix it in code" anymore, because every
+        change goes through the tokens and a sync. Three layers also mean finding the real color
+        behind a component takes two hops, which Storybook and the fact sheets now absorb. And a
+        brand can change values but not the shape of a component. A client who wants a different
+        button anatomy doesn't fit, and I scoped that out on purpose. Changes to shape are design
+        decisions in Figma, not forks in code.
+      </p>
+
+      <h3>Decision two: let the kit answer questions instead of hoping it gets read</h3>
+      <p>
+        I didn't write more documentation. Every component publishes a fact sheet generated from the
+        code: its exact options, defaults, colors and usage rules. A small connector lets any AI
+        assistant look those facts up in the middle of a task. "Which button styles exist?" stopped
+        being a memory test and became a lookup.
+      </p>
+      <figure>
+        <!-- VIDEO SLOT: an assistant calling the kit's lookup mid-task -->
+        <p>
+          [VIDEO: 15 to 20 seconds, screen recording cropped to the assistant's window. Show the
+          prompt "build me a delete confirmation dialog", then the moment the assistant calls the
+          kit's lookup for the button component and the fact sheet comes back with the list of
+          button styles. Zoom on that list for two seconds, then show the assistant choosing the
+          destructive style. Cut any waiting time.]
+        </p>
+        <figcaption>
+          The assistant checks the real component before writing a single line.
+        </figcaption>
+      </figure>
+      <p>
+        The assistant did not remember the button styles. It asked, and the kit answered with the
+        real list. That is the difference between a lookup and a guess.
+      </p>
+      <p>
+        I built the kit to match shadcn, a popular open source set of interface parts that nearly
+        every AI model has already seen. An assistant arrives with correct instincts and only has to
+        learn our few differences, which are published as a short list. The first one is buttons.
+        Our Figma set has a tonal style and two extra destructive styles that shadcn doesn't, and
+        shadcn's link style isn't in ours, so I kept the Figma set and mapped the rest.
+      </p>
+      <p>
+        The trade-off: I gave up naming freedom, and I gave up elegant code. Each component file
+        follows a rigid pattern so the facts can be read straight from it. I'd rather have a
+        slightly awkward file than a fact sheet nobody can trust.
+      </p>
+
+      <p>
+        People get the same answers. Storybook, a living catalog of every component, mirrors the
+        property panel of its Figma component one to one, so a designer can put the two side by side
+        and check them.
+      </p>
+      <figure>
+        <!-- IMAGE SLOT: a Storybook story next to its Figma property panel -->
+        <p>
+          [IMAGE: a crop of two panels side by side, both readable at full size. Left: the Storybook
+          controls for the Button, with its variant and size options visible. Right: the Figma
+          property panel for the same Button. Draw a thin line between three matching names, for
+          example the variant options, the size options and the disabled toggle, so the one-to-one
+          match is obvious. Crop to the panels only, not the whole window.]
+        </p>
+        <figcaption>Same options, same names, one to one.</figcaption>
+      </figure>
+      <p>
+        A designer can check a component against its Figma version without reading any code. If a
+        name or an option ever differs between the two panels, it shows in one glance.
+      </p>
+
+      <h3>Decision three: looks right is not right</h3>
+      <p>
+        Fact sheets tell an assistant what is true. Something still has to catch it when it ignores
+        them. Every change rebuilds what is generated and compares it line by line with what is
+        saved, so one drifted value turns the project red. That check once caught an automated
+        cleanup pass that had quietly corrupted the fact sheets, and I fenced those tools off from
+        the generated files.
+      </p>
+      <p>
+        But a check only catches what it knows to look for, so I also ran a review over every
+        component against its Figma version and the rules of the kit. The rule I held hardest: a
+        component that looks identical on screen still fails if it gets there with a raw value. A
+        radio button's dot was hardcoded white. A switch's thumb was hardcoded white. A drawer's
+        rounded corners resolved to the wrong radius. An accordion had a fixed pixel height. The
+        assistants' output looked right and wasn't. Each one was a spot where the kit's promise,
+        that nothing is hardcoded, could quietly break, so I sent each component back until it
+        passed.
+      </p>
+      <p>
+        Recurring jobs became playbooks an assistant runs step by step: syncing tokens from Figma,
+        adding a brand, auditing whether Figma and code still agree. A playbook either works or
+        fails loudly. The cost is that playbooks take time to write and keep alive, and they only
+        pay off if they get run again and again. I accepted that because the kit is meant to be
+        reused for every new brand.
+      </p>
+    </section>
+
+    <section>
+      <h2>The outcome</h2>
+      <p>
+        The test that mattered: an empty project, an AI assistant connected to the kit, and one
+        casual prompt, "build me a delete confirmation dialog". The assistant looked up the real
+        component, used the correct destructive style, and produced a dialog that was on-brand in
+        both brands, with no hardcoded color anywhere. It worked for two reasons. The assistant
+        could look up the real component instead of guessing, and every color it used resolved
+        through the tokens, so the dialog followed the brand switch.
+      </p>
+      <p>
+        That is one test, not a study, and it is the clearest proof I have that the lookup works.
+      </p>
+      <figure>
+        <!-- VIDEO SLOT: screen recording of the prompt-to-dialog flow, with the kit -->
+        <p>
+          [VIDEO: 30 to 45 seconds, one unbroken screen recording that starts from an empty project.
+          Type the prompt "build me a delete confirmation dialog", let the assistant look up the
+          component and build the dialog, then flip the brand switch so the dialog changes from one
+          brand to the other. End on a search of the generated file for a hex color that returns
+          zero results. Speed up the waiting, and keep the prompt and the result at normal speed.]
+        </p>
+        <figcaption>
+          From one sentence to an on-brand dialog, with every color coming from the kit.
+        </figcaption>
+      </figure>
+      <p>
+        Watch for two moments: the assistant looks the component up before it writes anything, and
+        the brand switch at the end changes the dialog without anyone touching it. The final search
+        finds no raw colors.
+      </p>
+      <figure>
+        <!-- VIDEO SLOT: the same prompt, same assistant, no kit connected -->
+        <p>
+          [VIDEO: the same recording, framed the same way, so the two can sit side by side. Same
+          prompt, same assistant, same model, a fresh empty project with no kit connected. Show the
+          result, try the brand switch, and end on the same search for a hex color, this time
+          showing the raw colors the assistant typed in. Run it three times and show the typical
+          run. If the runs differ a lot, say so in the text. Keep any failures in.]
+        </p>
+        <figcaption>The same sentence without the kit.</figcaption>
+      </figure>
+      <p>
+        [NEEDS DETAIL: one or two sentences on what the without-kit run produced, for example how
+        many raw colors the search found and whether the brand switch did anything.]
+      </p>
+      <p>
+        The kit ships with 56 components, 835 design tokens and two live brands, and every change is
+        checked against the source.
+      </p>
+      <figure>
+        <!-- IMAGE SLOT: new screens for JIT's internal apps, designed with the kit -->
+        <p>
+          [IMAGE: two or three real screens from different internal apps, side by side at the same
+          scale. Mark the shared pieces with thin outlines and one short label each: the same
+          primary button, the same dialog, the same spacing. If an old version exists, add it as a
+          small before next to each. Real screens, straight on, no tilted mockups.]
+        </p>
+        <figcaption>New screens for JIT's internal apps, designed with the kit.</figcaption>
+      </figure>
+      <p>
+        [NEEDS DETAIL: one sentence on what a person using the apps sees now that they did not
+        before, for example the same dialog behaving the same way in every app.]
+      </p>
+    </section>
+
+    <section>
+      <h2>What I'd tell my past self</h2>
+      <p>
+        The audience of a design system now includes machines, and they need different things from
+        people: facts they can look up, rules they can't misread, and a loud failure when something
+        drifts. Designing for that changed what I count as good documentation.
+      </p>
+    </section>
+  </body>
+</html>
