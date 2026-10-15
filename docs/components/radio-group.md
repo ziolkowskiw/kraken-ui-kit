@@ -29,14 +29,14 @@ A set of checkable buttons where only one can be checked at a time. Use to choos
 **L2 Semantic**
 - `--ds-color-border-focus`
 - `--ds-color-primary-foreground`
-- `--ds-spacing-component-sm`
-- `--ds-typography-labelsm-fontsize`
-- `--ds-typography-labelsm-lineheight`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 
 **L3 Component**
 - `--ds-input-content`
 - `--ds-input-contenterror`
-- `--ds-input-placeholder`
+- `--ds-input-fieldgap`
+- `--ds-input-helper`
 - `--ds-radio-bordercolor`
 - `--ds-radio-bordererror`
 - `--ds-radio-borderhover`

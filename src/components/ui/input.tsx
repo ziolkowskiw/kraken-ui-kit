@@ -8,7 +8,7 @@ import { TooltipIcon, TooltipProvider } from "./tooltip"
 
 const inputVariants = cva(
   [
-    "flex w-full items-center gap-1.5 border transition-colors outline-none",
+    "flex w-full items-center gap-[var(--ds-spacing-component-xs)] border transition-colors outline-none",
     "[border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)]",
     "hover:[border-color:var(--ds-input-borderhover)]",
     "focus-within:[border-color:var(--ds-input-borderfocus)]",
@@ -65,14 +65,14 @@ function InputField({
   const id = idProp ?? generatedId
   const hasError = error || !!errorMessage
   return (
-    <div className="flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start">
+    <div className="flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start">
       {label && (
-        <div className="flex items-center gap-1 h-4">
-          <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+        <div className="flex items-center gap-1 h-5">
+          <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
             {label}
           </label>
           {mandatory && (
-            <span className="[color:var(--ds-input-contenterror)]">*</span>
+            <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>
           )}
           {tooltip && (
             <TooltipProvider>
@@ -99,11 +99,11 @@ function InputField({
         {rightDecoration}
       </div>
       {hasError && errorMessage ? (
-        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
           {errorMessage}
         </p>
       ) : description ? (
-        <p className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+        <p className="[color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
           {description}
         </p>
       ) : null}

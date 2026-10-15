@@ -3127,17 +3127,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-15T18:55:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{spacing.component.md}"
+                "reference": "{spacing.component.sm}"
               }
             },
             "variableId": "VariableID:1007:94"
           }
         },
         "$type": "dimension",
-        "$value": "{spacing.component.md}"
+        "$value": "{spacing.component.sm}"
       },
       "size": {
         "lg": {
@@ -3600,6 +3600,23 @@
         },
         "$type": "color",
         "$value": "{color.destructive-muted-foreground}"
+      },
+      "fieldGap": {
+        "$description": "Vertical gap between label row, control and help text in every *Field stack.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:264",
+            "lastSyncedAt": "2026-10-15T20:02:43.459Z",
+            "lastSyncedValue": {
+              "component": {
+                "reference": "{spacing.4}"
+              }
+            },
+            "variableId": "VariableID:4178:16838"
+          }
+        },
+        "$type": "dimension",
+        "$value": "{spacing.4}"
       },
       "fill": {
         "$description": "Input background at rest.",

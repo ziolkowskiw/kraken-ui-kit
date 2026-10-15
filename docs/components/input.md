@@ -38,8 +38,10 @@ Displays a form input field. Use for single-line text entry in forms. Always map
 - `--ds-input-borderwidth`
 - `--ds-input-content`
 - `--ds-input-contenterror`
+- `--ds-input-fieldgap`
 - `--ds-input-fill`
 - `--ds-input-filldisabled`
+- `--ds-input-helper`
 - `--ds-input-placeholder`
 - `--ds-input-size-lg-fontsize`
 - `--ds-input-size-lg-height`
@@ -56,9 +58,9 @@ Displays a form input field. Use for single-line text entry in forms. Always map
 - `--ds-input-value`
 
 **L2 Semantic**
-- `--ds-spacing-component-sm`
-- `--ds-typography-labelsm-fontsize`
-- `--ds-typography-labelsm-lineheight`
+- `--ds-spacing-component-xs`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 
 ## Accessibility
 

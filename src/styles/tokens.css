@@ -902,6 +902,7 @@
   --ds-input-placeholder: var(--ds-color-content-placeholder);
   --ds-input-helper: var(--ds-color-muted-foreground);
   --ds-input-contenterror: var(--ds-color-destructive-muted-foreground);
+  --ds-input-fieldgap: var(--ds-spacing-4);
   --ds-input-size-sm-height: var(--ds-spacing-component-height-md);
   --ds-input-size-sm-paddingx: var(--ds-spacing-component-xs);
   --ds-input-size-sm-fontsize: var(--ds-typography-labelmd-fontsize);
@@ -1032,7 +1033,7 @@
   --ds-checkbox-containerfill: var(--ds-color-background);
   --ds-checkbox-warninghovercolor: var(--ds-color-status-warning-foreground);
   --ds-checkbox-paddingx: var(--ds-spacing-component-md);
-  --ds-checkbox-paddingydefault: var(--ds-spacing-component-md);
+  --ds-checkbox-paddingydefault: var(--ds-spacing-component-sm);
   --ds-checkbox-checkedborder: var(--ds-color-primary);
   --ds-checkbox-cornerradius: var(--ds-radius-sm);
   --ds-checkbox-borderwidth: var(--ds-input-borderwidth);

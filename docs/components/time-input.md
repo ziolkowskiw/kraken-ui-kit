@@ -30,9 +30,9 @@ Time Input component. See MAPPING.md for the full shadcn-aligned description.
 
 **L2 Semantic**
 - `--ds-color-icon-muted`
-- `--ds-spacing-component-sm`
-- `--ds-typography-labelsm-fontsize`
-- `--ds-typography-labelsm-lineheight`
+- `--ds-spacing-component-xs`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 
 **L3 Component**
 - `--ds-input-bordercolor`
@@ -43,8 +43,10 @@ Time Input component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-input-borderwidth`
 - `--ds-input-content`
 - `--ds-input-contenterror`
+- `--ds-input-fieldgap`
 - `--ds-input-fill`
 - `--ds-input-filldisabled`
+- `--ds-input-helper`
 - `--ds-input-placeholder`
 - `--ds-input-size-lg-fontsize`
 - `--ds-input-size-lg-height`

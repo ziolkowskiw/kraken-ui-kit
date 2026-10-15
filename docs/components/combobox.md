@@ -62,9 +62,10 @@ Combobox component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-color-icon-muted`
 - `--ds-color-muted-foreground`
 - `--ds-color-ring`
-- `--ds-spacing-component-sm`
+- `--ds-spacing-component-xs`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 - `--ds-typography-labelsm-fontsize`
-- `--ds-typography-labelsm-lineheight`
 
 **L3 Component**
 - `--ds-input-bordercolor`
@@ -74,8 +75,10 @@ Combobox component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-input-borderwidth`
 - `--ds-input-content`
 - `--ds-input-contenterror`
+- `--ds-input-fieldgap`
 - `--ds-input-fill`
 - `--ds-input-filldisabled`
+- `--ds-input-helper`
 - `--ds-input-placeholder`
 - `--ds-input-size-lg-fontsize`
 - `--ds-input-size-lg-height`
