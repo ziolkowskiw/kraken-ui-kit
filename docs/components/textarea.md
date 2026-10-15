@@ -38,8 +38,10 @@ Displays a form textarea. Use for multi-line text entry (comments, notes). Map t
 - `--ds-input-borderwidth`
 - `--ds-input-content`
 - `--ds-input-contenterror`
+- `--ds-input-fieldgap`
 - `--ds-input-fill`
 - `--ds-input-filldisabled`
+- `--ds-input-helper`
 - `--ds-input-placeholder`
 - `--ds-input-size-lg-fontsize`
 - `--ds-input-size-lg-paddingx`
@@ -53,7 +55,9 @@ Displays a form textarea. Use for multi-line text entry (comments, notes). Map t
 - `--ds-input-value`
 
 **L2 Semantic**
-- `--ds-spacing-component-sm`
+- `--ds-typography-bodymd-lineheight`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 - `--ds-typography-labelsm-fontsize`
 - `--ds-typography-labelsm-lineheight`
 

@@ -17,7 +17,7 @@ stylesheet. Figma is the source of truth for token **decisions**;
 - If the bridge is down, stop and ask the user to open Figma + the bridge — step 1
   cannot run without it. (Step 2 runs anywhere, no Figma needed.)
 
-## Step 1 — Export from Figma (needs the bridge)
+## Step 1 — Export from Figma (using Figma MCP Bridge)
 
 Export **only the three real collections** — `global`, `semantic`, `component`.
 Exclude the docs-only `_preview-labels` collection. Keep aliases intact

@@ -47,21 +47,29 @@ Displays a list of options to pick from, triggered by a button. Use for single-c
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
 - `--ds-shadow-overlay`
-- `--ds-spacing-component-sm`
-- `--ds-typography-labelsm-fontsize`
-- `--ds-typography-labelsm-lineheight`
+- `--ds-spacing-component-xs`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 
 **L3 Component**
 - `--ds-input-borderfocus`
 - `--ds-input-borderhover`
 - `--ds-input-content`
 - `--ds-input-contenterror`
+- `--ds-input-fieldgap`
+- `--ds-input-helper`
 - `--ds-input-placeholder`
 - `--ds-input-size-lg-fontsize`
+- `--ds-input-size-lg-height`
+- `--ds-input-size-lg-paddingx`
 - `--ds-input-size-lg-radius`
 - `--ds-input-size-md-fontsize`
+- `--ds-input-size-md-height`
+- `--ds-input-size-md-paddingx`
 - `--ds-input-size-md-radius`
 - `--ds-input-size-sm-fontsize`
+- `--ds-input-size-sm-height`
+- `--ds-input-size-sm-paddingx`
 - `--ds-input-size-sm-radius`
 - `--ds-select-bordercolor`
 - `--ds-select-borderdisabled`
@@ -69,19 +77,6 @@ Displays a list of options to pick from, triggered by a button. Use for single-c
 - `--ds-select-borderwidth`
 - `--ds-select-fill`
 - `--ds-select-icon`
-- `--ds-select-paddingright`
-- `--ds-select-size-lg-gap`
-- `--ds-select-size-lg-minheight`
-- `--ds-select-size-lg-paddingleft`
-- `--ds-select-size-lg-paddingy`
-- `--ds-select-size-md-gap`
-- `--ds-select-size-md-minheight`
-- `--ds-select-size-md-paddingleft`
-- `--ds-select-size-md-paddingy`
-- `--ds-select-size-sm-gap`
-- `--ds-select-size-sm-minheight`
-- `--ds-select-size-sm-paddingleft`
-- `--ds-select-size-sm-paddingy`
 - `--ds-select-value`
 
 **L1 Primitive / Shared**

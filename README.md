@@ -115,7 +115,7 @@ npx shadcn add @kraken/button    # installs tokenized, brand-switchable
 
 <!-- STATUS:START -->
 
-- ✅ **Token pipeline**: 835 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ brand).
+- ✅ **Token pipeline**: 836 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ brand).
 - ✅ **React kit + Storybook**: 56 components wired to tokens; live brand toggle in showcase and Storybook.
 - ✅ **Figma↔code mapping**: `MAPPING.md` — 47 parent components, node IDs + source links.
 - ✅ **Registry + AI layer**: shadcn registry (60 items), workflow skills, per-component docs, `design.md`.

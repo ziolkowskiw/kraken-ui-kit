@@ -132,7 +132,7 @@ function DatePicker(props: DatePickerProps) {
             data-slot="date-picker-trigger"
             aria-invalid={error || undefined}
             className={cn(
-              "flex w-full items-center gap-2 border text-left transition-colors outline-none",
+              "flex w-full items-center gap-[var(--ds-spacing-component-xs)] border text-left transition-colors outline-none",
               "[border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)]",
               "hover:[border-color:var(--ds-input-borderhover)] focus-visible:[border-color:var(--ds-input-borderfocus)]",
               "aria-invalid:[border-color:var(--ds-input-bordererror)]",
@@ -179,13 +179,13 @@ function DatePickerField({
 }: DatePickerFieldProps) {
   const hasError = error || !!errorMessage
   return (
-    <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
+    <div className={cn("flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start", className)}>
       {label && (
-        <div className="flex items-center gap-1 h-4">
-          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+        <div className="flex items-center gap-1 h-5">
+          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
             {label}
           </span>
-          {mandatory && <span className="[color:var(--ds-input-contenterror)]">*</span>}
+          {mandatory && <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>}
           {tooltip && (
             <TooltipProvider>
               <TooltipIcon content={tooltip} />
@@ -195,11 +195,11 @@ function DatePickerField({
       )}
       <DatePicker error={hasError} {...(props as DatePickerProps)} />
       {hasError && errorMessage ? (
-        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
           {errorMessage}
         </p>
       ) : description ? (
-        <p className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+        <p className="[color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
           {description}
         </p>
       ) : null}

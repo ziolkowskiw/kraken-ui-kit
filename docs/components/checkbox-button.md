@@ -48,14 +48,14 @@ Checkbox Button component. See MAPPING.md for the full shadcn-aligned descriptio
 - `--ds-checkbox-size-sm-minheight`
 - `--ds-input-content`
 - `--ds-input-contenterror`
-- `--ds-input-placeholder`
+- `--ds-input-fieldgap`
+- `--ds-input-helper`
 
 **L2 Semantic**
 - `--ds-color-content-primary`
 - `--ds-color-content-secondary`
 - `--ds-color-content-tertiary`
 - `--ds-color-primary-muted`
-- `--ds-spacing-component-sm`
 - `--ds-typography-labelmd-fontsize`
 - `--ds-typography-labelmd-fontweight`
 - `--ds-typography-labelmd-lineheight`

@@ -134,11 +134,11 @@ function CheckboxButtonGroup({
   // label (above the options); in horizontal it sits at the bottom. (Figma)
   const helpOrError =
     hasError && errorMessage ? (
-      <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+      <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
         {errorMessage}
       </p>
     ) : description ? (
-      <p className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+      <p className="[color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
         {description}
       </p>
     ) : null
@@ -146,7 +146,7 @@ function CheckboxButtonGroup({
   return (
     <div
       className={cn(
-        "flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start",
+        "flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start",
         className,
       )}
       aria-invalid={hasError || undefined}
@@ -154,12 +154,12 @@ function CheckboxButtonGroup({
       {...props}
     >
       {label && (
-        <div className="flex items-center gap-1 h-4">
-          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+        <div className="flex items-center gap-1 h-5">
+          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
             {label}
           </span>
           {mandatory && (
-            <span className="[color:var(--ds-input-contenterror)]">*</span>
+            <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>
           )}
           {tooltip && (
             <TooltipProvider>

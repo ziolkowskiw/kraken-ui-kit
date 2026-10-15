@@ -34,7 +34,7 @@ const selectTriggerVariants = cva(
   [
     "flex w-fit items-center justify-between border-solid transition-colors outline-none select-none",
     "[border-width:var(--ds-select-borderwidth)] [background-color:var(--ds-select-fill)] [border-color:var(--ds-select-bordercolor)]",
-    "[padding-right:var(--ds-select-paddingright)]",
+    "[gap:var(--ds-spacing-component-xs)]",
     "hover:[border-color:var(--ds-input-borderhover)]",
     "focus-visible:[border-color:var(--ds-input-borderfocus)]",
     "disabled:cursor-not-allowed disabled:opacity-50 disabled:[border-color:var(--ds-select-borderdisabled)]",
@@ -46,9 +46,9 @@ const selectTriggerVariants = cva(
   {
     variants: {
       size: {
-        sm: "[min-height:var(--ds-select-size-sm-minheight)] [padding-left:var(--ds-select-size-sm-paddingleft)] [padding-block:var(--ds-select-size-sm-paddingy)] [gap:var(--ds-select-size-sm-gap)] [border-radius:var(--ds-input-size-sm-radius)] [font-size:var(--ds-input-size-sm-fontsize)]",
-        md: "[min-height:var(--ds-select-size-md-minheight)] [padding-left:var(--ds-select-size-md-paddingleft)] [padding-block:var(--ds-select-size-md-paddingy)] [gap:var(--ds-select-size-md-gap)] [border-radius:var(--ds-input-size-md-radius)] [font-size:var(--ds-input-size-md-fontsize)]",
-        lg: "[min-height:var(--ds-select-size-lg-minheight)] [padding-left:var(--ds-select-size-lg-paddingleft)] [padding-block:var(--ds-select-size-lg-paddingy)] [gap:var(--ds-select-size-lg-gap)] [border-radius:var(--ds-input-size-lg-radius)] [font-size:var(--ds-input-size-lg-fontsize)]",
+        sm: "[min-height:var(--ds-input-size-sm-height)] [padding-inline:var(--ds-input-size-sm-paddingx)] [border-radius:var(--ds-input-size-sm-radius)] [font-size:var(--ds-input-size-sm-fontsize)]",
+        md: "[min-height:var(--ds-input-size-md-height)] [padding-inline:var(--ds-input-size-md-paddingx)] [border-radius:var(--ds-input-size-md-radius)] [font-size:var(--ds-input-size-md-fontsize)]",
+        lg: "[min-height:var(--ds-input-size-lg-height)] [padding-inline:var(--ds-input-size-lg-paddingx)] [border-radius:var(--ds-input-size-lg-radius)] [font-size:var(--ds-input-size-lg-fontsize)]",
       },
     },
     defaultVariants: { size: "md" },
@@ -254,14 +254,14 @@ function SelectField({
   const labelId = React.useId()
   const hasError = error || !!errorMessage
   return (
-    <div className={cn("flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start", className)}>
+    <div className={cn("flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start", className)}>
       {label && (
-        <div className="flex items-center gap-1 h-4">
-          <span id={labelId} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+        <div className="flex items-center gap-1 h-5">
+          <span id={labelId} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
             {label}
           </span>
           {mandatory && (
-            <span className="[color:var(--ds-input-contenterror)]">*</span>
+            <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>
           )}
           {tooltip && (
             <TooltipProvider>
@@ -285,11 +285,11 @@ function SelectField({
         </SelectContent>
       </Select>
       {hasError && errorMessage ? (
-        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
           {errorMessage}
         </p>
       ) : description ? (
-        <p className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+        <p className="[color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
           {description}
         </p>
       ) : null}

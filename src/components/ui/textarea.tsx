@@ -8,7 +8,7 @@ const textareaVariants = cva(
   [
     "flex w-full field-sizing-content min-h-16 border transition-colors outline-none",
     "[border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)]",
-    "[color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)]",
+    "[color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)] [line-height:var(--ds-typography-bodymd-lineheight)]",
     "hover:[border-color:var(--ds-input-borderhover)]",
     "focus-visible:[border-color:var(--ds-input-borderfocus)]",
     "disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-input-borderdisabled)] disabled:cursor-not-allowed disabled:opacity-50 disabled:[color:var(--ds-input-placeholder)]",
@@ -84,17 +84,17 @@ function TextareaField({
     </span>
   ) : null
   return (
-    <div className="flex w-full flex-col gap-[var(--ds-spacing-component-sm)] items-start">
+    <div className="flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start">
       {(label || counter) && (
         // Top row: label on the left, character counter pinned to the top-right.
-        <div className="flex w-full items-center gap-1 min-h-4">
+        <div className="flex w-full items-center gap-1 min-h-5">
           {label && (
-            <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)]">
+            <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
               {label}
             </label>
           )}
           {label && mandatory && (
-            <span className="[color:var(--ds-input-contenterror)]">*</span>
+            <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>
           )}
           {label && tooltip && (
             <TooltipProvider>
@@ -120,11 +120,11 @@ function TextareaField({
         }}
       />
       {hasError && errorMessage ? (
-        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
           {errorMessage}
         </p>
       ) : description ? (
-        <p className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] w-full">
+        <p className="[color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
           {description}
         </p>
       ) : null}
