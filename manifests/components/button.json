@@ -119,9 +119,7 @@
       "--ds-button-destructiveghost-borderdisabled",
       "--ds-button-destructiveghost-content",
       "--ds-button-destructiveghost-contentdisabled",
-      "--ds-button-destructiveghost-fill",
       "--ds-button-destructiveghost-fillactive",
-      "--ds-button-destructiveghost-filldisabled",
       "--ds-button-destructiveghost-fillhover",
       "--ds-button-destructivesecondary-border",
       "--ds-button-destructivesecondary-borderdisabled",
@@ -134,7 +132,6 @@
       "--ds-button-ghost-content",
       "--ds-button-ghost-contentdisabled",
       "--ds-button-ghost-fillactive",
-      "--ds-button-ghost-filldisabled",
       "--ds-button-ghost-fillhover",
       "--ds-button-ghost-size-lg-paddingx",
       "--ds-button-ghost-size-md-paddingx",
@@ -184,7 +181,9 @@
       "--ds-button-tonal-filldisabled",
       "--ds-button-tonal-fillhover"
     ],
-    "other": []
+    "other": [
+      "--ds-color-none"
+    ]
   },
   "usage": {
     "do": [
