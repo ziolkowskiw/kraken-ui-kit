@@ -4,7 +4,7 @@
     "contract": "Switching swaps only [data-theme] semantic values; components/apps need zero per-brand code. shadcn vars (--primary, --background, …) are re-pointed at --ds-* in kraken-theme.css, so Tailwind classes theme too. Never hard-code brand values.",
     "default": "jit",
     "values": {
-      "brand": "primary #298EE5 (blue, --ds-color-brand-500), sharp 0px, Noto Sans",
+      "brand": "primary #298EE5 (blue, --ds-color-brand-500), sharp 0px, Noto Sans, compact density (see scales.spacing)",
       "jit": "primary #FFD242 (yellow, --ds-color-jit-400), rounded 6px, Moderat JIT"
     }
   },
@@ -37,7 +37,7 @@
   "scales": {
     "fontSizes": "xs sm md lg xl 2xl…6xl = 12 14 16 20 24 32 40 48 56 72px",
     "radius": "none xs sm md lg xl 2xl 3xl full = 0 2 4 6 8 12 16 24 9999px",
-    "spacing": "px steps 0-256 (0 1 2 3 4 5 6 7 8 10 12 16 20 24 28 32 36 40 44 48 56 64 80 96 128 160 192 256); aliases component-xs…2xl (6→32px), layout-xs…2xl (16→96px)",
+    "spacing": "px steps 0-256 (0 1 2 3 4 5 6 7 8 10 12 16 20 24 28 32 36 40 44 48 56 64 80 96 128 160 192 256); aliases component 2xs…2xl = jit 6 6 8 12 16 24 32 / brand 4 4 6 10 12 20 24px; component-height 2xs…2xl = jit 20 24 28 32 40 48 80 / brand 16 20 24 28 32 40 64px; layout xs…2xl = jit 16 24 32 48 64 96 / brand 12 20 24 32 48 80px",
     "typographyRoles": "display{md,lg,xl,2xl} heading{sm,md,lg,xl} body{xs,sm,md,lg} label{sm,md,lg} link{xs,sm,md,lg} overline"
   },
   "shadcnDivergences": [

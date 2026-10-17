@@ -67,12 +67,12 @@ function InputField({
   return (
     <div className="flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start">
       {label && (
-        <div className="flex items-center gap-1 h-5">
-          <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
+        <div className="flex items-center gap-1 [color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
+          <label htmlFor={id}>
             {label}
           </label>
           {mandatory && (
-            <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>
+            <span className="[color:var(--ds-input-contenterror)]">*</span>
           )}
           {tooltip && (
             <TooltipProvider>

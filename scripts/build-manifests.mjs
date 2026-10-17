@@ -229,6 +229,28 @@ for (const file of files) {
 emit("index.json", indexEntries);
 
 // ── foundations.json — the always-on layer ───────────────────────────────────
+// Semantic spacing aliases are per-brand, so derive the summary from the token
+// modes rather than hand-writing jit-only px values.
+const SIZE_ORDER = ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"];
+const px = (ref) => {
+  const step = ref.match(/^\{spacing\.(\d+)\}$/)?.[1];
+  if (step === undefined) throw new Error(`foundations: unresolvable spacing ref ${ref}`);
+  return step;
+};
+function spacingAliasSummary(label, group) {
+  const sizes = SIZE_ORDER.filter((s) => group[s]?.$value !== undefined);
+  const row = (pick) => sizes.map((s) => px(pick(group[s]))).join(" ");
+  const jit = row((t) => t.$value);
+  const brand = row((t) => t.$extensions?.modes?.brand ?? t.$value);
+  return `${label} ${sizes[0]}…${sizes.at(-1)} = jit ${jit} / brand ${brand}px`;
+}
+const { component: spacingComponent, layout: spacingLayout } = dtcg.semantic.spacing;
+const spacingAliases = [
+  spacingAliasSummary("component", spacingComponent),
+  spacingAliasSummary("component-height", spacingComponent.height),
+  spacingAliasSummary("layout", spacingLayout),
+].join("; ");
+
 const foundations = {
   system:
     "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 2 brands.",
@@ -255,7 +277,7 @@ const foundations = {
     default: "jit",
     values: {
       jit: "primary #FFD242 (yellow, --ds-color-jit-400), rounded 6px, Moderat JIT",
-      brand: "primary #298EE5 (blue, --ds-color-brand-500), sharp 0px, Noto Sans",
+      brand: "primary #298EE5 (blue, --ds-color-brand-500), sharp 0px, Noto Sans, compact density (see scales.spacing)",
     },
     contract:
       "Switching swaps only [data-theme] semantic values; components/apps need zero per-brand code. shadcn vars (--primary, --background, …) are re-pointed at --ds-* in kraken-theme.css, so Tailwind classes theme too. Never hard-code brand values.",
@@ -282,8 +304,7 @@ const foundations = {
     shadcn: clean(d.shadcn),
   })),
   scales: {
-    spacing:
-      "px steps 0-256 (0 1 2 3 4 5 6 7 8 10 12 16 20 24 28 32 36 40 44 48 56 64 80 96 128 160 192 256); aliases component-xs…2xl (6→32px), layout-xs…2xl (16→96px)",
+    spacing: `px steps 0-256 (0 1 2 3 4 5 6 7 8 10 12 16 20 24 28 32 36 40 44 48 56 64 80 96 128 160 192 256); aliases ${spacingAliases}`,
     radius: "none xs sm md lg xl 2xl 3xl full = 0 2 4 6 8 12 16 24 9999px",
     fontSizes: "xs sm md lg xl 2xl…6xl = 12 14 16 20 24 32 40 48 56 72px",
     typographyRoles:

@@ -181,11 +181,9 @@ function DatePickerField({
   return (
     <div className={cn("flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start", className)}>
       {label && (
-        <div className="flex items-center gap-1 h-5">
-          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
-            {label}
-          </span>
-          {mandatory && <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>}
+        <div className="flex items-center gap-1 [color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
+          {label}
+          {mandatory && <span className="[color:var(--ds-input-contenterror)]">*</span>}
           {tooltip && (
             <TooltipProvider>
               <TooltipIcon content={tooltip} />
