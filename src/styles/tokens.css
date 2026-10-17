@@ -1092,7 +1092,7 @@
   --ds-menuitem-destructive-fillhover: var(--ds-color-status-error-bg);
   --ds-menuitem-destructive-fillactive: var(--ds-color-status-error-border);
   --ds-menuitem-destructive-content: var(--ds-color-label-red-default);
-  --ds-card-fill: var(--ds-color-card);
+  --ds-card-fill: var(--ds-color-background);
   --ds-card-border: var(--ds-color-border);
   --ds-card-foreground: var(--ds-color-card-foreground);
   --ds-sidebar-fill: var(--ds-color-sidebar);

@@ -2704,14 +2704,14 @@
             "lastSyncedAt": "2026-06-13T07:49:36.622Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.card}"
+                "reference": "{color.background}"
               }
             },
             "variableId": "VariableID:1949:2"
           }
         },
         "$type": "color",
-        "$value": "{color.card}"
+        "$value": "{color.background}"
       },
       "foreground": {
         "$extensions": {
