@@ -39,7 +39,13 @@ const tabsListVariants = cva(
   {
     variants: {
       variant: {
-        line: "bg-transparent",
+        line: [
+          "bg-transparent",
+          // full-width divider (Figma `card/border`) 2px above the bottom edge, so the 3px active
+          // indicator overlaps it; triggers are positioned later, so they paint over it
+          "group-data-horizontal/tabs:relative group-data-horizontal/tabs:w-full",
+          "group-data-horizontal/tabs:before:absolute group-data-horizontal/tabs:before:inset-x-0 group-data-horizontal/tabs:before:bottom-[var(--ds-spacing-2)] group-data-horizontal/tabs:before:h-px group-data-horizontal/tabs:before:[background-color:var(--ds-card-border)] group-data-horizontal/tabs:before:content-['']",
+        ].join(" "),
         // segmented "badge" control: bordered white container, active tab is a filled pill
         badge:
           "[background-color:var(--ds-color-background)] border [border-color:var(--ds-color-border)] [border-radius:var(--ds-card-radius)] p-[var(--ds-spacing-component-xs)]",
@@ -82,10 +88,17 @@ const tabsTriggerVariants = cva(
     variants: {
       variant: {
         line: [
-          "py-1",
-          // baseline (1px) → active underline (3px), inset to match the label width (Figma)
-          "after:absolute after:inset-x-3 after:bottom-0 after:h-px after:[background-color:var(--ds-color-border)] after:transition-all after:content-['']",
+          "px-[var(--ds-spacing-component-sm)] py-1",
+          // horizontal: 20px label box + 6px below it; top padding depends on depth (compoundVariants),
+          // giving the Figma 31px (depth 1) / 29px (depth 2) tab with the label 8px above the divider
+          "group-data-horizontal/tabs:pb-[var(--ds-spacing-6)]",
+          // underline (1px → 3px active), inset to match the label width (Figma)
+          "after:absolute after:inset-x-[var(--ds-spacing-component-sm)] after:bottom-0 after:h-px after:[background-color:var(--ds-color-border)] after:transition-all after:content-['']",
           "data-active:after:h-[3px] data-active:after:[background-color:var(--ds-color-foreground)]",
+          // horizontal: the list divider is the baseline, so rest shows no mark, hover draws a 1px mark on
+          // the divider row (2px up), and the active indicator sits flush at the bottom, top edge on the divider
+          "group-data-horizontal/tabs:after:bottom-[var(--ds-spacing-2)] group-data-horizontal/tabs:after:[background-color:var(--ds-color-foreground)] group-data-horizontal/tabs:after:opacity-0 group-data-horizontal/tabs:hover:after:opacity-100",
+          "group-data-horizontal/tabs:data-active:after:bottom-0 group-data-horizontal/tabs:data-active:after:opacity-100",
           // vertical: indicator runs down the right edge instead
           "group-data-vertical/tabs:after:inset-x-auto group-data-vertical/tabs:after:inset-y-1 group-data-vertical/tabs:after:right-0 group-data-vertical/tabs:after:left-auto group-data-vertical/tabs:after:h-auto group-data-vertical/tabs:after:w-px",
           "group-data-vertical/tabs:data-active:after:h-auto group-data-vertical/tabs:data-active:after:w-[3px]",
@@ -100,6 +113,10 @@ const tabsTriggerVariants = cva(
         2: "[font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] [font-weight:var(--ds-typography-labelmd-fontweight)]",
       },
     },
+    compoundVariants: [
+      { variant: "line", depth: 1, class: "group-data-horizontal/tabs:pt-[var(--ds-spacing-5)]" },
+      { variant: "line", depth: 2, class: "group-data-horizontal/tabs:pt-[var(--ds-spacing-3)]" },
+    ],
     defaultVariants: { variant: "line", depth: 1 },
   }
 )

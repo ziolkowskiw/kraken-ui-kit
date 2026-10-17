@@ -25,6 +25,7 @@ Layered sections of content displayed one at a time. Use to switch between relat
 ## Token map
 
 **L3 Component**
+- `--ds-card-border`
 - `--ds-card-radius`
 
 **L2 Semantic**
@@ -36,6 +37,11 @@ Layered sections of content displayed one at a time. Use to switch between relat
 - `--ds-color-status-neutral-bg`
 - `--ds-color-status-neutral-border`
 - `--ds-radius-lg`
+- `--ds-spacing-2`
+- `--ds-spacing-3`
+- `--ds-spacing-5`
+- `--ds-spacing-6`
+- `--ds-spacing-component-sm`
 - `--ds-spacing-component-xs`
 - `--ds-typography-labellg-fontsize`
 - `--ds-typography-labellg-fontweight`
