@@ -89,9 +89,10 @@ const tabsTriggerVariants = cva(
       variant: {
         line: [
           "px-[var(--ds-spacing-component-sm)] py-1",
-          // horizontal: 20px label box + 6px below it; top padding depends on depth (compoundVariants),
-          // giving the Figma 31px (depth 1) / 29px (depth 2) tab with the label 8px above the divider
-          "group-data-horizontal/tabs:pb-[var(--ds-spacing-6)]",
+          // horizontal: 20px label box + 10px below it (8px clear gap to the bar, which is 2px up + 1px thick /
+          // 3px active); top padding depends on depth (compoundVariants), giving a 36px (depth 1) / 34px
+          // (depth 2) tab — Figma's 35/29 snapped to the spacing grid (no 5px/3px steps)
+          "group-data-horizontal/tabs:pb-[var(--ds-spacing-10)]",
           // underline (1px → 3px active), inset to match the label width (Figma)
           "after:absolute after:inset-x-[var(--ds-spacing-component-sm)] after:bottom-0 after:h-px after:[background-color:var(--ds-color-border)] after:transition-all after:content-['']",
           "data-active:after:h-[3px] data-active:after:[background-color:var(--ds-color-foreground)]",
@@ -114,8 +115,8 @@ const tabsTriggerVariants = cva(
       },
     },
     compoundVariants: [
-      { variant: "line", depth: 1, class: "group-data-horizontal/tabs:pt-[var(--ds-spacing-5)]" },
-      { variant: "line", depth: 2, class: "group-data-horizontal/tabs:pt-[var(--ds-spacing-3)]" },
+      { variant: "line", depth: 1, class: "group-data-horizontal/tabs:pt-[var(--ds-spacing-6)]" },
+      { variant: "line", depth: 2, class: "group-data-horizontal/tabs:pt-[var(--ds-spacing-4)]" },
     ],
     defaultVariants: { variant: "line", depth: 1 },
   }

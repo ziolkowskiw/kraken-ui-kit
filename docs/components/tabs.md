@@ -37,9 +37,9 @@ Layered sections of content displayed one at a time. Use to switch between relat
 - `--ds-color-status-neutral-bg`
 - `--ds-color-status-neutral-border`
 - `--ds-radius-lg`
+- `--ds-spacing-10`
 - `--ds-spacing-2`
-- `--ds-spacing-3`
-- `--ds-spacing-5`
+- `--ds-spacing-4`
 - `--ds-spacing-6`
 - `--ds-spacing-component-sm`
 - `--ds-spacing-component-xs`

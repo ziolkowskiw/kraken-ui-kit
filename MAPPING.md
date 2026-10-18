@@ -274,7 +274,7 @@ Legacy `Menu`×2 is now distinct — match on **node ID**, not name:
 
 2026-07-11 — JIT DS 2.1 hygiene rename: tabs set 2248:18598 is the composed bar (maps to `tabs.tsx`); 1825:18415 renamed `tabs/trigger` (sub-part).
 
-2026-10-18 — tabs `line` spacing synced to Figma: 8px horizontal padding (`spacing/component/sm`), full-width bottom divider (`card/border`) 2px above the bottom edge, hover mark on the divider row, 3px active indicator flush at the bottom (31px depth 1 / 29px depth 2 tabs).
+2026-10-18 — tabs `line` spacing synced to Figma: 8px horizontal padding (`spacing/component/sm`), full-width bottom divider (`card/border`) 2px above the bottom edge, hover mark on the divider row, 3px active indicator flush at the bottom (Figma 35px depth 1 / 29px depth 2 with an 8px label-to-bar gap, snapped to the spacing grid as 36px / 34px tabs; label-to-bar gap bound to `spacing/8`).
 
 ---
 

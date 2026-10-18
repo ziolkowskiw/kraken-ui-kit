@@ -248,7 +248,6 @@
   --ds-spacing-0: 0px;
   --ds-spacing-1: 1px;
   --ds-spacing-2: 2px;
-  --ds-spacing-3: 3px;
   --ds-spacing-4: 4px;
   --ds-spacing-6: 6px;
   --ds-spacing-8: 8px;
@@ -298,10 +297,6 @@
   --ds-fontweight-semibold: 600;
   --ds-fontweight-extrabold: 800;
   --ds-fontweight-black: 900;
-  --ds-spacing-5: 5px;
-  --ds-spacing-7: 7px;
-  --ds-spacing-36: 36px;
-  --ds-spacing-44: 44px;
   --ds-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --ds-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --ds-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -1062,9 +1057,9 @@
   --ds-select-size-md-paddingleft: var(--ds-spacing-component-md);
   --ds-select-size-lg-paddingleft: var(--ds-spacing-component-lg);
   --ds-select-paddingright: var(--ds-spacing-component-xs);
-  --ds-select-size-sm-paddingy: 5.5px;
-  --ds-select-size-md-paddingy: 7.5px;
-  --ds-select-size-lg-paddingy: 9.5px;
+  --ds-select-size-sm-paddingy: var(--ds-spacing-6);
+  --ds-select-size-md-paddingy: var(--ds-spacing-8);
+  --ds-select-size-lg-paddingy: var(--ds-spacing-10);
   --ds-select-size-sm-gap: var(--ds-spacing-component-2xs);
   --ds-select-size-md-gap: var(--ds-spacing-component-xs);
   --ds-select-size-lg-gap: var(--ds-spacing-component-md);

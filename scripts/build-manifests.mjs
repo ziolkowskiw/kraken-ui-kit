@@ -304,7 +304,7 @@ const foundations = {
     shadcn: clean(d.shadcn),
   })),
   scales: {
-    spacing: `px steps 0-256 (0 1 2 3 4 5 6 7 8 10 12 16 20 24 28 32 36 40 44 48 56 64 80 96 128 160 192 256); aliases ${spacingAliases}`,
+    spacing: `px steps 0-256 (0 1 2 4 6 8 10 12 16 20 24 28 32 40 48 56 64 80 96 128 160 192 256); aliases ${spacingAliases}`,
     radius: "none xs sm md lg xl 2xl 3xl full = 0 2 4 6 8 12 16 24 9999px",
     fontSizes: "xs sm md lg xl 2xl…6xl = 12 14 16 20 24 32 40 48 56 72px",
     typographyRoles:
