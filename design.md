@@ -58,7 +58,7 @@ Layer 3  --ds-button-primary-fill   ─►  Layer 2  --ds-color-primary   ─►
 
 ### Scales (Layer 1)
 
-- **Spacing** — px-named steps: `0 1 2 3 4 5 6 7 8 10 12 16 20 24 28 32 36 40 44 48 56 64 80 96 128 160 192 256`.
+- **Spacing** — px-named steps: `0 1 2 4 6 8 10 12 16 20 24 28 32 40 48 56 64 80 96 128 160 192 256` (4px grid; 1–2 are hairline steps, 6 and 10 are the half-steps the semantic layer is built on).
   Semantic aliases: `component-xs…2xl` (6→32px), `layout-xs…2xl` (16→96px).
 - **Radius** — `none xs sm md lg xl 2xl 3xl full` (0, 2, 4, 6, 8, 12, 16, 24, 9999px).
 - **Font sizes** — `xs…6xl` (12, 14, 16, 20, 24, 32, 40, 48, 56, 72px); line heights `xs…3xl` (16→56px).

@@ -101,7 +101,7 @@ function TableHeaderDecoration({
 
 const tableHeaderVariants = cva(
   [
-    "group/th relative flex h-8 flex-1 items-center gap-1 px-2 py-[7px] whitespace-nowrap select-none",
+    "group/th relative flex h-8 flex-1 items-center gap-1 px-2 py-2 whitespace-nowrap select-none",
     "[font-size:var(--ds-typography-labellg-fontsize)] [font-weight:var(--ds-typography-labellg-fontweight)] [line-height:var(--ds-typography-labellg-lineheight)]",
     "[color:var(--ds-color-content-primary)]",
     "[background-color:var(--ds-color-muted)]",

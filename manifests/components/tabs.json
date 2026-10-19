@@ -97,6 +97,7 @@
   "title": "Tabs",
   "tokens": {
     "layer3": [
+      "--ds-card-border",
       "--ds-card-radius"
     ],
     "other": [
@@ -108,6 +109,11 @@
       "--ds-color-status-neutral-bg",
       "--ds-color-status-neutral-border",
       "--ds-radius-lg",
+      "--ds-spacing-10",
+      "--ds-spacing-2",
+      "--ds-spacing-4",
+      "--ds-spacing-6",
+      "--ds-spacing-component-sm",
       "--ds-spacing-component-xs",
       "--ds-typography-labellg-fontsize",
       "--ds-typography-labellg-fontweight",
@@ -140,7 +146,21 @@
           "badge"
         ]
       }
-    }
+    },
+    "compound": [
+      {
+        "when": {
+          "depth": "1",
+          "variant": "line"
+        }
+      },
+      {
+        "when": {
+          "depth": "2",
+          "variant": "line"
+        }
+      }
+    ]
   },
   "whenToUseInstead": [
     {

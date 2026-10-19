@@ -6,9 +6,10 @@ description: Sync design tokens from the Figma JIT DS 2.1 file into the repo and
 # token-sync — Figma variables → tokens.json → CSS
 
 The single ritual that pulls token changes out of Figma and regenerates the
-stylesheet. Figma is the source of truth for token **decisions**;
-`tokens/tokens.dtcg.json` is the canonical machine artifact. Full background:
-`docs/token-pipeline.md`. **Never hand-edit any token CSS.**
+stylesheet. `tokens/tokens.dtcg.json` is the **source of truth**; Figma is the
+visual editor for it. This ritual is how a visual edit lands in the token files,
+so treat the export as a proposed change to be reviewed, not as authoritative.
+Full background: `docs/token-pipeline.md`. **Never hand-edit any token CSS.**
 
 ## Preconditions
 
@@ -28,6 +29,11 @@ Exclude the docs-only `_preview-labels` collection. Keep aliases intact
 
 Use the `figma_export_tokens` MCP tool for both. Verify the two files changed and
 still contain the brand modes (`jit`, `brand`) before continuing.
+
+**Review the diff** (`git diff tokens/`) before building. Every changed token
+should be one the user actually edited in Figma; unexpected changes (reverted
+values, a changed alias/shadow format) mean the export is stale or Figma has
+drifted from the files — stop and ask rather than overwriting the source of truth.
 
 ## Step 2 — Build the final CSS (no Figma; CI-safe)
 

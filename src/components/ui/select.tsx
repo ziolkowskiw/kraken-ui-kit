@@ -32,15 +32,14 @@ function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
 
 const selectTriggerVariants = cva(
   [
-    "flex w-fit items-center justify-between border-solid transition-colors outline-none select-none",
+    "flex w-fit items-center justify-between gap-[var(--ds-spacing-component-xs)] border-solid transition-colors outline-none select-none",
     "[border-width:var(--ds-select-borderwidth)] [background-color:var(--ds-select-fill)] [border-color:var(--ds-select-bordercolor)]",
-    "[gap:var(--ds-spacing-component-xs)]",
     "hover:[border-color:var(--ds-input-borderhover)]",
     "focus-visible:[border-color:var(--ds-input-borderfocus)]",
     "disabled:cursor-not-allowed disabled:opacity-50 disabled:[border-color:var(--ds-select-borderdisabled)]",
     "aria-invalid:[border-color:var(--ds-select-bordererror)]",
     "data-placeholder:[color:var(--ds-input-placeholder)]",
-    "*:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5",
+    "*:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-[var(--ds-spacing-component-xs)]",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",
   ].join(" "),
   {
@@ -256,12 +255,12 @@ function SelectField({
   return (
     <div className={cn("flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start", className)}>
       {label && (
-        <div className="flex items-center gap-1 h-5">
-          <span id={labelId} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
+        <div className="flex items-center gap-1 [color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
+          <span id={labelId}>
             {label}
           </span>
           {mandatory && (
-            <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>
+            <span className="[color:var(--ds-input-contenterror)]">*</span>
           )}
           {tooltip && (
             <TooltipProvider>

@@ -79,7 +79,7 @@ function TextareaField({
     if (value !== undefined) setCharCount(String(value).length)
   }, [value])
   const counter = showCounter && maxLength ? (
-    <span className="[color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] tabular-nums shrink-0">
+    <span className="ml-auto [color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] tabular-nums shrink-0">
       {charCount}/{maxLength}
     </span>
   ) : null
@@ -87,21 +87,23 @@ function TextareaField({
     <div className="flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start">
       {(label || counter) && (
         // Top row: label on the left, character counter pinned to the top-right.
-        <div className="flex w-full items-center gap-1 min-h-5">
+        <div className="flex w-full items-center gap-1 min-h-[1lh] [color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
           {label && (
-            <label htmlFor={id} className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
-              {label}
-            </label>
+            <>
+              <label htmlFor={id}>
+                {label}
+              </label>
+              {mandatory && (
+                <span className="[color:var(--ds-input-contenterror)]">*</span>
+              )}
+              {tooltip && (
+                <TooltipProvider>
+                  <TooltipIcon content={tooltip} />
+                </TooltipProvider>
+              )}
+            </>
           )}
-          {label && mandatory && (
-            <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>
-          )}
-          {label && tooltip && (
-            <TooltipProvider>
-              <TooltipIcon content={tooltip} />
-            </TooltipProvider>
-          )}
-          {counter && <span className="ml-auto">{counter}</span>}
+          {counter}
         </div>
       )}
       <textarea

@@ -154,12 +154,10 @@ function CheckboxButtonGroup({
       {...props}
     >
       {label && (
-        <div className="flex items-center gap-1 h-5">
-          <span className="[color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
-            {label}
-          </span>
+        <div className="flex items-center gap-1 [color:var(--ds-input-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">
+          {label}
           {mandatory && (
-            <span className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]">*</span>
+            <span className="[color:var(--ds-input-contenterror)]">*</span>
           )}
           {tooltip && (
             <TooltipProvider>

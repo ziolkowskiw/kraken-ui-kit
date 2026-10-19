@@ -34,9 +34,7 @@ Displays a button or a component that looks like a button. Use for primary actio
 - `--ds-button-destructiveghost-borderdisabled`
 - `--ds-button-destructiveghost-content`
 - `--ds-button-destructiveghost-contentdisabled`
-- `--ds-button-destructiveghost-fill`
 - `--ds-button-destructiveghost-fillactive`
-- `--ds-button-destructiveghost-filldisabled`
 - `--ds-button-destructiveghost-fillhover`
 - `--ds-button-destructivesecondary-border`
 - `--ds-button-destructivesecondary-borderdisabled`
@@ -49,7 +47,6 @@ Displays a button or a component that looks like a button. Use for primary actio
 - `--ds-button-ghost-content`
 - `--ds-button-ghost-contentdisabled`
 - `--ds-button-ghost-fillactive`
-- `--ds-button-ghost-filldisabled`
 - `--ds-button-ghost-fillhover`
 - `--ds-button-ghost-size-lg-paddingx`
 - `--ds-button-ghost-size-md-paddingx`
@@ -98,6 +95,9 @@ Displays a button or a component that looks like a button. Use for primary actio
 - `--ds-button-tonal-fillactive`
 - `--ds-button-tonal-filldisabled`
 - `--ds-button-tonal-fillhover`
+
+**L2 Semantic**
+- `--ds-color-none`
 
 ## Accessibility
 

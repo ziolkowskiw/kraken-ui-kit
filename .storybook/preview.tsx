@@ -6,7 +6,7 @@ import "../src/app/globals.css";
 
 const preview: Preview = {
   // Two live "change the semantic layer" switches in the toolbar:
-  //  • brand       — swaps the semantic brand tokens (jit ⇄ brand) via [data-theme]
+  //  • brand       — swaps the semantic brand tokens (jit ⇄ brand ⇄ acme) via [data-theme]
   //  • colorScheme — toggles the .dark token block (light ⇄ dark)
   initialGlobals: { brand: "jit", colorScheme: "light" },
   globalTypes: {
@@ -18,6 +18,7 @@ const preview: Preview = {
         items: [
           { value: "jit", title: "JIT — yellow, rounded" },
           { value: "brand", title: "Brand — blue, sharp" },
+          { value: "acme", title: "Acme — lime, spacious" },
         ],
         dynamicTitle: true,
       },
@@ -39,8 +40,8 @@ const preview: Preview = {
     (Story, context) => {
       if (typeof document !== "undefined") {
         const el = document.documentElement;
-        // Brand: jit is the :root default (no attribute); brand is the override.
-        if (context.globals.brand === "brand") el.dataset.theme = "brand";
+        // Brand: jit is the :root default (no attribute); every other brand is an override.
+        if (context.globals.brand !== "jit") el.dataset.theme = context.globals.brand;
         else delete el.dataset.theme;
         // Color scheme: toggle the `.dark` token block on <html>.
         el.classList.toggle("dark", context.globals.colorScheme === "dark");

@@ -1,29 +1,35 @@
 # Token pipeline — Figma → JSON → CSS
 
-Plain-language guide to how design tokens get from Figma into code. You (designer)
-make changes in Figma; this pipeline turns them into the CSS the components use.
-**You never hand-edit the CSS.**
+Plain-language guide to how design tokens get from Figma into code. The token files
+in `tokens/` are the **source of truth**; Figma is the **visual editor** for them.
+You (designer) make changes in Figma, the sync lands them in the token files (where
+you can review the diff), and this pipeline turns the files into the CSS the
+components use. **You never hand-edit the CSS.**
 
 ## The three files
 
-| File                      | What it is                                                                                                                                               | Edited by                              |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| `tokens/tokens.dtcg.json` | The **canonical** token data — every variable, its layer, value, and alias chain, in the industry-standard W3C DTCG format. The source of truth in code. | Figma export (never by hand)           |
-| `tokens/tokens.raw.css`   | The raw CSS export from the Figma plugin — correct values, but one block per Figma collection-mode. An intermediate.                                     | Figma export (never by hand)           |
-| `src/styles/tokens.css`   | The **final** stylesheet the app imports. Correct `:root` / brand-theme structure.                                                                       | `npm run tokens:build` (never by hand) |
+| File                      | What it is                                                                                                                                           | Edited by                                       |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `tokens/tokens.dtcg.json` | The **canonical** token data — every variable, its layer, value, and alias chain, in the industry-standard W3C DTCG format. **The source of truth.** | Figma sync, reviewed as a diff before it's kept |
+| `tokens/tokens.raw.css`   | The raw CSS export from the Figma plugin — correct values, but one block per Figma collection-mode. An intermediate.                                 | Figma sync (never by hand)                      |
+| `src/styles/tokens.css`   | The **final** stylesheet the app imports. Correct `:root` / brand-theme structure.                                                                   | `npm run tokens:build` (never by hand)          |
 
 ## The two steps
 
 ### 1. Sync from Figma (needs the Figma desktop bridge running)
 
+Figma is the visual editor, so this is how a visual edit lands in the token files.
+Review the diff of `tokens.dtcg.json` before keeping it — once committed, the file
+(not Figma) is the reference, and `drift-audit` measures Figma against it.
+
 Done with Claude + the Figma Console MCP. Claude runs two exports against the live
-`JIT DS 2.0` file, writing **only the three real collections** (`global`, `semantic`,
+`JIT DS 2.1` file, writing **only the three real collections** (`global`, `semantic`,
 `component`) — the `_preview-labels` collection is docs-only and excluded:
 
 - `tokens.dtcg.json` — canonical JSON, **aliases preserved** (`resolveAliases: false`).
 - `tokens.raw.css` — css-vars, aliases preserved, `--ds-` prefix.
 
-(This becomes the `token-sync` Claude skill — see the project plan, Phase 7.)
+(This is the `token-sync` Claude skill.)
 
 ### 2. Build the final CSS (no Figma needed — runs anywhere, incl. CI)
 
