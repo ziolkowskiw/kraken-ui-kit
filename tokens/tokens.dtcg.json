@@ -3568,21 +3568,21 @@
         "$value": "{borderWidth.sm}"
       },
       "content": {
-        "$description": "Floating or static label text colour.",
+        "$description": "Field label text colour (secondary). Value text uses input/value.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
             "lastSyncedAt": "2026-06-13T07:49:36.622Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.surface-foreground}"
+                "reference": "{color.content.secondary}"
               }
             },
             "variableId": "VariableID:68:920"
           }
         },
         "$type": "color",
-        "$value": "{color.surface-foreground}"
+        "$value": "{color.content.secondary}"
       },
       "contentError": {
         "$description": "Inline error message text colour.",
