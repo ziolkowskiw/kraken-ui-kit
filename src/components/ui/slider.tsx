@@ -51,8 +51,8 @@ function Slider({
           data-slot="slider-track"
           className={cn(
             "relative grow overflow-hidden [border-radius:var(--ds-radius-full)] [background-color:var(--ds-color-muted)]",
-            "data-[orientation=horizontal]:[height:var(--ds-spacing-2)] data-[orientation=horizontal]:w-full",
-            "data-[orientation=vertical]:[width:var(--ds-spacing-2)] data-[orientation=vertical]:h-full"
+            "data-[orientation=horizontal]:[height:var(--ds-spacing-6)] data-[orientation=horizontal]:w-full",
+            "data-[orientation=vertical]:[width:var(--ds-spacing-6)] data-[orientation=vertical]:h-full"
           )}
         >
           <SliderPrimitive.Indicator
@@ -66,8 +66,9 @@ function Slider({
             data-slot="slider-thumb"
             aria-label={thumbCount > 1 ? (i === 0 ? "Minimum value" : "Maximum value") : "Value"}
             className={cn(
-              "block size-4 shrink-0 border-2 outline-none transition-[box-shadow]",
-              "[border-radius:var(--ds-radius-full)] [border-color:var(--ds-color-primary)] [background-color:var(--ds-color-white)]",
+              // Figma slider/marker: 14px white disc with a 1px foreground ring
+              "block size-3.5 shrink-0 border outline-none transition-[box-shadow]",
+              "[border-radius:var(--ds-radius-full)] [border-color:var(--ds-color-foreground)] [background-color:var(--ds-color-background)]",
               "hover:ring-4 hover:ring-ring/20",
               "focus-visible:ring-4 focus-visible:ring-ring/50",
               "data-disabled:pointer-events-none data-disabled:opacity-50"

@@ -26,13 +26,14 @@ A set of checkable buttons where only one can be checked at a time. Use to choos
 
 ## Token map
 
-**L2 Semantic**
-- `--ds-color-border-focus`
-- `--ds-color-primary-foreground`
-- `--ds-typography-labelmd-fontsize`
-- `--ds-typography-labelmd-lineheight`
-
 **L3 Component**
+- `--ds-button-primary-filldisabled`
+- `--ds-checkbox-checked`
+- `--ds-checkbox-checkedborder`
+- `--ds-checkbox-checkeddisabled`
+- `--ds-checkbox-containerfill`
+- `--ds-checkbox-fill`
+- `--ds-checkbox-filldisabled`
 - `--ds-input-content`
 - `--ds-input-contenterror`
 - `--ds-input-fieldgap`
@@ -41,9 +42,12 @@ A set of checkable buttons where only one can be checked at a time. Use to choos
 - `--ds-radio-bordererror`
 - `--ds-radio-borderhover`
 - `--ds-radio-borderwidth`
-- `--ds-radio-fill`
-- `--ds-radio-fillerror`
-- `--ds-radio-indicator`
+
+**L2 Semantic**
+- `--ds-color-border-focus`
+- `--ds-spacing-4`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 
 ## Accessibility
 

@@ -8,9 +8,9 @@ const meta = {
   parameters: { layout: 'centered', docs: { description: { component: 'A set of two-state buttons that can be toggled on or off; segmented / multi-toggle controls.' } } },
   tags: ['autodocs'],
   argTypes: {
-    skin: { control: 'inline-radio', options: ['outlined', 'ghost'] },
-    size: { control: 'inline-radio', options: ['xs', 'sm', 'md', 'lg'] },
-    orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'] },
+    skin: { control: 'select', options: ['outlined', 'ghost'], name: 'Skin' },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'], name: 'Size' },
+    orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'], name: 'Orientation' },
     disabled: { control: 'boolean' },
   },
   args: { skin: 'outlined', size: 'md', orientation: 'horizontal' },

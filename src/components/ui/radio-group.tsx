@@ -28,13 +28,16 @@ function RadioGroupItem({ className, error, ...props }: RadioGroupItemProps) {
       data-error={error || undefined}
       className={cn(
         "group/radio peer relative flex aspect-square size-4 shrink-0 rounded-full border-solid outline-none transition-colors",
-        "[border-width:var(--ds-radio-borderwidth)] [background-color:var(--ds-radio-fill)] [border-color:var(--ds-radio-bordercolor)]",
+        // Figma radio-group/item (1084:8168): a white disc with a coloured ring + 8px
+        // dot when checked — the disc itself is never filled.
+        "[border-width:var(--ds-radio-borderwidth)] [background-color:var(--ds-checkbox-containerfill)] [border-color:var(--ds-radio-bordercolor)]",
         "hover:[border-color:var(--ds-radio-borderhover)]",
         "focus-visible:shadow-[0px_0px_0px_3px_var(--ds-color-border-focus)]",
-        "disabled:cursor-not-allowed disabled:opacity-50",
-        "data-checked:[border-color:var(--ds-radio-indicator)] data-checked:[background-color:var(--ds-radio-indicator)] data-checked:text-[var(--ds-color-primary-foreground)]",
-        "data-[error]:[border-color:var(--ds-radio-bordererror)]",
-        "data-[error]:data-checked:[background-color:var(--ds-radio-fillerror)] data-[error]:data-checked:[border-color:var(--ds-radio-fillerror)]",
+        // Base UI renders the root as a <span>: disabled is data-disabled, not :disabled.
+        "data-disabled:cursor-not-allowed data-disabled:opacity-50 data-disabled:[background-color:var(--ds-checkbox-filldisabled)]",
+        "data-checked:[border-color:var(--ds-checkbox-checkedborder)] data-checked:text-[var(--ds-checkbox-checked)]",
+        "data-checked:data-disabled:opacity-30 data-checked:data-disabled:[background-color:var(--ds-button-primary-filldisabled)] data-checked:data-disabled:[border-color:var(--ds-checkbox-checkeddisabled)] data-checked:data-disabled:text-[var(--ds-checkbox-checkeddisabled)]",
+        "data-[error]:[background-color:var(--ds-checkbox-fill)] data-[error]:[border-color:var(--ds-radio-bordererror)] data-[error]:data-checked:text-[var(--ds-radio-bordererror)]",
         className
       )}
       {...props}
@@ -74,6 +77,17 @@ function RadioGroupField({
 }: RadioGroupFieldProps) {
   const labelId = React.useId()
   const hasError = error || !!errorMessage
+  const isVertical = direction === "vertical"
+  const helpOrError =
+    hasError && errorMessage ? (
+      <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
+        {errorMessage}
+      </p>
+    ) : description ? (
+      <p className="[color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
+        {description}
+      </p>
+    ) : null
   return (
     <div className={cn("flex w-full flex-col gap-[var(--ds-input-fieldgap)] items-start", className)}>
       {label && (
@@ -91,27 +105,20 @@ function RadioGroupField({
           )}
         </div>
       )}
+      {isVertical && helpOrError}
       <RadioGroupPrimitive
         data-slot="radio-group"
         aria-invalid={hasError || undefined}
         aria-labelledby={label ? labelId : undefined}
         className={cn(
-          "grid w-full gap-2",
-          direction === "horizontal" ? "grid-flow-col auto-cols-fr" : "grid-flow-row",
+          "flex w-full gap-[var(--ds-spacing-4)]",
+          isVertical ? "flex-col" : "flex-row flex-wrap",
         )}
         {...props}
       >
         {children}
       </RadioGroupPrimitive>
-      {hasError && errorMessage ? (
-        <p className="[color:var(--ds-input-contenterror)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
-          {errorMessage}
-        </p>
-      ) : description ? (
-        <p className="[color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
-          {description}
-        </p>
-      ) : null}
+      {!isVertical && helpOrError}
     </div>
   )
 }

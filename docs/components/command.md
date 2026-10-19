@@ -32,19 +32,30 @@ Command component. See MAPPING.md for the full shadcn-aligned description.
 
 ## Token map
 
+**L3 Component**
+- `--ds-card-radius`
+- `--ds-input-bordercolor`
+- `--ds-input-borderfocus`
+- `--ds-input-borderwidth`
+- `--ds-input-fill`
+- `--ds-input-placeholder`
+- `--ds-input-size-md-fontsize`
+- `--ds-input-size-md-height`
+- `--ds-input-size-md-paddingx`
+- `--ds-input-size-md-radius`
+- `--ds-input-value`
+
 **L2 Semantic**
 - `--ds-color-border`
 - `--ds-color-content-tertiary`
-- `--ds-color-icon-muted`
+- `--ds-color-foreground`
 - `--ds-color-muted-foreground`
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
-- `--ds-radius-lg`
+- `--ds-spacing-8`
+- `--ds-spacing-component-sm`
+- `--ds-spacing-component-xs`
 - `--ds-typography-labelsm-fontsize`
-
-**L3 Component**
-- `--ds-input-placeholder`
-- `--ds-input-value`
 
 ## Accessibility
 

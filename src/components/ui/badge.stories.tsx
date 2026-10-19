@@ -8,6 +8,7 @@ const COLORS = ['neutral', 'brand', 'green', 'red', 'orange', 'amber', 'blue', '
 const APPEARANCES = ['filled', 'outlined', 'ghost'] as const
 
 type StoryProps = React.ComponentProps<typeof Badge> & {
+  hasBorder?: boolean
   leftIconName?: IconName
   rightIconName?: IconName
 }
@@ -18,10 +19,13 @@ const meta = {
   parameters: { layout: 'centered', docs: { description: { component: 'displays a badge or a component that looks like a badge; label/categorize items or show counts/status' } } },
   tags: ['autodocs'],
   argTypes: {
-    color: { control: 'select', options: COLORS },
-    appearance: { control: 'select', options: APPEARANCES },
-    size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
-    shape: { control: 'inline-radio', options: ['round', 'square'] },
+    children: { control: 'text', name: 'Label' },
+    color: { control: 'select', options: COLORS, name: 'Color' },
+    appearance: { control: 'select', options: APPEARANCES, name: 'Appearance' },
+    size: { control: 'select', options: ['sm', 'md', 'lg'], name: 'Size' },
+    shape: { control: 'select', options: ['round', 'square'], name: 'Shape' },
+    // Figma `has border` — no prop; the story clears the border colour.
+    hasBorder: { control: 'boolean', name: 'has border' },
     leftIconName: iconArgType('Left icon'),
     rightIconName: iconArgType('Right icon'),
     // hide the raw ReactNode props from the controls table
@@ -29,17 +33,19 @@ const meta = {
     rightIcon: { table: { disable: true } },
   },
   args: {
-    children: 'Badge',
-    color: 'amber',
+    children: 'Status label',
+    color: 'neutral',
+    hasBorder: true,
     appearance: 'filled',
     size: 'md',
     shape: 'round',
     leftIconName: 'none',
     rightIconName: 'none',
   },
-  render: ({ leftIconName, rightIconName, ...args }: StoryProps) => (
+  render: ({ hasBorder, leftIconName, rightIconName, ...args }: StoryProps) => (
     <Badge
       {...args}
+      className={hasBorder ? undefined : '[border-color:transparent]'}
       leftIcon={renderIcon(leftIconName)}
       rightIcon={renderIcon(rightIconName)}
     />

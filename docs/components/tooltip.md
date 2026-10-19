@@ -22,10 +22,11 @@ All props are passed through to the underlying Base UI / HTML element.
 ## Token map
 
 **L2 Semantic**
-- `--ds-color-foreground`
 - `--ds-color-inverse`
 - `--ds-color-inverse-foreground`
-- `--ds-color-muted-foreground`
+
+**L3 Component**
+- `--ds-input-helper`
 
 **L1 Primitive / Shared**
 - `--ds-tooltip-fontsize`

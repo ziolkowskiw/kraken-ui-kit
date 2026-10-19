@@ -6,14 +6,16 @@
   ],
   "aliases": [],
   "boundaries": [],
-  "description": "Pagination with page navigation, next and previous links; page through long lists/tables. Pagination/Content/Item/Link/Previous/Next/Ellipsis.",
+  "description": "Pagination with page navigation, next and previous links; page through long lists/tables. Pagination/Content/Item/Link/First/Previous/Next/Last/Ellipsis.",
   "exports": [
     "Pagination",
     "PaginationContent",
     "PaginationItem",
     "PaginationLink",
+    "PaginationFirst",
     "PaginationPrevious",
     "PaginationNext",
+    "PaginationLast",
     "PaginationEllipsis"
   ],
   "figma": {
@@ -46,8 +48,10 @@
       "PaginationContent",
       "PaginationItem",
       "PaginationLink",
+      "PaginationFirst",
       "PaginationPrevious",
       "PaginationNext",
+      "PaginationLast",
       "PaginationEllipsis"
     ],
     "figmaParts": []
@@ -56,10 +60,12 @@
   "story": "src/components/ui/pagination.stories.tsx",
   "title": "Pagination",
   "tokens": {
-    "layer3": [],
-    "other": [
-      "--ds-color-content-tertiary"
-    ]
+    "layer3": [
+      "--ds-button-ghost-content",
+      "--ds-button-ghost-fillactive",
+      "--ds-button-size-xs-height"
+    ],
+    "other": []
   },
   "usage": {
     "do": [],

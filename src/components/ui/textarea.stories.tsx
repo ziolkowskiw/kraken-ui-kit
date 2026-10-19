@@ -5,6 +5,8 @@ const STATES = ['rest', 'error', 'disabled'] as const
 
 type TextareaFieldStoryProps = React.ComponentProps<typeof TextareaField> & {
   state: 'rest' | 'error' | 'disabled'
+  showLabel?: boolean
+  showHelpText?: boolean
   hasTooltip?: boolean
   tooltipText?: string
 }
@@ -17,17 +19,21 @@ const meta = {
   argTypes: {
     state: { control: 'select', options: STATES, name: 'State' },
     label: { control: 'text', name: 'Label' },
+    defaultValue: { control: 'text', name: 'Value' },
     description: { control: 'text', name: 'Help text' },
     errorMessage: { control: 'text', name: 'Error message' },
     placeholder: { control: 'text', name: 'Placeholder' },
+    showLabel: { control: 'boolean', name: 'Show label' },
+    showHelpText: { control: 'boolean', name: 'Show help text' },
     mandatory: { control: 'boolean', name: 'Mandatory field' },
-    hasTooltip: { control: 'boolean', name: 'hasTooltip', table: { category: 'Nested: Tooltip' } },
+    hasTooltip: { control: 'boolean', name: 'Show info tooltip', table: { category: 'Nested: Tooltip' } },
     tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Nested: Tooltip' }, if: { arg: 'hasTooltip' } },
     tooltip: { table: { disable: true } },
     showCounter: { control: 'boolean', name: 'Show counter' },
     maxLength: { control: 'number', name: 'Max length', if: { arg: 'showCounter' } },
     error: { table: { disable: true } },
     disabled: { table: { disable: true } },
+    id: { table: { disable: true } },
   },
   args: {
     state: 'rest',
@@ -35,16 +41,23 @@ const meta = {
     description: 'Help text',
     errorMessage: 'Error message',
     placeholder: 'Placeholder',
+    defaultValue: '',
+    showLabel: true,
+    showHelpText: true,
     mandatory: false,
     hasTooltip: true,
     tooltipText: 'Extra context for this field.',
-    showCounter: true,
+    showCounter: false,
     maxLength: 200,
   },
-  render: ({ state, errorMessage, hasTooltip, tooltipText, ...args }: TextareaFieldStoryProps) => (
+  render: ({ state, label, description, showLabel, showHelpText, errorMessage, hasTooltip, tooltipText, ...args }: TextareaFieldStoryProps) => (
     <TextareaField
+      // Remount when Value changes so the uncontrolled textarea picks it up.
+      key={String(args.defaultValue)}
       {...args}
-      tooltip={hasTooltip ? tooltipText : undefined}
+      label={showLabel ? label : undefined}
+      description={showHelpText ? description : undefined}
+      tooltip={showLabel && hasTooltip ? tooltipText : undefined}
       error={state === 'error'}
       errorMessage={state === 'error' ? errorMessage : undefined}
       disabled={state === 'disabled'}
@@ -61,8 +74,12 @@ export const Playground: Story = {}
 
 export const Default: Story = {}
 
+export const Filled: Story = {
+  args: { defaultValue: 'Text area value' },
+}
+
 export const WithError: Story = {
-  args: { state: 'error' },
+  args: { state: 'error', defaultValue: 'Text area value' },
 }
 
 export const Disabled: Story = {
@@ -78,5 +95,5 @@ export const WithCounter: Story = {
 }
 
 export const NoLabel: Story = {
-  args: { label: undefined },
+  args: { showLabel: false },
 }

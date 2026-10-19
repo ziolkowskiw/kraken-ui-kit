@@ -12,7 +12,8 @@ function Empty({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="empty"
       className={cn(
-        "flex w-full flex-col items-center justify-center gap-6 text-center [padding-block:var(--ds-spacing-component-2xl)] [padding-inline:var(--ds-spacing-component-xl)]",
+        // Figma `empty` (1686:7468): a muted surface, xl padding, lg gap.
+        "flex w-full flex-col items-center justify-center text-center [gap:var(--ds-spacing-component-lg)] [padding:var(--ds-spacing-component-xl)] [border-radius:var(--ds-button-size-md-radius)] [background-color:var(--ds-color-muted)]",
         className
       )}
       {...props}
@@ -35,7 +36,7 @@ const emptyMediaVariants = cva(
   {
     variants: {
       variant: {
-        icon: "size-12 [border-radius:var(--ds-radius-lg)] [background-color:var(--ds-color-muted)] [color:var(--ds-color-icon-default)] [&_svg]:size-6",
+        icon: "size-10 [padding:var(--ds-spacing-component-sm)] [border-radius:var(--ds-button-size-sm-radius)] [background-color:var(--ds-color-border)] [color:var(--ds-color-content-primary)] [&_svg]:size-6",
         default: "[color:var(--ds-color-icon-muted)] [&_svg]:size-8",
       },
     },
@@ -62,7 +63,7 @@ function EmptyTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="empty-title"
       className={cn(
-        "[color:var(--ds-color-content-primary)] [font-family:var(--ds-typography-headingmd-fontfamily)] [font-size:var(--ds-typography-headingmd-fontsize)] [font-weight:var(--ds-typography-headingmd-fontweight)] [line-height:var(--ds-typography-headingmd-lineheight)]",
+        "[color:var(--ds-color-content-primary)] [font-family:var(--ds-typography-headinglg-fontfamily)] [font-size:var(--ds-typography-headinglg-fontsize)] [font-weight:var(--ds-typography-headinglg-fontweight)] [line-height:var(--ds-typography-headinglg-lineheight)]",
         className
       )}
       {...props}
@@ -75,7 +76,7 @@ function EmptyDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="empty-description"
       className={cn(
-        "[color:var(--ds-color-content-secondary)] [font-family:var(--ds-typography-bodymd-fontfamily)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)]",
+        "[color:var(--ds-color-content-primary)] [font-family:var(--ds-typography-bodymd-fontfamily)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)]",
         className
       )}
       {...props}
@@ -87,7 +88,7 @@ function EmptyContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="empty-content"
-      className={cn("flex flex-wrap items-center justify-center gap-3", className)}
+      className={cn("flex flex-wrap items-center justify-center [gap:var(--ds-spacing-component-md)]", className)}
       {...props}
     />
   )

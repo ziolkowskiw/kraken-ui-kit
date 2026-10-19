@@ -27,7 +27,8 @@ function Command({
       <div
         data-slot="command"
         className={cn(
-          "flex w-full flex-col overflow-hidden [border-radius:var(--ds-radius-lg)] border [border-color:var(--ds-color-border)] [background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
+          // Figma: 8px inset, card radius, sm gap between the search field and the list.
+          "flex w-full flex-col overflow-hidden [padding:var(--ds-spacing-8)] [gap:var(--ds-spacing-component-sm)] [border-radius:var(--ds-card-radius)] border [border-color:var(--ds-color-border)] [background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
           className
         )}
       >
@@ -39,12 +40,16 @@ function Command({
 
 function CommandInput({ className, ...props }: AutocompletePrimitive.Input.Props) {
   return (
-    <div data-slot="command-input-wrapper" className="flex items-center gap-2 border-b [border-color:var(--ds-color-border)] px-3">
-      <SearchIcon className="size-4 shrink-0 [color:var(--ds-color-icon-muted)]" />
+    // Figma embeds the `search` field (input md): bordered, input radius + height.
+    <div
+      data-slot="command-input-wrapper"
+      className="flex shrink-0 items-center gap-[var(--ds-spacing-component-xs)] border [border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)] [height:var(--ds-input-size-md-height)] [padding-inline:var(--ds-input-size-md-paddingx)] [border-radius:var(--ds-input-size-md-radius)] focus-within:[border-color:var(--ds-input-borderfocus)]"
+    >
+      <SearchIcon className="size-4 shrink-0 [color:var(--ds-color-foreground)]" />
       <AutocompletePrimitive.Input
         data-slot="command-input"
         className={cn(
-          "flex h-11 w-full bg-transparent text-sm outline-none [color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)] disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-full w-full bg-transparent [font-size:var(--ds-input-size-md-fontsize)] outline-none [color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)] disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
         {...props}
@@ -60,7 +65,7 @@ function CommandList({ className, ...props }: AutocompletePrimitive.List.Props) 
       data-slot="command-list"
       aria-label="Commands"
       tabIndex={0}
-      className={cn("max-h-72 scroll-py-1 overflow-x-hidden overflow-y-auto p-1", className)}
+      className={cn("max-h-72 scroll-py-1 overflow-x-hidden overflow-y-auto", className)}
       {...props}
     />
   )
@@ -70,14 +75,14 @@ function CommandEmpty({ className, ...props }: AutocompletePrimitive.Empty.Props
   return (
     <AutocompletePrimitive.Empty
       data-slot="command-empty"
-      className={cn("py-6 text-center text-sm [color:var(--ds-color-content-tertiary)]", className)}
+      className={cn("py-6 text-center text-sm [color:var(--ds-color-content-tertiary)] empty:hidden", className)}
       {...props}
     />
   )
 }
 
 function CommandGroup({ className, ...props }: AutocompletePrimitive.Group.Props) {
-  return <AutocompletePrimitive.Group data-slot="command-group" className={cn("p-1", className)} {...props} />
+  return <AutocompletePrimitive.Group data-slot="command-group" className={cn(className)} {...props} />
 }
 
 function CommandGroupLabel({ className, ...props }: AutocompletePrimitive.GroupLabel.Props) {

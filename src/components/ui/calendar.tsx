@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { DayPicker, getDefaultClassNames, type DayButton } from "react-day-picker"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -57,13 +57,18 @@ function Calendar({
         months: "relative flex flex-col gap-4 sm:flex-row",
         month: "flex w-full flex-col gap-4",
         month_caption: "flex h-9 items-center justify-center px-9",
-        caption_label: "text-sm font-medium [color:var(--ds-color-content-primary)]",
+        // Figma: plain caption is tertiary; dropdown captions (captionLayout="dropdown*")
+        // read as ghost-button text with a chevron-down, the native <select> overlaid.
+        caption_label: "inline-flex items-center gap-1 [font-size:var(--ds-typography-labelmd-fontsize)] [color:var(--ds-color-content-tertiary)]",
+        dropdowns: "flex items-center gap-2 [font-size:var(--ds-typography-labelmd-fontsize)] [color:var(--ds-color-content-tertiary)]",
+        dropdown_root: "relative inline-flex items-center [&>span]:[color:var(--ds-button-ghost-content)]",
+        dropdown: "absolute inset-0 cursor-pointer opacity-0",
         nav: "absolute inset-x-0 top-0 flex items-center justify-between px-1",
         button_previous: navButton,
         button_next: navButton,
         month_grid: "w-full border-collapse",
         weekdays: "flex",
-        weekday: "w-8 text-center text-xs font-normal [color:var(--ds-color-content-tertiary)]",
+        weekday: "w-8 text-center [font-size:var(--ds-typography-labelsm-fontsize)] font-normal [color:var(--ds-color-content-secondary)]",
         week: "mt-2 flex w-full",
         day: "relative size-8 p-0 text-center text-sm",
         day_button:
@@ -71,7 +76,7 @@ function Calendar({
         selected:
           "[&>button]:[background-color:var(--ds-button-primary-fill)] [&>button]:[color:var(--ds-button-primary-content)] [&>button]:hover:[background-color:var(--ds-button-primary-fillhover)]",
         today: "[&>button]:border [&>button]:[border-color:var(--ds-color-border-strong)]",
-        outside: "[&>button]:[color:var(--ds-color-content-disabled)] [&>button]:opacity-50",
+        outside: "[&>button]:[color:var(--ds-color-content-tertiary)]",
         disabled: "[&>button]:opacity-50 [&>button]:pointer-events-none [&>button]:[color:var(--ds-button-ghost-contentdisabled)]",
         range_start: "[&>button]:rounded-l-[var(--ds-radius-sm)] [&>button]:rounded-r-none",
         range_end: "[&>button]:rounded-r-[var(--ds-radius-sm)] [&>button]:rounded-l-none",
@@ -84,6 +89,8 @@ function Calendar({
         Chevron: ({ orientation, className: cl }) =>
           orientation === "left" ? (
             <ChevronLeft className={cn("size-4", cl)} />
+          ) : orientation === "down" ? (
+            <ChevronDown className={cn("size-3.5", cl)} />
           ) : (
             <ChevronRight className={cn("size-4", cl)} />
           ),

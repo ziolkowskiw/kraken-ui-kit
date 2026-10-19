@@ -20,6 +20,7 @@ const renderIcon = (name?: IconName): React.ReactNode => {
 }
 
 type StoryProps = {
+  expanded?: boolean
   type?: 'single' | 'multiple'
   variant?: (typeof VARIANTS)[number]
   title?: string
@@ -47,6 +48,7 @@ const meta = {
       name: 'Type',
     },
     variant: { control: 'select', options: VARIANTS, name: 'Variant' },
+    expanded: { control: 'boolean', name: 'Expanded' },
     compact: { control: 'boolean', name: 'Compact' },
     title: { control: 'text', name: 'Title' },
     hasSubtitle: { control: 'boolean', name: 'hasSubtitle' },
@@ -90,6 +92,7 @@ const meta = {
   args: {
     type: 'single',
     variant: 'in-box',
+    expanded: true,
     compact: false,
     title: 'Accordion title',
     hasSubtitle: true,
@@ -104,6 +107,7 @@ const meta = {
     linkButtonLabel: 'Learn more',
   },
   render: ({
+    expanded,
     type,
     variant,
     compact,
@@ -118,7 +122,7 @@ const meta = {
     hasLinkButton,
     linkButtonLabel,
   }: StoryProps) => (
-    <Accordion type={type} className="w-[510px]" defaultValue={[0]}>
+    <Accordion key={String(expanded)} type={type} className="w-[510px]" defaultValue={expanded ? [0] : []}>
       <AccordionItem variant={variant}>
         <AccordionTrigger
           title={title}

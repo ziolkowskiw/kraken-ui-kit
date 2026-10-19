@@ -61,9 +61,10 @@
   "title": "Toggle",
   "tokens": {
     "layer3": [
+      "--ds-button-ghost-content",
+      "--ds-button-ghost-fillhover",
       "--ds-button-secondary-border",
       "--ds-button-secondary-content",
-      "--ds-button-secondary-fillactive",
       "--ds-button-secondary-fillhover",
       "--ds-button-size-lg-fontsize",
       "--ds-button-size-lg-height",

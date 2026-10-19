@@ -69,9 +69,11 @@
   "title": "Toggle Group",
   "tokens": {
     "layer3": [
+      "--ds-button-ghost-fill",
+      "--ds-button-primary-fill",
+      "--ds-button-primary-fillhover",
       "--ds-button-secondary-border",
       "--ds-button-secondary-content",
-      "--ds-button-secondary-fillactive",
       "--ds-button-secondary-fillhover",
       "--ds-button-size-lg-fontsize",
       "--ds-button-size-lg-height",
@@ -91,7 +93,8 @@
       "--ds-button-size-xs-radius"
     ],
     "other": [
-      "--ds-color-border-focus"
+      "--ds-color-border-focus",
+      "--ds-color-primary-foreground"
     ]
   },
   "usage": {

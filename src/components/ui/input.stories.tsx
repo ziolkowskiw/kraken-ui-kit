@@ -16,6 +16,8 @@ const STATES = ['rest', 'error', 'disabled'] as const
 
 type FieldStoryProps = React.ComponentProps<typeof InputField> & {
   state: 'rest' | 'error' | 'disabled'
+  showLabel?: boolean
+  showDescription?: boolean
   leftIconName?: IconName
   rightIconName?: IconName
   hasTooltip?: boolean
@@ -31,11 +33,14 @@ const meta = {
     state: { control: 'select', options: STATES, name: 'State' },
     size: { control: 'select', options: SIZES, name: 'Size' },
     label: { control: 'text', name: 'Label' },
+    defaultValue: { control: 'text', name: 'Value' },
     description: { control: 'text', name: 'Description' },
     errorMessage: { control: 'text', name: 'Error message' },
     placeholder: { control: 'text', name: 'Placeholder' },
+    showLabel: { control: 'boolean', name: 'Show label' },
+    showDescription: { control: 'boolean', name: 'Show description' },
     mandatory: { control: 'boolean', name: 'Mandatory field' },
-    hasTooltip: { control: 'boolean', name: 'hasTooltip', table: { category: 'Nested: Tooltip' } },
+    hasTooltip: { control: 'boolean', name: 'Show info tooltip', table: { category: 'Nested: Tooltip' } },
     tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Nested: Tooltip' }, if: { arg: 'hasTooltip' } },
     tooltip: { table: { disable: true } },
     leftIconName: { control: 'select', options: ICON_OPTIONS, name: 'Left decoration' },
@@ -48,20 +53,27 @@ const meta = {
   args: {
     state: 'rest',
     size: 'md',
-    label: 'Name',
+    label: 'Label',
+    defaultValue: '',
     placeholder: 'Placeholder',
     description: 'Help text',
     errorMessage: 'Error message',
+    showLabel: true,
+    showDescription: true,
     mandatory: false,
     hasTooltip: true,
     tooltipText: 'Extra context for this field.',
     leftIconName: 'none',
     rightIconName: 'none',
   },
-  render: ({ state, leftIconName, rightIconName, errorMessage, hasTooltip, tooltipText, ...args }: FieldStoryProps) => (
+  render: ({ state, label, description, showLabel, showDescription, leftIconName, rightIconName, errorMessage, hasTooltip, tooltipText, ...args }: FieldStoryProps) => (
     <InputField
+      // Remount when Value changes so the uncontrolled input picks it up.
+      key={String(args.defaultValue)}
       {...args}
-      tooltip={hasTooltip ? tooltipText : undefined}
+      label={showLabel ? label : undefined}
+      description={showDescription ? description : undefined}
+      tooltip={showLabel && hasTooltip ? tooltipText : undefined}
       error={state === 'error'}
       errorMessage={state === 'error' ? errorMessage : undefined}
       disabled={state === 'disabled'}
@@ -80,12 +92,16 @@ export const Playground: Story = {}
 
 export const Default: Story = {}
 
+export const Filled: Story = {
+  args: { defaultValue: 'Text field value' },
+}
+
 export const WithError: Story = {
-  args: { state: 'error', mandatory: true },
+  args: { state: 'error', mandatory: true, defaultValue: 'Text field value' },
 }
 
 export const Disabled: Story = {
-  args: { state: 'disabled' },
+  args: { state: 'disabled', defaultValue: 'Text field value' },
 }
 
 export const Small: Story = {

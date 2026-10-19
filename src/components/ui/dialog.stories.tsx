@@ -24,6 +24,7 @@ const BUTTON_VARIANTS = [
 ] as const
 
 type DialogStoryProps = {
+  type: 'desktop' | 'desktop scrollable'
   titleLabel: string
   subtitleText: string
   hasSubtitle: boolean
@@ -43,7 +44,8 @@ const meta = {
   parameters: { layout: 'centered', docs: { description: { component: 'a window overlaid on the primary window, content underneath inert; focused tasks/forms needing confirmation' } } },
   tags: ['autodocs'],
   argTypes: {
-    // ── Content ──
+    // ── Content ── (Figma Type=desktop|desktop scrollable)
+    type: { control: 'select', options: ['desktop', 'desktop scrollable'], name: 'Type', table: { category: 'Content' } },
     hasTitle: { control: 'boolean', name: 'hasTitle', table: { category: 'Content' } },
     titleLabel: { control: 'text', name: 'Title', table: { category: 'Content' }, if: { arg: 'hasTitle' } },
     hasSubtitle: { control: 'boolean', name: 'hasSubtitle', table: { category: 'Content' } },
@@ -58,6 +60,7 @@ const meta = {
     confirmVariant: { control: 'select', options: BUTTON_VARIANTS, name: 'Confirm variant', table: { category: 'Nested: Footer' } },
   },
   args: {
+    type: 'desktop',
     titleLabel: 'Title',
     subtitleText: 'This is supporting text',
     hasTitle: true,
@@ -70,6 +73,7 @@ const meta = {
     confirmVariant: 'primary',
   },
   render: ({
+    type,
     titleLabel,
     subtitleText,
     hasTitle,
@@ -90,6 +94,16 @@ const meta = {
             <DialogDescription>{subtitleText}</DialogDescription>
           )}
         </DialogHeader>
+        {type === 'desktop scrollable' && (
+          // Scrollable body between the fixed header and footer.
+          <div className="max-h-64 overflow-y-auto [color:var(--ds-color-content-primary)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)]">
+            {Array.from({ length: 8 }, (_, i) => (
+              <p key={i} className="mb-3">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
+              </p>
+            ))}
+          </div>
+        )}
         <DialogFooter>
           <DialogClose render={<Button variant="secondary">{cancelLabel}</Button>} />
           <DialogClose render={<Button variant={confirmVariant}>{confirmLabel}</Button>} />

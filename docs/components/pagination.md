@@ -12,8 +12,10 @@ Pagination component. See MAPPING.md for the full shadcn-aligned description.
 - `PaginationContent`
 - `PaginationItem`
 - `PaginationLink`
+- `PaginationFirst`
 - `PaginationPrevious`
 - `PaginationNext`
+- `PaginationLast`
 - `PaginationEllipsis`
 
 ## Props
@@ -25,8 +27,10 @@ Pagination component. See MAPPING.md for the full shadcn-aligned description.
 
 ## Token map
 
-**L2 Semantic**
-- `--ds-color-content-tertiary`
+**L3 Component**
+- `--ds-button-ghost-content`
+- `--ds-button-ghost-fillactive`
+- `--ds-button-size-xs-height`
 
 ## Accessibility
 

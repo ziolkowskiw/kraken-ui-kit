@@ -21,15 +21,15 @@ Progress component. See MAPPING.md for the full shadcn-aligned description.
 ## Token map
 
 **L2 Semantic**
-- `--ds-color-content-secondary`
 - `--ds-color-muted`
 - `--ds-color-primary`
 - `--ds-radius-full`
-- `--ds-spacing-2`
-- `--ds-spacing-component-sm`
-- `--ds-typography-labelsm-fontfamily`
-- `--ds-typography-labelsm-fontsize`
-- `--ds-typography-labelsm-lineheight`
+- `--ds-spacing-12`
+- `--ds-typography-bodymd-fontsize`
+- `--ds-typography-labellg-lineheight`
+
+**L3 Component**
+- `--ds-input-value`
 
 ## Accessibility
 

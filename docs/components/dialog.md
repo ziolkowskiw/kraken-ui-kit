@@ -28,14 +28,24 @@ A window overlaid on the primary window, rendering content underneath inert. Use
 
 ## Token map
 
+**L3 Component**
+- `--ds-button-secondary-border`
+
 **L2 Semantic**
+- `--ds-color-background`
 - `--ds-color-border`
-- `--ds-color-muted`
-- `--ds-color-muted-foreground`
+- `--ds-color-content-primary`
+- `--ds-color-content-secondary`
 - `--ds-color-overlay`
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
 - `--ds-radius-xl`
+- `--ds-typography-bodysm-fontsize`
+- `--ds-typography-bodysm-lineheight`
+- `--ds-typography-headingmd-fontfamily`
+- `--ds-typography-headingmd-fontsize`
+- `--ds-typography-headingmd-fontweight`
+- `--ds-typography-headingmd-lineheight`
 
 ## Accessibility
 

@@ -1154,7 +1154,7 @@
   --ds-input-bordererror: var(--ds-color-destructive);
   --ds-input-borderdisabled: var(--ds-color-border);
   --ds-input-borderwidth: var(--ds-borderwidth-sm);
-  --ds-input-content: var(--ds-color-surface-foreground);
+  --ds-input-content: var(--ds-color-content-secondary);
   --ds-input-value: var(--ds-color-foreground);
   --ds-input-placeholder: var(--ds-color-content-placeholder);
   --ds-input-helper: var(--ds-color-muted-foreground);

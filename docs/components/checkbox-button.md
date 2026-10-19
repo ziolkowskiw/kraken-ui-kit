@@ -40,7 +40,9 @@ Checkbox Button component. See MAPPING.md for the full shadcn-aligned descriptio
 - `--ds-checkbox-checkeddisabled`
 - `--ds-checkbox-containerfill`
 - `--ds-checkbox-containerradius`
+- `--ds-checkbox-filldisabled`
 - `--ds-checkbox-fillhover`
+- `--ds-checkbox-focusringerror`
 - `--ds-checkbox-gap`
 - `--ds-checkbox-paddingx`
 - `--ds-checkbox-size-lg-minheight`
@@ -56,6 +58,7 @@ Checkbox Button component. See MAPPING.md for the full shadcn-aligned descriptio
 - `--ds-color-content-secondary`
 - `--ds-color-content-tertiary`
 - `--ds-color-primary-muted`
+- `--ds-spacing-4`
 - `--ds-typography-labelmd-fontsize`
 - `--ds-typography-labelmd-fontweight`
 - `--ds-typography-labelmd-lineheight`

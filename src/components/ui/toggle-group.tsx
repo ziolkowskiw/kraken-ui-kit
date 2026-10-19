@@ -21,8 +21,9 @@ const toggleGroupItemVariants = cva(
   [
     "inline-flex shrink-0 select-none items-center justify-center gap-2 whitespace-nowrap border transition-colors outline-none cursor-pointer",
     "[color:var(--ds-button-secondary-content)]",
-    "hover:[background-color:var(--ds-button-secondary-fillhover)]",
-    "data-[pressed]:[background-color:var(--ds-button-secondary-fillactive)] data-[pressed]:z-10",
+    "[background-color:var(--ds-button-ghost-fill)] hover:[background-color:var(--ds-button-secondary-fillhover)]",
+    // Figma Selected=true: primary fill + primary-foreground content
+    "data-[pressed]:[background-color:var(--ds-button-primary-fill)] data-[pressed]:[color:var(--ds-color-primary-foreground)] data-[pressed]:hover:[background-color:var(--ds-button-primary-fillhover)] data-[pressed]:z-10",
     "focus-visible:z-10 focus-visible:[border-color:var(--ds-color-border-focus)] focus-visible:ring-[3px] focus-visible:ring-ring/50",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",

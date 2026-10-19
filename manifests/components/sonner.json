@@ -57,30 +57,29 @@
   "story": "src/components/ui/sonner.stories.tsx",
   "title": "Sonner",
   "tokens": {
-    "layer3": [],
+    "layer3": [
+      "--ds-alert-padding",
+      "--ds-alert-radius",
+      "--ds-badge-green-border",
+      "--ds-badge-green-fill",
+      "--ds-badge-orange-border",
+      "--ds-badge-orange-fill",
+      "--ds-badge-red-border",
+      "--ds-badge-red-fill"
+    ],
     "other": [
-      "--ds-color-border",
+      "--ds-color-background",
       "--ds-color-content-primary",
       "--ds-color-content-secondary",
       "--ds-color-content-tertiary",
-      "--ds-color-popover",
-      "--ds-color-status-error-border",
-      "--ds-color-status-error-icon",
-      "--ds-color-status-info-border",
-      "--ds-color-status-info-icon",
-      "--ds-color-status-success-border",
-      "--ds-color-status-success-icon",
-      "--ds-color-status-warning-border",
-      "--ds-color-status-warning-icon",
-      "--ds-radius-lg",
-      "--ds-shadow-overlay",
+      "--ds-color-status-neutral-border",
+      "--ds-spacing-8",
+      "--ds-typography-bodymd-fontfamily",
+      "--ds-typography-bodymd-fontsize",
       "--ds-typography-bodysm-fontfamily",
       "--ds-typography-bodysm-fontsize",
       "--ds-typography-bodysm-lineheight",
-      "--ds-typography-labelmd-fontfamily",
-      "--ds-typography-labelmd-fontsize",
-      "--ds-typography-labelmd-fontweight",
-      "--ds-typography-labelmd-lineheight"
+      "--ds-typography-labellg-lineheight"
     ]
   },
   "usage": {

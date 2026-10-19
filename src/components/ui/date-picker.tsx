@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon, CircleAlert } from "lucide-react"
 import type { DateRange } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
@@ -136,23 +136,24 @@ function DatePicker(props: DatePickerProps) {
               "[border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)]",
               "hover:[border-color:var(--ds-input-borderhover)] focus-visible:[border-color:var(--ds-input-borderfocus)]",
               "aria-invalid:[border-color:var(--ds-input-bordererror)]",
-              "disabled:cursor-not-allowed disabled:opacity-50",
+              "disabled:cursor-not-allowed disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-input-borderdisabled)]",
               SIZE_CLASS[size],
               className
             )}
           />
         }
       >
-        <CalendarIcon className="size-4 shrink-0 [color:var(--ds-color-icon-muted)]" />
-        <span className={cn("flex-1 truncate", hasValue ? "[color:var(--ds-input-value)]" : "[color:var(--ds-input-placeholder)]")}>
+        <CalendarIcon className="size-4 shrink-0 [color:var(--ds-input-value)] in-disabled:[color:var(--ds-color-content-disabled-strong)]" />
+        <span className={cn("flex-1 truncate", hasValue && !disabled ? "[color:var(--ds-input-value)]" : "[color:var(--ds-input-placeholder)]")}>
           {label}
         </span>
+        {error && <CircleAlert className="size-4 shrink-0 [color:var(--ds-input-bordererror)]" />}
       </PopoverTrigger>
       <PopoverContent align="start" className="w-auto p-0">
         {isRange ? (
-          <Calendar mode="range" selected={selectedRange} onSelect={setRange} autoFocus />
+          <Calendar mode="range" selected={selectedRange} onSelect={setRange} defaultMonth={selectedRange?.from} autoFocus />
         ) : (
-          <Calendar mode="single" selected={selectedSingle} onSelect={setSingle} autoFocus />
+          <Calendar mode="single" selected={selectedSingle} onSelect={setSingle} defaultMonth={selectedSingle} autoFocus />
         )}
       </PopoverContent>
     </Popover>

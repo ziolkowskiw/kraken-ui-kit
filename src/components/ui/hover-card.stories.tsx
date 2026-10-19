@@ -12,7 +12,9 @@ import { LinkButton } from './link'
 
 type StoryProps = {
   triggerLabel: string
+  hasTitle: boolean
   title: string
+  hasCopy: boolean
   copy: string
   meta: string
   side?: 'top' | 'right' | 'bottom' | 'left'
@@ -27,27 +29,32 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     triggerLabel: { control: 'text', name: 'Label', table: { category: 'Nested: Trigger' } },
-    title: { control: 'text', name: 'Title', table: { category: 'Content' } },
-    copy: { control: 'text', name: 'Body', table: { category: 'Content' } },
+    hasTitle: { control: 'boolean', name: 'hasTitle', table: { category: 'Content' } },
+    title: { control: 'text', name: 'Title', table: { category: 'Content' }, if: { arg: 'hasTitle' } },
+    hasCopy: { control: 'boolean', name: 'hasCopy', table: { category: 'Content' } },
+    copy: { control: 'text', name: 'Copy', table: { category: 'Content' }, if: { arg: 'hasCopy' } },
     meta: { control: 'text', name: 'Meta line', table: { category: 'Content' } },
     side: { control: 'inline-radio', options: ['top', 'right', 'bottom', 'left'], table: { category: 'Position' } },
     align: { control: 'inline-radio', options: ['start', 'center', 'end'], table: { category: 'Position' } },
   },
   args: {
     triggerLabel: '@kraken',
+    hasTitle: true,
     title: 'Kraken UI Kit',
+    hasCopy: true,
     copy: 'A shadcn-based design system with a 3-layer token architecture and brand theming.',
-    meta: 'Joined June 2026',
+    // Not part of the Figma card — leave empty to match the design.
+    meta: '',
     side: 'bottom',
     align: 'center',
   },
-  render: ({ triggerLabel, title, copy, meta, side, align }) => (
+  render: ({ triggerLabel, hasTitle, title, hasCopy, copy, meta, side, align }) => (
     <HoverCard>
       <HoverCardTrigger render={<LinkButton>{triggerLabel}</LinkButton>} />
       <HoverCardContent side={side} align={align}>
         <div className="flex flex-col gap-2">
-          <HoverCardTitle>{title}</HoverCardTitle>
-          <HoverCardCopy>{copy}</HoverCardCopy>
+          {hasTitle && <HoverCardTitle>{title}</HoverCardTitle>}
+          {hasCopy && <HoverCardCopy>{copy}</HoverCardCopy>}
           {meta && (
             <div className="flex items-center gap-2 pt-1 [color:var(--ds-color-content-tertiary)] [font-size:var(--ds-typography-bodyxs-fontsize)]">
               <CalendarDays className="size-3.5" />

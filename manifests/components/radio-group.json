@@ -84,6 +84,13 @@
   "title": "Radio Group",
   "tokens": {
     "layer3": [
+      "--ds-button-primary-filldisabled",
+      "--ds-checkbox-checked",
+      "--ds-checkbox-checkedborder",
+      "--ds-checkbox-checkeddisabled",
+      "--ds-checkbox-containerfill",
+      "--ds-checkbox-fill",
+      "--ds-checkbox-filldisabled",
       "--ds-input-content",
       "--ds-input-contenterror",
       "--ds-input-fieldgap",
@@ -91,14 +98,11 @@
       "--ds-radio-bordercolor",
       "--ds-radio-bordererror",
       "--ds-radio-borderhover",
-      "--ds-radio-borderwidth",
-      "--ds-radio-fill",
-      "--ds-radio-fillerror",
-      "--ds-radio-indicator"
+      "--ds-radio-borderwidth"
     ],
     "other": [
       "--ds-color-border-focus",
-      "--ds-color-primary-foreground",
+      "--ds-spacing-4",
       "--ds-typography-labelmd-fontsize",
       "--ds-typography-labelmd-lineheight"
     ]

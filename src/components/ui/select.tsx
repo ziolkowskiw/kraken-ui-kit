@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 import { TooltipIcon, TooltipProvider } from "./tooltip"
-import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react"
+import { ChevronDownIcon, CheckIcon, ChevronUpIcon, CircleAlert } from "lucide-react"
 
 const Select = SelectPrimitive.Root
 
@@ -24,7 +24,7 @@ function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
   return (
     <SelectPrimitive.Value
       data-slot="select-value"
-      className={cn("flex flex-1 text-left [color:var(--ds-select-value)]", className)}
+      className={cn("flex flex-1 text-left [color:var(--ds-select-value)] in-data-placeholder:[color:var(--ds-input-placeholder)]", className)}
       {...props}
     />
   )
@@ -36,7 +36,7 @@ const selectTriggerVariants = cva(
     "[border-width:var(--ds-select-borderwidth)] [background-color:var(--ds-select-fill)] [border-color:var(--ds-select-bordercolor)]",
     "hover:[border-color:var(--ds-input-borderhover)]",
     "focus-visible:[border-color:var(--ds-input-borderfocus)]",
-    "disabled:cursor-not-allowed disabled:opacity-50 disabled:[border-color:var(--ds-select-borderdisabled)]",
+    "disabled:cursor-not-allowed disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-select-borderdisabled)] disabled:*:data-[slot=select-value]:[color:var(--ds-input-placeholder)]",
     "aria-invalid:[border-color:var(--ds-select-bordererror)]",
     "data-placeholder:[color:var(--ds-input-placeholder)]",
     "*:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-[var(--ds-spacing-component-xs)]",
@@ -69,7 +69,7 @@ function SelectTrigger({
       {children}
       <SelectPrimitive.Icon
         render={
-          <ChevronDownIcon className="pointer-events-none size-4 [color:var(--ds-select-icon)]" />
+          <ChevronDownIcon className="pointer-events-none size-4 [color:var(--ds-color-foreground)] in-data-disabled:[color:var(--ds-color-content-disabled-strong)]" />
         }
       />
     </SelectPrimitive.Trigger>
@@ -143,7 +143,7 @@ function SelectItem({
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        "relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none",
+        "relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1.5 pr-8 pl-2 text-sm outline-hidden select-none",
         "focus:[background-color:var(--ds-menuitem-fillhover)] focus:[color:var(--ds-menuitem-content)]",
         "data-disabled:pointer-events-none data-disabled:opacity-50",
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
@@ -278,6 +278,7 @@ function SelectField({
           aria-label={!label ? ariaLabel : undefined}
         >
           <SelectValue placeholder={placeholder} />
+          {hasError && <CircleAlert className="size-4 [color:var(--ds-input-bordererror)]" />}
         </SelectTrigger>
         <SelectContent>
           {children}

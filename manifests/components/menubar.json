@@ -75,14 +75,21 @@
   "story": "src/components/ui/menubar.stories.tsx",
   "title": "Menubar",
   "tokens": {
-    "layer3": [],
+    "layer3": [
+      "--ds-card-radius"
+    ],
     "other": [
-      "--ds-color-background",
       "--ds-color-border",
       "--ds-color-content-primary",
       "--ds-color-content-tertiary",
       "--ds-color-muted-foreground",
+      "--ds-color-popover",
       "--ds-menuitem-fillhover",
+      "--ds-spacing-12",
+      "--ds-spacing-4",
+      "--ds-spacing-8",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-labellg-lineheight",
       "--ds-typography-labelsm-fontsize"
     ]
   },

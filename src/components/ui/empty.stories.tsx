@@ -33,7 +33,7 @@ type StoryProps = {
 const meta = {
   title: 'Components/Empty',
   component: Empty,
-  parameters: { layout: 'padded', docs: { description: { component: 'A centred empty/zero-state — optional media, title, body, and action slot. Compound (shadcn-faithful):' } } },
+  parameters: { layout: 'padded', docs: { description: { component: 'A centred empty/zero-state — optional media, title, body, and action slot. Compound (shadcn-faithful): `Empty`, `EmptyHeader`, `EmptyMedia`, `EmptyTitle`, `EmptyDescription`, `EmptyContent`.' } } },
   tags: ['autodocs'],
   argTypes: {
     // ── Slot: Media ── (the Icon picker only applies when the media slot is shown)
@@ -64,10 +64,10 @@ const meta = {
     description: 'When you receive messages they will show up here.',
     showPrimary: true,
     showSecondary: true,
-    showGhost: false,
+    showGhost: true,
   },
   render: (args: StoryProps) => (
-    <div className="mx-auto max-w-md rounded-lg border [border-color:var(--ds-color-border)]">
+    <div className="mx-auto max-w-3xl">
       <Empty>
         <EmptyHeader>
           {args.showIcon && <EmptyMedia>{renderIcon(args.iconName)}</EmptyMedia>}
@@ -75,9 +75,10 @@ const meta = {
           {args.showBody && <EmptyDescription>{args.description}</EmptyDescription>}
         </EmptyHeader>
         <EmptyContent>
-          {args.showPrimary && <Button variant="primary">Get started</Button>}
-          {args.showSecondary && <Button variant="secondary">Import</Button>}
-          {args.showGhost && <Button variant="ghost">Learn more</Button>}
+          {/* Figma order: ghost · secondary · primary, all lg */}
+          {args.showGhost && <Button variant="ghost" size="lg">Learn more</Button>}
+          {args.showSecondary && <Button variant="secondary" size="lg">Import</Button>}
+          {args.showPrimary && <Button variant="primary" size="lg">Get started</Button>}
         </EmptyContent>
       </Empty>
     </div>

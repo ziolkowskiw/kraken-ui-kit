@@ -151,7 +151,7 @@ const meta = {
     variant: 'default',
     title: 'Modal title',
     description: 'Are you sure you want to proceed? This action cannot be undone.',
-    closeIcon: false,
+    closeIcon: true,
     // Left slot — 1 ghost button (cancel)
     left1Show: true,
     left1Label: 'Label',

@@ -27,13 +27,16 @@ const radioButtonVariants = cva(
           "[border-width:var(--ds-checkbox-borderwidth)] border-solid [border-color:var(--ds-checkbox-bordercolor)]",
           "[border-radius:var(--ds-checkbox-containerradius)]",
           "hover:[background-color:var(--ds-checkbox-fillhover)] hover:[border-color:var(--ds-checkbox-borderhover)]",
-          "has-[:disabled]:opacity-50 has-[:disabled]:cursor-not-allowed",
+          "has-[:disabled]:cursor-not-allowed has-[:disabled]:[background-color:var(--ds-checkbox-filldisabled)] has-[:disabled]:[border-color:var(--ds-checkbox-bordercolor)]",
+          // Figma disabled tile: grey fill + neutral border in every checked state, no opacity.
+          "has-[:disabled]:has-[[data-checked]]:[background-color:var(--ds-checkbox-filldisabled)] has-[:disabled]:has-[[data-checked]]:[border-color:var(--ds-checkbox-bordercolor)]",
           "has-[[data-checked]]:[background-color:var(--ds-color-primary-muted)] has-[[data-checked]]:[border-color:var(--ds-checkbox-checkedborder)]",
-          "data-[error]:[border-color:var(--ds-checkbox-bordererror)]",
+          // unchecked error tiles carry the pale error border; checked ones the strong one
+          "data-[error]:[border-color:var(--ds-checkbox-focusringerror)]",
           "data-[error]:has-[[data-checked]]:[background-color:var(--ds-checkbox-containerfill)] data-[error]:has-[[data-checked]]:[border-color:var(--ds-checkbox-bordererror)]",
           "data-[error]:hover:[border-color:var(--ds-checkbox-bordererrorhover)]",
         ].join(" "),
-        standalone: "has-[:disabled]:opacity-50 has-[:disabled]:cursor-not-allowed",
+        standalone: "has-[:disabled]:cursor-not-allowed",
       },
       size: {
         sm: "[min-height:var(--ds-checkbox-size-sm-minheight)]",
@@ -70,7 +73,7 @@ function RadioButton({
       <div className="flex flex-col gap-1">
         <span
           className={cn(
-            "[font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] [font-weight:var(--ds-typography-labelmd-fontweight)]",
+            "[font-size:var(--ds-typography-labellg-fontsize)] [line-height:var(--ds-typography-labellg-lineheight)] [font-weight:var(--ds-typography-labellg-fontweight)]",
             "[color:var(--ds-color-content-secondary)]",
             "group-has-[[data-checked]]/rb:[color:var(--ds-color-content-primary)]",
             "group-has-[:disabled]/rb:[color:var(--ds-checkbox-checkeddisabled)]"
@@ -149,8 +152,8 @@ function RadioButtonGroup({
         data-slot="radio-button-group"
         aria-invalid={hasError || undefined}
         className={cn(
-          "grid w-full",
-          isVertical ? "grid-flow-row gap-2" : "grid-flow-col auto-cols-fr gap-2"
+          "flex w-full gap-[var(--ds-spacing-4)]",
+          isVertical ? "flex-col" : "flex-row flex-wrap"
         )}
         {...props}
       >

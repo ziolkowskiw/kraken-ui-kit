@@ -147,11 +147,13 @@
   "title": "Select",
   "tokens": {
     "layer3": [
+      "--ds-input-bordererror",
       "--ds-input-borderfocus",
       "--ds-input-borderhover",
       "--ds-input-content",
       "--ds-input-contenterror",
       "--ds-input-fieldgap",
+      "--ds-input-filldisabled",
       "--ds-input-helper",
       "--ds-input-placeholder",
       "--ds-input-size-lg-fontsize",
@@ -171,11 +173,12 @@
       "--ds-select-bordererror",
       "--ds-select-borderwidth",
       "--ds-select-fill",
-      "--ds-select-icon",
       "--ds-select-value"
     ],
     "other": [
       "--ds-color-border",
+      "--ds-color-content-disabled-strong",
+      "--ds-color-foreground",
       "--ds-color-muted-foreground",
       "--ds-color-popover",
       "--ds-color-popover-foreground",

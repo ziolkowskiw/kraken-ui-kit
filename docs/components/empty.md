@@ -25,22 +25,26 @@ Empty component. See MAPPING.md for the full shadcn-aligned description.
 
 ## Token map
 
+**L3 Component**
+- `--ds-button-size-md-radius`
+- `--ds-button-size-sm-radius`
+
 **L2 Semantic**
+- `--ds-color-border`
 - `--ds-color-content-primary`
-- `--ds-color-content-secondary`
-- `--ds-color-icon-default`
 - `--ds-color-icon-muted`
 - `--ds-color-muted`
-- `--ds-radius-lg`
-- `--ds-spacing-component-2xl`
+- `--ds-spacing-component-lg`
+- `--ds-spacing-component-md`
+- `--ds-spacing-component-sm`
 - `--ds-spacing-component-xl`
 - `--ds-typography-bodymd-fontfamily`
 - `--ds-typography-bodymd-fontsize`
 - `--ds-typography-bodymd-lineheight`
-- `--ds-typography-headingmd-fontfamily`
-- `--ds-typography-headingmd-fontsize`
-- `--ds-typography-headingmd-fontweight`
-- `--ds-typography-headingmd-lineheight`
+- `--ds-typography-headinglg-fontfamily`
+- `--ds-typography-headinglg-fontsize`
+- `--ds-typography-headinglg-fontweight`
+- `--ds-typography-headinglg-lineheight`
 
 ## Accessibility
 

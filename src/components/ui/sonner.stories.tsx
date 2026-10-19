@@ -32,7 +32,7 @@ const meta = {
   parameters: { layout: 'centered', docs: { description: { component: 'An opinionated toast component for React; transient success/error notifications.' } } },
   tags: ['autodocs'],
   argTypes: {
-    type: { control: 'inline-radio', options: TYPES, name: 'Type', table: { category: 'Toast' } },
+    type: { control: 'inline-radio', options: TYPES, name: 'Variant', table: { category: 'Toast' } },
     message: { control: 'text', name: 'Message', table: { category: 'Toast' } },
     description: { control: 'text', name: 'Description', table: { category: 'Toast' } },
     hasAction: { control: 'boolean', name: 'Action button', table: { category: 'Toast' } },
@@ -41,9 +41,9 @@ const meta = {
     triggerVariant: { control: 'select', options: BUTTON_VARIANTS, name: 'Variant', table: { category: 'Nested: Trigger' } },
   },
   args: {
-    type: 'success',
-    message: 'Changes saved',
-    description: 'Your profile has been updated.',
+    type: 'info',
+    message: 'Event has been created.',
+    description: '',
     hasAction: false,
     actionLabel: 'Undo',
     triggerLabel: 'Show toast',

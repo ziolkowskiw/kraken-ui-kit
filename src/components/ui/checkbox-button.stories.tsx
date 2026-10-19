@@ -101,7 +101,7 @@ export const AllVariantsAndSizes: Story = {
       {VARIANTS.map((v) => (
         <div key={v} className="flex flex-col gap-3">
           <p className="text-xs text-muted-foreground capitalize">variant: {v}</p>
-          <div className="flex gap-3">
+          <div className="flex items-start gap-3">
             {SIZES.map((s) => (
               <CheckboxButton key={s} variant={v} size={s} label={`Size ${s}`} />
             ))}

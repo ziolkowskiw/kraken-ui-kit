@@ -105,7 +105,7 @@ function DialogFooter({
     <div
       data-slot="dialog-footer"
       className={cn(
-        "-mx-4 -mb-4 flex flex-col-reverse gap-2 [border-bottom-left-radius:var(--ds-radius-xl)] [border-bottom-right-radius:var(--ds-radius-xl)] [border-top:1px_solid_var(--ds-color-border)] [background-color:var(--ds-color-muted)] p-4 sm:flex-row sm:justify-end",
+        "-mx-4 -mb-4 flex flex-col-reverse gap-2 [border-bottom-left-radius:var(--ds-radius-xl)] [border-bottom-right-radius:var(--ds-radius-xl)] [border-top:1px_solid_var(--ds-button-secondary-border)] [background-color:var(--ds-color-background)] p-4 sm:flex-row sm:justify-end",
         className
       )}
       {...props}
@@ -125,7 +125,8 @@ function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
     <DialogPrimitive.Title
       data-slot="dialog-title"
       className={cn(
-        "font-heading text-base leading-none font-medium",
+        // Figma dialog/header title: heading md (20 bold), content-primary
+        "[font-family:var(--ds-typography-headingmd-fontfamily)] [font-size:var(--ds-typography-headingmd-fontsize)] [font-weight:var(--ds-typography-headingmd-fontweight)] [line-height:var(--ds-typography-headingmd-lineheight)] [color:var(--ds-color-content-primary)]",
         className
       )}
       {...props}
@@ -141,7 +142,7 @@ function DialogDescription({
     <DialogPrimitive.Description
       data-slot="dialog-description"
       className={cn(
-        "text-sm [color:var(--ds-color-muted-foreground)]",
+        "[font-size:var(--ds-typography-bodysm-fontsize)] [line-height:var(--ds-typography-bodysm-lineheight)] [color:var(--ds-color-content-secondary)]",
         className
       )}
       {...props}

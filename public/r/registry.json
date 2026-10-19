@@ -1192,8 +1192,7 @@
       "title": "Tooltip",
       "description": "Kraken UI Kit tooltip — tokenized shadcn component (Layer-3 --ds-* bindings, brand-switchable via [data-theme]).",
       "dependencies": [
-        "@base-ui/react@1.5.0",
-        "lucide-react@1.18.0"
+        "@base-ui/react@1.5.0"
       ],
       "registryDependencies": [
         "@kraken/theme",

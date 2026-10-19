@@ -12,7 +12,7 @@ const inputVariants = cva(
     "[border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)]",
     "hover:[border-color:var(--ds-input-borderhover)]",
     "focus-within:[border-color:var(--ds-input-borderfocus)]",
-    "has-[input:disabled]:[background-color:var(--ds-input-filldisabled)] has-[input:disabled]:[border-color:var(--ds-input-borderdisabled)] has-[input:disabled]:cursor-not-allowed has-[input:disabled]:opacity-50",
+    "has-[input:disabled]:[background-color:var(--ds-input-filldisabled)] has-[input:disabled]:[border-color:var(--ds-input-borderdisabled)] has-[input:disabled]:cursor-not-allowed",
     "has-[input[aria-invalid=true]]:[border-color:var(--ds-input-bordererror)]",
     "[&_input]:flex-1 [&_input]:min-w-0 [&_input]:bg-transparent [&_input]:outline-none [&_input]:border-none",
     "[&_input]:placeholder:[color:var(--ds-input-placeholder)]",
@@ -127,7 +127,7 @@ function Input({
         "[color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)]",
         "hover:[border-color:var(--ds-input-borderhover)]",
         "focus-visible:[border-color:var(--ds-input-borderfocus)]",
-        "disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-input-borderdisabled)] disabled:cursor-not-allowed disabled:opacity-50 disabled:[color:var(--ds-input-placeholder)]",
+        "disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-input-borderdisabled)] disabled:cursor-not-allowed disabled:[color:var(--ds-input-placeholder)]",
         "aria-invalid:[border-color:var(--ds-input-bordererror)]",
         className
       )}

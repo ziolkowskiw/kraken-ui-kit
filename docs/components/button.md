@@ -30,8 +30,6 @@ Displays a button or a component that looks like a button. Use for primary actio
 - `--ds-button-destructive-fillactive`
 - `--ds-button-destructive-filldisabled`
 - `--ds-button-destructive-fillhover`
-- `--ds-button-destructiveghost-border`
-- `--ds-button-destructiveghost-borderdisabled`
 - `--ds-button-destructiveghost-content`
 - `--ds-button-destructiveghost-contentdisabled`
 - `--ds-button-destructiveghost-fillactive`

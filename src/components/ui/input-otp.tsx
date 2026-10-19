@@ -48,10 +48,11 @@ const otpSlotVariants = cva(
   {
     variants: {
       size: {
-        xs: "size-8 text-sm",
-        sm: "size-9 text-sm",
-        md: "size-10 text-base",
-        lg: "size-12 text-lg",
+        // Figma input-otp/slot (1698:13679): 24 / 32 / 36 / 40px squares, 12px text at xs, 14px otherwise
+        xs: "size-6 [font-size:var(--ds-typography-labelsm-fontsize)]",
+        sm: "size-8 [font-size:var(--ds-typography-labelmd-fontsize)]",
+        md: "size-9 [font-size:var(--ds-typography-labelmd-fontsize)]",
+        lg: "size-10 [font-size:var(--ds-typography-labelmd-fontsize)]",
       },
     },
     defaultVariants: { size: "md" },

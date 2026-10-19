@@ -48,7 +48,7 @@ function HoverCardTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="hover-card-title"
       className={cn(
-        "[color:var(--ds-color-content-primary)] [font-family:var(--ds-typography-labellg-fontfamily)] [font-size:var(--ds-typography-labellg-fontsize)] [font-weight:var(--ds-typography-labellg-fontweight)] [line-height:var(--ds-typography-labellg-lineheight)]",
+        "[color:var(--ds-color-content-primary)] [font-family:var(--ds-typography-headingsm-fontfamily)] [font-size:var(--ds-typography-headingsm-fontsize)] [font-weight:var(--ds-typography-headingsm-fontweight)] [line-height:var(--ds-typography-headingsm-lineheight)]",
         className
       )}
       {...props}
@@ -61,7 +61,7 @@ function HoverCardCopy({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="hover-card-copy"
       className={cn(
-        "[color:var(--ds-color-content-secondary)] [font-family:var(--ds-typography-bodysm-fontfamily)] [font-size:var(--ds-typography-bodysm-fontsize)] [line-height:var(--ds-typography-bodysm-lineheight)]",
+        "[color:var(--ds-color-content-primary)] [font-family:var(--ds-typography-bodymd-fontfamily)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-bodymd-lineheight)]",
         className
       )}
       {...props}

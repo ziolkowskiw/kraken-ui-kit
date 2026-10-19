@@ -34,12 +34,20 @@ Menubar component. See MAPPING.md for the full shadcn-aligned description.
 
 ## Token map
 
+**L3 Component**
+- `--ds-card-radius`
+
 **L2 Semantic**
-- `--ds-color-background`
 - `--ds-color-border`
 - `--ds-color-content-primary`
 - `--ds-color-content-tertiary`
 - `--ds-color-muted-foreground`
+- `--ds-color-popover`
+- `--ds-spacing-12`
+- `--ds-spacing-4`
+- `--ds-spacing-8`
+- `--ds-typography-bodymd-fontsize`
+- `--ds-typography-labellg-lineheight`
 - `--ds-typography-labelsm-fontsize`
 
 **L1 Primitive / Shared**

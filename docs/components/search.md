@@ -27,8 +27,8 @@ Search component. See MAPPING.md for the full shadcn-aligned description.
 ## Token map
 
 **L2 Semantic**
-- `--ds-color-content-primary`
-- `--ds-color-icon-muted`
+- `--ds-color-content-disabled-strong`
+- `--ds-color-foreground`
 - `--ds-color-status-warning-border`
 - `--ds-color-status-warning-icon`
 - `--ds-spacing-component-xs`

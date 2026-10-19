@@ -22,9 +22,10 @@ Toggle component. See MAPPING.md for the full shadcn-aligned description.
 ## Token map
 
 **L3 Component**
+- `--ds-button-ghost-content`
+- `--ds-button-ghost-fillhover`
 - `--ds-button-secondary-border`
 - `--ds-button-secondary-content`
-- `--ds-button-secondary-fillactive`
 - `--ds-button-secondary-fillhover`
 - `--ds-button-size-lg-fontsize`
 - `--ds-button-size-lg-height`

@@ -39,7 +39,9 @@ Radio Button component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-checkbox-checkeddisabled`
 - `--ds-checkbox-containerfill`
 - `--ds-checkbox-containerradius`
+- `--ds-checkbox-filldisabled`
 - `--ds-checkbox-fillhover`
+- `--ds-checkbox-focusringerror`
 - `--ds-checkbox-gap`
 - `--ds-checkbox-paddingx`
 - `--ds-checkbox-size-lg-minheight`
@@ -55,8 +57,11 @@ Radio Button component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-color-content-secondary`
 - `--ds-color-content-tertiary`
 - `--ds-color-primary-muted`
+- `--ds-spacing-4`
+- `--ds-typography-labellg-fontsize`
+- `--ds-typography-labellg-fontweight`
+- `--ds-typography-labellg-lineheight`
 - `--ds-typography-labelmd-fontsize`
-- `--ds-typography-labelmd-fontweight`
 - `--ds-typography-labelmd-lineheight`
 - `--ds-typography-labelsm-fontsize`
 - `--ds-typography-labelsm-lineheight`

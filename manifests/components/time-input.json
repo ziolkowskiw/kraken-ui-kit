@@ -73,7 +73,7 @@
       "name": "id"
     }
   ],
-  "rationale": "Mirrors the Figma `time-input` set (858:2044): a field for entering a time, with a trailing clock affordance. State=rest|hover|focus|disabled|error × Size × Filled. Reuses the `--ds-input-*` field tokens.",
+  "rationale": "Mirrors the Figma `time-input` set (903:5961): a field for entering a time, with a trailing `clock-8` affordance. State=rest|hover|focus|disabled|error × Size × Filled. Reuses the `--ds-input-*` field tokens. The browser's own picker indicator is hidden so only the kit clock shows; clicking the clock opens the native picker. Proportional figures (no tabular-nums) to match the Figma value text.",
   "slots": {
     "exports": [
       "TimeInputField"
@@ -85,6 +85,7 @@
   "title": "Time Input",
   "tokens": {
     "layer3": [
+      "--ds-button-secondary-content",
       "--ds-input-bordercolor",
       "--ds-input-borderdisabled",
       "--ds-input-bordererror",
@@ -113,7 +114,7 @@
       "--ds-input-value"
     ],
     "other": [
-      "--ds-color-icon-muted",
+      "--ds-color-content-disabled-strong",
       "--ds-spacing-component-xs",
       "--ds-typography-labelmd-fontsize",
       "--ds-typography-labelmd-lineheight"
