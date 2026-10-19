@@ -5,10 +5,11 @@ description: Onboard a new brand theme into the kit by adding a mode to the Figm
 
 # add-brand — onboard a new brand theme
 
-The ritual for adding a third (or Nth) brand to the kit. Themes are authored
-**in Figma, not in code** — this skill is the bridge from a new Figma mode to
-a working `data-theme="<brand>"` in the running app, with zero component
-code changes.
+The ritual for adding a third (or Nth) brand to the kit. Themes are edited
+visually **in Figma, never with an in-code builder**, and land in
+`tokens/tokens.dtcg.json` — the source of truth — through `token-sync`. This
+skill is the bridge from a new Figma mode to a working `data-theme="<brand>"`
+in the running app, with zero component code changes.
 
 ## Preconditions
 

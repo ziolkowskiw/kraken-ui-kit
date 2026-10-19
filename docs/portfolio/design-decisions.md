@@ -28,21 +28,32 @@ consumers of a design system now include agents.
 
 ## Part 1 — Foundation decisions
 
-### 1. Figma is the single source of truth, and code is generated from it
+### 1. The token files are the source of truth; Figma is their visual editor
 
-**Decision.** One Figma file (`JIT DS 2.1`) owns every design decision: 835
-variables and 56 component sets. Code artifacts — token CSS, component
-manifests, docs, the registry — are generated from that source through
-pipelines, never authored in parallel.
+**Decision.** The canonical token file (`tokens/tokens.dtcg.json`) is the
+single source of truth for every design token — 835 variables across three
+layers. Figma (`JIT DS 2.1`) is the _visual editor_ for those tokens: the place
+where a designer sees, adjusts, and approves values — not the place where the
+truth lives. Everything downstream — token CSS, component manifests, docs, the
+registry — is generated from the token files through pipelines, never authored
+in parallel.
 
 **Why.** Design systems die in the gap between design and code. If both sides
 are hand-maintained, they _will_ diverge, and the divergence is invisible
-until it's expensive. Making one side generated means drift is a build
-failure, not a slow rot.
+until it's expensive. Making one side canonical and everything else generated
+means drift is a build failure, not a slow rot. I put the truth in plain,
+versioned files rather than inside a design tool because files can be diffed,
+reviewed in a pull request, validated by CI, and read by an agent without
+opening anything. A Figma file can do none of those things, and it can change
+silently. Figma stays in the loop because it is the best _interface_ for
+editing tokens — pickers, live previews, semantic modes — but an interface is
+not an authority.
 
 **Trade-off.** Generation demands discipline: you give up the freedom to
-"quickly fix it in code". Every change routes through the source and a
-rebuild. I accepted the slower loop in exchange for the guarantee.
+"quickly fix it in code". Every change routes through the token files and a
+rebuild. And two surfaces now touch the same data, so the sync between Figma
+and the files has to be explicit and checked (see decision 16) rather than
+assumed. I accepted the slower loop in exchange for the guarantee.
 
 ### 2. A 3-layer token architecture, with zero literals in components
 
@@ -88,7 +99,7 @@ manifests then only need to describe the _differences_, not the whole world.
 **Trade-off.** Parity is a constraint on naming creativity, and it forces the
 divergence list to be maintained honestly (that's what the `drift-audit`
 skill guards). Where the Figma design genuinely disagreed with shadcn (Button
-has seven variants, not six; Alert's axis is `type`), I kept the Figma truth
+has seven variants, not six; Alert's axis is `type`), I kept the Figma design
 and documented the divergence instead of pretending.
 
 ### 5. Tailwind v4 + CVA + Base UI as the delivery stack
@@ -116,7 +127,8 @@ rule with no judgment calls: never branch on brand.
 **Trade-off.** A brand that wants to change component _anatomy_ (not just
 values) doesn't fit this model. I scoped that out deliberately: value-level
 theming covers the real use case (client brands), and anatomy changes should
-be design decisions in Figma, not forks in code.
+be deliberate design decisions, made in Figma and recorded in the system, not
+forks in code.
 
 ## Part 2 — Decision 7, the reversal: killing the theme editor
 
@@ -130,12 +142,14 @@ workflow.
 color pickers and the whole kit restyles live. It worked, and it round-tripped
 to Figma.
 
-**Why it died.** It quietly created a _second place where design decisions
-happen_. Two writable sources of truth is one too many — the exact disease
-the kit exists to cure, reintroduced through a side door. Designers already
-have a semantic-mode editor with a full approval workflow: Figma itself. So
-themes became Figma semantic modes, exported through the same `token-sync`
-pipeline as everything else, with the `add-brand` skill as the ritual.
+**Why it died.** It quietly created a _second visual editor with its own
+write path_ into the tokens. Two competing ways to change the truth is one too
+many — the exact disease the kit exists to cure, reintroduced through a side
+door. Designers already have a semantic-mode editor with a full approval
+workflow: Figma itself. So themes became Figma semantic modes, edited in Figma
+and landed in the token files through the same `token-sync` pipeline as
+everything else, with the `add-brand` skill as the ritual. One editor, one
+canonical file.
 
 **What it cost.** Two weeks of built, working, demoable code — deleted. This
 is the single most important decision in the project: choosing the boring
@@ -260,13 +274,15 @@ must be. This applies the kit's core philosophy to its own marketing copy.
 ### 16. Drift is checked in three directions, on a schedule
 
 **Decision.** `manifests:check` (code ⇄ generated artifacts) runs on every
-push; `drift-audit` (Figma ⇄ tokens ⇄ code/MAPPING) runs as a periodic
+push; `drift-audit` (Figma ⇄ token files ⇄ code/MAPPING) runs as a periodic
 read-only ritual; `parity-reviewer` spot-checks single components against
 both Figma and shadcn.
 
 **Why.** Each edge of the triangle fails differently. CI catches what code
-changes break; only a Figma-connected audit catches what _design_ changes
-break. Report-only auditing keeps the governance loop honest — the auditor
+changes break; only a Figma-connected audit catches the case where the visual
+editor and the token files have drifted apart. The audit measures Figma
+_against_ the token files, not the other way round — the files are the
+reference. Report-only auditing keeps the governance loop honest — the auditor
 never fixes, it hands findings to the skill that owns the fix.
 
 ---
@@ -275,7 +291,8 @@ never fixes, it hands findings to the skill that owns the fix.
 
 Every decision above is one idea applied repeatedly: **make the truth live in
 exactly one place, make every other representation generated, and make drift
-loud.** Humans decide in Figma and in `overrides/`; machines propagate; CI
+loud.** Humans decide — visually in Figma, durably in the token files and in
+`overrides/`; machines propagate; CI
 refuses anything that breaks the chain. That is what "AI-native" means here —
 not that AI built it (though it largely did), but that an AI can pick it up
 tomorrow, query what is true, and be structurally prevented from making it

@@ -14,8 +14,12 @@ of sync. **Report only — do not modify Figma, tokens, or code here.** Hand fix
 
 1. **Figma variables ⇄ `tokens/tokens.dtcg.json`** (needs the Figma bridge live):
    - Export current variables (as in `token-sync` step 1, to a temp/in-memory view).
-   - Diff against `tokens.dtcg.json`: variables added/removed/renamed in Figma but
-     not in the JSON, value or alias-target changes, new modes/brands.
+   - Diff against `tokens.dtcg.json` — the source of truth, so Figma is the side
+     measured against it: variables added/removed/renamed in Figma but not in the
+     JSON, value or alias-target changes, new modes/brands. Report each as
+     "Figma ahead of the files" (an un-synced edit → `token-sync`) or "Figma
+     behind the files" (the file changed by other means) so the user can decide
+     which side should move.
    - Assert the layer contract: semantic still aliases primitives; component still
      aliases semantic; **no raw values in Layers 2–3**.
 

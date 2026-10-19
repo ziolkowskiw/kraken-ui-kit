@@ -28,7 +28,7 @@ Three observations shaped everything that followed:
 
 I anchored the kit to shadcn, the open source collection of interface parts that most of the industry, and every AI model's training data, already knows. Names, options and behaviors match it exactly, and the few deliberate differences are published as a short machine-readable list.
 
-The trade-off: I gave up naming freedom. Where our Figma design genuinely disagreed with the convention, for example our buttons come in seven styles rather than six, I kept the Figma truth and documented the difference instead of pretending it was not there.
+The trade-off: I gave up naming freedom. Where our Figma design genuinely disagreed with the convention, for example our buttons come in seven styles rather than six, I kept the Figma design and documented the difference instead of pretending it was not there.
 
 The payoff is that an AI assistant arrives with correct instincts and only needs to learn the differences, not the whole system.
 
@@ -42,7 +42,7 @@ To show off that power, I built a visual theme editor: pick colors, watch the wh
 
 Then I deleted it.
 
-The editor had quietly created a second place where design decisions happen. Two sources of truth is the exact disease a design system exists to cure, and I had reintroduced it through a side door because it looked good in a demo. Designers already have a place to author themes with real review built in: Figma itself. So theming moved fully into Figma, flowing through the same one-way pipeline as everything else, and two weeks of working, demoable work went in the bin.
+The editor had quietly created a second way to change the tokens. Two competing editors for one source of truth is the exact disease a design system exists to cure, and I had reintroduced it through a side door because it looked good in a demo. Designers already have a place to edit themes with real review built in: Figma itself. So theming moved fully into Figma as the one visual editor, landing in the token files through the same one-way pipeline as everything else, and two weeks of working, demoable work went in the bin.
 
 That deletion is the decision I would defend hardest. The boring architecture protects the promise; the impressive feature undermined it.
 
