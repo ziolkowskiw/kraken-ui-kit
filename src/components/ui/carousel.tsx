@@ -124,11 +124,11 @@ function CarouselPrevious({ className, ...props }: React.ComponentProps<typeof B
   return (
     <Button
       data-slot="carousel-previous"
-      variant="secondary"
+      variant="ghost"
       size="md"
       iconOnly
       className={cn(
-        "absolute size-8 rounded-full",
+        "absolute",
         orientation === "horizontal"
           ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -149,11 +149,11 @@ function CarouselNext({ className, ...props }: React.ComponentProps<typeof Butto
   return (
     <Button
       data-slot="carousel-next"
-      variant="secondary"
+      variant="ghost"
       size="md"
       iconOnly
       className={cn(
-        "absolute size-8 rounded-full",
+        "absolute",
         orientation === "horizontal"
           ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",

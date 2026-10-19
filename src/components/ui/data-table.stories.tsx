@@ -11,7 +11,7 @@ type StoryProps = React.ComponentProps<typeof TableTitle>
 const meta = {
   title: 'Components/DataTable/Title',
   component: TableTitle,
-  parameters: { layout: 'padded', docs: { description: { component: 'Composed data table. Also' } } },
+  parameters: { layout: 'padded', docs: { description: { component: 'Composed data table (title, header row, body rows, section titles). Also see `data-table-header.tsx` and `data-table-cell.tsx`.' } } },
   tags: ['autodocs'],
   argTypes: {
     variant: { control: 'inline-radio', options: TITLE_VARIANTS, name: 'Variant' },

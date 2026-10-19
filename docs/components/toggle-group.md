@@ -24,9 +24,11 @@ Toggle Group component. See MAPPING.md for the full shadcn-aligned description.
 ## Token map
 
 **L3 Component**
+- `--ds-button-ghost-fill`
+- `--ds-button-primary-fill`
+- `--ds-button-primary-fillhover`
 - `--ds-button-secondary-border`
 - `--ds-button-secondary-content`
-- `--ds-button-secondary-fillactive`
 - `--ds-button-secondary-fillhover`
 - `--ds-button-size-lg-fontsize`
 - `--ds-button-size-lg-height`
@@ -47,6 +49,7 @@ Toggle Group component. See MAPPING.md for the full shadcn-aligned description.
 
 **L2 Semantic**
 - `--ds-color-border-focus`
+- `--ds-color-primary-foreground`
 
 ## Accessibility
 

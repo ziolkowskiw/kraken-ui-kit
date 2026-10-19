@@ -73,6 +73,7 @@
       "--ds-checkbox-checkedborder",
       "--ds-checkbox-checkeddisabled",
       "--ds-checkbox-checkedhover",
+      "--ds-checkbox-containerfill",
       "--ds-checkbox-cornerradius",
       "--ds-checkbox-fill",
       "--ds-checkbox-filldisabled",

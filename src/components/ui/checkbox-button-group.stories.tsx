@@ -13,6 +13,8 @@ type GroupStoryProps = React.ComponentProps<typeof CheckboxButtonGroup> & {
   cbVariant: 'button' | 'standalone'
   hasSecondLine: boolean
   secondLineLabel: string
+  showLabel: boolean
+  showHelpText: boolean
   hasTooltip: boolean
   tooltipText: string
   optionCount: number
@@ -27,7 +29,7 @@ type GroupStoryProps = React.ComponentProps<typeof CheckboxButtonGroup> & {
 const meta: Meta<GroupStoryProps> = {
   title: 'Components/CheckboxButtonGroup',
   component: CheckboxButtonGroup,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'A labelled group of checkbox-buttons with help/error text; multi-select from a small visible set.' } } },
   tags: ['autodocs'],
   argTypes: {
     state: { control: 'select', options: STATES, name: 'State' },
@@ -36,8 +38,10 @@ const meta: Meta<GroupStoryProps> = {
     label: { control: 'text', name: 'Label' },
     description: { control: 'text', name: 'Help text' },
     errorMessage: { control: 'text', name: 'Error message' },
+    showLabel: { control: 'boolean', name: 'Show label' },
+    showHelpText: { control: 'boolean', name: 'Show help text' },
     mandatory: { control: 'boolean', name: 'Mandatory field' },
-    hasTooltip: { control: 'boolean', name: 'hasTooltip', table: { category: 'Nested: Tooltip' } },
+    hasTooltip: { control: 'boolean', name: 'Show info tooltip', table: { category: 'Nested: Tooltip' } },
     tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Nested: Tooltip' }, if: { arg: 'hasTooltip' } },
     cbVariant: { control: 'select', options: CB_VARIANTS, name: 'checkbox-button / Variant' },
     hasSecondLine: { control: 'boolean', name: 'checkbox-button / hasSecondLine' },
@@ -52,6 +56,7 @@ const meta: Meta<GroupStoryProps> = {
     error: { table: { disable: true } },
     children: { table: { disable: true } },
     tooltip: { table: { disable: true } },
+    className: { table: { disable: true } },
   },
   args: {
     state: 'default',
@@ -60,6 +65,8 @@ const meta: Meta<GroupStoryProps> = {
     label: 'Label',
     description: 'Help text',
     errorMessage: 'Error message',
+    showLabel: true,
+    showHelpText: true,
     mandatory: false,
     hasTooltip: true,
     tooltipText: 'Pick the options that apply to you.',
@@ -75,7 +82,7 @@ const meta: Meta<GroupStoryProps> = {
     option6Label: 'Option F',
   },
   render: ({
-    state, errorMessage, size, cbVariant, hasSecondLine, secondLineLabel,
+    state, label, description, showLabel, showHelpText, errorMessage, size, cbVariant, hasSecondLine, secondLineLabel,
     hasTooltip, tooltipText, optionCount,
     option1Label, option2Label, option3Label, option4Label, option5Label, option6Label,
     ...args
@@ -89,8 +96,9 @@ const meta: Meta<GroupStoryProps> = {
         size={size}
         error={isError}
         errorMessage={isError ? errorMessage : undefined}
-        tooltip={hasTooltip ? tooltipText : undefined}
-        className="w-96"
+        label={showLabel ? label : undefined}
+        description={showHelpText ? description : undefined}
+        tooltip={showLabel && hasTooltip ? tooltipText : undefined}
       >
         {labels.map((label, i) => (
           <CheckboxButton

@@ -58,17 +58,19 @@
   "story": "src/components/ui/table.stories.tsx",
   "title": "Table",
   "tokens": {
-    "layer3": [],
+    "layer3": [
+      "--ds-button-secondary-content"
+    ],
     "other": [
       "--ds-color-border",
-      "--ds-color-content-primary",
       "--ds-color-content-secondary",
       "--ds-color-muted",
+      "--ds-spacing-component-sm",
       "--ds-typography-bodymd-fontfamily",
       "--ds-typography-bodymd-fontsize",
       "--ds-typography-bodysm-fontsize",
-      "--ds-typography-labelsm-fontsize",
-      "--ds-typography-labelsm-lineheight"
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-lineheight"
     ]
   },
   "usage": {

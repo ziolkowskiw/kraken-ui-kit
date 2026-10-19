@@ -35,7 +35,7 @@ const meta = {
   title: 'Components/DropdownMenu',
   // docs-only association; the playground args are story-level props
   component: DropdownMenu as React.ComponentType<StoryProps>,
-  parameters: { layout: 'centered', docs: { description: { component: 'Displays a menu of actions or functions, triggered by a button; action/overflow menus. Full' } } },
+  parameters: { layout: 'centered', docs: { description: { component: 'Displays a menu of actions or functions, triggered by a button; action/overflow menus. Full `DropdownMenu*` surface.' } } },
   tags: ['autodocs'],
   argTypes: {
     // ── Nested: Trigger (a real Button) ──

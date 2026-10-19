@@ -29,13 +29,14 @@ Date Picker component. See MAPPING.md for the full shadcn-aligned description.
 ## Token map
 
 **L2 Semantic**
-- `--ds-color-icon-muted`
+- `--ds-color-content-disabled-strong`
 - `--ds-spacing-component-xs`
 - `--ds-typography-labelmd-fontsize`
 - `--ds-typography-labelmd-lineheight`
 
 **L3 Component**
 - `--ds-input-bordercolor`
+- `--ds-input-borderdisabled`
 - `--ds-input-bordererror`
 - `--ds-input-borderfocus`
 - `--ds-input-borderhover`
@@ -44,6 +45,7 @@ Date Picker component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-input-contenterror`
 - `--ds-input-fieldgap`
 - `--ds-input-fill`
+- `--ds-input-filldisabled`
 - `--ds-input-helper`
 - `--ds-input-placeholder`
 - `--ds-input-size-lg-fontsize`

@@ -46,17 +46,16 @@
   "story": "src/components/ui/progress.stories.tsx",
   "title": "Progress",
   "tokens": {
-    "layer3": [],
+    "layer3": [
+      "--ds-input-value"
+    ],
     "other": [
-      "--ds-color-content-secondary",
       "--ds-color-muted",
       "--ds-color-primary",
       "--ds-radius-full",
-      "--ds-spacing-2",
-      "--ds-spacing-component-sm",
-      "--ds-typography-labelsm-fontfamily",
-      "--ds-typography-labelsm-fontsize",
-      "--ds-typography-labelsm-lineheight"
+      "--ds-spacing-12",
+      "--ds-typography-bodymd-fontsize",
+      "--ds-typography-labellg-lineheight"
     ]
   },
   "usage": {

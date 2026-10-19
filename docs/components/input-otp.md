@@ -26,6 +26,8 @@ Input Otp component. See MAPPING.md for the full shadcn-aligned description.
 
 **L2 Semantic**
 - `--ds-color-content-tertiary`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelsm-fontsize`
 
 **L3 Component**
 - `--ds-input-bordercolor`

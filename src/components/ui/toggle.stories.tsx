@@ -22,8 +22,8 @@ const meta = {
   parameters: { layout: 'centered', docs: { description: { component: 'A two-state button that can be either on or off; a single toggleable option (e.g. bold).' } } },
   tags: ['autodocs'],
   argTypes: {
-    variant: { control: 'inline-radio', options: VARIANTS },
-    size: { control: 'inline-radio', options: SIZES },
+    variant: { control: 'select', options: VARIANTS, name: 'Variant' },
+    size: { control: 'select', options: SIZES, name: 'Size' },
     defaultPressed: { control: 'boolean', name: 'Active' },
     disabled: { control: 'boolean' },
     iconName: { control: 'select', options: ICON_OPTIONS, name: 'Icon' },
@@ -34,10 +34,10 @@ const meta = {
     defaultPressed: false,
     disabled: false,
     iconName: 'none',
-    children: 'Toggle',
+    children: 'Action verb',
   },
   render: ({ iconName, children, ...args }: StoryProps) => (
-    <Toggle {...args}>
+    <Toggle key={String(args.defaultPressed)} {...args}>
       {renderIcon(iconName)}
       {children}
     </Toggle>

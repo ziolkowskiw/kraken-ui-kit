@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Combobox as ComboboxPrimitive } from "@base-ui/react/combobox"
 import { cva, type VariantProps } from "class-variance-authority"
-import { CheckIcon, ChevronDownIcon, XIcon } from "lucide-react"
+import { CheckIcon, ChevronsUpDownIcon, CircleAlert, XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { menuPopupClasses, menuItemClasses } from "./dropdown-menu"
@@ -48,7 +48,7 @@ function ComboboxTrigger({ className, children, ...props }: ComboboxPrimitive.Tr
       {...props}
     >
       {children}
-      <ChevronDownIcon className="pointer-events-none size-4 [color:var(--ds-color-muted-foreground)]" />
+      <ChevronsUpDownIcon className="pointer-events-none size-4 [color:var(--ds-color-foreground)]" />
     </ComboboxPrimitive.Trigger>
   )
 }
@@ -131,7 +131,7 @@ function ComboboxChipsInput({ className, ...props }: ComboboxPrimitive.Input.Pro
     <ComboboxPrimitive.Input
       data-slot="combobox-chip-input"
       className={cn(
-        "min-w-16 flex-1 border-none bg-transparent outline-none [color:var(--ds-input-content)] placeholder:[color:var(--ds-input-placeholder)]",
+        "min-w-16 flex-1 border-none bg-transparent outline-none [color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)]",
         className
       )}
       {...props}
@@ -144,9 +144,9 @@ const comboboxInputVariants = cva(
     "flex w-full items-center gap-[var(--ds-spacing-component-xs)] border transition-colors outline-none",
     "[border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)]",
     "hover:[border-color:var(--ds-input-borderhover)] focus-within:[border-color:var(--ds-input-borderfocus)]",
-    "has-[input:disabled]:[background-color:var(--ds-input-filldisabled)] has-[input:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed",
+    "has-[input:disabled]:[background-color:var(--ds-input-filldisabled)] has-[input:disabled]:[border-color:var(--ds-input-borderdisabled)] has-[input:disabled]:cursor-not-allowed [&_input]:disabled:cursor-not-allowed [&_input]:disabled:[color:var(--ds-input-placeholder)]",
     "has-[input[aria-invalid=true]]:[border-color:var(--ds-input-bordererror)]",
-    "[&_svg]:shrink-0 [&_svg]:pointer-events-none",
+    "[&_svg]:shrink-0 [&_svg]:pointer-events-none has-[input:disabled]:[&_svg]:[color:var(--ds-color-content-disabled-strong)]",
   ].join(" "),
   {
     variants: {
@@ -175,6 +175,7 @@ function ComboboxInput({
         className="min-w-0 flex-1 bg-transparent outline-none [color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)]"
         {...props}
       />
+      {error && <CircleAlert className="[color:var(--ds-input-bordererror)]" />}
       {showClear && (
         <ComboboxPrimitive.Clear
           aria-label="Clear"
@@ -185,9 +186,9 @@ function ComboboxInput({
       )}
       <ComboboxPrimitive.Trigger
         aria-label="Open"
-        className="grid size-4 place-items-center [color:var(--ds-select-icon)] outline-none"
+        className="grid size-4 place-items-center [color:var(--ds-color-foreground)] outline-none disabled:[color:var(--ds-color-content-disabled-strong)]"
       >
-        <ChevronDownIcon className="size-4" />
+        <ChevronsUpDownIcon className="size-4" />
       </ComboboxPrimitive.Trigger>
     </div>
   )
@@ -221,7 +222,7 @@ function ComboboxEmpty({ className, ...props }: ComboboxPrimitive.Empty.Props) {
   return (
     <ComboboxPrimitive.Empty
       data-slot="combobox-empty"
-      className={cn("px-2 py-4 text-center text-sm [color:var(--ds-color-content-tertiary)]", className)}
+      className={cn("px-2 py-4 text-center text-sm [color:var(--ds-color-content-tertiary)] empty:hidden", className)}
       {...props}
     />
   )

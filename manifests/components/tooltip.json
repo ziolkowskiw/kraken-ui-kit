@@ -26,8 +26,7 @@
   "install": {
     "command": "npx shadcn add @kraken/tooltip",
     "dependencies": [
-      "@base-ui/react@1.5.0",
-      "lucide-react@1.18.0"
+      "@base-ui/react@1.5.0"
     ],
     "registryDependencies": [
       "@kraken/theme",
@@ -58,12 +57,12 @@
   "story": "src/components/ui/tooltip.stories.tsx",
   "title": "Tooltip",
   "tokens": {
-    "layer3": [],
+    "layer3": [
+      "--ds-input-helper"
+    ],
     "other": [
-      "--ds-color-foreground",
       "--ds-color-inverse",
       "--ds-color-inverse-foreground",
-      "--ds-color-muted-foreground",
       "--ds-tooltip-fontsize",
       "--ds-tooltip-maxwidth",
       "--ds-tooltip-paddingx",

@@ -3,6 +3,8 @@ import * as React from 'react'
 import { Switch } from './switch'
 
 type SwitchStoryProps = React.ComponentProps<typeof Switch> & {
+  showLeftLabel?: boolean
+  showRightLabel?: boolean
   hasTooltip?: boolean
   tooltipText?: string
 }
@@ -17,10 +19,12 @@ const meta = {
     defaultChecked: { control: 'boolean', name: 'Active' },
     disabled: { control: 'boolean' },
     error: { control: 'boolean', name: 'Error' },
-    rightLabel: { control: 'text', name: 'Right label' },
-    leftLabel: { control: 'text', name: 'Left label' },
-    hasTooltip: { control: 'boolean', name: 'Show info tooltip', table: { category: 'Tooltip' } },
-    tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Tooltip' }, if: { arg: 'hasTooltip' } },
+    showLeftLabel: { control: 'boolean', name: 'Show left label' },
+    leftLabel: { control: 'text', name: 'Left label', if: { arg: 'showLeftLabel' } },
+    showRightLabel: { control: 'boolean', name: 'Show right label' },
+    rightLabel: { control: 'text', name: 'Right label', if: { arg: 'showRightLabel' } },
+    hasTooltip: { control: 'boolean', name: 'showTooltip', table: { category: 'Nested: Tooltip' } },
+    tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Nested: Tooltip' }, if: { arg: 'hasTooltip' } },
     tooltip: { table: { disable: true } },
   },
   args: {
@@ -28,13 +32,22 @@ const meta = {
     defaultChecked: false,
     disabled: false,
     error: false,
+    showLeftLabel: true,
+    leftLabel: 'Label',
+    showRightLabel: true,
     rightLabel: 'Label',
-    leftLabel: '',
     hasTooltip: false,
     tooltipText: 'Turning this on enables email notifications.',
   },
-  render: ({ hasTooltip, tooltipText, ...args }: SwitchStoryProps) => (
-    <Switch {...args} tooltip={hasTooltip ? tooltipText : undefined} />
+  render: ({ showLeftLabel, showRightLabel, leftLabel, rightLabel, hasTooltip, tooltipText, ...args }: SwitchStoryProps) => (
+    <Switch
+      // Remount when Active changes so the uncontrolled switch picks it up.
+      key={String(args.defaultChecked)}
+      {...args}
+      leftLabel={showLeftLabel ? leftLabel : undefined}
+      rightLabel={showRightLabel ? rightLabel : undefined}
+      tooltip={hasTooltip ? tooltipText : undefined}
+    />
   ),
 } satisfies Meta<SwitchStoryProps>
 

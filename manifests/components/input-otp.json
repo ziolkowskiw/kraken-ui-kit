@@ -74,7 +74,9 @@
       "--ds-input-value"
     ],
     "other": [
-      "--ds-color-content-tertiary"
+      "--ds-color-content-tertiary",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelsm-fontsize"
     ]
   },
   "usage": {

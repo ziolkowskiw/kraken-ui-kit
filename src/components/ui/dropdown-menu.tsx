@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
 // submenus. Items bind the `--ds-menuitem-*` Layer-3 tokens; the popup uses the
 // `--ds-color-popover` surface. Exposed class strings are reused by context-menu.
 const menuPopupClasses = cn(
-  "z-50 min-w-40 origin-(--transform-origin) overflow-y-auto overflow-x-hidden p-1",
+  "z-50 min-w-40 origin-(--transform-origin) overflow-y-auto overflow-x-hidden p-1 outline-none",
   "[border-radius:var(--ds-radius-lg)] [background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
   "[box-shadow:var(--ds-shadow-overlay)] ring-1 ring-foreground/10",
   "data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",

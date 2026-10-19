@@ -666,14 +666,16 @@
   },
   {
     "aliases": [],
-    "description": "Pagination with page navigation, next and previous links; page through long lists/tables. Pagination/Content/Item/Link/Previous/Next/Ellipsis.",
+    "description": "Pagination with page navigation, next and previous links; page through long lists/tables. Pagination/Content/Item/Link/First/Previous/Next/Last/Ellipsis.",
     "exports": [
       "Pagination",
       "PaginationContent",
       "PaginationItem",
       "PaginationLink",
+      "PaginationFirst",
       "PaginationPrevious",
       "PaginationNext",
+      "PaginationLast",
       "PaginationEllipsis"
     ],
     "file": "components/pagination.json",

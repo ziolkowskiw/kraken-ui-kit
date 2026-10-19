@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Input as InputPrimitive } from "@base-ui/react/input"
 import { cva, type VariantProps } from "class-variance-authority"
-import { SearchIcon, XIcon, TriangleAlert } from "lucide-react"
+import { CircleAlert, SearchIcon, XIcon, TriangleAlert } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { TooltipIcon, TooltipProvider } from "./tooltip"
@@ -18,12 +18,14 @@ const searchVariants = cva(
     "[border-width:var(--ds-input-borderwidth)] [border-color:var(--ds-input-bordercolor)] [background-color:var(--ds-input-fill)]",
     "hover:[border-color:var(--ds-input-borderhover)]",
     "focus-within:[border-color:var(--ds-input-borderfocus)]",
-    "has-[input:disabled]:[background-color:var(--ds-input-filldisabled)] has-[input:disabled]:[border-color:var(--ds-input-borderdisabled)] has-[input:disabled]:cursor-not-allowed has-[input:disabled]:opacity-50",
+    "has-[input:disabled]:[background-color:var(--ds-input-filldisabled)] has-[input:disabled]:[border-color:var(--ds-input-borderdisabled)] has-[input:disabled]:cursor-not-allowed [&_input]:disabled:cursor-not-allowed [&_input]:disabled:[color:var(--ds-input-placeholder)]",
     "data-[state=error]:[border-color:var(--ds-input-bordererror)]",
     "data-[state=warning]:[border-color:var(--ds-color-status-warning-border)]",
     "[&_input]:flex-1 [&_input]:min-w-0 [&_input]:bg-transparent [&_input]:outline-none [&_input]:border-none",
     "[&_input]:placeholder:[color:var(--ds-input-placeholder)] [&_input]:[color:var(--ds-input-value)]",
-    "[&_svg]:shrink-0 [&_svg]:pointer-events-none",
+    "[&_svg]:shrink-0 [&_svg]:pointer-events-none has-[input:disabled]:[&_svg]:[color:var(--ds-color-content-disabled-strong)]",
+    // The kit renders its own clear control, so hide the browser's search-cancel X.
+    "[&_input::-webkit-search-cancel-button]:appearance-none",
   ].join(" "),
   {
     variants: {
@@ -51,15 +53,17 @@ function Search({ className, size, value, onClear, state = "default", ...props }
       data-state={state}
       className={cn(searchVariants({ size }), className)}
     >
-      <SearchIcon className="[color:var(--ds-color-icon-muted)]" />
+      <SearchIcon className="[color:var(--ds-color-foreground)]" />
       <InputPrimitive type="search" value={value} {...props} />
+      {state === "error" && <CircleAlert className="[color:var(--ds-input-bordererror)]" />}
       {state === "warning" && <TriangleAlert className="[color:var(--ds-color-status-warning-icon)]" />}
       {showClear && (
         <button
           type="button"
           aria-label="Clear search"
           onClick={onClear}
-          className="grid size-4 place-items-center [color:var(--ds-color-icon-muted)] hover:[color:var(--ds-color-content-primary)] outline-none"
+          disabled={props.disabled}
+          className="grid size-4 place-items-center [color:var(--ds-color-foreground)] outline-none disabled:cursor-not-allowed"
         >
           <XIcon className="size-4" />
         </button>
@@ -106,7 +110,7 @@ function SearchField({
           {errorMessage}
         </p>
       ) : description ? (
-        <p className="[color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full">
+        <p className="data-[state=warning]:[color:var(--ds-color-status-warning-icon)] [color:var(--ds-input-helper)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] w-full" data-state={resolvedState}>
           {description}
         </p>
       ) : null}

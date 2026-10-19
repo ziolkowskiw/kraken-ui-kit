@@ -24,16 +24,19 @@ All props are passed through to the underlying Base UI / HTML element.
 
 ## Token map
 
+**L3 Component**
+- `--ds-button-secondary-content`
+
 **L2 Semantic**
 - `--ds-color-border`
-- `--ds-color-content-primary`
 - `--ds-color-content-secondary`
 - `--ds-color-muted`
+- `--ds-spacing-component-sm`
 - `--ds-typography-bodymd-fontfamily`
 - `--ds-typography-bodymd-fontsize`
 - `--ds-typography-bodysm-fontsize`
-- `--ds-typography-labelsm-fontsize`
-- `--ds-typography-labelsm-lineheight`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 
 ## Accessibility
 

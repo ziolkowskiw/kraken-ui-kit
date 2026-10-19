@@ -11,7 +11,7 @@ const textareaVariants = cva(
     "[color:var(--ds-input-value)] placeholder:[color:var(--ds-input-placeholder)] [line-height:var(--ds-typography-bodymd-lineheight)]",
     "hover:[border-color:var(--ds-input-borderhover)]",
     "focus-visible:[border-color:var(--ds-input-borderfocus)]",
-    "disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-input-borderdisabled)] disabled:cursor-not-allowed disabled:opacity-50 disabled:[color:var(--ds-input-placeholder)]",
+    "disabled:[background-color:var(--ds-input-filldisabled)] disabled:[border-color:var(--ds-input-borderdisabled)] disabled:cursor-not-allowed disabled:[color:var(--ds-input-placeholder)]",
     "aria-invalid:[border-color:var(--ds-input-bordererror)]",
   ].join(" "),
   {
@@ -79,7 +79,7 @@ function TextareaField({
     if (value !== undefined) setCharCount(String(value).length)
   }, [value])
   const counter = showCounter && maxLength ? (
-    <span className="ml-auto [color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] tabular-nums shrink-0">
+    <span className="ml-auto [color:var(--ds-input-placeholder)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] shrink-0">
       {charCount}/{maxLength}
     </span>
   ) : null

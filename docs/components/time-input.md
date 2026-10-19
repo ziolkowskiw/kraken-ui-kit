@@ -28,13 +28,8 @@ Time Input component. See MAPPING.md for the full shadcn-aligned description.
 
 ## Token map
 
-**L2 Semantic**
-- `--ds-color-icon-muted`
-- `--ds-spacing-component-xs`
-- `--ds-typography-labelmd-fontsize`
-- `--ds-typography-labelmd-lineheight`
-
 **L3 Component**
+- `--ds-button-secondary-content`
 - `--ds-input-bordercolor`
 - `--ds-input-borderdisabled`
 - `--ds-input-bordererror`
@@ -61,6 +56,12 @@ Time Input component. See MAPPING.md for the full shadcn-aligned description.
 - `--ds-input-size-sm-paddingx`
 - `--ds-input-size-sm-radius`
 - `--ds-input-value`
+
+**L2 Semantic**
+- `--ds-color-content-disabled-strong`
+- `--ds-spacing-component-xs`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelmd-lineheight`
 
 ## Accessibility
 

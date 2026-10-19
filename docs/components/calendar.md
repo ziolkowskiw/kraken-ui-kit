@@ -19,6 +19,7 @@ All props are passed through to the underlying Base UI / HTML element.
 ## Token map
 
 **L3 Component**
+- `--ds-button-ghost-content`
 - `--ds-button-ghost-contentdisabled`
 - `--ds-button-ghost-fillhover`
 - `--ds-button-primary-content`
@@ -29,12 +30,13 @@ All props are passed through to the underlying Base UI / HTML element.
 
 **L2 Semantic**
 - `--ds-color-border-strong`
-- `--ds-color-content-disabled`
 - `--ds-color-content-primary`
 - `--ds-color-content-secondary`
 - `--ds-color-content-tertiary`
 - `--ds-color-muted`
 - `--ds-radius-sm`
+- `--ds-typography-labelmd-fontsize`
+- `--ds-typography-labelsm-fontsize`
 
 ## Accessibility
 

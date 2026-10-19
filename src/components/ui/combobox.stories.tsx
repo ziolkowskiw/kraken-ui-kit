@@ -24,38 +24,70 @@ const fruits = [
   'Watermelon',
 ]
 
+const STATES = ['rest', 'error', 'disabled'] as const
+
 type StoryArgs = {
+  state: (typeof STATES)[number]
   label?: string
+  value?: string
   placeholder?: string
   description?: string
   errorMessage?: string
   size?: 'sm' | 'md' | 'lg'
+  showLabel?: boolean
+  showDescription?: boolean
   mandatory?: boolean
+  hasTooltip?: boolean
+  tooltipText?: string
 }
 
 const meta = {
   title: 'Components/Combobox',
   component: ComboboxField,
-  parameters: { layout: 'padded', docs: { description: { component: 'Autocomplete input with a list of suggestions (popover + command); searchable single-select over many options.' } } },
+  parameters: { layout: 'centered', docs: { description: { component: 'Autocomplete input with a list of suggestions (popover + command); searchable single-select over many options.' } } },
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
-    label: { control: 'text' },
-    placeholder: { control: 'text' },
-    description: { control: 'text', name: 'Help text' },
-    errorMessage: { control: 'text' },
-    mandatory: { control: 'boolean' },
+    state: { control: 'select', options: STATES, name: 'State' },
+    size: { control: 'select', options: ['sm', 'md', 'lg'], name: 'Size' },
+    label: { control: 'text', name: 'Label' },
+    value: { control: 'select', options: ['none', ...fruits], name: 'Value' },
+    description: { control: 'text', name: 'Description' },
+    errorMessage: { control: 'text', name: 'Error message' },
+    placeholder: { control: 'text', name: 'Placeholder' },
+    showLabel: { control: 'boolean', name: 'Show label' },
+    showDescription: { control: 'boolean', name: 'Show description' },
+    mandatory: { control: 'boolean', name: 'Mandatory field' },
+    hasTooltip: { control: 'boolean', name: 'Show info tooltip', table: { category: 'Nested: Tooltip' } },
+    tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Nested: Tooltip' }, if: { arg: 'hasTooltip' } },
   },
   args: {
-    label: 'Favourite fruit',
-    placeholder: 'Search fruit…',
-    description: 'Start typing to filter.',
+    state: 'rest',
     size: 'md',
+    label: 'Label',
+    value: 'none',
+    description: 'Help text',
+    errorMessage: 'Error message',
+    placeholder: 'Placeholder',
+    showLabel: true,
+    showDescription: true,
     mandatory: false,
+    hasTooltip: true,
+    tooltipText: 'Extra context for this field.',
   },
-  render: (args: StoryArgs) => (
+  render: ({ state, value, label, description, errorMessage, showLabel, showDescription, hasTooltip, tooltipText, ...args }: StoryArgs) => (
     <div className="w-72">
-      <ComboboxField {...args} items={fruits}>
+      <ComboboxField
+        // Remount when Value changes so the uncontrolled combobox picks it up.
+        key={value}
+        {...args}
+        defaultValue={value === 'none' ? undefined : value}
+        label={showLabel ? label : undefined}
+        description={showDescription ? description : undefined}
+        tooltip={showLabel && hasTooltip ? tooltipText : undefined}
+        errorMessage={state === 'error' ? errorMessage : undefined}
+        disabled={state === 'disabled'}
+        items={fruits}
+      >
         <ComboboxContent>
           <ComboboxEmpty>No fruit found.</ComboboxEmpty>
           <ComboboxList>
@@ -76,8 +108,16 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
 
+export const Filled: Story = {
+  args: { value: 'Banana' },
+}
+
 export const ErrorState: Story = {
-  args: { errorMessage: 'Please pick a fruit.' },
+  args: { state: 'error', value: 'Banana' },
+}
+
+export const Disabled: Story = {
+  args: { state: 'disabled', value: 'Banana' },
 }
 
 /* Multi-select: selected values render as removable chips (--ds-chip-* tokens)

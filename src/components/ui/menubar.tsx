@@ -16,7 +16,8 @@ function Menubar({ className, ...props }: MenubarPrimitive.Props) {
     <MenubarPrimitive
       data-slot="menubar"
       className={cn(
-        "flex items-center gap-1 rounded-md border p-1 [border-color:var(--ds-color-border)] [background-color:var(--ds-color-background)] shadow-xs",
+        // Figma `menubar` (1753:5204): popover surface, 4px inset, card radius, no shadow.
+        "flex w-fit items-center border [padding:var(--ds-spacing-4)] [border-radius:var(--ds-card-radius)] [border-color:var(--ds-color-border)] [background-color:var(--ds-color-popover)]",
         className
       )}
       {...props}
@@ -49,7 +50,8 @@ function MenubarTrigger({ className, ...props }: MenuPrimitive.Trigger.Props) {
     <MenuPrimitive.Trigger
       data-slot="menubar-trigger"
       className={cn(
-        "flex cursor-default items-center rounded-sm px-2 py-1 text-sm font-medium outline-none select-none [color:var(--ds-color-content-primary)]",
+        "flex cursor-default items-center rounded-sm [padding-block:var(--ds-spacing-8)] [padding-inline:var(--ds-spacing-12)] [font-size:var(--ds-typography-bodymd-fontsize)] [line-height:var(--ds-typography-labellg-lineheight)] outline-none select-none [color:var(--ds-color-muted-foreground)]",
+        "data-popup-open:[color:var(--ds-color-content-primary)]",
         "data-highlighted:[background-color:var(--ds-menuitem-fillhover)] data-popup-open:[background-color:var(--ds-menuitem-fillhover)]",
         className
       )}

@@ -25,9 +25,10 @@ const meta = {
   parameters: { layout: 'centered', docs: { description: { component: 'displays a button or a component that looks like a button; primary actions, form submits, dialog/menu triggers' } } },
   tags: ['autodocs'],
   argTypes: {
-    variant: { control: 'select', options: VARIANTS },
-    size: { control: 'inline-radio', options: SIZES },
-    iconOnly: { control: 'boolean' },
+    children: { control: 'text', name: 'Action verb' },
+    variant: { control: 'select', options: VARIANTS, name: 'Variant' },
+    size: { control: 'select', options: SIZES, name: 'Size' },
+    iconOnly: { control: 'boolean', name: 'iconOnly' },
     disabled: { control: 'boolean' },
     leftIconName: iconArgType('Left icon'),
     rightIconName: iconArgType('Right icon'),

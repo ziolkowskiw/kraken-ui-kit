@@ -43,6 +43,8 @@ Displays a list of options to pick from, triggered by a button. Use for single-c
 
 **L2 Semantic**
 - `--ds-color-border`
+- `--ds-color-content-disabled-strong`
+- `--ds-color-foreground`
 - `--ds-color-muted-foreground`
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
@@ -52,11 +54,13 @@ Displays a list of options to pick from, triggered by a button. Use for single-c
 - `--ds-typography-labelmd-lineheight`
 
 **L3 Component**
+- `--ds-input-bordererror`
 - `--ds-input-borderfocus`
 - `--ds-input-borderhover`
 - `--ds-input-content`
 - `--ds-input-contenterror`
 - `--ds-input-fieldgap`
+- `--ds-input-filldisabled`
 - `--ds-input-helper`
 - `--ds-input-placeholder`
 - `--ds-input-size-lg-fontsize`
@@ -76,7 +80,6 @@ Displays a list of options to pick from, triggered by a button. Use for single-c
 - `--ds-select-bordererror`
 - `--ds-select-borderwidth`
 - `--ds-select-fill`
-- `--ds-select-icon`
 - `--ds-select-value`
 
 **L1 Primitive / Shared**

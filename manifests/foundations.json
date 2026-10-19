@@ -95,6 +95,16 @@
       "area": "Slider range slot",
       "kit": "data-slot=\"slider-indicator\" (Base UI naming)",
       "shadcn": "data-slot=\"slider-range\""
+    },
+    {
+      "area": "Pagination",
+      "kit": "ghost xs controls; icon-only PaginationPrevious/PaginationNext + PaginationFirst/PaginationLast (chevron-first/last)",
+      "shadcn": "text \"Previous\"/\"Next\" links, no first/last"
+    },
+    {
+      "area": "Toast look",
+      "kit": "surface tinted per type (badge fill/border tokens), message only — no type icon",
+      "shadcn": "neutral card with a type icon"
     }
   ],
   "sources": [

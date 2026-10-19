@@ -41,14 +41,16 @@ function Checkbox({ className, error, hoverScope = "self", ...props }: CheckboxP
         "[border-width:var(--ds-checkbox-borderwidth)] [border-radius:var(--ds-checkbox-cornerradius)] border-solid [box-shadow:var(--ds-shadow-control)]",
         "[background-color:var(--ds-checkbox-fill)] [border-color:var(--ds-checkbox-bordercolor)]",
         "focus-visible:shadow-[0px_0px_0px_3px_var(--ds-color-border-focus)]",
-        "disabled:opacity-50 disabled:cursor-not-allowed disabled:[background-color:var(--ds-checkbox-filldisabled)]",
+        // Base UI renders the root as a <span>, so disabled is the data-disabled attribute (not :disabled).
+        "data-disabled:opacity-50 data-disabled:cursor-not-allowed data-disabled:[background-color:var(--ds-checkbox-filldisabled)]",
         // checked AND indeterminate share the brand fill/border (matches Figma)
         "data-checked:[background-color:var(--ds-checkbox-checked)] data-checked:[border-color:var(--ds-checkbox-checkedborder)] data-checked:text-[var(--ds-color-primary-foreground)]",
         "data-indeterminate:[background-color:var(--ds-checkbox-checked)] data-indeterminate:[border-color:var(--ds-checkbox-checkedborder)] data-indeterminate:text-[var(--ds-color-primary-foreground)]",
-        "data-checked:disabled:[background-color:var(--ds-checkbox-checkeddisabled)] data-indeterminate:disabled:[background-color:var(--ds-checkbox-checkeddisabled)]",
+        "data-checked:data-disabled:[background-color:var(--ds-checkbox-checkeddisabled)] data-checked:data-disabled:[border-color:var(--ds-checkbox-bordercolor)] data-checked:data-disabled:text-[var(--ds-checkbox-containerfill)]",
+        "data-indeterminate:data-disabled:[background-color:var(--ds-checkbox-checkeddisabled)] data-indeterminate:data-disabled:[border-color:var(--ds-checkbox-bordercolor)] data-indeterminate:data-disabled:text-[var(--ds-checkbox-containerfill)]",
         "data-[error]:[border-color:var(--ds-checkbox-bordererror)]",
-        "data-[error]:data-checked:[background-color:var(--ds-checkbox-bordererror)] data-[error]:data-checked:[border-color:var(--ds-checkbox-bordererror)]",
-        "data-[error]:data-indeterminate:[background-color:var(--ds-checkbox-bordererror)] data-[error]:data-indeterminate:[border-color:var(--ds-checkbox-bordererror)]",
+        "data-[error]:data-checked:[background-color:var(--ds-checkbox-bordererror)] data-[error]:data-checked:[border-color:var(--ds-checkbox-bordererror)] data-[error]:data-checked:text-[var(--ds-checkbox-containerfill)]",
+        "data-[error]:data-indeterminate:[background-color:var(--ds-checkbox-bordererror)] data-[error]:data-indeterminate:[border-color:var(--ds-checkbox-bordererror)] data-[error]:data-indeterminate:text-[var(--ds-checkbox-containerfill)]",
         "data-[error]:focus-visible:shadow-[0px_0px_0px_3px_var(--ds-color-border-focus)]",
         // hover styling — own :hover, or driven by an ancestor .group/cb
         hoverScope === "self" && hoverSelf,

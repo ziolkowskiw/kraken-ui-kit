@@ -79,16 +79,21 @@
   "story": "src/components/ui/switch.stories.tsx",
   "title": "Switch",
   "tokens": {
-    "layer3": [
-      "--ds-input-bordercolor"
-    ],
+    "layer3": [],
     "other": [
+      "--ds-color-background",
+      "--ds-color-border",
       "--ds-color-border-focus",
+      "--ds-color-border-strong",
       "--ds-color-content-primary",
+      "--ds-color-content-tertiary",
       "--ds-color-primary",
       "--ds-color-primary-hover",
+      "--ds-color-primary-muted",
       "--ds-color-status-error-border",
-      "--ds-color-white"
+      "--ds-color-surface",
+      "--ds-typography-labelmd-fontsize",
+      "--ds-typography-labelmd-lineheight"
     ]
   },
   "usage": {

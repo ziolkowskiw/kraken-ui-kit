@@ -211,3 +211,32 @@ Read this file at the start of every run. Append new discoveries at the bottom.
 **Rule:** When one variant axis (cell `Type`: text/link/diff/badge/checkbox/actions/file/input/…) changes the entire content rather than just styling, implement it as a `switch (type)` returning different JSX (reusing Badge/Button/Checkbox/Input), not a CVA with 13 class-strings. Keep `alignment` (justify/text-align) and per-type container padding as the only CVA-ish bits. Expose nested config (badgeColor, fileName, actionLabel) grouped by `table.category` in the story.
 **Why:** The cell's 13 types each render a different primitive; CVA only suits axes that vary styling on the same markup.
 **Applies to:** "kind"/"type" enums that swap content wholesale (cells, list items, media objects)
+
+---
+
+## Visual parity pass — 2026-10-19
+
+### Discovery: Base UI Checkbox/Radio roots are `<span>` — `disabled:` never matches
+
+**Category:** validation
+**Rule:** Style disabled Base UI Checkbox/Radio roots with `data-disabled:`, not `disabled:`. Only real `<button>`/`<input>` elements (Toggle, Tabs trigger) match `:disabled`.
+**Why:** checkbox and radio disabled styling silently never applied; caught only by rendering the Disabled story.
+**Applies to:** checkbox, radio-group, any Base UI part rendered as a span
+
+### Discovery: `tabular-nums` changes Moderat JIT's glyphs
+
+**Category:** token
+**Rule:** Don't add `tabular-nums` to Moderat text — its tabular figures have slashed zeros and look monospace, unlike Figma.
+**Applies to:** time-input, counters, any numeric text
+
+### Discovery: native inputs add their own affordances
+
+**Category:** validation
+**Rule:** `type="time"`/`"date"` render a picker indicator and `type="search"` a cancel ✕ — hide them (`::-webkit-calendar-picker-indicator`, `::-webkit-search-cancel-button`) when the kit renders its own icon.
+**Applies to:** time-input, search
+
+### Discovery: code review ≠ visual parity
+
+**Category:** tooling
+**Rule:** Verify parity on rendered pixels: screenshot stories with playwright (`channel: "chrome"`), open overlays by clicking/hovering (portals escape `#storybook-root`), and read Figma colours from `boundVariables`, not screenshots.
+**Applies to:** every parity review

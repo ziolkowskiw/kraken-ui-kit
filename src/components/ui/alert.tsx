@@ -75,7 +75,7 @@ function Alert({
             {icon}
           </div>
         )}
-        <div className="flex flex-1 flex-col gap-[var(--ds-spacing-component-sm)] items-start min-w-0 pt-0.5">
+        <div className={cn("flex flex-1 flex-col gap-[var(--ds-spacing-component-sm)] items-start min-w-0 pt-0.5", alertTitleColorMap[type ?? "neutral"])}>
           {children}
         </div>
       </div>

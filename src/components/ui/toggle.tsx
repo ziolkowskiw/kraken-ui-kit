@@ -14,7 +14,6 @@ const toggleVariants = cva(
     "group/toggle inline-flex shrink-0 select-none items-center justify-center gap-2 whitespace-nowrap border transition-colors outline-none cursor-pointer",
     "[color:var(--ds-button-secondary-content)]",
     "hover:[background-color:var(--ds-button-secondary-fillhover)]",
-    "data-[pressed]:[background-color:var(--ds-button-secondary-fillactive)]",
     "focus-visible:[border-color:var(--ds-color-border-focus)] focus-visible:ring-[3px] focus-visible:ring-ring/50",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0",
@@ -22,8 +21,9 @@ const toggleVariants = cva(
   {
     variants: {
       variant: {
-        outline: "[border-color:var(--ds-button-secondary-border)]",
-        ghost: "border-transparent",
+        // Figma Active=True fills with the variant's fillHover token.
+        outline: "[border-color:var(--ds-button-secondary-border)] data-[pressed]:[background-color:var(--ds-button-secondary-fillhover)]",
+        ghost: "border-transparent [color:var(--ds-button-ghost-content)] hover:[background-color:var(--ds-button-ghost-fillhover)] data-[pressed]:[background-color:var(--ds-button-ghost-fillhover)]",
       },
       size: {
         sm: "[height:var(--ds-button-size-sm-height)] [padding-inline:var(--ds-button-size-sm-paddingx)] [border-radius:var(--ds-button-size-sm-radius)] [font-size:var(--ds-button-size-sm-fontsize)] [&_svg]:size-3.5",

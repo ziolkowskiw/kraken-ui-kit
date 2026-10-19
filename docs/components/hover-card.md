@@ -23,18 +23,17 @@ All props are passed through to the underlying Base UI / HTML element.
 
 **L2 Semantic**
 - `--ds-color-content-primary`
-- `--ds-color-content-secondary`
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
 - `--ds-radius-lg`
 - `--ds-shadow-overlay`
-- `--ds-typography-bodysm-fontfamily`
-- `--ds-typography-bodysm-fontsize`
-- `--ds-typography-bodysm-lineheight`
-- `--ds-typography-labellg-fontfamily`
-- `--ds-typography-labellg-fontsize`
-- `--ds-typography-labellg-fontweight`
-- `--ds-typography-labellg-lineheight`
+- `--ds-typography-bodymd-fontfamily`
+- `--ds-typography-bodymd-fontsize`
+- `--ds-typography-bodymd-lineheight`
+- `--ds-typography-headingsm-fontfamily`
+- `--ds-typography-headingsm-fontsize`
+- `--ds-typography-headingsm-fontweight`
+- `--ds-typography-headingsm-lineheight`
 
 ## Accessibility
 

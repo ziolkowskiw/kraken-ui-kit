@@ -73,8 +73,9 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       data-slot="table-head"
       className={cn(
-        "h-10 px-3 text-left align-middle whitespace-nowrap",
-        "[color:var(--ds-color-content-secondary)] [font-size:var(--ds-typography-labelsm-fontsize)] [line-height:var(--ds-typography-labelsm-lineheight)] font-medium",
+        // Figma table/header (1824:18391): 8px padding, 14px regular, secondary-button content
+        "[padding:var(--ds-spacing-component-sm)] text-left align-middle whitespace-nowrap",
+        "[color:var(--ds-button-secondary-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] font-normal",
         "[&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-px",
         className
       )}
@@ -88,7 +89,8 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
     <td
       data-slot="table-cell"
       className={cn(
-        "h-10 px-3 align-middle whitespace-nowrap [color:var(--ds-color-content-primary)]",
+        // Figma table/cell (1824:18395): 8px padding, 14px regular
+        "[padding:var(--ds-spacing-component-sm)] align-middle whitespace-nowrap [color:var(--ds-button-secondary-content)] [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)]",
         "[&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-px",
         className
       )}

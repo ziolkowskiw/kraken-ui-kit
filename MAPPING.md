@@ -60,6 +60,8 @@ deliberate — do not "fix" them back to shadcn (audited in
 | Drawer | Base UI dialog | `vaul` |
 | EmptyMedia slot | `data-slot="empty-media"` | `data-slot="empty-icon"` |
 | Slider range slot | `data-slot="slider-indicator"` (Base UI naming) | `data-slot="slider-range"` |
+| Pagination | ghost `xs` controls; icon-only `PaginationPrevious`/`PaginationNext` + `PaginationFirst`/`PaginationLast` (chevron-first/last) | text "Previous"/"Next" links, no first/last |
+| Toast look | surface tinted per type (badge fill/border tokens), message only — no type icon | neutral card with a type icon |
 
 Formerly-backlogged upstream gaps, now shipped: sidebar app-shell
 (`SidebarProvider/Trigger/Inset/Rail/MenuSub*` — no mobile sheet mode yet),
@@ -228,7 +230,7 @@ from the top apply. Figma 🎨 and source 💻 are linked per row.
 | kbd | [🎨 1719:48975](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1719-48975) | [💻](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/kbd.tsx) | Keyboard shortcut display. `Kbd` renders one key; pair with `+` separator for combos. |
 | menubar | [🎨 1753:5204](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1753-5204) | [💻](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/menubar.tsx) | A horizontal bar of menus. `Menubar/Menu/Trigger/Content/Item/Separator/Group/Label/Sub/SubTrigger/SubContent`. |
 | navigation-menu | [🎨 1755:1748](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1755-1748) | [💻](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/navigation-menu.tsx) | A horizontal menu whose triggers reveal a shared floating panel. `NavigationMenu/List/Item/Trigger/Content/Link/Viewport/Indicator`. |
-| pagination | [🎨 1760:679](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1760-679) | [💻](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/pagination.tsx) | Pagination with page navigation, next and previous links; page through long lists/tables. `Pagination/Content/Item/Link/Previous/Next/Ellipsis`. |
+| pagination | [🎨 1760:679](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1760-679) | [💻](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/pagination.tsx) | Pagination with page navigation, next and previous links; page through long lists/tables. `Pagination/Content/Item/Link/First/Previous/Next/Last/Ellipsis`. |
 | popover | [🎨 1762:1829](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1762-1829) | [💻](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/popover.tsx) | Displays rich content in a portal, triggered by a button; small floating forms, info, pickers. `Popover/Trigger/Content/Close/Title/Description`. |
 | progress | [🎨 1792:1815](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1792-1815) | [💻](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/progress.tsx) | Rounded track + indicator with optional label row. `value` (0–100). `Progress`. |
 | resizable | [🎨 1799:3154](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=1799-3154) | [💻](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/resizable.tsx) | Accessible resizable panel groups and layouts; split views and adjustable panes (`react-resizable-panels`). |

@@ -5,8 +5,10 @@ import {
   PaginationContent,
   PaginationItem,
   PaginationLink,
+  PaginationFirst,
   PaginationPrevious,
   PaginationNext,
+  PaginationLast,
   PaginationEllipsis,
 } from './pagination'
 
@@ -14,6 +16,7 @@ type StoryProps = {
   totalPages: number
   currentPage: number
   showPrevNext: boolean
+  showFirstLast: boolean
 }
 
 /** Windowed page list: always first + last, the current page ±1, ellipses for gaps. */
@@ -37,20 +40,27 @@ const meta = {
   parameters: { layout: 'centered', docs: { description: { component: 'Pagination with page navigation, next and previous links; page through long lists/tables.' } } },
   tags: ['autodocs'],
   argTypes: {
-    totalPages: { control: { type: 'range', min: 1, max: 20, step: 1 }, name: 'Total pages' },
+    totalPages: { control: { type: 'range', min: 1, max: 40, step: 1 }, name: 'Total pages' },
     currentPage: { control: { type: 'number', min: 1 }, name: 'Current page' },
     showPrevNext: { control: 'boolean', name: 'Prev / Next' },
+    showFirstLast: { control: 'boolean', name: 'First / Last' },
   },
   args: {
-    totalPages: 10,
+    totalPages: 32,
     currentPage: 2,
     showPrevNext: true,
+    showFirstLast: true,
   },
-  render: ({ totalPages, currentPage, showPrevNext }) => {
+  render: ({ totalPages, currentPage, showPrevNext, showFirstLast }) => {
     const current = Math.min(Math.max(currentPage, 1), totalPages)
     return (
       <Pagination>
         <PaginationContent>
+          {showFirstLast && (
+            <PaginationItem>
+              <PaginationFirst href="#" aria-disabled={current === 1} />
+            </PaginationItem>
+          )}
           {showPrevNext && (
             <PaginationItem>
               <PaginationPrevious href="#" aria-disabled={current === 1} />
@@ -72,6 +82,11 @@ const meta = {
           {showPrevNext && (
             <PaginationItem>
               <PaginationNext href="#" aria-disabled={current === totalPages} />
+            </PaginationItem>
+          )}
+          {showFirstLast && (
+            <PaginationItem>
+              <PaginationLast href="#" aria-disabled={current === totalPages} />
             </PaginationItem>
           )}
         </PaginationContent>

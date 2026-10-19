@@ -21,18 +21,20 @@ const checkboxButtonVariants = cva(
           "[border-width:var(--ds-checkbox-borderwidth)] border-solid [border-color:var(--ds-checkbox-bordercolor)]",
           "[border-radius:var(--ds-checkbox-containerradius)]",
           "hover:[background-color:var(--ds-checkbox-fillhover)] hover:[border-color:var(--ds-checkbox-borderhover)]",
-          "has-[:disabled]:opacity-50 has-[:disabled]:cursor-not-allowed",
+          "has-[:disabled]:cursor-not-allowed has-[:disabled]:[background-color:var(--ds-checkbox-filldisabled)] has-[:disabled]:[border-color:var(--ds-checkbox-bordercolor)]",
+          // Figma disabled tile: grey fill + neutral border in every checked state, no opacity.
+          "has-[:disabled]:has-[[data-checked]]:[background-color:var(--ds-checkbox-filldisabled)] has-[:disabled]:has-[[data-checked]]:[border-color:var(--ds-checkbox-bordercolor)]",
           // checked / indeterminate: brand border + muted fill (Figma checked container)
           "has-[[data-checked]]:[background-color:var(--ds-color-primary-muted)] has-[[data-checked]]:[border-color:var(--ds-checkbox-checkedborder)]",
           "has-[[data-indeterminate]]:[background-color:var(--ds-color-primary-muted)] has-[[data-indeterminate]]:[border-color:var(--ds-checkbox-checkedborder)]",
           // error: red border in every checked state (overrides the brand rules above via higher specificity)
-          "data-[error]:[border-color:var(--ds-checkbox-bordererror)]",
+          "data-[error]:[border-color:var(--ds-checkbox-focusringerror)]",
           "data-[error]:has-[[data-checked]]:[background-color:var(--ds-checkbox-containerfill)] data-[error]:has-[[data-checked]]:[border-color:var(--ds-checkbox-bordererror)]",
           "data-[error]:has-[[data-indeterminate]]:[background-color:var(--ds-checkbox-containerfill)] data-[error]:has-[[data-indeterminate]]:[border-color:var(--ds-checkbox-bordererror)]",
           "data-[error]:hover:[border-color:var(--ds-checkbox-bordererrorhover)]",
         ].join(" "),
         standalone: [
-          "has-[:disabled]:opacity-50 has-[:disabled]:cursor-not-allowed",
+          "has-[:disabled]:cursor-not-allowed",
         ].join(" "),
       },
       // Single-line rows resolve to exactly the size token (sm 32 / md 40 / lg 48),
@@ -169,13 +171,14 @@ function CheckboxButtonGroup({
       {isVertical && helpOrError}
       <div
         className={cn(
-          "grid w-full",
+          "w-full",
           isVertical
             ? // vertical option gap is tighter for md/sm than lg (Figma)
               size === "lg"
-              ? "grid-flow-row gap-2"
-              : "grid-flow-row gap-1"
-            : "grid-flow-col auto-cols-fr gap-2",
+              ? "grid grid-flow-row gap-2"
+              : "grid grid-flow-row gap-1"
+            : // horizontal options hug their content and wrap (Figma input_options)
+              "flex flex-row flex-wrap gap-[var(--ds-spacing-4)]",
         )}
       >
         {children}

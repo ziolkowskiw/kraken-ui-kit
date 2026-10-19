@@ -25,7 +25,9 @@ const renderIcon = (name?: IconName): React.ReactNode => {
 }
 
 type StoryProps = React.ComponentProps<typeof Item> & {
+  hasTitle?: boolean
   title?: string
+  hasDescription?: boolean
   description?: string
   iconName?: IconName
   showAction?: boolean
@@ -37,26 +39,30 @@ const meta = {
   parameters: { layout: 'padded', docs: { description: { component: 'A flexible, composable row for displaying content in a structured layout; list rows, option rows, settings entries.' } } },
   tags: ['autodocs'],
   argTypes: {
-    variant: { control: 'inline-radio', options: ['default', 'muted', 'outline'] },
-    title: { control: 'text', name: 'Title' },
-    description: { control: 'text', name: 'Description' },
+    variant: { control: 'select', options: ['default', 'muted', 'outline'], name: 'Variant' },
+    hasTitle: { control: 'boolean', name: 'hasTitle' },
+    title: { control: 'text', name: 'title', if: { arg: 'hasTitle' } },
+    hasDescription: { control: 'boolean', name: 'hasDescription' },
+    description: { control: 'text', name: 'description', if: { arg: 'hasDescription' } },
     iconName: { control: 'select', options: ICON_OPTIONS, name: 'Left icon' },
     showAction: { control: 'boolean', name: 'Right action' },
   },
   args: {
     variant: 'outline',
+    hasTitle: true,
     title: 'Notifications',
+    hasDescription: true,
     description: 'Manage how you receive alerts and updates.',
     iconName: 'Bell',
     showAction: true,
   },
-  render: ({ title, description, iconName, showAction, ...args }: StoryProps) => (
+  render: ({ hasTitle, title, hasDescription, description, iconName, showAction, ...args }: StoryProps) => (
     <div className="w-96">
       <Item {...args}>
         {iconName !== 'none' && <ItemMedia>{renderIcon(iconName)}</ItemMedia>}
         <ItemContent>
-          <ItemTitle>{title}</ItemTitle>
-          {description && <ItemDescription>{description}</ItemDescription>}
+          {hasTitle && <ItemTitle>{title}</ItemTitle>}
+          {hasDescription && description && <ItemDescription>{description}</ItemDescription>}
         </ItemContent>
         {showAction && (
           <ItemActions>

@@ -10,12 +10,14 @@ import { TooltipIcon, TooltipProvider } from "./tooltip"
 const switchVariants = cva(
   [
     "peer group/switch relative inline-flex shrink-0 items-center rounded-full border border-transparent transition-all outline-none cursor-pointer",
-    "data-unchecked:[background-color:var(--ds-input-bordercolor)]",
+    // Figma switch (1814:16852): off track = border-strong; disabled swaps colours
+    // (border / primary-muted track, surface thumb) rather than fading with opacity.
+    "data-unchecked:[background-color:var(--ds-color-border-strong)]",
     "data-checked:[background-color:var(--ds-color-primary)]",
     "data-checked:hover:[background-color:var(--ds-color-primary-hover)]",
     "focus-visible:shadow-[0px_0px_0px_3px_var(--ds-color-border-focus)]",
     "aria-invalid:shadow-[0px_0px_0px_3px_var(--ds-color-status-error-border)]",
-    "data-disabled:cursor-not-allowed data-disabled:opacity-50",
+    "data-disabled:cursor-not-allowed data-disabled:data-unchecked:[background-color:var(--ds-color-border)] data-disabled:data-checked:[background-color:var(--ds-color-primary-muted)] data-disabled:data-checked:hover:[background-color:var(--ds-color-primary-muted)]",
   ].join(" "),
   {
     variants: {
@@ -29,7 +31,7 @@ const switchVariants = cva(
 )
 
 const thumbVariants = cva(
-  "pointer-events-none block rounded-full [background-color:var(--ds-color-white)] ring-0 transition-transform",
+  "pointer-events-none block rounded-full [background-color:var(--ds-color-background)] data-disabled:data-unchecked:[background-color:var(--ds-color-surface)] ring-0 transition-transform",
   {
     variants: {
       size: {
@@ -70,7 +72,7 @@ function Switch({ className, size, leftLabel, rightLabel, error, tooltip, ...pro
   // The <label> wraps the toggle so clicking the text flips it. The info ⓘ is a
   // sibling OUTSIDE the label, so hovering/clicking it never toggles the switch.
   const row = (
-    <label className="flex items-center gap-2 text-sm [color:var(--ds-color-content-primary)]">
+    <label className="flex items-center gap-2 [font-size:var(--ds-typography-labelmd-fontsize)] [line-height:var(--ds-typography-labelmd-lineheight)] [color:var(--ds-color-content-primary)] has-data-disabled:[color:var(--ds-color-content-tertiary)]">
       {leftLabel && <span>{leftLabel}</span>}
       {switchEl}
       {rightLabel && <span>{rightLabel}</span>}

@@ -108,7 +108,7 @@ function DrawerTitle({ className, ...props }: DialogPrimitive.Title.Props) {
   return (
     <DialogPrimitive.Title
       data-slot="drawer-title"
-      className={cn("font-heading text-base leading-none font-medium [color:var(--ds-color-content-primary)]", className)}
+      className={cn("[font-family:var(--ds-typography-headingmd-fontfamily)] [font-size:var(--ds-typography-headingmd-fontsize)] [font-weight:var(--ds-typography-headingmd-fontweight)] [line-height:var(--ds-typography-headingmd-lineheight)] [color:var(--ds-color-content-primary)]", className)}
       {...props}
     />
   )
@@ -118,7 +118,7 @@ function DrawerDescription({ className, ...props }: DialogPrimitive.Description.
   return (
     <DialogPrimitive.Description
       data-slot="drawer-description"
-      className={cn("text-sm [color:var(--ds-color-muted-foreground)]", className)}
+      className={cn("[font-size:var(--ds-typography-bodysm-fontsize)] [line-height:var(--ds-typography-bodysm-lineheight)] [color:var(--ds-color-content-secondary)]", className)}
       {...props}
     />
   )

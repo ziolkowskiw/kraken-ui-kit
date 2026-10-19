@@ -12,16 +12,22 @@ const STATES = ['rest', 'error', 'disabled'] as const
 
 type SelectFieldStoryProps = React.ComponentProps<typeof SelectField> & {
   state: 'rest' | 'error' | 'disabled'
+  showLabel?: boolean
+  showDescription?: boolean
   hasTooltip?: boolean
   tooltipText?: string
 }
 
+// Values double as labels: SelectValue renders the raw value unless `items` is given.
+const VALUES = ['Apple', 'Banana', 'Cherry', 'Grape'] as const
+
 const sampleItems = (
   <>
-    <SelectItem value="apple">Apple</SelectItem>
-    <SelectItem value="banana">Banana</SelectItem>
-    <SelectItem value="cherry">Cherry</SelectItem>
-    <SelectItem value="grape">Grape</SelectItem>
+    {VALUES.map((v) => (
+      <SelectItem key={v} value={v}>
+        {v}
+      </SelectItem>
+    ))}
   </>
 )
 
@@ -34,16 +40,23 @@ const meta = {
     state: { control: 'select', options: STATES, name: 'State' },
     size: { control: 'select', options: SIZES, name: 'Size' },
     label: { control: 'text', name: 'Label' },
+    defaultValue: { control: 'select', options: ['none', ...VALUES], name: 'Value' },
     description: { control: 'text', name: 'Description' },
     errorMessage: { control: 'text', name: 'Error message' },
     placeholder: { control: 'text', name: 'Placeholder' },
+    showLabel: { control: 'boolean', name: 'Show label' },
+    showDescription: { control: 'boolean', name: 'Show description' },
     mandatory: { control: 'boolean', name: 'Mandatory field' },
-    hasTooltip: { control: 'boolean', name: 'hasTooltip', table: { category: 'Nested: Tooltip' } },
+    hasTooltip: { control: 'boolean', name: 'Show info tooltip', table: { category: 'Nested: Tooltip' } },
     tooltipText: { control: 'text', name: 'Tooltip content', table: { category: 'Nested: Tooltip' }, if: { arg: 'hasTooltip' } },
     tooltip: { table: { disable: true } },
     error: { table: { disable: true } },
     disabled: { table: { disable: true } },
     children: { table: { disable: true } },
+    value: { table: { disable: true } },
+    onValueChange: { table: { disable: true } },
+    className: { table: { disable: true } },
+    'aria-label': { table: { disable: true } },
   },
   args: {
     state: 'rest',
@@ -52,15 +65,23 @@ const meta = {
     description: 'Help text',
     errorMessage: 'Error message',
     placeholder: 'Placeholder',
+    defaultValue: 'none',
+    showLabel: true,
+    showDescription: true,
     mandatory: false,
     hasTooltip: true,
     tooltipText: 'Extra context for this field.',
     children: sampleItems,
   },
-  render: ({ state, errorMessage, hasTooltip, tooltipText, ...args }) => (
+  render: ({ state, label, description, showLabel, showDescription, defaultValue, errorMessage, hasTooltip, tooltipText, ...args }) => (
     <SelectField
+      // Remount when Value changes so the uncontrolled select picks it up.
+      key={defaultValue}
       {...args}
-      tooltip={hasTooltip ? tooltipText : undefined}
+      defaultValue={defaultValue === 'none' ? undefined : defaultValue}
+      label={showLabel ? label : undefined}
+      description={showDescription ? description : undefined}
+      tooltip={showLabel && hasTooltip ? tooltipText : undefined}
       error={state === 'error'}
       errorMessage={state === 'error' ? errorMessage : undefined}
       disabled={state === 'disabled'}
@@ -78,17 +99,15 @@ export const Playground: Story = {}
 export const Default: Story = {}
 
 export const Filled: Story = {
-  render: ({ state, ...args }) => (
-    <SelectField {...args} defaultValue="banana" className="w-72" />
-  ),
+  args: { defaultValue: 'Banana' },
 }
 
 export const WithError: Story = {
-  args: { state: 'error' },
+  args: { state: 'error', defaultValue: 'Banana' },
 }
 
 export const Disabled: Story = {
-  args: { state: 'disabled' },
+  args: { state: 'disabled', defaultValue: 'Banana' },
 }
 
 export const Small: Story = {

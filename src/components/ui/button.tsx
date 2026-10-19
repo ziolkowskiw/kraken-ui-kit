@@ -33,7 +33,7 @@ const buttonVariants = cva(
         "destructive-secondary":
           "[--btn-fill:var(--ds-button-destructivesecondary-fill)] [--btn-fill-hover:var(--ds-button-destructivesecondary-fillhover)] [--btn-fill-active:var(--ds-button-destructivesecondary-fillactive)] [--btn-fill-disabled:var(--ds-button-destructivesecondary-filldisabled)] [--btn-content:var(--ds-button-destructivesecondary-content)] [--btn-content-disabled:var(--ds-button-destructivesecondary-contentdisabled)] [--btn-border:var(--ds-button-destructivesecondary-border)] [--btn-border-disabled:var(--ds-button-destructivesecondary-borderdisabled)]",
         "destructive-ghost":
-          "[--btn-fill:var(--ds-color-none)] [--btn-fill-hover:var(--ds-button-destructiveghost-fillhover)] [--btn-fill-active:var(--ds-button-destructiveghost-fillactive)] [--btn-fill-disabled:var(--ds-color-none)] [--btn-content:var(--ds-button-destructiveghost-content)] [--btn-content-disabled:var(--ds-button-destructiveghost-contentdisabled)] [--btn-border:var(--ds-button-destructiveghost-border)] [--btn-border-disabled:var(--ds-button-destructiveghost-borderdisabled)]",
+          "[--btn-fill:var(--ds-color-none)] [--btn-fill-hover:var(--ds-button-destructiveghost-fillhover)] [--btn-fill-active:var(--ds-button-destructiveghost-fillactive)] [--btn-fill-disabled:var(--ds-color-none)] [--btn-content:var(--ds-button-destructiveghost-content)] [--btn-content-disabled:var(--ds-button-destructiveghost-contentdisabled)]",
       },
       size: {
         xs: "[height:var(--ds-button-size-xs-height)] [padding-inline:var(--ds-button-size-xs-paddingx)] [font-size:var(--ds-button-size-xs-fontsize)] [font-weight:var(--ds-button-size-xs-fontweight)] [border-radius:var(--ds-button-size-xs-radius)] gap-1 [&_svg]:size-3",

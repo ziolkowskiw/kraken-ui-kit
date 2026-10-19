@@ -29,6 +29,7 @@ A control that toggles between checked and not checked. Use for opt-in/agree flo
 - `--ds-checkbox-checkedborder`
 - `--ds-checkbox-checkeddisabled`
 - `--ds-checkbox-checkedhover`
+- `--ds-checkbox-containerfill`
 - `--ds-checkbox-cornerradius`
 - `--ds-checkbox-fill`
 - `--ds-checkbox-filldisabled`
