@@ -9307,14 +9307,14 @@
               "lastSyncedAt": "2026-10-19T11:28:34.749Z",
               "lastSyncedValue": {
                 "global": {
-                  "literal": "Mozilla Text"
+                  "literal": "Darker Grotesque"
                 }
               },
               "variableId": "VariableID:4284:61062"
             }
           },
           "$type": "string",
-          "$value": "Mozilla Text"
+          "$value": "Darker Grotesque"
         },
         "text": {
           "$description": "acme/text — Global typeface for Acme body, label and overline text — referenced by semantic/typography tokens, never applied directly.",
@@ -10593,14 +10593,14 @@
                 "reference": "{color.slate.200}"
               },
               "acme": {
-                "reference": "{color.slate.200}"
+                "reference": "{color.slate.100}"
               }
             },
             "variableId": "VariableID:68:625"
           },
           "modes": {
             "brand": "{color.slate.200}",
-            "acme": "{color.slate.200}"
+            "acme": "{color.slate.100}"
           }
         },
         "$type": "color",
@@ -10646,14 +10646,14 @@
                 "reference": "{color.cyan.500}"
               },
               "acme": {
-                "reference": "{color.cyan.500}"
+                "reference": "{color.acme.700}"
               }
             },
             "variableId": "VariableID:68:627"
           },
           "modes": {
             "brand": "{color.cyan.500}",
-            "acme": "{color.cyan.500}"
+            "acme": "{color.acme.700}"
           }
         },
         "$type": "color",
@@ -10700,14 +10700,14 @@
                 "reference": "{color.slate.700}"
               },
               "acme": {
-                "reference": "{color.slate.700}"
+                "reference": "{color.acme.800}"
               }
             },
             "variableId": "VariableID:1090:9366"
           },
           "modes": {
             "brand": "{color.slate.700}",
-            "acme": "{color.slate.700}"
+            "acme": "{color.acme.800}"
           }
         },
         "$type": "color",
@@ -13145,14 +13145,14 @@
                 "reference": "{color.slate.300}"
               },
               "acme": {
-                "reference": "{color.slate.300}"
+                "reference": "{color.acme.200}"
               }
             },
             "variableId": "VariableID:68:756"
           },
           "modes": {
             "brand": "{color.slate.300}",
-            "acme": "{color.slate.300}"
+            "acme": "{color.acme.200}"
           }
         },
         "$type": "color",
@@ -13199,14 +13199,14 @@
                 "reference": "{color.slate.100}"
               },
               "acme": {
-                "reference": "{color.slate.100}"
+                "reference": "{color.acme.100}"
               }
             },
             "variableId": "VariableID:277:2572"
           },
           "modes": {
             "brand": "{color.slate.100}",
-            "acme": "{color.slate.100}"
+            "acme": "{color.acme.100}"
           }
         },
         "$type": "color",
@@ -13226,14 +13226,14 @@
                 "reference": "{color.slate.300}"
               },
               "acme": {
-                "reference": "{color.slate.300}"
+                "reference": "{color.acme.200}"
               }
             },
             "variableId": "VariableID:1312:6095"
           },
           "modes": {
             "brand": "{color.slate.300}",
-            "acme": "{color.slate.300}"
+            "acme": "{color.acme.200}"
           }
         },
         "$type": "color",
@@ -14069,14 +14069,14 @@
                 "reference": "{borderRadius.16}"
               },
               "acme": {
-                "reference": "{borderRadius.16}"
+                "reference": "{borderRadius.4}"
               }
             },
             "variableId": "VariableID:782:8"
           },
           "modes": {
             "brand": "{borderRadius.16}",
-            "acme": "{borderRadius.16}"
+            "acme": "{borderRadius.4}"
           }
         },
         "$type": "dimension",
@@ -14096,14 +14096,14 @@
                 "reference": "{borderRadius.24}"
               },
               "acme": {
-                "reference": "{borderRadius.24}"
+                "reference": "{borderRadius.8}"
               }
             },
             "variableId": "VariableID:782:9"
           },
           "modes": {
             "brand": "{borderRadius.24}",
-            "acme": "{borderRadius.24}"
+            "acme": "{borderRadius.8}"
           }
         },
         "$type": "dimension",
@@ -14150,14 +14150,14 @@
                 "reference": "{borderRadius.2}"
               },
               "acme": {
-                "reference": "{borderRadius.6}"
+                "reference": "{borderRadius.4}"
               }
             },
             "variableId": "VariableID:782:6"
           },
           "modes": {
             "brand": "{borderRadius.2}",
-            "acme": "{borderRadius.6}"
+            "acme": "{borderRadius.4}"
           }
         },
         "$type": "dimension",
@@ -14177,14 +14177,14 @@
                 "reference": "{borderRadius.none}"
               },
               "acme": {
-                "reference": "{borderRadius.4}"
+                "reference": "{borderRadius.2}"
               }
             },
             "variableId": "VariableID:782:5"
           },
           "modes": {
             "brand": "{borderRadius.none}",
-            "acme": "{borderRadius.4}"
+            "acme": "{borderRadius.2}"
           }
         },
         "$type": "dimension",
@@ -14258,14 +14258,14 @@
                 "reference": "{borderRadius.12}"
               },
               "acme": {
-                "reference": "{borderRadius.12}"
+                "reference": "{borderRadius.4}"
               }
             },
             "variableId": "VariableID:782:7"
           },
           "modes": {
             "brand": "{borderRadius.12}",
-            "acme": "{borderRadius.12}"
+            "acme": "{borderRadius.4}"
           }
         },
         "$type": "dimension",
@@ -15523,14 +15523,14 @@
                   "reference": "{fontSize.4xl}"
                 },
                 "acme": {
-                  "reference": "{fontSize.4xl}"
+                  "reference": "{fontSize.5xl}"
                 }
               },
               "variableId": "VariableID:68:770"
             },
             "modes": {
               "brand": "{fontSize.4xl}",
-              "acme": "{fontSize.4xl}"
+              "acme": "{fontSize.5xl}"
             }
           },
           "$type": "dimension",
@@ -15577,14 +15577,14 @@
                   "reference": "{lineHeight.2xl}"
                 },
                 "acme": {
-                  "reference": "{lineHeight.2xl}"
+                  "reference": "{lineHeight.3xl}"
                 }
               },
               "variableId": "VariableID:68:772"
             },
             "modes": {
               "brand": "{lineHeight.2xl}",
-              "acme": "{lineHeight.2xl}"
+              "acme": "{lineHeight.3xl}"
             }
           },
           "$type": "dimension",
@@ -15633,14 +15633,14 @@
                   "reference": "{fontSize.3xl}"
                 },
                 "acme": {
-                  "reference": "{fontSize.3xl}"
+                  "reference": "{fontSize.4xl}"
                 }
               },
               "variableId": "VariableID:68:774"
             },
             "modes": {
               "brand": "{fontSize.3xl}",
-              "acme": "{fontSize.3xl}"
+              "acme": "{fontSize.4xl}"
             }
           },
           "$type": "dimension",
@@ -15687,14 +15687,14 @@
                   "reference": "{lineHeight.2xl}"
                 },
                 "acme": {
-                  "reference": "{lineHeight.2xl}"
+                  "reference": "{lineHeight.3xl}"
                 }
               },
               "variableId": "VariableID:68:776"
             },
             "modes": {
               "brand": "{lineHeight.2xl}",
-              "acme": "{lineHeight.2xl}"
+              "acme": "{lineHeight.3xl}"
             }
           },
           "$type": "dimension",
@@ -15743,14 +15743,14 @@
                   "reference": "{fontSize.5xl}"
                 },
                 "acme": {
-                  "reference": "{fontSize.5xl}"
+                  "reference": "{fontSize.6xl}"
                 }
               },
               "variableId": "VariableID:68:766"
             },
             "modes": {
               "brand": "{fontSize.5xl}",
-              "acme": "{fontSize.5xl}"
+              "acme": "{fontSize.6xl}"
             }
           },
           "$type": "dimension",
@@ -15853,14 +15853,14 @@
                   "reference": "{fontSize.xl}"
                 },
                 "acme": {
-                  "reference": "{fontSize.xl}"
+                  "reference": "{fontSize.2xl}"
                 }
               },
               "variableId": "VariableID:68:782"
             },
             "modes": {
               "brand": "{fontSize.xl}",
-              "acme": "{fontSize.xl}"
+              "acme": "{fontSize.2xl}"
             }
           },
           "$type": "dimension",
@@ -15907,14 +15907,14 @@
                   "reference": "{lineHeight.xl}"
                 },
                 "acme": {
-                  "reference": "{lineHeight.xl}"
+                  "reference": "{lineHeight.2xl}"
                 }
               },
               "variableId": "VariableID:68:784"
             },
             "modes": {
               "brand": "{lineHeight.xl}",
-              "acme": "{lineHeight.xl}"
+              "acme": "{lineHeight.2xl}"
             }
           },
           "$type": "dimension",
@@ -15963,14 +15963,14 @@
                   "reference": "{fontSize.lg}"
                 },
                 "acme": {
-                  "reference": "{fontSize.lg}"
+                  "reference": "{fontSize.xl}"
                 }
               },
               "variableId": "VariableID:68:786"
             },
             "modes": {
               "brand": "{fontSize.lg}",
-              "acme": "{fontSize.lg}"
+              "acme": "{fontSize.xl}"
             }
           },
           "$type": "dimension",
@@ -16017,14 +16017,14 @@
                   "reference": "{lineHeight.lg}"
                 },
                 "acme": {
-                  "reference": "{lineHeight.lg}"
+                  "reference": "{lineHeight.xl}"
                 }
               },
               "variableId": "VariableID:68:788"
             },
             "modes": {
               "brand": "{lineHeight.lg}",
-              "acme": "{lineHeight.lg}"
+              "acme": "{lineHeight.xl}"
             }
           },
           "$type": "dimension",
@@ -16073,14 +16073,14 @@
                   "reference": "{fontSize.md}"
                 },
                 "acme": {
-                  "reference": "{fontSize.md}"
+                  "reference": "{fontSize.lg}"
                 }
               },
               "variableId": "VariableID:68:790"
             },
             "modes": {
               "brand": "{fontSize.md}",
-              "acme": "{fontSize.md}"
+              "acme": "{fontSize.lg}"
             }
           },
           "$type": "dimension",
@@ -16183,14 +16183,14 @@
                   "reference": "{fontSize.2xl}"
                 },
                 "acme": {
-                  "reference": "{fontSize.2xl}"
+                  "reference": "{fontSize.3xl}"
                 }
               },
               "variableId": "VariableID:68:778"
             },
             "modes": {
               "brand": "{fontSize.2xl}",
-              "acme": "{fontSize.2xl}"
+              "acme": "{fontSize.3xl}"
             }
           },
           "$type": "dimension",
@@ -16237,14 +16237,14 @@
                   "reference": "{lineHeight.xl}"
                 },
                 "acme": {
-                  "reference": "{lineHeight.xl}"
+                  "reference": "{lineHeight.2xl}"
                 }
               },
               "variableId": "VariableID:68:780"
             },
             "modes": {
               "brand": "{lineHeight.xl}",
-              "acme": "{lineHeight.xl}"
+              "acme": "{lineHeight.2xl}"
             }
           },
           "$type": "dimension",

@@ -38,10 +38,10 @@ export default function RootLayout({
         // body-rendered stylesheets so React knows where to order it.
         precedence="default"
       />
-      {/* Acme fonts: "Mozilla Text" (display + headings) and "Inter" (body, labels). */}
+      {/* Acme fonts: "Darker Grotesque" (display + headings) and "Inter" (body, labels). */}
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Mozilla+Text:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Darker+Grotesque:wght@400;500;600;700&display=swap"
         precedence="default"
       />
       <body className="min-h-full flex flex-col">{children}</body>
