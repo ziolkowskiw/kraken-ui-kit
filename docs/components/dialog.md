@@ -40,6 +40,8 @@ A window overlaid on the primary window, rendering content underneath inert. Use
 - `--ds-color-popover`
 - `--ds-color-popover-foreground`
 - `--ds-radius-xl`
+- `--ds-spacing-component-lg`
+- `--ds-spacing-component-sm`
 - `--ds-typography-bodysm-fontsize`
 - `--ds-typography-bodysm-lineheight`
 - `--ds-typography-headingmd-fontfamily`

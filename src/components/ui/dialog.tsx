@@ -53,9 +53,9 @@ function DialogContent({
       <DialogPrimitive.Popup
         data-slot="dialog-content"
         className={cn(
-          "fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 text-sm outline-none",
+          "fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-[var(--ds-spacing-component-lg)] text-sm outline-none",
           "[background-color:var(--ds-color-popover)] [color:var(--ds-color-popover-foreground)]",
-          "[border-radius:var(--ds-radius-xl)] p-4 [box-shadow:0_0_0_1px_var(--ds-color-border)]",
+          "[border-radius:var(--ds-radius-xl)] [padding:var(--ds-spacing-component-lg)] [box-shadow:0_0_0_1px_var(--ds-color-border)]",
           "duration-100 sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
           className
         )}
@@ -68,7 +68,7 @@ function DialogContent({
             render={
               <Button
                 variant="ghost"
-                className="absolute top-2 right-2"
+                className="absolute [top:var(--ds-spacing-component-sm)] [right:var(--ds-spacing-component-sm)]"
                 size="sm"
                 iconOnly
               />
@@ -87,7 +87,7 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="dialog-header"
-      className={cn("flex flex-col gap-2", className)}
+      className={cn("flex flex-col gap-[var(--ds-spacing-component-sm)]", className)}
       {...props}
     />
   )
@@ -105,7 +105,7 @@ function DialogFooter({
     <div
       data-slot="dialog-footer"
       className={cn(
-        "-mx-4 -mb-4 flex flex-col-reverse gap-2 [border-bottom-left-radius:var(--ds-radius-xl)] [border-bottom-right-radius:var(--ds-radius-xl)] [border-top:1px_solid_var(--ds-button-secondary-border)] [background-color:var(--ds-color-background)] p-4 sm:flex-row sm:justify-end",
+        "[margin-inline:calc(var(--ds-spacing-component-lg)*-1)] [margin-bottom:calc(var(--ds-spacing-component-lg)*-1)] flex flex-col-reverse gap-[var(--ds-spacing-component-sm)] [border-bottom-left-radius:var(--ds-radius-xl)] [border-bottom-right-radius:var(--ds-radius-xl)] [border-top:1px_solid_var(--ds-button-secondary-border)] [background-color:var(--ds-color-background)] [padding:var(--ds-spacing-component-lg)] sm:flex-row sm:justify-end",
         className
       )}
       {...props}
