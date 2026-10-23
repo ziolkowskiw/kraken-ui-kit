@@ -845,16 +845,16 @@
   --ds-color-destructive-foreground: var(--ds-color-white);
   --ds-color-destructive-muted: var(--ds-color-red-100);
   --ds-color-destructive-muted-foreground: var(--ds-color-red-900);
-  --ds-color-background: var(--ds-color-slate-50);
+  --ds-color-background: var(--ds-color-slate-100);
   --ds-color-foreground: var(--ds-color-slate-900);
-  --ds-color-muted: var(--ds-color-slate-100);
+  --ds-color-muted: var(--ds-color-slate-200);
   --ds-color-muted-foreground: var(--ds-color-slate-600);
   --ds-color-surface: var(--ds-color-slate-50);
   --ds-color-inverse: var(--ds-color-slate-900);
   --ds-color-border-input: var(--ds-color-slate-200);
   --ds-color-overlay: var(--ds-color-slate-800);
-  --ds-color-border-subtle: var(--ds-color-slate-100);
-  --ds-color-border: var(--ds-color-slate-100);
+  --ds-color-border-subtle: var(--ds-color-slate-200);
+  --ds-color-border: var(--ds-color-slate-200);
   --ds-color-border-strong: var(--ds-color-slate-300);
   --ds-color-border-focus: var(--ds-color-acme-700);
   --ds-color-border-inverse: var(--ds-color-slate-700);
@@ -1063,7 +1063,7 @@
   --ds-color-border-field-hover: var(--ds-color-slate-200);
   --ds-color-border-input-focus: var(--ds-color-acme-800);
   --ds-color-content-disabled-on-color: var(--ds-color-slate-500);
-  --ds-color-popover: var(--ds-color-slate-50);
+  --ds-color-popover: var(--ds-color-slate-100);
   --ds-color-popover-foreground: var(--ds-color-slate-900);
   --ds-color-destructive-hover: var(--ds-color-red-500);
   --ds-color-border-disabled: var(--ds-color-slate-200);
@@ -1074,7 +1074,7 @@
   --ds-color-content-highlight: #B2F10C4D;
   --ds-color-card: var(--ds-color-slate-50);
   --ds-color-card-foreground: var(--ds-color-slate-800);
-  --ds-color-accent: var(--ds-color-slate-100);
+  --ds-color-accent: var(--ds-color-slate-200);
   --ds-color-accent-foreground: var(--ds-color-slate-900);
   --ds-color-input: var(--ds-color-slate-200);
   --ds-color-ring: var(--ds-color-cyan-500);
