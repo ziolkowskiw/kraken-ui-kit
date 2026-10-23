@@ -10557,7 +10557,7 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
-            "lastSyncedAt": "2026-06-13T07:49:36.621Z",
+            "lastSyncedAt": "2026-10-23T13:00:00.000Z",
             "lastSyncedValue": {
               "jit": {
                 "reference": "{color.white}"
@@ -10566,14 +10566,14 @@
                 "reference": "{color.white}"
               },
               "acme": {
-                "reference": "{color.white}"
+                "reference": "{color.slate.50}"
               }
             },
             "variableId": "VariableID:68:594"
           },
           "modes": {
             "brand": "{color.white}",
-            "acme": "{color.white}"
+            "acme": "{color.slate.50}"
           }
         },
         "$type": "color",
@@ -10637,7 +10637,7 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
-            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
+            "lastSyncedAt": "2026-10-23T13:00:00.000Z",
             "lastSyncedValue": {
               "jit": {
                 "reference": "{color.slate.200}"
@@ -10646,14 +10646,14 @@
                 "reference": "{color.slate.200}"
               },
               "acme": {
-                "reference": "{color.slate.100}"
+                "reference": "{color.white}"
               }
             },
             "variableId": "VariableID:4346:68068"
           },
           "modes": {
             "brand": "{color.slate.200}",
-            "acme": "{color.slate.100}"
+            "acme": "{color.white}"
           }
         },
         "$type": "color",
@@ -11473,7 +11473,7 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
-            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
+            "lastSyncedAt": "2026-10-23T13:00:00.000Z",
             "lastSyncedValue": {
               "jit": {
                 "reference": "{color.white}"
@@ -11482,14 +11482,14 @@
                 "reference": "{color.white}"
               },
               "acme": {
-                "reference": "{color.slate.100}"
+                "reference": "{color.white}"
               }
             },
             "variableId": "VariableID:4346:68067"
           },
           "modes": {
             "brand": "{color.white}",
-            "acme": "{color.slate.100}"
+            "acme": "{color.white}"
           }
         },
         "$type": "color",
@@ -12895,7 +12895,7 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T13:00:00.000Z",
             "lastSyncedValue": {
               "jit": {
                 "reference": "{color.white}"
@@ -12904,14 +12904,14 @@
                 "reference": "{color.white}"
               },
               "acme": {
-                "reference": "{color.white}"
+                "reference": "{color.slate.50}"
               }
             },
             "variableId": "VariableID:1252:17445"
           },
           "modes": {
             "brand": "{color.white}",
-            "acme": "{color.white}"
+            "acme": "{color.slate.50}"
           }
         },
         "$type": "color",

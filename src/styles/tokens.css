@@ -851,7 +851,7 @@
   --ds-color-destructive-foreground: var(--ds-color-white);
   --ds-color-destructive-muted: var(--ds-color-red-100);
   --ds-color-destructive-muted-foreground: var(--ds-color-red-900);
-  --ds-color-background: var(--ds-color-white);
+  --ds-color-background: var(--ds-color-slate-50);
   --ds-color-foreground: var(--ds-color-slate-900);
   --ds-color-muted: var(--ds-color-slate-100);
   --ds-color-muted-foreground: var(--ds-color-slate-600);
@@ -1064,12 +1064,12 @@
   --ds-borderwidth-none: var(--ds-borderwidth-0);
   --ds-borderwidth-lg: var(--ds-borderwidth-4);
   --ds-color-border-input-hover: var(--ds-color-slate-600);
-  --ds-color-field: var(--ds-color-slate-100);
-  --ds-color-border-field: var(--ds-color-slate-100);
+  --ds-color-field: var(--ds-color-white);
+  --ds-color-border-field: var(--ds-color-white);
   --ds-color-border-field-hover: var(--ds-color-slate-200);
   --ds-color-border-input-focus: var(--ds-color-acme-800);
   --ds-color-content-disabled-on-color: var(--ds-color-slate-500);
-  --ds-color-popover: var(--ds-color-white);
+  --ds-color-popover: var(--ds-color-slate-50);
   --ds-color-popover-foreground: var(--ds-color-slate-900);
   --ds-color-destructive-hover: var(--ds-color-red-500);
   --ds-color-border-disabled: var(--ds-color-slate-200);
