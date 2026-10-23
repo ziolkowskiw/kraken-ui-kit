@@ -51,7 +51,7 @@ function ResizableHandle({
       {...props}
     >
       {withHandle && (
-        <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border [border-color:var(--ds-color-border)] [background-color:var(--ds-color-background)]">
+        <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border [border-color:var(--ds-color-border)] [background-color:var(--ds-color-control)]">
           <GripVerticalIcon className={cn("size-2.5 [color:var(--ds-color-content-tertiary)]", isVertical && "rotate-90")} />
         </div>
       )}

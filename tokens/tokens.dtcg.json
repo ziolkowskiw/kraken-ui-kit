@@ -1906,17 +1906,17 @@
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:264",
-              "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+              "lastSyncedAt": "2026-10-23T14:30:00.000Z",
               "lastSyncedValue": {
                 "component": {
-                  "reference": "{color.background}"
+                  "reference": "{color.control}"
                 }
               },
               "variableId": "VariableID:68:853"
             }
           },
           "$type": "color",
-          "$value": "{color.background}"
+          "$value": "{color.control}"
         },
         "fillActive": {
           "$description": "Secondary button background when pressed.",
@@ -2974,17 +2974,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T14:30:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.background}"
+                "reference": "{color.control}"
               }
             },
             "variableId": "VariableID:1007:90"
           }
         },
         "$type": "color",
-        "$value": "{color.background}"
+        "$value": "{color.control}"
       },
       "containerRadius": {
         "$description": "Border radius of the checkbox button container (outer row). Aliases input/size/md/radius.",
@@ -3025,17 +3025,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
+            "lastSyncedAt": "2026-10-23T14:30:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.background}"
+                "reference": "{color.control}"
               }
             },
             "variableId": "VariableID:1037:4"
           }
         },
         "$type": "color",
-        "$value": "{color.background}"
+        "$value": "{color.control}"
       },
       "fillDisabled": {
         "$description": "Background of the checkbox button container when disabled. Aliases input/containerColorDisabled.",
@@ -3619,21 +3619,21 @@
         "$value": "{spacing.4}"
       },
       "fill": {
-        "$description": "Input background at rest. Shared by every form field; checkbox and radio bind color/background directly.",
+        "$description": "Input background at rest. Shared by every form field; binds color/control like every other clickable surface.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
+            "lastSyncedAt": "2026-10-23T14:30:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.field}"
+                "reference": "{color.control}"
               }
             },
             "variableId": "VariableID:68:911"
           }
         },
         "$type": "color",
-        "$value": "{color.field}"
+        "$value": "{color.control}"
       },
       "fillDisabled": {
         "$description": "Input background when disabled.",
@@ -4155,17 +4155,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
+            "lastSyncedAt": "2026-10-23T14:30:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.background}"
+                "reference": "{color.control}"
               }
             },
             "variableId": "VariableID:1073:5274"
           }
         },
         "$type": "color",
-        "$value": "{color.background}"
+        "$value": "{color.control}"
       },
       "fillError": {
         "$description": "Fill of the inner dot in error state. Matches error border for visual consistency.",
@@ -10633,7 +10633,7 @@
         "$value": "{color.slate.200}"
       },
       "border-field": {
-        "$description": "Form field border at rest. Matches color/border-input in jit and brand; equals color/field in borderless brands so the edge disappears.",
+        "$description": "Form field border at rest. Matches color/border-input in jit and brand; equals color/control in borderless brands so the edge disappears.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
@@ -10879,7 +10879,7 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T14:30:00.000Z",
             "lastSyncedValue": {
               "jit": {
                 "reference": "{color.slate.50}"
@@ -10888,14 +10888,14 @@
                 "reference": "{color.slate.50}"
               },
               "acme": {
-                "reference": "{color.slate.50}"
+                "reference": "{color.slate.100}"
               }
             },
             "variableId": "VariableID:1936:2"
           },
           "modes": {
             "brand": "{color.slate.50}",
-            "acme": "{color.slate.50}"
+            "acme": "{color.slate.100}"
           }
         },
         "$type": "color",
@@ -11280,6 +11280,33 @@
           "$value": "{color.slate.500}"
         }
       },
+      "control": {
+        "$description": "Fill for anything clickable — form fields, secondary buttons, checkbox and radio boxes, checkbox/radio cards, switch, slider and resize handles. White in every brand today; containers carry the tint (acme).",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:263",
+            "lastSyncedAt": "2026-10-23T14:30:00.000Z",
+            "lastSyncedValue": {
+              "jit": {
+                "reference": "{color.white}"
+              },
+              "brand": {
+                "reference": "{color.white}"
+              },
+              "acme": {
+                "reference": "{color.white}"
+              }
+            },
+            "variableId": "VariableID:4346:68067"
+          },
+          "modes": {
+            "brand": "{color.white}",
+            "acme": "{color.white}"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.white}"
+      },
       "destructive": {
         "$description": "Error fill — destructive button background, inline validation error indicator.",
         "$extensions": {
@@ -11467,33 +11494,6 @@
         },
         "$type": "color",
         "$value": "{color.red.900}"
-      },
-      "field": {
-        "$description": "Form field fill at rest — input, select, textarea, search, combobox, date/time picker, OTP, command search. Matches color/background in jit and brand; a tinted fill in borderless brands.",
-        "$extensions": {
-          "figma-console-mcp": {
-            "collectionId": "VariableCollectionId:68:263",
-            "lastSyncedAt": "2026-10-23T13:00:00.000Z",
-            "lastSyncedValue": {
-              "jit": {
-                "reference": "{color.white}"
-              },
-              "brand": {
-                "reference": "{color.white}"
-              },
-              "acme": {
-                "reference": "{color.white}"
-              }
-            },
-            "variableId": "VariableID:4346:68067"
-          },
-          "modes": {
-            "brand": "{color.white}",
-            "acme": "{color.white}"
-          }
-        },
-        "$type": "color",
-        "$value": "{color.white}"
       },
       "foreground": {
         "$description": "Primary content on surface — body text, default icon fill.",
@@ -13324,7 +13324,7 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T14:30:00.000Z",
             "lastSyncedValue": {
               "jit": {
                 "reference": "{color.slate.50}"
@@ -13333,14 +13333,14 @@
                 "reference": "{color.slate.50}"
               },
               "acme": {
-                "reference": "{color.slate.50}"
+                "reference": "{color.slate.100}"
               }
             },
             "variableId": "VariableID:2005:2"
           },
           "modes": {
             "brand": "{color.slate.50}",
-            "acme": "{color.slate.50}"
+            "acme": "{color.slate.100}"
           }
         },
         "$type": "color",
@@ -13755,7 +13755,7 @@
             "$extensions": {
               "figma-console-mcp": {
                 "collectionId": "VariableCollectionId:68:263",
-                "lastSyncedAt": "2026-06-13T07:49:36.621Z",
+                "lastSyncedAt": "2026-10-23T14:30:00.000Z",
                 "lastSyncedValue": {
                   "jit": {
                     "reference": "{color.slate.50}"
@@ -13764,14 +13764,14 @@
                     "reference": "{color.slate.50}"
                   },
                   "acme": {
-                    "reference": "{color.slate.50}"
+                    "reference": "{color.slate.100}"
                   }
                 },
                 "variableId": "VariableID:68:660"
               },
               "modes": {
                 "brand": "{color.slate.50}",
-                "acme": "{color.slate.50}"
+                "acme": "{color.slate.100}"
               }
             },
             "$type": "color",
@@ -14085,7 +14085,7 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
-            "lastSyncedAt": "2026-06-13T07:49:36.621Z",
+            "lastSyncedAt": "2026-10-23T14:30:00.000Z",
             "lastSyncedValue": {
               "jit": {
                 "reference": "{color.slate.50}"
@@ -14094,14 +14094,14 @@
                 "reference": "{color.slate.50}"
               },
               "acme": {
-                "reference": "{color.slate.50}"
+                "reference": "{color.slate.100}"
               }
             },
             "variableId": "VariableID:68:598"
           },
           "modes": {
             "brand": "{color.slate.50}",
-            "acme": "{color.slate.50}"
+            "acme": "{color.slate.100}"
           }
         },
         "$type": "color",

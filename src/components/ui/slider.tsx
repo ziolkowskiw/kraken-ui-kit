@@ -68,7 +68,7 @@ function Slider({
             className={cn(
               // Figma slider/marker: 14px white disc with a 1px foreground ring
               "block size-3.5 shrink-0 border outline-none transition-[box-shadow]",
-              "[border-radius:var(--ds-radius-full)] [border-color:var(--ds-color-foreground)] [background-color:var(--ds-color-background)]",
+              "[border-radius:var(--ds-radius-full)] [border-color:var(--ds-color-foreground)] [background-color:var(--ds-color-control)]",
               "hover:ring-4 hover:ring-ring/20",
               "focus-visible:ring-4 focus-visible:ring-ring/50",
               "data-disabled:pointer-events-none data-disabled:opacity-50"

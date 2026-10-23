@@ -50,9 +50,9 @@
   "tokens": {
     "layer3": [],
     "other": [
-      "--ds-color-background",
       "--ds-color-border",
-      "--ds-color-content-tertiary"
+      "--ds-color-content-tertiary",
+      "--ds-color-control"
     ]
   },
   "usage": {

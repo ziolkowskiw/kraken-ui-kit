@@ -40,7 +40,7 @@
   "tokens": {
     "layer3": [],
     "other": [
-      "--ds-color-background",
+      "--ds-color-control",
       "--ds-color-foreground",
       "--ds-color-muted",
       "--ds-color-primary",

@@ -548,7 +548,7 @@
   --ds-borderwidth-none: var(--ds-borderwidth-0);
   --ds-borderwidth-lg: var(--ds-borderwidth-4);
   --ds-color-border-input-hover: var(--ds-color-slate-600);
-  --ds-color-field: var(--ds-color-white);
+  --ds-color-control: var(--ds-color-white);
   --ds-color-border-field: var(--ds-color-slate-200);
   --ds-color-border-field-hover: var(--ds-color-slate-600);
   --ds-color-border-input-focus: var(--ds-color-slate-700);
@@ -806,7 +806,7 @@
   --ds-borderwidth-none: var(--ds-borderwidth-0);
   --ds-borderwidth-lg: var(--ds-borderwidth-4);
   --ds-color-border-input-hover: var(--ds-color-slate-600);
-  --ds-color-field: var(--ds-color-white);
+  --ds-color-control: var(--ds-color-white);
   --ds-color-border-field: var(--ds-color-slate-200);
   --ds-color-border-field-hover: var(--ds-color-slate-600);
   --ds-color-border-input-focus: var(--ds-color-slate-700);
@@ -855,7 +855,7 @@
   --ds-color-foreground: var(--ds-color-slate-900);
   --ds-color-muted: var(--ds-color-slate-200);
   --ds-color-muted-foreground: var(--ds-color-slate-600);
-  --ds-color-surface: var(--ds-color-slate-50);
+  --ds-color-surface: var(--ds-color-slate-100);
   --ds-color-inverse: var(--ds-color-slate-900);
   --ds-color-border-input: var(--ds-color-slate-200);
   --ds-color-overlay: var(--ds-color-slate-800);
@@ -891,7 +891,7 @@
   --ds-color-status-info-border: var(--ds-color-blue-200);
   --ds-color-status-info-foreground: var(--ds-color-blue-800);
   --ds-color-status-info-icon: var(--ds-color-blue-600);
-  --ds-color-status-neutral-bg: var(--ds-color-slate-50);
+  --ds-color-status-neutral-bg: var(--ds-color-slate-100);
   --ds-color-status-neutral-border: var(--ds-color-slate-200);
   --ds-color-status-neutral-foreground: var(--ds-color-slate-700);
   --ds-color-status-neutral-icon: var(--ds-color-slate-500);
@@ -1064,7 +1064,7 @@
   --ds-borderwidth-none: var(--ds-borderwidth-0);
   --ds-borderwidth-lg: var(--ds-borderwidth-4);
   --ds-color-border-input-hover: var(--ds-color-slate-600);
-  --ds-color-field: var(--ds-color-white);
+  --ds-color-control: var(--ds-color-white);
   --ds-color-border-field: var(--ds-color-white);
   --ds-color-border-field-hover: var(--ds-color-slate-200);
   --ds-color-border-input-focus: var(--ds-color-acme-800);
@@ -1078,13 +1078,13 @@
   --ds-chart-color-5: var(--ds-color-slate-300);
   --ds-color-secondary-pressed: var(--ds-color-acme-200);
   --ds-color-content-highlight: #B2F10C4D;
-  --ds-color-card: var(--ds-color-slate-50);
+  --ds-color-card: var(--ds-color-slate-100);
   --ds-color-card-foreground: var(--ds-color-slate-800);
   --ds-color-accent: var(--ds-color-slate-200);
   --ds-color-accent-foreground: var(--ds-color-slate-900);
   --ds-color-input: var(--ds-color-slate-200);
   --ds-color-ring: var(--ds-color-cyan-500);
-  --ds-color-sidebar: var(--ds-color-slate-50);
+  --ds-color-sidebar: var(--ds-color-slate-100);
   --ds-color-sidebar-foreground: var(--ds-color-slate-900);
   --ds-color-sidebar-primary: var(--ds-color-acme-400);
   --ds-color-sidebar-primary-foreground: var(--ds-color-acme-900);
@@ -1114,7 +1114,7 @@
   --ds-button-tonal-content: var(--ds-color-primary-muted-foreground);
   --ds-button-tonal-contentdisabled: var(--ds-color-content-disabled-on-color);
   --ds-button-tonal-icondisabled: var(--ds-color-content-disabled-on-color);
-  --ds-button-secondary-fill: var(--ds-color-background);
+  --ds-button-secondary-fill: var(--ds-color-control);
   --ds-button-secondary-fillhover: var(--ds-color-secondary-hover);
   --ds-button-secondary-fillactive: var(--ds-color-secondary-pressed);
   --ds-button-secondary-filldisabled: var(--ds-color-muted);
@@ -1160,7 +1160,7 @@
   --ds-button-size-lg-fontsize: var(--ds-typography-labellg-fontsize);
   --ds-button-size-lg-fontweight: var(--ds-typography-labellg-fontweight);
   --ds-button-size-lg-radius: var(--ds-radius-lg);
-  --ds-input-fill: var(--ds-color-field);
+  --ds-input-fill: var(--ds-color-control);
   --ds-input-filldisabled: var(--ds-color-muted);
   --ds-input-fillfilled: var(--ds-color-surface);
   --ds-input-bordercolor: var(--ds-color-border-field);
@@ -1302,7 +1302,7 @@
   --ds-badge-size-lg-radiussquare: var(--ds-radius-xs);
   --ds-checkbox-checked: var(--ds-color-primary);
   --ds-checkbox-checkedhover: var(--ds-color-primary-hover);
-  --ds-checkbox-containerfill: var(--ds-color-background);
+  --ds-checkbox-containerfill: var(--ds-color-control);
   --ds-checkbox-warninghovercolor: var(--ds-color-status-warning-foreground);
   --ds-checkbox-paddingx: var(--ds-spacing-component-md);
   --ds-checkbox-paddingydefault: var(--ds-spacing-component-sm);
@@ -1310,7 +1310,7 @@
   --ds-checkbox-cornerradius: var(--ds-radius-sm);
   --ds-checkbox-borderwidth: var(--ds-input-borderwidth);
   --ds-checkbox-containerradius: var(--ds-input-size-md-radius);
-  --ds-checkbox-fill: var(--ds-color-background);
+  --ds-checkbox-fill: var(--ds-color-control);
   --ds-checkbox-fillhover: var(--ds-input-fillfilled);
   --ds-checkbox-filldisabled: var(--ds-input-filldisabled);
   --ds-checkbox-bordercolor: var(--ds-color-border-input);
@@ -1347,7 +1347,7 @@
   --ds-select-size-md-gap: var(--ds-spacing-component-xs);
   --ds-select-size-lg-gap: var(--ds-spacing-component-md);
   --ds-select-iconsize: var(--ds-spacing-component-lg);
-  --ds-radio-fill: var(--ds-color-background);
+  --ds-radio-fill: var(--ds-color-control);
   --ds-radio-bordercolor: var(--ds-color-border-input);
   --ds-radio-borderhover: var(--ds-color-border-input-hover);
   --ds-radio-bordererror: var(--ds-input-bordererror);
