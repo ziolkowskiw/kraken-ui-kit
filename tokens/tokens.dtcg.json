@@ -2787,17 +2787,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{input.borderColor}"
+                "reference": "{color.border-input}"
               }
             },
             "variableId": "VariableID:1037:7"
           }
         },
         "$type": "color",
-        "$value": "{input.borderColor}"
+        "$value": "{color.border-input}"
       },
       "borderError": {
         "$description": "Border color of the checkbox input box in error semantic state. Aliases input/borderColorError.",
@@ -2838,17 +2838,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{input.borderHover}"
+                "reference": "{color.border-input-hover}"
               }
             },
             "variableId": "VariableID:1037:8"
           }
         },
         "$type": "color",
-        "$value": "{input.borderHover}"
+        "$value": "{color.border-input-hover}"
       },
       "borderWarning": {
         "$description": "Border color of the checkbox input box in warning semantic state. Aliases color/warning.",
@@ -3025,17 +3025,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{input.fill}"
+                "reference": "{color.background}"
               }
             },
             "variableId": "VariableID:1037:4"
           }
         },
         "$type": "color",
-        "$value": "{input.fill}"
+        "$value": "{color.background}"
       },
       "fillDisabled": {
         "$description": "Background of the checkbox button container when disabled. Aliases input/containerColorDisabled.",
@@ -3470,17 +3470,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.border-input}"
+                "reference": "{color.border-field}"
               }
             },
             "variableId": "VariableID:68:914"
           }
         },
         "$type": "color",
-        "$value": "{color.border-input}"
+        "$value": "{color.border-field}"
       },
       "borderDisabled": {
         "$description": "Input border when disabled.",
@@ -3538,17 +3538,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.border-input-hover}"
+                "reference": "{color.border-field-hover}"
               }
             },
             "variableId": "VariableID:68:915"
           }
         },
         "$type": "color",
-        "$value": "{color.border-input-hover}"
+        "$value": "{color.border-field-hover}"
       },
       "borderWidth": {
         "$description": "Input border stroke width.",
@@ -3619,21 +3619,21 @@
         "$value": "{spacing.4}"
       },
       "fill": {
-        "$description": "Input background at rest.",
+        "$description": "Input background at rest. Shared by every form field; checkbox and radio bind color/background directly.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{color.background}"
+                "reference": "{color.field}"
               }
             },
             "variableId": "VariableID:68:911"
           }
         },
         "$type": "color",
-        "$value": "{color.background}"
+        "$value": "{color.field}"
       },
       "fillDisabled": {
         "$description": "Input background when disabled.",
@@ -4087,17 +4087,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{input.borderColor}"
+                "reference": "{color.border-input}"
               }
             },
             "variableId": "VariableID:1073:5275"
           }
         },
         "$type": "color",
-        "$value": "{input.borderColor}"
+        "$value": "{color.border-input}"
       },
       "borderError": {
         "$description": "Border color in error state.",
@@ -4121,17 +4121,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{input.borderHover}"
+                "reference": "{color.border-input-hover}"
               }
             },
             "variableId": "VariableID:1073:5276"
           }
         },
         "$type": "color",
-        "$value": "{input.borderHover}"
+        "$value": "{color.border-input-hover}"
       },
       "borderWidth": {
         "$description": "Stroke width of the radio circle border.",
@@ -4155,17 +4155,17 @@
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:264",
-            "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
             "lastSyncedValue": {
               "component": {
-                "reference": "{input.fill}"
+                "reference": "{color.background}"
               }
             },
             "variableId": "VariableID:1073:5274"
           }
         },
         "$type": "color",
-        "$value": "{input.fill}"
+        "$value": "{color.background}"
       },
       "fillError": {
         "$description": "Fill of the inner dot in error state. Matches error border for visual consistency.",
@@ -9321,17 +9321,17 @@
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:262",
-              "lastSyncedAt": "2026-10-19T11:28:34.749Z",
+              "lastSyncedAt": "2026-10-23T12:00:00.000Z",
               "lastSyncedValue": {
                 "global": {
-                  "literal": "Inter"
+                  "literal": "Helvetica Neue"
                 }
               },
               "variableId": "VariableID:4284:61063"
             }
           },
           "$type": "string",
-          "$value": "Inter"
+          "$value": "Helvetica Neue"
         }
       }
     },
@@ -10632,6 +10632,60 @@
         "$type": "color",
         "$value": "{color.slate.200}"
       },
+      "border-field": {
+        "$description": "Form field border at rest. Matches color/border-input in jit and brand; equals color/field in borderless brands so the edge disappears.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:263",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
+            "lastSyncedValue": {
+              "jit": {
+                "reference": "{color.slate.200}"
+              },
+              "brand": {
+                "reference": "{color.slate.200}"
+              },
+              "acme": {
+                "reference": "{color.slate.100}"
+              }
+            },
+            "variableId": "VariableID:4346:68068"
+          },
+          "modes": {
+            "brand": "{color.slate.200}",
+            "acme": "{color.slate.100}"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.slate.200}"
+      },
+      "border-field-hover": {
+        "$description": "Form field border on hover. Matches color/border-input-hover in jit and brand; a faint edge in borderless brands.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:263",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
+            "lastSyncedValue": {
+              "jit": {
+                "reference": "{color.slate.600}"
+              },
+              "brand": {
+                "reference": "{color.slate.600}"
+              },
+              "acme": {
+                "reference": "{color.slate.200}"
+              }
+            },
+            "variableId": "VariableID:4346:68069"
+          },
+          "modes": {
+            "brand": "{color.slate.600}",
+            "acme": "{color.slate.200}"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.slate.600}"
+      },
       "border-focus": {
         "$description": "Focus ring — keyboard-navigation focus indicator on any interactive element. Should be highly visible.",
         "$extensions": {
@@ -10660,7 +10714,7 @@
         "$value": "{color.cyan.500}"
       },
       "border-input": {
-        "$description": "Standard visible border — input border at rest, secondary button border, card outline.",
+        "$description": "Standard visible border — secondary button border, checkbox and radio outline at rest. Form fields use color/border-field.",
         "$extensions": {
           "figma-console-mcp": {
             "collectionId": "VariableCollectionId:68:263",
@@ -11413,6 +11467,33 @@
         },
         "$type": "color",
         "$value": "{color.red.900}"
+      },
+      "field": {
+        "$description": "Form field fill at rest — input, select, textarea, search, combobox, date/time picker, OTP, command search. Matches color/background in jit and brand; a tinted fill in borderless brands.",
+        "$extensions": {
+          "figma-console-mcp": {
+            "collectionId": "VariableCollectionId:68:263",
+            "lastSyncedAt": "2026-10-23T12:00:00.000Z",
+            "lastSyncedValue": {
+              "jit": {
+                "reference": "{color.white}"
+              },
+              "brand": {
+                "reference": "{color.white}"
+              },
+              "acme": {
+                "reference": "{color.slate.100}"
+              }
+            },
+            "variableId": "VariableID:4346:68067"
+          },
+          "modes": {
+            "brand": "{color.white}",
+            "acme": "{color.slate.100}"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.white}"
       },
       "foreground": {
         "$description": "Primary content on surface — body text, default icon fill.",
@@ -17081,7 +17162,7 @@
           "$extensions": {
             "figma-console-mcp": {
               "collectionId": "VariableCollectionId:68:263",
-              "lastSyncedAt": "2026-06-13T07:49:36.622Z",
+              "lastSyncedAt": "2026-10-23T12:00:00.000Z",
               "lastSyncedValue": {
                 "jit": {
                   "reference": "{fontWeight.bold}"
@@ -17090,14 +17171,14 @@
                   "reference": "{fontWeight.bold}"
                 },
                 "acme": {
-                  "reference": "{fontWeight.semibold}"
+                  "reference": "{fontWeight.bold}"
                 }
               },
               "variableId": "VariableID:68:819"
             },
             "modes": {
               "brand": "{fontWeight.bold}",
-              "acme": "{fontWeight.semibold}"
+              "acme": "{fontWeight.bold}"
             }
           },
           "$type": "fontWeight",
