@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { expect, userEvent, within } from 'storybook/test'
 import * as React from 'react'
 import { Switch } from './switch'
 
@@ -104,4 +105,15 @@ export const AllStates: Story = {
       <Switch leftLabel="Left" rightLabel="Right" defaultChecked />
     </div>
   ),
+}
+
+// Interaction test: the switch flips on click.
+export const Toggles: Story = {
+  play: async ({ canvasElement }) => {
+    const toggle = within(canvasElement).getByRole('switch')
+    await userEvent.click(toggle)
+    await expect(toggle).toBeChecked()
+    await userEvent.click(toggle)
+    await expect(toggle).not.toBeChecked()
+  },
 }

@@ -140,7 +140,7 @@ export default function Showcase() {
             <Input placeholder="Email address" />
             <Textarea placeholder="Your message…" />
             <Select>
-              <SelectTrigger>
+              <SelectTrigger aria-label="Pick an option">
                 <SelectValue placeholder="Pick an option" />
               </SelectTrigger>
               <SelectContent>

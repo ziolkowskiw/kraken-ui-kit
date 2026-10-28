@@ -175,7 +175,7 @@ Adapted from _"Design Systems in 2026 → turn your system into a Claude Skill."
 - [ ] `disabled` (and `error`, where it exists) has a dedicated state story.
 - [ ] No hardcoded colors/spacing — components read `--ds-*` tokens; stories never
       inline hex/px for themed surfaces.
-- [ ] Renders correctly under **all four toolbar permutations**: brand `jit`/`brand`
+- [ ] Renders correctly under **all four toolbar permutations**: brand `jit`/`acme`
       × scheme `light`/`dark`.
 - [ ] `title` is `Components/<Name>`, `tags: ['autodocs']`, typed `satisfies Meta`.
 
@@ -183,6 +183,50 @@ Adapted from _"Design Systems in 2026 → turn your system into a Claude Skill."
 
 Storybook exposes two live switches (`.storybook/preview.tsx`):
 
-- **Brand** — `jit` (default, `:root`) ⇄ `brand` (`[data-theme="brand"]`), the
+- **Brand** — `jit` (default, `:root`) ⇄ `acme` (`[data-theme="acme"]`; the `brand` theme still ships but is not shown in Storybook), the
   semantic layer swap.
-- **Scheme** — `light` ⇄ `dark`, toggles the `.dark` token block on `<html>`.
+- **Scheme** — `light` ⇄ `dark`, sets `data-scheme="dark"` on `<html>`. `.storybook/dark.css`
+  mirrors each semantic color across its ramp and keeps brand identity colors. It is a
+  Storybook-only, hand-set palette (not in Figma or `tokens.dtcg.json`); the shadcn `.dark`
+  class is no longer used here.
+
+## Docs pages
+
+Non-component pages live in `src/docs/` and sit above `Components` via `storySort`
+in `.storybook/preview.tsx` (`Introduction` → `Foundations` → `Components`).
+
+- `Introduction.mdx` and `TokenArchitecture.mdx` import `manifests/foundations.json`
+  and `manifests/tokens.json` and render from them. Change the content by changing
+  the source and regenerating the manifests, never by typing it into the MDX.
+- Docs show the **selected** brand and scheme only, never every brand at once.
+  `.storybook/docs/brand.tsx` reads the toolbar globals (`useSelected`) and resolves token
+  values for that brand (`ResolvedTokens`). Swatches are `var(--ds-*)` fills, never literals.
+
+## Component docs page
+
+`.storybook/docs/ComponentDocsPage.tsx` is the docs page for every `autodocs` story. It reads
+`manifests/components/<name>.json`, matched by the story file name, and adds: install command,
+Figma link, "use something else when", do/don't, variant axes, accessibility, good to know and
+the layer 3 token list, around the standard Primary, Controls and Stories blocks.
+
+- Change that content in the source (`manifests/overrides/<name>.json`, `scripts/data/a11y-notes.mjs`,
+  the component `.tsx`), then regenerate. Never type it into a story.
+- A story file named `<name>.stories.tsx` gets its manifest automatically. Without a match the page
+  still renders the standard blocks.
+
+## Interaction tests
+
+A story with a `play` function is also a test: `npm test` runs every story in Chromium through
+`@storybook/addon-vitest`, with a11y violations set to fail the run.
+
+- Name the story for the behaviour (`OpensAndCloses`, `Toggles`, `SwitchesTab`) and keep it short.
+- Portaled content (dialogs, popovers, menus) is outside `canvasElement`; query
+  `within(canvasElement.ownerDocument.body)`.
+- Animated content: wait with `waitFor`, do not assert on the first frame.
+- Query by role and accessible name. A loose label regex can match a neighbouring control.
+
+## Patterns
+
+`src/docs/patterns.stories.tsx` (sidebar: `Patterns/…`) holds compositions of several components,
+such as the settings form. Add a pattern when a recipe shows where responsibility sits (for example
+validation belongs to the page, the kit renders `errorMessage`).

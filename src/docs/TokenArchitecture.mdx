@@ -1,0 +1,75 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import foundations from "../../manifests/foundations.json";
+import tokens from "../../manifests/tokens.json";
+import { BRAND_SCALE_TOKENS, BrandSummary, ResolvedTokens } from "../../.storybook/docs/brand";
+
+<Meta title="Foundations/Token architecture" />
+
+# Token architecture
+
+Three layers. Components read the third one (or the semantic layer), never a primitive.
+
+<ol>
+  {foundations.tokenArchitecture.layers.map((layer) => (
+    <li key={layer}>{layer}</li>
+  ))}
+</ol>
+
+## Size of each layer
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th>Tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>L1 global</td>
+      <td>{tokens.layers.global.length}</td>
+    </tr>
+    <tr>
+      <td>L2 semantic</td>
+      <td>{tokens.layers.semantic.length}</td>
+    </tr>
+    <tr>
+      <td>L3 component</td>
+      <td>
+        {Object.values(tokens.layers.component).reduce((sum, list) => sum + list.length, 0)} across{" "}
+        {Object.keys(tokens.layers.component).length} components
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Naming
+
+<table>
+  <thead>
+    <tr>
+      <th>Kind</th>
+      <th>Pattern</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(foundations.tokenArchitecture.naming).map(([kind, pattern]) => (
+      <tr key={kind}>
+        <td>{kind}</td>
+        <td>
+          <code>{pattern}</code>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+## Values for the selected brand
+
+Follows the Brand and Scheme switches in the toolbar.
+
+<BrandSummary />
+
+<ResolvedTokens tokens={BRAND_SCALE_TOKENS} />
+
+Tokens are generated from `tokens/tokens.dtcg.json`. Never edit `src/styles/tokens.css` by hand.

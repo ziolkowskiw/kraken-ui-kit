@@ -16,7 +16,7 @@ const INPUT_TYPES: InputType[] = [
 const meta = {
   title: 'Components/DataTable/FormCell',
   component: FormTableCell,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'form control sized for a data-table cell; inputType selects text field, select, search, date, switch, checkbox, radio or textarea' } } },
   tags: ['autodocs'],
   argTypes: {
     inputType: { control: 'select', options: INPUT_TYPES, name: 'Input type' },

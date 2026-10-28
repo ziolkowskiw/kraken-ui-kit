@@ -1,0 +1,71 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import foundations from "../../manifests/foundations.json";
+
+<Meta title="Introduction" />
+
+# Kraken UI Kit
+
+{foundations.system}
+
+Every page in this Storybook is generated from the same sources the kit ships
+from, so what you read here is what the code does.
+
+## Where to start
+
+- **Foundations / Brands & theming** — the selected brand, rendered live from the semantic tokens.
+- **Foundations / Token architecture** — the three token layers and how names are built.
+- **Components** — one entry per component. Open **Playground** to drive every Figma property from the controls panel, then the named stories for variants, sizes and states.
+
+## Install
+
+Add the registry to your `components.json`, then pull the theme and any component:
+
+<p>{foundations.install.registriesConfig}</p>
+
+<pre>
+  <code>
+    {foundations.install.bootstrap}
+    {"\n"}
+    {foundations.install.component}
+  </code>
+</pre>
+
+## Core principles
+
+<ul>
+  {foundations.corePrinciples.map((principle) => (
+    <li key={principle}>{principle}</li>
+  ))}
+</ul>
+
+## Toolbar
+
+Two switches in the toolbar change the whole canvas at once:
+
+- **Brand** — `jit` (default) or `acme`. Swaps only the semantic layer through `[data-theme]`.
+- **Scheme** — light or dark. Dark is Storybook-only for now: `.storybook/dark.css` mirrors the semantic colors, and the kit itself has no dark tokens yet.
+
+Every component should look right in all four combinations. Check them before you ship a change.
+
+## Where shadcn differs
+
+The kit follows shadcn names and props. These are the places it deliberately does not:
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Kit</th>
+      <th>shadcn</th>
+    </tr>
+  </thead>
+  <tbody>
+    {foundations.shadcnDivergences.map((row) => (
+      <tr key={row.area}>
+        <td>{row.area}</td>
+        <td>{row.kit}</td>
+        <td>{row.shadcn}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

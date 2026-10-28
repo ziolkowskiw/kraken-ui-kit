@@ -20,7 +20,7 @@ const LABELS = ['One', 'Two', 'Three', 'Four', 'Five'] as const
 const meta = {
   title: 'Components/ButtonGroup',
   component: ButtonGroup,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'a joined row of buttons that share borders; grouped related actions' } } },
   tags: ['autodocs'],
   argTypes: {
     orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'], name: 'Orientation' },

@@ -3,11 +3,14 @@ import React from "react";
 
 // Pull in the full token + shadcn theme layer so stories render with real styles.
 import "../src/app/globals.css";
+// Storybook-only dark scheme (semantic tokens mirrored across their ramps).
+import "./dark.css";
+import { ComponentDocsPage } from "./docs/ComponentDocsPage";
 
 const preview: Preview = {
   // Two live "change the semantic layer" switches in the toolbar:
-  //  • brand       — swaps the semantic brand tokens (jit ⇄ brand ⇄ acme) via [data-theme]
-  //  • colorScheme — toggles the .dark token block (light ⇄ dark)
+  //  • brand       — swaps the semantic brand tokens (jit ⇄ acme) via [data-theme]
+  //  • colorScheme — sets data-scheme on <html>; .storybook/dark.css re-points the semantic tokens (light ⇄ dark)
   initialGlobals: { brand: "jit", colorScheme: "light" },
   globalTypes: {
     brand: {
@@ -17,7 +20,6 @@ const preview: Preview = {
         icon: "paintbrush",
         items: [
           { value: "jit", title: "JIT — yellow, rounded" },
-          { value: "brand", title: "Brand — blue, sharp" },
           { value: "acme", title: "Acme — lime, spacious" },
         ],
         dynamicTitle: true,
@@ -43,8 +45,9 @@ const preview: Preview = {
         // Brand: jit is the :root default (no attribute); every other brand is an override.
         if (context.globals.brand !== "jit") el.dataset.theme = context.globals.brand;
         else delete el.dataset.theme;
-        // Color scheme: toggle the `.dark` token block on <html>.
-        el.classList.toggle("dark", context.globals.colorScheme === "dark");
+        // Color scheme: data-scheme (not the shadcn `.dark` class, which only greys out shadcn vars).
+        if (context.globals.colorScheme === "dark") el.dataset.scheme = "dark";
+        else delete el.dataset.scheme;
       }
       return (
         <div className="bg-background text-foreground p-6">
@@ -54,6 +57,10 @@ const preview: Preview = {
     },
   ],
   parameters: {
+    options: {
+      storySort: { order: ["Introduction", "Foundations", "Components", "Patterns"] },
+    },
+    docs: { page: ComponentDocsPage },
     controls: {
       matchers: {
         color: /(background|color)$/i,
