@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kraken design system</title>
+<style>
+  body { margin: 3rem auto 5rem; padding: 0 1.25rem; max-width: 42rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; }
+  h1 { font-size: 2.75rem; line-height: 1.1; margin: 0 0 0.75rem; }
+  h2 { font-size: 1.75rem; line-height: 1.2; margin: 4rem 0 0.75rem; }
+  h3 { font-size: 1.15rem; line-height: 1.3; margin: 2.5rem 0 0.5rem; }
+  p { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.1rem; }
+  figure { margin: 1.75rem 0 2.25rem; }
+  figcaption { font-size: 0.9rem; line-height: 1.5; color: #6b6b6b; margin-top: 0.5rem; }
+  img, video { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+
+<h1>Kraken design system</h1>
+<p>How do you make a family of internal apps feel like one product, when AI is writing a growing share of the screens?</p>
+
+<section>
+<h2>Problem</h2>
+<p>JIT's internal apps look and behave differently from each other, client projects start without a design system, and AI agents build screens from guesses.</p>
+</section>
+
+<section>
+<h2>Solution</h2>
+<p>Kraken is a design system that designers, developers and AI assistants can all read: internal apps share one set of components, a client brand changes one layer, and AI looks components up instead of guessing.</p>
+</section>
+
+<section>
+<h2>TL;DR</h2>
+<p>JIT's internal apps had drifted apart, client projects started with no design system, and AI agents built screens from guesses. Three decisions shaped Kraken: one layer of tokens carries a brand, agents look components up from a map and fact sheets instead of guessing, and Figma wins where it disagrees with shadcn. A test brand changes 102 of 255 meaning values and no component values, but the refreshed internal screens are not in the apps yet.</p>
+</section>
+
+<figure>
+  <img src="hero-jit-vs-acme.png" alt="One screen in the jit brand and the acme brand side by side">
+  <figcaption>The same components in two brands, with only one layer swapped.</figcaption>
+</figure>
+
+<section>
+<h2>Context</h2>
+<h3>JIT's apps grew on different technologies, so every update started from scratch</h3>
+<p>JIT's internal apps were built over years on different technologies, from an old custom codebase to newer shadcn apps. Kraken is one shared set of parts, built in Figma and in code, for those apps, for new ones and for client projects. The goal is that developers learn one setup instead of one per app.</p>
+</section>
+
+<section>
+<h2>The problem</h2>
+<h3>Employees relearned every app, and some jobs had no good way to be done</h3>
+<p>Employees had to relearn how things look and behave in each app, and they told me so, for example that reporting work time had no way to report many days at once. JIT asked for one system for the internal apps, and on my own initiative I also made it themeable for client projects that start with no design system. A client brand is now set up by editing one layer, which I proved with a test brand, though no client project has used it yet.</p>
+</section>
+
+<section>
+<h2>Insights</h2>
+<p>A design system for several brands is <strong>layered</strong>: the brand lives in one layer, so nothing else moves.</p>
+<p>A design system for several tools is <strong>familiar</strong>: it speaks shadcn, so developers and agents already know its names.</p>
+<p>A design system for AI agents is <strong>readable</strong>: every part has a fact sheet, so the agent looks things up instead of guessing.</p>
+</section>
+
+<section>
+<h2>The process</h2>
+
+<h3>One layer carries the brand, and acme showed me where it leaked</h3>
+<p>A new brand should not mean rewriting every part. Kraken has three layers of tokens (315 base values, 255 meaning values and 277 component values), and a brand only edits the middle layer, the one that says what each color is for. Acme, a test brand, changes 102 of the 255 meaning values and none of the 277 component values, and when I refined it the switch, slider and resize handle still used a page color where they needed a control color, so I added one control token that fixed them for every brand.</p>
+
+<h3>I dropped the theme editor because Figma gives more control</h3>
+<p>Setting a brand up by hand is slow, so I built a browser theme editor in about an hour. It gave less control than Figma, could not compare brands side by side and added one more tool, so I replaced it with a skill, which is written instructions an agent follows, that turns a brand brief into a meaning layer in Figma, and a second skill that syncs it into the token files. Acme went from a written brief to rendered components with no component edit on the first pass, at the cost that a new brand now needs someone who works in Figma.</p>
+<figure>
+  <img src="acme-steps.png" alt="Four steps: the acme brief, the acme mode in Figma, the synced token files and components rendered in acme">
+  <figcaption>Acme went from a written brief to rendered components, and it passes the same accessibility check as jit.</figcaption>
+</figure>
+<figure>
+  <img src="theme-editor-03-live-edit.png" alt="The browser theme editor I built and dropped">
+  <figcaption>The theme editor I built in an hour, tested and dropped.</figcaption>
+</figure>
+
+<h3>Kraken keeps shadcn's names, and Figma wins where they disagree</h3>
+<p>Developers and the newer JIT apps already used shadcn, but Figma and shadcn disagree in places. I built on shadcn names and kept Figma's choices where they differ, so buttons have seven styles and no "outline", and every Button property in Figma has a Storybook control with the same name and values, checked by hand and with an agent scan. Designers and developers read one vocabulary, at the cost of a list of differences that has to stay current.</p>
+<figure>
+  <img src="button-figma-vs-storybook.png" alt="Button properties in Figma next to Button controls in Storybook">
+  <figcaption>Same properties, same names, same values.</figcaption>
+</figure>
+
+<h3>A map and a fact sheet per part let agents look components up</h3>
+<p>An agent building from a Figma screen has to guess which code part it is looking at, and Code Connect was not in JIT's Figma plan. I made a map from every Figma component to its code and a fact sheet per component for the agent to read, plus a check that fails when either drifts from its source. Asked for a delete dialog, an agent without them typed in 14 colors and 37 pixel values, and with them it typed in none and followed each brand, from one run each.</p>
+<figure>
+  <img src="dialog-without-kit.png" alt="Delete dialog built by an agent without Kraken">
+  <img src="dialog-with-kit-jit.png" alt="Delete dialog built by an agent with Kraken, jit brand">
+  <img src="dialog-with-kit-acme.png" alt="Delete dialog built by an agent with Kraken, acme brand">
+  <figcaption>Left to right: without Kraken, with Kraken in jit and in acme, and only the agent without Kraken was told the font, so I would repeat this test before calling it a result.</figcaption>
+</figure>
+
+<h3>Agents redraft existing screens, and I stay in the loop</h3>
+<p>Refreshing an existing internal screen by hand is slow. An agent brings the old screen into Figma and redrafts it from Kraken parts, then I fix what it got wrong, such as broken grouping and copy, and once the date selection, which it put in the wrong place. Screens come together faster, and none leaves without my check.</p>
+<figure>
+  <img src="agent-date-fix.png" alt="The date selection where the agent placed it and where I moved it">
+  <figcaption>The agent found the right components and put the date in the wrong place.</figcaption>
+</figure>
+<figure>
+  <video controls src="redraft.mp4"></video>
+  <figcaption>From an old screen to a Kraken screen, with my fixes on camera.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>The outcome</h2>
+<h3>Two refreshed screens show the same parts working in two different tools</h3>
+<p>Two internal tools built years apart looked like strangers. The refreshed time reporting screen now reports many days at once, which answers the employee complaint, and the refreshed social network screen has a cleaner layout and a clearer hierarchy. They are not in the apps yet, and no one else has built with Kraken or asked it for a change, so the next test is a second developer.</p>
+<figure>
+  <img src="refreshed-before-after.png" alt="Old and refreshed screens side by side, the Timeports time reporting screen with bulk reporting and a WeJit screen">
+  <figcaption>Two tools built years apart, refreshed from the same components.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Reflection</h2>
+<h3>A common context beats polishing each app on its own</h3>
+<p>Each JIT app had its own patterns, so each one had its own learning curve. Kraken gives them one common context, and its skills let an agent build a screen from it without making design decisions each time. Next I would have agents do more of the work through skills, because new tools arrive every few weeks.</p>
+</section>
+
+</body>
+</html>

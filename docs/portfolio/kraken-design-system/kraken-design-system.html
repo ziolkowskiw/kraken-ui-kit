@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kraken design system</title>
+<style>
+  body { margin: 3rem auto 5rem; padding: 0 1.25rem; max-width: 64rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; }
+  h1 { font-size: 3rem; line-height: 1.1; margin: 0 0 0.5rem; }
+  h2 { font-size: 2rem; line-height: 1.2; margin: 6rem 0 0.5rem; max-width: 40rem; }
+  h3 { font-size: 1.5rem; line-height: 1.25; margin: 4rem 0 0.5rem; max-width: 40rem; }
+  p { font-size: 1.1rem; line-height: 1.5; margin: 0 0 1.25rem; max-width: 40rem; }
+  .lead { font-size: 1.3rem; color: #4a4a4a; }
+  .eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b6b; margin: 0 0 0.25rem; }
+  figure { margin: 1.5rem 0 2rem; }
+  figcaption { font-size: 0.9rem; line-height: 1.5; color: #6b6b6b; margin-top: 0.5rem; max-width: 40rem; }
+  img { display: block; width: 100%; height: auto; border: 1px solid #e3e3e3; border-radius: 6px; }
+
+  /* placeholder for a graphic to be prepared */
+  .ph { display: flex; flex-direction: column; justify-content: center; gap: 0.4rem; padding: 1.5rem; border: 2px dashed #b5b5b5; border-radius: 6px; background: #f6f6f6; color: #4a4a4a; font-size: 0.95rem; line-height: 1.45; }
+  .ph b { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8a8a; }
+  .ph code { font-size: 0.8rem; color: #8a8a8a; }
+  .wide .ph { aspect-ratio: 21 / 9; }
+  .std .ph { aspect-ratio: 16 / 9; }
+  .sq .ph { aspect-ratio: 4 / 3; }
+
+  .grid { display: grid; gap: 1.25rem; margin: 1.5rem 0 2rem; }
+  .grid figure { margin: 0; }
+  .g2 { grid-template-columns: repeat(2, 1fr); }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .g4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 40rem) { .g2, .g3, .g4 { grid-template-columns: 1fr; } }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin: 3rem 0 0; padding: 2rem 0; border-top: 1px solid #e3e3e3; border-bottom: 1px solid #e3e3e3; }
+  .stats div { font-size: 0.9rem; color: #6b6b6b; line-height: 1.3; }
+  .stats strong { display: block; font-size: 2.75rem; line-height: 1; color: #1a1a1a; margin-bottom: 0.35rem; }
+  @media (max-width: 40rem) { .stats { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<h1>Kraken design system</h1>
+<p class="lead">One system that a new brand, a new tool and an AI agent can all build from without guessing.</p>
+
+<figure class="wide">
+  <div class="ph"><b>Image · hero</b>One screen in jit and acme side by side. Same components, two brands.<code>hero-jit-vs-acme.png</code></div>
+  <figcaption>Only the semantic layer changes between them.</figcaption>
+</figure>
+
+<div class="stats">
+  <div><strong>56</strong>components in Figma and code</div>
+  <div><strong>2</strong>brands running in Storybook</div>
+  <div><strong>102 / 255</strong>semantic values acme changes</div>
+  <div><strong>0 / 277</strong>component tokens acme changes</div>
+</div>
+
+<section>
+<h2>Every tool drifted. Every project started from zero.</h2>
+<p>JIT's internal tools each had their own technology, look and behavior, client projects restyled shadcn templates, and AI agents typed in colors that matched nothing around them. I built Kraken in Figma and code as one shared system for existing tools, new tools, client brands and agents. Every new project now starts from the same parts instead of from zero.</p>
+<div class="grid g3">
+  <figure class="sq"><div class="ph"><b>Image</b>Three internal tools side by side, same task, three looks.<code>problem-tools.png</code></div><figcaption>Internal tools</figcaption></figure>
+  <figure class="sq"><div class="ph"><b>Image</b>A restyled shadcn client template, close enough to the brand.<code>problem-client-template.png</code></div><figcaption>Client projects</figcaption></figure>
+  <figure class="sq"><div class="ph"><b>Image</b>An agent-generated screen with hand-typed hex values highlighted.<code>problem-agent-colors.png</code></div><figcaption>AI agents</figcaption></figure>
+</div>
+<figure class="wide">
+  <div class="ph"><b>Diagram · overview</b>Three inputs (existing tools, new client brand, AI agent) feeding one box, Kraken, with Figma and code inside it.<code>solution-overview.png</code></div>
+  <figcaption>Shared components, one token layer per brand, a lookup that agents read.</figcaption>
+</figure>
+<figure>
+  <div class="ph"><b>Quote card · optional</b>One real quote from an employee or developer, e.g. no way to report many days at once. Add how many people said it.<code>problem-quote.png</code></div>
+</figure>
+</section>
+
+<section>
+<h2>Decision 1: one layer carries the brand</h2>
+
+<h3>A new brand changes one layer, not every component</h3>
+<p>Restyling a template per client meant touching every component. Kraken binds components to semantic and component tokens only, so a brand adds its palette and fonts and remaps the semantic layer. Acme changes 102 of 255 semantic values and none of the 277 component tokens.</p>
+<figure class="std">
+  <div class="ph"><b>Diagram · the key graphic</b>The primary button fill traced through the three layers: 315 primitives, 255 semantic, 277 component. Highlight the semantic layer as the only one that changes. Show jit and acme.<code>layers-button-fill.png</code></div>
+  <figcaption>Each brand points the same semantic token at its own palette.</figcaption>
+</figure>
+
+<h3>Brands are authored in Figma, not in a theme editor</h3>
+<p>My first idea was a browser theme editor, but it gave less control than Figma variables, could not compare brands side by side and added a second place to edit tokens. I dropped it for a skill that turns a written brief into a semantic mode in Figma, and a second skill that syncs the mode into the token files. Acme, a fictional client brand, went from brief to rendered components that way, at the cost that setting up a brand now depends on Figma and someone who can work in it.</p>
+<div class="grid g4">
+  <figure class="sq"><div class="ph"><b>1 · Brief</b>The written acme brief given to the agent.<code>acme-1-brief.png</code></div></figure>
+  <figure class="sq"><div class="ph"><b>2 · Figma</b>The acme mode in the semantic collection.<code>acme-2-figma.png</code></div></figure>
+  <figure class="sq"><div class="ph"><b>3 · Sync</b>The synced token files, diff view.<code>acme-3-tokens.png</code></div></figure>
+  <figure class="sq"><div class="ph"><b>4 · Render</b>Components rendered in acme.<code>acme-4-render.png</code></div></figure>
+</div>
+<figure class="std">
+  <img src="theme-editor-03-live-edit.png" alt="The browser theme editor I built and dropped">
+  <figcaption><b>Tried and dropped:</b> the browser theme editor.</figcaption>
+</figure>
+
+<h3>Acme showed where the system leaked</h3>
+<p>Once acme's fields turned white on grey containers, the switch, the slider and the resize handle still used a page color where they needed a control color. I added one semantic token for controls and rebound the three. The fix reached every brand, not only acme.</p>
+<figure class="std">
+  <div class="ph"><b>Image · before / after</b>The switch, slider and resize handle on white-on-grey containers, before and after the new control token.<code>acme-leak-fix.png</code></div>
+</figure>
+
+<h3>Accessibility is checked per brand</h3>
+<p>A color that passes in one brand can fail in another. Every component runs through Storybook's accessibility check, and an audit skill reruns it across every brand and color scheme against WCAG 2.2 AA after any brand or token change. Automated checks catch only part of the problems, so the report also lists what it could not verify.</p>
+<figure class="std">
+  <div class="ph"><b>Matrix</b>Audit result: jit and acme × light/dark as a grid of pass / fail / could not verify against WCAG 2.2 AA.<code>a11y-matrix.png</code></div>
+</figure>
+</section>
+
+<section>
+<h2>Decision 2: the same names in Figma and in code</h2>
+<p>Developers already knew shadcn and agents already recognized its names, but Figma and shadcn disagreed in places. I built Kraken on shadcn, 45 of 56 components follow its names, and where they disagreed Figma won, so buttons have seven variants and no "outline" because "secondary" already is one. Design and code now share one vocabulary, an agent that reaches for "outline" is told to use "secondary", and the cost is some of the familiarity I chose shadcn for.</p>
+<figure class="std">
+  <div class="ph"><b>Image · side by side</b>The Button's property panel in Figma next to its controls in Storybook. Same seven variants, same names.<code>names-figma-storybook.png</code></div>
+  <figcaption>Figma properties and Storybook controls share one vocabulary.</figcaption>
+</figure>
+<div class="grid g2">
+  <figure class="sq"><div class="ph"><b>Bar graphic</b>56 components split 45 with a shadcn counterpart / 11 JIT patterns shadcn does not ship (data tables, date pickers, time inputs).<code>shadcn-split.png</code></div></figure>
+  <figure class="sq"><div class="ph"><b>Callout</b>An agent reaches for <code style="display:inline">variant="outline"</code> and the fact sheet answers: use <code style="display:inline">secondary</code>.<code>outline-to-secondary.png</code></div></figure>
+</div>
+</section>
+
+<section>
+<h2>Decision 3: a system an agent can read</h2>
+
+<h3>Agents look components up instead of guessing</h3>
+<p>An agent building from a Figma screen has to guess which code component it is looking at, and Figma's Code Connect was not in JIT's plan. I made the link myself: a map from every Figma component to its code, plus a fact sheet per component with variants, defaults, tokens, accessibility notes and usage rules, read through a small local server. Nothing joins the system without a fact sheet, at the cost of upkeep, because a check fails whenever a fact sheet, the map or a token file drifts from its source.</p>
+<figure class="std">
+  <div class="ph"><b>Diagram · machine-readable layer</b>Figma and code on either side, joined by the map. Fact sheets generated from code. Drift checks. An agent reading from the whole layer.<code>agent-layer.png</code></div>
+  <figcaption>What an agent reads before it builds, and the checks that keep it accurate.</figcaption>
+</figure>
+
+<h3>Same prompt, with and without the lookup</h3>
+<p>Given "build me a delete confirmation dialog", an agent without Kraken invented 14 colors and 37 pixel values and the result could not change brand. With the fact sheets it chose the alert dialog, used the button variants correctly and followed both brands. It was one run, and only the agent without Kraken was told the font, so I would repeat it before calling it a result.</p>
+<div class="grid g3">
+  <figure><img src="dialog-without-kit.png" alt="Delete dialog built by an agent without Kraken"><figcaption>Without Kraken</figcaption></figure>
+  <figure><img src="dialog-with-kit-jit.png" alt="Delete dialog built by an agent with Kraken, jit brand"><figcaption>With Kraken · jit</figcaption></figure>
+  <figure><img src="dialog-with-kit-acme.png" alt="Delete dialog built by an agent with Kraken, acme brand"><figcaption>With Kraken · acme</figcaption></figure>
+</div>
+<figure class="std">
+  <div class="ph"><b>Image · stat card</b>Use the finished Figma frame <code style="display:inline">ai-readiness</code>: 14 colors and 37 pixel values typed in vs 0, one fixed look vs 2 brands.<code>ai-readiness.png</code></div>
+</figure>
+
+<h3>Agents draft, I decide</h3>
+<p>Redrafting an existing screen by hand is slow, and an agent's first draft still misses judgment calls. An agent brings the screen into Figma and redrafts it from Kraken components, then I decide which component really fits, how elements are grouped, the copy and which states the design should prevent. The redrafted time-reporting screen adds the bulk option employees asked for, built from Kraken's table select.</p>
+<figure class="wide">
+  <div class="ph"><b>Video · 30 to 45 s</b>An existing internal tool screen brought into Figma, redrafted by an agent from Kraken components, then refined by hand. Add one on-screen fix you made to the agent's draft.<code>redraft.mp4</code></div>
+</figure>
+
+<h3>A dry run as a new developer</h3>
+<p>No other developer has built with Kraken yet, so I could not tell whether the fact sheets are enough. I had an agent play a developer new to the kit and build a time-off request form with a table from the fact sheets, stories and component source alone. It typed in no colors or pixel values, the screen followed both brands, and it found three gaps that I fixed.</p>
+<figure class="std">
+  <div class="ph"><b>Image · use Figma frame</b>The finished frame <code style="display:inline">time-off-dry-run</code>: the time-off form in jit and acme plus the three gaps found.<code>time-off-dry-run.png</code></div>
+  <figcaption>A simulation, not adoption. A real developer is still the test.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Outcome</h2>
+<p>The redrafted screens are not in JIT's tools yet, and so far I am the only person who has built with Kraken. Acme is a fictional brand, so it proves the design, not adoption, and Timeports and WeJit are the first two tools I redrafted from the same components. A client brand now costs one layer of decisions instead of a restyled template, and the next test is the share of new screens made from Kraken parts and the hand-typed values per screen.</p>
+<figure class="wide">
+  <div class="ph"><b>Image · before / after</b>A Timeports screen and a WeJit screen: the old tool next to its Kraken version. The date-tabs before/after pair in this folder is a starting point.<code>outcome-before-after.png</code></div>
+  <figcaption>Two tools built years apart, redrafted from the same components.</figcaption>
+</figure>
+</section>
+
+</body>
+</html>
