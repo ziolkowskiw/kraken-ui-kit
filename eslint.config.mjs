@@ -47,5 +47,11 @@ export default tseslint.config(
     languageOptions: { globals: globals.node },
     rules: { "@next/next/no-html-link-for-pages": "off" },
   },
+  // Skill scripts drive Playwright: Node at the top level, browser inside page.evaluate().
+  {
+    files: [".claude/skills/**/scripts/*.mjs"],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+    rules: { "@next/next/no-html-link-for-pages": "off" },
+  },
   prettier, // MUST be last: disables formatting rules that fight Prettier.
 );
