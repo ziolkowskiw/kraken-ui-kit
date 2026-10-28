@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["data grid", "list table"],
+  "keywords": ["rows", "columns", "sortable", "status list"],
+  "usage": {
+    "do": [
+      "Assemble in this order: <DataTable> > <TableTitle> > <TableHeaderRow> of <TableHeader> > <TableRow> of <DataTableCell>.",
+      "TableTitle shows only the title by default; pass actions (or showAction for the placeholder buttons) and showTooltip + tooltip when you need them.",
+      "Set TableRow variant (white | grey | selected) to alternate rows or mark a selection; add interactive for hover and pressed states."
+    ],
+    "dont": [
+      "Don't ship showAction without actions: the default buttons are labelled \"Action verb\".",
+      "Don't rebuild a data table from raw table parts — use table only for simple static tables."
+    ]
+  },
+  "whenToUseInstead": [
+    { "component": "table", "when": "a simple static table with no title bar, sorting or cell types" }
+  ]
+}

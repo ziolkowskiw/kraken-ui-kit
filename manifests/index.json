@@ -333,13 +333,22 @@
     "title": "Context Menu"
   },
   {
-    "aliases": [],
+    "aliases": [
+      "table cell",
+      "td"
+    ],
     "description": "Composed data table (composed set). Also data-table-header.tsx, data-table-cell.tsx.",
     "exports": [
       "DataTableCell"
     ],
     "file": "components/data-table-cell.json",
-    "keywords": [],
+    "keywords": [
+      "badge",
+      "checkbox",
+      "link",
+      "row actions",
+      "status"
+    ],
     "name": "data-table-cell",
     "title": "Data Table Cell"
   },
@@ -358,7 +367,10 @@
     "title": "Data Table Header"
   },
   {
-    "aliases": [],
+    "aliases": [
+      "data grid",
+      "list table"
+    ],
     "description": "Composed data table (composed set). Also data-table-header.tsx, data-table-cell.tsx.",
     "exports": [
       "TableTitle",
@@ -366,7 +378,12 @@
       "DataTable"
     ],
     "file": "components/data-table.json",
-    "keywords": [],
+    "keywords": [
+      "columns",
+      "rows",
+      "sortable",
+      "status list"
+    ],
     "name": "data-table",
     "title": "Data Table"
   },

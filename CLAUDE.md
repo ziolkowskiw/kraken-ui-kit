@@ -44,7 +44,7 @@ layer and are schema-validated.
 - Every color/spacing/radius/typography value is a `--ds-*` token — no hex/px
   literals, ever. Components bind Layer 3 (or semantic), not primitives.
 - State is CSS, never a prop; `disabled` is the only state prop.
-- Brands: `data-theme` = `jit` (default) | `brand` — only the semantic layer
+- Brands: `data-theme` = `jit` (default) | `brand` | `acme` — only the semantic layer
   swaps; zero per-brand code.
 - Form inputs go through `*Field` wrappers; icons are lucide via
   `leftIcon`/`rightIcon`/`icon`.

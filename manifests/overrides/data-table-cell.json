@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/override.schema.json",
+  "aliases": ["table cell", "td"],
+  "keywords": ["badge", "checkbox", "link", "row actions", "status"],
+  "usage": {
+    "do": [
+      "Pick the cell content with type: text | text 2 rows | link | diff | icon + text | icon only | checkbox | action overflow | actions icon | action text | badge | file | input (default text).",
+      "For type=\"badge\" pass badgeLabel and badgeColor (any Badge color: neutral | brand | green | red | orange | amber | blue | purple).",
+      "Right-align numbers with alignment=\"right\" (default left).",
+      "Wire row actions with onEdit / onDownload / onDelete (type=\"actions icon\"), onOverflow (type=\"action overflow\") or onAction + actionLabel (type=\"action text\")."
+    ],
+    "dont": [
+      "Don't put a Badge or Button inside a text cell by hand — use the matching type.",
+      "Don't put ad-hoc form controls in cells — use form-table-cell."
+    ]
+  },
+  "boundaries": [
+    "Cells are the body of a data-table: compose them inside <TableRow> under a <TableHeaderRow> of <TableHeader> labels."
+  ],
+  "whenToUseInstead": [
+    { "component": "form-table-cell", "when": "the cell holds an editable form control" },
+    { "component": "table", "when": "a simple static table with no data-table styling or cell types" }
+  ]
+}

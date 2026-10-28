@@ -36,9 +36,9 @@ function TableTitle({
   className,
   variant = "title",
   title = "Table title",
-  showTooltip = true,
+  showTooltip = false,
   tooltip = "More information",
-  showAction = true,
+  showAction = false,
   actions,
   ...props
 }: TableTitleProps) {
