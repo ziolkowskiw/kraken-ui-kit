@@ -31,7 +31,7 @@ const switchVariants = cva(
 )
 
 const thumbVariants = cva(
-  "pointer-events-none block rounded-full [background-color:var(--ds-color-background)] data-disabled:data-unchecked:[background-color:var(--ds-color-surface)] ring-0 transition-transform",
+  "pointer-events-none block rounded-full [background-color:var(--ds-color-control)] data-disabled:data-unchecked:[background-color:var(--ds-color-surface)] ring-0 transition-transform",
   {
     variants: {
       size: {

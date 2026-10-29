@@ -1,7 +1,7 @@
 # Kraken UI Kit (JIT DS 2.0)
 
 > A shadcn-based design system with a 3-layer --ds-* token architecture
-> (global → semantic → component) and free brand theming (jit / brand) via
+> (global → semantic → component) and free brand theming (jit / brand / acme) via
 > [data-theme]. 56 tokenized components, Figma-first, machine-readable:
 > every component has a dense JSON contract generated from human-maintained
 > sources. Read foundations first; never guess variant names or tokens.

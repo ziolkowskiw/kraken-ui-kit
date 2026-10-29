@@ -55,7 +55,7 @@ export const FullTable: Story = {
   render: () => (
     <div className="w-[900px]">
       <DataTable>
-        <TableTitle title="Invoices" />
+        <TableTitle title="Invoices" showTooltip showAction />
 
         <TableHeaderRow>
           <TableHeader

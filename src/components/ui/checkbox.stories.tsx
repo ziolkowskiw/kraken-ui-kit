@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { expect, userEvent, within } from 'storybook/test'
 import * as React from 'react'
 import { Checkbox } from './checkbox'
 
@@ -111,5 +112,16 @@ export const AllStates: Story = {
         ))}
       </div>
     )
+  },
+}
+
+// Interaction test: clicking checks the box, a second click clears it.
+export const Toggles: Story = {
+  play: async ({ canvasElement }) => {
+    const box = within(canvasElement).getByRole('checkbox')
+    await userEvent.click(box)
+    await expect(box).toBeChecked()
+    await userEvent.click(box)
+    await expect(box).not.toBeChecked()
   },
 }

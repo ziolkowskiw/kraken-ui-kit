@@ -25,12 +25,12 @@ A control that toggles between on and off. Use for instant settings that take ef
 ## Token map
 
 **L2 Semantic**
-- `--ds-color-background`
 - `--ds-color-border`
 - `--ds-color-border-focus`
 - `--ds-color-border-strong`
 - `--ds-color-content-primary`
 - `--ds-color-content-tertiary`
+- `--ds-color-control`
 - `--ds-color-primary`
 - `--ds-color-primary-hover`
 - `--ds-color-primary-muted`

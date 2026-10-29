@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { expect, userEvent, within } from 'storybook/test'
 import * as React from 'react'
 import { CalendarDays } from 'lucide-react'
 import {
@@ -71,3 +72,15 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
+
+export const TitleOnly: Story = { args: { hasCopy: false } }
+
+// Interaction test: the preview appears on hover.
+export const ShowsOnHover: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+    await userEvent.hover(canvas.getByText('@kraken'))
+    await expect(await body.findByText('Kraken UI Kit', {}, { timeout: 4000 })).toBeVisible()
+  },
+}

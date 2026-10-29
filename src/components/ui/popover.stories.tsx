@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { expect, userEvent, waitFor, within } from 'storybook/test'
 import * as React from 'react'
 import { X } from 'lucide-react'
 import {
@@ -73,3 +74,33 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
+
+export const Placement: Story = {
+  render: () => (
+    <div className="grid grid-cols-2 gap-x-24 gap-y-16 p-12">
+      {(['top', 'right', 'bottom', 'left'] as const).map((side) => (
+        <Popover key={side}>
+          <PopoverTrigger render={<Button variant="secondary">{side}</Button>} />
+          <PopoverContent side={side}>
+            <PopoverHeader>
+              <PopoverTitle>Opens to the {side}</PopoverTitle>
+              <PopoverDescription>Placement flips if there is no room.</PopoverDescription>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      ))}
+    </div>
+  ),
+}
+
+// Interaction test: opens from the trigger, closes from the close button.
+export const OpensAndCloses: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+    await userEvent.click(canvas.getByRole('button', { name: 'Open popover' }))
+    await expect(await body.findByText('Dimensions')).toBeVisible()
+    await userEvent.click(await body.findByRole('button', { name: 'Close' }))
+    await waitFor(() => expect(body.queryByText('Dimensions')).not.toBeInTheDocument())
+  },
+}

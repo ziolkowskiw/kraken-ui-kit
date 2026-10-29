@@ -22,9 +22,9 @@ Resizable component. See MAPPING.md for the full shadcn-aligned description.
 ## Token map
 
 **L2 Semantic**
-- `--ds-color-background`
 - `--ds-color-border`
 - `--ds-color-content-tertiary`
+- `--ds-color-control`
 
 ## Accessibility
 

@@ -4,7 +4,10 @@
     "Sortable columns: the sort button inside <th> needs aria-sort=\"ascending|descending|none\".",
     "Interactive rows: prefer row-level action buttons over whole-row click targets."
   ],
-  "aliases": [],
+  "aliases": [
+    "data grid",
+    "list table"
+  ],
   "boundaries": [],
   "description": "Composed data table (composed set). Also data-table-header.tsx, data-table-cell.tsx.",
   "exports": [
@@ -29,7 +32,12 @@
     ],
     "registryItem": "data-table"
   },
-  "keywords": [],
+  "keywords": [
+    "columns",
+    "rows",
+    "sortable",
+    "status list"
+  ],
   "name": "data-table",
   "notes": [
     "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
@@ -97,8 +105,15 @@
     ]
   },
   "usage": {
-    "do": [],
-    "dont": []
+    "do": [
+      "Assemble in this order: <DataTable> > <TableTitle> > <TableHeaderRow> of <TableHeader> > <TableRow> of <DataTableCell>.",
+      "TableTitle shows only the title by default; pass actions (or showAction for the placeholder buttons) and showTooltip + tooltip when you need them.",
+      "Set TableRow variant (white | grey | selected) to alternate rows or mark a selection; add interactive for hover and pressed states."
+    ],
+    "dont": [
+      "Don't ship showAction without actions: the default buttons are labelled \"Action verb\".",
+      "Don't rebuild a data table from raw table parts — use table only for simple static tables."
+    ]
   },
   "variants": {
     "axes": {
@@ -114,5 +129,10 @@
       }
     }
   },
-  "whenToUseInstead": []
+  "whenToUseInstead": [
+    {
+      "component": "table",
+      "when": "a simple static table with no title bar, sorting or cell types"
+    }
+  ]
 }

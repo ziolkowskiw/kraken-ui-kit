@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { expect, userEvent, waitFor, within } from 'storybook/test'
 import * as React from 'react'
 import { icons } from 'lucide-react'
 import {
@@ -243,4 +244,14 @@ export const DisabledItem: Story = {
       </AccordionItem>
     </Accordion>
   ),
+}
+
+// Interaction test: the trigger toggles aria-expanded.
+export const TogglesItem: Story = {
+  play: async ({ canvasElement }) => {
+    const [trigger] = within(canvasElement).getAllByRole('button')
+    const before = trigger.getAttribute('aria-expanded')
+    await userEvent.click(trigger)
+    await waitFor(() => expect(trigger.getAttribute('aria-expanded')).not.toBe(before))
+  },
 }

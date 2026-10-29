@@ -15,7 +15,7 @@ type StackStoryProps = React.ComponentProps<typeof AvatarStack> & {
 const meta = {
   title: 'Components/AvatarStack',
   component: AvatarStack,
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'centered', docs: { description: { component: 'overlapping row of avatars for showing several people at once; collapses extras into a count' } } },
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'select', options: SIZE_OPTIONS, name: 'Size' },

@@ -2,7 +2,7 @@
 
 A shadcn-based company design system that is **designed in Figma and generated
 into code** — and stays that way. The token files (`tokens/tokens.dtcg.json`) are
-the source of truth for 827 design tokens, and one Figma file (`JIT DS 2.1`) is
+the source of truth for 847 design tokens, and one Figma file (`JIT DS 2.1`) is
 their visual editor and the home of the 56 component designs; a token pipeline,
 a Figma↔code map, and a set of AI skills keep the two sides from drifting apart.
 
@@ -116,7 +116,7 @@ npx shadcn add @kraken/button    # installs tokenized, brand-switchable
 
 <!-- STATUS:START -->
 
-- ✅ **Token pipeline**: 844 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ brand).
+- ✅ **Token pipeline**: 847 tokens (3 layers) export from Figma; brand-switchable CSS verified (jit ⇄ brand).
 - ✅ **React kit + Storybook**: 56 components wired to tokens; live brand toggle in showcase and Storybook.
 - ✅ **Figma↔code mapping**: `MAPPING.md` — 47 parent components, node IDs + source links.
 - ✅ **Registry + AI layer**: shadcn registry (60 items), workflow skills, per-component docs, `design.md`.

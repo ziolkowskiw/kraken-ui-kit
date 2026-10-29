@@ -1,13 +1,13 @@
 ---
 name: design-system
-description: Apply the Kraken UI Kit (JIT DS 2.1) design system — --ds-* tokens, 3-layer architecture, brand theming (jit/brand), shadcn-named components, Figma parity, Storybook conventions — to all UI, component, and design work.
+description: Apply the Kraken UI Kit (JIT DS 2.1) design system — --ds-* tokens, 3-layer architecture, brand theming (jit/brand/acme), shadcn-named components, Figma parity, Storybook conventions — to all UI, component, and design work.
 ---
 
 # Kraken UI Kit — Design System Skill
 
 The single source of truth for building UI with the Kraken UI Kit (JIT DS 2.1):
 a shadcn-based kit designed in Figma, generated into code, kept in sync via a
-token pipeline. 827 tokens across 3 layers, 56 components, 2 brands.
+token pipeline. 847 tokens across 3 layers, 56 components, 3 brands.
 
 This file holds the rules and conventions. Exhaustive detail lives in the
 reference files listed at the bottom — load them on demand, don't inline them.
@@ -25,7 +25,7 @@ reference files listed at the bottom — load them on demand, don't inline them.
    verbatim; variant values are the exact lowercase enum strings shown in Figma.
 5. **State is CSS, never a prop.** hover/focus/active come from pseudo-classes;
    the only state prop is `disabled`.
-6. **Accessibility is non-negotiable.** WCAG 2.1 AA contrast (4.5:1 text,
+6. **Accessibility is non-negotiable.** WCAG 2.2 AA contrast (4.5:1 text,
    3:1 UI), visible focus ring (`--ds-color-border-focus`), full keyboard
    navigation.
 7. **Generated files are never hand-edited.** `src/styles/tokens.css` is built
@@ -97,7 +97,7 @@ in `src/styles/kraken-theme.css`, so plain Tailwind classes (`bg-primary`,
    mandatory; the bare primitive stays available.
 6. Icons are `lucide-react` components passed as `leftIcon` / `rightIcon` /
    `icon` props (or children) — never baked in.
-7. Verify in both brands before calling it done: toggle `jit ⇄ brand` in the
+7. Verify in both brands before calling it done: toggle `jit ⇄ brand ⇄ acme` in the
    showcase (`npm run dev`) or the Storybook toolbar.
 8. Reference API: Button — `variant` (primary | secondary | tonal | ghost |
    destructive | destructive-secondary | destructive-ghost), `size`

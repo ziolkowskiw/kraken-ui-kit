@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { expect, userEvent, waitFor, within } from 'storybook/test'
 import * as React from 'react'
 import {
   Dialog,
@@ -167,4 +168,18 @@ export const Destructive: Story = {
       </DialogContent>
     </Dialog>
   ),
+}
+
+// Interaction test: opens from the trigger, closes with Escape.
+export const OpensAndCloses: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+    await userEvent.click(canvas.getAllByRole('button')[0])
+    const dialog = await body.findByRole('dialog')
+    // the dialog fades in, so wait for it instead of asserting on the first frame
+    await waitFor(() => expect(dialog).toBeVisible())
+    await userEvent.keyboard('{Escape}')
+    await waitFor(() => expect(body.queryByRole('dialog')).not.toBeInTheDocument())
+  },
 }

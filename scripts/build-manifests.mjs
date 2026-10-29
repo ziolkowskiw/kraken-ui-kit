@@ -242,7 +242,8 @@ function spacingAliasSummary(label, group) {
   const row = (pick) => sizes.map((s) => px(pick(group[s]))).join(" ");
   const jit = row((t) => t.$value);
   const brand = row((t) => t.$extensions?.modes?.brand ?? t.$value);
-  return `${label} ${sizes[0]}…${sizes.at(-1)} = jit ${jit} / brand ${brand}px`;
+  const acme = row((t) => t.$extensions?.modes?.acme ?? t.$value);
+  return `${label} ${sizes[0]}…${sizes.at(-1)} = jit ${jit} / brand ${brand} / acme ${acme}px`;
 }
 const { component: spacingComponent, layout: spacingLayout } = dtcg.semantic.spacing;
 const spacingAliases = [
@@ -253,7 +254,7 @@ const spacingAliases = [
 
 const foundations = {
   system:
-    "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 2 brands.",
+    "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 3 brands.",
   sources: ["design.md", "MAPPING.md"],
   tokenArchitecture: {
     layers: [
@@ -279,6 +280,7 @@ const foundations = {
       jit: "primary #FFD242 (yellow, --ds-color-jit-400), rounded 6px, Moderat JIT",
       brand:
         "primary #298EE5 (blue, --ds-color-brand-500), sharp 0px, Noto Sans, compact density (see scales.spacing)",
+      acme: "primary #B2F10C (lime, --ds-color-acme-400), sharp 2px, Darker Grotesque headings + Helvetica Neue body, roomy density (see scales.spacing). The test client brand, made with the add-brand skill.",
     },
     contract:
       "Switching swaps only [data-theme] semantic values; components/apps need zero per-brand code. shadcn vars (--primary, --background, …) are re-pointed at --ds-* in kraken-theme.css, so Tailwind classes theme too. Never hard-code brand values.",
@@ -290,7 +292,7 @@ const foundations = {
     "shadcn parity: names/props follow shadcn verbatim; variant values are the exact lowercase Figma enum strings.",
     "Form inputs ship as *Field wrappers (InputField, TextareaField, SelectField, RadioGroupField) adding label/description/errorMessage/mandatory.",
     "Icons are lucide-react components passed as leftIcon/rightIcon/icon (or children) — never baked in; Figma icon-picker value = lucide name.",
-    "WCAG 2.1 AA: 4.5:1 text / 3:1 UI contrast, visible focus ring (--ds-color-border-focus), full keyboard support.",
+    "WCAG 2.2 AA: 4.5:1 text / 3:1 UI contrast, visible focus ring (--ds-color-border-focus), full keyboard support.",
     "Generated files (tokens.css, registry.json, docs/, manifests/ except overrides/) are never hand-edited.",
   ],
   // Lead sentence of each MAPPING.md convention — the rule without the exposition.

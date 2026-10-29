@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { expect, userEvent, within } from 'storybook/test'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs'
 
 const VARIANTS = ['line', 'badge'] as const
@@ -95,4 +96,14 @@ export const AllVariants: Story = {
       ))}
     </div>
   ),
+}
+
+// Interaction test: selecting another tab moves aria-selected.
+export const SwitchesTab: Story = {
+  play: async ({ canvasElement }) => {
+    const tabs = within(canvasElement).getAllByRole('tab')
+    await userEvent.click(tabs[1])
+    await expect(tabs[1]).toHaveAttribute('aria-selected', 'true')
+    await expect(tabs[0]).toHaveAttribute('aria-selected', 'false')
+  },
 }

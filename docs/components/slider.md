@@ -18,7 +18,7 @@ All props are passed through to the underlying Base UI / HTML element.
 ## Token map
 
 **L2 Semantic**
-- `--ds-color-background`
+- `--ds-color-control`
 - `--ds-color-foreground`
 - `--ds-color-muted`
 - `--ds-color-primary`
