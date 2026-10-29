@@ -11,8 +11,7 @@ export const AXE_PATH = require.resolve("axe-core/axe.min.js");
 
 // Theme matrix — must match globalTypes in .storybook/preview.tsx.
 export const BRANDS = ["jit", "brand", "acme"];
-// Dark is opt-in (--schemes light,dark): it is deferred in polish-plan.md and
-// .dark does not reach --ds-* yet, so it would bury every run in noise.
+// Dark is opt-in (--schemes light,dark): .dark does not reach --ds-* yet, so it would bury every run in noise.
 export const SCHEMES = ["light"];
 
 // WCAG 2.2 A + AA (EN 301 549 v4.1.1). best-practice rules are deliberately left out.

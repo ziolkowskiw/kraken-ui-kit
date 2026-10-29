@@ -124,5 +124,3 @@ npx shadcn add @kraken/button    # installs tokenized, brand-switchable
 - ⬜ **Governance** (ongoing): monthly `drift-audit` scheduling pending; `v0.1.0` already released 2026-07-13 via the release agent.
 
 <!-- STATUS:END -->
-
-Full roadmap: [`polish-plan.md`](polish-plan.md) Part 3.

@@ -12,7 +12,6 @@ storybook-static/
 mcp/dist/
 mcp/manifests/
 coverage/
-.superpowers/
 # lockfiles / vendored
 package-lock.json
 mcp/package-lock.json

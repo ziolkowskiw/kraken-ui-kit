@@ -44,8 +44,7 @@ cascade from `[data-theme]` on an ancestor via the token layer. Never hard-code.
 
 The kit forks shadcn's **base-nova** style but is **Figma-first**: where the
 Figma variant matrix and shadcn disagree, Figma wins. These divergences are
-deliberate — do not "fix" them back to shadcn (audited in
-`audit/shadcn-consistency.md`):
+deliberate — do not "fix" them back to shadcn:
 
 | Area | Kit (Figma) | shadcn base-nova |
 |---|---|---|
