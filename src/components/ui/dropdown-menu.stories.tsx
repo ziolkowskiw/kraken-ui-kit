@@ -51,7 +51,7 @@ const meta = {
   },
   args: {
     triggerLabel: 'Open menu',
-    triggerVariant: 'secondary',
+    triggerVariant: 'outline',
     showIcons: true,
     showShortcuts: true,
     showCheckbox: true,

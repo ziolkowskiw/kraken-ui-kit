@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { expect, userEvent, within } from 'storybook/test'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs'
 
-const VARIANTS = ['line', 'badge'] as const
+const VARIANTS = ['line', 'default'] as const
 const ORIENTATIONS = ['horizontal', 'vertical'] as const
 const DEPTHS = [1, 2] as const
 
@@ -71,7 +71,7 @@ export const Playground: Story = {}
 
 export const Line: Story = { args: { variant: 'line' } }
 
-export const Badge: Story = { args: { variant: 'badge' } }
+export const Default: Story = { args: { variant: 'default' } }
 
 export const Depth2: Story = { args: { variant: 'line', depth: 2 } }
 

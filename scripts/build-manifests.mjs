@@ -305,6 +305,7 @@ const foundations = {
     area: clean(d.area),
     kit: clean(d.kit),
     shadcn: clean(d.shadcn),
+    kind: d.kind,
   })),
   scales: {
     spacing: `px steps 0-256 (0 1 2 4 6 8 10 12 16 20 24 28 32 40 48 56 64 80 96 128 160 192 256); aliases ${spacingAliases}`,

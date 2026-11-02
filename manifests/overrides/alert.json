@@ -12,7 +12,7 @@
     ]
   },
   "boundaries": [
-    "The kind prop is named type (neutral | error | success | informational | warning) — NOT variant; this is a deliberate shadcn divergence."
+    "The kind prop is named variant (default | destructive | success | informational | warning). default and destructive match shadcn; success, informational and warning are kit-only."
   ],
   "whenToUseInstead": [
     { "component": "sonner", "when": "transient success/error toasts" },

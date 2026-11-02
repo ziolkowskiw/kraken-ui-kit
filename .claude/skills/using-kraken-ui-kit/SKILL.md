@@ -110,9 +110,9 @@ Switching only swaps the semantic layer — component tokens are untouched and e
   (they add label / description / errorMessage / mandatory).
 - **Icons** are `lucide-react` components passed as `leftIcon` / `rightIcon` /
   `icon` props (or children).
-- Button: `variant` (primary | secondary | tonal | ghost | destructive |
-  destructive-secondary | destructive-ghost), `size` (xs | sm | md | lg),
-  `iconOnly`. `secondary` _is_ the outline; `link` is a separate component.
+- Button: `variant` (default | outline | secondary | ghost | destructive |
+  destructive-outline | destructive-ghost), `size` (xs | sm | md | lg),
+  `iconOnly`. `link` is a separate component.
 
 ## 5. Figma ↔ code
 

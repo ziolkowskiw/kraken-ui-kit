@@ -39,7 +39,7 @@ function SettingsForm() {
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
           {saved && (
-            <Alert type="success" icon={<CircleCheck />}>
+            <Alert variant="success" icon={<CircleCheck />}>
               <AlertTitle>Profile saved</AlertTitle>
               <AlertDescription>Your changes are live.</AlertDescription>
             </Alert>

@@ -10,7 +10,7 @@
     "tab panel"
   ],
   "boundaries": [
-    "variant values are line (default, underline strip) and badge (pill/segmented). Figma's variant named \"default\" maps to code value \"badge\" — a deliberate divergence.",
+    "variant values are line (the default here, underline strip) and default (pill/segmented, the same as shadcn's default). Note: unlike shadcn, an unset variant renders line.",
     "depth on TabsList (1 | 2) is a kit extension with no Figma axis."
   ],
   "description": "layered sections of content displayed one at a time; switch between related views in the same space",
@@ -51,12 +51,12 @@
     {
       "default": "line",
       "figmaProperty": "Variant",
-      "figmaValues": "Figma line → \"line\" (default, underline strip) · Figma default → \"badge\" (pill/segmented, the \"default\" Figma variant maps to the badge code value)",
+      "figmaValues": "Figma line → \"line\" (default, underline strip) · Figma default → \"default\" (pill/segmented)",
       "kind": "enum",
       "name": "variant",
       "values": [
         "line",
-        "badge"
+        "default"
       ]
     },
     {
@@ -143,7 +143,7 @@
         "default": "line",
         "values": [
           "line",
-          "badge"
+          "default"
         ]
       }
     },

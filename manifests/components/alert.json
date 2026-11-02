@@ -11,7 +11,7 @@
     "notice"
   ],
   "boundaries": [
-    "The kind prop is named type (neutral | error | success | informational | warning) — NOT variant; this is a deliberate shadcn divergence."
+    "The kind prop is named variant (default | destructive | success | informational | warning). default and destructive match shadcn; success, informational and warning are kit-only."
   ],
   "description": "displays a callout for user attention; inline, non-blocking messages (info, success, warning, error)",
   "exports": [
@@ -49,14 +49,14 @@
   ],
   "props": [
     {
-      "default": "neutral",
-      "figmaProperty": "Type",
-      "figmaValues": "neutral · error · success · informational · warning",
+      "default": "default",
+      "figmaProperty": "Variant",
+      "figmaValues": "default · destructive · success · informational · warning",
       "kind": "enum",
-      "name": "type",
+      "name": "variant",
       "values": [
-        "neutral",
-        "error",
+        "default",
+        "destructive",
         "success",
         "informational",
         "warning"
@@ -143,11 +143,11 @@
   },
   "variants": {
     "axes": {
-      "type": {
-        "default": "neutral",
+      "variant": {
+        "default": "default",
         "values": [
-          "neutral",
-          "error",
+          "default",
+          "destructive",
           "success",
           "informational",
           "warning"

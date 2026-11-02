@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-type TabsVariant = "line" | "badge"
+type TabsVariant = "line" | "default"
 type TabsDepth = 1 | 2
 
 // TabsList tells each TabsTrigger which visual variant and depth to render, so
@@ -46,8 +46,8 @@ const tabsListVariants = cva(
           "group-data-horizontal/tabs:relative group-data-horizontal/tabs:w-full",
           "group-data-horizontal/tabs:before:absolute group-data-horizontal/tabs:before:inset-x-0 group-data-horizontal/tabs:before:bottom-[var(--ds-spacing-2)] group-data-horizontal/tabs:before:h-px group-data-horizontal/tabs:before:[background-color:var(--ds-card-border)] group-data-horizontal/tabs:before:content-['']",
         ].join(" "),
-        // segmented "badge" control: bordered white container, active tab is a filled pill
-        badge:
+        // segmented "default" control: bordered white container, active tab is a filled pill
+        default:
           "[background-color:var(--ds-color-background)] border [border-color:var(--ds-color-border)] [border-radius:var(--ds-card-radius)] p-[var(--ds-spacing-component-xs)]",
       },
     },
@@ -104,7 +104,7 @@ const tabsTriggerVariants = cva(
           "group-data-vertical/tabs:after:inset-x-auto group-data-vertical/tabs:after:inset-y-1 group-data-vertical/tabs:after:right-0 group-data-vertical/tabs:after:left-auto group-data-vertical/tabs:after:h-auto group-data-vertical/tabs:after:w-px",
           "group-data-vertical/tabs:data-active:after:h-auto group-data-vertical/tabs:data-active:after:w-[3px]",
         ].join(" "),
-        badge: [
+        default: [
           "h-8 py-2 [border-radius:var(--ds-radius-lg)] border border-transparent",
           "data-active:[background-color:var(--ds-color-status-neutral-bg)] data-active:[border-color:var(--ds-color-status-neutral-border)]",
         ].join(" "),

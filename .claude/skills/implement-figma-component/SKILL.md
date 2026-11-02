@@ -367,7 +367,7 @@ Fix and re-validate in a tight loop until all mismatches are resolved.
 When a Figma component nests an instance of another design-system component (e.g. an Alert that contains a Button, a Card that contains a Badge, a header cell that contains a Checkbox), first check whether that component already exists in `src/components/ui/`. If it does, **import and render the actual component** inside the parent — do NOT copy its Tailwind/markup into the parent. This keeps a single source of truth: a later change to `button.tsx` automatically shows up everywhere Button is composed (Alert, Card, DataTable, Dialog…).
 
 - Detect it from the Figma design context: a nested `INSTANCE` whose name matches an existing component (the generated code often emits a `function Button(...)`/`function Badge(...)` for the nested instance — that is your signal it's a real component, not bespoke markup).
-- Match the Figma instance's variant/size props to the real component's props (e.g. Figma `button/secondary/sm` → `<Button variant="secondary" size="sm">`).
+- Match the Figma instance's variant/size props to the real component's props (e.g. Figma `button/outline/sm` → `<Button variant="outline" size="sm">`).
 - If the existing component is missing a variant the Figma instance needs, extend the existing component (add the CVA variant) rather than forking a copy.
 - If the component does NOT exist yet, build it as its own primitive first, then compose it (bottom-up — see the data-table learnings).
 
@@ -475,7 +475,7 @@ Complete all items before marking the component done:
 - **State mapping:** Figma `state=rest|hover|focus|active|disabled` → CSS only. Pin stories to `state=rest`. Only `disabled` is a React prop.
 - **Size mapping:** Figma `xs|sm|md|lg` → code `xs|sm|md|lg` (shadcn default = our `md`)
 - `iconOnly=true` → `size="icon"` in shadcn terms, but we keep `iconOnly` as a boolean prop
-- `secondary` IS the outline variant — no separate `outline`
+- Button variants use shadcn names: `default`, `outline`, `secondary` (tonal fill)
 - No `link` variant on Button — Link and Link Button are separate components
 - Form controls inherit Input tokens: checkbox/radio/select may alias `input/*` tokens
 - **Compound components** (single Figma variant, compositional): export multiple sub-components, story controls expose text labels + structural toggles (discovered: Breadcrumb)

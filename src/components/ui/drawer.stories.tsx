@@ -46,10 +46,10 @@ const meta = {
     title: 'Edit profile',
     description: "Make changes to your profile here. Click save when you're done.",
     triggerLabel: 'Open drawer',
-    triggerVariant: 'secondary',
+    triggerVariant: 'outline',
     cancelLabel: 'Cancel',
     confirmLabel: 'Save changes',
-    confirmVariant: 'primary',
+    confirmVariant: 'default',
   },
   render: ({ side, title, description, triggerLabel, triggerVariant, cancelLabel, confirmLabel, confirmVariant }) => (
     <Drawer>

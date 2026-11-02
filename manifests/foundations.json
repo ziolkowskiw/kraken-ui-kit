@@ -44,66 +44,67 @@
   "shadcnDivergences": [
     {
       "area": "Button variants",
-      "kit": "primary/secondary/tonal/ghost/destructive/destructive-secondary/destructive-ghost",
-      "shadcn": "default/outline/secondary/ghost/destructive/link (map: default→primary, outline→secondary)"
+      "kind": "extra",
+      "kit": "default/outline/secondary/ghost/destructive (shadcn names) plus kit-only destructive-outline, destructive-ghost; no link variant (separate component)",
+      "shadcn": "default/outline/secondary/ghost/destructive/link"
     },
     {
       "area": "Button sizing",
+      "kind": "api",
       "kit": "--ds-button-size-* tokens + iconOnly prop",
       "shadcn": "utility classes + size=\"icon-*\""
     },
     {
-      "area": "Alert prop",
-      "kit": "type",
-      "shadcn": "variant"
+      "area": "Alert variants",
+      "kind": "extra",
+      "kit": "variant: default/destructive (shadcn names) plus kit-only success, informational, warning",
+      "shadcn": "variant: default/destructive"
     },
     {
-      "area": "Tabs variant",
-      "kit": "badge",
-      "shadcn": "default"
+      "area": "Tabs default",
+      "kind": "default",
+      "kit": "an unset variant renders line (underline strip); default is the segmented pill",
+      "shadcn": "an unset variant renders default (segmented pill)"
     },
     {
       "area": "AlertDialog",
+      "kind": "api",
       "kit": "prop-driven AlertDialogContent (title/description/primaryActions/secondaryActions); AlertDialogCancel alias provided for copy-paste compat",
       "shadcn": "composable Header/Footer/Title/Action/Cancel/Media"
     },
     {
       "area": "Avatar",
+      "kind": "api",
       "kit": "prop-driven (src/fallback), AvatarStack",
       "shadcn": "composable AvatarImage/AvatarFallback, AvatarBadge/AvatarGroup"
     },
     {
       "area": "Progress",
+      "kind": "api",
       "kit": "single <Progress value label>",
       "shadcn": "composable Track/Indicator/Label/Value"
     },
     {
       "area": "Toast",
+      "kind": "api",
       "kit": "Base UI Toast (toast, toastManager)",
       "shadcn": "sonner package"
     },
     {
       "area": "Drawer",
+      "kind": "api",
       "kit": "Base UI dialog",
       "shadcn": "vaul"
     },
     {
-      "area": "EmptyMedia slot",
-      "kit": "data-slot=\"empty-media\"",
-      "shadcn": "data-slot=\"empty-icon\""
-    },
-    {
-      "area": "Slider range slot",
-      "kit": "data-slot=\"slider-indicator\" (Base UI naming)",
-      "shadcn": "data-slot=\"slider-range\""
-    },
-    {
       "area": "Pagination",
+      "kind": "extra",
       "kit": "ghost xs controls; icon-only PaginationPrevious/PaginationNext + PaginationFirst/PaginationLast (chevron-first/last)",
       "shadcn": "text \"Previous\"/\"Next\" links, no first/last"
     },
     {
       "area": "Toast look",
+      "kind": "look",
       "kit": "surface tinted per type (badge fill/border tokens), message only — no type icon",
       "shadcn": "neutral card with a type icon"
     }

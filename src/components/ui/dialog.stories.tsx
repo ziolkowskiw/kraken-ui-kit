@@ -15,12 +15,12 @@ import { Button } from './button'
 import { Input } from './input'
 
 const BUTTON_VARIANTS = [
-  'primary',
+  'default',
+  'outline',
   'secondary',
-  'tonal',
   'ghost',
   'destructive',
-  'destructive-secondary',
+  'destructive-outline',
   'destructive-ghost',
 ] as const
 
@@ -68,10 +68,10 @@ const meta = {
     hasSubtitle: true,
     showCloseButton: true,
     triggerLabel: 'Open dialog',
-    triggerVariant: 'secondary',
+    triggerVariant: 'outline',
     cancelLabel: 'Cancel',
     confirmLabel: 'Confirm',
-    confirmVariant: 'primary',
+    confirmVariant: 'default',
   },
   render: ({
     type,
@@ -106,7 +106,7 @@ const meta = {
           </div>
         )}
         <DialogFooter>
-          <DialogClose render={<Button variant="secondary">{cancelLabel}</Button>} />
+          <DialogClose render={<Button variant="outline">{cancelLabel}</Button>} />
           <DialogClose render={<Button variant={confirmVariant}>{confirmLabel}</Button>} />
         </DialogFooter>
       </DialogContent>
@@ -162,7 +162,7 @@ export const Destructive: Story = {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <DialogClose render={<Button variant="secondary">Cancel</Button>} />
+          <DialogClose render={<Button variant="outline">Cancel</Button>} />
           <DialogClose render={<Button variant="destructive">Delete</Button>} />
         </DialogFooter>
       </DialogContent>

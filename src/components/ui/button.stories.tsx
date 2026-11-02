@@ -4,12 +4,12 @@ import { Button } from './button'
 import { iconArgType, renderIcon, type IconName } from '@/lib/story-helpers'
 
 const VARIANTS = [
-  'primary',
+  'default',
+  'outline',
   'secondary',
-  'tonal',
   'ghost',
   'destructive',
-  'destructive-secondary',
+  'destructive-outline',
   'destructive-ghost',
 ] as const
 const SIZES = ['xs', 'sm', 'md', 'lg'] as const
@@ -37,7 +37,7 @@ const meta = {
   },
   args: {
     children: 'Action verb',
-    variant: 'primary',
+    variant: 'default',
     size: 'md',
     iconOnly: false,
     disabled: false,
@@ -90,7 +90,7 @@ export const IconOnly: Story = {
 export const Disabled: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-2">
-      {(['primary', 'secondary', 'tonal', 'destructive'] as const).map((variant) => (
+      {(['default', 'outline', 'secondary', 'destructive'] as const).map((variant) => (
         <Button key={variant} variant={variant} disabled>
           {variant}
         </Button>

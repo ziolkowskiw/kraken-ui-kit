@@ -16,7 +16,7 @@ Displays a callout for user attention. Use for inline, non-blocking messages (in
 
 | Prop | Type | Values | Default |
 |---|---|---|---|
-| `type` | enum | `"neutral" \| "error" \| "success" \| "informational" \| "warning"` | `"neutral"` |
+| `variant` | enum | `"default" \| "destructive" \| "success" \| "informational" \| "warning"` | `"default"` |
 | `icon` | string / node | — | — |
 | `closeIcon` | string / node | — | — |
 | `action` | string / node | — | — |

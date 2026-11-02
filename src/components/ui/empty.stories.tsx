@@ -75,10 +75,10 @@ const meta = {
           {args.showBody && <EmptyDescription>{args.description}</EmptyDescription>}
         </EmptyHeader>
         <EmptyContent>
-          {/* Figma order: ghost · secondary · primary, all lg */}
+          {/* Figma order: ghost · outline · default, all lg */}
           {args.showGhost && <Button variant="ghost" size="lg">Learn more</Button>}
-          {args.showSecondary && <Button variant="secondary" size="lg">Import</Button>}
-          {args.showPrimary && <Button variant="primary" size="lg">Get started</Button>}
+          {args.showSecondary && <Button variant="outline" size="lg">Import</Button>}
+          {args.showPrimary && <Button variant="default" size="lg">Get started</Button>}
         </EmptyContent>
       </Empty>
     </div>

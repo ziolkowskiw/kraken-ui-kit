@@ -1107,11 +1107,11 @@
   --ds-button-primary-content: var(--ds-color-primary-foreground);
   --ds-button-primary-contentdisabled: var(--ds-color-content-disabled-on-color);
   --ds-button-primary-icondisabled: var(--ds-color-content-disabled-on-color);
-  --ds-button-tonal-fill: var(--ds-color-primary-muted);
-  --ds-button-tonal-fillhover: var(--ds-color-primary-muted-hover);
-  --ds-button-tonal-fillactive: var(--ds-color-primary-muted-active);
+  --ds-button-tonal-fill: var(--ds-color-muted);
+  --ds-button-tonal-fillhover: var(--ds-color-border);
+  --ds-button-tonal-fillactive: var(--ds-color-secondary-pressed);
   --ds-button-tonal-filldisabled: var(--ds-color-muted);
-  --ds-button-tonal-content: var(--ds-color-primary-muted-foreground);
+  --ds-button-tonal-content: var(--ds-color-content-primary);
   --ds-button-tonal-contentdisabled: var(--ds-color-content-disabled-on-color);
   --ds-button-tonal-icondisabled: var(--ds-color-content-disabled-on-color);
   --ds-button-secondary-fill: var(--ds-color-control);

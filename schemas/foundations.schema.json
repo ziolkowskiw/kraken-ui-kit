@@ -49,7 +49,8 @@
         "properties": {
           "area": { "type": "string" },
           "kit": { "type": "string" },
-          "shadcn": { "type": "string" }
+          "shadcn": { "type": "string" },
+          "kind": { "enum": ["extra", "default", "api", "look"] }
         }
       }
     },

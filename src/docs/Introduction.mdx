@@ -66,23 +66,62 @@ Every component should look right in all four combinations. Check them before yo
 
 ## Where shadcn differs
 
-The kit follows shadcn names and props. These are the places it deliberately does not:
+The kit uses shadcn names and props wherever a shadcn equivalent exists. The names
+that now match are Button `default`, `outline` and `secondary`, Alert `variant`
+(`default`, `destructive`), Tabs `default`, and the `empty-icon` and `slider-range`
+slots. Code written for shadcn should work with those names unchanged.
 
+Where the two differ, the kit follows Figma. Each difference falls into one of four kinds:
+
+export const kinds = [
+  {
+    kind: "extra",
+    title: "The kit adds to shadcn",
+    note: "Extra values that shadcn has no equivalent for. Everything shadcn has still works.",
+  },
+  {
+    kind: "default",
+    title: "A different default",
+    note: "Same names, but the unset value is not the same.",
+  },
+  {
+    kind: "api",
+    title: "A different prop API or library",
+    note: "The component is built differently, so shadcn code needs adapting, not just renaming.",
+  },
+  {
+    kind: "look",
+    title: "A different look",
+    note: "Same behavior, different visual treatment.",
+  },
+];
+
+{kinds.map((group) => {
+const rows = foundations.shadcnDivergences.filter((row) => row.kind === group.kind);
+if (rows.length === 0) return null;
+return (
+
+<section key={group.kind}>
+<h3>{group.title}</h3>
+<p>{group.note}</p>
 <table>
-  <thead>
-    <tr>
-      <th>Area</th>
-      <th>Kit</th>
-      <th>shadcn</th>
-    </tr>
-  </thead>
-  <tbody>
-    {foundations.shadcnDivergences.map((row) => (
-      <tr key={row.area}>
-        <td>{row.area}</td>
-        <td>{row.kit}</td>
-        <td>{row.shadcn}</td>
-      </tr>
-    ))}
-  </tbody>
+<thead>
+<tr>
+<th>Area</th>
+<th>Kit</th>
+<th>shadcn</th>
+</tr>
+</thead>
+<tbody>
+{rows.map((row) => (
+<tr key={row.area}>
+<td>{row.area}</td>
+<td>{row.kit}</td>
+<td>{row.shadcn}</td>
+</tr>
+))}
+</tbody>
 </table>
+</section>
+);
+})}

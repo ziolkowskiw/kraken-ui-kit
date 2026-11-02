@@ -4,13 +4,13 @@ import { icons, AlertCircle, CheckCircle2, Info, AlertTriangle, Bell, X } from '
 import { Alert, AlertTitle, AlertDescription } from './alert'
 import { Button } from './button'
 
-const TYPE_OPTIONS = ['neutral', 'error', 'success', 'informational', 'warning'] as const
-const BUTTON_VARIANTS = ['primary', 'secondary', 'tonal', 'ghost', 'destructive', 'destructive-secondary', 'destructive-ghost'] as const
+const VARIANT_OPTIONS = ['default', 'destructive', 'success', 'informational', 'warning'] as const
+const BUTTON_VARIANTS = ['default', 'outline', 'secondary', 'ghost', 'destructive', 'destructive-outline', 'destructive-ghost'] as const
 const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const
 
 const iconMap = {
-  neutral: <Bell size={16} />,
-  error: <AlertCircle size={16} />,
+  default: <Bell size={16} />,
+  destructive: <AlertCircle size={16} />,
   success: <CheckCircle2 size={16} />,
   informational: <Info size={16} />,
   warning: <AlertTriangle size={16} />,
@@ -46,7 +46,7 @@ const meta = {
   parameters: { layout: 'padded', docs: { description: { component: 'displays a callout for user attention; inline, non-blocking messages (info, success, warning, error)' } } },
   tags: ['autodocs'],
   argTypes: {
-    type: { control: 'select', options: TYPE_OPTIONS, name: 'Type' },
+    variant: { control: 'select', options: VARIANT_OPTIONS, name: 'Variant' },
     titleText: { control: 'text', name: 'Title' },
     hasIcon: { control: 'boolean', name: 'hasIcon' },
     iconName: {
@@ -105,7 +105,7 @@ const meta = {
     action: { table: { disable: true } },
   },
   args: {
-    type: 'neutral',
+    variant: 'default',
     titleText: 'This action cannot be undone',
     descriptionText: 'Please make sure your data is correct',
     hasIcon: true,
@@ -114,14 +114,14 @@ const meta = {
     showCloseIcon: true,
     showButton: true,
     actionVerb: 'Action verb',
-    actionButtonVariant: 'secondary',
+    actionButtonVariant: 'outline',
     actionButtonSize: 'sm',
     actionButtonIconOnly: false,
     actionButtonLeftIconName: 'none',
     actionButtonRightIconName: 'none',
   },
   render: ({
-    type,
+    variant,
     titleText,
     descriptionText,
     hasIcon,
@@ -137,11 +137,11 @@ const meta = {
     actionButtonRightIconName,
     ...args
   }) => {
-    const t = type ?? 'neutral'
+    const t = variant ?? 'default'
     return (
       <Alert
         {...args}
-        type={t}
+        variant={t}
         icon={hasIcon ? renderIcon(iconName) : undefined}
         closeIcon={<X />}
         onClose={showCloseIcon ? () => {} : undefined}
@@ -190,24 +190,24 @@ export const WithButton: Story = {
 }
 
 export const Error: Story = {
-  args: { type: 'error', hasIcon: true },
+  args: { variant: 'destructive', hasIcon: true },
 }
 
 export const Success: Story = {
-  args: { type: 'success', hasIcon: true },
+  args: { variant: 'success', hasIcon: true },
 }
 
 export const Informational: Story = {
-  args: { type: 'informational', hasIcon: true },
+  args: { variant: 'informational', hasIcon: true },
 }
 
 export const Warning: Story = {
-  args: { type: 'warning', hasIcon: true },
+  args: { variant: 'warning', hasIcon: true },
 }
 
 export const FullFeatured: Story = {
   args: {
-    type: 'informational',
+    variant: 'informational',
     hasIcon: true,
     hasDescription: true,
     showCloseIcon: true,
@@ -218,8 +218,8 @@ export const FullFeatured: Story = {
 export const AllTypes: Story = {
   render: () => (
     <div className="flex flex-col gap-4 max-w-md">
-      {TYPE_OPTIONS.map((t) => (
-        <Alert key={t} type={t} icon={iconMap[t]} closeIcon={<X />} onClose={() => {}}>
+      {VARIANT_OPTIONS.map((t) => (
+        <Alert key={t} variant={t} icon={iconMap[t]} closeIcon={<X />} onClose={() => {}}>
           <AlertTitle className="capitalize">{t}</AlertTitle>
           <AlertDescription>
             This is a {t} alert with icon and description.

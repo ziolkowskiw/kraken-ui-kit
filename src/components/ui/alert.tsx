@@ -11,10 +11,10 @@ const alertVariants = cva(
   ].join(" "),
   {
     variants: {
-      type: {
-        neutral:
+      variant: {
+        default:
           "[background-color:var(--ds-color-status-neutral-bg)] [border-color:var(--ds-color-status-neutral-border)]",
-        error:
+        destructive:
           "[background-color:var(--ds-color-status-error-bg)] [border-color:var(--ds-color-status-error-border)]",
         success:
           "[background-color:var(--ds-color-status-success-bg)] [border-color:var(--ds-color-status-success-border)]",
@@ -24,21 +24,21 @@ const alertVariants = cva(
           "[background-color:var(--ds-color-status-warning-bg)] [border-color:var(--ds-color-status-warning-border)]",
       },
     },
-    defaultVariants: { type: "neutral" },
+    defaultVariants: { variant: "default" },
   }
 )
 
 const alertTitleColorMap = {
-  neutral: "[color:var(--ds-color-status-neutral-foreground)]",
-  error: "[color:var(--ds-color-status-error-foreground)]",
+  default: "[color:var(--ds-color-status-neutral-foreground)]",
+  destructive: "[color:var(--ds-color-status-error-foreground)]",
   success: "[color:var(--ds-color-status-success-foreground)]",
   informational: "[color:var(--ds-color-status-info-foreground)]",
   warning: "[color:var(--ds-color-status-warning-foreground)]",
 } as const
 
 const alertIconColorMap = {
-  neutral: "[color:var(--ds-color-status-neutral-icon)]",
-  error: "[color:var(--ds-color-status-error-icon)]",
+  default: "[color:var(--ds-color-status-neutral-icon)]",
+  destructive: "[color:var(--ds-color-status-error-icon)]",
   success: "[color:var(--ds-color-status-success-icon)]",
   informational: "[color:var(--ds-color-status-info-icon)]",
   warning: "[color:var(--ds-color-status-warning-icon)]",
@@ -54,7 +54,7 @@ type AlertProps = React.ComponentProps<"div"> &
 
 function Alert({
   className,
-  type = "neutral",
+  variant = "default",
   icon,
   closeIcon,
   onClose,
@@ -66,16 +66,16 @@ function Alert({
     <div
       data-slot="alert"
       role="alert"
-      className={cn(alertVariants({ type }), className)}
+      className={cn(alertVariants({ variant }), className)}
       {...props}
     >
       <div className="flex flex-1 items-start gap-[var(--ds-spacing-component-md)] min-w-0">
         {icon && (
-          <div className={cn("flex shrink-0 items-center pt-0.5 [&_svg]:size-4", alertIconColorMap[type ?? "neutral"])}>
+          <div className={cn("flex shrink-0 items-center pt-0.5 [&_svg]:size-4", alertIconColorMap[variant ?? "default"])}>
             {icon}
           </div>
         )}
-        <div className={cn("flex flex-1 flex-col gap-[var(--ds-spacing-component-sm)] items-start min-w-0 pt-0.5", alertTitleColorMap[type ?? "neutral"])}>
+        <div className={cn("flex flex-1 flex-col gap-[var(--ds-spacing-component-sm)] items-start min-w-0 pt-0.5", alertTitleColorMap[variant ?? "default"])}>
           {children}
         </div>
       </div>

@@ -14,7 +14,7 @@ Displays a button or a component that looks like a button. Use for primary actio
 
 | Prop | Type | Values | Default |
 |---|---|---|---|
-| `variant` | enum | `"destructive-secondary" \| "destructive-ghost" \| "primary" \| "secondary" \| "tonal" \| "ghost" \| "destructive"` | `"primary"` |
+| `variant` | enum | `"destructive-outline" \| "destructive-ghost" \| "default" \| "outline" \| "secondary" \| "ghost" \| "destructive"` | `"default"` |
 | `size` | enum | `"xs" \| "sm" \| "md" \| "lg"` | `"md"` |
 | `leftIcon` | string / node | — | — |
 | `rightIcon` | string / node | — | — |
