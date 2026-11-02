@@ -58,7 +58,8 @@ jobs:
 
   story-tests:
     # Non-blocking: visible on the PR, never fails the required check.
-    runs-on: ubuntu-latest
+    # Pinned: Playwright does not support ubuntu-latest (26.04) yet.
+    runs-on: ubuntu-24.04
     continue-on-error: true
     steps:
       - uses: actions/checkout@v5
