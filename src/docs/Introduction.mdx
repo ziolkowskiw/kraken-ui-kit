@@ -1,5 +1,7 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 import foundations from "../../manifests/foundations.json";
+import components from "../../manifests/index.json";
+import tokens from "../../manifests/tokens.json";
 
 <Meta title="Introduction" />
 
@@ -10,9 +12,24 @@ import foundations from "../../manifests/foundations.json";
 Every page in this Storybook is generated from the same sources the kit ships
 from, so what you read here is what the code does.
 
+<ul>
+  <li>
+    <strong>{components.length} components</strong>, each with a Playground that mirrors its Figma
+    properties
+  </li>
+  <li>
+    <strong>{tokens.layers.global.length + tokens.layers.semantic.length} shared tokens</strong> in
+    two layers, plus one component layer per component
+  </li>
+  <li>
+    <strong>Brand and scheme switches</strong> in the toolbar that restyle every page at once
+  </li>
+</ul>
+
 ## Where to start
 
 - **Foundations / Brands & theming** — the selected brand, rendered live from the semantic tokens.
+- **Foundations / Creating a brand** — how a new brand is added without touching a component.
 - **Foundations / Token architecture** — the three token layers and how names are built.
 - **Components** — one entry per component. Open **Playground** to drive every Figma property from the controls panel, then the named stories for variants, sizes and states.
 
@@ -42,7 +59,7 @@ Add the registry to your `components.json`, then pull the theme and any componen
 
 Two switches in the toolbar change the whole canvas at once:
 
-- **Brand** — `jit` (default) or `acme`. Swaps only the semantic layer through `[data-theme]`.
+- **Brand** — `jit` is the default. A brand swaps only the semantic layer through `[data-theme]`, so no component carries brand code.
 - **Scheme** — light or dark. Dark is Storybook-only for now: `.storybook/dark.css` mirrors the semantic colors, and the kit itself has no dark tokens yet.
 
 Every component should look right in all four combinations. Check them before you ship a change.

@@ -1,0 +1,62 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { BRAND_SCALE_TOKENS, ResolvedTokens } from "../../.storybook/docs/brand";
+
+<Meta title="Foundations/Creating a brand" />
+
+# Creating a brand
+
+A brand is one more column of values in the semantic layer. Global tokens, component
+tokens and component code stay exactly as they are, so a new brand never needs a
+component change.
+
+## What a brand changes
+
+Color roles, shape, density and type. These are the values that differ per brand,
+shown here for the brand and scheme selected in the toolbar:
+
+<ResolvedTokens tokens={BRAND_SCALE_TOKENS} />
+
+## Steps
+
+<ol style={{ listStyle: "decimal", paddingLeft: 24 }}>
+  <li>
+    <strong>Pick a name.</strong> Lowercase, one word or kebab-case. It becomes the{" "}
+    <code>data-theme</code> value everywhere.
+  </li>
+  <li>
+    <strong>Add a mode in Figma.</strong> In the <code>semantic</code> collection of the JIT DS 2.1
+    file, add a mode with that name. Copy the values from <code>jit</code>, then change colors,
+    radius, spacing and fonts to fit the new identity. Leave the <code>global</code> and{" "}
+    <code>component</code> collections alone.
+  </li>
+  <li>
+    <strong>Sync the tokens.</strong> Export the collections into{" "}
+    <code>tokens/tokens.dtcg.json</code>, the source of truth, then run{" "}
+    <code>npm run tokens:build</code> to regenerate <code>src/styles/tokens.css</code>.
+  </li>
+  <li>
+    <strong>Add it to Storybook.</strong> Add a toolbar entry in <code>.storybook/preview.tsx</code>{" "}
+    and, for the dark scheme, a block for the brand in <code>.storybook/dark.css</code>.
+  </li>
+  <li>
+    <strong>Verify.</strong> Switch to the brand in the toolbar and check every component. Then run{" "}
+    <code>npm run manifests:check</code>. Component tokens must not have changed, because only
+    semantic values differ per brand.
+  </li>
+</ol>
+
+## Using a brand in an app
+
+Set the name on `<html>`, or on any ancestor to theme just that part of the page:
+
+<pre>
+  <code>{'<html data-theme="your-brand">'}</code>
+</pre>
+
+`jit` is the default and sets no attribute.
+
+## Rules
+
+- Change only the semantic layer. A new brand adds a mode, never a component file.
+- Never hard-code a brand value in a component or an app. Use a `--ds-*` token.
+- Give every semantic role a value in the new mode. Figma requires one for each variable.

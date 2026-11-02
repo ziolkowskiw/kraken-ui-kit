@@ -18,7 +18,12 @@ const meta = {
     layout: "padded",
     docs: {
       description: {
-        component: `${foundations.brands.contract}\n\nShows the brand and scheme selected in the toolbar. Switch Brand to compare.`,
+        component: [
+          "A brand is a set of semantic token values, selected with `data-theme` on `<html>` or any ancestor. `jit` is the default and sets no attribute.",
+          "Components never carry brand code: switching swaps only the semantic layer, and the shadcn variables (`--primary`, `--background`, …) are re-pointed at `--ds-*` in `kraken-theme.css`, so Tailwind classes follow too. Never hard-code a brand value.",
+          "`jit` is the default brand: yellow primary, rounded 6px corners and Moderat JIT type. The swatches below show the brand and scheme selected in the toolbar.",
+          "To add another brand, see **Foundations / Creating a brand**.",
+        ].join("\n\n"),
       },
     },
   },
@@ -39,9 +44,11 @@ export const SelectedBrand: Story = {
           <code className="text-sm font-semibold">
             data-theme=&quot;{brand}&quot;, {globals.colorScheme === "dark" ? "dark" : "light"}
           </code>
-          <p className="text-sm" style={{ color: "var(--ds-color-muted-foreground)" }}>
-            {foundations.brands.values[brand].replace(" (see scales.spacing)", "")}
-          </p>
+          {brand === "jit" && (
+            <p className="text-sm" style={{ color: "var(--ds-color-muted-foreground)" }}>
+              {foundations.brands.values.jit}
+            </p>
+          )}
         </div>
         <div className="grid grid-cols-3 gap-2">
           {SWATCHES.map(([cssVar, label]) => (

@@ -254,7 +254,7 @@ const spacingAliases = [
 
 const foundations = {
   system:
-    "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 3 brands.",
+    "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, brand-switchable through one semantic layer.",
   sources: ["design.md", "MAPPING.md"],
   tokenArchitecture: {
     layers: [
@@ -280,7 +280,7 @@ const foundations = {
       jit: "primary #FFD242 (yellow, --ds-color-jit-400), rounded 6px, Moderat JIT",
       brand:
         "primary #298EE5 (blue, --ds-color-brand-500), sharp 0px, Noto Sans, compact density (see scales.spacing)",
-      acme: "primary #B2F10C (lime, --ds-color-acme-400), sharp 2px, Darker Grotesque headings + Helvetica Neue body, roomy density (see scales.spacing). The test client brand, made with the add-brand skill.",
+      acme: "primary #B2F10C (lime, --ds-color-acme-400), sharp 2px, Darker Grotesque headings + Helvetica Neue body, roomy density (see scales.spacing). The second brand: it proves the swap needs no component code.",
     },
     contract:
       "Switching swaps only [data-theme] semantic values; components/apps need zero per-brand code. shadcn vars (--primary, --background, …) are re-pointed at --ds-* in kraken-theme.css, so Tailwind classes theme too. Never hard-code brand values.",
