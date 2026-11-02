@@ -78,7 +78,9 @@ export default function Showcase() {
         <Card>
           <CardHeader>
             <CardTitle>Buttons</CardTitle>
-            <CardDescription>Variants & sizes — the default button follows the brand.</CardDescription>
+            <CardDescription>
+              Variants & sizes — the default button follows the brand.
+            </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center gap-2">

@@ -97,30 +97,31 @@ export const kinds = [
 ];
 
 {kinds.map((group) => {
-  const rows = foundations.shadcnDivergences.filter((row) => row.kind === group.kind);
-  if (rows.length === 0) return null;
-  return (
-    <section key={group.kind}>
-      <h3>{group.title}</h3>
-      <p>{group.note}</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Area</th>
-            <th>Kit</th>
-            <th>shadcn</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.area}>
-              <td>{row.area}</td>
-              <td>{row.kit}</td>
-              <td>{row.shadcn}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </section>
-  );
+const rows = foundations.shadcnDivergences.filter((row) => row.kind === group.kind);
+if (rows.length === 0) return null;
+return (
+
+<section key={group.kind}>
+<h3>{group.title}</h3>
+<p>{group.note}</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Kit</th>
+<th>shadcn</th>
+</tr>
+</thead>
+<tbody>
+{rows.map((row) => (
+<tr key={row.area}>
+<td>{row.area}</td>
+<td>{row.kit}</td>
+<td>{row.shadcn}</td>
+</tr>
+))}
+</tbody>
+</table>
+</section>
+);
 })}
