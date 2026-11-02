@@ -35,7 +35,7 @@ These rules hold for **every** component, so the tables below don't repeat them:
 6. **Sub-parts are NOT separate files** — they compose into the parent's `.tsx`
    as exported parts (`dialog/header` → `DialogHeader` in `dialog.tsx`).
 
-Brand/theme (`jit` ⇄ `brand` ⇄ `acme`) and light/dark values are **not** props — they
+Brand/theme (`jit` ⇄ `acme`) and light/dark values are **not** props — they
 cascade from `[data-theme]` on an ancestor via the token layer. Never hard-code.
 
 ---

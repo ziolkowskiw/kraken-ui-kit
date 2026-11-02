@@ -41,6 +41,25 @@ const card = {
   borderRadius: 6,
   padding: "4px 16px",
 };
+const chip = {
+  border: "1px solid color-mix(in srgb, currentColor 15%, transparent)",
+  borderRadius: 4,
+  padding: "1px 6px",
+  fontSize: 12,
+  background: "color-mix(in srgb, currentColor 5%, transparent)",
+};
+// Do and Don't cards take their color from the status tokens, so they follow the brand and scheme.
+const tone = (kind: "success" | "error") => ({
+  ...card,
+  background: `var(--ds-color-status-${kind}-bg)`,
+  borderColor: `var(--ds-color-status-${kind}-border)`,
+});
+const toneHeading = (kind: "success" | "error") => ({
+  display: "flex",
+  alignItems: "center",
+  gap: 8,
+  color: `var(--ds-color-status-${kind}-foreground)`,
+});
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -120,12 +139,16 @@ export function ComponentDocsPage() {
               gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             }}
           >
-            <div style={card}>
-              <h3>Do</h3>
+            <div style={tone("success")}>
+              <h3 style={toneHeading("success")}>
+                <span aria-hidden>✓</span> Do
+              </h3>
               <List items={m.usage.do ?? []} />
             </div>
-            <div style={card}>
-              <h3>Don&apos;t</h3>
+            <div style={tone("error")}>
+              <h3 style={toneHeading("error")}>
+                <span aria-hidden>✕</span> Don&apos;t
+              </h3>
               <List items={m.usage.dont ?? []} />
             </div>
           </div>
@@ -134,12 +157,12 @@ export function ComponentDocsPage() {
 
       {axes.length > 0 && (
         <Section title="Variant axes">
-          <table>
+          <table style={{ width: "100%" }}>
             <thead>
               <tr>
-                <th>Prop</th>
-                <th>Values</th>
-                <th>Default</th>
+                <th style={{ textAlign: "left" }}>Prop</th>
+                <th style={{ textAlign: "left" }}>Values</th>
+                <th style={{ textAlign: "left" }}>Default</th>
               </tr>
             </thead>
             <tbody>
@@ -148,7 +171,15 @@ export function ComponentDocsPage() {
                   <td>
                     <code>{axis}</code>
                   </td>
-                  <td>{def.values.map((v) => `${v}`).join(" · ")}</td>
+                  <td>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                      {def.values.map((v) => (
+                        <code key={v} style={chip}>
+                          {v}
+                        </code>
+                      ))}
+                    </div>
+                  </td>
                   <td>
                     <code>{def.default}</code>
                   </td>

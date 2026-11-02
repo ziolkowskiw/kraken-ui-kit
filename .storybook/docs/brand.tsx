@@ -113,7 +113,7 @@ export function ResolvedTokens({
   );
 }
 
-// The one-line description of the selected brand, from manifests/foundations.json.
+// Only the default brand is described in the docs; any other brand shows its name and scheme.
 export function BrandSummary() {
   const { brand, scheme } = useSelected();
   return (
@@ -121,9 +121,13 @@ export function BrandSummary() {
       <strong>
         <code>data-theme=&quot;{brand}&quot;</code>, {scheme}
       </strong>
-      <br />
-      {/* the manifest line points at a scales table that the docs no longer show */}
-      {foundations.brands.values[brand].replace(" (see scales.spacing)", "")}
+      {brand === "jit" && (
+        <>
+          <br />
+          {/* the manifest line points at a scales table that the docs no longer show */}
+          {foundations.brands.values.jit.replace(" (see scales.spacing)", "")}
+        </>
+      )}
     </p>
   );
 }

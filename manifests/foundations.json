@@ -4,7 +4,7 @@
     "contract": "Switching swaps only [data-theme] semantic values; components/apps need zero per-brand code. shadcn vars (--primary, --background, …) are re-pointed at --ds-* in kraken-theme.css, so Tailwind classes theme too. Never hard-code brand values.",
     "default": "jit",
     "values": {
-      "acme": "primary #B2F10C (lime, --ds-color-acme-400), sharp 2px, Darker Grotesque headings + Helvetica Neue body, roomy density (see scales.spacing). The test client brand, made with the add-brand skill.",
+      "acme": "primary #B2F10C (lime, --ds-color-acme-400), sharp 2px, Darker Grotesque headings + Helvetica Neue body, roomy density (see scales.spacing). The second brand: it proves the swap needs no component code.",
       "brand": "primary #298EE5 (blue, --ds-color-brand-500), sharp 0px, Noto Sans, compact density (see scales.spacing)",
       "jit": "primary #FFD242 (yellow, --ds-color-jit-400), rounded 6px, Moderat JIT"
     }
@@ -26,7 +26,7 @@
     "Instance-swap (icons) → a lucide-react icon passed as leftIcon / rightIcon / icon (or children).",
     "Disambiguate duplicate Figma names by node ID (see Part 4).",
     "Sub-parts are NOT separate files — they compose into the parent's .tsx as exported parts (dialog/header → DialogHeader in dialog.tsx).",
-    "Brand/theme (jit ⇄ brand ⇄ acme) and light/dark values are not props — they cascade from [data-theme] on an ancestor via the token layer."
+    "Brand/theme (jit ⇄ acme) and light/dark values are not props — they cascade from [data-theme] on an ancestor via the token layer."
   ],
   "install": {
     "bootstrap": "npx shadcn add @kraken/theme (pulls the tokens item automatically)",
@@ -112,7 +112,7 @@
     "design.md",
     "MAPPING.md"
   ],
-  "system": "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, 3 brands.",
+  "system": "Kraken UI Kit (JIT DS 2.1) — shadcn-based, Figma-first, 3-layer --ds-* tokens, brand-switchable through one semantic layer.",
   "tokenArchitecture": {
     "layers": [
       "L1 global: primitive ramps/scales (--ds-color-jit-400, --ds-spacing-16) — never bind component colors here.",
