@@ -7,7 +7,7 @@
 - Answer component questions from `manifests/components/<name>.json` (or the
   `kraken-ui` MCP tools when connected): exact variant enums, defaults, props,
   `--ds-*` tokens, a11y, usage do/don't. Do **not** invent variants
-  (`variant="outline"` does not exist — `secondary` is the outline) or tokens.
+  (Button variants are shadcn names: `default`, `outline`, `secondary`, `ghost`, `destructive`) or tokens.
 - `manifests/index.json` maps aliases/keywords → components; duplicate Figma
   names resolve by **node ID** (see MAPPING.md Part 4).
 

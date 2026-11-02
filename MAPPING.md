@@ -42,25 +42,28 @@ cascade from `[data-theme]` on an ancestor via the token layer. Never hard-code.
 
 ## shadcn divergence contract
 
-The kit forks shadcn's **base-nova** style but is **Figma-first**: where the
-Figma variant matrix and shadcn disagree, Figma wins. These divergences are
-deliberate — do not "fix" them back to shadcn:
+The kit forks shadcn's **base-nova** style and uses shadcn names wherever a shadcn
+equivalent exists (Button `default/outline/secondary`, Alert `variant`, Tabs
+`default`, `empty-icon`, `slider-range`). It is still **Figma-first**: where the
+Figma variant matrix has no shadcn equivalent, or shadcn builds the component
+differently, Figma wins. These divergences are deliberate. The Kind column says
+why: `extra` (the kit adds values shadcn lacks), `default` (a different default
+value), `api` (a different prop API or underlying library), `look` (a different
+visual treatment):
 
-| Area | Kit (Figma) | shadcn base-nova |
-|---|---|---|
-| Button variants | `primary/secondary/tonal/ghost/destructive/destructive-secondary/destructive-ghost` | `default/outline/secondary/ghost/destructive/link` (map: `default`→`primary`, `outline`→`secondary`) |
-| Button sizing | `--ds-button-size-*` tokens + `iconOnly` prop | utility classes + `size="icon-*"` |
-| Alert prop | `type` | `variant` |
-| Tabs variant | `badge` | `default` |
-| AlertDialog | prop-driven `AlertDialogContent` (`title/description/primaryActions/secondaryActions`); `AlertDialogCancel` alias provided for copy-paste compat | composable `Header/Footer/Title/Action/Cancel/Media` |
-| Avatar | prop-driven (`src`/`fallback`), `AvatarStack` | composable `AvatarImage/AvatarFallback`, `AvatarBadge/AvatarGroup` |
-| Progress | single `<Progress value label>` | composable `Track/Indicator/Label/Value` |
-| Toast | Base UI Toast (`toast`, `toastManager`) | `sonner` package |
-| Drawer | Base UI dialog | `vaul` |
-| EmptyMedia slot | `data-slot="empty-media"` | `data-slot="empty-icon"` |
-| Slider range slot | `data-slot="slider-indicator"` (Base UI naming) | `data-slot="slider-range"` |
-| Pagination | ghost `xs` controls; icon-only `PaginationPrevious`/`PaginationNext` + `PaginationFirst`/`PaginationLast` (chevron-first/last) | text "Previous"/"Next" links, no first/last |
-| Toast look | surface tinted per type (badge fill/border tokens), message only — no type icon | neutral card with a type icon |
+| Area | Kit | shadcn base-nova | Kind |
+|---|---|---|---|
+| Button variants | `default/outline/secondary/ghost/destructive` (shadcn names) plus kit-only `destructive-outline`, `destructive-ghost`; no `link` variant (separate component) | `default/outline/secondary/ghost/destructive/link` | extra |
+| Button sizing | `--ds-button-size-*` tokens + `iconOnly` prop | utility classes + `size="icon-*"` | api |
+| Alert variants | `variant`: `default/destructive` (shadcn names) plus kit-only `success`, `informational`, `warning` | `variant`: `default/destructive` | extra |
+| Tabs default | an unset `variant` renders `line` (underline strip); `default` is the segmented pill | an unset `variant` renders `default` (segmented pill) | default |
+| AlertDialog | prop-driven `AlertDialogContent` (`title/description/primaryActions/secondaryActions`); `AlertDialogCancel` alias provided for copy-paste compat | composable `Header/Footer/Title/Action/Cancel/Media` | api |
+| Avatar | prop-driven (`src`/`fallback`), `AvatarStack` | composable `AvatarImage/AvatarFallback`, `AvatarBadge/AvatarGroup` | api |
+| Progress | single `<Progress value label>` | composable `Track/Indicator/Label/Value` | api |
+| Toast | Base UI Toast (`toast`, `toastManager`) | `sonner` package | api |
+| Drawer | Base UI dialog | `vaul` | api |
+| Pagination | ghost `xs` controls; icon-only `PaginationPrevious`/`PaginationNext` + `PaginationFirst`/`PaginationLast` (chevron-first/last) | text "Previous"/"Next" links, no first/last | extra |
+| Toast look | surface tinted per type (badge fill/border tokens), message only — no type icon | neutral card with a type icon | look |
 
 Formerly-backlogged upstream gaps, now shipped: sidebar app-shell
 (`SidebarProvider/Trigger/Inset/Rail/MenuSub*` — no mobile sheet mode yet),
@@ -80,15 +83,15 @@ These mirror their Figma component API exactly and carry full Storybook controls
 
 | Figma property | type | Code prop | Values |
 |---|---|---|---|
-| Variant | enum | `variant` | `primary` (default) · `secondary` · `tonal` · `ghost` · `destructive` · `destructive-secondary` · `destructive-ghost` |
+| Variant | enum | `variant` | `default` (default) · `outline` · `secondary` · `ghost` · `destructive` · `destructive-outline` · `destructive-ghost` |
 | Size | enum | `size` | `xs` · `sm` · `md` (default) · `lg` |
 | Icon only | bool | `iconOnly` | `true` / `false` |
 | (left/right icon swap) | instance | `leftIcon` / `rightIcon` | lucide icon |
 | State | axis | — (CSS) | `disabled` is the only prop |
 
 > Button-size decision (was open): Figma `xs/sm/md/lg` already match the code
-> strings 1:1 — **no mapping table needed**. `outline` is **not** a Button variant
-> (`secondary` *is* the outline); `link` is its own component.
+> strings 1:1 — **no mapping table needed**. Variant names now match shadcn
+> (`default`/`outline`/`secondary`); `link` is its own component.
 
 ### badge — displays a badge or a component that looks like a badge; label/categorize items or show counts/status
 [🎨 Figma `badge` 619:6877](https://www.figma.com/design/Y3gNgjmXe1t67fPlDjM2iH/?node-id=619-6877) · [💻 badge.tsx](https://github.com/ziolkowskiw/kraken-ui-kit/blob/main/src/components/ui/badge.tsx) · exports `Badge`, `badgeVariants`
@@ -178,7 +181,7 @@ These mirror their Figma component API exactly and carry full Storybook controls
 
 | Figma property | Code prop | Values |
 |---|---|---|
-| Type | `type` | `neutral` · `error` · `success` · `informational` · `warning` |
+| Variant | `variant` | `default` · `destructive` · `success` · `informational` · `warning` |
 | (icon) | `icon` | lucide icon / bool |
 | (dismiss) | `onClose` | handler (renders close affordance) |
 | (action) | `action` | node (renders action Button) |
@@ -196,7 +199,7 @@ These mirror their Figma component API exactly and carry full Storybook controls
 
 | Figma property | Code prop | Values |
 |---|---|---|
-| Variant | `variant` on `TabsList` | Figma `line` → `"line"` (default, underline strip) · Figma `default` → `"badge"` (pill/segmented, the "default" Figma variant maps to the `badge` code value) |
+| Variant | `variant` on `TabsList` | Figma `line` → `"line"` (default, underline strip) · Figma `default` → `"default"` (pill/segmented) |
 | Orientation | `orientation` on `Tabs` | `horizontal` · `vertical` |
 | (disabled tab) | `disabled` on `TabsTrigger` | bool |
 | (depth — code ext.) | `depth` on `TabsList` | `1` (default) · `2` — controls label scale; no Figma axis, intentional kit extension |

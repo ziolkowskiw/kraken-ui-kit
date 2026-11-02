@@ -11,7 +11,7 @@
     ]
   },
   "boundaries": [
-    "variant values are line (default, underline strip) and badge (pill/segmented). Figma's variant named \"default\" maps to code value \"badge\" — a deliberate divergence.",
+    "variant values are line (the default here, underline strip) and default (pill/segmented, the same as shadcn's default). Note: unlike shadcn, an unset variant renders line.",
     "depth on TabsList (1 | 2) is a kit extension with no Figma axis."
   ],
   "whenToUseInstead": [

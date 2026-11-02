@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 
 // Mirrors the Figma `Empty state` component (1686:7468): a centered empty/zero
 // state — optional media (icon), title, body, and an action slot that composes
-// real <Button>s (primary / secondary / ghost). Built as compound parts so the
+// real <Button>s (default / outline / ghost). Built as compound parts so the
 // action row is the single source of truth (the actual Button component).
 function Empty({ className, ...props }: React.ComponentProps<"div">) {
   return (
@@ -51,7 +51,7 @@ function EmptyMedia({
 }: React.ComponentProps<"div"> & VariantProps<typeof emptyMediaVariants>) {
   return (
     <div
-      data-slot="empty-media"
+      data-slot="empty-icon"
       className={cn(emptyMediaVariants({ variant }), className)}
       {...props}
     />

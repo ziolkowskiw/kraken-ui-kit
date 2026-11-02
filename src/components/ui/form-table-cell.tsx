@@ -75,7 +75,7 @@ function FormTableCell({
       break
     case "file uploader":
       control = (
-        <Button variant="secondary" size="sm" className="w-full">
+        <Button variant="outline" size="sm" className="w-full">
           Action verb
         </Button>
       )

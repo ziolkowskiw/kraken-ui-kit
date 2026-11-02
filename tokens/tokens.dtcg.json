@@ -2550,14 +2550,14 @@
               "lastSyncedAt": "2026-06-13T07:49:36.622Z",
               "lastSyncedValue": {
                 "component": {
-                  "reference": "{color.primary-muted-foreground}"
+                  "reference": "{color.content.primary}"
                 }
               },
               "variableId": "VariableID:68:848"
             }
           },
           "$type": "color",
-          "$value": "{color.primary-muted-foreground}"
+          "$value": "{color.content.primary}"
         },
         "contentDisabled": {
           "$description": "Tonal button label colour when disabled.",
@@ -2584,14 +2584,14 @@
               "lastSyncedAt": "2026-06-13T07:49:36.622Z",
               "lastSyncedValue": {
                 "component": {
-                  "reference": "{color.primary-muted}"
+                  "reference": "{color.muted}"
                 }
               },
               "variableId": "VariableID:68:844"
             }
           },
           "$type": "color",
-          "$value": "{color.primary-muted}"
+          "$value": "{color.muted}"
         },
         "fillActive": {
           "$description": "Tonal button background when pressed.",
@@ -2601,14 +2601,14 @@
               "lastSyncedAt": "2026-06-13T07:49:36.622Z",
               "lastSyncedValue": {
                 "component": {
-                  "reference": "{color.primary-muted-active}"
+                  "reference": "{color.secondary-pressed}"
                 }
               },
               "variableId": "VariableID:68:846"
             }
           },
           "$type": "color",
-          "$value": "{color.primary-muted-active}"
+          "$value": "{color.secondary-pressed}"
         },
         "fillDisabled": {
           "$description": "Tonal button background when disabled.",
@@ -2635,14 +2635,14 @@
               "lastSyncedAt": "2026-06-13T07:49:36.622Z",
               "lastSyncedValue": {
                 "component": {
-                  "reference": "{color.primary-muted-hover}"
+                  "reference": "{color.border}"
                 }
               },
               "variableId": "VariableID:68:845"
             }
           },
           "$type": "color",
-          "$value": "{color.primary-muted-hover}"
+          "$value": "{color.border}"
         },
         "iconDisabled": {
           "$description": "Tonal button icon colour when disabled.",

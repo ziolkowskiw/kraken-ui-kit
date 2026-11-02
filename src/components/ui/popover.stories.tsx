@@ -40,7 +40,7 @@ const meta = {
   },
   args: {
     triggerLabel: 'Open popover',
-    triggerVariant: 'secondary',
+    triggerVariant: 'outline',
     title: 'Dimensions',
     description: 'Set the dimensions for the layer.',
     side: 'bottom',
@@ -80,7 +80,7 @@ export const Placement: Story = {
     <div className="grid grid-cols-2 gap-x-24 gap-y-16 p-12">
       {(['top', 'right', 'bottom', 'left'] as const).map((side) => (
         <Popover key={side}>
-          <PopoverTrigger render={<Button variant="secondary">{side}</Button>} />
+          <PopoverTrigger render={<Button variant="outline">{side}</Button>} />
           <PopoverContent side={side}>
             <PopoverHeader>
               <PopoverTitle>Opens to the {side}</PopoverTitle>

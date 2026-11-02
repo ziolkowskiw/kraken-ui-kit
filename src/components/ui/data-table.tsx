@@ -28,7 +28,7 @@ type TableTitleProps = React.ComponentProps<"div"> &
     showTooltip?: boolean
     tooltip?: React.ReactNode
     showAction?: boolean
-    /** override the default ghost/secondary/primary action buttons */
+    /** override the default ghost/outline/default action buttons */
     actions?: React.ReactNode
   }
 
@@ -68,10 +68,10 @@ function TableTitle({
               <Button variant="ghost" size="sm">
                 Action verb
               </Button>
-              <Button variant="secondary" size="sm">
+              <Button variant="outline" size="sm">
                 Action verb
               </Button>
-              <Button variant="primary" size="sm">
+              <Button variant="default" size="sm">
                 Action verb
               </Button>
             </>

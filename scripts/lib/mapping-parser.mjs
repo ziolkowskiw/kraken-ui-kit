@@ -79,7 +79,7 @@ export function parseMapping(md) {
     if (!line.trim().startsWith("|") || isSeparatorRow(line)) continue;
     const cells = splitRow(line);
     if (cells.length < 3 || cells[0] === "Area") continue;
-    divergences.push({ area: cells[0], kit: cells[1], shadcn: cells[2] });
+    divergences.push({ area: cells[0], kit: cells[1], shadcn: cells[2], kind: cells[3] });
   }
   const divergenceNote =
     divSection

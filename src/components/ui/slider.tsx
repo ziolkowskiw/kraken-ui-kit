@@ -56,7 +56,7 @@ function Slider({
           )}
         >
           <SliderPrimitive.Indicator
-            data-slot="slider-indicator"
+            data-slot="slider-range"
             className="[background-color:var(--ds-color-primary)] data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
           />
         </SliderPrimitive.Track>

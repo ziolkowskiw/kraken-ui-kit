@@ -32,7 +32,7 @@ const meta = {
   args: {
     orientation: 'horizontal',
     count: 3,
-    variant: 'secondary',
+    variant: 'outline',
     size: 'md',
     iconOnly: false,
   },
@@ -66,14 +66,14 @@ export const IconToolbar: Story = {
   render: () => (
     <div className="flex gap-4">
       <ButtonGroup>
-        <Button variant="secondary" size="sm" iconOnly aria-label="Bold"><Bold /></Button>
-        <Button variant="secondary" size="sm" iconOnly aria-label="Italic"><Italic /></Button>
-        <Button variant="secondary" size="sm" iconOnly aria-label="Underline"><Underline /></Button>
+        <Button variant="outline" size="sm" iconOnly aria-label="Bold"><Bold /></Button>
+        <Button variant="outline" size="sm" iconOnly aria-label="Italic"><Italic /></Button>
+        <Button variant="outline" size="sm" iconOnly aria-label="Underline"><Underline /></Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="secondary" size="sm" iconOnly aria-label="Align left"><AlignLeft /></Button>
-        <Button variant="secondary" size="sm" iconOnly aria-label="Align center"><AlignCenter /></Button>
-        <Button variant="secondary" size="sm" iconOnly aria-label="Align right"><AlignRight /></Button>
+        <Button variant="outline" size="sm" iconOnly aria-label="Align left"><AlignLeft /></Button>
+        <Button variant="outline" size="sm" iconOnly aria-label="Align center"><AlignCenter /></Button>
+        <Button variant="outline" size="sm" iconOnly aria-label="Align right"><AlignRight /></Button>
       </ButtonGroup>
     </div>
   ),
@@ -85,9 +85,9 @@ export const WithTextAndSeparator: Story = {
     <ButtonGroup>
       <ButtonGroupText>Align</ButtonGroupText>
       <ButtonGroupSeparator />
-      <Button variant="secondary" size="md" iconOnly leftIcon={<AlignLeft />} aria-label="Align left" />
-      <Button variant="secondary" size="md" iconOnly leftIcon={<AlignCenter />} aria-label="Align center" />
-      <Button variant="secondary" size="md" iconOnly leftIcon={<AlignRight />} aria-label="Align right" />
+      <Button variant="outline" size="md" iconOnly leftIcon={<AlignLeft />} aria-label="Align left" />
+      <Button variant="outline" size="md" iconOnly leftIcon={<AlignCenter />} aria-label="Align center" />
+      <Button variant="outline" size="md" iconOnly leftIcon={<AlignRight />} aria-label="Align right" />
     </ButtonGroup>
   ),
 }

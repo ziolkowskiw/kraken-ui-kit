@@ -108,7 +108,7 @@ export const WithButtonAction: Story = {
           <ItemDescription>Unlock advanced analytics and more seats.</ItemDescription>
         </ItemContent>
         <ItemActions>
-          <Button variant="primary" size="sm">Upgrade</Button>
+          <Button variant="default" size="sm">Upgrade</Button>
         </ItemActions>
       </Item>
     </div>

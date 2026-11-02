@@ -12,7 +12,7 @@ import { Button } from './button'
 import { Alert, AlertTitle, AlertDescription } from './alert'
 import { Info } from 'lucide-react'
 
-const BUTTON_VARIANTS = ['primary', 'secondary', 'tonal', 'ghost', 'destructive', 'destructive-secondary', 'destructive-ghost'] as const
+const BUTTON_VARIANTS = ['default', 'outline', 'secondary', 'ghost', 'destructive', 'destructive-outline', 'destructive-ghost'] as const
 const BUTTON_SIZES = ['xs', 'sm', 'md', 'lg'] as const
 
 type IconName = 'none' | keyof typeof icons
@@ -169,10 +169,10 @@ const meta = {
     left2LeftIcon: 'none',
     left2RightIcon: 'none',
     left2ClosesDialog: false,
-    // Right slot — secondary + primary
+    // Right slot — outline + default
     right1Show: true,
     right1Label: 'Label',
-    right1Variant: 'secondary',
+    right1Variant: 'outline',
     right1Size: 'md',
     right1IconOnly: false,
     right1LeftIcon: 'none',
@@ -180,7 +180,7 @@ const meta = {
     right1ClosesDialog: true,
     right2Show: true,
     right2Label: 'Label',
-    right2Variant: 'primary',
+    right2Variant: 'default',
     right2Size: 'md',
     right2IconOnly: false,
     right2LeftIcon: 'none',
@@ -340,7 +340,7 @@ export const ChangeVariant: Story = {
           primaryActions={hasRight ? <>{renderButton(right1, 'r1')}{renderButton(right2, 'r2')}</> : undefined}
         >
           <div className="flex flex-col gap-[var(--ds-spacing-component-lg)] [padding-inline:var(--ds-spacing-component-xl)] [padding-block:var(--ds-spacing-component-lg)]">
-            <Alert type="informational" icon={<Info />}>
+            <Alert variant="informational" icon={<Info />}>
               <AlertTitle>Information provided by the system</AlertTitle>
               <AlertDescription>
                 Information provided by the system might not be sufficient for performing this operation.

@@ -78,13 +78,13 @@ export default function Showcase() {
         <Card>
           <CardHeader>
             <CardTitle>Buttons</CardTitle>
-            <CardDescription>Variants & sizes — primary follows the brand.</CardDescription>
+            <CardDescription>Variants & sizes — the default button follows the brand.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center gap-2">
-              <Button>Primary</Button>
+              <Button>Default</Button>
+              <Button variant="outline">Outline</Button>
               <Button variant="secondary">Secondary</Button>
-              <Button variant="tonal">Tonal</Button>
               <Button variant="ghost">Ghost</Button>
               <Button variant="destructive">Destructive</Button>
             </div>
@@ -196,7 +196,7 @@ export default function Showcase() {
               <AlertDescription>This alert uses semantic tokens.</AlertDescription>
             </Alert>
             <Dialog>
-              <DialogTrigger render={<Button variant="secondary">Open dialog</Button>} />
+              <DialogTrigger render={<Button variant="outline">Open dialog</Button>} />
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Brand-aware dialog</DialogTitle>
@@ -205,7 +205,7 @@ export default function Showcase() {
                   </DialogDescription>
                 </DialogHeader>
                 <DialogFooter>
-                  <DialogClose render={<Button variant="secondary">Cancel</Button>} />
+                  <DialogClose render={<Button variant="outline">Cancel</Button>} />
                   <DialogClose render={<Button>Confirm</Button>} />
                 </DialogFooter>
               </DialogContent>

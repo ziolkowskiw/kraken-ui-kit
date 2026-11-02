@@ -54,12 +54,12 @@ export function iconArgType(label: string, category?: string) {
 
 /** Figma Button variant axis — reused wherever a story nests a real Button. */
 export const BUTTON_VARIANTS = [
-  "primary",
+  "default",
+  "outline",
   "secondary",
-  "tonal",
   "ghost",
   "destructive",
-  "destructive-secondary",
+  "destructive-outline",
   "destructive-ghost",
 ] as const;
 export type ButtonVariant = (typeof BUTTON_VARIANTS)[number];

@@ -53,7 +53,7 @@ const meta = {
     showFooter: true,
     cancelLabel: 'Cancel',
     confirmLabel: 'Deploy',
-    confirmVariant: 'primary',
+    confirmVariant: 'default',
   },
   render: ({ filled, title, description, contentText, showAction, showFooter, cancelLabel, confirmLabel, confirmVariant }: StoryProps) => (
     <Card filled={filled} className="w-80">
@@ -73,7 +73,7 @@ const meta = {
       </CardContent>
       {showFooter && (
         <CardFooter className="justify-end gap-2">
-          <Button variant="secondary" size="sm">
+          <Button variant="outline" size="sm">
             {cancelLabel}
           </Button>
           <Button variant={confirmVariant} size="sm">{confirmLabel}</Button>

@@ -99,9 +99,8 @@ in `src/styles/kraken-theme.css`, so plain Tailwind classes (`bg-primary`,
    `icon` props (or children) — never baked in.
 7. Verify in both brands before calling it done: toggle `jit ⇄ brand ⇄ acme` in the
    showcase (`npm run dev`) or the Storybook toolbar.
-8. Reference API: Button — `variant` (primary | secondary | tonal | ghost |
-   destructive | destructive-secondary | destructive-ghost), `size`
-   (xs | sm | md | lg), `iconOnly`. `secondary` _is_ the outline; `link` is a
+8. Reference API: Button — `variant` (default | outline | secondary | ghost | destructive | destructive-outline | destructive-ghost), `size`
+   (xs | sm | md | lg), `iconOnly`. `link` is a
    separate component.
 
 ## Storybook requirements

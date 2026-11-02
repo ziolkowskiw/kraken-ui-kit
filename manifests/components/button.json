@@ -14,8 +14,8 @@
     "submit button"
   ],
   "boundaries": [
-    "variant is exactly: primary | secondary | tonal | ghost | destructive | destructive-secondary | destructive-ghost.",
-    "shadcn mapping: default→primary, outline→secondary; shadcn's link variant is the separate link component.",
+    "variant is exactly: default | outline | secondary | ghost | destructive | destructive-outline | destructive-ghost.",
+    "Variant names match shadcn (default, outline, secondary, ghost, destructive); shadcn's link variant is the separate link component.",
     "Sizing comes from --ds-button-size-* tokens + the iconOnly prop — there is no size=\"icon-*\"."
   ],
   "description": "displays a button or a component that looks like a button; primary actions, form submits, dialog/menu triggers",
@@ -49,22 +49,22 @@
   ],
   "name": "button",
   "notes": [
-    "Button-size decision (was open): Figma xs/sm/md/lg already match the code strings 1:1 — no mapping table needed. outline is not a Button variant (secondary *is* the outline); link is its own component.",
+    "Button-size decision (was open): Figma xs/sm/md/lg already match the code strings 1:1 — no mapping table needed. Variant names now match shadcn (default/outline/secondary); link is its own component.",
     "hover/focus/active states are CSS pseudo-classes, not props; disabled is the only state prop."
   ],
   "props": [
     {
-      "default": "primary",
+      "default": "default",
       "figmaProperty": "Variant",
-      "figmaValues": "primary (default) · secondary · tonal · ghost · destructive · destructive-secondary · destructive-ghost",
+      "figmaValues": "default (default) · outline · secondary · ghost · destructive · destructive-outline · destructive-ghost",
       "kind": "enum",
       "name": "variant",
       "values": [
-        "destructive-secondary",
+        "destructive-outline",
         "destructive-ghost",
-        "primary",
+        "default",
+        "outline",
         "secondary",
-        "tonal",
         "ghost",
         "destructive"
       ]
@@ -188,12 +188,12 @@
       "Use variant=\"secondary\" for the outline look — secondary IS the outline variant.",
       "Give every iconOnly button an aria-label (or title) with a text equivalent.",
       "Pass lucide-react icons via leftIcon / rightIcon — never bake icons into children markup.",
-      "Use the destructive family (destructive / destructive-secondary / destructive-ghost) for irreversible actions."
+      "Use the destructive family (destructive / destructive-outline / destructive-ghost) for irreversible actions."
     ],
     "dont": [
       "Don't use Button for navigation — use link (inline) or link-button (button-shaped navigation).",
       "Don't add hover/focus/active props — those states are CSS pseudo-classes; disabled is the only state prop.",
-      "Don't invent variant=\"outline\" or variant=\"link\" — neither exists in this kit."
+      "Don't invent variant=\"link\" — link is the separate link component."
     ]
   },
   "variants": {
@@ -208,13 +208,13 @@
         ]
       },
       "variant": {
-        "default": "primary",
+        "default": "default",
         "values": [
-          "destructive-secondary",
+          "destructive-outline",
           "destructive-ghost",
-          "primary",
+          "default",
+          "outline",
           "secondary",
-          "tonal",
           "ghost",
           "destructive"
         ]

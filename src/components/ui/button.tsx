@@ -20,17 +20,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary:
+        default:
           "[--btn-fill:var(--ds-button-primary-fill)] [--btn-fill-hover:var(--ds-button-primary-fillhover)] [--btn-fill-active:var(--ds-button-primary-fillactive)] [--btn-fill-disabled:var(--ds-button-primary-filldisabled)] [--btn-content:var(--ds-button-primary-content)] [--btn-content-disabled:var(--ds-button-primary-contentdisabled)]",
-        secondary:
+        outline:
           "[--btn-fill:var(--ds-button-secondary-fill)] [--btn-fill-hover:var(--ds-button-secondary-fillhover)] [--btn-fill-active:var(--ds-button-secondary-fillactive)] [--btn-fill-disabled:var(--ds-button-secondary-filldisabled)] [--btn-content:var(--ds-button-secondary-content)] [--btn-content-disabled:var(--ds-button-secondary-contentdisabled)] [--btn-border:var(--ds-button-secondary-border)]",
-        tonal:
+        secondary:
           "[--btn-fill:var(--ds-button-tonal-fill)] [--btn-fill-hover:var(--ds-button-tonal-fillhover)] [--btn-fill-active:var(--ds-button-tonal-fillactive)] [--btn-fill-disabled:var(--ds-button-tonal-filldisabled)] [--btn-content:var(--ds-button-tonal-content)] [--btn-content-disabled:var(--ds-button-tonal-contentdisabled)]",
         ghost:
           "[--btn-fill:transparent] [--btn-fill-hover:var(--ds-button-ghost-fillhover)] [--btn-fill-active:var(--ds-button-ghost-fillactive)] [--btn-fill-disabled:var(--ds-color-none)] [--btn-content:var(--ds-button-ghost-content)] [--btn-content-disabled:var(--ds-button-ghost-contentdisabled)]",
         destructive:
           "[--btn-fill:var(--ds-button-destructive-fill)] [--btn-fill-hover:var(--ds-button-destructive-fillhover)] [--btn-fill-active:var(--ds-button-destructive-fillactive)] [--btn-fill-disabled:var(--ds-button-destructive-filldisabled)] [--btn-content:var(--ds-button-destructive-content)] [--btn-content-disabled:var(--ds-button-destructive-contentdisabled)]",
-        "destructive-secondary":
+        "destructive-outline":
           "[--btn-fill:var(--ds-button-destructivesecondary-fill)] [--btn-fill-hover:var(--ds-button-destructivesecondary-fillhover)] [--btn-fill-active:var(--ds-button-destructivesecondary-fillactive)] [--btn-fill-disabled:var(--ds-button-destructivesecondary-filldisabled)] [--btn-content:var(--ds-button-destructivesecondary-content)] [--btn-content-disabled:var(--ds-button-destructivesecondary-contentdisabled)] [--btn-border:var(--ds-button-destructivesecondary-border)] [--btn-border-disabled:var(--ds-button-destructivesecondary-borderdisabled)]",
         "destructive-ghost":
           "[--btn-fill:var(--ds-color-none)] [--btn-fill-hover:var(--ds-button-destructiveghost-fillhover)] [--btn-fill-active:var(--ds-button-destructiveghost-fillactive)] [--btn-fill-disabled:var(--ds-color-none)] [--btn-content:var(--ds-button-destructiveghost-content)] [--btn-content-disabled:var(--ds-button-destructiveghost-contentdisabled)]",
@@ -55,7 +55,7 @@ const buttonVariants = cva(
       { variant: "ghost", iconOnly: false, size: "md", class: "[padding-inline:var(--ds-button-ghost-size-md-paddingx)]" },
       { variant: "ghost", iconOnly: false, size: "lg", class: "[padding-inline:var(--ds-button-ghost-size-lg-paddingx)]" },
     ],
-    defaultVariants: { variant: "primary", size: "md", iconOnly: false },
+    defaultVariants: { variant: "default", size: "md", iconOnly: false },
   }
 )
 

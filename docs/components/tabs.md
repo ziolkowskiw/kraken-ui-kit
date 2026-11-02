@@ -17,7 +17,7 @@ Layered sections of content displayed one at a time. Use to switch between relat
 
 | Prop | Type | Values | Default |
 |---|---|---|---|
-| `variant` | enum | `"line" \| "badge"` | `"line"` |
+| `variant` | enum | `"line" \| "default"` | `"line"` |
 | `depth` | enum | `"1" \| "2"` | — |
 
 > **State note:** `hover`, `focus`, `active` states are handled by CSS pseudo-classes — there is no state prop. `disabled` is the only state prop.

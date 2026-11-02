@@ -120,7 +120,7 @@ export const Palette: Story = {
     const [open, setOpen] = React.useState(false)
     return (
       <>
-        <Button variant="secondary" onClick={() => setOpen(true)}>
+        <Button variant="outline" onClick={() => setOpen(true)}>
           Open command palette
         </Button>
         <CommandDialog open={open} onOpenChange={setOpen}>
